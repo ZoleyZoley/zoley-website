@@ -13,7 +13,7 @@ section files are plain HTML and stand on their own.)
 
 Boundaries are parsed, not hardcoded, so the pages can grow or shrink freely.
 """
-import re, os, json, sys, shutil
+import re, os, io, json, sys, shutil
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
@@ -61,6 +61,32 @@ DEF_RE = re.compile(
 GUARD = ('(function(run){ if (document.readyState !== "loading") { run(); }\n'
          '  else { document.addEventListener("DOMContentLoaded", run); } })(() => {')
 DCL = 'document.addEventListener("DOMContentLoaded", () => {'
+
+
+# --- TODO markers -----------------------------------------------------------
+# Leave a note for Claude anywhere in a .v2.html page:
+#     <!-- TODO: tighten this heading, it wraps to three lines on mobile -->
+# The build lists every marker it finds and strips them out of sections.v2/,
+# so an un-actioned note can never reach the CDN.
+TODO_RE = re.compile(r'[ \t]*<!--\s*TODO\b.*?-->[ \t]*\n?', re.S)
+
+
+def strip_todos(text):
+    return TODO_RE.sub("", text)
+
+
+def report_todos():
+    hits = []
+    for fname in PAGES:
+        for n, line in enumerate(io.open(os.path.join(SRC, fname), encoding="utf-8"), 1):
+            if re.search(r'<!--\s*TODO\b', line):
+                note = re.sub(r'^.*?<!--\s*TODO:?\s*', '', line.rstrip())
+                hits.append((fname, n, note.replace('-->', '').strip()))
+    if hits:
+        print(f"\n{len(hits)} TODO marker(s) still open (stripped from the built sections):")
+        for fname, n, note in hits:
+            print(f"  main pages/{fname}:{n}  {note}")
+    return hits
 
 
 def collect_defs(text):
@@ -208,7 +234,7 @@ def build():
                        f'<div id="{sid}">\n  <style>\n{scss}\n  </style>\n'
                        f'{defs_block(miss, page_defs)}\n{markup}\n</div>\n')
                 fn = f"{j+1:02d}-{slugs[j]}.html"
-                open(os.path.join(OUT, folder, fn), "w").write(out)
+                open(os.path.join(OUT, folder, fn), "w").write(strip_todos(out))
                 entries.append({"file": fn, "id": sid, "title": pretty(slugs[j]),
                                 "key": f"{folder}/{fn[:-5]}", "defs_injected": miss})
         else:     # ---- already one div per section ----
@@ -229,7 +255,7 @@ def build():
                 out = (header(folder, pretty(slugs[j]), fname, sid) +
                        f'<div id="{sid}">\n  <style>\n{block}\n  </style>\n\n{markup}\n</div>\n')
                 fn = f"{j+1:02d}-{slugs[j]}.html"
-                open(os.path.join(OUT, folder, fn), "w").write(out)
+                open(os.path.join(OUT, folder, fn), "w").write(strip_todos(out))
                 entries.append({"file": fn, "id": sid, "title": pretty(slugs[j]),
                                 "key": f"{folder}/{fn[:-5]}", "defs_injected": []})
 
@@ -240,6 +266,7 @@ def build():
     json.dump(manifest, open(os.path.join(OUT, "manifest.json"), "w"), indent=2)
     total = sum(len(v["sections"]) for v in manifest.values())
     print(f"built {total} sections across {len(manifest)} pages -> sections.v2/")
+    report_todos()
     return manifest
 
 
