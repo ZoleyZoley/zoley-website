@@ -150,6 +150,29 @@ Scoped under #zly-consulting-what-we-do. Self-contained: paste into a Squarespac
       #zly-consulting-what-we-do .btn { justify-content: center; }
       #zly-consulting-what-we-do .final { padding: 40px 22px; border-radius: 12px; }
     }
+      /* ===== FULL-BLEED ILLUSTRATIONS ON PHONES =====
+       The drawings keep every bit of their desktop detail while scaling down, so the
+       labels inside them shrink too. Giving the panel the whole screen takes the
+       drawing from about 308px to 390px - roughly a third bigger - and every label
+       grows with it. calc(50% - 50vw) cancels whatever side padding the section
+       carries, so this needs no per-page gutter value.
+       Deliberately NOT applied to illustrations that sit inside a card - the case
+       studies and the homepage featured band - which would break out of its edges. */
+    @media (max-width: 560px) {
+      /* 50vw counts the scrollbar, so a desktop window narrowed below 560px could
+         otherwise overshoot by its width. clip contains it without creating a
+         scroll container the way overflow:hidden would. */
+      #zly-consulting-what-we-do { overflow-x: clip; }
+      #zly-consulting-what-we-do .board {
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        border-left: 0;
+        border-right: 0;
+        border-radius: 0;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
   </style>
 
   <section class="sec" style="padding-top: 30px;">

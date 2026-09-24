@@ -88,9 +88,19 @@ def defs_block(missing, page_defs):
 
 
 def tokenize(css):
-    """Split CSS into (kind, selector, body, raw). Handles one level of nesting."""
+    """Split CSS into (kind, selector, body, raw). Handles one level of nesting.
+
+    Comments come back as their own token. If they were left in the buffer they
+    would end up glued to the front of the next selector, and a comment sitting
+    above an @media block would stop it being recognised as an at-rule - the rule
+    would then be dropped silently from every section.
+    """
     toks, i, n, buf = [], 0, len(css), ""
     while i < n:
+        if css.startswith('/*', i):
+            j = css.find('*/', i)
+            j = n if j == -1 else j + 2
+            toks.append(('comment', None, None, css[i:j])); i = j; continue
         if css[i] == '@' and css[i:].lstrip('@').startswith('import'):
             # Find the ';' that ends the at-rule - not one inside url(...) or a
             # quoted string. Google Fonts URLs contain ';' between weights, and
@@ -123,13 +133,23 @@ def css_for(css, sid):
     toks = tokenize(css)
     out = []
     kf = {s.split()[1].strip(): r for k, s, b, r in toks if k == 'at' and s.startswith('@keyframes')}
+    pending = None          # a comment waits for the rule it documents
     for k, sel, body, raw in toks:
+        if k == 'comment':
+            pending = raw
+            continue
+        keep = None
         if k == 'rule' and f"#{sid}" in sel:
-            out.append(raw)
+            keep = raw
         elif k == 'at' and sel.startswith('@media'):
             inner = [r for kk, ss, bb, r in tokenize(body) if kk == 'rule' and f"#{sid}" in ss]
             if inner:
-                out.append(sel + " {\n  " + "\n  ".join(inner) + "\n}")
+                keep = sel + " {\n  " + "\n  ".join(inner) + "\n}"
+        if keep is not None:
+            if pending:
+                out.append(pending)
+            out.append(keep)
+        pending = None
     joined = "\n".join(out)
     imports = [t[3] for t in toks if t[0] == 'import']
     used_kf = [r for name, r in kf.items() if re.search(r'\b' + re.escape(name) + r'\b', joined)]

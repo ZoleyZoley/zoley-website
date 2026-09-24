@@ -8,7 +8,7 @@ Scoped under #zly-about-story. Self-contained: paste into a Squarespace Code Blo
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
     /* ===== story ===== */
-      #zly-about-story {
+    #zly-about-story {
         --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
         --barn: #b5482d; --violet: #6c5ce7; --blue: #4ea1ff; --sage: #7a8b69; --marigold: #e3a72e; --border: rgba(27,36,48,0.14);
         font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
@@ -26,6 +26,26 @@ Scoped under #zly-about-story. Self-contained: paste into a Squarespace Code Blo
     @media (max-width: 900px) {
       #zly-about-story .sec { grid-template-columns: 1fr; padding: 16px 20px 60px; gap: 32px; }
       #zly-about-story .media { order: -1; }
+    }
+    /* ===== FULL-BLEED ILLUSTRATIONS ON PHONES =====
+         The drawings keep every bit of their desktop detail while scaling down, so the
+         labels inside them shrink too. Giving the panel the whole screen takes the
+         drawing from about 308px to 390px - roughly a third bigger - and every label
+         grows with it. calc(50% - 50vw) cancels whatever side padding the section
+         carries, so this needs no per-page gutter value.
+         Deliberately NOT applied to illustrations that sit inside a card - the case
+         studies and the homepage featured band - which would break out of its edges. */
+    @media (max-width: 560px) {
+      #zly-about-story { overflow-x: clip; }
+      #zly-about-story .media {
+          margin-left: calc(50% - 50vw);
+          margin-right: calc(50% - 50vw);
+          border-left: 0;
+          border-right: 0;
+          border-radius: 0;
+          padding-left: 0;
+          padding-right: 0;
+        }
     }
   </style>
 

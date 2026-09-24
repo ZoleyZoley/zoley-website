@@ -1,0 +1,9 @@
+<!doctype html><html><head><meta charset="utf-8"></head><body style="margin:0"><iframe id=f src="/__inner.html" style="width:390px;height:800px;border:0"></iframe>
+<script>setTimeout(()=>{const w=document.getElementById("f").contentWindow,d=w.document,o=[];
+[["ai","#zly-ai-hero"],["advertising","#zly-ads-hero"]].forEach(([n,sel])=>{const s=d.querySelector(sel+" .board svg");if(!s){o.push(n+": not found");return;}
+const r=s.getBoundingClientRect();const vb=s.viewBox.baseVal.width;const scale=r.width/vb;
+const ts=[...s.querySelectorAll("text")].map(t=>parseFloat(w.getComputedStyle(t).fontSize));
+const mn=Math.min(...ts),mx=Math.max(...ts);
+o.push(n+": svg rendered "+Math.round(r.width)+"px wide, viewBox "+vb+", scale "+scale.toFixed(3));
+o.push("   author font-size range "+mn+"-"+mx+"px  ->  RENDERS AT "+(mn*scale).toFixed(1)+"-"+(mx*scale).toFixed(1)+"px");});
+document.body.insertAdjacentHTML("afterbegin","<pre id=R>"+o.join("\n")+"</pre>");},7000);</script></body></html>
