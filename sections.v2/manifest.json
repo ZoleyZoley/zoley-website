@@ -6,56 +6,56 @@
         "file": "01-hero.html",
         "id": "zly-hy-hero",
         "title": "Hero",
-        "key": "homepage/hero",
+        "key": "homepage/01-hero",
         "defs_injected": []
       },
       {
         "file": "02-capabilities.html",
         "id": "zly-hy-capabilities",
-        "title": "Capabilities + Rotating Text",
-        "key": "homepage/capabilities",
+        "title": "Capabilities",
+        "key": "homepage/02-capabilities",
         "defs_injected": []
       },
       {
         "file": "03-approach.html",
         "id": "zly-hy-approach",
         "title": "Approach",
-        "key": "homepage/approach",
+        "key": "homepage/03-approach",
         "defs_injected": []
       },
       {
         "file": "04-who-we-are.html",
         "id": "zly-hy-who-we-are",
         "title": "Who We Are",
-        "key": "homepage/who-we-are",
+        "key": "homepage/04-who-we-are",
         "defs_injected": []
       },
       {
         "file": "05-resources.html",
         "id": "zly-hy-resources",
         "title": "Resources",
-        "key": "homepage/resources",
+        "key": "homepage/05-resources",
         "defs_injected": []
       },
       {
         "file": "06-featured.html",
         "id": "zly-hy-featured",
         "title": "Featured",
-        "key": "homepage/featured",
+        "key": "homepage/06-featured",
         "defs_injected": []
       },
       {
         "file": "07-testimonials.html",
         "id": "zly-hy-testimonials",
         "title": "Testimonials",
-        "key": "homepage/testimonials",
+        "key": "homepage/07-testimonials",
         "defs_injected": []
       },
       {
         "file": "08-final-cta.html",
         "id": "zly-hy-final-cta",
         "title": "Final CTA",
-        "key": "homepage/final-cta",
+        "key": "homepage/08-final-cta",
         "defs_injected": []
       }
     ]
@@ -67,49 +67,49 @@
         "file": "01-hero.html",
         "id": "zly-ai-hero",
         "title": "Hero",
-        "key": "ai/hero",
+        "key": "ai/01-hero",
         "defs_injected": []
       },
       {
         "file": "02-adoption-gap.html",
         "id": "zly-ai-adoption-gap",
         "title": "Adoption Gap",
-        "key": "ai/adoption-gap",
+        "key": "ai/02-adoption-gap",
         "defs_injected": []
       },
       {
         "file": "03-what-we-do.html",
         "id": "zly-ai-what-we-do",
         "title": "What We Do",
-        "key": "ai/what-we-do",
+        "key": "ai/03-what-we-do",
         "defs_injected": []
       },
       {
         "file": "04-current-state.html",
         "id": "zly-ai-current-state",
         "title": "Current State",
-        "key": "ai/current-state",
+        "key": "ai/04-current-state",
         "defs_injected": []
       },
       {
         "file": "05-advise-against.html",
         "id": "zly-ai-advise-against",
-        "title": "Where We'd Advise Against It",
-        "key": "ai/advise-against",
+        "title": "Advise Against",
+        "key": "ai/05-advise-against",
         "defs_injected": []
       },
       {
         "file": "06-how-we-do-it.html",
         "id": "zly-ai-how-we-do-it",
         "title": "How We Do It",
-        "key": "ai/how-we-do-it",
+        "key": "ai/06-how-we-do-it",
         "defs_injected": []
       },
       {
         "file": "07-case-study.html",
         "id": "zly-ai-case-study",
         "title": "Case Study",
-        "key": "ai/case-study",
+        "key": "ai/07-case-study",
         "defs_injected": [
           "zai-grad"
         ]
@@ -118,7 +118,7 @@
         "file": "08-final-cta.html",
         "id": "zly-ai-final-cta",
         "title": "Final CTA",
-        "key": "ai/final-cta",
+        "key": "ai/08-final-cta",
         "defs_injected": []
       }
     ]
@@ -130,56 +130,56 @@
         "file": "01-hero.html",
         "id": "zly-auto-hero",
         "title": "Hero",
-        "key": "automation/hero",
+        "key": "automation/01-hero",
         "defs_injected": []
       },
       {
         "file": "02-cost-of-manual-work.html",
         "id": "zly-auto-cost-of-manual-work",
         "title": "Cost Of Manual Work",
-        "key": "automation/cost-of-manual-work",
+        "key": "automation/02-cost-of-manual-work",
         "defs_injected": []
       },
       {
         "file": "03-what-we-automate.html",
         "id": "zly-auto-what-we-automate",
         "title": "What We Automate",
-        "key": "automation/what-we-automate",
+        "key": "automation/03-what-we-automate",
         "defs_injected": []
       },
       {
         "file": "04-current-state.html",
         "id": "zly-auto-current-state",
         "title": "Current State",
-        "key": "automation/current-state",
+        "key": "automation/04-current-state",
         "defs_injected": []
       },
       {
         "file": "05-where-to-start.html",
         "id": "zly-auto-where-to-start",
         "title": "Where To Start",
-        "key": "automation/where-to-start",
+        "key": "automation/05-where-to-start",
         "defs_injected": []
       },
       {
         "file": "06-how-we-do-it.html",
         "id": "zly-auto-how-we-do-it",
         "title": "How We Do It",
-        "key": "automation/how-we-do-it",
+        "key": "automation/06-how-we-do-it",
         "defs_injected": []
       },
       {
         "file": "07-case-study.html",
         "id": "zly-auto-case-study",
         "title": "Case Study",
-        "key": "automation/case-study",
+        "key": "automation/07-case-study",
         "defs_injected": []
       },
       {
         "file": "08-final-cta.html",
         "id": "zly-auto-final-cta",
         "title": "Final CTA",
-        "key": "automation/final-cta",
+        "key": "automation/08-final-cta",
         "defs_injected": []
       }
     ]
@@ -191,63 +191,63 @@
         "file": "01-hero.html",
         "id": "zly-ads-hero",
         "title": "Hero",
-        "key": "advertising/hero",
+        "key": "advertising/01-hero",
         "defs_injected": []
       },
       {
         "file": "02-cost-of-guessing.html",
         "id": "zly-ads-cost-of-guessing",
         "title": "Cost Of Guessing",
-        "key": "advertising/cost-of-guessing",
+        "key": "advertising/02-cost-of-guessing",
         "defs_injected": []
       },
       {
         "file": "03-what-we-do.html",
         "id": "zly-ads-what-we-do",
         "title": "What We Do",
-        "key": "advertising/what-we-do",
+        "key": "advertising/03-what-we-do",
         "defs_injected": []
       },
       {
         "file": "04-current-state.html",
         "id": "zly-ads-current-state",
         "title": "Current State",
-        "key": "advertising/current-state",
+        "key": "advertising/04-current-state",
         "defs_injected": []
       },
       {
         "file": "05-advise-against.html",
         "id": "zly-ads-advise-against",
-        "title": "Where We'd Advise Against It",
-        "key": "advertising/advise-against",
+        "title": "Advise Against",
+        "key": "advertising/05-advise-against",
         "defs_injected": []
       },
       {
         "file": "06-how-we-do-it.html",
         "id": "zly-ads-how-we-do-it",
         "title": "How We Do It",
-        "key": "advertising/how-we-do-it",
+        "key": "advertising/06-how-we-do-it",
         "defs_injected": []
       },
       {
         "file": "07-tracking-metrics.html",
         "id": "zly-ads-tracking-metrics",
-        "title": "Tracking & Metrics",
-        "key": "advertising/tracking-metrics",
+        "title": "Tracking Metrics",
+        "key": "advertising/07-tracking-metrics",
         "defs_injected": []
       },
       {
         "file": "08-case-study.html",
         "id": "zly-ads-case-study",
         "title": "Case Study",
-        "key": "advertising/case-study",
+        "key": "advertising/08-case-study",
         "defs_injected": []
       },
       {
         "file": "09-final-cta.html",
         "id": "zly-ads-final-cta",
         "title": "Final CTA",
-        "key": "advertising/final-cta",
+        "key": "advertising/09-final-cta",
         "defs_injected": []
       }
     ]
@@ -259,56 +259,56 @@
         "file": "01-hero.html",
         "id": "zly-consulting-hero",
         "title": "Hero",
-        "key": "consulting/hero",
+        "key": "consulting/01-hero",
         "defs_injected": []
       },
       {
         "file": "02-cost-of-guessing.html",
         "id": "zly-consulting-cost-of-guessing",
         "title": "Cost Of Guessing",
-        "key": "consulting/cost-of-guessing",
+        "key": "consulting/02-cost-of-guessing",
         "defs_injected": []
       },
       {
         "file": "03-what-we-do.html",
         "id": "zly-consulting-what-we-do",
         "title": "What We Do",
-        "key": "consulting/what-we-do",
+        "key": "consulting/03-what-we-do",
         "defs_injected": []
       },
       {
         "file": "04-current-state.html",
         "id": "zly-consulting-current-state",
         "title": "Current State",
-        "key": "consulting/current-state",
+        "key": "consulting/04-current-state",
         "defs_injected": []
       },
       {
         "file": "05-what-you-receive.html",
         "id": "zly-consulting-what-you-receive",
         "title": "What You Receive",
-        "key": "consulting/what-you-receive",
+        "key": "consulting/05-what-you-receive",
         "defs_injected": []
       },
       {
         "file": "06-how-we-do-it.html",
         "id": "zly-consulting-how-we-do-it",
         "title": "How We Do It",
-        "key": "consulting/how-we-do-it",
+        "key": "consulting/06-how-we-do-it",
         "defs_injected": []
       },
       {
         "file": "07-case-study.html",
         "id": "zly-consulting-case-study",
         "title": "Case Study",
-        "key": "consulting/case-study",
+        "key": "consulting/07-case-study",
         "defs_injected": []
       },
       {
         "file": "08-final-cta.html",
         "id": "zly-consulting-final-cta",
         "title": "Final CTA",
-        "key": "consulting/final-cta",
+        "key": "consulting/08-final-cta",
         "defs_injected": []
       }
     ]
@@ -320,56 +320,56 @@
         "file": "01-hero.html",
         "id": "zly-web-hero",
         "title": "Hero",
-        "key": "web-design/hero",
+        "key": "web-design/01-hero",
         "defs_injected": []
       },
       {
         "file": "02-cost-of-slow-site.html",
         "id": "zly-web-cost-of-slow-site",
-        "title": "Cost Of A Slow Site",
-        "key": "web-design/cost-of-slow-site",
+        "title": "Cost Of Slow Site",
+        "key": "web-design/02-cost-of-slow-site",
         "defs_injected": []
       },
       {
         "file": "03-what-we-do.html",
         "id": "zly-web-what-we-do",
         "title": "What We Do",
-        "key": "web-design/what-we-do",
+        "key": "web-design/03-what-we-do",
         "defs_injected": []
       },
       {
         "file": "04-current-state.html",
         "id": "zly-web-current-state",
         "title": "Current State",
-        "key": "web-design/current-state",
+        "key": "web-design/04-current-state",
         "defs_injected": []
       },
       {
         "file": "05-signs.html",
         "id": "zly-web-signs",
         "title": "Signs",
-        "key": "web-design/signs",
+        "key": "web-design/05-signs",
         "defs_injected": []
       },
       {
         "file": "06-how-we-do-it.html",
         "id": "zly-web-how-we-do-it",
         "title": "How We Do It",
-        "key": "web-design/how-we-do-it",
+        "key": "web-design/06-how-we-do-it",
         "defs_injected": []
       },
       {
         "file": "07-what-we-measure.html",
         "id": "zly-web-what-we-measure",
         "title": "What We Measure",
-        "key": "web-design/what-we-measure",
+        "key": "web-design/07-what-we-measure",
         "defs_injected": []
       },
       {
         "file": "08-case-study.html",
         "id": "zly-web-case-study",
         "title": "Case Study",
-        "key": "web-design/case-study",
+        "key": "web-design/08-case-study",
         "defs_injected": [
           "zwb-grad"
         ]
@@ -378,7 +378,7 @@
         "file": "09-final-cta.html",
         "id": "zly-web-final-cta",
         "title": "Final CTA",
-        "key": "web-design/final-cta",
+        "key": "web-design/09-final-cta",
         "defs_injected": []
       }
     ]
@@ -389,96 +389,37 @@
       {
         "file": "01-hero.html",
         "id": "zly-about-hero",
-        "key": "about/hero",
-        "title": "Hero"
+        "title": "Hero",
+        "key": "about/01-hero",
+        "defs_injected": []
       },
       {
         "file": "02-story.html",
         "id": "zly-about-story",
-        "key": "about/story",
-        "title": "Story"
+        "title": "Story",
+        "key": "about/02-story",
+        "defs_injected": []
       },
       {
         "file": "03-how-we-work.html",
         "id": "zly-about-how",
-        "key": "about/how-we-work",
-        "title": "How We Work"
+        "title": "How We Work",
+        "key": "about/03-how-we-work",
+        "defs_injected": []
       },
       {
         "file": "04-principles.html",
         "id": "zly-about-values",
-        "key": "about/principles",
-        "title": "Principles"
+        "title": "Principles",
+        "key": "about/04-principles",
+        "defs_injected": []
       },
       {
         "file": "05-final-cta.html",
         "id": "zly-about-cta",
-        "key": "about/final-cta",
-        "title": "Final CTA"
-      }
-    ]
-  },
-  "build": {
-    "source": "zoley-build.v2.html",
-    "sections": [
-      {
-        "file": "01-hero.html",
-        "id": "zly-build-hero",
-        "key": "build/hero",
-        "title": "Hero"
-      },
-      {
-        "file": "02-lead-magnet.html",
-        "id": "zly-build-magnet",
-        "key": "build/lead-magnet",
-        "title": "Lead Magnet"
-      },
-      {
-        "file": "03-services.html",
-        "id": "zly-build-services",
-        "key": "build/services",
-        "title": "Services"
-      },
-      {
-        "file": "04-validation.html",
-        "id": "zly-build-validate",
-        "key": "build/validation",
-        "title": "Validation"
-      },
-      {
-        "file": "05-final-cta.html",
-        "id": "zly-build-cta",
-        "key": "build/final-cta",
-        "title": "Final CTA"
-      }
-    ]
-  },
-  "case-studies": {
-    "source": "zoley-case-studies.v2.html",
-    "sections": [
-      {
-        "file": "01-hero.html",
-        "id": "zly-cs-hero",
-        "key": "case-studies/hero",
-        "title": "Hero"
-      },
-      {
-        "file": "02-how-we-measure.html",
-        "id": "zly-cs-measure",
-        "key": "case-studies/how-we-measure",
-        "title": "How We Measure"
-      },
-      {
-        "file": "03-grid.html",
-        "id": "zly-cs-grid",
-        "key": "case-studies/grid",
-        "title": "Grid"
-      },
-      {
-        "file": "04-final-cta.html",
-        "id": "zly-cs-cta",
-        "key": "case-studies/final-cta",
-        "title": "Final CTA"
+        "title": "Final CTA",
+        "key": "about/05-final-cta",
+        "defs_injected": []
       }
     ]
   },
@@ -488,20 +429,23 @@
       {
         "file": "01-hero.html",
         "id": "zly-price-hero",
-        "key": "pricing/hero",
-        "title": "Hero"
+        "title": "Hero",
+        "key": "pricing/01-hero",
+        "defs_injected": []
       },
       {
         "file": "02-what-shapes-a-quote.html",
         "id": "zly-price-shape",
-        "key": "pricing/what-shapes-a-quote",
-        "title": "What Shapes A Quote"
+        "title": "What Shapes A Quote",
+        "key": "pricing/02-what-shapes-a-quote",
+        "defs_injected": []
       },
       {
         "file": "03-two-paths.html",
         "id": "zly-price-paths",
-        "key": "pricing/two-paths",
-        "title": "Two Paths"
+        "title": "Two Paths",
+        "key": "pricing/03-two-paths",
+        "defs_injected": []
       }
     ]
   },
@@ -511,20 +455,96 @@
       {
         "file": "01-hero.html",
         "id": "zly-quickstart-hero",
-        "key": "quickstart/hero",
-        "title": "Hero"
+        "title": "Hero",
+        "key": "quickstart/01-hero",
+        "defs_injected": []
       },
       {
         "file": "02-form.html",
         "id": "zly-quickstart-form",
-        "key": "quickstart/form",
-        "title": "Form"
+        "title": "Form",
+        "key": "quickstart/02-form",
+        "defs_injected": []
       },
       {
         "file": "03-next-steps.html",
         "id": "zly-quickstart-next",
-        "key": "quickstart/next-steps",
-        "title": "Next Steps"
+        "title": "Next Steps",
+        "key": "quickstart/03-next-steps",
+        "defs_injected": []
+      }
+    ]
+  },
+  "build": {
+    "source": "zoley-build.v2.html",
+    "sections": [
+      {
+        "file": "01-hero.html",
+        "id": "zly-build-hero",
+        "title": "Hero",
+        "key": "build/01-hero",
+        "defs_injected": []
+      },
+      {
+        "file": "02-lead-magnet.html",
+        "id": "zly-build-magnet",
+        "title": "Lead Magnet",
+        "key": "build/02-lead-magnet",
+        "defs_injected": []
+      },
+      {
+        "file": "03-services.html",
+        "id": "zly-build-services",
+        "title": "Services",
+        "key": "build/03-services",
+        "defs_injected": []
+      },
+      {
+        "file": "04-validation.html",
+        "id": "zly-build-validate",
+        "title": "Validation",
+        "key": "build/04-validation",
+        "defs_injected": []
+      },
+      {
+        "file": "05-final-cta.html",
+        "id": "zly-build-cta",
+        "title": "Final CTA",
+        "key": "build/05-final-cta",
+        "defs_injected": []
+      }
+    ]
+  },
+  "case-studies": {
+    "source": "zoley-case-studies.v2.html",
+    "sections": [
+      {
+        "file": "01-hero.html",
+        "id": "zly-cs-hero",
+        "title": "Hero",
+        "key": "case-studies/01-hero",
+        "defs_injected": []
+      },
+      {
+        "file": "02-how-we-measure.html",
+        "id": "zly-cs-measure",
+        "title": "How We Measure",
+        "key": "case-studies/02-how-we-measure",
+        "defs_injected": []
+      },
+      {
+        "file": "03-grid.html",
+        "id": "zly-cs-grid",
+        "title": "Grid",
+        "key": "case-studies/03-grid",
+        "defs_injected": []
+      },
+      {
+        "file": "04-final-cta.html",
+        "id": "zly-cs-cta",
+        "title": "Final CTA",
+        "key": "case-studies/04-final-cta",
+        "defs_injected": []
       }
     ]
   }
