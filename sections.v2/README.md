@@ -8,14 +8,21 @@ Every section is **self-contained**: it carries its own scoped CSS and renders o
 **Once**, in Settings -> Advanced -> Code Injection -> **Header**:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.0.3/dist/zoley-loader.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.0.4/dist/zoley-loader.js"></script>
 ```
 
-Then give each page one Code Block per section, each holding a single line (listed below).
-Paste those once; you never touch them again.
+Then give each page **one** Code Block holding a single line:
 
-**To ship a change:** edit the section -> `git push` -> `git tag v1.0.4 && git push --tags` ->
-change `@v1.0.3` to `@v1.0.4` in the header snippet. That number is the only thing you edit in Squarespace.
+```html
+<div data-zoley-page="ai"></div>
+```
+
+That renders every section of that page, in the order below. Adding, removing or
+reordering a section afterwards is a git change only - Squarespace never needs touching again.
+To place one section somewhere specific instead, use its own line from the page's list.
+
+**To ship a change:** edit the section -> `git push` -> `git tag v1.0.5 && git push --tags` ->
+change `@v1.0.4` to `@v1.0.5` in the header snippet. That number is the only thing you edit in Squarespace.
 
 > Pinned tags, not `@main`: jsDelivr caches a branch for 12h at the edge and **7 days in a browser
 > that already loaded it**. Exact tags are immutable and go live immediately.
@@ -36,6 +43,10 @@ Source: `main pages/zoley-homepage.v2.html` - 8 sections
 | 6 | Featured | `homepage/06-featured.html` | `#zly-hy-featured` |
 | 7 | Testimonials | `homepage/07-testimonials.html` | `#zly-hy-testimonials` |
 | 8 | Final CTA | `homepage/08-final-cta.html` | `#zly-hy-final-cta` |
+
+Whole page: `<div data-zoley-page="homepage"></div>`
+
+Or place sections individually:
 
 ```html
 <div data-zoley-section="homepage/01-hero"></div>
@@ -63,6 +74,10 @@ Source: `main pages/zoley-ai-page.v2.html` - 8 sections
 | 7 | Case Study | `ai/07-case-study.html` | `#zly-ai-case-study` |
 | 8 | Final CTA | `ai/08-final-cta.html` | `#zly-ai-final-cta` |
 
+Whole page: `<div data-zoley-page="ai"></div>`
+
+Or place sections individually:
+
 ```html
 <div data-zoley-section="ai/01-hero"></div>
 <div data-zoley-section="ai/02-adoption-gap"></div>
@@ -88,6 +103,10 @@ Source: `main pages/zoley-automation-page.v2.html` - 8 sections
 | 6 | How We Do It | `automation/06-how-we-do-it.html` | `#zly-auto-how-we-do-it` |
 | 7 | Case Study | `automation/07-case-study.html` | `#zly-auto-case-study` |
 | 8 | Final CTA | `automation/08-final-cta.html` | `#zly-auto-final-cta` |
+
+Whole page: `<div data-zoley-page="automation"></div>`
+
+Or place sections individually:
 
 ```html
 <div data-zoley-section="automation/01-hero"></div>
@@ -116,6 +135,10 @@ Source: `main pages/zoley-digital-advertising-page.v2.html` - 9 sections
 | 8 | Case Study | `advertising/08-case-study.html` | `#zly-ads-case-study` |
 | 9 | Final CTA | `advertising/09-final-cta.html` | `#zly-ads-final-cta` |
 
+Whole page: `<div data-zoley-page="advertising"></div>`
+
+Or place sections individually:
+
 ```html
 <div data-zoley-section="advertising/01-hero"></div>
 <div data-zoley-section="advertising/02-cost-of-guessing"></div>
@@ -142,6 +165,10 @@ Source: `main pages/zoley-strategic-consulting-page.v2.html` - 8 sections
 | 6 | How We Do It | `consulting/06-how-we-do-it.html` | `#zly-consulting-how-we-do-it` |
 | 7 | Case Study | `consulting/07-case-study.html` | `#zly-consulting-case-study` |
 | 8 | Final CTA | `consulting/08-final-cta.html` | `#zly-consulting-final-cta` |
+
+Whole page: `<div data-zoley-page="consulting"></div>`
+
+Or place sections individually:
 
 ```html
 <div data-zoley-section="consulting/01-hero"></div>
@@ -170,6 +197,10 @@ Source: `main pages/zoley-web-design-page.v2.html` - 9 sections
 | 8 | Case Study | `web-design/08-case-study.html` | `#zly-web-case-study` |
 | 9 | Final CTA | `web-design/09-final-cta.html` | `#zly-web-final-cta` |
 
+Whole page: `<div data-zoley-page="web-design"></div>`
+
+Or place sections individually:
+
 ```html
 <div data-zoley-section="web-design/01-hero"></div>
 <div data-zoley-section="web-design/02-cost-of-slow-site"></div>
@@ -194,6 +225,10 @@ Source: `main pages/zoley-about.v2.html` - 5 sections
 | 4 | Principles | `about/04-principles.html` | `#zly-about-values` |
 | 5 | Final CTA | `about/05-final-cta.html` | `#zly-about-cta` |
 
+Whole page: `<div data-zoley-page="about"></div>`
+
+Or place sections individually:
+
 ```html
 <div data-zoley-section="about/01-hero"></div>
 <div data-zoley-section="about/02-story"></div>
@@ -212,6 +247,10 @@ Source: `main pages/zoley-pricing.v2.html` - 3 sections
 | 2 | What Shapes A Quote | `pricing/02-what-shapes-a-quote.html` | `#zly-price-shape` |
 | 3 | Two Paths | `pricing/03-two-paths.html` | `#zly-price-paths` |
 
+Whole page: `<div data-zoley-page="pricing"></div>`
+
+Or place sections individually:
+
 ```html
 <div data-zoley-section="pricing/01-hero"></div>
 <div data-zoley-section="pricing/02-what-shapes-a-quote"></div>
@@ -227,6 +266,10 @@ Source: `main pages/zoley-quickstart.v2.html` - 3 sections
 | 1 | Hero | `quickstart/01-hero.html` | `#zly-quickstart-hero` |
 | 2 | Form | `quickstart/02-form.html` | `#zly-quickstart-form` |
 | 3 | Next Steps | `quickstart/03-next-steps.html` | `#zly-quickstart-next` |
+
+Whole page: `<div data-zoley-page="quickstart"></div>`
+
+Or place sections individually:
 
 ```html
 <div data-zoley-section="quickstart/01-hero"></div>
@@ -246,6 +289,10 @@ Source: `main pages/zoley-build.v2.html` - 5 sections
 | 4 | Validation | `build/04-validation.html` | `#zly-build-validate` |
 | 5 | Final CTA | `build/05-final-cta.html` | `#zly-build-cta` |
 
+Whole page: `<div data-zoley-page="build"></div>`
+
+Or place sections individually:
+
 ```html
 <div data-zoley-section="build/01-hero"></div>
 <div data-zoley-section="build/02-lead-magnet"></div>
@@ -264,6 +311,10 @@ Source: `main pages/zoley-case-studies.v2.html` - 4 sections
 | 2 | How We Measure | `case-studies/02-how-we-measure.html` | `#zly-cs-measure` |
 | 3 | Grid | `case-studies/03-grid.html` | `#zly-cs-grid` |
 | 4 | Final CTA | `case-studies/04-final-cta.html` | `#zly-cs-cta` |
+
+Whole page: `<div data-zoley-page="case-studies"></div>`
+
+Or place sections individually:
 
 ```html
 <div data-zoley-section="case-studies/01-hero"></div>

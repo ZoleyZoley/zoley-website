@@ -21,8 +21,8 @@ Nothing in this repo was deleted or rewritten to build v2 — the originals are 
 
 1. Edit a file in `sections.v2/`.
 2. `git add -A && git commit -m "..." && git push`
-3. `git tag v1.0.4 && git push --tags`
-4. In Squarespace → Settings → Advanced → Code Injection → Header, change `@v1.0.3` to `@v1.0.4`.
+3. `git tag v1.0.5 && git push --tags`
+4. In Squarespace → Settings → Advanced → Code Injection → Header, change `@v1.0.4` to `@v1.0.5`.
 
 Step 4 is one character in one box. Everything else on the site updates from it.
 
@@ -39,16 +39,26 @@ week. Exact tags are immutable, so they go live the moment you bump the number.
 Header code injection (site-wide):
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.0.3/dist/zoley-loader.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.0.4/dist/zoley-loader.js"></script>
 ```
 
-Then each page gets one Code Block per section, each holding a single line:
+Then each page gets **one** Code Block holding a single line:
+
+```html
+<div data-zoley-page="ai"></div>
+```
+
+That renders every section of that page, in the order `sections.v2/manifest.json` gives.
+Adding, removing or reordering a section is then a git change alone - Squarespace never
+needs touching again.
+
+To place a single section somewhere specific, use its own key instead:
 
 ```html
 <div data-zoley-section="ai/01-hero"></div>
 ```
 
-`sections.v2/README.md` lists the exact lines for every page, in order.
+`sections.v2/README.md` lists the page names and every section key.
 
 ## Notes
 
