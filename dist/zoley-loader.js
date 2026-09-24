@@ -3,7 +3,7 @@
  * ---------------------------------------------------------------------------
  * Put ONE of these in Squarespace -> Settings -> Advanced -> Code Injection -> HEADER:
  *
- *   <script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.0.4/dist/zoley-loader.js"></script>
+ *   <script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.0.5/dist/zoley-loader.js"></script>
  *
  * Then each page just needs Code Blocks holding one line each:
  *

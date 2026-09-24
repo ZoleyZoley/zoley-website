@@ -266,14 +266,14 @@ def write_readme(manifest):
          "Every section is **self-contained**: it carries its own scoped CSS and renders on its own.\n",
          "## Squarespace wiring\n",
          "**Once**, in Settings -> Advanced -> Code Injection -> **Header**:\n",
-         '```html\n<script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.0.4/dist/zoley-loader.js"></script>\n```\n',
+         '```html\n<script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.0.5/dist/zoley-loader.js"></script>\n```\n',
          "Then give each page **one** Code Block holding a single line:\n",
          '```html\n<div data-zoley-page="ai"></div>\n```\n',
          "That renders every section of that page, in the order below. Adding, removing or",
          "reordering a section afterwards is a git change only - Squarespace never needs touching again.",
          "To place one section somewhere specific instead, use its own line from the page's list.\n",
-         "**To ship a change:** edit the section -> `git push` -> `git tag v1.0.5 && git push --tags` ->",
-         "change `@v1.0.4` to `@v1.0.5` in the header snippet. That number is the only thing you edit in Squarespace.\n",
+         "**To ship a change:** edit the section -> `git push` -> `git tag v1.0.6 && git push --tags` ->",
+         "change `@v1.0.5` to `@v1.0.6` in the header snippet. That number is the only thing you edit in Squarespace.\n",
          "> Pinned tags, not `@main`: jsDelivr caches a branch for 12h at the edge and **7 days in a browser",
          "> that already loaded it**. Exact tags are immutable and go live immediately.\n", "---\n"]
     for folder in ORDER:
