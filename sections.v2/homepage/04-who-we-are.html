@@ -218,12 +218,15 @@ Scoped under #zly-hy-who-we-are. Self-contained: paste into a Squarespace Code B
     #zly-hy-who-we-are .zhy-test-card.is-placeholder .plus { font-size: 26px; color: var(--barn); margin-bottom: 8px; }
     #zly-hy-who-we-are .zhy-test-card.is-placeholder p { font-size: 14px; margin: 0; }
     #zly-hy-who-we-are .zhy-test-nav { display: flex; align-items: center; justify-content: center; gap: 22px; margin-top: 28px; }
-    #zly-hy-who-we-are .zhy-test-nav button.zhy-test-arrow { width: 42px; height: 42px; border-radius: 50%; border: 1.5px solid var(--violet); background: var(--card); cursor: pointer; font-size: 17px; color: var(--violet); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease; }
+    #zly-hy-who-we-are .zhy-test-nav button.zhy-test-arrow { width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--violet); background: var(--card); cursor: pointer; font-size: 17px; color: var(--violet); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease; }
     #zly-hy-who-we-are .zhy-test-nav button.zhy-test-arrow:hover { background: var(--violet); color: #fff9ef; }
     #zly-hy-who-we-are .zhy-test-nav button.zhy-test-arrow:active { transform: scale(0.92); }
-    #zly-hy-who-we-are .zhy-test-dots { display: flex; align-items: center; gap: 9px; }
-    #zly-hy-who-we-are .zhy-test-dots button { width: 8px; height: 8px; padding: 0; border-radius: 50%; border: none; cursor: pointer; background: rgba(27,36,48,0.2); transition: background-color 0.3s ease, width 0.3s ease; }
-    #zly-hy-who-we-are .zhy-test-dots button.is-active { width: 22px; border-radius: 5px; background: var(--violet); }
+    #zly-hy-who-we-are .zhy-test-dots { display: flex; align-items: center; gap: 0; }
+    /* The dot stays 8px, but padding grows the control to a 44x44 tap target and
+       background-clip keeps the colour on the dot itself. Padding replaces the old
+       9px gap, so the targets sit edge to edge without overlapping. */
+    #zly-hy-who-we-are .zhy-test-dots button { box-sizing: content-box; width: 8px; height: 8px; padding: 18px; background-clip: content-box; border-radius: 50%; border: none; cursor: pointer; background-color: rgba(27,36,48,0.2); transition: background-color 0.3s ease, width 0.3s ease; }
+    #zly-hy-who-we-are .zhy-test-dots button.is-active { width: 22px; border-radius: 5px; background-color: var(--violet); }
     @media (prefers-reduced-motion: reduce) { #zly-hy-who-we-are .zhy-test-track { transition: none; } }
     @media (max-width: 640px) { #zly-hy-who-we-are .zhy-test-page { grid-template-columns: 1fr; } }
 
