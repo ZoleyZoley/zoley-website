@@ -189,15 +189,19 @@ Scoped under #zly-auto-hero. Self-contained: paste into a Squarespace Code Block
       <p class="cta-note">A written recommendation and pricing within two business days.</p>
     </div>
     <div class="board">
-      <svg viewBox="0 0 420 320" fill="none" role="img" aria-label="Illustration: a new lead flows automatically from a web form to the CRM, to a follow-up email, to an invoice, to payment">
+      <svg viewBox="0 0 420 320" fill="none" role="img" aria-label="Illustration: a new lead flows from a web form into the CRM, which branches two ways: a follow-up email, and an invoice that leads to payment">
         <defs>
           <linearGradient id="zau-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b5482d"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
         </defs>
-        <!-- pipeline path (S curve) -->
-        <path id="zau-path" class="thread" d="M70 62 C 150 62 150 130 210 130 S 290 62 350 62 S 350 200 290 200 S 150 200 130 258 S 250 290 350 262"/>
+        <!-- Two branches out of the CRM, not one chain: the reply and the invoice
+             happen independently, so 3 and 4 are deliberately not connected. -->
+        <path id="zau-path-a" class="thread" d="M70 62 C 130 62 150 130 210 130 C 270 130 290 52 348 52"/>
+        <path id="zau-path-b" class="thread" d="M210 130 C 250 155 275 185 306 212 C 250 258 165 258 100 246"/>
         <!-- moving dots -->
-        <circle class="dot" r="5" fill="#e3a72e" style="offset-path: path('M70 62 C 150 62 150 130 210 130 S 290 62 350 62 S 350 200 290 200 S 150 200 130 258 S 250 290 350 262');"/>
-        <circle class="dot" r="5" fill="#4ea1ff" style="offset-path: path('M70 62 C 150 62 150 130 210 130 S 290 62 350 62 S 350 200 290 200 S 150 200 130 258 S 250 290 350 262'); animation-delay: -2s;"/>
+        <circle class="dot" r="5" fill="#e3a72e" style="offset-path: path('M70 62 C 130 62 150 130 210 130 C 270 130 290 52 348 52');"/>
+        <circle class="dot" r="5" fill="#e3a72e" style="offset-path: path('M70 62 C 130 62 150 130 210 130 C 270 130 290 52 348 52'); animation-delay: -2s;"/>
+        <circle class="dot" r="5" fill="#6c5ce7" style="offset-path: path('M210 130 C 250 155 275 185 306 212 C 250 258 165 258 100 246'); animation-delay: -1s;"/>
+        <circle class="dot" r="5" fill="#7a8b69" style="offset-path: path('M210 130 C 250 155 275 185 306 212 C 250 258 165 258 100 246'); animation-delay: -3s;"/>
         <!-- 1 web form -->
         <g transform="translate(14 30) rotate(-3 55 32)">
           <rect x="0" y="0" width="112" height="64" rx="7" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
@@ -223,12 +227,10 @@ Scoped under #zly-auto-hero. Self-contained: paste into a Squarespace Code Block
         <g transform="translate(306 24) rotate(4 42 28)">
           <rect x="0" y="0" width="84" height="56" rx="6" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
           <path d="M4 6 L42 34 L80 6" fill="none" stroke="#e3a72e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
-          <circle cx="76" cy="8" r="9" fill="#7a8b69" stroke="#fff9ef" stroke-width="2"/>
-          <text x="76" y="11.5" font-family="DM Sans, sans-serif" font-size="9" font-weight="700" fill="#fff9ef" text-anchor="middle">2m</text>
         </g>
         <text x="300" y="104" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#e3a72e">3. reply in 2 min</text>
         <!-- 4 invoice -->
-        <g transform="translate(246 166) rotate(-2 44 34)">
+        <g transform="translate(262 178) rotate(-2 44 34)">
           <rect x="0" y="0" width="88" height="68" rx="5" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
           <text x="10" y="18" font-family="DM Sans, sans-serif" font-size="9.5" font-weight="700" fill="#1b2430" letter-spacing="1">INVOICE</text>
           <rect x="10" y="26" width="68" height="4" rx="2" fill="#1b2430" opacity="0.25"/>
@@ -236,7 +238,7 @@ Scoped under #zly-auto-hero. Self-contained: paste into a Squarespace Code Block
           <rect x="10" y="44" width="60" height="4" rx="2" fill="#1b2430" opacity="0.25"/>
           <text x="78" y="61" font-family="Newsreader, serif" font-size="12" font-weight="600" fill="#b5482d" text-anchor="end">$1,240</text>
         </g>
-        <text x="236" y="256" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#6c5ce7">4. invoice sent &amp; chased</text>
+        <text x="236" y="270" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#6c5ce7">4. invoice sent &amp; chased</text>
         <!-- 5 paid -->
         <g transform="translate(60 216) rotate(3 40 30)">
           <rect x="0" y="0" width="80" height="60" rx="7" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>

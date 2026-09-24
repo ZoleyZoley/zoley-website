@@ -198,15 +198,19 @@ V2 CHANGES (vs zoley-automation-page.html):
       <p class="cta-note">A written recommendation and pricing within two business days.</p>
     </div>
     <div class="board">
-      <svg viewBox="0 0 420 320" fill="none" role="img" aria-label="Illustration: a new lead flows automatically from a web form to the CRM, to a follow-up email, to an invoice, to payment">
+      <svg viewBox="0 0 420 320" fill="none" role="img" aria-label="Illustration: a new lead flows from a web form into the CRM, which branches two ways: a follow-up email, and an invoice that leads to payment">
         <defs>
           <linearGradient id="zau-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b5482d"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
         </defs>
-        <!-- pipeline path (S curve) -->
-        <path id="zau-path" class="thread" d="M70 62 C 150 62 150 130 210 130 S 290 62 350 62 S 350 200 290 200 S 150 200 130 258 S 250 290 350 262"/>
+        <!-- Two branches out of the CRM, not one chain: the reply and the invoice
+             happen independently, so 3 and 4 are deliberately not connected. -->
+        <path id="zau-path-a" class="thread" d="M70 62 C 130 62 150 130 210 130 C 270 130 290 52 348 52"/>
+        <path id="zau-path-b" class="thread" d="M210 130 C 250 155 275 185 306 212 C 250 258 165 258 100 246"/>
         <!-- moving dots -->
-        <circle class="dot" r="5" fill="#e3a72e" style="offset-path: path('M70 62 C 150 62 150 130 210 130 S 290 62 350 62 S 350 200 290 200 S 150 200 130 258 S 250 290 350 262');"/>
-        <circle class="dot" r="5" fill="#4ea1ff" style="offset-path: path('M70 62 C 150 62 150 130 210 130 S 290 62 350 62 S 350 200 290 200 S 150 200 130 258 S 250 290 350 262'); animation-delay: -2s;"/>
+        <circle class="dot" r="5" fill="#e3a72e" style="offset-path: path('M70 62 C 130 62 150 130 210 130 C 270 130 290 52 348 52');"/>
+        <circle class="dot" r="5" fill="#e3a72e" style="offset-path: path('M70 62 C 130 62 150 130 210 130 C 270 130 290 52 348 52'); animation-delay: -2s;"/>
+        <circle class="dot" r="5" fill="#6c5ce7" style="offset-path: path('M210 130 C 250 155 275 185 306 212 C 250 258 165 258 100 246'); animation-delay: -1s;"/>
+        <circle class="dot" r="5" fill="#7a8b69" style="offset-path: path('M210 130 C 250 155 275 185 306 212 C 250 258 165 258 100 246'); animation-delay: -3s;"/>
         <!-- 1 web form -->
         <g transform="translate(14 30) rotate(-3 55 32)">
           <rect x="0" y="0" width="112" height="64" rx="7" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
@@ -232,12 +236,10 @@ V2 CHANGES (vs zoley-automation-page.html):
         <g transform="translate(306 24) rotate(4 42 28)">
           <rect x="0" y="0" width="84" height="56" rx="6" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
           <path d="M4 6 L42 34 L80 6" fill="none" stroke="#e3a72e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
-          <circle cx="76" cy="8" r="9" fill="#7a8b69" stroke="#fff9ef" stroke-width="2"/>
-          <text x="76" y="11.5" font-family="DM Sans, sans-serif" font-size="9" font-weight="700" fill="#fff9ef" text-anchor="middle">2m</text>
         </g>
         <text x="300" y="104" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#e3a72e">3. reply in 2 min</text>
         <!-- 4 invoice -->
-        <g transform="translate(246 166) rotate(-2 44 34)">
+        <g transform="translate(262 178) rotate(-2 44 34)">
           <rect x="0" y="0" width="88" height="68" rx="5" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
           <text x="10" y="18" font-family="DM Sans, sans-serif" font-size="9.5" font-weight="700" fill="#1b2430" letter-spacing="1">INVOICE</text>
           <rect x="10" y="26" width="68" height="4" rx="2" fill="#1b2430" opacity="0.25"/>
@@ -245,7 +247,7 @@ V2 CHANGES (vs zoley-automation-page.html):
           <rect x="10" y="44" width="60" height="4" rx="2" fill="#1b2430" opacity="0.25"/>
           <text x="78" y="61" font-family="Newsreader, serif" font-size="12" font-weight="600" fill="#b5482d" text-anchor="end">$1,240</text>
         </g>
-        <text x="236" y="256" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#6c5ce7">4. invoice sent &amp; chased</text>
+        <text x="236" y="270" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#6c5ce7">4. invoice sent &amp; chased</text>
         <!-- 5 paid -->
         <g transform="translate(60 216) rotate(3 40 30)">
           <rect x="0" y="0" width="80" height="60" rx="7" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
@@ -261,7 +263,7 @@ V2 CHANGES (vs zoley-automation-page.html):
   <section class="time-band">
     <div class="time-card">
       <div class="time-grid">
-        <div class="time-stat">60%<span>of a knowledge worker's time goes to "work about work": chasing updates, re-entering data, switching between tools</span></div>
+        <div class="time-stat">60%<span>of the average workday goes to "work about work": chasing updates, re-entering data, switching between tools</span></div>
         <div>
           <span class="time-eyebrow">The cost of doing it by hand</span>
           <h2>In a small business, that time comes out of the owner's week.</h2>
@@ -275,7 +277,7 @@ V2 CHANGES (vs zoley-automation-page.html):
   <section class="sec" style="padding-top: 30px;">
     <div class="process-header">
       <h2>What we automate, and what it replaces.</h2>
-      <p class="process-sub">Every flow is built inside tools you already pay for, documented, and handed over. If a vendor disappears, your process doesn't.</p>
+      <p class="process-sub">Every flow is built inside the tools you already have, or with new tools we'll show you when one would serve you better. Documented and handed over either way.</p>
     </div>
     <div class="process-grid">
       <div class="process-card"><div class="pc-head"><span class="pc-num">1</span><h3>Lead capture &amp; follow-up</h3></div><p>Every inquiry gets a personal reply within minutes, is logged to your CRM, and is followed up on a schedule until it books or opts out.</p><div class="ex"><strong>Replaces:</strong> checking the inbox between jobs and hoping nothing slipped.</div></div>
@@ -297,9 +299,9 @@ V2 CHANGES (vs zoley-automation-page.html):
         <p class="process-sub">The research on lead response is unambiguous, and it explains why follow-up is almost always the first flow we build.</p>
       </div>
       <div class="stat-strip">
-        <div class="stat-card"><div class="num">21&times;</div><p>more likely to qualify a lead when you respond within 5 minutes rather than 30</p></div>
-        <div class="stat-card"><div class="num">42 hrs</div><p>the average time it takes a business to respond to a new inquiry, when it responds at all</p></div>
-        <div class="stat-card"><div class="num">23%</div><p>of businesses never respond to a web lead</p></div>
+        <div class="stat-card"><div class="num">21&times;</div><p>more likely to qualify a lead when you respond within 5 minutes rather than 2 days</p></div>
+        <div class="stat-card"><div class="num">42 hrs</div><p>the average time it takes a business to respond to a new inquiry, when managed by hand</p></div>
+        <div class="stat-card"><div class="num">23%</div><p>of leads will not work with you if you take longer than 1 day to respond to them</p></div>
       </div>
       <p class="stat-close">A five-minute reply is unrealistic for a person and trivial for a system.</p>
     </div>
@@ -311,8 +313,8 @@ V2 CHANGES (vs zoley-automation-page.html):
       <div>
         <span class="tag">a rule we use on every audit</span>
         <h2>Not everything is worth automating. Here's how we decide.</h2>
-        <p>Owners often arrive with a list of twenty things they'd like to automate. Most of them shouldn't be, at least not yet. We score every candidate on three questions and build the one with the highest return first. The rest wait until the first one has paid for itself.</p>
-        <p>This is also why we won't quote a "full automation package." The right first build is different for every business, and it's usually smaller than people expect.</p>
+        <p>Owners often arrive with a list of ten things they'd like to automate. We'll help you figure out prioritization by scoring the list with three questions and build the one with the highest return first. The rest wait until the first one has paid for itself.</p>
+        <p>The right first build is different for every business, and it's usually smaller than people expect.</p>
       </div>
       <div class="rule">
         <h3>The three questions</h3>
@@ -333,7 +335,7 @@ V2 CHANGES (vs zoley-automation-page.html):
       <div class="wd-row"><div class="wd-num">1</div><div><h3>Audit</h3><p>We walk through how a lead, a booking, and an invoice actually move through your business today, and time each manual step.</p></div><div class="wd-out">Findings memo</div></div>
       <div class="wd-row"><div class="wd-num">2</div><div><h3>Strategy</h3><p>A ranked list of flows using the three questions above, with the first build scoped to the step, the tools, and a fixed price.</p></div><div class="wd-out">Scoped plan &amp; quote</div></div>
       <div class="wd-row"><div class="wd-num">3</div><div><h3>Build &amp; connect</h3><p>We build the flow inside your existing tools, test it against real records, and run it in parallel with your current process before switching over.</p></div><div class="wd-out">Working system</div></div>
-      <div class="wd-row"><div class="wd-num">4</div><div><h3>Optimize</h3><p>Thirty days of monitoring, error handling, and a written handover with a diagram of every step. You own it outright.</p></div><div class="wd-out">Handover &amp; review</div></div>
+      <div class="wd-row"><div class="wd-num">4</div><div><h3>Optimize</h3><p>Monitoring, error handling, and a real plan moving forward — whether you decide you want to own the system or have ongoing support.</p></div><div class="wd-out">Handover &amp; review</div></div>
     </div>
     <div class="wd-cta"><a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-ghost">Start with the audit</a></div>
   </section>
@@ -411,8 +413,8 @@ V2 CHANGES (vs zoley-automation-page.html):
   <!-- PINNED TESTIMONIAL -->
   <div class="pin-wrap">
     <div class="pin-card">
-      <p class="quote">"Zoley enhanced our real estate website so potential buyers stay within our ecosystem. It led to a 40% increase in interest in our listings."</p>
-      <span>&mdash; Rob G., No Limit Real Estate, LLC</span>
+      <p class="quote">"We were missing so many leads per week until Zoley built us a custom intake system. Now, nothing gets missed, and my team isn't stuck doing the same busywork every day."</p>
+      <span>&mdash; Shirley J., Dental Medical Support Services, LLC.</span>
     </div>
   </div>
 
@@ -420,7 +422,7 @@ V2 CHANGES (vs zoley-automation-page.html):
   <section class="sec" style="padding-bottom: 96px;">
     <div class="final">
       <h2>Find out what's worth automating first.</h2>
-      <p>Answer a few questions about how work moves through your business. We'll reply within two business days with the first flow we'd build, what it would cost, and roughly how many hours it should return.</p>
+      <p>We'll walk through how your business runs, figure out where the repetitive busywork's piling up, and get to work building the systems to clear it out.</p>
       <div class="btn-row">
         <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get your automation plan</a>
         <a href="https://calendly.com/zoley/zoley-discovery-call" class="btn btn-outline">Book an intro call</a>
