@@ -246,11 +246,11 @@ def write_readme(manifest):
          "Every section is **self-contained**: it carries its own scoped CSS and renders on its own.\n",
          "## Squarespace wiring\n",
          "**Once**, in Settings -> Advanced -> Code Injection -> **Header**:\n",
-         '```html\n<script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.0.0/dist/zoley-loader.js"></script>\n```\n',
+         '```html\n<script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.0.1/dist/zoley-loader.js"></script>\n```\n',
          "Then give each page one Code Block per section, each holding a single line (listed below).",
          "Paste those once; you never touch them again.\n",
-         "**To ship a change:** edit the section -> `git push` -> `git tag v1.0.1 && git push --tags` ->",
-         "change `@v1.0.0` to `@v1.0.1` in the header snippet. That number is the only thing you edit in Squarespace.\n",
+         "**To ship a change:** edit the section -> `git push` -> `git tag v1.0.2 && git push --tags` ->",
+         "change `@v1.0.1` to `@v1.0.2` in the header snippet. That number is the only thing you edit in Squarespace.\n",
          "> Pinned tags, not `@main`: jsDelivr caches a branch for 12h at the edge and **7 days in a browser",
          "> that already loaded it**. Exact tags are immutable and go live immediately.\n", "---\n"]
     for folder in ORDER:

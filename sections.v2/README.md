@@ -8,14 +8,14 @@ Every section is **self-contained**: it carries its own scoped CSS and renders o
 **Once**, in Settings -> Advanced -> Code Injection -> **Header**:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.0.0/dist/zoley-loader.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.0.1/dist/zoley-loader.js"></script>
 ```
 
 Then give each page one Code Block per section, each holding a single line (listed below).
 Paste those once; you never touch them again.
 
-**To ship a change:** edit the section -> `git push` -> `git tag v1.0.1 && git push --tags` ->
-change `@v1.0.0` to `@v1.0.1` in the header snippet. That number is the only thing you edit in Squarespace.
+**To ship a change:** edit the section -> `git push` -> `git tag v1.0.2 && git push --tags` ->
+change `@v1.0.1` to `@v1.0.2` in the header snippet. That number is the only thing you edit in Squarespace.
 
 > Pinned tags, not `@main`: jsDelivr caches a branch for 12h at the edge and **7 days in a browser
 > that already loaded it**. Exact tags are immutable and go live immediately.
