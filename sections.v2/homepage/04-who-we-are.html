@@ -49,7 +49,13 @@ Scoped under #zly-hy-who-we-are. Self-contained: paste into a Squarespace Code B
     #zly-hy-who-we-are .zhy-cta-note { font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
 
     /* ---------- HERO ---------- */
-    #zly-hy-who-we-are .zhy-hero { padding: 112px 40px 40px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 64px; align-items: center; }
+    #zly-hy-who-we-are .zhy-hero { padding: 112px 40px 40px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 0.95fr 1.05fr; column-gap: 64px; row-gap: 0; align-items: start; }
+    /* The tag sits in its own row so row 2 starts at the H1. That keeps the
+       headline level with the top of the illustration without hard-coding the
+       tag's height, which is a Caveat line box and varies with the host font. */
+    #zly-hy-who-we-are .zhy-hero > .zhy-tag { grid-column: 1; grid-row: 1; justify-self: start; }
+    #zly-hy-who-we-are .zhy-hero-copy { grid-column: 1; grid-row: 2; }
+    #zly-hy-who-we-are .zhy-hero > .zhy-board { grid-column: 2; grid-row: 2; }
     #zly-hy-who-we-are .zhy-hero h1 { font-size: clamp(36px, 4.4vw, 56px); }
     #zly-hy-who-we-are .zhy-hero p.zhy-sub { font-size: 18px; margin: 22px 0 30px; max-width: 500px; }
 
@@ -132,8 +138,6 @@ Scoped under #zly-hy-who-we-are. Self-contained: paste into a Squarespace Code B
     #zly-hy-who-we-are .zhy-step .n { font-family: 'Caveat', cursive; font-size: 20px; color: var(--barn); font-weight: 700; }
     #zly-hy-who-we-are .zhy-step h3 { font-size: 20px; margin: 2px 0 8px; }
     #zly-hy-who-we-are .zhy-step p { font-size: 14.5px; }
-    #zly-hy-who-we-are .zhy-step .out { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 13px; color: var(--ink); }
-    #zly-hy-who-we-are .zhy-step .out strong { color: var(--barn); }
 
     /* ---------- WHO WE ARE ---------- */
     #zly-hy-who-we-are .zhy-who { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
@@ -197,7 +201,6 @@ Scoped under #zly-hy-who-we-are. Self-contained: paste into a Squarespace Code B
     #zly-hy-who-we-are .zhy-featured p:last-of-type { margin-bottom: 26px; }
     #zly-hy-who-we-are .zhy-week { background: var(--paper-2); border-radius: 14px; padding: 26px 26px 20px; border: 1px solid var(--border); }
     #zly-hy-who-we-are .zhy-week svg { width: 100%; height: auto; display: block; }
-    #zly-hy-who-we-are .zhy-week-cap { font-family: 'Caveat', cursive; font-size: 18px; color: var(--ink-soft); text-align: center; margin-top: 8px; transform: rotate(-1deg); }
 
     /* ---------- TESTIMONIALS (paginated carousel) ---------- */
     #zly-hy-who-we-are .zhy-test-head { text-align: center; max-width: 560px; margin: 0 auto 40px; }
@@ -252,7 +255,13 @@ Scoped under #zly-hy-who-we-are. Self-contained: paste into a Squarespace Code B
     #zly-hy-who-we-are .zhy-sign .zhy-cta-note { color: rgba(244,237,224,0.55); margin-top: 16px; }
 
     @media (max-width: 900px) {
-      #zly-hy-who-we-are .zhy-hero { grid-template-columns: 1fr; padding: 76px 20px 30px; gap: 40px; }
+      /* Stacked: auto placement, no row gap. The tag keeps its own 6px margin
+         and the copy block owns the 40px it used to get from the grid gap. */
+      #zly-hy-who-we-are .zhy-hero { grid-template-columns: 1fr; padding: 76px 20px 30px; column-gap: 0; row-gap: 0; }
+      #zly-hy-who-we-are .zhy-hero > .zhy-tag,
+      #zly-hy-who-we-are .zhy-hero-copy,
+      #zly-hy-who-we-are .zhy-hero > .zhy-board { grid-column: 1; grid-row: auto; }
+      #zly-hy-who-we-are .zhy-hero-copy { margin-bottom: 40px; }
       #zly-hy-who-we-are .zhy-proof { padding: 0 20px 30px; }
       #zly-hy-who-we-are .zhy-proof-inner { grid-template-columns: 1fr; }
       #zly-hy-who-we-are .zhy-proof-item { border-right: none; border-bottom: 1px solid var(--border); padding: 16px 4px; }
@@ -307,8 +316,8 @@ Scoped under #zly-hy-who-we-are. Self-contained: paste into a Squarespace Code B
       <div>
         <span class="zhy-tag">who we are</span>
         <h2>A consulting partner with a builder's toolkit.</h2>
-        <p>Most small businesses can hire a strategist or a developer, but rarely both in one conversation. Zoley closes that gap. The research informs what gets built, and what gets built is measured against the research.</p>
-        <p>We work with founders, owner-operators, and family businesses that have outgrown spreadsheets and goodwill, and want the systems of a larger company without the overhead of one. Engagements are scoped in writing, priced before we start, and supported after launch.</p>
+        <p>Most small businesses hire a strategist and then a developer, but rarely both in one conversation. Zoley closes that gap. The research informs what gets built, and what gets built is measured against the research.</p>
+        <p>We work with founders, owner-operators, and family businesses that want the systems of a larger company without the overhead of one. Engagements are scoped in writing, priced before we start, and supported after launch.</p>
       </div>
       <div>
         <!-- Swap this SVG for a real team photo when available: <img src="..." alt="The Zoley team"> -->

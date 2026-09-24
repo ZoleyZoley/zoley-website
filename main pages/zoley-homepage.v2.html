@@ -65,7 +65,13 @@ has no real submit handler yet — wire it to your email provider before publish
     #zly-hy .zhy-cta-note { font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
 
     /* ---------- HERO ---------- */
-    #zly-hy .zhy-hero { padding: 112px 40px 40px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 64px; align-items: center; }
+    #zly-hy .zhy-hero { padding: 112px 40px 40px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 0.95fr 1.05fr; column-gap: 64px; row-gap: 0; align-items: start; }
+    /* The tag sits in its own row so row 2 starts at the H1. That keeps the
+       headline level with the top of the illustration without hard-coding the
+       tag's height, which is a Caveat line box and varies with the host font. */
+    #zly-hy .zhy-hero > .zhy-tag { grid-column: 1; grid-row: 1; justify-self: start; }
+    #zly-hy .zhy-hero-copy { grid-column: 1; grid-row: 2; }
+    #zly-hy .zhy-hero > .zhy-board { grid-column: 2; grid-row: 2; }
     #zly-hy .zhy-hero h1 { font-size: clamp(36px, 4.4vw, 56px); }
     #zly-hy .zhy-hero p.zhy-sub { font-size: 18px; margin: 22px 0 30px; max-width: 500px; }
 
@@ -148,8 +154,6 @@ has no real submit handler yet — wire it to your email provider before publish
     #zly-hy .zhy-step .n { font-family: 'Caveat', cursive; font-size: 20px; color: var(--barn); font-weight: 700; }
     #zly-hy .zhy-step h3 { font-size: 20px; margin: 2px 0 8px; }
     #zly-hy .zhy-step p { font-size: 14.5px; }
-    #zly-hy .zhy-step .out { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 13px; color: var(--ink); }
-    #zly-hy .zhy-step .out strong { color: var(--barn); }
 
     /* ---------- WHO WE ARE ---------- */
     #zly-hy .zhy-who { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
@@ -213,7 +217,6 @@ has no real submit handler yet — wire it to your email provider before publish
     #zly-hy .zhy-featured p:last-of-type { margin-bottom: 26px; }
     #zly-hy .zhy-week { background: var(--paper-2); border-radius: 14px; padding: 26px 26px 20px; border: 1px solid var(--border); }
     #zly-hy .zhy-week svg { width: 100%; height: auto; display: block; }
-    #zly-hy .zhy-week-cap { font-family: 'Caveat', cursive; font-size: 18px; color: var(--ink-soft); text-align: center; margin-top: 8px; transform: rotate(-1deg); }
 
     /* ---------- TESTIMONIALS (paginated carousel) ---------- */
     #zly-hy .zhy-test-head { text-align: center; max-width: 560px; margin: 0 auto 40px; }
@@ -268,7 +271,13 @@ has no real submit handler yet — wire it to your email provider before publish
     #zly-hy .zhy-sign .zhy-cta-note { color: rgba(244,237,224,0.55); margin-top: 16px; }
 
     @media (max-width: 900px) {
-      #zly-hy .zhy-hero { grid-template-columns: 1fr; padding: 76px 20px 30px; gap: 40px; }
+      /* Stacked: auto placement, no row gap. The tag keeps its own 6px margin
+         and the copy block owns the 40px it used to get from the grid gap. */
+      #zly-hy .zhy-hero { grid-template-columns: 1fr; padding: 76px 20px 30px; column-gap: 0; row-gap: 0; }
+      #zly-hy .zhy-hero > .zhy-tag,
+      #zly-hy .zhy-hero-copy,
+      #zly-hy .zhy-hero > .zhy-board { grid-column: 1; grid-row: auto; }
+      #zly-hy .zhy-hero-copy { margin-bottom: 40px; }
       #zly-hy .zhy-proof { padding: 0 20px 30px; }
       #zly-hy .zhy-proof-inner { grid-template-columns: 1fr; }
       #zly-hy .zhy-proof-item { border-right: none; border-bottom: 1px solid var(--border); padding: 16px 4px; }
@@ -320,15 +329,14 @@ has no real submit handler yet — wire it to your email provider before publish
 
   <!-- 1. HERO -->
   <section class="zhy-hero">
-    <div>
-      <span class="zhy-tag">strategy, systems, execution</span>
-      <h1>The operating layer for businesses that intend to grow.</h1>
-      <p class="zhy-sub">Zoley designs the systems underneath a small business: the research that sets direction, the website and campaigns that bring in demand, and the automation that keeps it all moving without adding headcount.</p>
+    <span class="zhy-tag">strategy, systems, execution</span>
+    <div class="zhy-hero-copy">
+      <h1>It's time your business ran the way you always pictured it would.</h1>
+      <p class="zhy-sub">Zoley designs the systems underneath a small business: the research that sets direction, the website and campaigns that bring in demand, automation that keeps it moving, and reliable AI features that propel you forward.</p>
       <div class="zhy-cta-row">
-        <a href="https://www.zoley.io/find-your-next-best-business-move" class="zhy-btn zhy-btn-primary">Get your plan</a>
+        <a href="https://www.zoley.io/find-your-next-best-business-move" class="zhy-btn zhy-btn-primary">Get Started</a>
         <a href="https://calendly.com/zoley/zoley-discovery-call" class="zhy-btn zhy-btn-ghost">Book an intro call</a>
       </div>
-      <p class="zhy-cta-note">Answer a few questions. We reply with a written recommendation and pricing within two business days.</p>
     </div>
     <div class="zhy-board">
       <svg viewBox="0 0 400 320" fill="none" role="img" aria-label="Illustration: a website, customer record, database, calendar, location, and email connected by dashed threads">
@@ -398,7 +406,7 @@ has no real submit handler yet — wire it to your email provider before publish
     <div class="zhy-proof-inner">
       <div class="zhy-proof-item"><span class="num">30+</span><p>years of combined consulting experience across strategy, operations, and marketing</p></div>
       <div class="zhy-proof-item"><span class="num">4 in 5</span><p>clients refer us to another business owner</p></div>
-      <div class="zhy-proof-item"><span class="num">Fixed</span><p>scope and price agreed in writing before any work begins</p></div>
+      <div class="zhy-proof-item"><span class="num">$95</span><p>million dollars influenced by past strategic decisions</p></div>
     </div>
   </div>
 
@@ -410,12 +418,6 @@ has no real submit handler yet — wire it to your email provider before publish
       <p>Most firms sell one of these. We deliver them as a set, because a website without follow-up, or ads without tracking, is money spent on half a system.</p>
     </div>
     <div class="zhy-services-cards">
-      <a href="https://www.zoley.io/strategic-consulting" class="zhy-card" style="--zhy-card-accent: var(--sage);">
-        <svg viewBox="0 0 48 48" fill="none"><path d="M8 40 V28 M18 40 V18 M28 40 V24 M38 40 V10" stroke="#7a8b69" stroke-width="3.5" stroke-linecap="round"/></svg>
-        <h3>Strategic consulting</h3>
-        <p>Market research, competitor analysis, and pricing strategy. We establish what the market will pay for before you build it.</p>
-        <span class="zhy-card-link">Strategy &rarr;</span>
-      </a>
       <a href="https://www.zoley.io/ai" class="zhy-card" style="--zhy-card-accent: var(--violet);">
         <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="4" fill="#6c5ce7"/><circle cx="10" cy="14" r="3" fill="#6c5ce7"/><circle cx="38" cy="14" r="3" fill="#6c5ce7"/><circle cx="10" cy="34" r="3" fill="#6c5ce7"/><circle cx="38" cy="34" r="3" fill="#6c5ce7"/><path d="M24 24 L10 14 M24 24 L38 14 M24 24 L10 34 M24 24 L38 34" stroke="#6c5ce7" stroke-width="2"/></svg>
         <h3>AI integration</h3>
@@ -439,6 +441,12 @@ has no real submit handler yet — wire it to your email provider before publish
         <h3>Digital advertising</h3>
         <p>Targeted campaigns with tracking in place from day one, so every dollar can be traced to a lead or a sale.</p>
         <span class="zhy-card-link">Advertising &rarr;</span>
+      </a>
+      <a href="https://www.zoley.io/strategic-consulting" class="zhy-card" style="--zhy-card-accent: var(--sage);">
+        <svg viewBox="0 0 48 48" fill="none"><path d="M8 40 V28 M18 40 V18 M28 40 V24 M38 40 V10" stroke="#7a8b69" stroke-width="3.5" stroke-linecap="round"/></svg>
+        <h3>Strategic consulting</h3>
+        <p>Market research, competitor analysis, and pricing strategy. We establish what the market will pay for before you build it.</p>
+        <span class="zhy-card-link">Strategy &rarr;</span>
       </a>
     </div>
   </section>
@@ -468,28 +476,24 @@ has no real submit handler yet — wire it to your email provider before publish
         <span class="n">01</span>
         <h3>Diagnose</h3>
         <p>We audit how work, leads, and money actually move through your business, and where they stall.</p>
-        <div class="out"><strong>You get:</strong> a written findings summary</div>
       </div>
       <div class="zhy-step">
         <div class="zhy-step-ico"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="#6c5ce7" stroke-width="2.2"/><path d="M7 9h10M7 13h6" stroke="#6c5ce7" stroke-width="2.2" stroke-linecap="round"/></svg></div>
         <span class="n">02</span>
         <h3>Design</h3>
         <p>We rank the fixes by return on effort and scope the first one precisely: deliverables, timeline, and a fixed price.</p>
-        <div class="out"><strong>You get:</strong> a prioritized plan and quote</div>
       </div>
       <div class="zhy-step">
         <div class="zhy-step-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M14 4l6 6-10 10H4v-6L14 4z" stroke="#4ea1ff" stroke-width="2.2" stroke-linejoin="round"/><path d="M12 6l6 6" stroke="#4ea1ff" stroke-width="2.2"/></svg></div>
         <span class="n">03</span>
         <h3>Build &amp; connect</h3>
         <p>We build inside the tools you already run, document everything, and hand over ownership. No proprietary lock-in.</p>
-        <div class="out"><strong>You get:</strong> a working system you own</div>
       </div>
       <div class="zhy-step">
         <div class="zhy-step-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18L10 11l4 4 6-8" stroke="#7a8b69" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 21h16" stroke="#7a8b69" stroke-width="2.2" stroke-linecap="round"/></svg></div>
         <span class="n">04</span>
         <h3>Measure</h3>
         <p>Every build ships with tracking. We review the numbers with you and adjust, so the result holds up after launch.</p>
-        <div class="out"><strong>You get:</strong> a dashboard and a review cadence</div>
       </div>
     </div>
   </section>
@@ -500,8 +504,8 @@ has no real submit handler yet — wire it to your email provider before publish
       <div>
         <span class="zhy-tag">who we are</span>
         <h2>A consulting partner with a builder's toolkit.</h2>
-        <p>Most small businesses can hire a strategist or a developer, but rarely both in one conversation. Zoley closes that gap. The research informs what gets built, and what gets built is measured against the research.</p>
-        <p>We work with founders, owner-operators, and family businesses that have outgrown spreadsheets and goodwill, and want the systems of a larger company without the overhead of one. Engagements are scoped in writing, priced before we start, and supported after launch.</p>
+        <p>Most small businesses hire a strategist and then a developer, but rarely both in one conversation. Zoley closes that gap. The research informs what gets built, and what gets built is measured against the research.</p>
+        <p>We work with founders, owner-operators, and family businesses that want the systems of a larger company without the overhead of one. Engagements are scoped in writing, priced before we start, and supported after launch.</p>
       </div>
       <div>
         <!-- Swap this SVG for a real team photo when available: <img src="..." alt="The Zoley team"> -->
@@ -633,7 +637,6 @@ has no real submit handler yet — wire it to your email provider before publish
           <path d="M356 186 Q 356 204 336 208" stroke="#6c5ce7" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
           <text x="140" y="222" font-family="Caveat, cursive" font-size="20" font-weight="700" fill="#6c5ce7">handled by systems, not by you</text>
         </svg>
-        <div class="zhy-week-cap">Illustrative week, based on a typical first engagement.</div>
       </div>
     </div>
   </section>
@@ -671,8 +674,8 @@ has no real submit handler yet — wire it to your email provider before publish
   <!-- 8. FINAL CTA -->
   <section class="zhy-section" style="padding-bottom: 96px;">
     <div class="zhy-sign">
-      <h2>Start with a plan, not a pitch.</h2>
-      <p>Answer a few questions about your business. Within two business days you'll have a written recommendation and pricing, whether or not you decide to work with us.</p>
+      <h2>Let's build what your business needed 6 months ago.</h2>
+      <p>Let's pinpoint what's slowing you down, build the right solution, and grow from there.</p>
       <div class="zhy-cta-row" style="justify-content: center;">
         <a href="https://www.zoley.io/find-your-next-best-business-move" class="zhy-btn zhy-btn-primary">Get your plan</a>
         <a href="https://calendly.com/zoley/zoley-discovery-call" class="zhy-btn zhy-btn-ghost" style="color:#faf3e7; border-color:#faf3e7;">Book an intro call</a>
@@ -700,7 +703,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const changingWord = document.getElementById("zhy-changing-word");
   if (!changingWord) return;
 
-  const TYPE_DELAY = 68;    // per character; ~15 a second, a third slower than the old 45
+  const TYPE_DELAY = 78;    // per character; ~13 a second. Was 45, then 68, now 15% slower again.
   const HOLD_FULL  = 500;   // it sits complete for half a second
   const HOLD_EMPTY = 180;   // a breath of blank before the next one starts
 

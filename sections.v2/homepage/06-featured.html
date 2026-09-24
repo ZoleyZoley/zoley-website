@@ -49,7 +49,13 @@ Scoped under #zly-hy-featured. Self-contained: paste into a Squarespace Code Blo
     #zly-hy-featured .zhy-cta-note { font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
 
     /* ---------- HERO ---------- */
-    #zly-hy-featured .zhy-hero { padding: 112px 40px 40px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 64px; align-items: center; }
+    #zly-hy-featured .zhy-hero { padding: 112px 40px 40px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 0.95fr 1.05fr; column-gap: 64px; row-gap: 0; align-items: start; }
+    /* The tag sits in its own row so row 2 starts at the H1. That keeps the
+       headline level with the top of the illustration without hard-coding the
+       tag's height, which is a Caveat line box and varies with the host font. */
+    #zly-hy-featured .zhy-hero > .zhy-tag { grid-column: 1; grid-row: 1; justify-self: start; }
+    #zly-hy-featured .zhy-hero-copy { grid-column: 1; grid-row: 2; }
+    #zly-hy-featured .zhy-hero > .zhy-board { grid-column: 2; grid-row: 2; }
     #zly-hy-featured .zhy-hero h1 { font-size: clamp(36px, 4.4vw, 56px); }
     #zly-hy-featured .zhy-hero p.zhy-sub { font-size: 18px; margin: 22px 0 30px; max-width: 500px; }
 
@@ -132,8 +138,6 @@ Scoped under #zly-hy-featured. Self-contained: paste into a Squarespace Code Blo
     #zly-hy-featured .zhy-step .n { font-family: 'Caveat', cursive; font-size: 20px; color: var(--barn); font-weight: 700; }
     #zly-hy-featured .zhy-step h3 { font-size: 20px; margin: 2px 0 8px; }
     #zly-hy-featured .zhy-step p { font-size: 14.5px; }
-    #zly-hy-featured .zhy-step .out { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 13px; color: var(--ink); }
-    #zly-hy-featured .zhy-step .out strong { color: var(--barn); }
 
     /* ---------- WHO WE ARE ---------- */
     #zly-hy-featured .zhy-who { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
@@ -197,7 +201,6 @@ Scoped under #zly-hy-featured. Self-contained: paste into a Squarespace Code Blo
     #zly-hy-featured .zhy-featured p:last-of-type { margin-bottom: 26px; }
     #zly-hy-featured .zhy-week { background: var(--paper-2); border-radius: 14px; padding: 26px 26px 20px; border: 1px solid var(--border); }
     #zly-hy-featured .zhy-week svg { width: 100%; height: auto; display: block; }
-    #zly-hy-featured .zhy-week-cap { font-family: 'Caveat', cursive; font-size: 18px; color: var(--ink-soft); text-align: center; margin-top: 8px; transform: rotate(-1deg); }
 
     /* ---------- TESTIMONIALS (paginated carousel) ---------- */
     #zly-hy-featured .zhy-test-head { text-align: center; max-width: 560px; margin: 0 auto 40px; }
@@ -252,7 +255,13 @@ Scoped under #zly-hy-featured. Self-contained: paste into a Squarespace Code Blo
     #zly-hy-featured .zhy-sign .zhy-cta-note { color: rgba(244,237,224,0.55); margin-top: 16px; }
 
     @media (max-width: 900px) {
-      #zly-hy-featured .zhy-hero { grid-template-columns: 1fr; padding: 76px 20px 30px; gap: 40px; }
+      /* Stacked: auto placement, no row gap. The tag keeps its own 6px margin
+         and the copy block owns the 40px it used to get from the grid gap. */
+      #zly-hy-featured .zhy-hero { grid-template-columns: 1fr; padding: 76px 20px 30px; column-gap: 0; row-gap: 0; }
+      #zly-hy-featured .zhy-hero > .zhy-tag,
+      #zly-hy-featured .zhy-hero-copy,
+      #zly-hy-featured .zhy-hero > .zhy-board { grid-column: 1; grid-row: auto; }
+      #zly-hy-featured .zhy-hero-copy { margin-bottom: 40px; }
       #zly-hy-featured .zhy-proof { padding: 0 20px 30px; }
       #zly-hy-featured .zhy-proof-inner { grid-template-columns: 1fr; }
       #zly-hy-featured .zhy-proof-item { border-right: none; border-bottom: 1px solid var(--border); padding: 16px 4px; }
@@ -337,7 +346,6 @@ Scoped under #zly-hy-featured. Self-contained: paste into a Squarespace Code Blo
           <path d="M356 186 Q 356 204 336 208" stroke="#6c5ce7" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
           <text x="140" y="222" font-family="Caveat, cursive" font-size="20" font-weight="700" fill="#6c5ce7">handled by systems, not by you</text>
         </svg>
-        <div class="zhy-week-cap">Illustrative week, based on a typical first engagement.</div>
       </div>
     </div>
   </section>
