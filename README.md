@@ -21,8 +21,8 @@ Nothing in this repo was deleted or rewritten to build v2 — the originals are 
 
 1. Edit a file in `sections.v2/`.
 2. `git add -A && git commit -m "..." && git push`
-3. `git tag v1.0.2 && git push --tags`
-4. In Squarespace → Settings → Advanced → Code Injection → Header, change `@v1.0.1` to `@v1.0.2`.
+3. `git tag v1.0.4 && git push --tags`
+4. In Squarespace → Settings → Advanced → Code Injection → Header, change `@v1.0.3` to `@v1.0.4`.
 
 Step 4 is one character in one box. Everything else on the site updates from it.
 
@@ -39,7 +39,7 @@ week. Exact tags are immutable, so they go live the moment you bump the number.
 Header code injection (site-wide):
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.0.1/dist/zoley-loader.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.0.3/dist/zoley-loader.js"></script>
 ```
 
 Then each page gets one Code Block per section, each holding a single line:
