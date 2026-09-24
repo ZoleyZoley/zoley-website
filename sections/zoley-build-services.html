@@ -1,0 +1,44 @@
+<!--
+ZOLEY — BUILD YOUR COMPANY PAGE — SERVICES SECTION
+-->
+
+<div id="zly-build-services">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-build-services {
+      --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+      --barn: #b5482d; --violet: #6c5ce7; --blue: #4ea1ff; --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-build-services * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-build-services .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-build-services h2, #zly-build-services h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-build-services p { color: var(--ink-soft); line-height: 1.65; }
+
+    #zly-build-services .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+    #zly-build-services .service-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 28px; position: relative; overflow: hidden; }
+    #zly-build-services .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--barn), var(--violet), var(--blue)); }
+    #zly-build-services .service-card h3 { font-size: 19px; margin-bottom: 8px; }
+    #zly-build-services .service-card p { font-size: 14.5px; }
+    #zly-build-services .process-header { text-align: center; margin-bottom: 10px; }
+    #zly-build-services .process-header h2 { font-size: clamp(26px, 3vw, 36px); max-width: 600px; margin: 0 auto; }
+
+    @media (max-width: 900px) {
+      #zly-build-services .services-grid { grid-template-columns: 1fr; }
+      #zly-build-services .sec { padding: 60px 20px; }
+    }
+  </style>
+
+  <section class="sec">
+    <div class="process-header"><h2>What's included when you build with us.</h2></div>
+    <div class="services-grid">
+      <div class="service-card"><h3>Strategy Sessions</h3><p>A 1-on-1 session to map your plan and skip the rookie mistakes.</p></div>
+      <div class="service-card"><h3>Tool Recommendations</h3><p>Matched to your business, for payments, scheduling, and more.</p></div>
+      <div class="service-card"><h3>Market Research</h3><p>Validate your idea, understand your audience, spot the gaps you can fill.</p></div>
+      <div class="service-card"><h3>Website Build</h3><p>Launch fast with a clean site that gets your message across.</p></div>
+      <div class="service-card"><h3>Quick Start Templates</h3><p>Plug-and-play templates for proposals, pricing, and outreach.</p></div>
+      <div class="service-card"><h3>Logo &amp; Branding</h3><p>A visual identity that reflects your story and speaks to your audience.</p></div>
+    </div>
+  </section>
+</div>

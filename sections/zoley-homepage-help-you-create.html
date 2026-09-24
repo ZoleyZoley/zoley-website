@@ -1,0 +1,133 @@
+<!--
+ZOLEY HOMEPAGE — HELP YOU CREATE (ROTATING TEXT) SECTION
+Sits directly below the hero.
+-->
+
+<div id="zly-home-help">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-home-help {
+      --paper: #faf3e7; --ink: #1b2430; --ink-soft: #5c6b76;
+      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: var(--paper); color: var(--ink);
+    }
+    #zly-home-help * { box-sizing: border-box; }
+
+    #zly-home-help .wrap { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 50px 24px; }
+    #zly-home-help .static-text {
+      font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.15;
+      font-size: clamp(32px, 5.5vw, 54px); margin-bottom: 14px; color: var(--ink);
+    }
+    #zly-home-help .word-row { min-height: 1.4em; }
+    #zly-home-help .changing-word {
+      font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.3;
+      font-size: clamp(32px, 5.5vw, 54px); transition: background 0.3s ease-in-out;
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
+    }
+    #zly-home-help .cursor { font-size: clamp(32px, 5.5vw, 54px); color: var(--ink-soft); animation: zly-help-blink 1s step-start infinite; }
+    @keyframes zly-help-blink { 50% { opacity: 0; } }
+
+    @media (max-width: 900px) {
+      #zly-home-help .wrap { padding: 40px 20px; }
+    }
+    @media (max-width: 480px) {
+      #zly-home-help .static-text { margin-bottom: 22px; line-height: 1.3; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #zly-home-help .cursor { animation: none; }
+    }
+  </style>
+
+  <div class="wrap">
+    <div class="static-text">Let us help you create:</div>
+    <div class="word-row">
+      <span class="changing-word" id="zly-help-word">an automation system</span><span class="cursor" id="zly-help-cursor">|</span>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var root = document.getElementById('zly-home-help');
+      var changingWord = document.getElementById('zly-help-word');
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Brand-color gradient pairs, cycled per phrase (barn / violet / blue / marigold / sage)
+      var words = [
+        { text: "an automation system",     gradient: "linear-gradient(45deg, #7a8b69, #4ea1ff)" },
+        { text: "a business plan",          gradient: "linear-gradient(45deg, #b5482d, #e3a72e)" },
+        { text: "an AI strategy",           gradient: "linear-gradient(45deg, #6c5ce7, #4ea1ff)" },
+        { text: "a lead generation funnel", gradient: "linear-gradient(45deg, #b5482d, #6c5ce7)" },
+        { text: "a marketing guide",        gradient: "linear-gradient(45deg, #e3a72e, #b5482d)" },
+        { text: "a website",                gradient: "linear-gradient(45deg, #4ea1ff, #6c5ce7)" },
+        { text: "a brand identity",         gradient: "linear-gradient(45deg, #e3a72e, #6c5ce7)" },
+        { text: "an email newsletter",      gradient: "linear-gradient(45deg, #7a8b69, #e3a72e)" },
+        { text: "a product strategy",       gradient: "linear-gradient(45deg, #6c5ce7, #7a8b69)" },
+        { text: "a client onboarding flow", gradient: "linear-gradient(45deg, #4ea1ff, #7a8b69)" }
+      ];
+
+      function applyGradient(i) {
+        changingWord.style.background = words[i].gradient;
+        changingWord.style.webkitBackgroundClip = 'text';
+        changingWord.style.webkitTextFillColor = 'transparent';
+      }
+
+      // Paint the first phrase instantly, no typing
+      changingWord.textContent = words[0].text;
+      applyGradient(0);
+
+      if (reduceMotion) return; // static first phrase only, no continuous motion
+
+      var TYPE_DELAY = 55;
+      var ERASE_DELAY = 40;
+      var HOLD_FULL = 900;
+      var HOLD_EMPTY = 220;
+
+      var i = 1; // start at second phrase, never type the first
+      var charIndex = 0;
+      var typing = true;
+
+      function tick() {
+        var w = words[i].text;
+        applyGradient(i);
+
+        if (typing) {
+          charIndex++;
+          changingWord.textContent = w.slice(0, charIndex);
+          if (charIndex === w.length) {
+            typing = false;
+            setTimeout(tick, HOLD_FULL);
+          } else {
+            setTimeout(tick, TYPE_DELAY);
+          }
+        } else {
+          charIndex--;
+          changingWord.textContent = w.slice(0, Math.max(charIndex, 0));
+          if (charIndex <= 0) {
+            typing = true;
+            i = (i + 1) % words.length;
+            if (i === 0) i = 1;
+            setTimeout(tick, HOLD_EMPTY);
+          } else {
+            setTimeout(tick, ERASE_DELAY);
+          }
+        }
+      }
+
+      var start = function () {
+        if (window.requestIdleCallback) requestIdleCallback(tick, { timeout: 300 });
+        else setTimeout(tick, 150);
+      };
+
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          if (entries[0].isIntersecting) { io.disconnect(); start(); }
+        }, { threshold: 0.2 });
+        io.observe(root);
+      } else {
+        start();
+      }
+    })();
+  </script>
+</div>

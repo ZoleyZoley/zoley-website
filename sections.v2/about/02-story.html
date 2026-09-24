@@ -1,0 +1,91 @@
+<!--
+ZOLEY — ABOUT — Story
+Source: main pages/zoley-about.v2.html
+Scoped under #zly-about-story. Self-contained: drop into a Squarespace Code Block.
+-->
+
+<div id="zly-about-story">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;
+    /* ===== story ===== */
+      #zly-about-story {
+        --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+        --barn: #b5482d; --violet: #6c5ce7; --blue: #4ea1ff; --sage: #7a8b69; --marigold: #e3a72e; --border: rgba(27,36,48,0.14);
+        font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+      }
+    #zly-about-story * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-about-story .sec { padding: 30px 24px 90px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    #zly-about-story h2 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); font-size: clamp(26px, 3vw, 36px); margin-bottom: 18px; }
+    #zly-about-story p { color: var(--ink-soft); line-height: 1.7; font-size: 16.5px; margin-bottom: 16px; }
+    #zly-about-story p:last-of-type { margin-bottom: 0; }
+    #zly-about-story .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: var(--barn); }
+    #zly-about-story .media { background: var(--paper-2); border: 1px solid var(--border); border-radius: 16px; padding: 22px; }
+    #zly-about-story .media svg { width: 100%; height: auto; display: block; }
+    #zly-about-story .media img { width: 100%; height: auto; display: block; border-radius: 10px; }
+    #zly-about-story .cap { font-family: 'Caveat', cursive; font-size: 18px; color: var(--ink-soft); text-align: center; margin-top: 10px; transform: rotate(-1deg); }
+    @media (max-width: 900px) {
+      #zly-about-story .sec { grid-template-columns: 1fr; padding: 16px 20px 60px; gap: 32px; }
+      #zly-about-story .media { order: -1; }
+    }
+  </style>
+
+  <section class="sec">
+    <div>
+      <span class="tag">how we got here</span>
+      <h2>We kept meeting owners who had been sold tools without a diagnosis.</h2>
+      <p>Between us we've spent more than thirty years in consulting, operations, and marketing, much of it inside larger companies with the budgets to hire a strategist, a developer, and an agency separately. Small businesses can't, so they end up with a website from one vendor, ads from another, and a stack of software subscriptions nobody connected.</p>
+      <p>Zoley was built to do the diagnosis first. We audit how a business actually runs, rank what's costing it the most, and then build the fix ourselves, inside the tools the owner already has. When the research and the build come from the same people, the result gets measured against the plan instead of drifting away from it.</p>
+      <p>We don't sell retainers you can't cancel, software we get commission on, or reports nobody reads. Every engagement is scoped in writing, priced before it starts, and handed over with documentation so you own what we built.</p>
+    </div>
+    <div>
+      <!-- Swap this SVG for a real team photo when available: <img src="..." alt="The Zoley team"> -->
+      <div class="media">
+        <svg viewBox="0 0 440 330" fill="none" role="img" aria-label="Illustration: a typical engagement laid out week by week, from audit to plan to build to review">
+          <defs>
+            <linearGradient id="zab-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b5482d"/><stop offset="1" stop-color="#4ea1ff"/></linearGradient>
+          </defs>
+          <!-- vertical timeline -->
+          <line x1="60" y1="36" x2="60" y2="300" stroke="url(#zab-grad)" stroke-width="2.5" stroke-dasharray="6 6"/>
+          <!-- node 1 -->
+          <circle cx="60" cy="52" r="13" fill="#fff9ef" stroke="#b5482d" stroke-width="2.5"/>
+          <text x="60" y="56.5" font-family="DM Sans, sans-serif" font-size="11" font-weight="700" fill="#b5482d" text-anchor="middle">1</text>
+          <g transform="translate(92 26) rotate(-1 150 26)">
+            <rect x="0" y="0" width="300" height="52" rx="7" fill="#fff9ef" stroke="#1b2430" stroke-width="2"/>
+            <text x="16" y="21" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#1b2430">Week 1 · Audit</text>
+            <text x="16" y="39" font-family="DM Sans, sans-serif" font-size="11" fill="#5c6b76">Interviews, numbers, and a walk through how work moves</text>
+            <text x="286" y="21" font-family="Caveat, cursive" font-size="15" font-weight="700" fill="#b5482d" text-anchor="end">findings memo</text>
+          </g>
+          <!-- node 2 -->
+          <circle cx="60" cy="126" r="13" fill="#fff9ef" stroke="#6c5ce7" stroke-width="2.5"/>
+          <text x="60" y="130.5" font-family="DM Sans, sans-serif" font-size="11" font-weight="700" fill="#6c5ce7" text-anchor="middle">2</text>
+          <g transform="translate(92 100) rotate(1 150 26)">
+            <rect x="0" y="0" width="300" height="52" rx="7" fill="#fff9ef" stroke="#1b2430" stroke-width="2"/>
+            <text x="16" y="21" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#1b2430">Week 2 · Plan</text>
+            <text x="16" y="39" font-family="DM Sans, sans-serif" font-size="11" fill="#5c6b76">Ranked fixes, first build scoped, fixed price agreed</text>
+            <text x="286" y="21" font-family="Caveat, cursive" font-size="15" font-weight="700" fill="#6c5ce7" text-anchor="end">plan &amp; quote</text>
+          </g>
+          <!-- node 3 -->
+          <circle cx="60" cy="200" r="13" fill="#fff9ef" stroke="#4ea1ff" stroke-width="2.5"/>
+          <text x="60" y="204.5" font-family="DM Sans, sans-serif" font-size="11" font-weight="700" fill="#4ea1ff" text-anchor="middle">3</text>
+          <g transform="translate(92 174) rotate(-1 150 26)">
+            <rect x="0" y="0" width="300" height="52" rx="7" fill="#fff9ef" stroke="#1b2430" stroke-width="2"/>
+            <text x="16" y="21" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#1b2430">Weeks 3–6 · Build &amp; connect</text>
+            <text x="16" y="39" font-family="DM Sans, sans-serif" font-size="11" fill="#5c6b76">Inside your existing tools, tested on real records</text>
+            <text x="286" y="21" font-family="Caveat, cursive" font-size="15" font-weight="700" fill="#4ea1ff" text-anchor="end">working system</text>
+          </g>
+          <!-- node 4 -->
+          <circle cx="60" cy="274" r="13" fill="#fff9ef" stroke="#7a8b69" stroke-width="2.5"/>
+          <text x="60" y="278.5" font-family="DM Sans, sans-serif" font-size="11" font-weight="700" fill="#7a8b69" text-anchor="middle">4</text>
+          <g transform="translate(92 248) rotate(1 150 26)">
+            <rect x="0" y="0" width="300" height="52" rx="7" fill="#fff9ef" stroke="#1b2430" stroke-width="2"/>
+            <text x="16" y="21" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#1b2430">Day 30 · Review &amp; handover</text>
+            <text x="16" y="39" font-family="DM Sans, sans-serif" font-size="11" fill="#5c6b76">Numbers against the plan, documentation, you own it</text>
+            <text x="286" y="21" font-family="Caveat, cursive" font-size="15" font-weight="700" fill="#7a8b69" text-anchor="end">dashboard</text>
+          </g>
+          <text x="20" y="322" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#5c6b76">a typical first engagement</text>
+        </svg>
+      </div>
+      <div class="cap">Every engagement follows the same four stages.</div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,129 @@
+<!--
+ZOLEY — STRATEGIC CONSULTING PAGE — 3. WHAT WE DO SECTION
+-->
+
+<div id="zly-consulting-svc-what-we-do">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-consulting-svc-what-we-do {
+      --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef;
+      --ink: #1b2430; --ink-soft: #5c6b76;
+      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-consulting-svc-what-we-do * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-consulting-svc-what-we-do .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-consulting-svc-what-we-do h1, #zly-consulting-svc-what-we-do h2, #zly-consulting-svc-what-we-do h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-consulting-svc-what-we-do p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-consulting-svc-what-we-do .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 12px; padding: 0 4px; color: var(--barn); }
+
+    /* BUTTONS */
+    #zly-consulting-svc-what-we-do .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-consulting-svc-what-we-do .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-consulting-svc-what-we-do .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-consulting-svc-what-we-do .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    #zly-consulting-svc-what-we-do .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+    #zly-consulting-svc-what-we-do .btn-outline { background: transparent; color: #fff9ef; border: 2px solid var(--barn); }
+    #zly-consulting-svc-what-we-do .btn-outline:hover { background: var(--barn); }
+
+    /* 1. HERO */
+    #zly-consulting-svc-what-we-do .hero { padding: 108px 24px 72px; max-width: 900px; margin: 0 auto; text-align: center; }
+    #zly-consulting-svc-what-we-do .hero h1 { font-size: clamp(34px, 4.6vw, 54px); }
+    #zly-consulting-svc-what-we-do .hero p.sub { font-size: 18.5px; max-width: 540px; margin: 20px auto 30px; }
+
+    /* SECTION HEADERS (shared by 2, 4, 6) */
+    #zly-consulting-svc-what-we-do .process-header { text-align: center; margin-bottom: 40px; }
+    #zly-consulting-svc-what-we-do .process-header h2 { font-size: clamp(30px, 3.6vw, 40px); max-width: 640px; margin: 0 auto; }
+
+    /* 2. TIME COST */
+    #zly-consulting-svc-what-we-do .time-band { padding: 70px 24px; }
+    #zly-consulting-svc-what-we-do .time-card { max-width: 1160px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 56px; box-shadow: 0 18px 40px -20px rgba(27,36,48,0.28); position: relative; overflow: hidden; }
+    #zly-consulting-svc-what-we-do .time-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--barn), var(--marigold)); }
+    #zly-consulting-svc-what-we-do .time-eyebrow { display: block; font-size: 12.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--barn); margin-bottom: 14px; }
+    #zly-consulting-svc-what-we-do .time-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; align-items: center; }
+    #zly-consulting-svc-what-we-do .time-stat { font-family: 'Newsreader', serif; font-size: clamp(56px, 7vw, 84px); font-weight: 600; line-height: 1; color: var(--barn); text-shadow: 0 2px 0 rgba(181,72,45,0.12); }
+    #zly-consulting-svc-what-we-do .time-stat span { font-size: 16px; color: var(--ink-soft); font-family: 'DM Sans', sans-serif; display: block; margin-top: 12px; font-weight: 600; }
+    #zly-consulting-svc-what-we-do .time-grid h2 { font-size: clamp(30px, 3.4vw, 38px); }
+
+    /* CARD GRID (used in section 3) */
+    #zly-consulting-svc-what-we-do .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+    #zly-consulting-svc-what-we-do .process-grid--3col { grid-template-columns: repeat(3, 1fr); }
+    #zly-consulting-svc-what-we-do .process-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
+    #zly-consulting-svc-what-we-do .pc-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    #zly-consulting-svc-what-we-do .pc-num { flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 13px; line-height: 1; display: flex; align-items: center; justify-content: center; }
+    #zly-consulting-svc-what-we-do .process-card h3 { font-size: 16.5px; }
+    #zly-consulting-svc-what-we-do .process-card p { font-size: 13.5px; }
+
+    /* VERTICAL LIST (used in section 5) */
+    #zly-consulting-svc-what-we-do .wd-list { max-width: 760px; margin: 0 auto; }
+    #zly-consulting-svc-what-we-do .wd-row { display: flex; gap: 22px; align-items: flex-start; padding: 26px 0; border-bottom: 1px solid var(--border); }
+    #zly-consulting-svc-what-we-do .wd-row:last-of-type { border-bottom: none; }
+    #zly-consulting-svc-what-we-do .wd-num { flex: 0 0 auto; width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 16px; line-height: 1; display: flex; align-items: center; justify-content: center; }
+    #zly-consulting-svc-what-we-do .wd-row h3 { font-size: 19px; margin-bottom: 6px; }
+    #zly-consulting-svc-what-we-do .wd-row p { font-size: 14.5px; }
+    #zly-consulting-svc-what-we-do .wd-cta { text-align: center; margin-top: 36px; }
+
+    /* 4. CURRENT STATE — full-bleed dark band, color breakup */
+    #zly-consulting-svc-what-we-do .stat-band { background: var(--ink); padding: 90px 24px; position: relative; overflow: hidden; }
+    #zly-consulting-svc-what-we-do .stat-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(181,72,45,0.2), transparent 55%), radial-gradient(circle at 85% 80%, rgba(78,161,255,0.18), transparent 55%); }
+    #zly-consulting-svc-what-we-do .stat-band .inner { max-width: 1160px; margin: 0 auto; position: relative; }
+    #zly-consulting-svc-what-we-do .stat-band .process-header h2 { color: var(--paper); }
+    #zly-consulting-svc-what-we-do .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+    #zly-consulting-svc-what-we-do .stat-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 32px 22px; transform: rotate(var(--r, 0deg)); }
+    #zly-consulting-svc-what-we-do .stat-card:nth-child(1) { --r: -1deg; }
+    #zly-consulting-svc-what-we-do .stat-card:nth-child(2) { --r: 1deg; }
+    #zly-consulting-svc-what-we-do .stat-card:nth-child(3) { --r: -0.5deg; }
+    #zly-consulting-svc-what-we-do .stat-card .num { font-family: 'Newsreader', serif; font-size: clamp(36px, 4vw, 48px); font-weight: 600; color: var(--barn); }
+    #zly-consulting-svc-what-we-do .stat-card p { font-size: 14px; margin-top: 8px; color: #c7d0d6; }
+    #zly-consulting-svc-what-we-do .stat-close { text-align: center; max-width: 620px; margin: 40px auto 0; font-size: 16.5px; color: var(--paper); font-family: 'Newsreader', serif; font-style: italic; line-height: 1.5; }
+
+    /* 6. CASE STUDY */
+    #zly-consulting-svc-what-we-do .case-study { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 40px; box-shadow: 0 18px 40px -24px rgba(27,36,48,0.25); }
+    #zly-consulting-svc-what-we-do .case-study-media { width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; margin-bottom: 32px; background: linear-gradient(135deg, rgba(122,139,105,0.18), rgba(78,161,255,0.18)); display: flex; align-items: center; justify-content: center; text-align: center; padding: 24px; }
+    #zly-consulting-svc-what-we-do .case-study-media span { font-size: 13.5px; color: var(--ink-soft); font-style: italic; }
+    #zly-consulting-svc-what-we-do .case-study-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    #zly-consulting-svc-what-we-do .case-study-body { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 44px; align-items: center; }
+    #zly-consulting-svc-what-we-do .case-study .cs-stat { font-family: 'Newsreader', serif; font-weight: 600; font-size: clamp(44px, 5vw, 60px); color: var(--barn); line-height: 1; }
+    #zly-consulting-svc-what-we-do .case-study .cs-stat-label { font-size: 14px; color: var(--ink-soft); margin-top: 8px; }
+    #zly-consulting-svc-what-we-do .case-study h3 { font-size: 22px; margin-bottom: 10px; }
+    #zly-consulting-svc-what-we-do .case-study p { font-size: 15px; margin-bottom: 18px; }
+    #zly-consulting-svc-what-we-do .case-study .cs-link { font-weight: 700; color: var(--barn); text-decoration: none; border-bottom: 2px solid var(--barn); padding-bottom: 2px; }
+
+    /* 7. FINAL CTA */
+    #zly-consulting-svc-what-we-do .final { background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center; margin: 0 24px; max-width: 1112px; margin-left: auto; margin-right: auto; position: relative; overflow: hidden; }
+    #zly-consulting-svc-what-we-do .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+    #zly-consulting-svc-what-we-do .final > * { position: relative; }
+    #zly-consulting-svc-what-we-do .final h2 { color: var(--paper); font-size: clamp(27px, 3.2vw, 36px); margin-bottom: 14px; }
+    #zly-consulting-svc-what-we-do .final p { color: #c7d0d6; max-width: 460px; margin: 0 auto 26px; }
+    #zly-consulting-svc-what-we-do .final .btn-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    @media (max-width: 900px) {
+      #zly-consulting-svc-what-we-do .stat-strip { grid-template-columns: 1fr; }
+      #zly-consulting-svc-what-we-do .process-grid { grid-template-columns: repeat(2, 1fr); }
+      #zly-consulting-svc-what-we-do .case-study-body { grid-template-columns: 1fr; text-align: center; }
+      #zly-consulting-svc-what-we-do .sec { padding: 60px 20px; }
+      #zly-consulting-svc-what-we-do .time-band { padding: 40px 20px; }
+      #zly-consulting-svc-what-we-do .time-card { padding: 32px 24px; }
+      #zly-consulting-svc-what-we-do .stat-band { padding: 60px 20px; }
+    }
+    @media (max-width: 560px) {
+      #zly-consulting-svc-what-we-do .process-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <!-- 3. WHAT WE DO -->
+  <section class="sec">
+    <div class="process-header"><h2>A closer look at how we help.</h2></div>
+    <div class="process-grid process-grid--3col">
+      <div class="process-card"><div class="pc-head"><span class="pc-num">1</span><h3>Market Research</h3></div><p>Understand who's actually buying, and what they actually want.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">2</span><h3>Competitor Research</h3></div><p>See what competitors are doing well, and where they're vulnerable.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">3</span><h3>Pricing Strategy</h3></div><p>Find the pricing gaps you're leaving on the table, or pricing yourself out of.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">4</span><h3>New Offer Development</h3></div><p>Spot the product or service opportunities you haven't tapped yet.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">5</span><h3>Positioning &amp; Messaging</h3></div><p>Make sure the market understands why you're the right choice.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">6</span><h3>Growth Roadmapping</h3></div><p>Turn the research into a clear plan, not just a report.</p></div>
+    </div>
+    <div class="wd-cta"><a href="#" class="btn btn-ghost">Learn more about strategy</a></div>
+  </section>
+</div>

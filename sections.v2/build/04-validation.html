@@ -1,0 +1,67 @@
+<!--
+ZOLEY — BUILD — Validation
+Source: main pages/zoley-build.v2.html
+Scoped under #zly-build-validate. Self-contained: drop into a Squarespace Code Block.
+-->
+
+<div id="zly-build-validate">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;
+    /* ===== validation ===== */
+      #zly-build-validate {
+        --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+        --barn: #b5482d; --violet: #6c5ce7; --sage: #7a8b69; --marigold: #e3a72e; --border: rgba(27,36,48,0.14);
+        font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+      }
+    #zly-build-validate * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-build-validate .sec { padding: 20px 24px 90px; max-width: 1160px; margin: 0 auto; }
+    #zly-build-validate h2, #zly-build-validate h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-build-validate p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-build-validate .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: var(--barn); }
+    #zly-build-validate .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-build-validate .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    #zly-build-validate .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+    #zly-build-validate .validate { background: var(--paper-2); border-radius: 16px; padding: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    #zly-build-validate .validate h2 { font-size: clamp(24px, 2.8vw, 32px); margin-bottom: 14px; }
+    #zly-build-validate .validate p.body { margin-bottom: 18px; font-size: 16px; }
+    #zly-build-validate .validate blockquote { font-family: 'Newsreader', serif; font-style: italic; font-size: 18px; color: var(--ink); margin: 0 0 6px; }
+    #zly-build-validate .validate cite { font-size: 13.5px; color: var(--ink-soft); font-style: normal; }
+    #zly-build-validate .steps { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 26px 28px; }
+    #zly-build-validate .steps h3 { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; font-family: 'DM Sans', sans-serif; color: var(--barn); margin-bottom: 14px; }
+    #zly-build-validate .steps ol { padding-left: 20px; color: var(--ink); font-size: 15px; line-height: 1.55; }
+    #zly-build-validate .steps li { margin-bottom: 10px; }
+    #zly-build-validate .steps li span { color: var(--ink-soft); }
+    #zly-build-validate .steps .cap { font-family: 'Caveat', cursive; font-size: 18px; color: var(--ink-soft); margin-top: 6px; }
+    @media (max-width: 900px) {
+      #zly-build-validate .sec { padding: 16px 20px 60px; }
+      #zly-build-validate .validate { grid-template-columns: 1fr; padding: 32px 24px; gap: 26px; }
+    }
+    @media (max-width: 480px) {
+      #zly-build-validate .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+
+  <section class="sec">
+    <div class="validate">
+      <div>
+        <span class="tag">test before you commit</span>
+        <h2>Find out if people will buy, before you build the thing they'd buy.</h2>
+        <p class="body">A validation test puts a real offer in front of real prospects and measures what they do. It takes about a week, costs a fraction of a full launch, and it's the single most reliable way we know to avoid the most common cause of failure.</p>
+        <blockquote>"The fastest way to learn is by doing, not by thinking about doing."</blockquote>
+        <cite>&mdash; Reid Hoffman, co-founder of LinkedIn</cite>
+        <div style="margin-top: 24px;">
+          <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-ghost">Set up a validation test</a>
+        </div>
+      </div>
+      <div class="steps">
+        <h3>How a one-week test runs</h3>
+        <ol>
+          <li><strong>Day 1–2: the offer.</strong> <span>One page describing the product, the price, and a way to say "I want this."</span></li>
+          <li><strong>Day 3–6: the traffic.</strong> <span>A small, targeted ad spend or direct outreach to the people it's for.</span></li>
+          <li><strong>Day 7: the read.</strong> <span>Sign-ups, deposits, or replies against a threshold we set in advance.</span></li>
+        </ol>
+        <div class="cap">Clear the threshold and you launch with proof. Miss it and you've saved months.</div>
+      </div>
+    </div>
+  </section>
+</div>

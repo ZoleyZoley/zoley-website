@@ -1,0 +1,136 @@
+<!--
+ZOLEY — BUILD YOUR COMPANY PAGE — LEAD MAGNET SECTION
+-->
+
+<div id="zly-build-magnet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-build-magnet {
+      --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-build-magnet * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-build-magnet h2, #zly-build-magnet h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-build-magnet p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-build-magnet .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 12px; }
+    #zly-build-magnet .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-build-magnet .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-build-magnet .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+
+    #zly-build-magnet .magnet-band { background: var(--ink); padding: 70px 24px; position: relative; overflow: hidden; }
+    #zly-build-magnet .magnet-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 85% 80%, rgba(181,72,45,0.2), transparent 55%); }
+    #zly-build-magnet .magnet-wrap { position: relative; max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 0.9fr; gap: 50px; align-items: center; }
+    #zly-build-magnet .magnet-copy .tag { color: var(--marigold); }
+    #zly-build-magnet .magnet-copy h2 { color: var(--paper); font-size: clamp(28px, 3.4vw, 40px); margin-bottom: 14px; }
+    #zly-build-magnet .magnet-copy p { color: #c7d0d6; font-size: 16px; margin-bottom: 20px; }
+    #zly-build-magnet .magnet-stats { display: flex; gap: 28px; margin-top: 26px; flex-wrap: wrap; }
+    #zly-build-magnet .magnet-stat .num { font-family: 'Newsreader', serif; font-size: 32px; font-weight: 600; color: #fff; }
+    #zly-build-magnet .magnet-stat p { font-size: 13px; max-width: 150px; color: #9aa6ae; }
+
+    #zly-build-magnet .magnet-card { background: var(--card); border-radius: 14px; padding: 36px; box-shadow: 0 20px 50px rgba(0,0,0,0.35); }
+    #zly-build-magnet .magnet-card .icon { width: 44px; height: 44px; margin-bottom: 16px; }
+    #zly-build-magnet .magnet-card h3 { font-size: 21px; margin-bottom: 8px; }
+    #zly-build-magnet .magnet-card p.desc { font-size: 14.5px; margin-bottom: 22px; }
+    #zly-build-magnet .zly-form-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    #zly-build-magnet .zly-input {
+      flex: 1; min-width: 180px; padding: 14px 16px; border-radius: 8px; border: 1.5px solid var(--border);
+      font-family: 'DM Sans', sans-serif; font-size: 15px; background: var(--paper); color: var(--ink);
+    }
+    #zly-build-magnet .zly-input:focus { outline: none; border-color: var(--violet); }
+    #zly-build-magnet .magnet-card .btn-primary { white-space: nowrap; }
+    #zly-build-magnet .form-note { font-size: 12.5px; color: var(--ink-soft); margin-top: 12px; }
+    #zly-build-magnet .form-status { font-size: 14px; margin-top: 12px; display: none; }
+    #zly-build-magnet .form-status.success { display: block; color: var(--sage); font-weight: 600; }
+    #zly-build-magnet .form-status.error { display: block; color: var(--barn); font-weight: 600; }
+
+    @media (max-width: 900px) {
+      #zly-build-magnet .magnet-wrap { grid-template-columns: 1fr; }
+      #zly-build-magnet .magnet-band { padding: 52px 20px; }
+    }
+    @media (max-width: 480px) {
+      #zly-build-magnet .magnet-card { padding: 26px 22px; }
+      #zly-build-magnet .zly-form-row { flex-direction: column; }
+      #zly-build-magnet .zly-input { min-width: 0; }
+      #zly-build-magnet .magnet-card .btn-primary { width: 100%; justify-content: center; }
+      #zly-build-magnet .magnet-stats { gap: 20px; }
+    }
+  </style>
+
+  <section class="magnet-band">
+    <div class="magnet-wrap">
+      <div class="magnet-copy">
+        <span class="tag">stop googling "how to start a business"</span>
+        <h2>Get the guide instead of the guesswork.</h2>
+        <p>The exact steps we walk every founder through, condensed into one free guide. No fluff, no 40-minute YouTube video required.</p>
+        <div class="magnet-stats">
+          <div class="magnet-stat"><div class="num">80%</div><p>of founders feel stuck or uncertain in the first 90 days</p></div>
+          <div class="magnet-stat"><div class="num">70%</div><p>of entrepreneurs wish they'd asked for help sooner</p></div>
+          <div class="magnet-stat"><div class="num">5x</div><p>more likely to succeed with a structured launch process</p></div>
+        </div>
+      </div>
+
+      <div class="magnet-card">
+        <svg class="icon" viewBox="0 0 48 48" fill="none"><rect x="10" y="6" width="28" height="36" rx="2" stroke="#b5482d" stroke-width="2.5"/><line x1="16" y1="16" x2="32" y2="16" stroke="#b5482d" stroke-width="2"/><line x1="16" y1="24" x2="32" y2="24" stroke="#b5482d" stroke-width="2"/><line x1="16" y1="32" x2="26" y2="32" stroke="#b5482d" stroke-width="2"/></svg>
+        <h3>How to Start a Business</h3>
+        <p class="desc">Our free step-by-step guide. Enter your email and it lands in your inbox in a couple of minutes.</p>
+
+        <form id="zly-guide-form" novalidate>
+          <div class="zly-form-row">
+            <input class="zly-input" type="email" id="zly-guide-email" placeholder="you@yourbusiness.com" required>
+            <button type="submit" class="btn btn-primary" id="zly-guide-submit">Send me the guide</button>
+          </div>
+          <p class="form-note">One email, no spam. Unsubscribe anytime.</p>
+          <p class="form-status" id="zly-guide-status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      // TODO: replace with your real form endpoint (Squarespace, ConvertKit, Mailchimp, or your own API)
+      var FORM_ENDPOINT = "https://REPLACE-WITH-YOUR-FORM-ENDPOINT.example.com/subscribe";
+
+      var form = document.getElementById('zly-guide-form');
+      var status = document.getElementById('zly-guide-status');
+      var submitBtn = document.getElementById('zly-guide-submit');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = document.getElementById('zly-guide-email').value.trim();
+
+        if (!email || !email.includes('@')) {
+          status.textContent = "That email doesn't look right, mind double-checking it?";
+          status.className = 'form-status error';
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email, source: 'build-page-guide' })
+        })
+          .then(function (res) {
+            if (!res.ok) throw new Error('Request failed');
+            status.textContent = "Sent. Check your inbox in the next couple of minutes.";
+            status.className = 'form-status success';
+            form.reset();
+          })
+          .catch(function () {
+            status.textContent = "Something didn't go through. Try again, or email us directly.";
+            status.className = 'form-status error';
+          })
+          .finally(function () {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send me the guide';
+          });
+      });
+    })();
+  </script>
+</div>

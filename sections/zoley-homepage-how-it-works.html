@@ -1,0 +1,107 @@
+<!--
+ZOLEY HOMEPAGE — HOW IT WORKS SECTION
+Vertical numbered timeline with divider lines and a scroll-triggered fade-up per step.
+-->
+
+<div id="zly-home-how">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-home-how {
+      --paper: #faf3e7;
+      --ink: #1b2430;
+      --ink-soft: #5c6b76;
+      --barn: #b5482d;
+      --sage: #7a8b69;
+      --violet: #6c5ce7;
+      --blue: #4ea1ff;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+    }
+    #zly-home-how * { box-sizing: border-box; }
+    #zly-home-how .zhy-section { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-home-how h2 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); font-size: clamp(26px, 3vw, 34px); max-width: 580px; }
+    #zly-home-how h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-home-how p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-home-how .zhy-tag {
+      font-family: 'Caveat', cursive; font-size: 22px; font-weight: 700;
+      color: var(--barn);
+      display: inline-block; transform: rotate(-2deg); margin-bottom: 10px; padding: 0 4px;
+    }
+
+    #zly-home-how .zhy-recipe { background: #fff9ef; border: 1px solid var(--border); border-radius: 10px; padding: 44px; margin-top: 40px; max-width: 720px; }
+    #zly-home-how .zhy-recipe ol { list-style: none; counter-reset: zhy-step; margin: 0; padding: 0; }
+    #zly-home-how .zhy-recipe li {
+      position: relative; counter-increment: zhy-step;
+      padding-left: 64px; padding-bottom: 28px; margin-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    #zly-home-how .zhy-recipe li.visible { opacity: 1; transform: translateY(0); }
+    #zly-home-how .zhy-recipe li:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    #zly-home-how .zhy-recipe li::before {
+      content: counter(zhy-step); font-family: 'Newsreader', serif; font-weight: 600; font-size: 17px;
+      position: absolute; left: 0; top: 0; width: 40px; height: 40px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #zly-home-how .zhy-recipe h3 { font-size: 19px; margin-bottom: 6px; }
+    #zly-home-how .zhy-recipe p { font-size: 15px; }
+
+    @media (max-width: 900px) {
+      #zly-home-how .zhy-section { padding: 60px 20px; }
+      #zly-home-how .zhy-recipe { padding: 32px 26px; }
+      #zly-home-how .zhy-recipe li { padding-left: 54px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #zly-home-how .zhy-recipe li { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+
+  <section class="zhy-section">
+    <span class="zhy-tag">how it works</span>
+    <h2>Four steps. No surprises, no tech-speak.</h2>
+    <div class="zhy-recipe">
+      <ol>
+        <li>
+          <h3>Fill out a Quick Start form or book a free call</h3>
+          <p>Let's find out where you are in your journey and what we can help you with.</p>
+        </li>
+        <li>
+          <h3>Get a tailored plan</h3>
+          <p>We'll work with you to build a practical roadmap, and bring focus to the most important areas for you.</p>
+        </li>
+        <li>
+          <h3>Build Mode: Activated</h3>
+          <p>We roll up our sleeves, build out your solution, and keep you in the loop — no stress on your end.</p>
+        </li>
+        <li>
+          <h3>Execute and grow</h3>
+          <p>We'll help you through implementation, or hand it off ready to go.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      var items = document.querySelectorAll('#zly-home-how .zhy-recipe li');
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(function (el) { el.classList.add('visible'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      items.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+</div>

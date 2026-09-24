@@ -1,0 +1,139 @@
+<!--
+ZOLEY HOMEPAGE — WHO THIS IS FOR (INFINITE CARD SCROLL) SECTION
+Auto-scrolling marquee of audience cards, pauses on hover, starts once scrolled into view.
+-->
+
+<div id="zly-home-who">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-home-who {
+      --paper: #faf3e7; --card: #fff9ef;
+      --ink: #1b2430; --ink-soft: #5c6b76;
+      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: var(--paper); color: var(--ink);
+    }
+    #zly-home-who * { box-sizing: border-box; }
+    #zly-home-who .zhy-section { padding: 90px 0; max-width: 1160px; margin: 0 auto; }
+    #zly-home-who .zhy-intro { padding: 0 24px; margin-bottom: 36px; }
+    #zly-home-who h2 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); font-size: clamp(26px, 3vw, 34px); max-width: 580px; }
+    #zly-home-who .zhy-tag {
+      font-family: 'Caveat', cursive; font-size: 22px; font-weight: 700;
+      color: var(--barn);
+      display: inline-block; transform: rotate(-2deg); margin-bottom: 10px; padding: 0 4px;
+    }
+
+    #zly-home-who .infinite-card-scroll { overflow: hidden; position: relative; padding: 8px 24px; }
+    #zly-home-who .scroll-track { display: flex; gap: 22px; width: max-content; }
+    #zly-home-who .animate-on-scroll .scroll-track { animation: zly-who-scroll 40s linear infinite; animation-play-state: paused; }
+    #zly-home-who .start-animation .scroll-track { animation-play-state: running; }
+    #zly-home-who .infinite-card-scroll:hover .scroll-track { animation-play-state: paused !important; }
+
+    #zly-home-who .card {
+      flex: 0 0 200px; background: var(--card); color: var(--ink);
+      border-radius: 10px; padding: 20px; box-shadow: 0 6px 16px rgba(27,36,48,0.10);
+      transition: transform 0.2s ease; border: 3px solid transparent;
+    }
+    #zly-home-who .card:hover { transform: translateY(-4px); }
+    #zly-home-who .card h3 { margin: 0 0 8px; font-size: 17px; }
+    #zly-home-who .card p { margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5; }
+
+    #zly-home-who .gradient-1 { border-image: linear-gradient(45deg, var(--barn), var(--marigold)) 1; }
+    #zly-home-who .gradient-2 { border-image: linear-gradient(45deg, var(--sage), var(--blue)) 1; }
+    #zly-home-who .gradient-3 { border-image: linear-gradient(45deg, var(--violet), var(--marigold)) 1; }
+    #zly-home-who .gradient-4 { border-image: linear-gradient(45deg, var(--blue), var(--barn)) 1; }
+    #zly-home-who .gradient-5 { border-image: linear-gradient(45deg, var(--sage), var(--violet)) 1; }
+
+    #zly-home-who .color-1 { color: var(--barn); }
+    #zly-home-who .color-2 { color: var(--sage); }
+    #zly-home-who .color-3 { color: var(--violet); }
+    #zly-home-who .color-4 { color: var(--blue); }
+    #zly-home-who .color-5 { color: var(--ink); }
+
+    @keyframes zly-who-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    @media (max-width: 900px) {
+      #zly-home-who .zhy-section { padding: 60px 0; }
+      #zly-home-who .card { flex-basis: 170px; padding: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #zly-home-who .scroll-track { animation: none !important; }
+    }
+  </style>
+
+  <section class="zhy-section">
+    <div class="zhy-intro">
+      <span class="zhy-tag">who this is for</span>
+      <h2>Built for founders at every stage.</h2>
+    </div>
+
+    <div class="infinite-card-scroll animate-on-scroll">
+      <div class="scroll-track">
+        <div class="card gradient-1">
+          <h3 class="color-1">Aspiring Founders</h3>
+          <p>You have a spark of an idea and need help turning it into a real venture.</p>
+        </div>
+        <div class="card gradient-2">
+          <h3 class="color-2">Solo Operators</h3>
+          <p>You wear every hat and want to buy back your time through systems and automation.</p>
+        </div>
+        <div class="card gradient-3">
+          <h3 class="color-3">The Creative</h3>
+          <p>You make great things, but need help getting them in front of the right audience.</p>
+        </div>
+        <div class="card gradient-4">
+          <h3 class="color-4">Legacy Owners</h3>
+          <p>You run a traditional business that needs to catch up digitally.</p>
+        </div>
+        <div class="card gradient-5">
+          <h3 class="color-5">I don't know what I need</h3>
+          <p>You know you need help, but don't know where to start — and want honest guidance.</p>
+        </div>
+        <!-- duplicate set for a seamless loop -->
+        <div class="card gradient-1">
+          <h3 class="color-1">Aspiring Founders</h3>
+          <p>You have a spark of an idea and need help turning it into a real venture.</p>
+        </div>
+        <div class="card gradient-2">
+          <h3 class="color-2">Solo Operators</h3>
+          <p>You wear every hat and want to buy back your time through systems and automation.</p>
+        </div>
+        <div class="card gradient-3">
+          <h3 class="color-3">The Creative</h3>
+          <p>You make great things, but need help getting them in front of the right audience.</p>
+        </div>
+        <div class="card gradient-4">
+          <h3 class="color-4">Legacy Owners</h3>
+          <p>You run a traditional business that needs to catch up digitally.</p>
+        </div>
+        <div class="card gradient-5">
+          <h3 class="color-5">I don't know what I need</h3>
+          <p>You know you need help, but don't know where to start — and want honest guidance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      var container = document.querySelector('#zly-home-who .infinite-card-scroll');
+      if (!container) return;
+
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              setTimeout(function () { entry.target.classList.add('start-animation'); }, 800);
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.3 });
+        io.observe(container);
+      } else {
+        container.classList.add('start-animation');
+      }
+    })();
+  </script>
+</div>

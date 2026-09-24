@@ -1,0 +1,46 @@
+<!--
+ZOLEY — ELEVATE YOUR BRAND PAGE — STAT STRIP SECTION
+-->
+
+<div id="zly-elev-stats">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-elev-stats {
+      --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+      --barn: #b5482d; --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-elev-stats * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-elev-stats .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-elev-stats h2 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-elev-stats p { color: var(--ink-soft); line-height: 1.65; }
+
+    #zly-elev-stats .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+    #zly-elev-stats .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 32px 22px; transform: rotate(var(--r, 0deg)); }
+    #zly-elev-stats .stat-card:nth-child(1) { --r: -1deg; }
+    #zly-elev-stats .stat-card:nth-child(2) { --r: 1deg; }
+    #zly-elev-stats .stat-card:nth-child(3) { --r: -0.5deg; }
+    #zly-elev-stats .stat-card .num { font-family: 'Newsreader', serif; font-size: clamp(36px, 4vw, 48px); font-weight: 600; color: var(--barn); }
+    #zly-elev-stats .stat-card p { font-size: 14px; margin-top: 8px; }
+    #zly-elev-stats .process-header { text-align: center; margin-bottom: 40px; }
+    #zly-elev-stats .process-header h2 { font-size: clamp(24px, 2.8vw, 32px); max-width: 600px; margin: 0 auto; }
+
+    @media (max-width: 900px) {
+      #zly-elev-stats .stat-strip { grid-template-columns: 1fr; }
+      #zly-elev-stats .sec { padding: 60px 20px; }
+    }
+    @media (max-width: 480px) {
+      #zly-elev-stats .stat-card { transform: none; }
+    }
+  </style>
+
+  <section class="sec">
+    <div class="process-header"><h2>The cost of standing still.</h2></div>
+    <div class="stat-strip">
+      <div class="stat-card"><div class="num">95%</div><p>of consumers are less likely to return after a poor experience</p></div>
+      <div class="stat-card"><div class="num">88%</div><p>of users leave a site that takes longer than 3 seconds to load</p></div>
+      <div class="stat-card"><div class="num">53%</div><p>of customers read reviews before they ever buy</p></div>
+    </div>
+  </section>
+</div>

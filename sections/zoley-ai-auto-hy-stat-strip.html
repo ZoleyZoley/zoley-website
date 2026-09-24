@@ -1,0 +1,104 @@
+<!--
+ZOLEY — AI & AUTOMATION PAGE (HYBRID) — STAT STRIP SECTION
+-->
+
+<div id="zly-ai-auto-hy-stat-strip">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-ai-auto-hy-stat-strip {
+      --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef;
+      --ink: #1b2430; --ink-soft: #5c6b76;
+      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-ai-auto-hy-stat-strip * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-ai-auto-hy-stat-strip .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-ai-auto-hy-stat-strip h1, #zly-ai-auto-hy-stat-strip h2, #zly-ai-auto-hy-stat-strip h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-ai-auto-hy-stat-strip p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-ai-auto-hy-stat-strip .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 12px; padding: 0 4px; color: var(--barn); }
+
+    /* HERO */
+    #zly-ai-auto-hy-stat-strip .hero { padding: 108px 24px 72px; max-width: 900px; margin: 0 auto; text-align: center; }
+    #zly-ai-auto-hy-stat-strip .hero h1 { font-size: clamp(34px, 4.6vw, 54px); }
+    #zly-ai-auto-hy-stat-strip .hero p.sub { font-size: 18.5px; max-width: 540px; margin: 20px auto 30px; }
+    #zly-ai-auto-hy-stat-strip .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-ai-auto-hy-stat-strip .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-ai-auto-hy-stat-strip .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-ai-auto-hy-stat-strip .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    #zly-ai-auto-hy-stat-strip .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+    #zly-ai-auto-hy-stat-strip .btn-outline { background: transparent; color: #fff9ef; border: 2px solid var(--barn); }
+    #zly-ai-auto-hy-stat-strip .btn-outline:hover { background: var(--barn); }
+    #zly-ai-auto-hy-stat-strip .final .btn-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* TIME COST */
+    #zly-ai-auto-hy-stat-strip .time-band { padding: 70px 24px; }
+    #zly-ai-auto-hy-stat-strip .time-card { max-width: 1160px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 56px; box-shadow: 0 18px 40px -20px rgba(27,36,48,0.28); position: relative; overflow: hidden; }
+    #zly-ai-auto-hy-stat-strip .time-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--barn), var(--marigold)); }
+    #zly-ai-auto-hy-stat-strip .time-eyebrow { display: block; font-size: 12.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--barn); margin-bottom: 14px; }
+    #zly-ai-auto-hy-stat-strip .time-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; align-items: center; }
+    #zly-ai-auto-hy-stat-strip .time-stat { font-family: 'Newsreader', serif; font-size: clamp(64px, 8vw, 96px); font-weight: 600; line-height: 1; color: var(--barn); text-shadow: 0 2px 0 rgba(181,72,45,0.12); }
+    #zly-ai-auto-hy-stat-strip .time-stat span { font-size: 16px; color: var(--ink-soft); font-family: 'DM Sans', sans-serif; display: block; margin-top: 12px; font-weight: 600; }
+    #zly-ai-auto-hy-stat-strip .time-grid h2 { font-size: clamp(26px, 3vw, 34px); }
+
+    /* PILLARS */
+    #zly-ai-auto-hy-stat-strip .pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+    #zly-ai-auto-hy-stat-strip .pillar { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 36px; position: relative; overflow: hidden; }
+    #zly-ai-auto-hy-stat-strip .pillar::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--barn), var(--violet), var(--blue)); }
+    #zly-ai-auto-hy-stat-strip .pillar h3 { font-size: 23px; margin-bottom: 10px; }
+    #zly-ai-auto-hy-stat-strip .pillar > p { font-size: 15px; margin-bottom: 20px; }
+    #zly-ai-auto-hy-stat-strip .pillar ul { list-style: none; }
+    #zly-ai-auto-hy-stat-strip .pillar li { position: relative; padding-left: 22px; font-size: 14.5px; color: var(--ink-soft); margin-bottom: 11px; }
+    #zly-ai-auto-hy-stat-strip .pillar li::before { content: ''; position: absolute; left: 0; top: 7px; width: 7px; height: 7px; border-radius: 50%; background: var(--marigold); }
+    #zly-ai-auto-hy-stat-strip .pillar .btn { margin-top: 22px; }
+
+    /* STAT STRIP */
+    #zly-ai-auto-hy-stat-strip .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+    #zly-ai-auto-hy-stat-strip .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 32px 22px; transform: rotate(var(--r, 0deg)); }
+    #zly-ai-auto-hy-stat-strip .stat-card:nth-child(1) { --r: -1deg; }
+    #zly-ai-auto-hy-stat-strip .stat-card:nth-child(2) { --r: 1deg; }
+    #zly-ai-auto-hy-stat-strip .stat-card:nth-child(3) { --r: -0.5deg; }
+    #zly-ai-auto-hy-stat-strip .stat-card .num { font-family: 'Newsreader', serif; font-size: clamp(36px, 4vw, 48px); font-weight: 600; color: var(--barn); }
+    #zly-ai-auto-hy-stat-strip .stat-card p { font-size: 14px; margin-top: 8px; }
+    #zly-ai-auto-hy-stat-strip .stat-close { text-align: center; max-width: 620px; margin: 40px auto 0; font-size: 16.5px; color: var(--ink); font-family: 'Newsreader', serif; font-style: italic; line-height: 1.5; }
+
+    /* PROCESS GRID */
+    #zly-ai-auto-hy-stat-strip .process-header { text-align: center; margin-bottom: 40px; }
+    #zly-ai-auto-hy-stat-strip .process-header h2 { font-size: clamp(24px, 2.8vw, 32px); max-width: 600px; margin: 0 auto; }
+    #zly-ai-auto-hy-stat-strip .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; counter-reset: step; }
+    #zly-ai-auto-hy-stat-strip .process-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 24px; counter-increment: step; position: relative; padding-top: 44px; }
+    #zly-ai-auto-hy-stat-strip .process-card::before { content: counter(step); font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 13px; line-height: 1; position: absolute; top: 16px; left: 18px; width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; display: flex; align-items: center; justify-content: center; }
+    #zly-ai-auto-hy-stat-strip .process-card h3 { font-size: 16.5px; margin-bottom: 6px; }
+    #zly-ai-auto-hy-stat-strip .process-card p { font-size: 13.5px; }
+
+    /* FINAL CTA */
+    #zly-ai-auto-hy-stat-strip .final { background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center; margin: 0 24px; max-width: 1112px; margin-left: auto; margin-right: auto; position: relative; overflow: hidden; }
+    #zly-ai-auto-hy-stat-strip .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+    #zly-ai-auto-hy-stat-strip .final > * { position: relative; }
+    #zly-ai-auto-hy-stat-strip .final h2 { color: var(--paper); font-size: clamp(27px, 3.2vw, 36px); margin-bottom: 14px; }
+    #zly-ai-auto-hy-stat-strip .final p { color: #c7d0d6; max-width: 460px; margin: 0 auto 26px; }
+
+    @media (max-width: 900px) {
+      #zly-ai-auto-hy-stat-strip .time-grid, #zly-ai-auto-hy-stat-strip .pillars { grid-template-columns: 1fr; }
+      #zly-ai-auto-hy-stat-strip .stat-strip, #zly-ai-auto-hy-stat-strip .process-grid { grid-template-columns: 1fr; }
+      #zly-ai-auto-hy-stat-strip .sec { padding: 60px 20px; }
+      #zly-ai-auto-hy-stat-strip .time-band { padding: 40px 20px; }
+      #zly-ai-auto-hy-stat-strip .time-card { padding: 32px 24px; }
+    }
+  </style>
+
+  <!-- STAT STRIP -->
+  <section class="sec">
+    <div class="process-header">
+      <span class="tag" style="display:block; text-align:center;">the bigger picture</span>
+      <h2>AI is changing how business gets done. Is your business ready?</h2>
+    </div>
+    <div class="stat-strip">
+      <div class="stat-card"><div class="num">72%</div><p>of companies worldwide now use AI in at least one part of the business</p></div>
+      <div class="stat-card"><div class="num">79%</div><p>of business leaders say they need AI to stay competitive</p></div>
+      <div class="stat-card"><div class="num">$1.3T</div><p>in sales expected to be driven by AI by 2032</p></div>
+    </div>
+    <p class="stat-close">"This is a real shift, not a passing trend, and waiting has a cost."</p>
+  </section>
+</div>

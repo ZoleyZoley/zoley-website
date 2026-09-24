@@ -1,0 +1,176 @@
+<!--
+ZOLEY — QUICKSTART — Form
+Source: main pages/zoley-quickstart.v2.html
+Scoped under #zly-quickstart-form. Self-contained: drop into a Squarespace Code Block.
+-->
+
+<div id="zly-quickstart-form">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;
+    /* ===== form ===== */
+      #zly-quickstart-form {
+        --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+        --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff; --border: rgba(27,36,48,0.14);
+        font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+      }
+    #zly-quickstart-form * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-quickstart-form .sec { padding: 20px 24px 80px; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 30px; align-items: start; }
+    #zly-quickstart-form h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-quickstart-form p { color: var(--ink-soft); line-height: 1.6; }
+    #zly-quickstart-form label { font-size: 13.5px; font-weight: 700; color: var(--ink); display: block; margin-bottom: 6px; }
+    #zly-quickstart-form label span { font-weight: 400; color: var(--ink-soft); }
+    #zly-quickstart-form .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 16px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-quickstart-form .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-quickstart-form .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-quickstart-form .qs-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 40px; position: relative; overflow: hidden; }
+    #zly-quickstart-form .qs-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--barn), var(--violet), var(--blue)); }
+    #zly-quickstart-form .qs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+    #zly-quickstart-form .qs-field { margin-bottom: 0; }
+    #zly-quickstart-form .qs-field.full { grid-column: 1 / -1; }
+    #zly-quickstart-form .zly-input, #zly-quickstart-form .zly-select, #zly-quickstart-form .zly-textarea { width: 100%; padding: 13px 14px; border-radius: 8px; border: 1.5px solid var(--border); font-family: 'DM Sans', sans-serif; font-size: 15px; background: var(--paper); color: var(--ink); }
+    #zly-quickstart-form .zly-textarea { resize: vertical; min-height: 100px; }
+    #zly-quickstart-form .zly-input:focus, #zly-quickstart-form .zly-select:focus, #zly-quickstart-form .zly-textarea:focus { outline: none; border-color: var(--violet); }
+    #zly-quickstart-form .form-note { font-size: 12.5px; color: var(--ink-soft); margin-top: 14px; text-align: center; }
+    #zly-quickstart-form .form-status { font-size: 14px; margin-top: 14px; text-align: center; display: none; }
+    #zly-quickstart-form .form-status.success { display: block; color: var(--sage); font-weight: 600; }
+    #zly-quickstart-form .form-status.error { display: block; color: var(--barn); font-weight: 600; }
+    /* side panel */
+      #zly-quickstart-form .side { background: var(--paper-2); border: 1px solid var(--border); border-radius: 14px; padding: 30px; position: sticky; top: 24px; }
+    #zly-quickstart-form .side .tag { font-family: 'Caveat', cursive; font-size: 20px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 6px; color: var(--barn); }
+    #zly-quickstart-form .side h3 { font-size: 20px; margin-bottom: 14px; }
+    #zly-quickstart-form .side ul { list-style: none; margin-bottom: 22px; }
+    #zly-quickstart-form .side li { display: flex; gap: 10px; font-size: 14px; color: var(--ink); padding: 7px 0; line-height: 1.5; }
+    #zly-quickstart-form .side li::before { content: '\2713'; color: var(--sage); font-weight: 700; flex-shrink: 0; }
+    #zly-quickstart-form .side .never { border-top: 1px solid var(--border); padding-top: 16px; }
+    #zly-quickstart-form .side .never h4 { font-family: 'DM Sans', sans-serif; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 8px; }
+    #zly-quickstart-form .side .never p { font-size: 13.5px; }
+    #zly-quickstart-form .side .alt { margin-top: 18px; font-size: 13.5px; }
+    #zly-quickstart-form .side .alt a { color: var(--barn); font-weight: 700; text-decoration: underline; text-decoration-color: #e3a72e; text-underline-offset: 3px; }
+    @media (max-width: 900px) {
+      #zly-quickstart-form .sec { grid-template-columns: 1fr; padding: 16px 20px 60px; }
+      #zly-quickstart-form .qs-card { padding: 28px 24px; }
+      #zly-quickstart-form .side { position: static; padding: 24px; }
+    }
+    @media (max-width: 480px) {
+      #zly-quickstart-form .qs-grid { grid-template-columns: 1fr; }
+      #zly-quickstart-form .qs-card { padding: 24px 20px; }
+    }
+  </style>
+
+  <section class="sec">
+    <div class="qs-card">
+      <form id="zly-qs-form" novalidate>
+        <div class="qs-grid">
+          <div class="qs-field">
+            <label for="zly-qs-name">Your name</label>
+            <input class="zly-input" type="text" id="zly-qs-name" name="name" placeholder="Jamie Rivera" required autocomplete="name">
+          </div>
+          <div class="qs-field">
+            <label for="zly-qs-email">Email</label>
+            <input class="zly-input" type="email" id="zly-qs-email" name="email" placeholder="you@yourbusiness.com" required autocomplete="email">
+          </div>
+          <div class="qs-field">
+            <label for="zly-qs-business">Business name</label>
+            <input class="zly-input" type="text" id="zly-qs-business" name="business" placeholder="Rivera's Coffee Co." autocomplete="organization">
+          </div>
+          <div class="qs-field">
+            <label for="zly-qs-site">Website <span>(optional)</span></label>
+            <input class="zly-input" type="url" id="zly-qs-site" name="website" placeholder="https://" autocomplete="url">
+          </div>
+          <div class="qs-field full">
+            <label for="zly-qs-help">What would you most like to change?</label>
+            <select class="zly-select" id="zly-qs-help" name="help_type">
+              <option value="">Choose one...</option>
+              <option value="strategy">Strategy: pricing, market research, a new offer</option>
+              <option value="ai">AI: put it to work on a specific job</option>
+              <option value="automation">Automation: follow-up, scheduling, invoicing, reporting</option>
+              <option value="web">Website: rebuild or improve what I have</option>
+              <option value="ads">Advertising: run or fix paid campaigns</option>
+              <option value="build">Launch: I'm starting a new business</option>
+              <option value="not-sure">Not sure yet. Help me figure out what's worth fixing first.</option>
+            </select>
+          </div>
+          <div class="qs-field full">
+            <label for="zly-qs-stage">Where is the business today?</label>
+            <select class="zly-select" id="zly-qs-stage" name="stage">
+              <option value="">Choose one...</option>
+              <option value="idea">An idea, not yet launched</option>
+              <option value="early">Launched, under two years old</option>
+              <option value="running">Established and running</option>
+              <option value="scaling">Established and ready to scale</option>
+            </select>
+          </div>
+          <div class="qs-field full">
+            <label for="zly-qs-notes">What's slowing you down right now? <span>(optional, but the more specific, the better the plan)</span></label>
+            <textarea class="zly-textarea" id="zly-qs-notes" name="notes" placeholder="For example: leads come in through the site but we're slow to reply, and I'm doing invoices by hand at month-end."></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="zly-qs-submit">Send me my plan</button>
+        <p class="form-note">A real person reads this. You'll hear back within two business days.</p>
+        <p class="form-status" id="zly-qs-status"></p>
+      </form>
+    </div>
+
+    <aside class="side">
+      <span class="tag">what you'll get back</span>
+      <h3>A written recommendation, not a sales call.</h3>
+      <ul>
+        <li>The one or two things we'd fix first, and why those before anything else</li>
+        <li>What the first engagement would include, step by step</li>
+        <li>A fixed price and a realistic timeline</li>
+        <li>What result we'd expect, and how we'd measure it</li>
+      </ul>
+      <div class="never">
+        <h4>What we won't do</h4>
+        <p>Add you to a drip sequence, share your details, or follow up more than once. If the plan isn't right for you, delete the email and that's the end of it.</p>
+      </div>
+      <p class="alt">Prefer to talk it through? <a href="https://calendly.com/zoley/free-30-min-discovery-call">Book a 30-minute call</a> instead.</p>
+    </aside>
+  </section>
+
+  <script>
+    (function () {
+      // TODO: replace with your real form endpoint (Squarespace, CRM webhook, or your own API).
+      var FORM_ENDPOINT = "https://REPLACE-WITH-YOUR-FORM-ENDPOINT.example.com/quick-start";
+      var form = document.getElementById('zly-qs-form');
+      var status = document.getElementById('zly-qs-status');
+      var submitBtn = document.getElementById('zly-qs-submit');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = document.getElementById('zly-qs-name').value.trim();
+        var email = document.getElementById('zly-qs-email').value.trim();
+        if (!name) { status.textContent = "Mind adding your name?"; status.className = 'form-status error'; return; }
+        if (!email || !email.includes('@')) { status.textContent = "That email doesn't look right. Mind double-checking it?"; status.className = 'form-status error'; return; }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        var payload = {
+          name: name,
+          email: email,
+          business: document.getElementById('zly-qs-business').value.trim(),
+          website: document.getElementById('zly-qs-site').value.trim(),
+          help_type: document.getElementById('zly-qs-help').value,
+          stage: document.getElementById('zly-qs-stage').value,
+          notes: document.getElementById('zly-qs-notes').value.trim(),
+          source: 'quick-start-page-v2'
+        };
+
+        fetch(FORM_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+          .then(function (res) {
+            if (!res.ok) throw new Error('Request failed');
+            status.textContent = "Received. You'll have your plan within two business days.";
+            status.className = 'form-status success';
+            form.reset();
+          })
+          .catch(function () {
+            status.textContent = "Something didn't go through. Try again, or email sales@zoley.io.";
+            status.className = 'form-status error';
+          })
+          .finally(function () { submitBtn.disabled = false; submitBtn.textContent = 'Send me my plan'; });
+      });
+    })();
+  </script>
+</div>

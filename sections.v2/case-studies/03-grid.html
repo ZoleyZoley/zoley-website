@@ -1,0 +1,70 @@
+<!--
+ZOLEY — CASE-STUDIES — Grid
+Source: main pages/zoley-case-studies.v2.html
+Scoped under #zly-cs-grid. Self-contained: drop into a Squarespace Code Block.
+-->
+
+<div id="zly-cs-grid">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;
+    /* ===== grid ===== */
+      #zly-cs-grid {
+        --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+        --barn: #b5482d; --violet: #6c5ce7; --blue: #4ea1ff; --sage: #7a8b69; --border: rgba(27,36,48,0.14);
+        font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+      }
+    #zly-cs-grid * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-cs-grid .sec { padding: 20px 24px 90px; max-width: 1160px; margin: 0 auto; }
+    #zly-cs-grid h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-cs-grid .cs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 26px; }
+    #zly-cs-grid .cs-card { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 28px; position: relative; overflow: hidden; text-decoration: none; color: inherit; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-cs-grid .cs-card:hover { transform: translateY(-6px); box-shadow: 0 18px 32px -16px rgba(27,36,48,0.28); }
+    #zly-cs-grid .cs-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--barn), var(--violet), var(--blue)); }
+    #zly-cs-grid .cs-tag { font-size: 12.5px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--barn); font-weight: 700; margin-bottom: 10px; }
+    #zly-cs-grid .cs-card h3 { font-size: 20px; margin-bottom: 8px; }
+    #zly-cs-grid .cs-headline { font-size: 14.5px; color: var(--ink-soft); line-height: 1.5; margin-bottom: 12px; }
+    #zly-cs-grid .cs-did { font-size: 13px; color: var(--ink); margin-bottom: 18px; line-height: 1.5; }
+    #zly-cs-grid .cs-did strong { color: var(--violet); }
+    #zly-cs-grid .cs-spark { width: 100%; height: 44px; margin-bottom: 4px; }
+    #zly-cs-grid .cs-spark svg { width: 100%; height: 44px; display: block; }
+    #zly-cs-grid .cs-stat { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border); }
+    #zly-cs-grid .cs-stat .num { font-family: 'Newsreader', serif; font-size: 22px; font-weight: 600; color: var(--barn); margin-right: 6px; }
+    #zly-cs-grid .cs-stat .label { font-size: 13px; color: var(--ink-soft); }
+    #zly-cs-grid .cs-link { display: block; margin-top: 16px; font-size: 14px; font-weight: 700; color: var(--ink); }
+    #zly-cs-grid .cs-card:hover .cs-link { color: var(--barn); }
+    @media (max-width: 900px) {
+      #zly-cs-grid .sec { padding: 16px 20px 60px; }
+      #zly-cs-grid .cs-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <section class="sec">
+    <div class="cs-grid">
+
+      <!-- CASE STUDY CARDS START — paste new cards anywhere above the END marker -->
+
+      <a class="cs-card" href="#">
+        <span class="cs-tag">example · local coffee shop</span>
+        <h3>Example Co.</h3>
+        <p class="cs-headline">Online orders rose 40% in six weeks after a rebuilt ordering page and an automated re-order reminder. (Replace this card with a real one, or delete it.)</p>
+        <p class="cs-did"><strong>What we did:</strong> web design, automation</p>
+        <div class="cs-spark"><svg viewBox="0 0 280 44" preserveAspectRatio="none" aria-hidden="true"><path d="M0 34 L40 32 L80 33 L120 28 L160 22 L200 16 L240 12 L280 8" stroke="#6c5ce7" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M0 34 L40 32 L80 33 L120 28 L160 22 L200 16 L240 12 L280 8 L280 44 L0 44 Z" fill="#6c5ce7" opacity="0.1"/></svg></div>
+        <div class="cs-stat"><span class="num">+40%</span><span class="label">online orders, six weeks</span></div>
+        <span class="cs-link">Read the case study &rarr;</span>
+      </a>
+
+      <a class="cs-card" href="#">
+        <span class="cs-tag">example · home services</span>
+        <h3>Sample Business</h3>
+        <p class="cs-headline">Three hours a week returned to the owner by automating lead follow-up and invoice reminders. (Replace this card with a real one, or delete it.)</p>
+        <p class="cs-did"><strong>What we did:</strong> automation</p>
+        <div class="cs-spark"><svg viewBox="0 0 280 44" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 L40 12 L80 14 L120 20 L160 26 L200 30 L240 34 L280 36" stroke="#7a8b69" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M0 10 L40 12 L80 14 L120 20 L160 26 L200 30 L240 34 L280 36 L280 44 L0 44 Z" fill="#7a8b69" opacity="0.12"/></svg></div>
+        <div class="cs-stat"><span class="num">3 hrs/wk</span><span class="label">of manual follow-up removed</span></div>
+        <span class="cs-link">Read the case study &rarr;</span>
+      </a>
+
+      <!-- CASE STUDY CARDS END -->
+
+    </div>
+  </section>
+</div>

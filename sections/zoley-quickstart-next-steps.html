@@ -1,0 +1,43 @@
+<!--
+ZOLEY — QUICK START PAGE — WHAT HAPPENS NEXT SECTION
+-->
+
+<div id="zly-quickstart-next">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-quickstart-next {
+      --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+      --sage: #7a8b69; --blue: #4ea1ff; --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-quickstart-next * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-quickstart-next .sec { padding: 0 24px 96px; max-width: 900px; margin: 0 auto; }
+    #zly-quickstart-next h2, #zly-quickstart-next h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-quickstart-next p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-quickstart-next .next-header { text-align: center; margin-bottom: 32px; }
+    #zly-quickstart-next .next-header h2 { font-size: clamp(22px, 2.6vw, 28px); }
+
+    #zly-quickstart-next .next-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; counter-reset: step; }
+    #zly-quickstart-next .next-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 24px; text-align: center; counter-increment: step; }
+    #zly-quickstart-next .next-card::before { content: counter(step); font-family: 'Newsreader', serif; font-weight: 600; font-size: 15px; width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
+    #zly-quickstart-next .next-card h3 { font-size: 16.5px; margin-bottom: 6px; }
+    #zly-quickstart-next .next-card p { font-size: 13.5px; }
+
+    @media (max-width: 900px) {
+      #zly-quickstart-next .next-grid { grid-template-columns: 1fr; }
+      #zly-quickstart-next .sec { padding: 0 20px 64px; }
+    }
+  </style>
+
+  <section class="sec">
+    <div class="next-header">
+      <h2>What happens after you hit submit.</h2>
+    </div>
+    <div class="next-grid">
+      <div class="next-card"><h3>We read every submission</h3><p>A real person looks at what you send, not a bot or an autoresponder.</p></div>
+      <div class="next-card"><h3>We reply with a plan</h3><p>Clear next steps and pricing shaped around your answers, no generic pitch.</p></div>
+      <div class="next-card"><h3>You decide what's next</h3><p>No pressure to commit. Ask questions, compare, take your time.</p></div>
+    </div>
+  </section>
+</div>

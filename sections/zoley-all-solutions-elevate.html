@@ -1,0 +1,60 @@
+<!--
+ZOLEY — ALL SOLUTIONS PAGE — "ELEVATE YOUR BRAND" SECTION
+-->
+
+<div id="zly-sol-elevate">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-sol-elevate {
+      --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+      --barn: #b5482d; --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-sol-elevate * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-sol-elevate h2 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-sol-elevate p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-sol-elevate .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 26px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-sol-elevate .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-sol-elevate .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+
+    #zly-sol-elevate .solution { padding: 70px 24px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; scroll-margin-top: 30px; }
+    #zly-sol-elevate .solution.reverse .solution-copy { order: 2; }
+    #zly-sol-elevate .solution.reverse .solution-art { order: 1; }
+    #zly-sol-elevate .solution-copy .kicker { font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--barn); font-weight: 700; margin-bottom: 10px; display: block; }
+    #zly-sol-elevate .solution-copy h2 { font-size: clamp(26px, 3vw, 36px); margin-bottom: 6px; }
+    #zly-sol-elevate .solution-copy .subhead { font-family: 'Newsreader', serif; font-style: italic; font-size: 17px; color: var(--ink-soft); margin-bottom: 16px; }
+    #zly-sol-elevate .solution-copy p.body { font-size: 15.5px; margin-bottom: 24px; }
+    #zly-sol-elevate .solution-art { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 30px; }
+    #zly-sol-elevate .solution-art svg { width: 100%; height: auto; display: block; }
+    #zly-sol-elevate .divider { border: none; border-top: 1px dashed var(--border); max-width: 1160px; margin: 0 auto; }
+
+    @media (max-width: 900px) {
+      #zly-sol-elevate .solution, #zly-sol-elevate .solution.reverse { grid-template-columns: 1fr; }
+      #zly-sol-elevate .solution.reverse .solution-copy, #zly-sol-elevate .solution.reverse .solution-art { order: initial; }
+      #zly-sol-elevate .solution { padding: 56px 20px; }
+    }
+  </style>
+
+  <section class="solution reverse" id="elevate-your-brand">
+    <div class="solution-copy">
+      <span class="kicker">Elevate your brand</span>
+      <h2>Make your presence impossible to ignore.</h2>
+      <p class="subhead">Already up and running?</p>
+      <p class="body">Let's refine how the world sees you. From polished websites to strategic positioning and content that converts, we'll sharpen your message and bring your brand into focus, so customers don't scroll past.</p>
+      <a href="https://www.zoley.io/elevate" class="btn btn-primary">Explore branding services</a>
+    </div>
+    <div class="solution-art">
+      <svg viewBox="0 0 360 260" fill="none">
+        <ellipse cx="180" cy="230" rx="90" ry="10" fill="#f6e4b8"/>
+        <path d="M180 230 C170 190 170 150 180 110" stroke="#1b2430" stroke-width="2.5" fill="none"/>
+        <path d="M120 130 C120 90 240 90 240 130 C240 160 210 165 180 160 C150 165 120 160 120 130 Z" fill="#e3a72e" stroke="#1b2430" stroke-width="2.5"/>
+        <circle cx="150" cy="70" r="14" fill="#6c5ce7" opacity="0.85"/>
+        <circle cx="210" cy="60" r="10" fill="#4ea1ff" opacity="0.85"/>
+        <circle cx="180" cy="45" r="8" fill="#b5482d" opacity="0.85"/>
+      </svg>
+    </div>
+  </section>
+
+  <hr class="divider">
+</div>

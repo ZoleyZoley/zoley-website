@@ -1,0 +1,272 @@
+# Zoley website — v2 sections
+
+Every section here is **self-contained**: it carries its own scoped CSS and renders on its own.
+`sections.v2/` is generated from the `.v2.html` files in `main pages/`, which stay as the reference copy.
+The originals (`.html`, no `.v2`) are untouched and still in `main pages/`.
+
+## Squarespace wiring
+
+**Once**, in Settings → Advanced → Code Injection → **Header**:
+
+```html
+<script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.0.0/dist/zoley-loader.js"></script>
+```
+
+Then each page gets Code Blocks containing one line each (listed per page below).
+Paste those once; you never touch them again.
+
+**To ship a change:** edit the section file → `git push` → `git tag v1.0.1 && git push --tags` → bump `@v1.0.0` to `@v1.0.1` in the header snippet. That version number is the only thing you ever edit in Squarespace.
+
+> Why a pinned tag and not `@main`: jsDelivr caches branch URLs for 12 hours at the edge and **7 days in a browser that has already loaded them**. Exact tags are immutable and go live immediately.
+
+---
+
+## homepage  →  `/`
+
+Source: `main pages/zoley-homepage.v2.html` · 8 sections
+
+| # | Section | File | Wrapper id |
+|---|---|---|---|
+| 1 | Hero | `homepage/01-hero.html` | `#zly-hy-hero` |
+| 2 | Capabilities + Rotating Text | `homepage/02-capabilities.html` | `#zly-hy-capabilities` |
+| 3 | Approach | `homepage/03-approach.html` | `#zly-hy-approach` |
+| 4 | Who We Are | `homepage/04-who-we-are.html` | `#zly-hy-who-we-are` |
+| 5 | Resources | `homepage/05-resources.html` | `#zly-hy-resources` |
+| 6 | Featured | `homepage/06-featured.html` | `#zly-hy-featured` |
+| 7 | Testimonials | `homepage/07-testimonials.html` | `#zly-hy-testimonials` |
+| 8 | Final CTA | `homepage/08-final-cta.html` | `#zly-hy-final-cta` |
+
+```html
+<div data-zoley-section="homepage/01-hero"></div>
+<div data-zoley-section="homepage/02-capabilities"></div>
+<div data-zoley-section="homepage/03-approach"></div>
+<div data-zoley-section="homepage/04-who-we-are"></div>
+<div data-zoley-section="homepage/05-resources"></div>
+<div data-zoley-section="homepage/06-featured"></div>
+<div data-zoley-section="homepage/07-testimonials"></div>
+<div data-zoley-section="homepage/08-final-cta"></div>
+```
+
+## ai  →  `/ai`
+
+Source: `main pages/zoley-ai-page.v2.html` · 8 sections
+
+| # | Section | File | Wrapper id |
+|---|---|---|---|
+| 1 | Hero | `ai/01-hero.html` | `#zly-ai-hero` |
+| 2 | Adoption Gap | `ai/02-adoption-gap.html` | `#zly-ai-adoption-gap` |
+| 3 | What We Do | `ai/03-what-we-do.html` | `#zly-ai-what-we-do` |
+| 4 | Current State | `ai/04-current-state.html` | `#zly-ai-current-state` |
+| 5 | Where We'd Advise Against It | `ai/05-advise-against.html` | `#zly-ai-advise-against` |
+| 6 | How We Do It | `ai/06-how-we-do-it.html` | `#zly-ai-how-we-do-it` |
+| 7 | Case Study | `ai/07-case-study.html` | `#zly-ai-case-study` |
+| 8 | Final CTA | `ai/08-final-cta.html` | `#zly-ai-final-cta` |
+
+```html
+<div data-zoley-section="ai/01-hero"></div>
+<div data-zoley-section="ai/02-adoption-gap"></div>
+<div data-zoley-section="ai/03-what-we-do"></div>
+<div data-zoley-section="ai/04-current-state"></div>
+<div data-zoley-section="ai/05-advise-against"></div>
+<div data-zoley-section="ai/06-how-we-do-it"></div>
+<div data-zoley-section="ai/07-case-study"></div>
+<div data-zoley-section="ai/08-final-cta"></div>
+```
+
+## automation  →  `/automation`
+
+Source: `main pages/zoley-automation-page.v2.html` · 8 sections
+
+| # | Section | File | Wrapper id |
+|---|---|---|---|
+| 1 | Hero | `automation/01-hero.html` | `#zly-auto-hero` |
+| 2 | Cost Of Manual Work | `automation/02-cost-of-manual-work.html` | `#zly-auto-cost-of-manual-work` |
+| 3 | What We Automate | `automation/03-what-we-automate.html` | `#zly-auto-what-we-automate` |
+| 4 | Current State | `automation/04-current-state.html` | `#zly-auto-current-state` |
+| 5 | Where To Start | `automation/05-where-to-start.html` | `#zly-auto-where-to-start` |
+| 6 | How We Do It | `automation/06-how-we-do-it.html` | `#zly-auto-how-we-do-it` |
+| 7 | Case Study | `automation/07-case-study.html` | `#zly-auto-case-study` |
+| 8 | Final CTA | `automation/08-final-cta.html` | `#zly-auto-final-cta` |
+
+```html
+<div data-zoley-section="automation/01-hero"></div>
+<div data-zoley-section="automation/02-cost-of-manual-work"></div>
+<div data-zoley-section="automation/03-what-we-automate"></div>
+<div data-zoley-section="automation/04-current-state"></div>
+<div data-zoley-section="automation/05-where-to-start"></div>
+<div data-zoley-section="automation/06-how-we-do-it"></div>
+<div data-zoley-section="automation/07-case-study"></div>
+<div data-zoley-section="automation/08-final-cta"></div>
+```
+
+## advertising  →  `/digital-advertising`
+
+Source: `main pages/zoley-digital-advertising-page.v2.html` · 9 sections
+
+| # | Section | File | Wrapper id |
+|---|---|---|---|
+| 1 | Hero | `advertising/01-hero.html` | `#zly-ads-hero` |
+| 2 | Cost Of Guessing | `advertising/02-cost-of-guessing.html` | `#zly-ads-cost-of-guessing` |
+| 3 | What We Do | `advertising/03-what-we-do.html` | `#zly-ads-what-we-do` |
+| 4 | Current State | `advertising/04-current-state.html` | `#zly-ads-current-state` |
+| 5 | Where We'd Advise Against It | `advertising/05-advise-against.html` | `#zly-ads-advise-against` |
+| 6 | How We Do It | `advertising/06-how-we-do-it.html` | `#zly-ads-how-we-do-it` |
+| 7 | Tracking & Metrics | `advertising/07-tracking-metrics.html` | `#zly-ads-tracking-metrics` |
+| 8 | Case Study | `advertising/08-case-study.html` | `#zly-ads-case-study` |
+| 9 | Final CTA | `advertising/09-final-cta.html` | `#zly-ads-final-cta` |
+
+```html
+<div data-zoley-section="advertising/01-hero"></div>
+<div data-zoley-section="advertising/02-cost-of-guessing"></div>
+<div data-zoley-section="advertising/03-what-we-do"></div>
+<div data-zoley-section="advertising/04-current-state"></div>
+<div data-zoley-section="advertising/05-advise-against"></div>
+<div data-zoley-section="advertising/06-how-we-do-it"></div>
+<div data-zoley-section="advertising/07-tracking-metrics"></div>
+<div data-zoley-section="advertising/08-case-study"></div>
+<div data-zoley-section="advertising/09-final-cta"></div>
+```
+
+## consulting  →  `/strategic-consulting`
+
+Source: `main pages/zoley-strategic-consulting-page.v2.html` · 8 sections
+
+| # | Section | File | Wrapper id |
+|---|---|---|---|
+| 1 | Hero | `consulting/01-hero.html` | `#zly-consulting-hero` |
+| 2 | Cost Of Guessing | `consulting/02-cost-of-guessing.html` | `#zly-consulting-cost-of-guessing` |
+| 3 | What We Do | `consulting/03-what-we-do.html` | `#zly-consulting-what-we-do` |
+| 4 | Current State | `consulting/04-current-state.html` | `#zly-consulting-current-state` |
+| 5 | What You Receive | `consulting/05-what-you-receive.html` | `#zly-consulting-what-you-receive` |
+| 6 | How We Do It | `consulting/06-how-we-do-it.html` | `#zly-consulting-how-we-do-it` |
+| 7 | Case Study | `consulting/07-case-study.html` | `#zly-consulting-case-study` |
+| 8 | Final CTA | `consulting/08-final-cta.html` | `#zly-consulting-final-cta` |
+
+```html
+<div data-zoley-section="consulting/01-hero"></div>
+<div data-zoley-section="consulting/02-cost-of-guessing"></div>
+<div data-zoley-section="consulting/03-what-we-do"></div>
+<div data-zoley-section="consulting/04-current-state"></div>
+<div data-zoley-section="consulting/05-what-you-receive"></div>
+<div data-zoley-section="consulting/06-how-we-do-it"></div>
+<div data-zoley-section="consulting/07-case-study"></div>
+<div data-zoley-section="consulting/08-final-cta"></div>
+```
+
+## web-design  →  `/web-design`
+
+Source: `main pages/zoley-web-design-page.v2.html` · 9 sections
+
+| # | Section | File | Wrapper id |
+|---|---|---|---|
+| 1 | Hero | `web-design/01-hero.html` | `#zly-web-hero` |
+| 2 | Cost Of A Slow Site | `web-design/02-cost-of-slow-site.html` | `#zly-web-cost-of-slow-site` |
+| 3 | What We Do | `web-design/03-what-we-do.html` | `#zly-web-what-we-do` |
+| 4 | Current State | `web-design/04-current-state.html` | `#zly-web-current-state` |
+| 5 | Signs | `web-design/05-signs.html` | `#zly-web-signs` |
+| 6 | How We Do It | `web-design/06-how-we-do-it.html` | `#zly-web-how-we-do-it` |
+| 7 | What We Measure | `web-design/07-what-we-measure.html` | `#zly-web-what-we-measure` |
+| 8 | Case Study | `web-design/08-case-study.html` | `#zly-web-case-study` |
+| 9 | Final CTA | `web-design/09-final-cta.html` | `#zly-web-final-cta` |
+
+```html
+<div data-zoley-section="web-design/01-hero"></div>
+<div data-zoley-section="web-design/02-cost-of-slow-site"></div>
+<div data-zoley-section="web-design/03-what-we-do"></div>
+<div data-zoley-section="web-design/04-current-state"></div>
+<div data-zoley-section="web-design/05-signs"></div>
+<div data-zoley-section="web-design/06-how-we-do-it"></div>
+<div data-zoley-section="web-design/07-what-we-measure"></div>
+<div data-zoley-section="web-design/08-case-study"></div>
+<div data-zoley-section="web-design/09-final-cta"></div>
+```
+
+## about  →  `/about`
+
+Source: `main pages/zoley-about.v2.html` · 5 sections
+
+| # | Section | File | Wrapper id |
+|---|---|---|---|
+| 1 | Hero | `about/01-hero.html` | `#zly-about-hero` |
+| 2 | Story | `about/02-story.html` | `#zly-about-story` |
+| 3 | How We Work | `about/03-how-we-work.html` | `#zly-about-how` |
+| 4 | Principles | `about/04-principles.html` | `#zly-about-values` |
+| 5 | Final CTA | `about/05-final-cta.html` | `#zly-about-cta` |
+
+```html
+<div data-zoley-section="about/01-hero"></div>
+<div data-zoley-section="about/02-story"></div>
+<div data-zoley-section="about/03-how-we-work"></div>
+<div data-zoley-section="about/04-principles"></div>
+<div data-zoley-section="about/05-final-cta"></div>
+```
+
+## pricing  →  `/pricing`
+
+Source: `main pages/zoley-pricing.v2.html` · 3 sections
+
+| # | Section | File | Wrapper id |
+|---|---|---|---|
+| 1 | Hero | `pricing/01-hero.html` | `#zly-price-hero` |
+| 2 | What Shapes A Quote | `pricing/02-what-shapes-a-quote.html` | `#zly-price-shape` |
+| 3 | Two Paths | `pricing/03-two-paths.html` | `#zly-price-paths` |
+
+```html
+<div data-zoley-section="pricing/01-hero"></div>
+<div data-zoley-section="pricing/02-what-shapes-a-quote"></div>
+<div data-zoley-section="pricing/03-two-paths"></div>
+```
+
+## quickstart  →  `/find-your-next-best-business-move`
+
+Source: `main pages/zoley-quickstart.v2.html` · 3 sections
+
+| # | Section | File | Wrapper id |
+|---|---|---|---|
+| 1 | Hero | `quickstart/01-hero.html` | `#zly-quickstart-hero` |
+| 2 | Form | `quickstart/02-form.html` | `#zly-quickstart-form` |
+| 3 | Next Steps | `quickstart/03-next-steps.html` | `#zly-quickstart-next` |
+
+```html
+<div data-zoley-section="quickstart/01-hero"></div>
+<div data-zoley-section="quickstart/02-form"></div>
+<div data-zoley-section="quickstart/03-next-steps"></div>
+```
+
+## build  →  `/build`
+
+Source: `main pages/zoley-build.v2.html` · 5 sections
+
+| # | Section | File | Wrapper id |
+|---|---|---|---|
+| 1 | Hero | `build/01-hero.html` | `#zly-build-hero` |
+| 2 | Lead Magnet | `build/02-lead-magnet.html` | `#zly-build-magnet` |
+| 3 | Services | `build/03-services.html` | `#zly-build-services` |
+| 4 | Validation | `build/04-validation.html` | `#zly-build-validate` |
+| 5 | Final CTA | `build/05-final-cta.html` | `#zly-build-cta` |
+
+```html
+<div data-zoley-section="build/01-hero"></div>
+<div data-zoley-section="build/02-lead-magnet"></div>
+<div data-zoley-section="build/03-services"></div>
+<div data-zoley-section="build/04-validation"></div>
+<div data-zoley-section="build/05-final-cta"></div>
+```
+
+## case-studies  →  `/case-studies`
+
+Source: `main pages/zoley-case-studies.v2.html` · 4 sections
+
+| # | Section | File | Wrapper id |
+|---|---|---|---|
+| 1 | Hero | `case-studies/01-hero.html` | `#zly-cs-hero` |
+| 2 | How We Measure | `case-studies/02-how-we-measure.html` | `#zly-cs-measure` |
+| 3 | Grid | `case-studies/03-grid.html` | `#zly-cs-grid` |
+| 4 | Final CTA | `case-studies/04-final-cta.html` | `#zly-cs-cta` |
+
+```html
+<div data-zoley-section="case-studies/01-hero"></div>
+<div data-zoley-section="case-studies/02-how-we-measure"></div>
+<div data-zoley-section="case-studies/03-grid"></div>
+<div data-zoley-section="case-studies/04-final-cta"></div>
+```

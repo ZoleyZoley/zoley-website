@@ -1,0 +1,44 @@
+<!--
+ZOLEY — AI & AUTOMATION PAGE — AUTOMATION PROCESS GRID SECTION
+-->
+
+<div id="zly-ai-process-auto">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-ai-process-auto {
+      --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+      --sage: #7a8b69; --blue: #4ea1ff; --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-ai-process-auto * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-ai-process-auto .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-ai-process-auto h2, #zly-ai-process-auto h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-ai-process-auto p { color: var(--ink-soft); line-height: 1.65; }
+
+    #zly-ai-process-auto .process-header { text-align: center; margin-bottom: 40px; }
+    #zly-ai-process-auto .process-header h2 { font-size: clamp(24px, 2.8vw, 32px); max-width: 600px; margin: 0 auto; }
+    #zly-ai-process-auto .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; counter-reset: step; }
+    #zly-ai-process-auto .process-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 24px; counter-increment: step; position: relative; padding-top: 44px; }
+    #zly-ai-process-auto .process-card::before { content: counter(step); font-family: 'Newsreader', serif; font-weight: 600; font-size: 15px; position: absolute; top: 16px; left: 18px; width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; display: flex; align-items: center; justify-content: center; }
+    #zly-ai-process-auto .process-card h3 { font-size: 16.5px; margin-bottom: 6px; }
+    #zly-ai-process-auto .process-card p { font-size: 13.5px; }
+
+    @media (max-width: 900px) {
+      #zly-ai-process-auto .process-grid { grid-template-columns: 1fr; }
+      #zly-ai-process-auto .sec { padding: 60px 20px; }
+    }
+  </style>
+
+  <section class="sec">
+    <div class="process-header"><h2>How we build your automation.</h2></div>
+    <div class="process-grid">
+      <div class="process-card"><h3>Automation Audit</h3><p>Find the repeat tasks most worth fixing first.</p></div>
+      <div class="process-card"><h3>Build &amp; Connect</h3><p>Wire it into your current systems, seamlessly.</p></div>
+      <div class="process-card"><h3>Workflow Strategy</h3><p>Leaner, faster workflows that save time and money.</p></div>
+      <div class="process-card"><h3>Tool Selection</h3><p>Tools chosen because they work, not because they're trendy.</p></div>
+      <div class="process-card"><h3>Scale with Automations</h3><p>Expand what's working, retire what isn't.</p></div>
+      <div class="process-card"><h3>Optimize</h3><p>Keep it maintained so results hold up over time.</p></div>
+    </div>
+  </section>
+</div>

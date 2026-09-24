@@ -1,0 +1,83 @@
+<!--
+ZOLEY — ALL SOLUTIONS PAGE (HYBRID) — BUILD YOUR COMPANY SECTION
+-->
+
+<div id="zly-solutions-hy-build-your-company">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-solutions-hy-build-your-company {
+      --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef;
+      --ink: #1b2430; --ink-soft: #5c6b76;
+      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); scroll-behavior: smooth;
+    }
+    #zly-solutions-hy-build-your-company * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-solutions-hy-build-your-company .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-solutions-hy-build-your-company h1, #zly-solutions-hy-build-your-company h2, #zly-solutions-hy-build-your-company h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-solutions-hy-build-your-company p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-solutions-hy-build-your-company .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 12px; padding: 0 4px; color: var(--barn); }
+    #zly-solutions-hy-build-your-company .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 26px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-solutions-hy-build-your-company .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-solutions-hy-build-your-company .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+
+    /* HERO */
+    #zly-solutions-hy-build-your-company .hero { padding: 100px 24px 40px; max-width: 780px; margin: 0 auto; text-align: center; }
+    #zly-solutions-hy-build-your-company .hero h1 { font-size: clamp(32px, 4.2vw, 50px); }
+    #zly-solutions-hy-build-your-company .hero p.sub { font-size: 17.5px; max-width: 560px; margin: 20px auto 0; }
+
+    /* THREE PILLS */
+    #zly-solutions-hy-build-your-company .pill-row { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin: 30px 0 10px; }
+    #zly-solutions-hy-build-your-company .pill { background: var(--card); border: 1px solid var(--border); border-radius: 100px; padding: 10px 20px; font-size: 13.5px; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; }
+
+    /* ANCHOR NAV */
+    #zly-solutions-hy-build-your-company .anchor-nav { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; padding: 30px 24px 10px; max-width: 900px; margin: 0 auto; }
+    #zly-solutions-hy-build-your-company .anchor-nav a { font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; padding: 9px 16px; border-radius: 100px; border: 1.5px solid var(--border); background: var(--card); transition: border-color 0.15s ease; }
+    #zly-solutions-hy-build-your-company .anchor-nav a:hover { border-color: var(--barn); }
+
+    /* SOLUTION BLOCK */
+    #zly-solutions-hy-build-your-company .solution { padding: 70px 24px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; scroll-margin-top: 30px; }
+    #zly-solutions-hy-build-your-company .solution.reverse .solution-copy { order: 2; }
+    #zly-solutions-hy-build-your-company .solution.reverse .solution-art { order: 1; }
+    #zly-solutions-hy-build-your-company .solution-copy .kicker { font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--barn); font-weight: 700; margin-bottom: 10px; display: block; }
+    #zly-solutions-hy-build-your-company .solution-copy h2 { font-size: clamp(26px, 3vw, 36px); margin-bottom: 6px; }
+    #zly-solutions-hy-build-your-company .solution-copy .subhead { font-family: 'Newsreader', serif; font-style: italic; font-size: 17px; color: var(--ink-soft); margin-bottom: 16px; }
+    #zly-solutions-hy-build-your-company .solution-copy p.body { font-size: 15.5px; margin-bottom: 24px; }
+    #zly-solutions-hy-build-your-company .solution-art { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 30px; }
+    #zly-solutions-hy-build-your-company .solution-art svg { width: 100%; height: auto; display: block; }
+    #zly-solutions-hy-build-your-company .divider { border: none; border-top: 1px dashed var(--border); max-width: 1160px; margin: 0 auto; }
+
+    @media (max-width: 900px) {
+      #zly-solutions-hy-build-your-company .solution, #zly-solutions-hy-build-your-company .solution.reverse { grid-template-columns: 1fr; }
+      #zly-solutions-hy-build-your-company .solution.reverse .solution-copy, #zly-solutions-hy-build-your-company .solution.reverse .solution-art { order: initial; }
+      #zly-solutions-hy-build-your-company .sec, #zly-solutions-hy-build-your-company .solution { padding: 56px 20px; }
+    }
+  </style>
+
+  <!-- BUILD YOUR COMPANY -->
+  <section class="solution" id="build-your-company">
+    <div class="solution-copy">
+      <span class="kicker">Build your company</span>
+      <h2>From spark to startup.</h2>
+      <p class="subhead">You've got an idea, now what?</p>
+      <p class="body">Whether you're launching your first business or exploring a side hustle, we'll help you take the right first steps. From LLC setup to one-page websites, we'll lay the foundation to turn your vision into something real.</p>
+      <a href="https://www.zoley.io/build" class="btn btn-primary">Get started</a>
+    </div>
+    <div class="solution-art">
+      <svg viewBox="0 0 360 260" fill="none">
+        <circle cx="180" cy="130" r="6" fill="#e3a72e"/>
+        <path d="M180 130 C 150 100 150 60 180 30" stroke="#b5482d" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M180 30 L 165 55 M180 30 L 195 55" stroke="#b5482d" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <rect x="60" y="180" width="60" height="50" rx="2" stroke="#1b2430" stroke-width="2.5" fill="#fff9ef"/>
+        <path d="M60 180 L 90 160 L 120 180" stroke="#1b2430" stroke-width="2.5" fill="none"/>
+        <rect x="150" y="170" width="60" height="60" rx="2" stroke="#1b2430" stroke-width="2.5" fill="#fff9ef"/>
+        <path d="M150 170 L 180 145 L 210 170" stroke="#1b2430" stroke-width="2.5" fill="none"/>
+        <rect x="240" y="190" width="60" height="40" rx="2" stroke="#1b2430" stroke-width="2.5" fill="#fff9ef"/>
+        <path d="M240 190 L 270 172 L 300 190" stroke="#1b2430" stroke-width="2.5" fill="none"/>
+      </svg>
+    </div>
+  </section>
+
+  <hr class="divider">
+</div>

@@ -1,0 +1,52 @@
+<!--
+ZOLEY — AI & AUTOMATION PAGE — AUTOMATION STAT STRIP SECTION
+-->
+
+<div id="zly-ai-stats-auto">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-ai-stats-auto {
+      --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+      --barn: #b5482d; --violet: #6c5ce7; --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-ai-stats-auto * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-ai-stats-auto .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-ai-stats-auto h2 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-ai-stats-auto p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-ai-stats-auto .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 12px; padding: 0 4px; color: var(--barn); }
+
+    #zly-ai-stats-auto .process-header { text-align: center; margin-bottom: 40px; }
+    #zly-ai-stats-auto .process-header h2 { font-size: clamp(24px, 2.8vw, 32px); max-width: 600px; margin: 0 auto; }
+    #zly-ai-stats-auto .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+    #zly-ai-stats-auto .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 32px 22px; transform: rotate(var(--r, 0deg)); }
+    #zly-ai-stats-auto .stat-card:nth-child(1) { --r: -1deg; }
+    #zly-ai-stats-auto .stat-card:nth-child(2) { --r: 1deg; }
+    #zly-ai-stats-auto .stat-card:nth-child(3) { --r: -0.5deg; }
+    #zly-ai-stats-auto .stat-card .num { font-family: 'Newsreader', serif; font-size: clamp(36px, 4vw, 48px); font-weight: 600; color: var(--barn); }
+    #zly-ai-stats-auto .stat-card p { font-size: 14px; margin-top: 8px; }
+    #zly-ai-stats-auto .stat-close { text-align: center; max-width: 620px; margin: 40px auto 0; font-size: 16.5px; color: var(--ink); font-family: 'Newsreader', serif; font-style: italic; line-height: 1.5; }
+
+    @media (max-width: 900px) {
+      #zly-ai-stats-auto .stat-strip { grid-template-columns: 1fr; }
+      #zly-ai-stats-auto .sec { padding: 60px 20px; }
+    }
+    @media (max-width: 480px) {
+      #zly-ai-stats-auto .stat-card { transform: none; }
+    }
+  </style>
+
+  <section class="sec">
+    <div class="process-header">
+      <span class="tag" style="display:block; text-align:center;">the bigger picture</span>
+      <h2>Automation is setting the pace. Are you matching it?</h2>
+    </div>
+    <div class="stat-strip">
+      <div class="stat-card"><div class="num">58%</div><p>of business leaders say automation frees up time for higher-value work</p></div>
+      <div class="stat-card"><div class="num">78%</div><p>of small businesses already use at least one automation tool</p></div>
+      <div class="stat-card"><div class="num">2-5x</div><p>faster growth is typical for businesses that automate well</p></div>
+    </div>
+    <p class="stat-close">"Your time should go toward growing the business, not repeating the same task by hand."</p>
+  </section>
+</div>

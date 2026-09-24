@@ -1,0 +1,44 @@
+<!--
+ZOLEY — AI & AUTOMATION PAGE — AI PROCESS GRID SECTION
+-->
+
+<div id="zly-ai-process-ai">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-ai-process-ai {
+      --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+      --sage: #7a8b69; --blue: #4ea1ff; --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-ai-process-ai * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-ai-process-ai .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-ai-process-ai h2, #zly-ai-process-ai h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-ai-process-ai p { color: var(--ink-soft); line-height: 1.65; }
+
+    #zly-ai-process-ai .process-header { text-align: center; margin-bottom: 40px; }
+    #zly-ai-process-ai .process-header h2 { font-size: clamp(24px, 2.8vw, 32px); max-width: 600px; margin: 0 auto; }
+    #zly-ai-process-ai .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; counter-reset: step; }
+    #zly-ai-process-ai .process-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 24px; counter-increment: step; position: relative; padding-top: 44px; }
+    #zly-ai-process-ai .process-card::before { content: counter(step); font-family: 'Newsreader', serif; font-weight: 600; font-size: 15px; position: absolute; top: 16px; left: 18px; width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; display: flex; align-items: center; justify-content: center; }
+    #zly-ai-process-ai .process-card h3 { font-size: 16.5px; margin-bottom: 6px; }
+    #zly-ai-process-ai .process-card p { font-size: 13.5px; }
+
+    @media (max-width: 900px) {
+      #zly-ai-process-ai .process-grid { grid-template-columns: 1fr; }
+      #zly-ai-process-ai .sec { padding: 60px 20px; }
+    }
+  </style>
+
+  <section class="sec">
+    <div class="process-header"><h2>How we bring AI into your business.</h2></div>
+    <div class="process-grid">
+      <div class="process-card"><h3>AI Audit</h3><p>Find where AI actually helps, and where it's just noise.</p></div>
+      <div class="process-card"><h3>Integrate AI</h3><p>Connect it into what you're already using, seamlessly.</p></div>
+      <div class="process-card"><h3>AI Strategy</h3><p>A plan built around your business, not a generic playbook.</p></div>
+      <div class="process-card"><h3>Find the Right Tools</h3><p>Cut through the noise and pick what earns its keep.</p></div>
+      <div class="process-card"><h3>Scale With AI</h3><p>Expand what's working, drop what isn't.</p></div>
+      <div class="process-card"><h3>Optimize</h3><p>Keep it sharp and useful as you grow.</p></div>
+    </div>
+  </section>
+</div>

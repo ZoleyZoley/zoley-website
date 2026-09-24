@@ -1,0 +1,355 @@
+<!--
+ZOLEY BUILD YOUR COMPANY PAGE — V2 — ONE CODE BLOCK FOR THIS ENTIRE PAGE
+Sections: Illustrated Hero / Lead Magnet (dark band) / What's Included / Validation Test / Final CTA
+
+V2 CHANGES (vs zoley-build.html):
+- Hero is now two-column with an inline SVG roadmap illustration (idea -> validate -> launch -> grow).
+- Copy rewritten in a more authoritative register. Primary CTA is the Quick Start form.
+- The three unsourced lead-magnet stats (80% / 70% / 5x) replaced with sourced figures (see V2-NOTES.md).
+- Each service card now states what you receive.
+- FORM_ENDPOINT in the lead-magnet script is still a placeholder — wire it before publishing.
+-->
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+  /* ===== hero ===== */
+  #zly-build-hero {
+    --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+    --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff; --border: rgba(27,36,48,0.14);
+    font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+  }
+  #zly-build-hero * { box-sizing: border-box; margin: 0; padding: 0; }
+  #zly-build-hero h1 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+  #zly-build-hero p { color: var(--ink-soft); line-height: 1.65; }
+  #zly-build-hero .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: var(--barn); }
+  #zly-build-hero .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  #zly-build-hero .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+  #zly-build-hero .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+  #zly-build-hero .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+  #zly-build-hero .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+  #zly-build-hero .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  #zly-build-hero .cta-note { font-size: 13px; margin-top: 12px; }
+  #zly-build-hero .hero { padding: 108px 24px 70px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  #zly-build-hero .hero h1 { font-size: clamp(34px, 4.4vw, 54px); }
+  #zly-build-hero .hero p.sub { font-size: 18px; max-width: 500px; margin: 20px 0 30px; }
+  #zly-build-hero .board { background: var(--paper-2); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+  #zly-build-hero .board svg { width: 100%; height: auto; display: block; }
+  #zly-build-hero .flag { animation: zbh-wave 3s ease-in-out infinite; transform-origin: 0 100%; transform-box: fill-box; }
+  @keyframes zbh-wave { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(4deg); } }
+  @media (prefers-reduced-motion: reduce) { #zly-build-hero .flag { animation: none; } }
+  @media (max-width: 900px) { #zly-build-hero .hero { grid-template-columns: 1fr; padding: 72px 20px 44px; gap: 36px; } }
+  @media (max-width: 560px) { #zly-build-hero .hero { padding: 56px 18px 36px; } #zly-build-hero .cta-row { flex-direction: column; align-items: stretch; } #zly-build-hero .btn { justify-content: center; } }
+
+  /* ===== lead magnet ===== */
+  #zly-build-magnet {
+    --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+    --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --border: rgba(27,36,48,0.14);
+    font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+  }
+  #zly-build-magnet * { box-sizing: border-box; margin: 0; padding: 0; }
+  #zly-build-magnet h2, #zly-build-magnet h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+  #zly-build-magnet p { color: var(--ink-soft); line-height: 1.65; }
+  #zly-build-magnet .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; }
+  #zly-build-magnet .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  #zly-build-magnet .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+  #zly-build-magnet .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+  #zly-build-magnet .magnet-band { background: var(--ink); padding: 70px 24px; position: relative; overflow: hidden; }
+  #zly-build-magnet .magnet-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 85% 80%, rgba(181,72,45,0.2), transparent 55%); }
+  #zly-build-magnet .magnet-wrap { position: relative; max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 0.9fr; gap: 50px; align-items: center; }
+  #zly-build-magnet .magnet-copy .tag { color: var(--marigold); }
+  #zly-build-magnet .magnet-copy h2 { color: var(--paper); font-size: clamp(28px, 3.4vw, 40px); margin-bottom: 14px; }
+  #zly-build-magnet .magnet-copy p { color: #c7d0d6; font-size: 16px; margin-bottom: 20px; }
+  #zly-build-magnet .magnet-stats { display: flex; gap: 28px; margin-top: 26px; flex-wrap: wrap; }
+  #zly-build-magnet .magnet-stat .num { font-family: 'Newsreader', serif; font-size: 32px; font-weight: 600; color: #fff; }
+  #zly-build-magnet .magnet-stat p { font-size: 13px; max-width: 160px; color: #9aa6ae; margin: 0; }
+  #zly-build-magnet .magnet-card { background: var(--card); border-radius: 14px; padding: 36px; box-shadow: 0 20px 50px rgba(0,0,0,0.35); }
+  #zly-build-magnet .magnet-card .icon { width: 44px; height: 44px; margin-bottom: 16px; }
+  #zly-build-magnet .magnet-card h3 { font-size: 21px; margin-bottom: 8px; }
+  #zly-build-magnet .magnet-card p.desc { font-size: 14.5px; margin-bottom: 14px; }
+  #zly-build-magnet .magnet-card ul { list-style: none; margin-bottom: 20px; }
+  #zly-build-magnet .magnet-card li { font-size: 13.5px; color: var(--ink); padding: 5px 0 5px 22px; position: relative; }
+  #zly-build-magnet .magnet-card li::before { content: '\2713'; position: absolute; left: 0; color: var(--sage); font-weight: 700; }
+  #zly-build-magnet .zly-form-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  #zly-build-magnet .zly-input { flex: 1; min-width: 180px; padding: 14px 16px; border-radius: 8px; border: 1.5px solid var(--border); font-family: 'DM Sans', sans-serif; font-size: 15px; background: var(--paper); color: var(--ink); }
+  #zly-build-magnet .zly-input:focus { outline: none; border-color: var(--violet); }
+  #zly-build-magnet .magnet-card .btn-primary { white-space: nowrap; }
+  #zly-build-magnet .form-note { font-size: 12.5px; color: var(--ink-soft); margin-top: 12px; }
+  #zly-build-magnet .form-status { font-size: 14px; margin-top: 12px; display: none; }
+  #zly-build-magnet .form-status.success { display: block; color: var(--sage); font-weight: 600; }
+  #zly-build-magnet .form-status.error { display: block; color: var(--barn); font-weight: 600; }
+  @media (max-width: 900px) { #zly-build-magnet .magnet-wrap { grid-template-columns: 1fr; } #zly-build-magnet .magnet-band { padding: 52px 20px; } }
+  @media (max-width: 480px) { #zly-build-magnet .magnet-card { padding: 26px 22px; } #zly-build-magnet .zly-form-row { flex-direction: column; } #zly-build-magnet .zly-input { min-width: 0; } #zly-build-magnet .magnet-card .btn-primary { width: 100%; justify-content: center; } #zly-build-magnet .magnet-stats { gap: 20px; } }
+
+  /* ===== services ===== */
+  #zly-build-services {
+    --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+    --barn: #b5482d; --violet: #6c5ce7; --blue: #4ea1ff; --border: rgba(27,36,48,0.14);
+    font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+  }
+  #zly-build-services * { box-sizing: border-box; margin: 0; padding: 0; }
+  #zly-build-services .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+  #zly-build-services h2, #zly-build-services h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+  #zly-build-services p { color: var(--ink-soft); line-height: 1.65; }
+  #zly-build-services .process-header { text-align: center; margin-bottom: 10px; }
+  #zly-build-services .process-header h2 { font-size: clamp(26px, 3vw, 36px); max-width: 640px; margin: 0 auto; }
+  #zly-build-services .process-header p { max-width: 600px; margin: 14px auto 0; font-size: 16px; }
+  #zly-build-services .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+  #zly-build-services .service-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 28px; position: relative; overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  #zly-build-services .service-card:hover { transform: translateY(-6px); box-shadow: 0 18px 32px -16px rgba(27,36,48,0.28); }
+  #zly-build-services .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--barn), var(--violet), var(--blue)); }
+  #zly-build-services .service-card h3 { font-size: 19px; margin-bottom: 8px; }
+  #zly-build-services .service-card p { font-size: 14.5px; }
+  #zly-build-services .service-card .out { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 13px; color: var(--ink); }
+  #zly-build-services .service-card .out strong { color: var(--barn); }
+  @media (max-width: 900px) { #zly-build-services .services-grid { grid-template-columns: 1fr; } #zly-build-services .sec { padding: 60px 20px; } }
+
+  /* ===== validation ===== */
+  #zly-build-validate {
+    --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+    --barn: #b5482d; --violet: #6c5ce7; --sage: #7a8b69; --marigold: #e3a72e; --border: rgba(27,36,48,0.14);
+    font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+  }
+  #zly-build-validate * { box-sizing: border-box; margin: 0; padding: 0; }
+  #zly-build-validate .sec { padding: 20px 24px 90px; max-width: 1160px; margin: 0 auto; }
+  #zly-build-validate h2, #zly-build-validate h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+  #zly-build-validate p { color: var(--ink-soft); line-height: 1.65; }
+  #zly-build-validate .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: var(--barn); }
+  #zly-build-validate .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  #zly-build-validate .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+  #zly-build-validate .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+  #zly-build-validate .validate { background: var(--paper-2); border-radius: 16px; padding: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+  #zly-build-validate .validate h2 { font-size: clamp(24px, 2.8vw, 32px); margin-bottom: 14px; }
+  #zly-build-validate .validate p.body { margin-bottom: 18px; font-size: 16px; }
+  #zly-build-validate .validate blockquote { font-family: 'Newsreader', serif; font-style: italic; font-size: 18px; color: var(--ink); margin: 0 0 6px; }
+  #zly-build-validate .validate cite { font-size: 13.5px; color: var(--ink-soft); font-style: normal; }
+  #zly-build-validate .steps { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 26px 28px; }
+  #zly-build-validate .steps h3 { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; font-family: 'DM Sans', sans-serif; color: var(--barn); margin-bottom: 14px; }
+  #zly-build-validate .steps ol { padding-left: 20px; color: var(--ink); font-size: 15px; line-height: 1.55; }
+  #zly-build-validate .steps li { margin-bottom: 10px; }
+  #zly-build-validate .steps li span { color: var(--ink-soft); }
+  #zly-build-validate .steps .cap { font-family: 'Caveat', cursive; font-size: 18px; color: var(--ink-soft); margin-top: 6px; }
+  @media (max-width: 900px) { #zly-build-validate .sec { padding: 16px 20px 60px; } #zly-build-validate .validate { grid-template-columns: 1fr; padding: 32px 24px; gap: 26px; } }
+  @media (max-width: 480px) { #zly-build-validate .btn { width: 100%; justify-content: center; } }
+
+  /* ===== final cta ===== */
+  #zly-build-cta {
+    --paper: #faf3e7; --ink: #1b2430; --barn: #b5482d; --violet: #6c5ce7;
+    font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+  }
+  #zly-build-cta * { box-sizing: border-box; margin: 0; padding: 0; }
+  #zly-build-cta .sec { padding: 0 24px 96px; max-width: 1160px; margin: 0 auto; }
+  #zly-build-cta h2 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; }
+  #zly-build-cta .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  #zly-build-cta .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+  #zly-build-cta .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+  #zly-build-cta .btn-outline { background: transparent; color: #fff9ef; border: 2px solid #faf3e7; }
+  #zly-build-cta .btn-outline:hover { background: #faf3e7; color: var(--ink); }
+  #zly-build-cta .btn-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  #zly-build-cta .final { background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center; position: relative; overflow: hidden; }
+  #zly-build-cta .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+  #zly-build-cta .final > * { position: relative; }
+  #zly-build-cta .final h2 { color: var(--paper); font-size: clamp(27px, 3.2vw, 36px); margin-bottom: 14px; }
+  #zly-build-cta .final p { color: #c7d0d6; max-width: 520px; margin: 0 auto 26px; line-height: 1.65; }
+  #zly-build-cta .final .note { font-size: 13px; color: rgba(244,237,224,0.55); margin: 16px 0 0; }
+  @media (max-width: 900px) { #zly-build-cta .sec { padding: 0 20px 64px; } #zly-build-cta .final { padding: 48px 28px; } }
+  @media (max-width: 480px) { #zly-build-cta .final { padding: 40px 22px; border-radius: 12px; } #zly-build-cta .btn-row { flex-direction: column; align-items: stretch; } #zly-build-cta .btn { justify-content: center; } }
+</style>
+
+<!-- HERO -->
+<div id="zly-build-hero">
+  <section class="hero">
+    <div>
+      <span class="tag">build your company</span>
+      <h1>Launch on evidence, not enthusiasm.</h1>
+      <p class="sub">You have the idea. We supply the structure: a validated market, a plan with numbers in it, the tools set up correctly the first time, and a site that's ready to take an order. Most founders spend their first three months finding out what to do. We'd rather you spend them doing it.</p>
+      <div class="cta-row">
+        <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get your launch plan</a>
+        <a href="https://calendly.com/zoley/free-30-min-discovery-call" class="btn btn-ghost">Book a 30-minute call</a>
+      </div>
+      <p class="cta-note">A written recommendation and pricing within two business days.</p>
+    </div>
+    <div class="board">
+      <svg viewBox="0 0 420 320" fill="none" role="img" aria-label="Illustration: a roadmap from idea, to validation, to launch, to growth, with a flag at the destination">
+        <defs>
+          <linearGradient id="zbh-grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b5482d"/><stop offset="0.5" stop-color="#6c5ce7"/><stop offset="1" stop-color="#4ea1ff"/></linearGradient>
+        </defs>
+        <!-- winding path -->
+        <path d="M40 270 C 90 270 90 200 150 200 S 210 130 270 130 S 330 60 380 60" stroke="url(#zbh-grad)" stroke-width="3" stroke-dasharray="7 7" stroke-linecap="round" fill="none"/>
+        <!-- milestone 1: idea (lightbulb) -->
+        <g transform="translate(40 270)">
+          <circle r="22" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <path d="M0 -11 a8 8 0 0 1 4 15 v3 h-8 v-3 a8 8 0 0 1 4 -15z" fill="#e3a72e" stroke="#1b2430" stroke-width="1.8" stroke-linejoin="round"/>
+          <rect x="-4" y="9" width="8" height="3" rx="1" fill="#1b2430"/>
+        </g>
+        <text x="40" y="308" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#b5482d" text-anchor="middle">the idea</text>
+        <!-- milestone 2: validate (checklist card) -->
+        <g transform="translate(150 200)">
+          <circle r="22" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <rect x="-9" y="-11" width="18" height="22" rx="2" fill="#faf3e7" stroke="#1b2430" stroke-width="1.6"/>
+          <path d="M-5 -4 l2.5 2.5 l5 -5 M-5 3 l2.5 2.5 l5 -5" stroke="#7a8b69" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <text x="150" y="240" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#6c5ce7" text-anchor="middle">validated</text>
+        <!-- milestone 3: launch (rocket-ish storefront) -->
+        <g transform="translate(270 130)">
+          <circle r="22" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <path d="M-10 4 h20 v8 h-20 z" fill="#faf3e7" stroke="#1b2430" stroke-width="1.6"/>
+          <path d="M-12 4 L0 -8 L12 4 Z" fill="#b5482d" stroke="#1b2430" stroke-width="1.6" stroke-linejoin="round"/>
+          <rect x="-2.5" y="6" width="5" height="6" fill="#4ea1ff"/>
+        </g>
+        <text x="270" y="170" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#4ea1ff" text-anchor="middle">launched</text>
+        <!-- milestone 4: grow (flag) -->
+        <g transform="translate(380 60)">
+          <circle r="22" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <line x1="-6" y1="12" x2="-6" y2="-12" stroke="#1b2430" stroke-width="2.2" stroke-linecap="round"/>
+          <path class="flag" d="M-6 -12 L10 -7 L-6 -2 Z" fill="#7a8b69" stroke="#1b2430" stroke-width="1.6" stroke-linejoin="round"/>
+        </g>
+        <text x="370" y="100" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#7a8b69" text-anchor="middle">growing</text>
+        <!-- side annotations -->
+        <g transform="translate(200 40)">
+          <rect x="0" y="0" width="120" height="44" rx="6" fill="#fff9ef" stroke="#1b2430" stroke-width="1.8" transform="rotate(-3 60 22)"/>
+          <text x="60" y="19" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="700" fill="#1b2430" text-anchor="middle" transform="rotate(-3 60 22)">Market test</text>
+          <text x="60" y="33" font-family="DM Sans, sans-serif" font-size="10" fill="#5c6b76" text-anchor="middle" transform="rotate(-3 60 22)">27 sign-ups in 6 days</text>
+        </g>
+        <path d="M200 76 Q 170 120 160 178" stroke="#6c5ce7" stroke-width="1.8" stroke-dasharray="4 5" fill="none" opacity="0.7"/>
+        <g transform="translate(286 220)">
+          <rect x="0" y="0" width="128" height="44" rx="6" fill="#fff9ef" stroke="#1b2430" stroke-width="1.8" transform="rotate(3 64 22)"/>
+          <text x="64" y="19" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="700" fill="#1b2430" text-anchor="middle" transform="rotate(3 64 22)">First 90 days</text>
+          <text x="64" y="33" font-family="DM Sans, sans-serif" font-size="10" fill="#5c6b76" text-anchor="middle" transform="rotate(3 64 22)">plan, tools, site, pricing</text>
+        </g>
+        <path d="M300 226 Q 290 190 280 154" stroke="#4ea1ff" stroke-width="1.8" stroke-dasharray="4 5" fill="none" opacity="0.7"/>
+      </svg>
+    </div>
+  </section>
+</div>
+
+<!-- LEAD MAGNET -->
+<div id="zly-build-magnet">
+  <section class="magnet-band">
+    <div class="magnet-wrap">
+      <div class="magnet-copy">
+        <span class="tag">before you spend a dollar</span>
+        <h2>The launch sequence we use with every founder, written down.</h2>
+        <p>Most business-launch advice is either generic or sold. This guide is the actual order of operations we walk clients through, from validating demand to setting a price to choosing the first three tools. It's free because the founders who read it tend to become better clients.</p>
+        <div class="magnet-stats">
+          <div class="magnet-stat"><div class="num">1 in 5</div><p>new businesses close within the first year</p></div>
+          <div class="magnet-stat"><div class="num">~1 in 2</div><p>close within five years</p></div>
+          <div class="magnet-stat"><div class="num">4 in 10</div><p>failures trace back to building something the market didn't need</p></div>
+        </div>
+      </div>
+
+      <div class="magnet-card">
+        <svg class="icon" viewBox="0 0 48 48" fill="none"><rect x="10" y="6" width="28" height="36" rx="2" stroke="#b5482d" stroke-width="2.5"/><line x1="16" y1="16" x2="32" y2="16" stroke="#b5482d" stroke-width="2"/><line x1="16" y1="24" x2="32" y2="24" stroke="#b5482d" stroke-width="2"/><line x1="16" y1="32" x2="26" y2="32" stroke="#b5482d" stroke-width="2"/></svg>
+        <h3>How to Start a Business: The Zoley Launch Sequence</h3>
+        <p class="desc">A step-by-step guide. Enter your email and it arrives within a couple of minutes.</p>
+        <ul>
+          <li>How to test demand in a week for under $200</li>
+          <li>Setting a first price you won't have to apologize for</li>
+          <li>The three tools every new business actually needs</li>
+          <li>A 90-day launch checklist</li>
+        </ul>
+        <form id="zly-guide-form" novalidate>
+          <div class="zly-form-row">
+            <input class="zly-input" type="email" id="zly-guide-email" placeholder="you@yourbusiness.com" required aria-label="Email address">
+            <button type="submit" class="btn btn-primary" id="zly-guide-submit">Send me the guide</button>
+          </div>
+          <p class="form-note">One email with the guide. No sequence, no follow-up sales calls.</p>
+          <p class="form-status" id="zly-guide-status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      // TODO: replace with your real form endpoint (Squarespace, ConvertKit, Mailchimp, or your own API)
+      var FORM_ENDPOINT = "https://REPLACE-WITH-YOUR-FORM-ENDPOINT.example.com/subscribe";
+      var form = document.getElementById('zly-guide-form');
+      var status = document.getElementById('zly-guide-status');
+      var submitBtn = document.getElementById('zly-guide-submit');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = document.getElementById('zly-guide-email').value.trim();
+        if (!email || !email.includes('@')) {
+          status.textContent = "That email doesn't look right. Mind double-checking it?";
+          status.className = 'form-status error';
+          return;
+        }
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        fetch(FORM_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: email, source: 'build-page-guide' }) })
+          .then(function (res) {
+            if (!res.ok) throw new Error('Request failed');
+            status.textContent = "Sent. Check your inbox in the next couple of minutes.";
+            status.className = 'form-status success';
+            form.reset();
+          })
+          .catch(function () {
+            status.textContent = "Something didn't go through. Try again, or email sales@zoley.io.";
+            status.className = 'form-status error';
+          })
+          .finally(function () { submitBtn.disabled = false; submitBtn.textContent = 'Send me the guide'; });
+      });
+    })();
+  </script>
+</div>
+
+<!-- SERVICES -->
+<div id="zly-build-services">
+  <section class="sec">
+    <div class="process-header">
+      <h2>What's included when you build with us.</h2>
+      <p>A launch engagement is scoped around the pieces you actually need. Most founders take three or four of these. Each one ends with something you can hold.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><h3>Strategy sessions</h3><p>Structured working sessions to turn the idea into a business model: who it's for, what it costs to deliver, how it makes money, and what has to be true for it to work.</p><div class="out"><strong>You get:</strong> a one-page business model and a 90-day plan</div></div>
+      <div class="service-card"><h3>Market research</h3><p>Evidence that people will pay: demand signals, competitor pricing, and interviews with the customers you're planning to serve.</p><div class="out"><strong>You get:</strong> a findings brief with a go / adjust / stop recommendation</div></div>
+      <div class="service-card"><h3>Tool recommendations &amp; setup</h3><p>The right payments, scheduling, invoicing, and CRM tools for your model, selected independently and configured to work together from day one.</p><div class="out"><strong>You get:</strong> a working stack, documented</div></div>
+      <div class="service-card"><h3>Website build</h3><p>A fast, clear site that says what you do, who it's for, and how to buy, on a platform you can edit yourself.</p><div class="out"><strong>You get:</strong> a live site with tracking, on a domain you own</div></div>
+      <div class="service-card"><h3>Quick-start templates</h3><p>Proposal, pricing sheet, intake form, and outreach templates written for your business so the first sale doesn't wait on paperwork.</p><div class="out"><strong>You get:</strong> a set of editable documents ready to send</div></div>
+      <div class="service-card"><h3>Logo &amp; brand basics</h3><p>A clean visual identity: logo, color, type, and the few rules needed to keep everything looking like it came from the same company.</p><div class="out"><strong>You get:</strong> logo files and a one-page brand guide</div></div>
+    </div>
+  </section>
+</div>
+
+<!-- VALIDATION TEST -->
+<div id="zly-build-validate">
+  <section class="sec">
+    <div class="validate">
+      <div>
+        <span class="tag">test before you commit</span>
+        <h2>Find out if people will buy, before you build the thing they'd buy.</h2>
+        <p class="body">A validation test puts a real offer in front of real prospects and measures what they do. It takes about a week, costs a fraction of a full launch, and it's the single most reliable way we know to avoid the most common cause of failure.</p>
+        <blockquote>"The fastest way to learn is by doing, not by thinking about doing."</blockquote>
+        <cite>&mdash; Reid Hoffman, co-founder of LinkedIn</cite>
+        <div style="margin-top: 24px;">
+          <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-ghost">Set up a validation test</a>
+        </div>
+      </div>
+      <div class="steps">
+        <h3>How a one-week test runs</h3>
+        <ol>
+          <li><strong>Day 1–2: the offer.</strong> <span>One page describing the product, the price, and a way to say "I want this."</span></li>
+          <li><strong>Day 3–6: the traffic.</strong> <span>A small, targeted ad spend or direct outreach to the people it's for.</span></li>
+          <li><strong>Day 7: the read.</strong> <span>Sign-ups, deposits, or replies against a threshold we set in advance.</span></li>
+        </ol>
+        <div class="cap">Clear the threshold and you launch with proof. Miss it and you've saved months.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FINAL CTA -->
+<div id="zly-build-cta">
+  <section class="sec">
+    <div class="final">
+      <h2>Start with a plan, not a pitch.</h2>
+      <p>Tell us about the business you want to build. Within two business days you'll have a written recommendation on where to start, what it would cost, and what you'd have at the end of the first 90 days.</p>
+      <div class="btn-row">
+        <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get your launch plan</a>
+        <a href="https://calendly.com/zoley/free-30-min-discovery-call" class="btn btn-outline">Book a 30-minute call</a>
+      </div>
+      <p class="note">No obligation. The recommendation is yours to keep either way.</p>
+    </div>
+  </section>
+</div>

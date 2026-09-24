@@ -1,0 +1,170 @@
+<!--
+ZOLEY — HOMEPAGE (HYBRID) — HOW IT WORKS SECTION
+-->
+
+<div id="zly-home-hy-how-it-works">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-home-hy-how-it-works {
+      --paper: #faf3e7;
+      --paper-2: #f6e4b8;
+      --ink: #1b2430;
+      --ink-soft: #5c6b76;
+      --marigold: #e3a72e;
+      --barn: #b5482d;
+      --sage: #7a8b69;
+      --violet: #6c5ce7;
+      --blue: #4ea1ff;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+    }
+    #zly-home-hy-how-it-works * { box-sizing: border-box; }
+    #zly-home-hy-how-it-works .zhy-section { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-home-hy-how-it-works h1, #zly-home-hy-how-it-works h2, #zly-home-hy-how-it-works h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-home-hy-how-it-works p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-home-hy-how-it-works .zhy-tag {
+      font-family: 'Caveat', cursive; font-size: 22px; font-weight: 700;
+      color: var(--barn);
+      display: inline-block; transform: rotate(-2deg); margin-bottom: 10px; padding: 0 4px;
+    }
+
+    /* ---------- HERO ---------- */
+    #zly-home-hy-how-it-works .zhy-hero { padding: 112px 24px 60px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 50px; align-items: center; }
+    #zly-home-hy-how-it-works .zhy-hero h1 { font-size: clamp(36px, 4.6vw, 58px); }
+    #zly-home-hy-how-it-works .zhy-hero .underline { position: relative; display: inline-block; }
+    #zly-home-hy-how-it-works .zhy-hero .underline svg { position: absolute; left: 0; bottom: -6px; width: 100%; height: 14px; }
+    #zly-home-hy-how-it-works .zhy-hero p.zhy-sub { font-size: 18.5px; margin: 22px 0 30px; max-width: 470px; }
+    #zly-home-hy-how-it-works .zhy-cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+    #zly-home-hy-how-it-works .zhy-btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px;
+      border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease; cursor: pointer; font-family: 'DM Sans', sans-serif;
+    }
+    #zly-home-hy-how-it-works .zhy-btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-home-hy-how-it-works .zhy-btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-home-hy-how-it-works .zhy-btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    #zly-home-hy-how-it-works .zhy-btn-ghost:hover { background: var(--ink); color: var(--paper); }
+
+    /* Signature: corkboard with pinned shop + network threads connecting service nodes */
+    #zly-home-hy-how-it-works .zhy-board {
+      background: var(--paper-2); border: 1px solid var(--border); border-radius: 14px;
+      padding: 20px; position: relative;
+    }
+    #zly-home-hy-how-it-works .zhy-board svg { width: 100%; height: auto; display: block; }
+    #zly-home-hy-how-it-works .zhy-thread { stroke: url(#zhy-thread-grad); stroke-width: 2; stroke-dasharray: 5 5; fill: none; opacity: 0.75; }
+    #zly-home-hy-how-it-works .zhy-pulse { animation: zhy-pulse 3s ease-in-out infinite; transform-origin: center; }
+    #zly-home-hy-how-it-works .zhy-pulse:nth-child(2) { animation-delay: 0.5s; }
+    #zly-home-hy-how-it-works .zhy-pulse:nth-child(3) { animation-delay: 1s; }
+    @keyframes zhy-pulse { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { #zly-home-hy-how-it-works .zhy-pulse { animation: none; } }
+
+    /* ---------- PINNED TESTIMONIAL ---------- */
+    #zly-home-hy-how-it-works .zhy-pin-wrap { display: flex; justify-content: center; padding: 20px 24px 76px; }
+    #zly-home-hy-how-it-works .zhy-pin-card {
+      background: #fff9ef; border: 1px solid var(--border); border-radius: 4px;
+      max-width: 620px; padding: 36px 40px; position: relative; transform: rotate(-1deg);
+      box-shadow: 0 12px 24px rgba(27,36,48,0.10);
+    }
+    #zly-home-hy-how-it-works .zhy-pin-card::before {
+      content: ''; position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      width: 18px; height: 18px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--barn), var(--violet));
+      box-shadow: 0 2px 3px rgba(0,0,0,0.25);
+    }
+    #zly-home-hy-how-it-works .zhy-pin-card p.quote { font-family: 'Newsreader', serif; font-style: italic; font-size: 20px; color: var(--ink); margin-bottom: 12px; }
+    #zly-home-hy-how-it-works .zhy-pin-card span { font-family: 'Caveat', cursive; font-size: 20px; color: var(--barn); font-weight: 700; }
+
+    /* ---------- SERVICES ---------- */
+    #zly-home-hy-how-it-works .zhy-services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 40px; }
+    #zly-home-hy-how-it-works .zhy-card {
+      background: #fff9ef; border: 1px solid var(--border); border-radius: 10px;
+      padding: 30px; text-align: left; position: relative; overflow: hidden;
+    }
+    #zly-home-hy-how-it-works .zhy-card::after {
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+      background: linear-gradient(90deg, var(--barn), var(--violet), var(--blue));
+    }
+    #zly-home-hy-how-it-works .zhy-card svg { width: 44px; height: 44px; margin-bottom: 16px; }
+    #zly-home-hy-how-it-works .zhy-card h3 { font-size: 21px; margin-bottom: 8px; }
+    #zly-home-hy-how-it-works .zhy-card p { font-size: 15px; }
+
+    /* ---------- ROTATING TEXT BAND (color break) ---------- */
+    #zly-home-hy-how-it-works .zhy-rotate-band { background: var(--ink); padding: 90px 24px; position: relative; overflow: hidden; }
+    #zly-home-hy-how-it-works .zhy-rotate-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(181,72,45,0.2), transparent 55%), radial-gradient(circle at 85% 80%, rgba(78,161,255,0.18), transparent 55%); }
+    #zly-home-hy-how-it-works .zhy-rotate-wrapper { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; max-width: 900px; margin: 0 auto; }
+    #zly-home-hy-how-it-works .zhy-static-text { font-family: 'Newsreader', serif; font-weight: 600; font-size: clamp(30px, 5vw, 52px); margin-bottom: 16px; color: var(--barn); line-height: 1.1; }
+    #zly-home-hy-how-it-works .zhy-changing-word { font-family: 'Newsreader', serif; font-weight: 600; font-size: clamp(30px, 5vw, 52px); line-height: 1.2; color: #fff9ef; }
+    #zly-home-hy-how-it-works .zhy-cursor { font-family: 'Newsreader', serif; font-size: clamp(30px, 5vw, 52px); color: #c7d0d6; animation: zhy-blink 1s step-start infinite; }
+    @keyframes zhy-blink { 50% { opacity: 0; } }
+    @media (max-width: 480px) { #zly-home-hy-how-it-works .zhy-static-text { margin-bottom: 22px; } }
+    @media (prefers-reduced-motion: reduce) { #zly-home-hy-how-it-works .zhy-cursor { animation: none; } }
+
+    /* ---------- HOW IT WORKS ---------- */
+    #zly-home-hy-how-it-works .zhy-recipe {
+      background: #fff9ef; border: 1px solid var(--border); border-radius: 10px;
+      padding: 44px; margin-top: 40px;
+    }
+    #zly-home-hy-how-it-works .zhy-recipe ol { list-style: none; counter-reset: zhy-step; display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px 40px; }
+    #zly-home-hy-how-it-works .zhy-recipe li { counter-increment: zhy-step; padding-left: 42px; position: relative; }
+    #zly-home-hy-how-it-works .zhy-recipe li::before {
+      content: counter(zhy-step); font-family: 'Newsreader', serif; font-weight: 600; font-size: 18px;
+      position: absolute; left: 0; top: -2px; width: 30px; height: 30px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #zly-home-hy-how-it-works .zhy-recipe h3 { font-size: 18px; margin-bottom: 5px; }
+    #zly-home-hy-how-it-works .zhy-recipe p { font-size: 14.5px; }
+
+    /* ---------- FINAL CTA ---------- */
+    #zly-home-hy-how-it-works .zhy-sign {
+      background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center;
+      margin: 0 24px; max-width: 1112px; margin-left: auto; margin-right: auto;
+      position: relative; overflow: hidden;
+    }
+    #zly-home-hy-how-it-works .zhy-sign::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%),
+                  radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%);
+    }
+    #zly-home-hy-how-it-works .zhy-sign > * { position: relative; }
+    #zly-home-hy-how-it-works .zhy-sign h2 { color: var(--paper); font-size: clamp(28px, 3.2vw, 38px); margin-bottom: 14px; }
+    #zly-home-hy-how-it-works .zhy-sign p { color: #c7d0d6; max-width: 460px; margin: 0 auto 28px; }
+
+    @media (max-width: 900px) {
+      #zly-home-hy-how-it-works .zhy-hero { grid-template-columns: 1fr; padding-top: 76px; }
+      #zly-home-hy-how-it-works .zhy-services { grid-template-columns: 1fr; }
+      #zly-home-hy-how-it-works .zhy-recipe ol { grid-template-columns: 1fr; }
+      #zly-home-hy-how-it-works .zhy-section { padding: 60px 20px; }
+      #zly-home-hy-how-it-works .zhy-rotate-band { padding: 60px 20px; }
+    }
+  </style>
+
+  <!-- HOW IT WORKS -->
+  <section class="zhy-section">
+    <span class="zhy-tag">how it works</span>
+    <h2 style="font-size: clamp(26px, 3vw, 34px); max-width: 580px;">Four steps. No surprises, no tech-speak.</h2>
+    <div class="zhy-recipe">
+      <ol>
+        <li>
+          <h3>You tell us what's slowing you down</h3>
+          <p>A quick form or a free call. We just want to understand your business.</p>
+        </li>
+        <li>
+          <h3>We put together a simple plan</h3>
+          <p>Clear, priced upfront, no surprises buried in fine print.</p>
+        </li>
+        <li>
+          <h3>We build it, quietly</h3>
+          <p>You keep running your business. We keep you posted, not overwhelmed.</p>
+        </li>
+        <li>
+          <h3>You get something that just works</h3>
+          <p>Ready to go, easy to update, and there if you ever need a hand again.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+</div>

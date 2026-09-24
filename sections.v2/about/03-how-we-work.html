@@ -1,0 +1,53 @@
+<!--
+ZOLEY — ABOUT — How We Work
+Source: main pages/zoley-about.v2.html
+Scoped under #zly-about-how. Self-contained: drop into a Squarespace Code Block.
+-->
+
+<div id="zly-about-how">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;
+    /* ===== how we work ===== */
+      #zly-about-how {
+        --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+        --barn: #b5482d; --violet: #6c5ce7; --blue: #4ea1ff; --sage: #7a8b69; --border: rgba(27,36,48,0.14);
+        font-family: 'DM Sans', sans-serif; background: var(--ink); color: var(--paper);
+      }
+    #zly-about-how * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-about-how .band { padding: 90px 24px; position: relative; overflow: hidden; }
+    #zly-about-how .band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 15% 15%, rgba(181,72,45,0.2), transparent 55%), radial-gradient(circle at 90% 85%, rgba(78,161,255,0.18), transparent 55%); }
+    #zly-about-how .inner { position: relative; max-width: 1160px; margin: 0 auto; }
+    #zly-about-how .head { text-align: center; max-width: 660px; margin: 0 auto 44px; }
+    #zly-about-how .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: #e3a72e; }
+    #zly-about-how h2 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--paper); font-size: clamp(26px, 3.2vw, 38px); margin-bottom: 12px; }
+    #zly-about-how .head p { color: #c7d0d6; line-height: 1.65; font-size: 16px; }
+    #zly-about-how .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    #zly-about-how .item { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 12px; padding: 26px 24px; }
+    #zly-about-how .item .n { font-family: 'Newsreader', serif; font-size: 30px; font-weight: 600; color: #e3a72e; line-height: 1; margin-bottom: 12px; }
+    #zly-about-how .item h3 { font-family: 'Newsreader', serif; font-weight: 600; font-size: 19px; color: var(--paper); margin-bottom: 8px; line-height: 1.2; }
+    #zly-about-how .item p { color: #c7d0d6; font-size: 14.5px; line-height: 1.6; }
+    @media (max-width: 900px) {
+      #zly-about-how .band { padding: 60px 20px; }
+      #zly-about-how .grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      #zly-about-how .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <section class="band">
+    <div class="inner">
+      <div class="head">
+        <span class="tag">how we work</span>
+        <h2>Four commitments you can hold us to.</h2>
+        <p>These aren't values. They're terms. If we break one, you should say so, and we'll fix it.</p>
+      </div>
+      <div class="grid">
+        <div class="item"><div class="n">01</div><h3>Diagnosis before prescription</h3><p>We won't quote a build until we've looked at how your business actually runs. The audit comes first, every time, and it's short.</p></div>
+        <div class="item"><div class="n">02</div><h3>Scoped and priced in writing</h3><p>Deliverables, timeline, and a fixed price before any work starts. If the scope changes, the price changes in writing too, not on the invoice.</p></div>
+        <div class="item"><div class="n">03</div><h3>Built to be owned</h3><p>We build inside tools you already pay for, document everything, and hand it over. No proprietary platform, no dependency on us to make a change.</p></div>
+        <div class="item"><div class="n">04</div><h3>Measured after launch</h3><p>Every build ships with tracking and a 30-day review against the plan. If the number didn't move, we want to know as much as you do.</p></div>
+      </div>
+    </div>
+  </section>
+</div>

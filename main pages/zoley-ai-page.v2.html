@@ -1,0 +1,422 @@
+<!--
+ZOLEY — AI PAGE — V2
+8-section template: Illustrated Hero / Adoption Gap / What We Do / Current State (color break) /
+Where We'd Advise Against It (new) / How We Do It / Case Study (illustrated) / Final CTA
+Scoped under #zly-ai-page. Drop into a Squarespace Code Block on /ai.
+
+V2 CHANGES (vs zoley-ai-page.html):
+- Hero is now a two-column layout with an inline SVG illustration (inbox -> AI -> outcomes).
+- Copy rewritten in a more authoritative register. Primary CTA is the Quick Start form.
+- Every external statistic is sourced in V2-NOTES.md (not cited on-page, by design).
+- New "Where we'd advise against it" block: credibility through candor.
+- Case study media placeholder replaced with an illustrated AI-assistant mock. Labeled as a
+  representative engagement until you swap in a named client.
+-->
+
+<div id="zly-ai-page">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-ai-page {
+      --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef;
+      --ink: #1b2430; --ink-soft: #5c6b76;
+      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-ai-page * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-ai-page .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-ai-page h1, #zly-ai-page h2, #zly-ai-page h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-ai-page p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-ai-page .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: var(--barn); }
+
+    /* BUTTONS */
+    #zly-ai-page .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-ai-page .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-ai-page .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-ai-page .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    #zly-ai-page .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+    #zly-ai-page .btn-outline { background: transparent; color: #fff9ef; border: 2px solid #faf3e7; }
+    #zly-ai-page .btn-outline:hover { background: #faf3e7; color: var(--ink); }
+    #zly-ai-page .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+    #zly-ai-page .cta-note { font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
+
+    /* 1. HERO (illustrated, two-column) */
+    #zly-ai-page .hero { padding: 108px 24px 60px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    #zly-ai-page .hero h1 { font-size: clamp(34px, 4.4vw, 54px); }
+    #zly-ai-page .hero p.sub { font-size: 18px; max-width: 500px; margin: 20px 0 30px; }
+    #zly-ai-page .board { background: var(--paper-2); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+    #zly-ai-page .board svg { width: 100%; height: auto; display: block; }
+    #zly-ai-page .thread { stroke: url(#zai-grad); stroke-width: 2; stroke-dasharray: 5 5; fill: none; opacity: 0.8; }
+    #zly-ai-page .pulse { animation: zai-pulse 3s ease-in-out infinite; }
+    #zly-ai-page .pulse:nth-of-type(2) { animation-delay: 0.6s; }
+    #zly-ai-page .pulse:nth-of-type(3) { animation-delay: 1.2s; }
+    @keyframes zai-pulse { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { #zly-ai-page .pulse { animation: none; } }
+
+    /* SECTION HEADERS */
+    #zly-ai-page .process-header { text-align: center; margin-bottom: 40px; }
+    #zly-ai-page .process-header h2 { font-size: clamp(30px, 3.6vw, 40px); max-width: 680px; margin: 0 auto; }
+    #zly-ai-page .process-header .process-sub { font-size: 16px; max-width: 600px; margin: 14px auto 0; }
+
+    /* PINNED TESTIMONIAL */
+    #zly-ai-page .pin-wrap { display: flex; justify-content: center; padding: 0 24px 20px; }
+    #zly-ai-page .pin-card { background: var(--card); border: 1px solid var(--border); border-radius: 4px; max-width: 620px; padding: 36px 40px; position: relative; transform: rotate(-1deg); box-shadow: 0 12px 24px rgba(27,36,48,0.10); }
+    #zly-ai-page .pin-card::before { content: ''; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 18px; height: 18px; border-radius: 50%; background: linear-gradient(135deg, var(--barn), var(--violet)); box-shadow: 0 2px 3px rgba(0,0,0,0.25); }
+    #zly-ai-page .pin-card p.quote { font-family: 'Newsreader', serif; font-style: italic; font-size: 20px; color: var(--ink); margin-bottom: 12px; }
+    #zly-ai-page .pin-card span { font-family: 'Caveat', cursive; font-size: 20px; color: var(--barn); font-weight: 700; }
+
+    /* 2. ADOPTION GAP (time-cost card) */
+    #zly-ai-page .time-band { padding: 30px 24px 70px; }
+    #zly-ai-page .time-card { max-width: 1160px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 56px; box-shadow: 0 18px 40px -20px rgba(27,36,48,0.28); position: relative; overflow: hidden; }
+    #zly-ai-page .time-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--barn), var(--marigold)); }
+    #zly-ai-page .time-eyebrow { display: block; font-size: 12.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--barn); margin-bottom: 14px; }
+    #zly-ai-page .time-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; align-items: center; }
+    #zly-ai-page .time-stat { font-family: 'Newsreader', serif; font-size: clamp(64px, 8vw, 96px); font-weight: 600; line-height: 1; color: var(--barn); }
+    #zly-ai-page .time-stat span { font-size: 16px; color: var(--ink-soft); font-family: 'DM Sans', sans-serif; display: block; margin-top: 12px; font-weight: 600; line-height: 1.4; }
+    #zly-ai-page .time-grid h2 { font-size: clamp(28px, 3.4vw, 38px); }
+
+    /* CARD GRID (section 3) */
+    #zly-ai-page .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    #zly-ai-page .process-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 26px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #zly-ai-page .process-card:hover { transform: translateY(-6px); box-shadow: 0 18px 32px -16px rgba(27,36,48,0.28); }
+    #zly-ai-page .pc-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    #zly-ai-page .pc-num { flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+    #zly-ai-page .process-card h3 { font-size: 17px; }
+    #zly-ai-page .process-card p { font-size: 14px; }
+    #zly-ai-page .wd-cta { text-align: center; margin-top: 40px; }
+
+    /* 4. CURRENT STATE — dark band */
+    #zly-ai-page .stat-band { background: var(--ink); padding: 90px 24px; position: relative; overflow: hidden; }
+    #zly-ai-page .stat-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(181,72,45,0.2), transparent 55%), radial-gradient(circle at 85% 80%, rgba(78,161,255,0.18), transparent 55%); }
+    #zly-ai-page .stat-band .inner { max-width: 1160px; margin: 0 auto; position: relative; }
+    #zly-ai-page .stat-band .process-header h2 { color: var(--paper); }
+    #zly-ai-page .stat-band .process-header .process-sub { color: #c7d0d6; }
+    #zly-ai-page .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+    #zly-ai-page .stat-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 32px 22px; transform: rotate(var(--r, 0deg)); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #zly-ai-page .stat-card:hover { transform: rotate(var(--r, 0deg)) translateY(-6px); box-shadow: 0 16px 30px -18px rgba(0,0,0,0.5); }
+    #zly-ai-page .stat-card:nth-child(1) { --r: -1deg; }
+    #zly-ai-page .stat-card:nth-child(2) { --r: 1deg; }
+    #zly-ai-page .stat-card:nth-child(3) { --r: -0.5deg; }
+    #zly-ai-page .stat-card .num { font-family: 'Newsreader', serif; font-size: clamp(36px, 4vw, 48px); font-weight: 600; color: #fff9ef; }
+    #zly-ai-page .stat-card p { font-size: 14px; margin-top: 8px; color: #c7d0d6; }
+    #zly-ai-page .stat-close { text-align: center; max-width: 640px; margin: 40px auto 0; font-size: 17px; color: var(--paper); font-family: 'Newsreader', serif; font-style: italic; line-height: 1.5; }
+
+    /* 5. WHERE WE'D ADVISE AGAINST IT */
+    #zly-ai-page .candor { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 50px; align-items: start; background: var(--paper-2); border-radius: 16px; padding: 48px; }
+    #zly-ai-page .candor h2 { font-size: clamp(26px, 3vw, 34px); margin-bottom: 14px; }
+    #zly-ai-page .candor p.lead { font-size: 16px; }
+    #zly-ai-page .candor ul { list-style: none; }
+    #zly-ai-page .candor li { display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--border); font-size: 15px; color: var(--ink); line-height: 1.55; }
+    #zly-ai-page .candor li:last-child { border-bottom: none; }
+    #zly-ai-page .candor li .x { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--barn); color: var(--barn); font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+    #zly-ai-page .candor li span.t { color: var(--ink-soft); }
+    #zly-ai-page .candor li span.t strong { color: var(--ink); }
+
+    /* VERTICAL LIST (section 6) */
+    #zly-ai-page .wd-list { max-width: 800px; margin: 0 auto; }
+    #zly-ai-page .wd-row { display: grid; grid-template-columns: 40px 1fr auto; gap: 22px; align-items: flex-start; padding: 26px 0; border-bottom: 1px solid var(--border); }
+    #zly-ai-page .wd-row:last-of-type { border-bottom: none; }
+    #zly-ai-page .wd-num { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+    #zly-ai-page .wd-row h3 { font-size: 19px; margin-bottom: 6px; }
+    #zly-ai-page .wd-row p { font-size: 14.5px; }
+    #zly-ai-page .wd-out { font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--barn); white-space: nowrap; padding-top: 12px; }
+
+    /* 7. CASE STUDY (illustrated) */
+    #zly-ai-page .case-study { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 40px; box-shadow: 0 18px 40px -24px rgba(27,36,48,0.25); }
+    #zly-ai-page .case-study-media { width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 32px; background: var(--paper-2); border: 1px solid var(--border); padding: 24px; }
+    #zly-ai-page .case-study-media svg { width: 100%; height: auto; display: block; max-width: 760px; margin: 0 auto; }
+    #zly-ai-page .case-study-media img { width: 100%; height: auto; display: block; }
+    #zly-ai-page .case-study-body { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 44px; align-items: center; }
+    #zly-ai-page .case-study .cs-stat { font-family: 'Newsreader', serif; font-weight: 600; font-size: clamp(44px, 5vw, 60px); color: var(--barn); line-height: 1; }
+    #zly-ai-page .case-study .cs-stat-label { font-size: 14px; color: var(--ink-soft); margin-top: 8px; }
+    #zly-ai-page .case-study h3 { font-size: 22px; margin-bottom: 10px; }
+    #zly-ai-page .case-study p { font-size: 15px; margin-bottom: 14px; }
+    #zly-ai-page .case-study .cs-note { font-family: 'Caveat', cursive; font-size: 17px; color: var(--ink-soft); }
+
+    /* 8. FINAL CTA */
+    #zly-ai-page .final { background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center; max-width: 1112px; margin: 0 auto; position: relative; overflow: hidden; }
+    #zly-ai-page .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+    #zly-ai-page .final > * { position: relative; }
+    #zly-ai-page .final h2 { color: var(--paper); font-size: clamp(27px, 3.2vw, 36px); margin-bottom: 14px; }
+    #zly-ai-page .final p { color: #c7d0d6; max-width: 520px; margin: 0 auto 26px; }
+    #zly-ai-page .final .btn-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    #zly-ai-page .final .cta-note { color: rgba(244,237,224,0.55); margin-top: 16px; }
+
+    @media (max-width: 900px) {
+      #zly-ai-page .hero { grid-template-columns: 1fr; padding: 72px 20px 40px; gap: 36px; }
+      #zly-ai-page .stat-strip { grid-template-columns: 1fr; }
+      #zly-ai-page .process-grid { grid-template-columns: repeat(2, 1fr); }
+      #zly-ai-page .case-study-body { grid-template-columns: 1fr; text-align: center; }
+      #zly-ai-page .candor { grid-template-columns: 1fr; padding: 32px 24px; gap: 24px; }
+      #zly-ai-page .time-grid { grid-template-columns: 1fr; gap: 24px; }
+      #zly-ai-page .wd-row { grid-template-columns: 40px 1fr; }
+      #zly-ai-page .wd-out { grid-column: 2; padding-top: 0; }
+      #zly-ai-page .sec { padding: 60px 20px; }
+      #zly-ai-page .time-band { padding: 20px 20px 40px; }
+      #zly-ai-page .time-card { padding: 32px 24px; }
+      #zly-ai-page .stat-band { padding: 60px 20px; }
+    }
+    @media (max-width: 560px) {
+      #zly-ai-page .process-grid { grid-template-columns: 1fr; }
+      #zly-ai-page .hero { padding-top: 56px; }
+      #zly-ai-page .cta-row, #zly-ai-page .final .btn-row { flex-direction: column; align-items: stretch; }
+      #zly-ai-page .btn { justify-content: center; }
+      #zly-ai-page .final { padding: 40px 22px; border-radius: 12px; }
+    }
+  </style>
+
+  <!-- 1. HERO -->
+  <section class="hero">
+    <div>
+      <span class="tag">AI strategy &amp; integration</span>
+      <h1>AI that does a specific job in your business. Not a demo.</h1>
+      <p class="sub">We identify the two or three places where AI will return real hours or revenue for your business, then build it into the tools you already use. You get a system with a defined job and a measured result, not another subscription to figure out.</p>
+      <div class="cta-row">
+        <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get your AI plan</a>
+        <a href="https://calendly.com/zoley/free-30-min-discovery-call" class="btn btn-ghost">Book a 30-minute call</a>
+      </div>
+      <p class="cta-note">A written recommendation and pricing within two business days.</p>
+    </div>
+    <div class="board">
+      <svg viewBox="0 0 420 320" fill="none" role="img" aria-label="Illustration: incoming messages pass through an AI assistant and come out answered, drafted, and summarized">
+        <defs>
+          <linearGradient id="zai-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b5482d"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
+          <linearGradient id="zai-core" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6c5ce7"/><stop offset="1" stop-color="#4ea1ff"/></linearGradient>
+        </defs>
+        <!-- inbox card (left) -->
+        <g transform="translate(14 60) rotate(-3 70 100)">
+          <rect x="0" y="0" width="140" height="200" rx="8" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <text x="14" y="26" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#1b2430" letter-spacing="1">INBOX</text>
+          <line x1="0" y1="36" x2="140" y2="36" stroke="#1b2430" stroke-width="1.5" opacity="0.3"/>
+          <g>
+            <circle cx="22" cy="58" r="8" fill="#e3a72e"/>
+            <rect x="38" y="52" width="80" height="6" rx="3" fill="#1b2430" opacity="0.7"/>
+            <rect x="38" y="63" width="56" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
+          </g>
+          <g>
+            <circle cx="22" cy="98" r="8" fill="#4ea1ff"/>
+            <rect x="38" y="92" width="68" height="6" rx="3" fill="#1b2430" opacity="0.7"/>
+            <rect x="38" y="103" width="76" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
+          </g>
+          <g>
+            <circle cx="22" cy="138" r="8" fill="#7a8b69"/>
+            <rect x="38" y="132" width="86" height="6" rx="3" fill="#1b2430" opacity="0.7"/>
+            <rect x="38" y="143" width="48" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
+          </g>
+          <g>
+            <circle cx="22" cy="178" r="8" fill="#b5482d"/>
+            <rect x="38" y="172" width="60" height="6" rx="3" fill="#1b2430" opacity="0.7"/>
+            <rect x="38" y="183" width="70" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
+          </g>
+        </g>
+        <!-- threads in -->
+        <path class="thread" d="M156 120 Q 190 150 206 160"/>
+        <!-- AI core (center) -->
+        <g transform="translate(210 160)">
+          <path d="M0 -44 L38 -22 L38 22 L0 44 L-38 22 L-38 -22 Z" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M0 -26 L22 -13 L22 13 L0 26 L-22 13 L-22 -13 Z" fill="url(#zai-core)" opacity="0.9"/>
+          <path d="M0 -12 L3 -3 L12 0 L3 3 L0 12 L-3 3 L-12 0 L-3 -3 Z" fill="#fff9ef"/>
+        </g>
+        <text x="210" y="228" font-family="Caveat, cursive" font-size="19" font-weight="700" fill="#6c5ce7" text-anchor="middle">trained on your business</text>
+        <!-- threads out -->
+        <path class="thread" d="M248 140 Q 274 90 288 70"/>
+        <path class="thread" d="M250 160 Q 270 160 288 160"/>
+        <path class="thread" d="M248 180 Q 274 230 288 250"/>
+        <!-- outcome cards (right) -->
+        <g class="pulse" transform="translate(288 40) rotate(2 58 30)">
+          <rect x="0" y="0" width="120" height="60" rx="7" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <circle cx="20" cy="30" r="10" fill="#7a8b69"/>
+          <path d="M15 30 l4 4 l7 -8" stroke="#fff9ef" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="38" y="27" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#1b2430">Answered</text>
+          <text x="38" y="42" font-family="DM Sans, sans-serif" font-size="10.5" fill="#5c6b76">in under a minute</text>
+        </g>
+        <g class="pulse" transform="translate(288 130) rotate(-2 58 30)">
+          <rect x="0" y="0" width="120" height="60" rx="7" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <circle cx="20" cy="30" r="10" fill="#e3a72e"/>
+          <path d="M16 34 l8 -8 M18 26 l4 4" stroke="#fff9ef" stroke-width="2.2" stroke-linecap="round"/>
+          <text x="38" y="27" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#1b2430">Drafted</text>
+          <text x="38" y="42" font-family="DM Sans, sans-serif" font-size="10.5" fill="#5c6b76">for your review</text>
+        </g>
+        <g class="pulse" transform="translate(288 220) rotate(3 58 30)">
+          <rect x="0" y="0" width="120" height="60" rx="7" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <circle cx="20" cy="30" r="10" fill="#4ea1ff"/>
+          <path d="M14 26h12M14 30h12M14 34h8" stroke="#fff9ef" stroke-width="2" stroke-linecap="round"/>
+          <text x="38" y="27" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#1b2430">Summarized</text>
+          <text x="38" y="42" font-family="DM Sans, sans-serif" font-size="10.5" fill="#5c6b76">end of every day</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 2. ADOPTION GAP -->
+  <section class="time-band">
+    <div class="time-card">
+      <div class="time-grid">
+        <div class="time-stat">58%<span>of U.S. small businesses now use generative AI, up from 40% the year before</span></div>
+        <div>
+          <span class="time-eyebrow">The gap is no longer access. It's integration.</span>
+          <h2>Most businesses use AI. Few run on it.</h2>
+          <p style="margin-top: 14px;">The typical pattern is a chat window open in one tab and the actual work happening in another. The tool is being used, but it isn't connected to your inbox, your calendar, your customer records, or your website. That's the difference between an experiment and an operating system, and it's the part we build.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. WHAT WE DO -->
+  <section class="sec" style="padding-top: 30px;">
+    <div class="process-header">
+      <h2>What we deploy, and the job each one does.</h2>
+      <p class="process-sub">Each of these is scoped as a specific system with a defined owner, a defined input, and a defined output. If it can't be described that way, we don't build it.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-card"><div class="pc-head"><span class="pc-num">1</span><h3>Tool selection &amp; vetting</h3></div><p>An independent recommendation on which AI tools fit your workflow, data, and budget. We don't resell software, so there's no incentive to steer you.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">2</span><h3>Customer-facing assistant</h3></div><p>Answers pricing, availability, and policy questions on your site or by text, trained on your actual answers, and hands off to a person when it should.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">3</span><h3>Content &amp; correspondence drafting</h3></div><p>First drafts of proposals, follow-up emails, and social posts in your voice, queued for your review rather than sent blind.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">4</span><h3>Meeting &amp; call summaries</h3></div><p>Automatic notes, action items, and follow-ups after every call, filed against the right customer record.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">5</span><h3>Reporting &amp; insight</h3></div><p>A plain-language weekly readout of sales, leads, and cash position, assembled from the systems you already have.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">6</span><h3>Integration into existing tools</h3></div><p>Everything above lives inside your current CRM, inbox, and calendar. No new dashboard for your team to remember to open.</p></div>
+    </div>
+    <div class="wd-cta"><a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Find out which of these fits your business</a></div>
+  </section>
+
+  <!-- 4. CURRENT STATE (color break) -->
+  <section class="stat-band">
+    <div class="inner">
+      <div class="process-header">
+        <span class="tag" style="display:block; text-align:center;">the bigger picture</span>
+        <h2>Adoption is nearly universal. Results are not.</h2>
+        <p class="process-sub">The numbers below describe businesses of every size. The pattern holds at ten employees as well as ten thousand.</p>
+      </div>
+      <div class="stat-strip">
+        <div class="stat-card"><div class="num">88%</div><p>of organizations now use AI in at least one business function</p></div>
+        <div class="stat-card"><div class="num">3 in 4</div><p>knowledge workers already use AI at work, most of them with tools they brought in themselves</p></div>
+        <div class="stat-card"><div class="num">~4 in 10</div><p>can point to a measurable effect on profit. The rest are still running pilots.</p></div>
+      </div>
+      <p class="stat-close">The advantage isn't in having AI. It's in having it wired to the work.</p>
+    </div>
+  </section>
+
+  <!-- 5. WHERE WE'D ADVISE AGAINST IT -->
+  <section class="sec">
+    <div class="candor">
+      <div>
+        <span class="tag">a note on candor</span>
+        <h2>Where we'd tell you not to bother.</h2>
+        <p class="lead">Part of what you're paying for is a straight answer. These are the situations where we'll recommend a simpler fix, or no AI at all, before we quote you anything.</p>
+      </div>
+      <ul>
+        <li><span class="x">&times;</span><span class="t"><strong>Your process isn't written down yet.</strong> AI amplifies whatever it's given. If the way you quote a job lives in one person's head, we'll document that first. It's cheaper and it's the real bottleneck.</span></li>
+        <li><span class="x">&times;</span><span class="t"><strong>The task happens fewer than a few times a week.</strong> Below that frequency, the setup rarely pays back. A checklist or a template will do.</span></li>
+        <li><span class="x">&times;</span><span class="t"><strong>The answer has to be exactly right every time.</strong> Legal terms, medical guidance, final pricing. AI can draft these for a person to review, but it shouldn't be the last step.</span></li>
+        <li><span class="x">&times;</span><span class="t"><strong>The real problem is a plain automation.</strong> If a lead isn't getting a reply, the fix is a follow-up sequence, not a language model. We'll say so and point you to the simpler build.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. HOW WE DO IT -->
+  <section class="sec" style="padding-top: 0;">
+    <div class="process-header"><h2>How we bring AI into your business.</h2><p class="process-sub">Four stages, each with a deliverable you can hold us to. Most first builds go live within four to six weeks of the audit.</p></div>
+    <div class="wd-list">
+      <div class="wd-row"><div class="wd-num">1</div><div><h3>Audit</h3><p>We map where time and questions actually go in your business, then rank the candidates by hours returned per hour of setup.</p></div><div class="wd-out">Findings memo</div></div>
+      <div class="wd-row"><div class="wd-num">2</div><div><h3>Strategy</h3><p>A short plan naming the first system to build, the tools it will use, what it will and won't do, and a fixed price.</p></div><div class="wd-out">Scoped plan &amp; quote</div></div>
+      <div class="wd-row"><div class="wd-num">3</div><div><h3>Implement</h3><p>We build and train the system on your real material, connect it to your existing tools, and run it alongside your team before it goes live.</p></div><div class="wd-out">Working system</div></div>
+      <div class="wd-row"><div class="wd-num">4</div><div><h3>Optimize</h3><p>Thirty days of monitoring, tuning, and a written handover. After that, you own it, with the option of ongoing support.</p></div><div class="wd-out">Handover &amp; review</div></div>
+    </div>
+    <div class="wd-cta"><a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-ghost">Start with the audit</a></div>
+  </section>
+
+  <!-- 7. CASE STUDY -->
+  <section class="sec" style="padding-top: 0;">
+    <div class="process-header">
+      <span class="tag" style="display:block; text-align:center;">representative engagement</span>
+      <h2>What a first build looks like in practice.</h2>
+    </div>
+    <div class="case-study">
+      <!-- Replace this illustration with a real screenshot when a named case study is available -->
+      <div class="case-study-media">
+        <svg viewBox="0 0 760 300" fill="none" role="img" aria-label="Illustration: a customer chat handled by an AI assistant, with a handoff to a team member when needed">
+          <!-- website frame -->
+          <rect x="0" y="0" width="480" height="300" rx="10" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <line x1="0" y1="30" x2="480" y2="30" stroke="#1b2430" stroke-width="2"/>
+          <circle cx="16" cy="15" r="4" fill="#b5482d"/><circle cx="30" cy="15" r="4" fill="#e3a72e"/><circle cx="44" cy="15" r="4" fill="#7a8b69"/>
+          <rect x="20" y="52" width="180" height="12" rx="6" fill="#4ea1ff" opacity="0.9"/>
+          <rect x="20" y="76" width="260" height="8" rx="4" fill="#1b2430" opacity="0.25"/>
+          <rect x="20" y="92" width="220" height="8" rx="4" fill="#1b2430" opacity="0.25"/>
+          <rect x="20" y="108" width="240" height="8" rx="4" fill="#1b2430" opacity="0.25"/>
+          <rect x="20" y="140" width="120" height="34" rx="6" fill="#b5482d"/>
+          <!-- chat widget -->
+          <g transform="translate(250 44)">
+            <rect x="0" y="0" width="210" height="240" rx="10" fill="#faf3e7" stroke="#1b2430" stroke-width="2"/>
+            <rect x="0" y="0" width="210" height="34" rx="10" fill="#6c5ce7"/>
+            <rect x="0" y="20" width="210" height="14" fill="#6c5ce7"/>
+            <text x="14" y="22" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#fff9ef">Ask us anything</text>
+            <circle cx="192" cy="17" r="4" fill="#7a8b69"/>
+            <!-- customer bubble -->
+            <rect x="60" y="48" width="138" height="40" rx="10" fill="#fff9ef" stroke="#1b2430" stroke-width="1.5"/>
+            <text x="70" y="65" font-family="DM Sans, sans-serif" font-size="10.5" fill="#1b2430">Do you service Riverside,</text>
+            <text x="70" y="79" font-family="DM Sans, sans-serif" font-size="10.5" fill="#1b2430">and what's a rough price?</text>
+            <!-- ai bubble -->
+            <rect x="12" y="100" width="150" height="70" rx="10" fill="#e9e4fb" stroke="#6c5ce7" stroke-width="1.5"/>
+            <text x="22" y="117" font-family="DM Sans, sans-serif" font-size="10.5" fill="#1b2430">Yes. Riverside is in our area.</text>
+            <text x="22" y="131" font-family="DM Sans, sans-serif" font-size="10.5" fill="#1b2430">Most jobs there run $180 to</text>
+            <text x="22" y="145" font-family="DM Sans, sans-serif" font-size="10.5" fill="#1b2430">$260. Want a firm quote? I</text>
+            <text x="22" y="159" font-family="DM Sans, sans-serif" font-size="10.5" fill="#1b2430">can book a 10-min call.</text>
+            <!-- customer bubble -->
+            <rect x="110" y="182" width="88" height="26" rx="10" fill="#fff9ef" stroke="#1b2430" stroke-width="1.5"/>
+            <text x="120" y="199" font-family="DM Sans, sans-serif" font-size="10.5" fill="#1b2430">Yes, tomorrow.</text>
+            <!-- handoff tag -->
+            <rect x="12" y="216" width="126" height="16" rx="8" fill="#7a8b69"/>
+            <text x="20" y="227.5" font-family="DM Sans, sans-serif" font-size="9.5" font-weight="700" fill="#fff9ef">Booked · handed to Maria</text>
+          </g>
+          <!-- thread to team -->
+          <path d="M470 170 Q 530 170 560 150" stroke="url(#zai-grad)" stroke-width="2" stroke-dasharray="5 5" fill="none" opacity="0.8"/>
+          <!-- team card -->
+          <g transform="translate(560 96) rotate(2 100 50)">
+            <rect x="0" y="0" width="190" height="108" rx="8" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <circle cx="30" cy="34" r="16" fill="#4ea1ff"/>
+            <circle cx="30" cy="29" r="6" fill="#fff9ef"/>
+            <path d="M18.5 44 C18.5 36 41.5 36 41.5 44" fill="#fff9ef"/>
+            <text x="56" y="30" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#1b2430">Maria's calendar</text>
+            <text x="56" y="46" font-family="DM Sans, sans-serif" font-size="10.5" fill="#5c6b76">Tue 9:40 · Riverside quote</text>
+            <rect x="16" y="64" width="158" height="8" rx="4" fill="#1b2430" opacity="0.15"/>
+            <rect x="16" y="80" width="110" height="8" rx="4" fill="#1b2430" opacity="0.15"/>
+          </g>
+          <text x="560" y="236" font-family="Caveat, cursive" font-size="19" font-weight="700" fill="#b5482d" transform="rotate(-3 560 236)">the team only steps in when it counts</text>
+        </svg>
+      </div>
+      <div class="case-study-body">
+        <div>
+          <div class="cs-stat">12+ hrs</div>
+          <div class="cs-stat-label">returned to the team each week</div>
+        </div>
+        <div>
+          <h3>A home-services company answering the same forty questions by hand.</h3>
+          <p>Hours, service area, rough pricing, availability. Every inquiry was answered manually, often hours later, and a share of them went cold in the meantime. We documented the real answers, built an assistant that handles first-line questions on the site and by text, and set it to book a call or hand off to a person when a job needed judgment. Response time dropped from hours to seconds, and the team got its afternoons back.</p>
+          <p class="cs-note">Details anonymized. Figures from a representative first engagement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PINNED TESTIMONIAL -->
+  <div class="pin-wrap">
+    <div class="pin-card">
+      <p class="quote">"Zoley enhanced our real estate website so potential buyers stay within our ecosystem. It led to a 40% increase in interest in our listings."</p>
+      <span>&mdash; Rob G., No Limit Real Estate, LLC</span>
+    </div>
+  </div>
+
+  <!-- 8. FINAL CTA -->
+  <section class="sec" style="padding-bottom: 96px;">
+    <div class="final">
+      <h2>Find out where AI would actually pay off for you.</h2>
+      <p>Answer a few questions about how your business runs. We'll reply within two business days with the one or two places we'd start, what it would cost, and what we'd expect it to return.</p>
+      <div class="btn-row">
+        <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get your AI plan</a>
+        <a href="https://calendly.com/zoley/free-30-min-discovery-call" class="btn btn-outline">Book a 30-minute call</a>
+      </div>
+      <p class="cta-note">No obligation. The recommendation is yours to keep either way.</p>
+    </div>
+  </section>
+</div>

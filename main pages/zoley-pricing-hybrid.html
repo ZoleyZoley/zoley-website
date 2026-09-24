@@ -1,0 +1,120 @@
+<!--
+ZOLEY — PRICING PAGE, HYBRID VARIANT
+Scoped under #zly-pricing. Drop into a Squarespace Code Block on /pricing.
+Kept the existing "custom pricing, no one-size-fits-all" positioning as-is,
+did not invent tier names or numbers since the live page doesn't show them.
+-->
+
+<div id="zly-pricing">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-pricing {
+      --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef;
+      --ink: #1b2430; --ink-soft: #5c6b76;
+      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-pricing * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-pricing .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-pricing h1, #zly-pricing h2, #zly-pricing h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-pricing p { color: var(--ink-soft); line-height: 1.7; }
+    #zly-pricing .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 12px; padding: 0 4px; color: var(--barn); }
+    #zly-pricing .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-pricing .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-pricing .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-pricing .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    #zly-pricing .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+    #zly-pricing a.inline-link { color: var(--barn); font-weight: 600; text-decoration: underline; text-decoration-color: var(--marigold); text-underline-offset: 3px; }
+
+    /* HERO */
+    #zly-pricing .hero-grid { padding: 108px 24px 30px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 0.85fr; gap: 56px; align-items: start; }
+    #zly-pricing .hero-grid h1 { font-size: clamp(34px, 4.4vw, 52px); max-width: 480px; }
+    #zly-pricing .hero-grid h1 em { font-style: normal; color: var(--barn); }
+    #zly-pricing .hero-copy p { margin-top: 18px; font-size: 16.5px; }
+    #zly-pricing .hero-copy p:first-of-type { margin-top: 24px; }
+
+    /* PRINCIPLE CHIPS */
+    #zly-pricing .chip-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 22px 0 6px; }
+    #zly-pricing .chip { background: var(--card); border: 1px solid var(--border); border-radius: 100px; padding: 8px 16px; font-size: 13.5px; font-weight: 600; color: var(--ink); }
+    #zly-pricing .chip::before { content: '\2713\0020'; color: var(--sage); }
+
+    /* SIGNATURE ILLUSTRATION: a simple hand-drawn "path" echoing the original forest-path photo,
+       reframed as a road/roadmap since the page is about finding the right path together */
+    #zly-pricing .path-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 28px; }
+    #zly-pricing .path-card svg { width: 100%; height: auto; display: block; }
+    #zly-pricing .path-card .cap { font-family: 'Caveat', cursive; font-size: 18px; color: var(--ink-soft); text-align: center; margin-top: 10px; transform: rotate(-1deg); }
+
+    /* TWO PATHS */
+    #zly-pricing .paths-header { text-align: center; margin-bottom: 40px; }
+    #zly-pricing .paths-header h2 { font-size: clamp(24px, 2.8vw, 32px); max-width: 600px; margin: 0 auto 10px; }
+    #zly-pricing .paths { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+    #zly-pricing .path-option { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 36px; text-align: center; position: relative; overflow: hidden; }
+    #zly-pricing .path-option::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--barn), var(--violet), var(--blue)); }
+    #zly-pricing .path-option .num { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; font-family: 'Newsreader', serif; font-weight: 600; font-size: 15px; margin-bottom: 16px; }
+    #zly-pricing .path-option h3 { font-size: 21px; margin-bottom: 8px; }
+    #zly-pricing .path-option p { font-size: 15px; margin-bottom: 22px; }
+
+    /* CONTACT FALLBACK */
+    #zly-pricing .fallback { text-align: center; max-width: 520px; margin: 46px auto 0; font-size: 15px; }
+
+    @media (max-width: 900px) {
+      #zly-pricing .hero-grid { grid-template-columns: 1fr; }
+      #zly-pricing .paths { grid-template-columns: 1fr; }
+      #zly-pricing .sec { padding: 60px 20px; }
+    }
+  </style>
+
+  <!-- HERO -->
+  <section class="hero-grid">
+    <div class="hero-copy">
+      <span class="tag">no one-size-fits-all here</span>
+      <h1>Let's talk pricing that works for <em>you</em>.</h1>
+      <p>We get it, pricing can be weird, especially when you're not buying an off-the-shelf service. That's not how we operate at Zoley.</p>
+      <p>We believe in building partnerships. That means we take the time to understand your goals, your timeline, and what you actually need, then shape a budget that fits where you're at and where you're going.</p>
+      <p>Whether you're starting from scratch, pivoting your strategy, or scaling what's already working, we're here to build with you.</p>
+      <div class="chip-row">
+        <span class="chip">Flexible</span>
+        <span class="chip">Collaborative</span>
+        <span class="chip">Transparent, no hidden fees</span>
+      </div>
+    </div>
+
+    <div class="path-card">
+      <svg viewBox="0 0 360 280" fill="none">
+        <path d="M180 280 C160 220 140 200 100 170 C60 140 50 90 70 40" stroke="#b5482d" stroke-width="3" stroke-dasharray="7 7" stroke-linecap="round" fill="none"/>
+        <path d="M180 280 C200 220 220 200 260 170 C300 140 310 90 290 40" stroke="#6c5ce7" stroke-width="3" stroke-dasharray="7 7" stroke-linecap="round" fill="none"/>
+        <circle cx="180" cy="278" r="8" fill="#e3a72e" stroke="#1b2430" stroke-width="2"/>
+        <circle cx="70" cy="40" r="8" fill="#7a8b69" stroke="#1b2430" stroke-width="2"/>
+        <circle cx="290" cy="40" r="8" fill="#4ea1ff" stroke="#1b2430" stroke-width="2"/>
+        <text x="40" y="26" font-family="DM Sans, sans-serif" font-size="12" fill="#1b2430" font-weight="700">Quick Start form</text>
+        <text x="222" y="26" font-family="DM Sans, sans-serif" font-size="12" fill="#1b2430" font-weight="700">Free call</text>
+        <text x="140" y="270" font-family="DM Sans, sans-serif" font-size="12" fill="#1b2430" font-weight="700">Your plan</text>
+      </svg>
+      <p class="cap">Two paths, same destination: a plan built around you.</p>
+    </div>
+  </section>
+
+  <!-- TWO PATHS -->
+  <section class="sec">
+    <div class="paths-header">
+      <h2>Want to explore what working together could look like? You've got two easy options.</h2>
+    </div>
+    <div class="paths">
+      <div class="path-option">
+        <div class="num">1</div>
+        <h3>Fill out our Quick Start form</h3>
+        <p>A few quick questions about your business and where you're headed. We'll come back with a plan and pricing shaped around it.</p>
+        <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Quick Start form</a>
+      </div>
+      <div class="path-option">
+        <div class="num">2</div>
+        <h3>Hop on a no-pressure call</h3>
+        <p>Prefer to talk it through? Book a free call and we'll figure out what you actually need together, live.</p>
+        <a href="https://calendly.com/zoley/free-30-min-discovery-call" class="btn btn-ghost">Book a call</a>
+      </div>
+    </div>
+    <p class="fallback">Not sure what you need yet? No stress, contact us at <a href="mailto:sales@zoley.io" class="inline-link">sales@zoley.io</a> and we'll talk it through.</p>
+  </section>
+</div>

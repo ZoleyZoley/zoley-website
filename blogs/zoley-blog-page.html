@@ -1,0 +1,160 @@
+<!--
+ZOLEY — BLOG PAGE
+Index/hub page (not the 7-section funnel template). Same design system as the service pages.
+Scoped under #zly-blog-page. Drop into a Squarespace Code Block on /blog (or as the intro block
+above a native Squarespace blog list).
+
+Content angle: general "what can a consultant do for your small business" thought leadership,
+with the featured post as the broad answer and the grid posts as one supporting piece per
+service line (AI, Automation, Web Design, Advertising, Strategy).
+
+VISUALS: each .post-media block has a placeholder <span>. Replace with an <img src="..." alt="...">
+once real post artwork exists. Post links (href="#") should point to each post's real URL once written.
+-->
+
+<div id="zly-blog-page">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-blog-page {
+      --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef;
+      --ink: #1b2430; --ink-soft: #5c6b76;
+      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-blog-page * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-blog-page .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-blog-page h1, #zly-blog-page h2, #zly-blog-page h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-blog-page p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-blog-page .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 12px; padding: 0 4px; color: var(--barn); }
+
+    /* BUTTONS */
+    #zly-blog-page .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-blog-page .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-blog-page .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-blog-page .btn-outline { background: transparent; color: #fff9ef; border: 2px solid var(--barn); }
+    #zly-blog-page .btn-outline:hover { background: var(--barn); }
+
+    /* HEADER */
+    #zly-blog-page .hero { padding: 108px 24px 64px; max-width: 780px; margin: 0 auto; text-align: center; }
+    #zly-blog-page .hero h1 { font-size: clamp(34px, 4.6vw, 54px); }
+    #zly-blog-page .hero p.sub { font-size: 18.5px; max-width: 540px; margin: 20px auto 0; }
+
+    /* SHARED POST BITS */
+    #zly-blog-page .post-cat { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--barn); border: 1px solid var(--border); background: var(--paper); padding: 4px 10px; border-radius: 999px; margin-bottom: 14px; align-self: flex-start; }
+    #zly-blog-page .post-link { font-weight: 700; color: var(--barn); text-decoration: none; border-bottom: 2px solid var(--barn); padding-bottom: 2px; align-self: flex-start; }
+
+    /* FEATURED POST */
+    #zly-blog-page .post-featured { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 40px; box-shadow: 0 18px 40px -24px rgba(27,36,48,0.25); display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: center; }
+    #zly-blog-page .post-featured-media { width: 100%; aspect-ratio: 16 / 10; border-radius: 12px; overflow: hidden; background: linear-gradient(135deg, rgba(122,139,105,0.18), rgba(78,161,255,0.18)); display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; }
+    #zly-blog-page .post-featured-media span { font-size: 13px; color: var(--ink-soft); font-style: italic; }
+    #zly-blog-page .post-featured-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    #zly-blog-page .post-featured-body { display: flex; flex-direction: column; }
+    #zly-blog-page .post-featured-body h2 { font-size: clamp(24px, 2.6vw, 30px); margin-bottom: 12px; }
+    #zly-blog-page .post-featured-body p { font-size: 15.5px; margin-bottom: 20px; }
+
+    /* POST GRID */
+    #zly-blog-page .post-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+    #zly-blog-page .post-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 24px; box-shadow: 0 14px 30px -20px rgba(27,36,48,0.2); display: flex; flex-direction: column; }
+    #zly-blog-page .post-media { width: 100%; aspect-ratio: 4 / 3; border-radius: 10px; overflow: hidden; margin-bottom: 18px; background: linear-gradient(135deg, rgba(122,139,105,0.18), rgba(78,161,255,0.18)); display: flex; align-items: center; justify-content: center; text-align: center; padding: 16px; }
+    #zly-blog-page .post-media span { font-size: 12.5px; color: var(--ink-soft); font-style: italic; }
+    #zly-blog-page .post-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    #zly-blog-page .post-card h3 { font-size: 17.5px; margin-bottom: 8px; }
+    #zly-blog-page .post-card p { font-size: 13.5px; margin-bottom: 16px; flex-grow: 1; }
+
+    /* FINAL CTA */
+    #zly-blog-page .final { background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center; margin: 0 24px; max-width: 1112px; margin-left: auto; margin-right: auto; position: relative; overflow: hidden; }
+    #zly-blog-page .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+    #zly-blog-page .final > * { position: relative; }
+    #zly-blog-page .final h2 { color: var(--paper); font-size: clamp(27px, 3.2vw, 36px); margin-bottom: 14px; }
+    #zly-blog-page .final p { color: #c7d0d6; max-width: 460px; margin: 0 auto 26px; }
+    #zly-blog-page .final .btn-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    @media (max-width: 900px) {
+      #zly-blog-page .post-featured { grid-template-columns: 1fr; }
+      #zly-blog-page .post-grid { grid-template-columns: repeat(2, 1fr); }
+      #zly-blog-page .sec { padding: 60px 20px; }
+    }
+    @media (max-width: 620px) {
+      #zly-blog-page .post-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <!-- HEADER -->
+  <section class="hero">
+    <span class="tag">the zoley blog</span>
+    <h1>Ideas for small businesses ready to grow.</h1>
+    <p class="sub">Straight talk on AI, automation, design, advertising, and strategy — no jargon, no fluff.</p>
+  </section>
+
+  <!-- FEATURED POST -->
+  <section class="sec" style="padding-top: 0; padding-bottom: 44px;">
+    <article class="post-featured">
+      <div class="post-featured-media"><span>Add a featured image for this post</span></div>
+      <div class="post-featured-body">
+        <span class="post-cat">Getting Started</span>
+        <h2>What does a business consultant actually do?</h2>
+        <p>If "consultant" makes you think of expensive advice and vague slide decks, here's what it actually looks like for a small business — and why it might be the highest-leverage thing you do this year.</p>
+        <a href="#" class="post-link">Read the post →</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- POST GRID -->
+  <section class="sec" style="padding-top: 0;">
+    <div class="post-grid">
+      <article class="post-card">
+        <div class="post-media"><span>Add a featured image for this post</span></div>
+        <span class="post-cat">AI</span>
+        <h3>5 signs your business is ready for AI</h3>
+        <p>AI isn't just for big companies with big budgets. Here's how to tell if your business has the kind of repetitive, predictable work that AI actually handles well.</p>
+        <a href="#" class="post-link">Read more →</a>
+      </article>
+
+      <article class="post-card">
+        <div class="post-media"><span>Add a featured image for this post</span></div>
+        <span class="post-cat">Automation</span>
+        <h3>The hidden cost of doing things by hand</h3>
+        <p>Manual busywork doesn't just cost time — it costs the opportunities you never got to because you were buried in admin. Here's how to spot what's worth automating first.</p>
+        <a href="#" class="post-link">Read more →</a>
+      </article>
+
+      <article class="post-card">
+        <div class="post-media"><span>Add a featured image for this post</span></div>
+        <span class="post-cat">Web Design</span>
+        <h3>Why your website might be losing you customers</h3>
+        <p>A slow, dated, or confusing website doesn't just look bad — it actively pushes potential customers toward a competitor. Here's what to check first.</p>
+        <a href="#" class="post-link">Read more →</a>
+      </article>
+
+      <article class="post-card">
+        <div class="post-media"><span>Add a featured image for this post</span></div>
+        <span class="post-cat">Advertising</span>
+        <h3>How to stop wasting money on ads that don't convert</h3>
+        <p>Boosting a post isn't a strategy. Here's the difference between ad spend that disappears and ad spend that actually turns into customers.</p>
+        <a href="#" class="post-link">Read more →</a>
+      </article>
+
+      <article class="post-card">
+        <div class="post-media"><span>Add a featured image for this post</span></div>
+        <span class="post-cat">Strategy</span>
+        <h3>You're probably pricing wrong. Here's how to tell.</h3>
+        <p>Most small businesses set prices by feel, not by what the market will actually bear. Here's a simple way to check if you're leaving money on the table.</p>
+        <a href="#" class="post-link">Read more →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="sec" style="padding-bottom: 96px;">
+    <div class="final">
+      <h2>Ready to put this into action?</h2>
+      <p>A free call is the fastest way to find out what actually applies to your business.</p>
+      <div class="btn-row">
+        <a href="https://calendly.com/zoley/free-30-min-discovery-call" class="btn btn-primary">Book a free call</a>
+        <a href="#" class="btn btn-outline">Start an intake form</a>
+      </div>
+    </div>
+  </section>
+</div>

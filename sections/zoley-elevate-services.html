@@ -1,0 +1,49 @@
+<!--
+ZOLEY — ELEVATE YOUR BRAND PAGE — SERVICES SECTION
+-->
+
+<div id="zly-elev-services">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-elev-services {
+      --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+      --barn: #b5482d; --violet: #6c5ce7; --blue: #4ea1ff; --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-elev-services * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-elev-services .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-elev-services h2, #zly-elev-services h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-elev-services p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-elev-services .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 12px; padding: 0 4px; color: var(--barn); }
+
+    #zly-elev-services .services-intro { text-align: center; max-width: 640px; margin: 0 auto 44px; }
+    #zly-elev-services .services-intro h2 { font-size: clamp(24px, 2.8vw, 32px); margin-bottom: 12px; }
+    #zly-elev-services .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    #zly-elev-services .service-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 28px; position: relative; overflow: hidden; }
+    #zly-elev-services .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--barn), var(--violet), var(--blue)); }
+    #zly-elev-services .service-card h3 { font-size: 19px; margin-bottom: 8px; }
+    #zly-elev-services .service-card p { font-size: 14.5px; }
+
+    @media (max-width: 900px) {
+      #zly-elev-services .services-grid { grid-template-columns: 1fr; }
+      #zly-elev-services .sec { padding: 60px 20px; }
+    }
+  </style>
+
+  <section class="sec">
+    <div class="services-intro">
+      <span class="tag" style="display:block;">no 30-page brand book required</span>
+      <h2>Most small businesses just need to be seen, understood, and remembered.</h2>
+      <p>We bridge that gap, combining strategy with creativity to help you make your mark.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><h3>Targeted Ad Campaigns</h3><p>Target and re-target so cold traffic doesn't stay cold, ads shown automatically to people who visited but didn't act.</p></div>
+      <div class="service-card"><h3>Brand Messaging Refresh</h3><p>Clarify your voice, mission, and message so your business sounds like it knows exactly who it's talking to.</p></div>
+      <div class="service-card"><h3>A/B Testing</h3><p>Test and improve with data-backed decisions that actually move ROI.</p></div>
+      <div class="service-card"><h3>Lead Magnet Design &amp; Setup</h3><p>High-converting lead magnets that start building your book of potential customers.</p></div>
+      <div class="service-card"><h3>Ad Tracking</h3><p>Know what's working and refine what isn't, quickly, before budget gets wasted.</p></div>
+      <div class="service-card"><h3>Website Refresh</h3><p>Simple, powerful messaging backed by psychology, that sounds like you and speaks to who you want to reach.</p></div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,114 @@
+<!--
+ZOLEY — CASE STUDIES HUB PAGE — CASE STUDY GRID SECTION
+-->
+
+<div id="zly-cs-hub-case-study-grid">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-cs-hub-case-study-grid {
+      --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef;
+      --ink: #1b2430; --ink-soft: #5c6b76;
+      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-cs-hub-case-study-grid * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-cs-hub-case-study-grid .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-cs-hub-case-study-grid h1, #zly-cs-hub-case-study-grid h2, #zly-cs-hub-case-study-grid h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-cs-hub-case-study-grid p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-cs-hub-case-study-grid .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 12px; padding: 0 4px; color: var(--barn); }
+
+    /* BUTTONS */
+    #zly-cs-hub-case-study-grid .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-cs-hub-case-study-grid .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-cs-hub-case-study-grid .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-cs-hub-case-study-grid .btn-outline { background: transparent; color: #fff9ef; border: 2px solid var(--barn); }
+    #zly-cs-hub-case-study-grid .btn-outline:hover { background: var(--barn); }
+
+    /* HEADER */
+    #zly-cs-hub-case-study-grid .hero { padding: 108px 24px 64px; max-width: 780px; margin: 0 auto; text-align: center; }
+    #zly-cs-hub-case-study-grid .hero h1 { font-size: clamp(34px, 4.6vw, 54px); }
+    #zly-cs-hub-case-study-grid .hero p.sub { font-size: 18.5px; max-width: 540px; margin: 20px auto 0; }
+
+    /* CASE STUDY GRID */
+    #zly-cs-hub-case-study-grid .cs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+    #zly-cs-hub-case-study-grid .cs-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 26px; box-shadow: 0 14px 30px -20px rgba(27,36,48,0.2); display: flex; flex-direction: column; scroll-margin-top: 40px; }
+    #zly-cs-hub-case-study-grid .cs-media { width: 100%; aspect-ratio: 4 / 3; border-radius: 10px; overflow: hidden; margin-bottom: 20px; background: linear-gradient(135deg, rgba(122,139,105,0.18), rgba(78,161,255,0.18)); display: flex; align-items: center; justify-content: center; text-align: center; padding: 16px; }
+    #zly-cs-hub-case-study-grid .cs-media span { font-size: 12.5px; color: var(--ink-soft); font-style: italic; }
+    #zly-cs-hub-case-study-grid .cs-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    #zly-cs-hub-case-study-grid .cs-cat { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--barn); border: 1px solid var(--border); background: var(--paper); padding: 4px 10px; border-radius: 999px; margin-bottom: 16px; align-self: flex-start; }
+    #zly-cs-hub-case-study-grid .cs-stat-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 14px; }
+    #zly-cs-hub-case-study-grid .cs-num { font-family: 'Newsreader', serif; font-weight: 600; font-size: clamp(28px, 3vw, 34px); color: var(--barn); line-height: 1; }
+    #zly-cs-hub-case-study-grid .cs-num-label { font-size: 13px; color: var(--ink-soft); }
+    #zly-cs-hub-case-study-grid .cs-card h3 { font-size: 18px; margin-bottom: 8px; }
+    #zly-cs-hub-case-study-grid .cs-card p { font-size: 14px; margin-bottom: 18px; flex-grow: 1; }
+    #zly-cs-hub-case-study-grid .cs-link { font-weight: 700; color: var(--barn); text-decoration: none; border-bottom: 2px solid var(--barn); padding-bottom: 2px; align-self: flex-start; }
+
+    /* FINAL CTA */
+    #zly-cs-hub-case-study-grid .final { background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center; margin: 0 24px; max-width: 1112px; margin-left: auto; margin-right: auto; position: relative; overflow: hidden; }
+    #zly-cs-hub-case-study-grid .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+    #zly-cs-hub-case-study-grid .final > * { position: relative; }
+    #zly-cs-hub-case-study-grid .final h2 { color: var(--paper); font-size: clamp(27px, 3.2vw, 36px); margin-bottom: 14px; }
+    #zly-cs-hub-case-study-grid .final p { color: #c7d0d6; max-width: 460px; margin: 0 auto 26px; }
+    #zly-cs-hub-case-study-grid .final .btn-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    @media (max-width: 900px) {
+      #zly-cs-hub-case-study-grid .cs-grid { grid-template-columns: repeat(2, 1fr); }
+      #zly-cs-hub-case-study-grid .sec { padding: 60px 20px; }
+    }
+    @media (max-width: 620px) {
+      #zly-cs-hub-case-study-grid .cs-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <!-- CASE STUDY GRID -->
+  <section class="sec" style="padding-top: 0;">
+    <div class="cs-grid">
+      <article class="cs-card" id="cs-ai">
+        <div class="cs-media"><span>Add a screenshot or visual from this project</span></div>
+        <span class="cs-cat">AI</span>
+        <div class="cs-stat-row"><div class="cs-num">12+ hrs</div><div class="cs-num-label">given back every week</div></div>
+        <h3>A local service business, buried in repeat questions.</h3>
+        <p>Customers kept asking the same handful of questions — hours, pricing, availability — and someone had to answer every one by hand. We set up an AI assistant that handles first-line questions automatically, so the team only steps in when it actually matters.</p>
+        <a href="#" class="cs-link">Read the full case study →</a>
+      </article>
+
+      <article class="cs-card" id="cs-automation">
+        <div class="cs-media"><span>Add a screenshot or visual from this project</span></div>
+        <span class="cs-cat">Automation</span>
+        <div class="cs-stat-row"><div class="cs-num">12+ hrs</div><div class="cs-num-label">given back every week</div></div>
+        <h3>A growing service business, chasing its own paperwork.</h3>
+        <p>Leads sat too long before a follow-up went out, and invoices had to be tracked and chased by hand. We automated the whole flow — leads, follow-ups, and invoicing — so the team spends its time on the work, not the admin around it.</p>
+        <a href="#" class="cs-link">Read the full case study →</a>
+      </article>
+
+      <article class="cs-card" id="cs-web-design">
+        <div class="cs-media"><span>Add a screenshot or visual from this project</span></div>
+        <span class="cs-cat">Web Design</span>
+        <div class="cs-stat-row"><div class="cs-num">2x</div><div class="cs-num-label">more leads from the same traffic</div></div>
+        <h3>A local business, running on a website years out of date.</h3>
+        <p>The old site was slow, cluttered, and impossible to update. We rebuilt it around a clear message and a faster, mobile-first experience — and it started converting visitors instead of losing them.</p>
+        <a href="#" class="cs-link">Read the full case study →</a>
+      </article>
+
+      <article class="cs-card" id="cs-advertising">
+        <div class="cs-media"><span>Add a screenshot or visual from this project</span></div>
+        <span class="cs-cat">Advertising</span>
+        <div class="cs-stat-row"><div class="cs-num">3x</div><div class="cs-num-label">return on ad spend</div></div>
+        <h3>A local business, running ads with no tracking and no clear audience.</h3>
+        <p>Spend was going out with no way to tell what was working. We rebuilt the campaigns around a targeted audience and clear tracking, and spend that used to disappear started turning into real leads.</p>
+        <a href="#" class="cs-link">Read the full case study →</a>
+      </article>
+
+      <article class="cs-card" id="cs-strategy">
+        <div class="cs-media"><span>Add a research chart, pricing table, or report excerpt</span></div>
+        <span class="cs-cat">Strategy</span>
+        <div class="cs-stat-row"><div class="cs-num">27%</div><div class="cs-num-label">revenue increase from one pricing fix</div></div>
+        <h3>A local business, pricing entirely on gut feeling.</h3>
+        <p>They'd never looked at what competitors charged or what customers were actually willing to pay. We ran the research, found the gap, and repriced two core offers — turning a guess into a plan that grew revenue without adding a single new customer.</p>
+        <a href="#" class="cs-link">Read the full case study →</a>
+      </article>
+    </div>
+  </section>
+</div>

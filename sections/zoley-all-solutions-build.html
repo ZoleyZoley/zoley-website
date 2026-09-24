@@ -1,0 +1,59 @@
+<!--
+ZOLEY — ALL SOLUTIONS PAGE — "BUILD YOUR COMPANY" SECTION
+-->
+
+<div id="zly-sol-build">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-sol-build {
+      --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+      --barn: #b5482d; --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-sol-build * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-sol-build h2 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-sol-build p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-sol-build .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 26px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-sol-build .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-sol-build .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+
+    #zly-sol-build .solution { padding: 70px 24px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; scroll-margin-top: 30px; }
+    #zly-sol-build .solution-copy .kicker { font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--barn); font-weight: 700; margin-bottom: 10px; display: block; }
+    #zly-sol-build .solution-copy h2 { font-size: clamp(26px, 3vw, 36px); margin-bottom: 6px; }
+    #zly-sol-build .solution-copy .subhead { font-family: 'Newsreader', serif; font-style: italic; font-size: 17px; color: var(--ink-soft); margin-bottom: 16px; }
+    #zly-sol-build .solution-copy p.body { font-size: 15.5px; margin-bottom: 24px; }
+    #zly-sol-build .solution-art { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 30px; }
+    #zly-sol-build .solution-art svg { width: 100%; height: auto; display: block; }
+    #zly-sol-build .divider { border: none; border-top: 1px dashed var(--border); max-width: 1160px; margin: 0 auto; }
+
+    @media (max-width: 900px) {
+      #zly-sol-build .solution { grid-template-columns: 1fr; padding: 56px 20px; }
+    }
+  </style>
+
+  <section class="solution" id="build-your-company">
+    <div class="solution-copy">
+      <span class="kicker">Build your company</span>
+      <h2>From spark to startup.</h2>
+      <p class="subhead">You've got an idea, now what?</p>
+      <p class="body">Whether you're launching your first business or exploring a side hustle, we'll help you take the right first steps. From LLC setup to one-page websites, we'll lay the foundation to turn your vision into something real.</p>
+      <a href="https://www.zoley.io/build" class="btn btn-primary">Get started</a>
+    </div>
+    <div class="solution-art">
+      <svg viewBox="0 0 360 260" fill="none">
+        <circle cx="180" cy="130" r="6" fill="#e3a72e"/>
+        <path d="M180 130 C 150 100 150 60 180 30" stroke="#b5482d" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M180 30 L 165 55 M180 30 L 195 55" stroke="#b5482d" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <rect x="60" y="180" width="60" height="50" rx="2" stroke="#1b2430" stroke-width="2.5" fill="#fff9ef"/>
+        <path d="M60 180 L 90 160 L 120 180" stroke="#1b2430" stroke-width="2.5" fill="none"/>
+        <rect x="150" y="170" width="60" height="60" rx="2" stroke="#1b2430" stroke-width="2.5" fill="#fff9ef"/>
+        <path d="M150 170 L 180 145 L 210 170" stroke="#1b2430" stroke-width="2.5" fill="none"/>
+        <rect x="240" y="190" width="60" height="40" rx="2" stroke="#1b2430" stroke-width="2.5" fill="#fff9ef"/>
+        <path d="M240 190 L 270 172 L 300 190" stroke="#1b2430" stroke-width="2.5" fill="none"/>
+      </svg>
+    </div>
+  </section>
+
+  <hr class="divider">
+</div>

@@ -1,0 +1,73 @@
+<!--
+ZOLEY — QUICKSTART — Next Steps
+Source: main pages/zoley-quickstart.v2.html
+Scoped under #zly-quickstart-next. Self-contained: drop into a Squarespace Code Block.
+-->
+
+<div id="zly-quickstart-next">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;
+    /* ===== next steps ===== */
+      #zly-quickstart-next {
+        --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+        --barn: #b5482d; --sage: #7a8b69; --blue: #4ea1ff; --violet: #6c5ce7; --border: rgba(27,36,48,0.14);
+        font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+      }
+    #zly-quickstart-next * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-quickstart-next .sec { padding: 0 24px 96px; max-width: 1100px; margin: 0 auto; }
+    #zly-quickstart-next h2, #zly-quickstart-next h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-quickstart-next p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-quickstart-next .next-header { text-align: center; margin-bottom: 32px; }
+    #zly-quickstart-next .next-header h2 { font-size: clamp(22px, 2.6vw, 30px); }
+    #zly-quickstart-next .timeline { background: var(--paper-2); border: 1px solid var(--border); border-radius: 14px; padding: 26px 26px 10px; margin-bottom: 26px; }
+    #zly-quickstart-next .timeline svg { width: 100%; height: auto; display: block; }
+    #zly-quickstart-next .next-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    #zly-quickstart-next .next-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
+    #zly-quickstart-next .next-card .k { font-family: 'Caveat', cursive; font-size: 19px; color: var(--barn); font-weight: 700; }
+    #zly-quickstart-next .next-card h3 { font-size: 17px; margin: 2px 0 6px; }
+    #zly-quickstart-next .next-card p { font-size: 13.5px; }
+    @media (max-width: 900px) {
+      #zly-quickstart-next .next-grid { grid-template-columns: 1fr; }
+      #zly-quickstart-next .sec { padding: 0 20px 64px; }
+      #zly-quickstart-next .timeline { padding: 18px 16px 6px; }
+    }
+    @media (max-width: 600px) {
+      #zly-quickstart-next .timeline { display: none; }
+    }
+  </style>
+
+  <section class="sec">
+    <div class="next-header">
+      <h2>What happens after you hit send.</h2>
+    </div>
+    <div class="timeline">
+      <svg viewBox="0 0 900 120" fill="none" role="img" aria-label="Timeline: today you submit the form, within two business days you receive a written plan, then you decide">
+        <defs><linearGradient id="zqs-grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b5482d"/><stop offset="0.5" stop-color="#6c5ce7"/><stop offset="1" stop-color="#7a8b69"/></linearGradient></defs>
+        <line x1="90" y1="50" x2="810" y2="50" stroke="url(#zqs-grad)" stroke-width="2.5" stroke-dasharray="7 7"/>
+        <!-- node 1 -->
+        <circle cx="90" cy="50" r="20" fill="#fff9ef" stroke="#b5482d" stroke-width="2.5"/>
+        <rect x="82" y="42" width="16" height="16" rx="2" fill="#b5482d"/>
+        <text x="90" y="92" font-family="DM Sans, sans-serif" font-size="13" font-weight="700" fill="#1b2430" text-anchor="middle">Today</text>
+        <text x="90" y="110" font-family="DM Sans, sans-serif" font-size="12" fill="#5c6b76" text-anchor="middle">you send the form</text>
+        <!-- node 2 -->
+        <circle cx="450" cy="50" r="20" fill="#fff9ef" stroke="#6c5ce7" stroke-width="2.5"/>
+        <rect x="441" y="41" width="18" height="18" rx="2" fill="#faf3e7" stroke="#6c5ce7" stroke-width="2"/>
+        <line x1="445" y1="47" x2="455" y2="47" stroke="#6c5ce7" stroke-width="1.6"/><line x1="445" y1="51" x2="455" y2="51" stroke="#6c5ce7" stroke-width="1.6"/><line x1="445" y1="55" x2="451" y2="55" stroke="#6c5ce7" stroke-width="1.6"/>
+        <text x="450" y="92" font-family="DM Sans, sans-serif" font-size="13" font-weight="700" fill="#1b2430" text-anchor="middle">Within 2 business days</text>
+        <text x="450" y="110" font-family="DM Sans, sans-serif" font-size="12" fill="#5c6b76" text-anchor="middle">a written plan with a fixed price</text>
+        <!-- node 3 -->
+        <circle cx="810" cy="50" r="20" fill="#fff9ef" stroke="#7a8b69" stroke-width="2.5"/>
+        <path d="M801 50 l6 6 l12 -12" stroke="#7a8b69" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="810" y="92" font-family="DM Sans, sans-serif" font-size="13" font-weight="700" fill="#1b2430" text-anchor="middle">Whenever you're ready</text>
+        <text x="810" y="110" font-family="DM Sans, sans-serif" font-size="12" fill="#5c6b76" text-anchor="middle">you decide, on your timeline</text>
+        <text x="270" y="30" font-family="Caveat, cursive" font-size="18" font-weight="700" fill="#b5482d" text-anchor="middle">a real person reads it</text>
+        <text x="630" y="30" font-family="Caveat, cursive" font-size="18" font-weight="700" fill="#7a8b69" text-anchor="middle">no follow-up pressure</text>
+      </svg>
+    </div>
+    <div class="next-grid">
+      <div class="next-card"><span class="k">01</span><h3>We read it properly</h3><p>Your answers go to a person, not a queue. If something's unclear we'll email one question, not a calendar link.</p></div>
+      <div class="next-card"><span class="k">02</span><h3>You get the plan in writing</h3><p>What we'd do first, what it includes, what it costs, and what it should return. Written so you can forward it to a partner or an accountant.</p></div>
+      <div class="next-card"><span class="k">03</span><h3>You decide</h3><p>Take it, ask questions, compare it, or shelve it. We'll check in once. After that, the next move is yours.</p></div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,440 @@
+<!--
+ZOLEY — WEB DEVELOPMENT & DESIGN PAGE — V2
+9-section template: Illustrated Hero / Cost of a Slow Site / What We Do / Current State (color break) /
+Signs Your Site Is Working Against You / How We Do It / What We Measure (drafted, was "content pending") /
+Case Study (illustrated) / Final CTA
+Scoped under #zly-web-page. Drop into a Squarespace Code Block on /web-design.
+
+V2 CHANGES (vs zoley-web-design-page.html):
+- Hero is now two-column with an inline SVG illustration (desktop + phone mock with a load-speed gauge).
+- Copy rewritten in a more authoritative register. Primary CTA is the Quick Start form.
+- Statistics replaced with sourced figures (see V2-NOTES.md; not cited on-page by design).
+  The commonly quoted "75% judge credibility by design" figure was dropped because it misquotes its source.
+- "Website tracking" section drafted (it was a content-pending placeholder). Edit freely.
+- Case study media replaced with an illustrated before/after. Labeled representative.
+-->
+
+<div id="zly-web-page">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-web-page {
+      --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef;
+      --ink: #1b2430; --ink-soft: #5c6b76;
+      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-web-page * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-web-page .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-web-page h1, #zly-web-page h2, #zly-web-page h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-web-page p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-web-page .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: var(--barn); }
+
+    #zly-web-page .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-web-page .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-web-page .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-web-page .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    #zly-web-page .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+    #zly-web-page .btn-outline { background: transparent; color: #fff9ef; border: 2px solid #faf3e7; }
+    #zly-web-page .btn-outline:hover { background: #faf3e7; color: var(--ink); }
+    #zly-web-page .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+    #zly-web-page .cta-note { font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
+
+    /* 1. HERO */
+    #zly-web-page .hero { padding: 108px 24px 60px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    #zly-web-page .hero h1 { font-size: clamp(34px, 4.4vw, 54px); }
+    #zly-web-page .hero p.sub { font-size: 18px; max-width: 500px; margin: 20px 0 30px; }
+    #zly-web-page .board { background: var(--paper-2); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+    #zly-web-page .board svg { width: 100%; height: auto; display: block; }
+    #zly-web-page .needle { transform-origin: 0px 0px; animation: zwb-needle 4s ease-in-out infinite; }
+    @keyframes zwb-needle { 0%, 100% { transform: rotate(-70deg); } 50% { transform: rotate(-58deg); } }
+    @media (prefers-reduced-motion: reduce) { #zly-web-page .needle { animation: none; transform: rotate(-64deg); } }
+
+    #zly-web-page .process-header { text-align: center; margin-bottom: 40px; }
+    #zly-web-page .process-header h2 { font-size: clamp(30px, 3.6vw, 40px); max-width: 680px; margin: 0 auto; }
+    #zly-web-page .process-header .process-sub { font-size: 16px; max-width: 600px; margin: 14px auto 0; }
+
+    #zly-web-page .pin-wrap { display: flex; justify-content: center; padding: 0 24px 20px; }
+    #zly-web-page .pin-card { background: var(--card); border: 1px solid var(--border); border-radius: 4px; max-width: 620px; padding: 36px 40px; position: relative; transform: rotate(-1deg); box-shadow: 0 12px 24px rgba(27,36,48,0.10); }
+    #zly-web-page .pin-card::before { content: ''; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 18px; height: 18px; border-radius: 50%; background: linear-gradient(135deg, var(--barn), var(--violet)); box-shadow: 0 2px 3px rgba(0,0,0,0.25); }
+    #zly-web-page .pin-card p.quote { font-family: 'Newsreader', serif; font-style: italic; font-size: 20px; color: var(--ink); margin-bottom: 12px; }
+    #zly-web-page .pin-card span { font-family: 'Caveat', cursive; font-size: 20px; color: var(--barn); font-weight: 700; }
+
+    /* 2. COST */
+    #zly-web-page .time-band { padding: 30px 24px 70px; }
+    #zly-web-page .time-card { max-width: 1160px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 56px; box-shadow: 0 18px 40px -20px rgba(27,36,48,0.28); position: relative; overflow: hidden; }
+    #zly-web-page .time-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--barn), var(--marigold)); }
+    #zly-web-page .time-eyebrow { display: block; font-size: 12.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--barn); margin-bottom: 14px; }
+    #zly-web-page .time-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; align-items: center; }
+    #zly-web-page .time-stat { font-family: 'Newsreader', serif; font-size: clamp(56px, 7vw, 88px); font-weight: 600; line-height: 1; color: var(--barn); }
+    #zly-web-page .time-stat span { font-size: 16px; color: var(--ink-soft); font-family: 'DM Sans', sans-serif; display: block; margin-top: 12px; font-weight: 600; line-height: 1.4; }
+    #zly-web-page .time-grid h2 { font-size: clamp(28px, 3.4vw, 38px); }
+
+    /* 3. CARD GRID */
+    #zly-web-page .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    #zly-web-page .process-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 26px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #zly-web-page .process-card:hover { transform: translateY(-6px); box-shadow: 0 18px 32px -16px rgba(27,36,48,0.28); }
+    #zly-web-page .pc-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    #zly-web-page .pc-num { flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+    #zly-web-page .process-card h3 { font-size: 17px; }
+    #zly-web-page .process-card p { font-size: 14px; }
+    #zly-web-page .wd-cta { text-align: center; margin-top: 40px; }
+
+    /* 4. STAT BAND */
+    #zly-web-page .stat-band { background: var(--ink); padding: 90px 24px; position: relative; overflow: hidden; }
+    #zly-web-page .stat-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(181,72,45,0.2), transparent 55%), radial-gradient(circle at 85% 80%, rgba(78,161,255,0.18), transparent 55%); }
+    #zly-web-page .stat-band .inner { max-width: 1160px; margin: 0 auto; position: relative; }
+    #zly-web-page .stat-band .process-header h2 { color: var(--paper); }
+    #zly-web-page .stat-band .process-header .process-sub { color: #c7d0d6; }
+    #zly-web-page .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+    #zly-web-page .stat-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 32px 22px; transform: rotate(var(--r, 0deg)); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #zly-web-page .stat-card:hover { transform: rotate(var(--r, 0deg)) translateY(-6px); box-shadow: 0 16px 30px -18px rgba(0,0,0,0.5); }
+    #zly-web-page .stat-card:nth-child(1) { --r: -1deg; }
+    #zly-web-page .stat-card:nth-child(2) { --r: 1deg; }
+    #zly-web-page .stat-card:nth-child(3) { --r: -0.5deg; }
+    #zly-web-page .stat-card .num { font-family: 'Newsreader', serif; font-size: clamp(36px, 4vw, 48px); font-weight: 600; color: #fff9ef; }
+    #zly-web-page .stat-card p { font-size: 14px; margin-top: 8px; color: #c7d0d6; }
+    #zly-web-page .stat-close { text-align: center; max-width: 640px; margin: 40px auto 0; font-size: 17px; color: var(--paper); font-family: 'Newsreader', serif; font-style: italic; line-height: 1.5; }
+
+    /* 5. SIGNS */
+    #zly-web-page .signs-band { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    #zly-web-page .signs-wrap { max-width: 1160px; margin: 0 auto; padding: 80px 24px; display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 50px; align-items: start; }
+    #zly-web-page .signs-wrap h2 { font-size: clamp(26px, 3vw, 36px); max-width: 400px; margin-bottom: 14px; }
+    #zly-web-page .signs-wrap p.lead { font-size: 15.5px; max-width: 400px; }
+    #zly-web-page .signs-list { list-style: none; }
+    #zly-web-page .signs-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+    #zly-web-page .signs-item:last-child { border-bottom: none; }
+    #zly-web-page .signs-num { font-family: 'Newsreader', serif; font-size: 15px; color: var(--barn); font-weight: 600; flex-shrink: 0; width: 28px; }
+    #zly-web-page .signs-item h3 { font-size: 17px; margin-bottom: 4px; }
+    #zly-web-page .signs-item p { font-size: 14.5px; }
+
+    /* 6. HOW WE DO IT */
+    #zly-web-page .wd-list { max-width: 800px; margin: 0 auto; }
+    #zly-web-page .wd-row { display: grid; grid-template-columns: 40px 1fr auto; gap: 22px; align-items: flex-start; padding: 26px 0; border-bottom: 1px solid var(--border); }
+    #zly-web-page .wd-row:last-of-type { border-bottom: none; }
+    #zly-web-page .wd-num { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+    #zly-web-page .wd-row h3 { font-size: 19px; margin-bottom: 6px; }
+    #zly-web-page .wd-row p { font-size: 14.5px; }
+    #zly-web-page .wd-out { font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--barn); white-space: nowrap; padding-top: 12px; }
+
+    /* 7. WHAT WE MEASURE */
+    #zly-web-page .measure { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 50px; align-items: center; background: var(--paper-2); border-radius: 16px; padding: 48px; }
+    #zly-web-page .measure h2 { font-size: clamp(26px, 3vw, 34px); margin-bottom: 14px; }
+    #zly-web-page .measure p { font-size: 16px; margin-bottom: 12px; }
+    #zly-web-page .metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    #zly-web-page .metric { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; }
+    #zly-web-page .metric .m { font-family: 'Newsreader', serif; font-size: 17px; font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+    #zly-web-page .metric p { font-size: 13.5px; margin: 0; }
+
+    /* 8. CASE STUDY */
+    #zly-web-page .case-study { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 40px; box-shadow: 0 18px 40px -24px rgba(27,36,48,0.25); }
+    #zly-web-page .case-study-media { width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 32px; background: var(--paper-2); border: 1px solid var(--border); padding: 24px; }
+    #zly-web-page .case-study-media svg { width: 100%; height: auto; display: block; max-width: 760px; margin: 0 auto; }
+    #zly-web-page .case-study-media img { width: 100%; height: auto; display: block; }
+    #zly-web-page .case-study-body { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 44px; align-items: center; }
+    #zly-web-page .case-study .cs-stat { font-family: 'Newsreader', serif; font-weight: 600; font-size: clamp(44px, 5vw, 60px); color: var(--barn); line-height: 1; }
+    #zly-web-page .case-study .cs-stat-label { font-size: 14px; color: var(--ink-soft); margin-top: 8px; }
+    #zly-web-page .case-study h3 { font-size: 22px; margin-bottom: 10px; }
+    #zly-web-page .case-study p { font-size: 15px; margin-bottom: 14px; }
+    #zly-web-page .case-study .cs-note { font-family: 'Caveat', cursive; font-size: 17px; color: var(--ink-soft); }
+
+    /* 9. FINAL CTA */
+    #zly-web-page .final { background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center; max-width: 1112px; margin: 0 auto; position: relative; overflow: hidden; }
+    #zly-web-page .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+    #zly-web-page .final > * { position: relative; }
+    #zly-web-page .final h2 { color: var(--paper); font-size: clamp(27px, 3.2vw, 36px); margin-bottom: 14px; }
+    #zly-web-page .final p { color: #c7d0d6; max-width: 520px; margin: 0 auto 26px; }
+    #zly-web-page .final .btn-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    #zly-web-page .final .cta-note { color: rgba(244,237,224,0.55); margin-top: 16px; }
+
+    @media (max-width: 900px) {
+      #zly-web-page .hero { grid-template-columns: 1fr; padding: 72px 20px 40px; gap: 36px; }
+      #zly-web-page .stat-strip { grid-template-columns: 1fr; }
+      #zly-web-page .process-grid { grid-template-columns: repeat(2, 1fr); }
+      #zly-web-page .case-study-body { grid-template-columns: 1fr; text-align: center; }
+      #zly-web-page .signs-wrap { grid-template-columns: 1fr; padding: 60px 20px; }
+      #zly-web-page .measure { grid-template-columns: 1fr; padding: 32px 24px; gap: 24px; }
+      #zly-web-page .time-grid { grid-template-columns: 1fr; gap: 24px; }
+      #zly-web-page .wd-row { grid-template-columns: 40px 1fr; }
+      #zly-web-page .wd-out { grid-column: 2; padding-top: 0; }
+      #zly-web-page .sec { padding: 60px 20px; }
+      #zly-web-page .time-band { padding: 20px 20px 40px; }
+      #zly-web-page .time-card { padding: 32px 24px; }
+      #zly-web-page .stat-band { padding: 60px 20px; }
+    }
+    @media (max-width: 560px) {
+      #zly-web-page .process-grid { grid-template-columns: 1fr; }
+      #zly-web-page .metric-grid { grid-template-columns: 1fr; }
+      #zly-web-page .hero { padding-top: 56px; }
+      #zly-web-page .cta-row, #zly-web-page .final .btn-row { flex-direction: column; align-items: stretch; }
+      #zly-web-page .btn { justify-content: center; }
+      #zly-web-page .final { padding: 40px 22px; border-radius: 12px; }
+    }
+  </style>
+
+  <!-- 1. HERO -->
+  <section class="hero">
+    <div>
+      <span class="tag">web design &amp; development</span>
+      <h1>A website built as a sales system, not a brochure.</h1>
+      <p class="sub">Fast, mobile-first, and written around how your customers actually decide. Every site we build ships with a clear next step for the visitor, tracking that tells you whether it's working, and full ownership. No platform you're locked into, no developer you have to call to change a sentence.</p>
+      <div class="cta-row">
+        <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get your website plan</a>
+        <a href="https://calendly.com/zoley/free-30-min-discovery-call" class="btn btn-ghost">Book a 30-minute call</a>
+      </div>
+      <p class="cta-note">A written recommendation and pricing within two business days.</p>
+    </div>
+    <div class="board">
+      <svg viewBox="0 0 420 320" fill="none" role="img" aria-label="Illustration: a desktop site and its mobile version, with a page-speed gauge reading fast and a clear call-to-action button">
+        <defs>
+          <linearGradient id="zwb-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b5482d"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
+        </defs>
+        <!-- desktop browser -->
+        <g transform="translate(14 22) rotate(-1.5 150 100)">
+          <rect x="0" y="0" width="290" height="200" rx="8" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <line x1="0" y1="26" x2="290" y2="26" stroke="#1b2430" stroke-width="2"/>
+          <circle cx="14" cy="13" r="3.5" fill="#b5482d"/><circle cx="26" cy="13" r="3.5" fill="#e3a72e"/><circle cx="38" cy="13" r="3.5" fill="#7a8b69"/>
+          <rect x="60" y="8" width="160" height="10" rx="5" fill="#1b2430" opacity="0.12"/>
+          <!-- hero area -->
+          <rect x="18" y="46" width="150" height="14" rx="5" fill="#1b2430" opacity="0.85"/>
+          <rect x="18" y="66" width="120" height="8" rx="4" fill="#1b2430" opacity="0.3"/>
+          <rect x="18" y="80" width="136" height="8" rx="4" fill="#1b2430" opacity="0.3"/>
+          <rect x="18" y="100" width="82" height="24" rx="6" fill="#b5482d"/>
+          <text x="59" y="116" font-family="DM Sans, sans-serif" font-size="10" font-weight="700" fill="#fff9ef" text-anchor="middle">Get a quote</text>
+          <rect x="184" y="42" width="88" height="86" rx="6" fill="#f6e4b8" stroke="#1b2430" stroke-width="1.5"/>
+          <path d="M196 116 L216 90 L232 104 L248 82 L262 116 Z" fill="#4ea1ff" opacity="0.7"/>
+          <circle cx="252" cy="62" r="7" fill="#e3a72e"/>
+          <!-- three feature cards -->
+          <rect x="18" y="146" width="78" height="38" rx="5" fill="#faf3e7" stroke="#1b2430" stroke-width="1.5"/>
+          <rect x="106" y="146" width="78" height="38" rx="5" fill="#faf3e7" stroke="#1b2430" stroke-width="1.5"/>
+          <rect x="194" y="146" width="78" height="38" rx="5" fill="#faf3e7" stroke="#1b2430" stroke-width="1.5"/>
+          <rect x="26" y="158" width="40" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
+          <rect x="114" y="158" width="46" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
+          <rect x="202" y="158" width="36" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
+        </g>
+        <!-- phone -->
+        <g transform="translate(316 58) rotate(4 50 100)">
+          <rect x="0" y="0" width="98" height="196" rx="14" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <rect x="30" y="8" width="38" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
+          <rect x="12" y="30" width="60" height="9" rx="4" fill="#1b2430" opacity="0.85"/>
+          <rect x="12" y="45" width="72" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
+          <rect x="12" y="55" width="56" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
+          <rect x="12" y="70" width="74" height="20" rx="5" fill="#b5482d"/>
+          <text x="49" y="83.5" font-family="DM Sans, sans-serif" font-size="8.5" font-weight="700" fill="#fff9ef" text-anchor="middle">Get a quote</text>
+          <rect x="12" y="102" width="74" height="42" rx="5" fill="#f6e4b8" stroke="#1b2430" stroke-width="1.2"/>
+          <rect x="12" y="152" width="74" height="10" rx="3" fill="#faf3e7" stroke="#1b2430" stroke-width="1.2"/>
+          <rect x="12" y="168" width="74" height="10" rx="3" fill="#faf3e7" stroke="#1b2430" stroke-width="1.2"/>
+        </g>
+        <!-- thread desktop -> phone -->
+        <path d="M300 120 Q 312 128 320 136" stroke="url(#zwb-grad)" stroke-width="2" stroke-dasharray="5 5" fill="none" opacity="0.8"/>
+        <!-- speed gauge -->
+        <g transform="translate(60 230)">
+          <path d="M0 60 A60 60 0 0 1 120 60" fill="none" stroke="#1b2430" stroke-width="2.5"/>
+          <path d="M0 60 A60 60 0 0 1 18 22" fill="none" stroke="#7a8b69" stroke-width="10" opacity="0.85"/>
+          <path d="M22 18 A60 60 0 0 1 98 18" fill="none" stroke="#e3a72e" stroke-width="10" opacity="0.85"/>
+          <path d="M102 22 A60 60 0 0 1 120 60" fill="none" stroke="#b5482d" stroke-width="10" opacity="0.85"/>
+          <g transform="translate(60 60)">
+            <line class="needle" x1="0" y1="0" x2="0" y2="-48" stroke="#1b2430" stroke-width="3" stroke-linecap="round"/>
+            <circle r="6" fill="#1b2430"/>
+          </g>
+          <text x="60" y="84" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#1b2430" text-anchor="middle">1.4s load</text>
+        </g>
+        <text x="196" y="280" font-family="Caveat, cursive" font-size="19" font-weight="700" fill="#7a8b69" transform="rotate(-3 196 280)">fast on every device</text>
+        <text x="196" y="306" font-family="Caveat, cursive" font-size="19" font-weight="700" fill="#b5482d" transform="rotate(-3 196 306)">one obvious next step</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 2. COST OF A SLOW SITE -->
+  <section class="time-band">
+    <div class="time-card">
+      <div class="time-grid">
+        <div class="time-stat">53%<span>of mobile visitors leave a page that takes longer than three seconds to load</span></div>
+        <div>
+          <span class="time-eyebrow">The cost of a slow, dated site</span>
+          <h2>Half your visitors decide before the page finishes loading.</h2>
+          <p style="margin-top: 14px;">More than half of all web traffic is now on a phone, and most sites built more than a few years ago were never designed for it. The visitor doesn't complain; they go back to the search results and choose the next business down. Speed, clarity, and an obvious next step are not design preferences. They're the difference between a site that generates inquiries and one that quietly loses them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. WHAT WE DO -->
+  <section class="sec" style="padding-top: 30px;">
+    <div class="process-header">
+      <h2>What's included in a build.</h2>
+      <p class="process-sub">Every site we deliver covers all six of these. There's no "basic tier" that leaves out the parts that make it work.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-card"><div class="pc-head"><span class="pc-num">1</span><h3>Design &amp; build</h3></div><p>A modern, fast site designed around your customer's decision path. Built on a platform you can edit yourself, with no proprietary lock-in.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">2</span><h3>Messaging &amp; copy</h3></div><p>We write the site. Headlines, service pages, and calls to action drawn from how your customers describe the problem, not how the industry does.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">3</span><h3>Search foundations</h3></div><p>Technical SEO, page structure, local listings, and the content needed to be found by people already searching for what you offer.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">4</span><h3>Mobile-first performance</h3></div><p>Designed on a phone screen first, then scaled up. Tested against real load-time targets, not just "looks fine on my laptop."</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">5</span><h3>Conversion path &amp; tracking</h3></div><p>One clear action per page, forms that route to the right place, and analytics configured so you can see which pages produce inquiries.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">6</span><h3>Ongoing site care</h3></div><p>Optional monthly support for updates, fixes, and small improvements, so the site keeps pace with the business instead of falling behind it.</p></div>
+    </div>
+    <div class="wd-cta"><a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get a plan for your site</a></div>
+  </section>
+
+  <!-- 4. CURRENT STATE (color break) -->
+  <section class="stat-band">
+    <div class="inner">
+      <div class="process-header">
+        <span class="tag" style="display:block; text-align:center;">the bigger picture</span>
+        <h2>Your website is doing one of two things right now: building trust, or spending it.</h2>
+      </div>
+      <div class="stat-strip">
+        <div class="stat-card"><div class="num">~60%</div><p>of global web traffic comes from mobile devices</p></div>
+        <div class="stat-card"><div class="num">35%</div><p>lower bounce rate for sites that load in under five seconds compared with the average</p></div>
+        <div class="stat-card"><div class="num">70%</div><p>longer average sessions on fast-loading sites</p></div>
+      </div>
+      <p class="stat-close">First impressions now happen on a phone, in under three seconds, and most businesses only get one.</p>
+    </div>
+  </section>
+
+  <!-- 5. SIGNS -->
+  <section class="signs-band">
+    <div class="signs-wrap">
+      <div>
+        <span class="tag">a quick self-audit</span>
+        <h2>Five signs your site is working against you.</h2>
+        <p class="lead">These are the issues we find most often in the first ten minutes of a site audit. If two or more apply, a rebuild usually pays for itself within the year.</p>
+      </div>
+      <ul class="signs-list">
+        <li class="signs-item"><span class="signs-num">01</span><div><h3>It was built years ago, and it looks it.</h3><p>Visitors read a dated site as a signal about the business behind it, fairly or not.</p></div></li>
+        <li class="signs-item"><span class="signs-num">02</span><div><h3>You can't change it without calling someone.</h3><p>Every small edit becomes a ticket, a wait, and often an invoice. That's a platform problem, and it's fixable.</p></div></li>
+        <li class="signs-item"><span class="signs-num">03</span><div><h3>It's slow, or it breaks on a phone.</h3><p>Most of your visitors are on mobile. If the layout shifts, the buttons are tiny, or it stalls, they're gone.</p></div></li>
+        <li class="signs-item"><span class="signs-num">04</span><div><h3>A stranger can't tell what you do in five seconds.</h3><p>Vague headlines and industry jargon send people back to the search results.</p></div></li>
+        <li class="signs-item"><span class="signs-num">05</span><div><h3>There's no obvious next step.</h3><p>If the visitor has to hunt for how to book, buy, or reach you, most won't. One clear action per page.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. HOW WE DO IT -->
+  <section class="sec">
+    <div class="process-header"><h2>How we build your site.</h2><p class="process-sub">Four stages, each with a deliverable. A typical build runs six to ten weeks from audit to launch, depending on scope.</p></div>
+    <div class="wd-list">
+      <div class="wd-row"><div class="wd-num">1</div><div><h3>Audit</h3><p>We review the current site, its analytics, and how customers actually find and evaluate you, then identify what's costing you inquiries.</p></div><div class="wd-out">Findings memo</div></div>
+      <div class="wd-row"><div class="wd-num">2</div><div><h3>Design &amp; build</h3><p>Structure and messaging first, then design, then build. You see and approve each stage before the next begins.</p></div><div class="wd-out">Staged approvals</div></div>
+      <div class="wd-row"><div class="wd-num">3</div><div><h3>Launch &amp; connect</h3><p>Forms wired to your CRM or inbox, tracking configured, listings updated, redirects handled so you don't lose existing search traffic.</p></div><div class="wd-out">Live site, tracked</div></div>
+      <div class="wd-row"><div class="wd-num">4</div><div><h3>Optimize</h3><p>Thirty days of post-launch monitoring, a training session so you can edit it yourself, and a written handover.</p></div><div class="wd-out">Handover &amp; training</div></div>
+    </div>
+    <div class="wd-cta"><a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-ghost">Start with the audit</a></div>
+  </section>
+
+  <!-- 7. WHAT WE MEASURE (drafted; was "content pending") -->
+  <section class="sec" style="padding-top: 0;">
+    <div class="measure">
+      <div>
+        <span class="tag">tracking &amp; reporting</span>
+        <h2>You'll know whether it's working, in numbers.</h2>
+        <p>A website without measurement is a guess with a domain name. Every site we launch ships with analytics configured around the actions that matter to your business, and a monthly summary written in plain language.</p>
+        <p>These are the six numbers we report on. If one of them isn't moving, that's where the next improvement goes.</p>
+      </div>
+      <div class="metric-grid">
+        <div class="metric"><span class="m">Qualified inquiries</span><p>Form submissions, calls, and bookings that came from the site, not just raw visits.</p></div>
+        <div class="metric"><span class="m">Conversion rate</span><p>The share of visitors who take the action the page was built for.</p></div>
+        <div class="metric"><span class="m">Load time</span><p>Measured on a mid-range phone over a normal connection, which is how most visitors arrive.</p></div>
+        <div class="metric"><span class="m">Traffic by source</span><p>Search, referrals, ads, and direct, so you know which channel is earning its keep.</p></div>
+        <div class="metric"><span class="m">Top pages &amp; exits</span><p>Where visitors go, and the page they were on when they left.</p></div>
+        <div class="metric"><span class="m">Search visibility</span><p>The terms you appear for and where, tracked month over month.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. CASE STUDY -->
+  <section class="sec" style="padding-top: 0;">
+    <div class="process-header">
+      <span class="tag" style="display:block; text-align:center;">representative engagement</span>
+      <h2>What a rebuild looks like in practice.</h2>
+    </div>
+    <div class="case-study">
+      <!-- Replace this illustration with a real before/after screenshot when a named case study is available -->
+      <div class="case-study-media">
+        <svg viewBox="0 0 760 300" fill="none" role="img" aria-label="Illustration: a cluttered, slow website before, and a clear, fast website after, with inquiries doubling">
+          <!-- BEFORE -->
+          <text x="0" y="16" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#5c6b76" letter-spacing="1.5">BEFORE</text>
+          <g transform="translate(0 28)">
+            <rect x="0" y="0" width="340" height="232" rx="8" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <line x1="0" y1="24" x2="340" y2="24" stroke="#1b2430" stroke-width="2"/>
+            <circle cx="12" cy="12" r="3" fill="#5c6b76"/><circle cx="22" cy="12" r="3" fill="#5c6b76"/><circle cx="32" cy="12" r="3" fill="#5c6b76"/>
+            <!-- cluttered content: many small blocks, no CTA -->
+            <g fill="#1b2430" opacity="0.28">
+              <rect x="14" y="38" width="100" height="7" rx="3"/><rect x="124" y="38" width="90" height="7" rx="3"/><rect x="224" y="38" width="100" height="7" rx="3"/>
+              <rect x="14" y="52" width="310" height="5" rx="2.5"/><rect x="14" y="62" width="300" height="5" rx="2.5"/><rect x="14" y="72" width="310" height="5" rx="2.5"/><rect x="14" y="82" width="280" height="5" rx="2.5"/>
+              <rect x="14" y="100" width="150" height="50" rx="3"/><rect x="174" y="100" width="150" height="50" rx="3"/>
+              <rect x="14" y="160" width="310" height="5" rx="2.5"/><rect x="14" y="170" width="290" height="5" rx="2.5"/><rect x="14" y="180" width="310" height="5" rx="2.5"/><rect x="14" y="190" width="240" height="5" rx="2.5"/>
+              <rect x="14" y="206" width="70" height="14" rx="3"/><rect x="92" y="206" width="70" height="14" rx="3"/><rect x="170" y="206" width="70" height="14" rx="3"/><rect x="248" y="206" width="70" height="14" rx="3"/>
+            </g>
+            <!-- spinner / slow -->
+            <g transform="translate(300 60)">
+              <circle r="14" fill="#faf3e7" stroke="#b5482d" stroke-width="2.5" stroke-dasharray="20 8"/>
+            </g>
+            <text x="170" y="246" font-family="Caveat, cursive" font-size="16" font-weight="700" fill="#b5482d" text-anchor="middle">8.2s load · no clear action · not mobile-friendly</text>
+          </g>
+          <!-- arrow -->
+          <path d="M356 150 L404 150" stroke="url(#zwb-grad)" stroke-width="2.5" stroke-dasharray="5 5" fill="none"/>
+          <path d="M398 144 L406 150 L398 156" stroke="#6c5ce7" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- AFTER -->
+          <text x="420" y="16" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#7a8b69" letter-spacing="1.5">AFTER</text>
+          <g transform="translate(420 28)">
+            <rect x="0" y="0" width="340" height="232" rx="8" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <line x1="0" y1="24" x2="340" y2="24" stroke="#1b2430" stroke-width="2"/>
+            <circle cx="12" cy="12" r="3" fill="#b5482d"/><circle cx="22" cy="12" r="3" fill="#e3a72e"/><circle cx="32" cy="12" r="3" fill="#7a8b69"/>
+            <rect x="24" y="48" width="170" height="16" rx="5" fill="#1b2430" opacity="0.88"/>
+            <rect x="24" y="72" width="140" height="7" rx="3.5" fill="#1b2430" opacity="0.3"/>
+            <rect x="24" y="86" width="156" height="7" rx="3.5" fill="#1b2430" opacity="0.3"/>
+            <rect x="24" y="110" width="104" height="30" rx="7" fill="#b5482d"/>
+            <text x="76" y="129.5" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="700" fill="#fff9ef" text-anchor="middle">Book a visit</text>
+            <rect x="214" y="46" width="102" height="96" rx="6" fill="#f6e4b8" stroke="#1b2430" stroke-width="1.5"/>
+            <path d="M228 128 L252 96 L270 112 L288 84 L304 128 Z" fill="#4ea1ff" opacity="0.7"/>
+            <circle cx="296" cy="66" r="8" fill="#e3a72e"/>
+            <rect x="24" y="162" width="92" height="46" rx="6" fill="#faf3e7" stroke="#1b2430" stroke-width="1.5"/>
+            <rect x="124" y="162" width="92" height="46" rx="6" fill="#faf3e7" stroke="#1b2430" stroke-width="1.5"/>
+            <rect x="224" y="162" width="92" height="46" rx="6" fill="#faf3e7" stroke="#1b2430" stroke-width="1.5"/>
+            <g transform="translate(300 60)"></g>
+            <text x="170" y="246" font-family="Caveat, cursive" font-size="16" font-weight="700" fill="#7a8b69" text-anchor="middle">1.4s load · one action per page · mobile-first</text>
+          </g>
+          <!-- result pill -->
+          <g transform="translate(300 268)">
+            <rect x="0" y="0" width="160" height="28" rx="14" fill="#6c5ce7"/>
+            <text x="80" y="18.5" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#fff9ef" text-anchor="middle">2× inquiries, same traffic</text>
+          </g>
+        </svg>
+      </div>
+      <div class="case-study-body">
+        <div>
+          <div class="cs-stat">2&times;</div>
+          <div class="cs-stat-label">inquiries from the same monthly traffic within 60 days of launch</div>
+        </div>
+        <div>
+          <h3>A local business on a site that hadn't changed since it launched.</h3>
+          <p>Traffic was steady, but almost none of it turned into a call or a form. The site took eight seconds to load on a phone, buried the phone number, and described the business in language its customers never used. We rewrote it around the three questions customers actually asked, cut load time to under two seconds, put one clear action on every page, and wired the forms into the owner's calendar. Visits didn't change. Inquiries doubled.</p>
+          <p class="cs-note">Details anonymized. Figures from a representative engagement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PINNED TESTIMONIAL -->
+  <div class="pin-wrap">
+    <div class="pin-card">
+      <p class="quote">"Zoley enhanced our real estate website so potential buyers stay within our ecosystem. It led to a 40% increase in interest in our listings."</p>
+      <span>&mdash; Rob G., No Limit Real Estate, LLC</span>
+    </div>
+  </div>
+
+  <!-- 9. FINAL CTA -->
+  <section class="sec" style="padding-bottom: 96px;">
+    <div class="final">
+      <h2>Find out what your site is costing you.</h2>
+      <p>Tell us about your business and share your current site. Within two business days we'll reply with what we'd fix first, what a build would involve, and what it would cost.</p>
+      <div class="btn-row">
+        <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get your website plan</a>
+        <a href="https://calendly.com/zoley/free-30-min-discovery-call" class="btn btn-outline">Book a 30-minute call</a>
+      </div>
+      <p class="cta-note">No obligation. The audit notes are yours to keep either way.</p>
+    </div>
+  </section>
+</div>

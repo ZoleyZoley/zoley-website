@@ -1,0 +1,427 @@
+<!--
+ZOLEY — DIGITAL ADVERTISING PAGE — V2
+9-section template: Illustrated Hero / Cost of Guessing / What We Do / Current State (color break) /
+Where We'd Advise Against It (new) / How We Do It / Tracking & Metrics (drafted, was "content pending") /
+Case Study (illustrated) / Final CTA
+Scoped under #zly-ads-page. Drop into a Squarespace Code Block on /digital-advertising.
+
+V2 CHANGES (vs zoley-digital-advertising-page.html):
+- Hero is now two-column with an inline SVG illustration (audience -> ad -> landing page -> tracked result).
+- Copy rewritten in a more authoritative register. Primary CTA is the Quick Start form.
+- Statistics replaced with sourced figures (see V2-NOTES.md; not cited on-page by design).
+- "Ad tracking and why your metrics matter" section drafted with the metrics we report. Edit freely.
+- New "Where we'd advise against it" block: credibility through candor.
+- Case study media replaced with an illustrated campaign dashboard. Labeled representative.
+-->
+
+<div id="zly-ads-page">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-ads-page {
+      --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef;
+      --ink: #1b2430; --ink-soft: #5c6b76;
+      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-ads-page * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-ads-page .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-ads-page h1, #zly-ads-page h2, #zly-ads-page h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-ads-page p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-ads-page .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: var(--barn); }
+
+    #zly-ads-page .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-ads-page .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-ads-page .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-ads-page .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    #zly-ads-page .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+    #zly-ads-page .btn-outline { background: transparent; color: #fff9ef; border: 2px solid #faf3e7; }
+    #zly-ads-page .btn-outline:hover { background: #faf3e7; color: var(--ink); }
+    #zly-ads-page .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+    #zly-ads-page .cta-note { font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
+
+    /* 1. HERO */
+    #zly-ads-page .hero { padding: 108px 24px 60px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    #zly-ads-page .hero h1 { font-size: clamp(34px, 4.4vw, 54px); }
+    #zly-ads-page .hero p.sub { font-size: 18px; max-width: 500px; margin: 20px 0 30px; }
+    #zly-ads-page .board { background: var(--paper-2); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+    #zly-ads-page .board svg { width: 100%; height: auto; display: block; }
+    #zly-ads-page .thread { stroke: url(#zad-grad); stroke-width: 2; stroke-dasharray: 5 5; fill: none; opacity: 0.8; }
+    #zly-ads-page .pulse { animation: zad-pulse 3s ease-in-out infinite; }
+    @keyframes zad-pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { #zly-ads-page .pulse { animation: none; } }
+
+    #zly-ads-page .process-header { text-align: center; margin-bottom: 40px; }
+    #zly-ads-page .process-header h2 { font-size: clamp(30px, 3.6vw, 40px); max-width: 680px; margin: 0 auto; }
+    #zly-ads-page .process-header .process-sub { font-size: 16px; max-width: 600px; margin: 14px auto 0; }
+
+    #zly-ads-page .pin-wrap { display: flex; justify-content: center; padding: 0 24px 20px; }
+    #zly-ads-page .pin-card { background: var(--card); border: 1px solid var(--border); border-radius: 4px; max-width: 620px; padding: 36px 40px; position: relative; transform: rotate(-1deg); box-shadow: 0 12px 24px rgba(27,36,48,0.10); }
+    #zly-ads-page .pin-card::before { content: ''; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 18px; height: 18px; border-radius: 50%; background: linear-gradient(135deg, var(--barn), var(--violet)); box-shadow: 0 2px 3px rgba(0,0,0,0.25); }
+    #zly-ads-page .pin-card p.quote { font-family: 'Newsreader', serif; font-style: italic; font-size: 20px; color: var(--ink); margin-bottom: 12px; }
+    #zly-ads-page .pin-card span { font-family: 'Caveat', cursive; font-size: 20px; color: var(--barn); font-weight: 700; }
+
+    /* 2. COST */
+    #zly-ads-page .time-band { padding: 30px 24px 70px; }
+    #zly-ads-page .time-card { max-width: 1160px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 56px; box-shadow: 0 18px 40px -20px rgba(27,36,48,0.28); position: relative; overflow: hidden; }
+    #zly-ads-page .time-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--barn), var(--marigold)); }
+    #zly-ads-page .time-eyebrow { display: block; font-size: 12.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--barn); margin-bottom: 14px; }
+    #zly-ads-page .time-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; align-items: center; }
+    #zly-ads-page .time-stat { font-family: 'Newsreader', serif; font-size: clamp(56px, 7vw, 88px); font-weight: 600; line-height: 1; color: var(--barn); }
+    #zly-ads-page .time-stat span { font-size: 16px; color: var(--ink-soft); font-family: 'DM Sans', sans-serif; display: block; margin-top: 12px; font-weight: 600; line-height: 1.4; }
+    #zly-ads-page .time-grid h2 { font-size: clamp(28px, 3.4vw, 38px); }
+
+    /* 3. CARD GRID */
+    #zly-ads-page .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    #zly-ads-page .process-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 26px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #zly-ads-page .process-card:hover { transform: translateY(-6px); box-shadow: 0 18px 32px -16px rgba(27,36,48,0.28); }
+    #zly-ads-page .pc-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    #zly-ads-page .pc-num { flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+    #zly-ads-page .process-card h3 { font-size: 17px; }
+    #zly-ads-page .process-card p { font-size: 14px; }
+    #zly-ads-page .wd-cta { text-align: center; margin-top: 40px; }
+
+    /* 4. STAT BAND */
+    #zly-ads-page .stat-band { background: var(--ink); padding: 90px 24px; position: relative; overflow: hidden; }
+    #zly-ads-page .stat-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(181,72,45,0.2), transparent 55%), radial-gradient(circle at 85% 80%, rgba(78,161,255,0.18), transparent 55%); }
+    #zly-ads-page .stat-band .inner { max-width: 1160px; margin: 0 auto; position: relative; }
+    #zly-ads-page .stat-band .process-header h2 { color: var(--paper); }
+    #zly-ads-page .stat-band .process-header .process-sub { color: #c7d0d6; }
+    #zly-ads-page .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+    #zly-ads-page .stat-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 32px 22px; transform: rotate(var(--r, 0deg)); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #zly-ads-page .stat-card:hover { transform: rotate(var(--r, 0deg)) translateY(-6px); box-shadow: 0 16px 30px -18px rgba(0,0,0,0.5); }
+    #zly-ads-page .stat-card:nth-child(1) { --r: -1deg; }
+    #zly-ads-page .stat-card:nth-child(2) { --r: 1deg; }
+    #zly-ads-page .stat-card:nth-child(3) { --r: -0.5deg; }
+    #zly-ads-page .stat-card .num { font-family: 'Newsreader', serif; font-size: clamp(36px, 4vw, 48px); font-weight: 600; color: #fff9ef; }
+    #zly-ads-page .stat-card p { font-size: 14px; margin-top: 8px; color: #c7d0d6; }
+    #zly-ads-page .stat-close { text-align: center; max-width: 640px; margin: 40px auto 0; font-size: 17px; color: var(--paper); font-family: 'Newsreader', serif; font-style: italic; line-height: 1.5; }
+
+    /* 5. CANDOR */
+    #zly-ads-page .candor { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 50px; align-items: start; background: var(--paper-2); border-radius: 16px; padding: 48px; }
+    #zly-ads-page .candor h2 { font-size: clamp(26px, 3vw, 34px); margin-bottom: 14px; }
+    #zly-ads-page .candor p.lead { font-size: 16px; }
+    #zly-ads-page .candor ul { list-style: none; }
+    #zly-ads-page .candor li { display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--border); font-size: 15px; line-height: 1.55; }
+    #zly-ads-page .candor li:last-child { border-bottom: none; }
+    #zly-ads-page .candor li .x { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--barn); color: var(--barn); font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+    #zly-ads-page .candor li span.t { color: var(--ink-soft); }
+    #zly-ads-page .candor li span.t strong { color: var(--ink); }
+
+    /* 6. HOW WE DO IT */
+    #zly-ads-page .wd-list { max-width: 800px; margin: 0 auto; }
+    #zly-ads-page .wd-row { display: grid; grid-template-columns: 40px 1fr auto; gap: 22px; align-items: flex-start; padding: 26px 0; border-bottom: 1px solid var(--border); }
+    #zly-ads-page .wd-row:last-of-type { border-bottom: none; }
+    #zly-ads-page .wd-num { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+    #zly-ads-page .wd-row h3 { font-size: 19px; margin-bottom: 6px; }
+    #zly-ads-page .wd-row p { font-size: 14.5px; }
+    #zly-ads-page .wd-out { font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--barn); white-space: nowrap; padding-top: 12px; }
+
+    /* 7. TRACKING & METRICS */
+    #zly-ads-page .measure { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 50px; align-items: center; background: var(--paper-2); border-radius: 16px; padding: 48px; }
+    #zly-ads-page .measure h2 { font-size: clamp(26px, 3vw, 34px); margin-bottom: 14px; }
+    #zly-ads-page .measure p { font-size: 16px; margin-bottom: 12px; }
+    #zly-ads-page .metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    #zly-ads-page .metric { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; }
+    #zly-ads-page .metric .m { font-family: 'Newsreader', serif; font-size: 17px; font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+    #zly-ads-page .metric p { font-size: 13.5px; margin: 0; }
+
+    /* 8. CASE STUDY */
+    #zly-ads-page .case-study { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 40px; box-shadow: 0 18px 40px -24px rgba(27,36,48,0.25); }
+    #zly-ads-page .case-study-media { width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 32px; background: var(--paper-2); border: 1px solid var(--border); padding: 24px; }
+    #zly-ads-page .case-study-media svg { width: 100%; height: auto; display: block; max-width: 760px; margin: 0 auto; }
+    #zly-ads-page .case-study-media img { width: 100%; height: auto; display: block; }
+    #zly-ads-page .case-study-body { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 44px; align-items: center; }
+    #zly-ads-page .case-study .cs-stat { font-family: 'Newsreader', serif; font-weight: 600; font-size: clamp(44px, 5vw, 60px); color: var(--barn); line-height: 1; }
+    #zly-ads-page .case-study .cs-stat-label { font-size: 14px; color: var(--ink-soft); margin-top: 8px; }
+    #zly-ads-page .case-study h3 { font-size: 22px; margin-bottom: 10px; }
+    #zly-ads-page .case-study p { font-size: 15px; margin-bottom: 14px; }
+    #zly-ads-page .case-study .cs-note { font-family: 'Caveat', cursive; font-size: 17px; color: var(--ink-soft); }
+
+    /* 9. FINAL CTA */
+    #zly-ads-page .final { background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center; max-width: 1112px; margin: 0 auto; position: relative; overflow: hidden; }
+    #zly-ads-page .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+    #zly-ads-page .final > * { position: relative; }
+    #zly-ads-page .final h2 { color: var(--paper); font-size: clamp(27px, 3.2vw, 36px); margin-bottom: 14px; }
+    #zly-ads-page .final p { color: #c7d0d6; max-width: 520px; margin: 0 auto 26px; }
+    #zly-ads-page .final .btn-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    #zly-ads-page .final .cta-note { color: rgba(244,237,224,0.55); margin-top: 16px; }
+
+    @media (max-width: 900px) {
+      #zly-ads-page .hero { grid-template-columns: 1fr; padding: 72px 20px 40px; gap: 36px; }
+      #zly-ads-page .stat-strip { grid-template-columns: 1fr; }
+      #zly-ads-page .process-grid { grid-template-columns: repeat(2, 1fr); }
+      #zly-ads-page .case-study-body { grid-template-columns: 1fr; text-align: center; }
+      #zly-ads-page .candor, #zly-ads-page .measure { grid-template-columns: 1fr; padding: 32px 24px; gap: 24px; }
+      #zly-ads-page .time-grid { grid-template-columns: 1fr; gap: 24px; }
+      #zly-ads-page .wd-row { grid-template-columns: 40px 1fr; }
+      #zly-ads-page .wd-out { grid-column: 2; padding-top: 0; }
+      #zly-ads-page .sec { padding: 60px 20px; }
+      #zly-ads-page .time-band { padding: 20px 20px 40px; }
+      #zly-ads-page .time-card { padding: 32px 24px; }
+      #zly-ads-page .stat-band { padding: 60px 20px; }
+    }
+    @media (max-width: 560px) {
+      #zly-ads-page .process-grid { grid-template-columns: 1fr; }
+      #zly-ads-page .metric-grid { grid-template-columns: 1fr; }
+      #zly-ads-page .hero { padding-top: 56px; }
+      #zly-ads-page .cta-row, #zly-ads-page .final .btn-row { flex-direction: column; align-items: stretch; }
+      #zly-ads-page .btn { justify-content: center; }
+      #zly-ads-page .final { padding: 40px 22px; border-radius: 12px; }
+    }
+  </style>
+
+  <!-- 1. HERO -->
+  <section class="hero">
+    <div>
+      <span class="tag">digital advertising</span>
+      <h1>Every dollar traced to a lead, or it doesn't get spent.</h1>
+      <p class="sub">We run search and social campaigns for businesses that want to know, in numbers, what their advertising returns. Targeting built on who actually buys, landing pages built to convert, and tracking in place before the first dollar goes out. If a campaign isn't paying for itself, you'll see it, and so will we.</p>
+      <div class="cta-row">
+        <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get your advertising plan</a>
+        <a href="https://calendly.com/zoley/free-30-min-discovery-call" class="btn btn-ghost">Book a 30-minute call</a>
+      </div>
+      <p class="cta-note">A written recommendation and pricing within two business days.</p>
+    </div>
+    <div class="board">
+      <svg viewBox="0 0 420 320" fill="none" role="img" aria-label="Illustration: a defined audience sees an ad, lands on a page built to convert, and the result is tracked as cost per lead and return on spend">
+        <defs>
+          <linearGradient id="zad-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b5482d"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
+        </defs>
+        <!-- audience target (top-left) -->
+        <g transform="translate(70 76)">
+          <circle r="52" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <circle r="34" fill="none" stroke="#e3a72e" stroke-width="2.5"/>
+          <circle r="16" fill="none" stroke="#e3a72e" stroke-width="2.5"/>
+          <!-- people inside -->
+          <g fill="#4ea1ff"><circle cx="-6" cy="-4" r="5"/><circle cx="8" cy="2" r="5"/><circle cx="-2" cy="10" r="5"/></g>
+          <g fill="#5c6b76" opacity="0.5"><circle cx="-38" cy="-20" r="4"/><circle cx="36" cy="26" r="4"/><circle cx="30" cy="-34" r="4"/><circle cx="-30" cy="30" r="4"/></g>
+        </g>
+        <text x="20" y="152" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#e3a72e">people ready to buy</text>
+        <!-- thread to ad -->
+        <path class="thread" d="M124 72 Q 170 40 206 56"/>
+        <!-- ad card (top-right) -->
+        <g transform="translate(206 26) rotate(3 90 42)">
+          <rect x="0" y="0" width="180" height="86" rx="8" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <rect x="12" y="12" width="26" height="12" rx="3" fill="#7a8b69"/>
+          <text x="25" y="21" font-family="DM Sans, sans-serif" font-size="8" font-weight="700" fill="#fff9ef" text-anchor="middle">Ad</text>
+          <rect x="46" y="13" width="110" height="9" rx="4" fill="#4ea1ff"/>
+          <rect x="12" y="34" width="156" height="6" rx="3" fill="#1b2430" opacity="0.5"/>
+          <rect x="12" y="46" width="120" height="6" rx="3" fill="#1b2430" opacity="0.3"/>
+          <rect x="12" y="62" width="70" height="14" rx="4" fill="#b5482d"/>
+          <text x="47" y="72" font-family="DM Sans, sans-serif" font-size="8.5" font-weight="700" fill="#fff9ef" text-anchor="middle">Get a quote</text>
+        </g>
+        <!-- thread to landing page -->
+        <path class="thread" d="M300 116 Q 300 140 292 160"/>
+        <!-- landing page (bottom-right) -->
+        <g transform="translate(228 164) rotate(-2 80 60)">
+          <rect x="0" y="0" width="160" height="118" rx="7" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <line x1="0" y1="18" x2="160" y2="18" stroke="#1b2430" stroke-width="1.5"/>
+          <circle cx="10" cy="9" r="2.5" fill="#b5482d"/><circle cx="19" cy="9" r="2.5" fill="#e3a72e"/><circle cx="28" cy="9" r="2.5" fill="#7a8b69"/>
+          <rect x="12" y="30" width="86" height="9" rx="4" fill="#1b2430" opacity="0.85"/>
+          <rect x="12" y="45" width="100" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
+          <rect x="12" y="55" width="80" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
+          <rect x="12" y="70" width="98" height="12" rx="3" fill="#faf3e7" stroke="#1b2430" stroke-width="1.2"/>
+          <rect x="12" y="88" width="98" height="12" rx="3" fill="#faf3e7" stroke="#1b2430" stroke-width="1.2"/>
+          <rect x="116" y="70" width="32" height="30" rx="4" fill="#b5482d"/>
+          <path d="M126 85 l4 4 l8 -9" stroke="#fff9ef" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <text x="236" y="300" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#b5482d">a page built to convert</text>
+        <!-- thread to results -->
+        <path class="thread" d="M226 230 Q 170 240 150 236"/>
+        <!-- results card (bottom-left) -->
+        <g class="pulse" transform="translate(16 186) rotate(2 66 50)">
+          <rect x="0" y="0" width="132" height="100" rx="8" fill="#fff9ef" stroke="#6c5ce7" stroke-width="2.5"/>
+          <text x="12" y="20" font-family="DM Sans, sans-serif" font-size="9.5" font-weight="700" fill="#6c5ce7" letter-spacing="1">THIS MONTH</text>
+          <text x="12" y="44" font-family="DM Sans, sans-serif" font-size="10" fill="#5c6b76">Cost per lead</text>
+          <text x="120" y="44" font-family="Newsreader, serif" font-size="15" font-weight="600" fill="#1b2430" text-anchor="end">$38</text>
+          <text x="12" y="66" font-family="DM Sans, sans-serif" font-size="10" fill="#5c6b76">Leads</text>
+          <text x="120" y="66" font-family="Newsreader, serif" font-size="15" font-weight="600" fill="#1b2430" text-anchor="end">46</text>
+          <text x="12" y="88" font-family="DM Sans, sans-serif" font-size="10" fill="#5c6b76">Return on spend</text>
+          <text x="120" y="88" font-family="Newsreader, serif" font-size="15" font-weight="600" fill="#7a8b69" text-anchor="end">3.1×</text>
+        </g>
+        <text x="20" y="310" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#6c5ce7">tracked from click to sale</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 2. COST OF GUESSING -->
+  <section class="time-band">
+    <div class="time-card">
+      <div class="time-grid">
+        <div class="time-stat">7.5%<span>average conversion rate on Google search ads across industries. Yours could be 2% or 12%, and the difference is almost entirely targeting and landing page.</span></div>
+        <div>
+          <span class="time-eyebrow">The cost of running ads without a system</span>
+          <h2>Boosted posts. Untracked clicks. A budget that just disappears.</h2>
+          <p style="margin-top: 14px;">Most small-business advertising fails in a predictable way: the audience is too broad, the ad sends people to the homepage, and nobody can say which clicks turned into customers. The platform reports impressions and clicks, which feel like progress and aren't. We build campaigns the other way around: decide what a lead is worth, set up tracking to count them, and only then spend.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. WHAT WE DO -->
+  <section class="sec" style="padding-top: 30px;">
+    <div class="process-header">
+      <h2>What a managed campaign includes.</h2>
+      <p class="process-sub">Advertising works as a system or not at all. Each part below is included because the campaign underperforms without it.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-card"><div class="pc-head"><span class="pc-num">1</span><h3>Audience &amp; targeting</h3></div><p>Built from who has actually bought from you, not from platform defaults. Geography, intent, and timing set so the ad reaches people in a buying frame of mind.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">2</span><h3>Search &amp; social campaigns</h3></div><p>Google for people already looking, Meta and others for people who fit the profile but haven't searched yet. We recommend the channel the numbers support, not both by default.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">3</span><h3>Landing pages</h3></div><p>A dedicated page per campaign, matched to the ad, with one action. Sending paid traffic to a homepage is the most common way to waste it.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">4</span><h3>Retargeting</h3></div><p>Follow-up ads for people who visited and didn't act, sequenced so they see a reason to return rather than the same ad again.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">5</span><h3>Testing &amp; optimization</h3></div><p>Structured tests on headlines, offers, and audiences, with a decision rule agreed in advance so results turn into changes instead of debates.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">6</span><h3>Tracking &amp; reporting</h3></div><p>Conversion tracking configured from day one, and a monthly report in plain language: what we spent, what it produced, what we're changing next.</p></div>
+    </div>
+    <div class="wd-cta"><a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Find out if ads make sense for your business</a></div>
+  </section>
+
+  <!-- 4. CURRENT STATE (color break) -->
+  <section class="stat-band">
+    <div class="inner">
+      <div class="process-header">
+        <span class="tag" style="display:block; text-align:center;">the bigger picture</span>
+        <h2>Attention is expensive. Untracked attention is wasted.</h2>
+        <p class="process-sub">Three numbers that shape how we build every campaign.</p>
+      </div>
+      <div class="stat-strip">
+        <div class="stat-card"><div class="num">63%</div><p>of consumers say they've clicked a Google ad when searching for something to buy</p></div>
+        <div class="stat-card"><div class="num">$2 : $1</div><p>revenue returned per dollar spent on search ads, by Google's own conservative estimate. Well-run campaigns do considerably better.</p></div>
+        <div class="stat-card"><div class="num">21&times;</div><p>more likely to qualify a lead when it's contacted within five minutes rather than thirty. Ads generate the lead; follow-up closes it.</p></div>
+      </div>
+      <p class="stat-close">The campaign is only half the system. What happens in the five minutes after the click is the other half.</p>
+    </div>
+  </section>
+
+  <!-- 5. WHERE WE'D ADVISE AGAINST IT -->
+  <section class="sec">
+    <div class="candor">
+      <div>
+        <span class="tag">a note on candor</span>
+        <h2>When we'll tell you not to run ads yet.</h2>
+        <p class="lead">Paid advertising amplifies what's already there. If the foundation isn't in place, the money accelerates the problem. We'll say so before we quote anything, and point you to the fix that should come first.</p>
+      </div>
+      <ul>
+        <li><span class="x">&times;</span><span class="t"><strong>Your site can't convert the traffic.</strong> If the landing experience is slow or unclear, ads just make more people leave faster. Fix the page first; it's cheaper.</span></li>
+        <li><span class="x">&times;</span><span class="t"><strong>Nobody will answer the lead.</strong> Paid leads go cold in minutes. Without a follow-up system in place, you're paying to generate inquiries that expire.</span></li>
+        <li><span class="x">&times;</span><span class="t"><strong>You don't yet know what a customer is worth.</strong> Without a rough lifetime value, there's no way to set a budget or judge a cost per lead. We can help you work it out, but it comes before the campaign.</span></li>
+        <li><span class="x">&times;</span><span class="t"><strong>The budget can't sustain a real test.</strong> A campaign needs enough spend and enough weeks to produce a readable result. If it can't, we'll recommend organic or referral work instead.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. HOW WE DO IT -->
+  <section class="sec" style="padding-top: 0;">
+    <div class="process-header"><h2>How we run a campaign.</h2><p class="process-sub">Setup takes two to three weeks. We treat the first month as a paid test with a defined success threshold, and we say up front what happens if it isn't met.</p></div>
+    <div class="wd-list">
+      <div class="wd-row"><div class="wd-num">1</div><div><h3>Audit &amp; economics</h3><p>What a lead and a customer are worth to you, what you've spent before and what it returned, and whether the site and follow-up can support paid traffic.</p></div><div class="wd-out">Budget &amp; targets memo</div></div>
+      <div class="wd-row"><div class="wd-num">2</div><div><h3>Build</h3><p>Audience definitions, ad copy and creative, a dedicated landing page, and conversion tracking installed and verified before launch.</p></div><div class="wd-out">Campaign ready to launch</div></div>
+      <div class="wd-row"><div class="wd-num">3</div><div><h3>Launch &amp; test</h3><p>Controlled spend in the first weeks, with structured tests on the variables most likely to move cost per lead.</p></div><div class="wd-out">Weekly readouts</div></div>
+      <div class="wd-row"><div class="wd-num">4</div><div><h3>Scale or stop</h3><p>If the numbers clear the threshold, we scale the budget in steps. If they don't, we tell you, and we don't keep spending your money to find out.</p></div><div class="wd-out">Monthly report &amp; decision</div></div>
+    </div>
+    <div class="wd-cta"><a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-ghost">Start with the audit</a></div>
+  </section>
+
+  <!-- 7. TRACKING & METRICS (drafted; was "content pending") -->
+  <section class="sec" style="padding-top: 0;">
+    <div class="measure">
+      <div>
+        <span class="tag">tracking &amp; reporting</span>
+        <h2>Six numbers, reported monthly, in plain language.</h2>
+        <p>Ad platforms will show you dozens of metrics. Most of them are there to make the platform look good. We report on the handful that connect spend to revenue, and we explain what each one means for the decision in front of you.</p>
+        <p>You'll always be able to answer one question from the report: for every dollar we put in, what came back?</p>
+      </div>
+      <div class="metric-grid">
+        <div class="metric"><span class="m">Total spend</span><p>What went out, by channel and campaign, against the budget we agreed.</p></div>
+        <div class="metric"><span class="m">Cost per click</span><p>What each visit cost. Useful for spotting audience or bidding problems early.</p></div>
+        <div class="metric"><span class="m">Click-through rate</span><p>How often people who saw the ad acted on it. A read on whether the message lands.</p></div>
+        <div class="metric"><span class="m">Cost per lead</span><p>What each inquiry cost. The number the whole campaign is managed against.</p></div>
+        <div class="metric"><span class="m">Conversion rate</span><p>The share of visitors who became leads. The clearest signal on the landing page.</p></div>
+        <div class="metric"><span class="m">Return on ad spend</span><p>Revenue attributed to the campaign divided by what it cost. The number that decides whether we scale.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. CASE STUDY -->
+  <section class="sec" style="padding-top: 0;">
+    <div class="process-header">
+      <span class="tag" style="display:block; text-align:center;">representative engagement</span>
+      <h2>What a rebuilt campaign looks like in practice.</h2>
+    </div>
+    <div class="case-study">
+      <!-- Replace this illustration with a real results screenshot when a named case study is available -->
+      <div class="case-study-media">
+        <svg viewBox="0 0 760 300" fill="none" role="img" aria-label="Chart: cost per lead falling and leads per month rising over four months after the campaign was rebuilt with targeting and tracking">
+          <rect x="0" y="0" width="760" height="300" rx="12" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <text x="28" y="38" font-family="DM Sans, sans-serif" font-size="13" font-weight="700" fill="#1b2430" letter-spacing="1.5">FOUR MONTHS, SAME BUDGET</text>
+          <!-- left: cost per lead bars (falling) -->
+          <g transform="translate(28 60)">
+            <text x="0" y="0" font-family="DM Sans, sans-serif" font-size="11.5" fill="#5c6b76">Cost per lead</text>
+            <line x1="0" y1="170" x2="330" y2="170" stroke="#1b2430" stroke-width="1.5" opacity="0.3"/>
+            <rect x="16" y="30" width="56" height="140" rx="4" fill="#b5482d" opacity="0.85"/>
+            <rect x="96" y="76" width="56" height="94" rx="4" fill="#b5482d" opacity="0.7"/>
+            <rect x="176" y="112" width="56" height="58" rx="4" fill="#7a8b69" opacity="0.8"/>
+            <rect x="256" y="128" width="56" height="42" rx="4" fill="#7a8b69" opacity="0.95"/>
+            <g font-family="Newsreader, serif" font-size="14" font-weight="600" fill="#1b2430" text-anchor="middle">
+              <text x="44" y="22">$142</text><text x="124" y="68">$96</text><text x="204" y="104">$58</text><text x="284" y="120">$41</text>
+            </g>
+            <g font-family="DM Sans, sans-serif" font-size="11" fill="#5c6b76" text-anchor="middle">
+              <text x="44" y="188">Before</text><text x="124" y="188">Month 1</text><text x="204" y="188">Month 2</text><text x="284" y="188">Month 3</text>
+            </g>
+          </g>
+          <!-- divider -->
+          <line x1="390" y1="60" x2="390" y2="250" stroke="#1b2430" stroke-width="1" opacity="0.15"/>
+          <!-- right: leads per month (rising) -->
+          <g transform="translate(414 60)">
+            <text x="0" y="0" font-family="DM Sans, sans-serif" font-size="11.5" fill="#5c6b76">Leads per month</text>
+            <line x1="0" y1="170" x2="320" y2="170" stroke="#1b2430" stroke-width="1.5" opacity="0.3"/>
+            <rect x="16" y="140" width="56" height="30" rx="4" fill="#5c6b76" opacity="0.5"/>
+            <rect x="96" y="112" width="56" height="58" rx="4" fill="#4ea1ff" opacity="0.7"/>
+            <rect x="176" y="70" width="56" height="100" rx="4" fill="#4ea1ff" opacity="0.85"/>
+            <rect x="256" y="40" width="56" height="130" rx="4" fill="#6c5ce7" opacity="0.9"/>
+            <g font-family="Newsreader, serif" font-size="14" font-weight="600" fill="#1b2430" text-anchor="middle">
+              <text x="44" y="132">14</text><text x="124" y="104">21</text><text x="204" y="62">34</text><text x="284" y="32">48</text>
+            </g>
+            <g font-family="DM Sans, sans-serif" font-size="11" fill="#5c6b76" text-anchor="middle">
+              <text x="44" y="188">Before</text><text x="124" y="188">Month 1</text><text x="204" y="188">Month 2</text><text x="284" y="188">Month 3</text>
+            </g>
+          </g>
+          <text x="560" y="284" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#6c5ce7" text-anchor="middle">3.4× the leads for the same monthly spend</text>
+        </svg>
+      </div>
+      <div class="case-study-body">
+        <div>
+          <div class="cs-stat">3&times;</div>
+          <div class="cs-stat-label">return on ad spend by month three, from a campaign that previously couldn't be measured at all</div>
+        </div>
+        <div>
+          <h3>A local business spending every month with no idea what it bought.</h3>
+          <p>The previous setup was a broad-radius campaign sending clicks to the homepage, with no conversion tracking. We started by establishing what a customer was worth, then rebuilt the audience around past buyers, wrote a dedicated landing page with a single action, installed tracking, and routed every lead into an instant follow-up sequence. The budget didn't change. Cost per lead fell by roughly two thirds, and for the first time the owner could see which ads produced revenue.</p>
+          <p class="cs-note">Details anonymized. Figures from a representative engagement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PINNED TESTIMONIAL -->
+  <div class="pin-wrap">
+    <div class="pin-card">
+      <p class="quote">"Zoley enhanced our real estate website so potential buyers stay within our ecosystem. It led to a 40% increase in interest in our listings."</p>
+      <span>&mdash; Rob G., No Limit Real Estate, LLC</span>
+    </div>
+  </div>
+
+  <!-- 9. FINAL CTA -->
+  <section class="sec" style="padding-bottom: 96px;">
+    <div class="final">
+      <h2>Find out what your ad budget should be doing.</h2>
+      <p>Tell us about your business and what you've spent so far. Within two business days we'll reply with whether paid advertising is the right next move, what we'd build, and what it would cost to test properly.</p>
+      <div class="btn-row">
+        <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get your advertising plan</a>
+        <a href="https://calendly.com/zoley/free-30-min-discovery-call" class="btn btn-outline">Book a 30-minute call</a>
+      </div>
+      <p class="cta-note">No obligation. If ads aren't the answer yet, we'll say so.</p>
+    </div>
+  </section>
+</div>

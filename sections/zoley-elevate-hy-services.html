@@ -1,0 +1,100 @@
+<!--
+ZOLEY — ELEVATE YOUR BRAND PAGE (HYBRID) — SERVICES SECTION
+-->
+
+<div id="zly-elevate-hy-services">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-elevate-hy-services {
+      --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef;
+      --ink: #1b2430; --ink-soft: #5c6b76;
+      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-elevate-hy-services * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-elevate-hy-services .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-elevate-hy-services h1, #zly-elevate-hy-services h2, #zly-elevate-hy-services h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-elevate-hy-services p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-elevate-hy-services .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 12px; padding: 0 4px; color: var(--barn); }
+    #zly-elevate-hy-services .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-elevate-hy-services .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-elevate-hy-services .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-elevate-hy-services .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    #zly-elevate-hy-services .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+
+    /* HERO */
+    #zly-elevate-hy-services .hero { padding: 108px 24px 70px; max-width: 780px; margin: 0 auto; text-align: center; }
+    #zly-elevate-hy-services .hero h1 { font-size: clamp(34px, 4.6vw, 54px); }
+    #zly-elevate-hy-services .hero p.sub { font-size: 18.5px; max-width: 520px; margin: 20px auto 30px; }
+
+    /* BEFORE/GAP SECTION */
+    #zly-elevate-hy-services .gap-band { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    #zly-elevate-hy-services .gap-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 50px; align-items: start; }
+    #zly-elevate-hy-services .gap-grid h2 { font-size: clamp(26px, 3vw, 36px); max-width: 380px; }
+    #zly-elevate-hy-services .gap-list { list-style: none; }
+    #zly-elevate-hy-services .gap-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+    #zly-elevate-hy-services .gap-item:last-child { border-bottom: none; }
+    #zly-elevate-hy-services .gap-num { font-family: 'Newsreader', serif; font-size: 15px; color: var(--barn); font-weight: 600; flex-shrink: 0; width: 28px; }
+    #zly-elevate-hy-services .gap-item h3 { font-size: 17px; margin-bottom: 4px; }
+    #zly-elevate-hy-services .gap-item p { font-size: 14.5px; }
+
+    /* STAT STRIP */
+    #zly-elevate-hy-services .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+    #zly-elevate-hy-services .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 32px 22px; transform: rotate(var(--r, 0deg)); }
+    #zly-elevate-hy-services .stat-card:nth-child(1) { --r: -1deg; }
+    #zly-elevate-hy-services .stat-card:nth-child(2) { --r: 1deg; }
+    #zly-elevate-hy-services .stat-card:nth-child(3) { --r: -0.5deg; }
+    #zly-elevate-hy-services .stat-card .num { font-family: 'Newsreader', serif; font-size: clamp(36px, 4vw, 48px); font-weight: 600; color: var(--barn); }
+    #zly-elevate-hy-services .stat-card p { font-size: 14px; margin-top: 8px; }
+    #zly-elevate-hy-services .process-header { text-align: center; margin-bottom: 40px; }
+    #zly-elevate-hy-services .process-header h2 { font-size: clamp(24px, 2.8vw, 32px); max-width: 600px; margin: 0 auto; }
+
+    /* AGENCY VS ZOLEY BAND */
+    #zly-elevate-hy-services .vs-band { background: var(--ink); border-radius: 14px; padding: 56px 40px; text-align: center; margin: 0 24px; max-width: 1112px; margin-left: auto; margin-right: auto; position: relative; overflow: hidden; }
+    #zly-elevate-hy-services .vs-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+    #zly-elevate-hy-services .vs-band > * { position: relative; }
+    #zly-elevate-hy-services .vs-band h2 { color: var(--paper); font-size: clamp(26px, 3vw, 36px); margin-bottom: 24px; max-width: 620px; margin-left: auto; margin-right: auto; }
+    #zly-elevate-hy-services .vs-band .btn-primary { margin-top: 4px; }
+
+    /* SERVICES */
+    #zly-elevate-hy-services .services-intro { text-align: center; max-width: 640px; margin: 0 auto 44px; }
+    #zly-elevate-hy-services .services-intro h2 { font-size: clamp(24px, 2.8vw, 32px); margin-bottom: 12px; }
+    #zly-elevate-hy-services .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    #zly-elevate-hy-services .service-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 28px; position: relative; overflow: hidden; }
+    #zly-elevate-hy-services .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--barn), var(--violet), var(--blue)); }
+    #zly-elevate-hy-services .service-card h3 { font-size: 19px; margin-bottom: 8px; }
+    #zly-elevate-hy-services .service-card p { font-size: 14.5px; }
+
+    /* CLOSING QUOTE */
+    #zly-elevate-hy-services .closing { background: var(--paper-2); border-radius: 14px; padding: 56px 44px; text-align: center; }
+    #zly-elevate-hy-services .closing h2 { font-size: clamp(24px, 2.8vw, 32px); margin-bottom: 22px; }
+    #zly-elevate-hy-services .closing blockquote { font-family: 'Newsreader', serif; font-style: italic; font-size: 20px; max-width: 540px; margin: 0 auto 10px; color: var(--ink); }
+    #zly-elevate-hy-services .closing cite { font-size: 14px; color: var(--ink-soft); font-style: normal; }
+    #zly-elevate-hy-services .closing .btn { margin-top: 24px; }
+
+    @media (max-width: 900px) {
+      #zly-elevate-hy-services .gap-grid { grid-template-columns: 1fr; }
+      #zly-elevate-hy-services .stat-strip, #zly-elevate-hy-services .services-grid { grid-template-columns: 1fr; }
+      #zly-elevate-hy-services .sec { padding: 60px 20px; }
+    }
+  </style>
+
+  <!-- SERVICES -->
+  <section class="sec">
+    <div class="services-intro">
+      <span class="tag" style="display:block;">no 30-page brand book required</span>
+      <h2>Most small businesses just need to be seen, understood, and remembered.</h2>
+      <p>We bridge that gap, combining strategy with creativity to help you make your mark.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><h3>Targeted Ad Campaigns</h3><p>Target and re-target so cold traffic doesn't stay cold, ads shown automatically to people who visited but didn't act.</p></div>
+      <div class="service-card"><h3>Brand Messaging Refresh</h3><p>Clarify your voice, mission, and message so your business sounds like it knows exactly who it's talking to.</p></div>
+      <div class="service-card"><h3>A/B Testing</h3><p>Test and improve with data-backed decisions that actually move ROI.</p></div>
+      <div class="service-card"><h3>Lead Magnet Design &amp; Setup</h3><p>High-converting lead magnets that start building your book of potential customers.</p></div>
+      <div class="service-card"><h3>Ad Tracking</h3><p>Know what's working and refine what isn't, quickly, before budget gets wasted.</p></div>
+      <div class="service-card"><h3>Website Refresh</h3><p>Simple, powerful messaging backed by psychology, that sounds like you and speaks to who you want to reach.</p></div>
+    </div>
+  </section>
+</div>

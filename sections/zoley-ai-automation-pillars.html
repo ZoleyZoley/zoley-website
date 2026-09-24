@@ -1,0 +1,68 @@
+<!--
+ZOLEY — AI & AUTOMATION PAGE — PILLARS SECTION (AI / Automation two-column)
+-->
+
+<div id="zly-ai-pillars">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-ai-pillars {
+      --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+      --marigold: #e3a72e; --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-ai-pillars * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-ai-pillars .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-ai-pillars h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-ai-pillars p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-ai-pillars .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-ai-pillars .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    #zly-ai-pillars .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+
+    #zly-ai-pillars .pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+    #zly-ai-pillars .pillar { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 36px; position: relative; overflow: hidden; }
+    #zly-ai-pillars .pillar::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--barn, #b5482d), var(--violet, #6c5ce7), var(--blue, #4ea1ff)); }
+    #zly-ai-pillars .pillar h3 { font-size: 23px; margin-bottom: 10px; }
+    #zly-ai-pillars .pillar > p { font-size: 15px; margin-bottom: 20px; }
+    #zly-ai-pillars .pillar ul { list-style: none; }
+    #zly-ai-pillars .pillar li { position: relative; padding-left: 22px; font-size: 14.5px; color: var(--ink-soft); margin-bottom: 11px; }
+    #zly-ai-pillars .pillar li::before { content: ''; position: absolute; left: 0; top: 7px; width: 7px; height: 7px; border-radius: 50%; background: var(--marigold); }
+    #zly-ai-pillars .pillar .btn { margin-top: 22px; }
+
+    @media (max-width: 900px) {
+      #zly-ai-pillars .pillars { grid-template-columns: 1fr; }
+      #zly-ai-pillars .sec { padding: 60px 20px; }
+    }
+    @media (max-width: 480px) {
+      #zly-ai-pillars .pillar { padding: 28px 24px; }
+      #zly-ai-pillars .pillar .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+
+  <section class="sec">
+    <div class="pillars">
+      <div class="pillar">
+        <h3>AI, set up right</h3>
+        <p>The right tools for your business, set up properly, no guesswork required.</p>
+        <ul>
+          <li>Tools matched to how you actually work, not the trend</li>
+          <li>A chatbot that handles FAQs and first-line questions</li>
+          <li>Help drafting emails, blog posts, and social content</li>
+          <li>Insights you can actually use to make decisions</li>
+        </ul>
+        <a href="#" class="btn btn-ghost">Learn more about AI</a>
+      </div>
+      <div class="pillar">
+        <h3>Automation that runs itself</h3>
+        <p>Affordable systems that take the repeat work off your hands, without giving you new software to babysit.</p>
+        <ul>
+          <li>Leads and follow-ups handled automatically</li>
+          <li>Payments and invoicing that stay on track</li>
+          <li>A simple dashboard so you always know where things stand</li>
+          <li>Scheduling that just works</li>
+        </ul>
+        <a href="#" class="btn btn-ghost">Get started with automation</a>
+      </div>
+    </div>
+  </section>
+</div>

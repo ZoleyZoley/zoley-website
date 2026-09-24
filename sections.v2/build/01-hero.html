@@ -1,0 +1,112 @@
+<!--
+ZOLEY — BUILD — Hero
+Source: main pages/zoley-build.v2.html
+Scoped under #zly-build-hero. Self-contained: drop into a Squarespace Code Block.
+-->
+
+<div id="zly-build-hero">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;
+    @keyframes zbh-wave { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(4deg); } }
+    0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+      /* ===== hero ===== */
+      #zly-build-hero {
+        --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+        --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff; --border: rgba(27,36,48,0.14);
+        font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+      }
+    #zly-build-hero * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-build-hero h1 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-build-hero p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-build-hero .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: var(--barn); }
+    #zly-build-hero .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-build-hero .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-build-hero .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-build-hero .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    #zly-build-hero .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+    #zly-build-hero .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+    #zly-build-hero .cta-note { font-size: 13px; margin-top: 12px; }
+    #zly-build-hero .hero { padding: 108px 24px 70px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    #zly-build-hero .hero h1 { font-size: clamp(34px, 4.4vw, 54px); }
+    #zly-build-hero .hero p.sub { font-size: 18px; max-width: 500px; margin: 20px 0 30px; }
+    #zly-build-hero .board { background: var(--paper-2); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+    #zly-build-hero .board svg { width: 100%; height: auto; display: block; }
+    #zly-build-hero .flag { animation: zbh-wave 3s ease-in-out infinite; transform-origin: 0 100%; transform-box: fill-box; }
+    @media (prefers-reduced-motion: reduce) {
+      #zly-build-hero .flag { animation: none; }
+    }
+    @media (max-width: 900px) {
+      #zly-build-hero .hero { grid-template-columns: 1fr; padding: 72px 20px 44px; gap: 36px; }
+    }
+    @media (max-width: 560px) {
+      #zly-build-hero .hero { padding: 56px 18px 36px; }
+      #zly-build-hero .cta-row { flex-direction: column; align-items: stretch; }
+      #zly-build-hero .btn { justify-content: center; }
+    }
+  </style>
+
+  <section class="hero">
+    <div>
+      <span class="tag">build your company</span>
+      <h1>Launch on evidence, not enthusiasm.</h1>
+      <p class="sub">You have the idea. We supply the structure: a validated market, a plan with numbers in it, the tools set up correctly the first time, and a site that's ready to take an order. Most founders spend their first three months finding out what to do. We'd rather you spend them doing it.</p>
+      <div class="cta-row">
+        <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get your launch plan</a>
+        <a href="https://calendly.com/zoley/free-30-min-discovery-call" class="btn btn-ghost">Book a 30-minute call</a>
+      </div>
+      <p class="cta-note">A written recommendation and pricing within two business days.</p>
+    </div>
+    <div class="board">
+      <svg viewBox="0 0 420 320" fill="none" role="img" aria-label="Illustration: a roadmap from idea, to validation, to launch, to growth, with a flag at the destination">
+        <defs>
+          <linearGradient id="zbh-grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b5482d"/><stop offset="0.5" stop-color="#6c5ce7"/><stop offset="1" stop-color="#4ea1ff"/></linearGradient>
+        </defs>
+        <!-- winding path -->
+        <path d="M40 270 C 90 270 90 200 150 200 S 210 130 270 130 S 330 60 380 60" stroke="url(#zbh-grad)" stroke-width="3" stroke-dasharray="7 7" stroke-linecap="round" fill="none"/>
+        <!-- milestone 1: idea (lightbulb) -->
+        <g transform="translate(40 270)">
+          <circle r="22" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <path d="M0 -11 a8 8 0 0 1 4 15 v3 h-8 v-3 a8 8 0 0 1 4 -15z" fill="#e3a72e" stroke="#1b2430" stroke-width="1.8" stroke-linejoin="round"/>
+          <rect x="-4" y="9" width="8" height="3" rx="1" fill="#1b2430"/>
+        </g>
+        <text x="40" y="308" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#b5482d" text-anchor="middle">the idea</text>
+        <!-- milestone 2: validate (checklist card) -->
+        <g transform="translate(150 200)">
+          <circle r="22" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <rect x="-9" y="-11" width="18" height="22" rx="2" fill="#faf3e7" stroke="#1b2430" stroke-width="1.6"/>
+          <path d="M-5 -4 l2.5 2.5 l5 -5 M-5 3 l2.5 2.5 l5 -5" stroke="#7a8b69" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <text x="150" y="240" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#6c5ce7" text-anchor="middle">validated</text>
+        <!-- milestone 3: launch (rocket-ish storefront) -->
+        <g transform="translate(270 130)">
+          <circle r="22" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <path d="M-10 4 h20 v8 h-20 z" fill="#faf3e7" stroke="#1b2430" stroke-width="1.6"/>
+          <path d="M-12 4 L0 -8 L12 4 Z" fill="#b5482d" stroke="#1b2430" stroke-width="1.6" stroke-linejoin="round"/>
+          <rect x="-2.5" y="6" width="5" height="6" fill="#4ea1ff"/>
+        </g>
+        <text x="270" y="170" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#4ea1ff" text-anchor="middle">launched</text>
+        <!-- milestone 4: grow (flag) -->
+        <g transform="translate(380 60)">
+          <circle r="22" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <line x1="-6" y1="12" x2="-6" y2="-12" stroke="#1b2430" stroke-width="2.2" stroke-linecap="round"/>
+          <path class="flag" d="M-6 -12 L10 -7 L-6 -2 Z" fill="#7a8b69" stroke="#1b2430" stroke-width="1.6" stroke-linejoin="round"/>
+        </g>
+        <text x="370" y="100" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#7a8b69" text-anchor="middle">growing</text>
+        <!-- side annotations -->
+        <g transform="translate(200 40)">
+          <rect x="0" y="0" width="120" height="44" rx="6" fill="#fff9ef" stroke="#1b2430" stroke-width="1.8" transform="rotate(-3 60 22)"/>
+          <text x="60" y="19" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="700" fill="#1b2430" text-anchor="middle" transform="rotate(-3 60 22)">Market test</text>
+          <text x="60" y="33" font-family="DM Sans, sans-serif" font-size="10" fill="#5c6b76" text-anchor="middle" transform="rotate(-3 60 22)">27 sign-ups in 6 days</text>
+        </g>
+        <path d="M200 76 Q 170 120 160 178" stroke="#6c5ce7" stroke-width="1.8" stroke-dasharray="4 5" fill="none" opacity="0.7"/>
+        <g transform="translate(286 220)">
+          <rect x="0" y="0" width="128" height="44" rx="6" fill="#fff9ef" stroke="#1b2430" stroke-width="1.8" transform="rotate(3 64 22)"/>
+          <text x="64" y="19" font-family="DM Sans, sans-serif" font-size="10.5" font-weight="700" fill="#1b2430" text-anchor="middle" transform="rotate(3 64 22)">First 90 days</text>
+          <text x="64" y="33" font-family="DM Sans, sans-serif" font-size="10" fill="#5c6b76" text-anchor="middle" transform="rotate(3 64 22)">plan, tools, site, pricing</text>
+        </g>
+        <path d="M300 226 Q 290 190 280 154" stroke="#4ea1ff" stroke-width="1.8" stroke-dasharray="4 5" fill="none" opacity="0.7"/>
+      </svg>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,66 @@
+<!--
+ZOLEY — ALL SOLUTIONS PAGE — "AUTOMATE YOUR OPERATIONS" SECTION
+-->
+
+<div id="zly-sol-automation">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-sol-automation {
+      --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+      --barn: #b5482d; --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-sol-automation * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-sol-automation h2 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-sol-automation p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-sol-automation .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 26px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-sol-automation .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-sol-automation .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+
+    #zly-sol-automation .solution { padding: 70px 24px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; scroll-margin-top: 30px; }
+    #zly-sol-automation .solution.reverse .solution-copy { order: 2; }
+    #zly-sol-automation .solution.reverse .solution-art { order: 1; }
+    #zly-sol-automation .solution-copy .kicker { font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--barn); font-weight: 700; margin-bottom: 10px; display: block; }
+    #zly-sol-automation .solution-copy h2 { font-size: clamp(26px, 3vw, 36px); margin-bottom: 6px; }
+    #zly-sol-automation .solution-copy .subhead { font-family: 'Newsreader', serif; font-style: italic; font-size: 17px; color: var(--ink-soft); margin-bottom: 16px; }
+    #zly-sol-automation .solution-copy p.body { font-size: 15.5px; margin-bottom: 24px; }
+    #zly-sol-automation .solution-art { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 30px; }
+    #zly-sol-automation .solution-art svg { width: 100%; height: auto; display: block; }
+    #zly-sol-automation .divider { border: none; border-top: 1px dashed var(--border); max-width: 1160px; margin: 0 auto; }
+
+    @media (max-width: 900px) {
+      #zly-sol-automation .solution, #zly-sol-automation .solution.reverse { grid-template-columns: 1fr; }
+      #zly-sol-automation .solution.reverse .solution-copy, #zly-sol-automation .solution.reverse .solution-art { order: initial; }
+      #zly-sol-automation .solution { padding: 56px 20px; }
+    }
+  </style>
+
+  <section class="solution reverse" id="automation">
+    <div class="solution-copy">
+      <span class="kicker">Automate your operations</span>
+      <h2>Reclaim your time. Scale without burnout.</h2>
+      <p class="subhead">You don't need more hours in the day.</p>
+      <p class="body">You need smarter systems. We build lightweight, low-cost automations that free up your time, reduce manual tasks, and make your business work harder for you.</p>
+      <a href="https://www.zoley.io/ai-automation" class="btn btn-primary">See automation services</a>
+    </div>
+    <div class="solution-art">
+      <svg viewBox="0 0 360 260" fill="none">
+        <defs>
+          <linearGradient id="sol-thread-auto" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#6c5ce7"/>
+            <stop offset="1" stop-color="#4ea1ff"/>
+          </linearGradient>
+        </defs>
+        <circle cx="140" cy="130" r="40" stroke="#1b2430" stroke-width="2.5" fill="#fff9ef"/>
+        <line x1="140" y1="130" x2="140" y2="105" stroke="#b5482d" stroke-width="2.5"/>
+        <line x1="140" y1="130" x2="158" y2="140" stroke="#b5482d" stroke-width="2.5"/>
+        <circle cx="240" cy="90" r="22" stroke="#1b2430" stroke-width="2.5" fill="#fff9ef"/>
+        <path d="M240 78 L240 90 L248 96" stroke="#6c5ce7" stroke-width="2.2"/>
+        <path d="M182 150 Q210 165 232 118" stroke="url(#sol-thread-auto)" stroke-width="2" stroke-dasharray="5 5" fill="none"/>
+      </svg>
+    </div>
+  </section>
+
+  <hr class="divider">
+</div>

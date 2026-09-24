@@ -1,0 +1,181 @@
+<!--
+ZOLEY — WEB-DESIGN — 3. WHAT WE DO
+Source: main pages/zoley-web-design-page.v2.html
+Scoped under #zly-web-what-we-do. Self-contained: drop into a Squarespace Code Block.
+-->
+
+<div id="zly-web-what-we-do">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-web-what-we-do {
+      --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef;
+      --ink: #1b2430; --ink-soft: #5c6b76;
+      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-web-what-we-do * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-web-what-we-do .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-web-what-we-do h1, #zly-web-what-we-do h2, #zly-web-what-we-do h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-web-what-we-do p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-web-what-we-do .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: var(--barn); }
+
+    #zly-web-what-we-do .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-web-what-we-do .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-web-what-we-do .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-web-what-we-do .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    #zly-web-what-we-do .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+    #zly-web-what-we-do .btn-outline { background: transparent; color: #fff9ef; border: 2px solid #faf3e7; }
+    #zly-web-what-we-do .btn-outline:hover { background: #faf3e7; color: var(--ink); }
+    #zly-web-what-we-do .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+    #zly-web-what-we-do .cta-note { font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
+
+    /* 1. HERO */
+    #zly-web-what-we-do .hero { padding: 108px 24px 60px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    #zly-web-what-we-do .hero h1 { font-size: clamp(34px, 4.4vw, 54px); }
+    #zly-web-what-we-do .hero p.sub { font-size: 18px; max-width: 500px; margin: 20px 0 30px; }
+    #zly-web-what-we-do .board { background: var(--paper-2); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+    #zly-web-what-we-do .board svg { width: 100%; height: auto; display: block; }
+    #zly-web-what-we-do .needle { transform-origin: 0px 0px; animation: zwb-needle 4s ease-in-out infinite; }
+    @keyframes zwb-needle { 0%, 100% { transform: rotate(-70deg); } 50% { transform: rotate(-58deg); } }
+    @media (prefers-reduced-motion: reduce) { #zly-web-what-we-do .needle { animation: none; transform: rotate(-64deg); } }
+
+    #zly-web-what-we-do .process-header { text-align: center; margin-bottom: 40px; }
+    #zly-web-what-we-do .process-header h2 { font-size: clamp(30px, 3.6vw, 40px); max-width: 680px; margin: 0 auto; }
+    #zly-web-what-we-do .process-header .process-sub { font-size: 16px; max-width: 600px; margin: 14px auto 0; }
+
+    #zly-web-what-we-do .pin-wrap { display: flex; justify-content: center; padding: 0 24px 20px; }
+    #zly-web-what-we-do .pin-card { background: var(--card); border: 1px solid var(--border); border-radius: 4px; max-width: 620px; padding: 36px 40px; position: relative; transform: rotate(-1deg); box-shadow: 0 12px 24px rgba(27,36,48,0.10); }
+    #zly-web-what-we-do .pin-card::before { content: ''; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 18px; height: 18px; border-radius: 50%; background: linear-gradient(135deg, var(--barn), var(--violet)); box-shadow: 0 2px 3px rgba(0,0,0,0.25); }
+    #zly-web-what-we-do .pin-card p.quote { font-family: 'Newsreader', serif; font-style: italic; font-size: 20px; color: var(--ink); margin-bottom: 12px; }
+    #zly-web-what-we-do .pin-card span { font-family: 'Caveat', cursive; font-size: 20px; color: var(--barn); font-weight: 700; }
+
+    /* 2. COST */
+    #zly-web-what-we-do .time-band { padding: 30px 24px 70px; }
+    #zly-web-what-we-do .time-card { max-width: 1160px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 56px; box-shadow: 0 18px 40px -20px rgba(27,36,48,0.28); position: relative; overflow: hidden; }
+    #zly-web-what-we-do .time-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--barn), var(--marigold)); }
+    #zly-web-what-we-do .time-eyebrow { display: block; font-size: 12.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--barn); margin-bottom: 14px; }
+    #zly-web-what-we-do .time-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; align-items: center; }
+    #zly-web-what-we-do .time-stat { font-family: 'Newsreader', serif; font-size: clamp(56px, 7vw, 88px); font-weight: 600; line-height: 1; color: var(--barn); }
+    #zly-web-what-we-do .time-stat span { font-size: 16px; color: var(--ink-soft); font-family: 'DM Sans', sans-serif; display: block; margin-top: 12px; font-weight: 600; line-height: 1.4; }
+    #zly-web-what-we-do .time-grid h2 { font-size: clamp(28px, 3.4vw, 38px); }
+
+    /* 3. CARD GRID */
+    #zly-web-what-we-do .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    #zly-web-what-we-do .process-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 26px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #zly-web-what-we-do .process-card:hover { transform: translateY(-6px); box-shadow: 0 18px 32px -16px rgba(27,36,48,0.28); }
+    #zly-web-what-we-do .pc-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    #zly-web-what-we-do .pc-num { flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+    #zly-web-what-we-do .process-card h3 { font-size: 17px; }
+    #zly-web-what-we-do .process-card p { font-size: 14px; }
+    #zly-web-what-we-do .wd-cta { text-align: center; margin-top: 40px; }
+
+    /* 4. STAT BAND */
+    #zly-web-what-we-do .stat-band { background: var(--ink); padding: 90px 24px; position: relative; overflow: hidden; }
+    #zly-web-what-we-do .stat-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(181,72,45,0.2), transparent 55%), radial-gradient(circle at 85% 80%, rgba(78,161,255,0.18), transparent 55%); }
+    #zly-web-what-we-do .stat-band .inner { max-width: 1160px; margin: 0 auto; position: relative; }
+    #zly-web-what-we-do .stat-band .process-header h2 { color: var(--paper); }
+    #zly-web-what-we-do .stat-band .process-header .process-sub { color: #c7d0d6; }
+    #zly-web-what-we-do .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+    #zly-web-what-we-do .stat-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 32px 22px; transform: rotate(var(--r, 0deg)); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #zly-web-what-we-do .stat-card:hover { transform: rotate(var(--r, 0deg)) translateY(-6px); box-shadow: 0 16px 30px -18px rgba(0,0,0,0.5); }
+    #zly-web-what-we-do .stat-card:nth-child(1) { --r: -1deg; }
+    #zly-web-what-we-do .stat-card:nth-child(2) { --r: 1deg; }
+    #zly-web-what-we-do .stat-card:nth-child(3) { --r: -0.5deg; }
+    #zly-web-what-we-do .stat-card .num { font-family: 'Newsreader', serif; font-size: clamp(36px, 4vw, 48px); font-weight: 600; color: #fff9ef; }
+    #zly-web-what-we-do .stat-card p { font-size: 14px; margin-top: 8px; color: #c7d0d6; }
+    #zly-web-what-we-do .stat-close { text-align: center; max-width: 640px; margin: 40px auto 0; font-size: 17px; color: var(--paper); font-family: 'Newsreader', serif; font-style: italic; line-height: 1.5; }
+
+    /* 5. SIGNS */
+    #zly-web-what-we-do .signs-band { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    #zly-web-what-we-do .signs-wrap { max-width: 1160px; margin: 0 auto; padding: 80px 24px; display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 50px; align-items: start; }
+    #zly-web-what-we-do .signs-wrap h2 { font-size: clamp(26px, 3vw, 36px); max-width: 400px; margin-bottom: 14px; }
+    #zly-web-what-we-do .signs-wrap p.lead { font-size: 15.5px; max-width: 400px; }
+    #zly-web-what-we-do .signs-list { list-style: none; }
+    #zly-web-what-we-do .signs-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+    #zly-web-what-we-do .signs-item:last-child { border-bottom: none; }
+    #zly-web-what-we-do .signs-num { font-family: 'Newsreader', serif; font-size: 15px; color: var(--barn); font-weight: 600; flex-shrink: 0; width: 28px; }
+    #zly-web-what-we-do .signs-item h3 { font-size: 17px; margin-bottom: 4px; }
+    #zly-web-what-we-do .signs-item p { font-size: 14.5px; }
+
+    /* 6. HOW WE DO IT */
+    #zly-web-what-we-do .wd-list { max-width: 800px; margin: 0 auto; }
+    #zly-web-what-we-do .wd-row { display: grid; grid-template-columns: 40px 1fr auto; gap: 22px; align-items: flex-start; padding: 26px 0; border-bottom: 1px solid var(--border); }
+    #zly-web-what-we-do .wd-row:last-of-type { border-bottom: none; }
+    #zly-web-what-we-do .wd-num { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+    #zly-web-what-we-do .wd-row h3 { font-size: 19px; margin-bottom: 6px; }
+    #zly-web-what-we-do .wd-row p { font-size: 14.5px; }
+    #zly-web-what-we-do .wd-out { font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--barn); white-space: nowrap; padding-top: 12px; }
+
+    /* 7. WHAT WE MEASURE */
+    #zly-web-what-we-do .measure { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 50px; align-items: center; background: var(--paper-2); border-radius: 16px; padding: 48px; }
+    #zly-web-what-we-do .measure h2 { font-size: clamp(26px, 3vw, 34px); margin-bottom: 14px; }
+    #zly-web-what-we-do .measure p { font-size: 16px; margin-bottom: 12px; }
+    #zly-web-what-we-do .metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    #zly-web-what-we-do .metric { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; }
+    #zly-web-what-we-do .metric .m { font-family: 'Newsreader', serif; font-size: 17px; font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+    #zly-web-what-we-do .metric p { font-size: 13.5px; margin: 0; }
+
+    /* 8. CASE STUDY */
+    #zly-web-what-we-do .case-study { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 40px; box-shadow: 0 18px 40px -24px rgba(27,36,48,0.25); }
+    #zly-web-what-we-do .case-study-media { width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 32px; background: var(--paper-2); border: 1px solid var(--border); padding: 24px; }
+    #zly-web-what-we-do .case-study-media svg { width: 100%; height: auto; display: block; max-width: 760px; margin: 0 auto; }
+    #zly-web-what-we-do .case-study-media img { width: 100%; height: auto; display: block; }
+    #zly-web-what-we-do .case-study-body { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 44px; align-items: center; }
+    #zly-web-what-we-do .case-study .cs-stat { font-family: 'Newsreader', serif; font-weight: 600; font-size: clamp(44px, 5vw, 60px); color: var(--barn); line-height: 1; }
+    #zly-web-what-we-do .case-study .cs-stat-label { font-size: 14px; color: var(--ink-soft); margin-top: 8px; }
+    #zly-web-what-we-do .case-study h3 { font-size: 22px; margin-bottom: 10px; }
+    #zly-web-what-we-do .case-study p { font-size: 15px; margin-bottom: 14px; }
+    #zly-web-what-we-do .case-study .cs-note { font-family: 'Caveat', cursive; font-size: 17px; color: var(--ink-soft); }
+
+    /* 9. FINAL CTA */
+    #zly-web-what-we-do .final { background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center; max-width: 1112px; margin: 0 auto; position: relative; overflow: hidden; }
+    #zly-web-what-we-do .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+    #zly-web-what-we-do .final > * { position: relative; }
+    #zly-web-what-we-do .final h2 { color: var(--paper); font-size: clamp(27px, 3.2vw, 36px); margin-bottom: 14px; }
+    #zly-web-what-we-do .final p { color: #c7d0d6; max-width: 520px; margin: 0 auto 26px; }
+    #zly-web-what-we-do .final .btn-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    #zly-web-what-we-do .final .cta-note { color: rgba(244,237,224,0.55); margin-top: 16px; }
+
+    @media (max-width: 900px) {
+      #zly-web-what-we-do .hero { grid-template-columns: 1fr; padding: 72px 20px 40px; gap: 36px; }
+      #zly-web-what-we-do .stat-strip { grid-template-columns: 1fr; }
+      #zly-web-what-we-do .process-grid { grid-template-columns: repeat(2, 1fr); }
+      #zly-web-what-we-do .case-study-body { grid-template-columns: 1fr; text-align: center; }
+      #zly-web-what-we-do .signs-wrap { grid-template-columns: 1fr; padding: 60px 20px; }
+      #zly-web-what-we-do .measure { grid-template-columns: 1fr; padding: 32px 24px; gap: 24px; }
+      #zly-web-what-we-do .time-grid { grid-template-columns: 1fr; gap: 24px; }
+      #zly-web-what-we-do .wd-row { grid-template-columns: 40px 1fr; }
+      #zly-web-what-we-do .wd-out { grid-column: 2; padding-top: 0; }
+      #zly-web-what-we-do .sec { padding: 60px 20px; }
+      #zly-web-what-we-do .time-band { padding: 20px 20px 40px; }
+      #zly-web-what-we-do .time-card { padding: 32px 24px; }
+      #zly-web-what-we-do .stat-band { padding: 60px 20px; }
+    }
+    @media (max-width: 560px) {
+      #zly-web-what-we-do .process-grid { grid-template-columns: 1fr; }
+      #zly-web-what-we-do .metric-grid { grid-template-columns: 1fr; }
+      #zly-web-what-we-do .hero { padding-top: 56px; }
+      #zly-web-what-we-do .cta-row, #zly-web-what-we-do .final .btn-row { flex-direction: column; align-items: stretch; }
+      #zly-web-what-we-do .btn { justify-content: center; }
+      #zly-web-what-we-do .final { padding: 40px 22px; border-radius: 12px; }
+    }
+  </style>
+
+  <section class="sec" style="padding-top: 30px;">
+    <div class="process-header">
+      <h2>What's included in a build.</h2>
+      <p class="process-sub">Every site we deliver covers all six of these. There's no "basic tier" that leaves out the parts that make it work.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-card"><div class="pc-head"><span class="pc-num">1</span><h3>Design &amp; build</h3></div><p>A modern, fast site designed around your customer's decision path. Built on a platform you can edit yourself, with no proprietary lock-in.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">2</span><h3>Messaging &amp; copy</h3></div><p>We write the site. Headlines, service pages, and calls to action drawn from how your customers describe the problem, not how the industry does.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">3</span><h3>Search foundations</h3></div><p>Technical SEO, page structure, local listings, and the content needed to be found by people already searching for what you offer.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">4</span><h3>Mobile-first performance</h3></div><p>Designed on a phone screen first, then scaled up. Tested against real load-time targets, not just "looks fine on my laptop."</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">5</span><h3>Conversion path &amp; tracking</h3></div><p>One clear action per page, forms that route to the right place, and analytics configured so you can see which pages produce inquiries.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">6</span><h3>Ongoing site care</h3></div><p>Optional monthly support for updates, fixes, and small improvements, so the site keeps pace with the business instead of falling behind it.</p></div>
+    </div>
+    <div class="wd-cta"><a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get a plan for your site</a></div>
+  </section>
+</div>

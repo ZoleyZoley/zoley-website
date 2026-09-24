@@ -1,0 +1,49 @@
+<!--
+ZOLEY — WEB DEVELOPMENT & DESIGN PAGE — SERVICES SECTION
+-->
+
+<div id="zly-webdev-services">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-webdev-services {
+      --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+      --barn: #b5482d; --violet: #6c5ce7; --blue: #4ea1ff; --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-webdev-services * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-webdev-services .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-webdev-services h2, #zly-webdev-services h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-webdev-services p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-webdev-services .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 12px; padding: 0 4px; color: var(--barn); }
+
+    #zly-webdev-services .services-intro { text-align: center; max-width: 640px; margin: 0 auto 44px; }
+    #zly-webdev-services .services-intro h2 { font-size: clamp(24px, 2.8vw, 32px); margin-bottom: 12px; }
+    #zly-webdev-services .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    #zly-webdev-services .service-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 28px; position: relative; overflow: hidden; }
+    #zly-webdev-services .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--barn), var(--violet), var(--blue)); }
+    #zly-webdev-services .service-card h3 { font-size: 19px; margin-bottom: 8px; }
+    #zly-webdev-services .service-card p { font-size: 14.5px; }
+
+    @media (max-width: 900px) {
+      #zly-webdev-services .services-grid { grid-template-columns: 1fr; }
+      #zly-webdev-services .sec { padding: 60px 20px; }
+    }
+  </style>
+
+  <section class="sec">
+    <div class="services-intro">
+      <span class="tag" style="display:block;">built once, owned forever</span>
+      <h2>Everything you need to launch, nothing you don't.</h2>
+      <p>A real website, properly built, with a clear path to add more as you grow.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><h3>Custom Website Design</h3><p>Every page designed around your business, not a generic template with your logo dropped in.</p></div>
+      <div class="service-card"><h3>Full Build &amp; Launch</h3><p>From first page to live site, we handle setup, structure, and everything technical in between.</p></div>
+      <div class="service-card"><h3>Mobile-First Development</h3><p>Looks and works right on the device most of your customers are actually using.</p></div>
+      <div class="service-card"><h3>E-Commerce Setup</h3><p>Sell online without duct-taping together five different tools that don't talk to each other.</p></div>
+      <div class="service-card"><h3>Site Speed &amp; SEO Basics</h3><p>Fast pages and clean structure so people, and Google, can actually find you.</p></div>
+      <div class="service-card"><h3>Ongoing Support &amp; Updates</h3><p>Something needs to change? We're a message away, not a ticket queue.</p></div>
+    </div>
+  </section>
+</div>

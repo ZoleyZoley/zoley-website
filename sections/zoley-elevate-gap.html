@@ -1,0 +1,64 @@
+<!--
+ZOLEY — ELEVATE YOUR BRAND PAGE — GAP SECTION (the problem list)
+-->
+
+<div id="zly-elev-gap">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-elev-gap {
+      --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+      --barn: #b5482d; --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-elev-gap * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-elev-gap .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-elev-gap h2, #zly-elev-gap h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-elev-gap p { color: var(--ink-soft); line-height: 1.65; }
+
+    #zly-elev-gap .gap-band { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    #zly-elev-gap .gap-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 50px; align-items: start; }
+    #zly-elev-gap .gap-grid h2 { font-size: clamp(26px, 3vw, 36px); max-width: 380px; }
+    #zly-elev-gap .gap-list { list-style: none; }
+    #zly-elev-gap .gap-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+    #zly-elev-gap .gap-item:last-child { border-bottom: none; }
+    #zly-elev-gap .gap-num { font-family: 'Newsreader', serif; font-size: 15px; color: var(--barn); font-weight: 600; flex-shrink: 0; width: 28px; }
+    #zly-elev-gap .gap-item h3 { font-size: 17px; margin-bottom: 4px; }
+    #zly-elev-gap .gap-item p { font-size: 14.5px; }
+
+    @media (max-width: 900px) {
+      #zly-elev-gap .gap-grid { grid-template-columns: 1fr; }
+      #zly-elev-gap .sec { padding: 60px 20px; }
+    }
+  </style>
+
+  <section class="sec gap-band">
+    <div class="gap-grid">
+      <div>
+        <h2>Your brand might be losing customers without you realizing it.</h2>
+      </div>
+      <ul class="gap-list">
+        <li class="gap-item">
+          <span class="gap-num">01</span>
+          <div><h3>Your website looks dated or loads slowly.</h3><p>Customers leave if a site feels outdated, or worse, if it takes more than three seconds to load.</p></div>
+        </li>
+        <li class="gap-item">
+          <span class="gap-num">02</span>
+          <div><h3>Your digital presence is inconsistent.</h3><p>A mismatch between your website, social media, and offline branding confuses customers before they buy.</p></div>
+        </li>
+        <li class="gap-item">
+          <span class="gap-num">03</span>
+          <div><h3>You're invisible online.</h3><p>Weak SEO or a lack of reviews means potential customers never even find you in the first place.</p></div>
+        </li>
+        <li class="gap-item">
+          <span class="gap-num">04</span>
+          <div><h3>Your ads aren't converting.</h3><p>Money spent on campaigns that don't target the right audience, landing on pages too weak to close.</p></div>
+        </li>
+        <li class="gap-item">
+          <span class="gap-num">05</span>
+          <div><h3>Competitors look better online.</h3><p>If their brand feels modern and yours doesn't, you get overlooked, even when your product is better.</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,354 @@
+<!--
+ZOLEY — HOMEPAGE — 1. HERO
+Source: main pages/zoley-homepage.v2.html
+Scoped under #zly-hy-hero. Self-contained: drop into a Squarespace Code Block.
+-->
+
+<div id="zly-hy-hero">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-hy-hero {
+      --paper: #faf3e7;
+      --paper-2: #f6e4b8;
+      --card: #fff9ef;
+      --ink: #1b2430;
+      --ink-soft: #5c6b76;
+      --marigold: #e3a72e;
+      --barn: #b5482d;
+      --sage: #7a8b69;
+      --violet: #6c5ce7;
+      --blue: #4ea1ff;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+    }
+    #zly-hy-hero * { box-sizing: border-box; }
+    #zly-hy-hero .zhy-section { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-hy-hero h1, #zly-hy-hero h2, #zly-hy-hero h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); margin: 0; }
+    #zly-hy-hero p { color: var(--ink-soft); line-height: 1.65; margin: 0; }
+    #zly-hy-hero .zhy-tag {
+      font-family: 'Caveat', cursive; font-size: 22px; font-weight: 700;
+      color: var(--barn);
+      display: inline-block; transform: rotate(-2deg); margin-bottom: 6px; padding: 0 4px;
+    }
+    #zly-hy-hero .zhy-eyebrow { display: block; font-size: 12.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--barn); margin-bottom: 12px; }
+
+    /* ---------- BUTTONS ---------- */
+    #zly-hy-hero .zhy-cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+    #zly-hy-hero .zhy-btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px;
+      border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease; cursor: pointer; font-family: 'DM Sans', sans-serif;
+    }
+    #zly-hy-hero .zhy-btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; border: none; }
+    #zly-hy-hero .zhy-btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-hy-hero .zhy-btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    #zly-hy-hero .zhy-btn-ghost:hover { background: var(--ink); color: var(--paper); }
+    #zly-hy-hero .zhy-cta-note { font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
+
+    /* ---------- HERO ---------- */
+    #zly-hy-hero .zhy-hero { padding: 112px 40px 40px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 64px; align-items: center; }
+    #zly-hy-hero .zhy-hero h1 { font-size: clamp(36px, 4.4vw, 56px); }
+    #zly-hy-hero .zhy-hero p.zhy-sub { font-size: 18px; margin: 22px 0 30px; max-width: 500px; }
+
+    /* Signature: corkboard with pinned icons + network threads connecting them */
+    #zly-hy-hero .zhy-board {
+      background: var(--paper-2); border: 1px solid var(--border); border-radius: 14px;
+      padding: 20px; position: relative;
+    }
+    #zly-hy-hero .zhy-board svg { width: 100%; height: auto; display: block; }
+    #zly-hy-hero .zhy-thread { stroke: url(#zhy-thread-grad); stroke-width: 2; stroke-dasharray: 5 5; fill: none; opacity: 0.75; }
+    #zly-hy-hero .zhy-pulse { animation: zhy-pulse 3s ease-in-out infinite; transform-origin: center; }
+    #zly-hy-hero .zhy-pulse:nth-child(2) { animation-delay: 0.5s; }
+    #zly-hy-hero .zhy-pulse:nth-child(3) { animation-delay: 1s; }
+    @keyframes zhy-pulse { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { #zly-hy-hero .zhy-pulse { animation: none; } }
+
+    /* Proof strip under the hero */
+    #zly-hy-hero .zhy-proof { max-width: 1160px; margin: 0 auto; padding: 10px 40px 40px; }
+    #zly-hy-hero .zhy-proof-inner { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); display: grid; grid-template-columns: repeat(3, 1fr); }
+    #zly-hy-hero .zhy-proof-item { padding: 22px 20px; display: flex; gap: 14px; align-items: flex-start; border-right: 1px solid var(--border); }
+    #zly-hy-hero .zhy-proof-item:last-child { border-right: none; }
+    #zly-hy-hero .zhy-proof-item .num { font-family: 'Newsreader', serif; font-size: 30px; font-weight: 600; color: var(--barn); line-height: 1; white-space: nowrap; }
+    #zly-hy-hero .zhy-proof-item p { font-size: 13.5px; line-height: 1.45; }
+
+    /* ---------- CAPABILITIES ---------- */
+    #zly-hy-hero .zhy-services-head { text-align: center; max-width: 680px; margin: 0 auto 40px; }
+    #zly-hy-hero .zhy-services-head p { margin-top: 12px; font-size: 16px; }
+    #zly-hy-hero .zhy-services-cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-bottom: 30px; }
+    #zly-hy-hero .zhy-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+      padding: 30px; text-align: left; position: relative; overflow: hidden;
+      flex: 1 1 280px; max-width: 340px; text-decoration: none; display: block; color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    #zly-hy-hero .zhy-card::after {
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+      background: var(--zhy-card-accent, var(--barn));
+    }
+    #zly-hy-hero .zhy-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 32px -16px rgba(27,36,48,0.28);
+      border-color: rgba(27,36,48,0.28);
+    }
+    #zly-hy-hero .zhy-card svg { width: 44px; height: 44px; margin-bottom: 16px; }
+    #zly-hy-hero .zhy-card h3 { font-size: 20px; margin-bottom: 8px; }
+    #zly-hy-hero .zhy-card p { font-size: 14.5px; margin: 0; }
+    #zly-hy-hero .zhy-card .zhy-card-link { display: inline-block; margin-top: 16px; font-size: 13.5px; font-weight: 700; color: var(--ink); }
+    #zly-hy-hero .zhy-card:hover .zhy-card-link { color: var(--barn); }
+
+    /* ---------- ROTATING TEXT ---------- */
+    #zly-hy-hero .zhy-rotate-band { padding: 50px 24px 60px; }
+    #zly-hy-hero .zhy-rotate-wrapper { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; max-width: 900px; margin: 0 auto; }
+    #zly-hy-hero .zhy-static-text { font-family: 'Newsreader', serif; font-weight: 600; font-size: clamp(30px, 5vw, 52px); margin-bottom: 16px; color: var(--barn); line-height: 1.1; }
+    #zly-hy-hero .zhy-changing-word { font-family: 'Newsreader', serif; font-weight: 600; font-size: clamp(30px, 5vw, 52px); line-height: 1.2; color: var(--ink); }
+    #zly-hy-hero .zhy-cursor { font-family: 'Newsreader', serif; font-size: clamp(30px, 5vw, 52px); color: var(--ink-soft); animation: zhy-blink 1s step-start infinite; }
+    @keyframes zhy-blink { 50% { opacity: 0; } }
+    @media (max-width: 480px) { #zly-hy-hero .zhy-static-text { margin-bottom: 22px; } }
+    @media (prefers-reduced-motion: reduce) { #zly-hy-hero .zhy-cursor { animation: none; } }
+    #zly-hy-hero .zhy-all-services { text-align: center; padding: 0 24px 40px; }
+
+    /* ---------- APPROACH (new) ---------- */
+    #zly-hy-hero .zhy-approach-head { text-align: center; max-width: 680px; margin: 0 auto 48px; }
+    #zly-hy-hero .zhy-approach-head h2 { font-size: clamp(28px, 3.4vw, 40px); }
+    #zly-hy-hero .zhy-approach-head p { margin-top: 14px; font-size: 16.5px; }
+    #zly-hy-hero .zhy-steps { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+    #zly-hy-hero .zhy-steps::before {
+      content: ''; position: absolute; left: 12%; right: 12%; top: 44px; height: 0;
+      border-top: 2px dashed rgba(108,92,231,0.5); z-index: 0;
+    }
+    #zly-hy-hero .zhy-step { position: relative; z-index: 1; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 26px 24px 28px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #zly-hy-hero .zhy-step:hover { transform: translateY(-6px); box-shadow: 0 18px 32px -16px rgba(27,36,48,0.28); }
+    #zly-hy-hero .zhy-step-ico { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; background: var(--paper-2); border: 1.5px solid var(--border); }
+    #zly-hy-hero .zhy-step-ico svg { width: 22px; height: 22px; }
+    #zly-hy-hero .zhy-step .n { font-family: 'Caveat', cursive; font-size: 20px; color: var(--barn); font-weight: 700; }
+    #zly-hy-hero .zhy-step h3 { font-size: 20px; margin: 2px 0 8px; }
+    #zly-hy-hero .zhy-step p { font-size: 14.5px; }
+    #zly-hy-hero .zhy-step .out { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 13px; color: var(--ink); }
+    #zly-hy-hero .zhy-step .out strong { color: var(--barn); }
+
+    /* ---------- WHO WE ARE ---------- */
+    #zly-hy-hero .zhy-who { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    #zly-hy-hero .zhy-who h2 { font-size: clamp(30px, 3.6vw, 42px); margin-bottom: 20px; }
+    #zly-hy-hero .zhy-who p { font-size: 17px; margin-bottom: 16px; }
+    #zly-hy-hero .zhy-who p:last-of-type { margin-bottom: 0; }
+    #zly-hy-hero .zhy-who-media {
+      border-radius: 16px; overflow: hidden;
+      background: var(--paper-2); border: 1px solid var(--border); padding: 22px;
+    }
+    #zly-hy-hero .zhy-who-media svg { width: 100%; height: auto; display: block; }
+    #zly-hy-hero .zhy-who-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    #zly-hy-hero .zhy-who-cap { font-family: 'Caveat', cursive; font-size: 18px; color: var(--ink-soft); text-align: center; margin-top: 10px; transform: rotate(-1deg); }
+
+    /* ---------- RESOURCES (color break) ---------- */
+    #zly-hy-hero .zhy-resources { background: var(--ink); padding: 90px 24px; position: relative; overflow: hidden; }
+    #zly-hy-hero .zhy-resources::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 15% 15%, rgba(181,72,45,0.2), transparent 55%), radial-gradient(circle at 90% 85%, rgba(78,161,255,0.18), transparent 55%); }
+    #zly-hy-hero .zhy-resources-inner { position: relative; max-width: 1160px; margin: 0 auto; }
+    #zly-hy-hero .zhy-resources-head { max-width: 640px; margin: 0 auto 48px; text-align: center; }
+    #zly-hy-hero .zhy-resources-head .zhy-tag { color: var(--marigold); }
+    #zly-hy-hero .zhy-resources-head h2 { color: var(--paper); font-size: clamp(26px, 3vw, 34px); margin-bottom: 12px; }
+    #zly-hy-hero .zhy-resources-head p { color: #c7d0d6; }
+    #zly-hy-hero .zhy-resources-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+    #zly-hy-hero .zhy-col-title { color: var(--paper); font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 14px; }
+    #zly-hy-hero .zhy-guide-list { list-style: none; margin: 0; padding: 0; }
+    #zly-hy-hero .zhy-guide-list li { border-bottom: 1px solid rgba(244,237,224,0.14); }
+    #zly-hy-hero .zhy-guide-list li:last-child { border-bottom: none; }
+    #zly-hy-hero .zhy-guide-link {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 18px 4px; color: var(--paper); text-decoration: none; font-weight: 600; font-size: 15.5px;
+      transition: color 0.15s ease;
+    }
+    #zly-hy-hero .zhy-guide-link small { display: block; font-weight: 400; font-size: 13px; color: #9aa6ae; margin-top: 3px; }
+    #zly-hy-hero .zhy-guide-link:hover { color: var(--marigold); }
+    #zly-hy-hero .zhy-guide-link .arrow { color: var(--marigold); font-size: 18px; flex-shrink: 0; }
+    #zly-hy-hero .zhy-newsletter {
+      background: rgba(244,237,224,0.06); border: 1px solid rgba(244,237,224,0.16); border-radius: 12px;
+      padding: 32px;
+    }
+    #zly-hy-hero .zhy-newsletter h3 { color: var(--paper); font-size: 19px; margin-bottom: 8px; }
+    #zly-hy-hero .zhy-newsletter p { color: #c7d0d6; font-size: 14px; margin-bottom: 20px; }
+    #zly-hy-hero .zhy-newsletter-form { display: flex; gap: 10px; flex-wrap: wrap; }
+    #zly-hy-hero .zhy-input {
+      flex: 1 1 200px; padding: 13px 16px; border-radius: 8px; border: 1px solid rgba(244,237,224,0.24);
+      background: rgba(244,237,224,0.08); color: var(--paper); font-size: 14.5px; font-family: 'DM Sans', sans-serif;
+    }
+    #zly-hy-hero .zhy-input::placeholder { color: rgba(244,237,224,0.5); }
+    #zly-hy-hero .zhy-input:focus { outline: 2px solid var(--marigold); outline-offset: 1px; }
+    #zly-hy-hero .zhy-newsletter-form .zhy-btn { flex-shrink: 0; }
+    #zly-hy-hero .zhy-newsletter .fine-print { font-size: 12px; color: rgba(244,237,224,0.5); margin-top: 12px; margin-bottom: 0; }
+
+    /* ---------- FEATURED (Automation spotlight) ---------- */
+    #zly-hy-hero .zhy-featured {
+      background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+      padding: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;
+      box-shadow: 0 24px 48px -28px rgba(27,36,48,0.3);
+    }
+    #zly-hy-hero .zhy-featured .zhy-tag { color: var(--blue); }
+    #zly-hy-hero .zhy-featured h2 { font-size: clamp(28px, 3.6vw, 40px); margin-bottom: 16px; }
+    #zly-hy-hero .zhy-featured p { font-size: 16px; margin-bottom: 16px; max-width: 480px; }
+    #zly-hy-hero .zhy-featured p:last-of-type { margin-bottom: 26px; }
+    #zly-hy-hero .zhy-week { background: var(--paper-2); border-radius: 14px; padding: 26px 26px 20px; border: 1px solid var(--border); }
+    #zly-hy-hero .zhy-week svg { width: 100%; height: auto; display: block; }
+    #zly-hy-hero .zhy-week-cap { font-family: 'Caveat', cursive; font-size: 18px; color: var(--ink-soft); text-align: center; margin-top: 8px; transform: rotate(-1deg); }
+
+    /* ---------- TESTIMONIALS (paginated carousel) ---------- */
+    #zly-hy-hero .zhy-test-head { text-align: center; max-width: 560px; margin: 0 auto 40px; }
+    #zly-hy-hero .zhy-test-head h2 { font-size: clamp(26px, 3vw, 34px); }
+    #zly-hy-hero .zhy-test-viewport { overflow: hidden; }
+    #zly-hy-hero .zhy-test-track { display: flex; transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1); will-change: transform; }
+    #zly-hy-hero .zhy-test-page { flex: 0 0 100%; min-width: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 4px 4px 6px; }
+    #zly-hy-hero .zhy-test-card {
+      position: relative; min-height: 236px;
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 34px 32px 26px 40px; display: flex; flex-direction: column;
+      box-shadow: 0 16px 34px -24px rgba(27,36,48,0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    #zly-hy-hero .zhy-test-card:hover { transform: translateY(-6px); box-shadow: 0 18px 32px -16px rgba(27,36,48,0.28); }
+    #zly-hy-hero .zhy-test-card::before { content: ''; position: absolute; left: 14px; top: 26px; bottom: 26px; width: 4px; border-radius: 4px; background: var(--violet); }
+    #zly-hy-hero .zhy-test-card .quote-icon { position: absolute; top: 16px; right: 18px; width: 19px; height: 15px; color: rgba(108,92,231,0.18); }
+    #zly-hy-hero .zhy-test-card p.quote { font-size: 16.5px; color: var(--ink); line-height: 1.65; flex-grow: 1; margin: 0 0 22px; }
+    #zly-hy-hero .zhy-test-card .who { border-top: 1px solid var(--border); padding-top: 16px; }
+    #zly-hy-hero .zhy-test-card .who strong { display: block; font-weight: 700; font-size: 15px; color: var(--ink); }
+    #zly-hy-hero .zhy-test-card .who .biz { display: block; font-weight: 400; color: var(--ink-soft); font-size: 13.5px; margin-top: 3px; }
+    #zly-hy-hero .zhy-test-card.is-placeholder { align-items: center; justify-content: center; text-align: center; border: 1.5px dashed var(--border); background: transparent; color: var(--ink-soft); box-shadow: none; }
+    #zly-hy-hero .zhy-test-card.is-placeholder::before, #zly-hy-hero .zhy-test-card.is-placeholder .quote-icon { display: none; }
+    #zly-hy-hero .zhy-test-card.is-placeholder .plus { font-size: 26px; color: var(--barn); margin-bottom: 8px; }
+    #zly-hy-hero .zhy-test-card.is-placeholder p { font-size: 14px; margin: 0; }
+    #zly-hy-hero .zhy-test-nav { display: flex; align-items: center; justify-content: center; gap: 22px; margin-top: 28px; }
+    #zly-hy-hero .zhy-test-nav button.zhy-test-arrow { width: 42px; height: 42px; border-radius: 50%; border: 1.5px solid var(--violet); background: var(--card); cursor: pointer; font-size: 17px; color: var(--violet); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease; }
+    #zly-hy-hero .zhy-test-nav button.zhy-test-arrow:hover { background: var(--violet); color: #fff9ef; }
+    #zly-hy-hero .zhy-test-nav button.zhy-test-arrow:active { transform: scale(0.92); }
+    #zly-hy-hero .zhy-test-dots { display: flex; align-items: center; gap: 9px; }
+    #zly-hy-hero .zhy-test-dots button { width: 8px; height: 8px; padding: 0; border-radius: 50%; border: none; cursor: pointer; background: rgba(27,36,48,0.2); transition: background-color 0.3s ease, width 0.3s ease; }
+    #zly-hy-hero .zhy-test-dots button.is-active { width: 22px; border-radius: 5px; background: var(--violet); }
+    @media (prefers-reduced-motion: reduce) { #zly-hy-hero .zhy-test-track { transition: none; } }
+    @media (max-width: 640px) { #zly-hy-hero .zhy-test-page { grid-template-columns: 1fr; } }
+
+    /* ---------- FINAL CTA ---------- */
+    #zly-hy-hero .zhy-sign {
+      background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center;
+      max-width: 1112px; margin: 0 auto; position: relative; overflow: hidden;
+    }
+    #zly-hy-hero .zhy-sign::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%),
+                  radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%);
+    }
+    #zly-hy-hero .zhy-sign > * { position: relative; }
+    #zly-hy-hero .zhy-sign h2 { color: var(--paper); font-size: clamp(28px, 3.2vw, 38px); margin-bottom: 14px; }
+    #zly-hy-hero .zhy-sign p { color: #c7d0d6; max-width: 520px; margin: 0 auto 28px; }
+    #zly-hy-hero .zhy-sign .zhy-cta-note { color: rgba(244,237,224,0.55); margin-top: 16px; }
+
+    @media (max-width: 900px) {
+      #zly-hy-hero .zhy-hero { grid-template-columns: 1fr; padding: 76px 20px 30px; gap: 40px; }
+      #zly-hy-hero .zhy-proof { padding: 0 20px 30px; }
+      #zly-hy-hero .zhy-proof-inner { grid-template-columns: 1fr; }
+      #zly-hy-hero .zhy-proof-item { border-right: none; border-bottom: 1px solid var(--border); padding: 16px 4px; }
+      #zly-hy-hero .zhy-proof-item:last-child { border-bottom: none; }
+      #zly-hy-hero .zhy-steps { grid-template-columns: 1fr 1fr; }
+      #zly-hy-hero .zhy-steps::before { display: none; }
+      #zly-hy-hero .zhy-who { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+      #zly-hy-hero .zhy-who-media { order: -1; }
+      #zly-hy-hero .zhy-resources-grid { grid-template-columns: 1fr; gap: 40px; }
+      #zly-hy-hero .zhy-featured { grid-template-columns: 1fr; padding: 40px 28px; text-align: center; }
+      #zly-hy-hero .zhy-featured p { margin-left: auto; margin-right: auto; }
+      #zly-hy-hero .zhy-section { padding: 60px 20px; }
+      #zly-hy-hero .zhy-rotate-band { padding: 50px 20px; }
+      #zly-hy-hero .zhy-resources { padding: 60px 20px; }
+    }
+    @media (max-width: 560px) {
+      #zly-hy-hero .zhy-steps { grid-template-columns: 1fr; }
+      #zly-hy-hero .zhy-hero { padding-top: 56px; }
+      #zly-hy-hero .zhy-cta-row { flex-direction: column; align-items: stretch; }
+      #zly-hy-hero .zhy-btn { justify-content: center; }
+      #zly-hy-hero .zhy-sign { padding: 40px 22px; border-radius: 12px; }
+      #zly-hy-hero .zhy-featured { padding: 32px 20px; }
+    }
+  </style>
+
+  <section class="zhy-hero">
+    <div>
+      <span class="zhy-tag">strategy, systems, execution</span>
+      <h1>The operating layer for businesses that intend to grow.</h1>
+      <p class="zhy-sub">Zoley designs the systems underneath a small business: the research that sets direction, the website and campaigns that bring in demand, and the automation that keeps it all moving without adding headcount.</p>
+      <div class="zhy-cta-row">
+        <a href="https://www.zoley.io/find-your-next-best-business-move" class="zhy-btn zhy-btn-primary">Get your plan</a>
+        <a href="https://calendly.com/zoley/free-30-min-discovery-call" class="zhy-btn zhy-btn-ghost">Book a 30-minute call</a>
+      </div>
+      <p class="zhy-cta-note">Answer a few questions. We reply with a written recommendation and pricing within two business days.</p>
+    </div>
+    <div class="zhy-board">
+      <svg viewBox="0 0 400 320" fill="none" role="img" aria-label="Illustration: a website, customer record, database, calendar, location, and email connected by dashed threads">
+        <defs>
+          <linearGradient id="zhy-thread-grad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#b5482d"/>
+            <stop offset="1" stop-color="#6c5ce7"/>
+          </linearGradient>
+          <symbol id="zhy-ico-website" viewBox="0 0 150 96">
+            <rect x="1" y="1" width="148" height="94" rx="4" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <line x1="1" y1="22" x2="149" y2="22" stroke="#1b2430" stroke-width="2"/>
+            <circle cx="14" cy="11.5" r="3" fill="#b5482d"/>
+            <circle cx="26" cy="11.5" r="3" fill="#e3a72e"/>
+            <circle cx="38" cy="11.5" r="3" fill="#7a8b69"/>
+            <rect x="14" y="36" width="90" height="8" rx="4" fill="#4ea1ff"/>
+            <rect x="14" y="52" width="122" height="6" rx="3" fill="#1b2430" opacity="0.35"/>
+            <rect x="14" y="66" width="96" height="6" rx="3" fill="#1b2430" opacity="0.35"/>
+            <rect x="14" y="80" width="60" height="6" rx="3" fill="#1b2430" opacity="0.35"/>
+          </symbol>
+          <symbol id="zhy-ico-database" viewBox="0 0 90 96">
+            <ellipse cx="45" cy="14" rx="43" ry="13" fill="#f6e4b8" stroke="#1b2430" stroke-width="2.5"/>
+            <path d="M2 14 L2 82 A43 13 0 0 0 88 82 L88 14" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <path d="M2 48 A43 13 0 0 0 88 48" fill="none" stroke="#1b2430" stroke-width="1.5" opacity="0.4"/>
+            <path d="M2 65 A43 13 0 0 0 88 65" fill="none" stroke="#1b2430" stroke-width="1.5" opacity="0.4"/>
+            <circle cx="45" cy="30" r="5" fill="#7a8b69"/>
+          </symbol>
+          <symbol id="zhy-ico-clock" viewBox="0 0 70 70">
+            <circle cx="35" cy="35" r="33" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <circle cx="35" cy="35" r="18" stroke="#b5482d" stroke-width="2.2" fill="none"/>
+            <line x1="35" y1="35" x2="35" y2="22" stroke="#b5482d" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="35" y1="35" x2="45" y2="40" stroke="#b5482d" stroke-width="2.2" stroke-linecap="round"/>
+          </symbol>
+          <symbol id="zhy-ico-pin" viewBox="0 0 46 60">
+            <path d="M23 2 C34 2 42 11 42 21 C42 36 23 58 23 58 C23 58 4 36 4 21 C4 11 12 2 23 2 Z" fill="#fff9ef" stroke="#6c5ce7" stroke-width="2.5"/>
+            <circle cx="23" cy="21" r="8" fill="#6c5ce7" opacity="0.85"/>
+          </symbol>
+          <symbol id="zhy-ico-contact" viewBox="0 0 130 92">
+            <rect x="1" y="1" width="128" height="90" rx="6" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <circle cx="32" cy="34" r="15" fill="#4ea1ff"/>
+            <circle cx="32" cy="29" r="5.5" fill="#fff9ef"/>
+            <path d="M21.5 43 C21.5 35.5 42.5 35.5 42.5 43" fill="#fff9ef"/>
+            <rect x="58" y="22" width="56" height="7" rx="3.5" fill="#1b2430" opacity="0.8"/>
+            <rect x="58" y="35" width="38" height="6" rx="3" fill="#1b2430" opacity="0.4"/>
+            <rect x="14" y="64" width="102" height="5" rx="2.5" fill="#1b2430" opacity="0.2"/>
+            <rect x="14" y="76" width="66" height="5" rx="2.5" fill="#1b2430" opacity="0.2"/>
+          </symbol>
+          <symbol id="zhy-ico-envelope" viewBox="0 0 90 62">
+            <rect x="1" y="1" width="88" height="60" rx="6" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <path d="M4 7 L45 37 L86 7" fill="none" stroke="#e3a72e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+          </symbol>
+        </defs>
+        <path class="zhy-thread" d="M92 68 Q 200 28 316 69"/>
+        <path class="zhy-thread" d="M316 69 Q 230 180 74 231"/>
+        <path class="zhy-thread" d="M74 231 Q 190 268 296 231"/>
+        <use href="#zhy-ico-website" x="14" y="18" width="156" height="100"/>
+        <use href="#zhy-ico-contact" x="246" y="20" width="140" height="99"/>
+        <use href="#zhy-ico-database" x="26" y="180" width="96" height="102"/>
+        <use href="#zhy-ico-clock" x="245" y="196" width="78" height="78"/>
+        <use href="#zhy-ico-pin" x="325" y="178" width="54" height="70" transform="rotate(10 352 213)"/>
+        <use href="#zhy-ico-envelope" x="308" y="236" width="84" height="57" transform="rotate(-7 350 264)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- PROOF STRIP (Zoley's own numbers — confirm each before publishing; see V2-NOTES.md) -->
+  <div class="zhy-proof">
+    <div class="zhy-proof-inner">
+      <div class="zhy-proof-item"><span class="num">30+</span><p>years of combined consulting experience across strategy, operations, and marketing</p></div>
+      <div class="zhy-proof-item"><span class="num">4 in 5</span><p>clients refer us to another business owner</p></div>
+      <div class="zhy-proof-item"><span class="num">Fixed</span><p>scope and price agreed in writing before any work begins</p></div>
+    </div>
+  </div>
+</div>

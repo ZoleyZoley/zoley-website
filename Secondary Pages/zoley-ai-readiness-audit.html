@@ -1,0 +1,339 @@
+<!--
+ZOLEY — FREE AI-READINESS AUDIT — STANDALONE LANDING PAGE
+Lead magnet: quick, AI-search-only audit (crawl access, structured data, answer-ready
+content, brand citations, AI engine visibility, content freshness). Deliberately narrow —
+this is the fast version, separate from the fuller website/reputation audit product.
+Scoped under #zly-ai-audit. Drop into its own Squarespace Code Block on whatever page/URL
+this ends up living at (not yet decided — this file is intentionally standalone, not
+wired into pages/ or sections/ yet).
+
+IMPORTANT — before either form actually works:
+Find "FORM_ENDPOINT" in the <script> below and replace it with your real submission URL.
+Options, easiest first:
+  1. Squarespace native: create a hidden Newsletter/Form block elsewhere on the site,
+     grab its action URL from the page source, and point FORM_ENDPOINT at it.
+  2. ConvertKit / Mailchimp / your CRM: use their form action URL or webhook, then set up
+     an automation there to actually run the audit and email the result.
+  3. Your own API: point this at your endpoint, have it kick off the AI-readiness check
+     and email the report.
+Until FORM_ENDPOINT is real, both forms show an error state instead of silently failing.
+Also swap the two placeholder legal links (Terms of Use / Privacy Policy) for your real URLs.
+-->
+
+<div id="zly-ai-audit">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-ai-audit {
+      --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef;
+      --ink: #1b2430; --ink-soft: #5c6b76;
+      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-ai-audit * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-ai-audit h1, #zly-ai-audit h2, #zly-ai-audit h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-ai-audit p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-ai-audit .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 12px; padding: 0 4px; color: var(--barn); }
+    #zly-ai-audit .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+
+    #zly-ai-audit .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 15px 26px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-ai-audit .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-ai-audit .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-ai-audit .btn-ghost { background: transparent; color: inherit; border: 2px solid currentColor; width: auto; }
+    #zly-ai-audit .btn-ghost:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+    /* shared form field styling, used by both forms */
+    #zly-ai-audit .zly-field { margin-bottom: 16px; }
+    #zly-ai-audit .zly-label { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 7px; }
+    #zly-ai-audit .zly-input { width: 100%; padding: 13px 15px; border-radius: 8px; border: 1.5px solid var(--border); font-family: 'DM Sans', sans-serif; font-size: 15px; background: var(--paper); color: var(--ink); }
+    #zly-ai-audit .zly-input:focus { outline: none; border-color: var(--violet); }
+    #zly-ai-audit .form-note { font-size: 12px; line-height: 1.6; margin-top: 14px; }
+    #zly-ai-audit .form-note a { color: inherit; font-weight: 700; }
+    #zly-ai-audit .form-status { font-size: 14px; margin-top: 12px; display: none; }
+    #zly-ai-audit .form-status.success { display: block; color: var(--sage); font-weight: 600; }
+    #zly-ai-audit .form-status.error { display: block; color: var(--barn); font-weight: 600; }
+
+    /* ===== HERO ===== */
+    #zly-ai-audit .aud-hero { background: var(--ink); padding: 108px 24px 80px; position: relative; overflow: hidden; }
+    #zly-ai-audit .aud-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 18% 15%, rgba(108,92,231,0.28), transparent 55%), radial-gradient(circle at 88% 85%, rgba(181,72,45,0.24), transparent 55%); }
+    #zly-ai-audit .aud-hero-wrap { position: relative; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.88fr); gap: 56px; align-items: center; }
+    #zly-ai-audit .aud-hero-copy .tag { color: var(--marigold); background: none; -webkit-text-fill-color: unset; }
+    #zly-ai-audit .aud-hero-copy h1 { color: var(--paper); font-size: clamp(32px, 4.2vw, 50px); max-width: 560px; }
+    #zly-ai-audit .aud-hero-copy p.sub { color: #c7d0d6; font-size: 17px; max-width: 500px; margin-top: 18px; }
+    #zly-ai-audit .aud-stats { display: flex; gap: 30px; margin-top: 32px; flex-wrap: wrap; }
+    #zly-ai-audit .aud-stat .num { font-family: 'Newsreader', serif; font-size: 32px; font-weight: 600; color: #fff; }
+    #zly-ai-audit .aud-stat p { font-size: 13px; max-width: 150px; color: #9aa6ae; }
+
+    #zly-ai-audit .aud-card { position: relative; background: var(--card); border-radius: 14px; padding: 34px; box-shadow: 0 20px 50px rgba(0,0,0,0.35); }
+    #zly-ai-audit .aud-card .kicker { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--barn); margin-bottom: 10px; }
+    #zly-ai-audit .aud-card h3 { font-size: 21px; margin-bottom: 20px; }
+
+    /* ===== SIGNALS GRID ===== */
+    #zly-ai-audit .aud-signals-head { max-width: 640px; }
+    #zly-ai-audit .aud-signals-head h2 { font-size: clamp(26px, 3.2vw, 36px); margin-bottom: 14px; }
+    #zly-ai-audit .aud-signals-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 42px; }
+    #zly-ai-audit .aud-signal-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 28px; position: relative; overflow: hidden; }
+    #zly-ai-audit .aud-signal-card::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--barn), var(--violet), var(--blue)); }
+    #zly-ai-audit .aud-signal-card svg { width: 40px; height: 40px; margin-bottom: 16px; }
+    #zly-ai-audit .aud-signal-card h3 { font-size: 19px; margin-bottom: 8px; }
+    #zly-ai-audit .aud-signal-card p { font-size: 14.5px; }
+
+    /* ===== REPORT PREVIEW ===== */
+    #zly-ai-audit .aud-preview { background: var(--paper-2); }
+    #zly-ai-audit .aud-preview-wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr); gap: 56px; align-items: center; }
+    #zly-ai-audit .aud-preview-copy h2 { font-size: clamp(26px, 3.2vw, 34px); margin-bottom: 14px; }
+    #zly-ai-audit .aud-preview-copy p.sub { margin-bottom: 20px; }
+    #zly-ai-audit .aud-checklist { list-style: none; margin-bottom: 26px; }
+    #zly-ai-audit .aud-checklist li { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 12px; font-size: 15px; color: var(--ink); font-weight: 500; }
+    #zly-ai-audit .aud-checklist li::before { content: '\2713'; color: var(--sage); font-weight: 700; flex-shrink: 0; }
+
+    #zly-ai-audit .aud-result-card { background: var(--card); border-radius: 14px; padding: 32px; box-shadow: 0 16px 40px rgba(27,36,48,0.12); }
+    #zly-ai-audit .aud-result-card .kicker { font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 18px; text-align: center; }
+    #zly-ai-audit .aud-gauge-wrap { display: flex; flex-direction: column; align-items: center; margin-bottom: 22px; }
+    #zly-ai-audit .aud-gauge { width: 132px; height: 132px; }
+    #zly-ai-audit .aud-gauge-label { font-size: 13.5px; font-weight: 700; color: var(--barn); margin-top: 8px; }
+    #zly-ai-audit .aud-signal-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 0; border-top: 1px solid var(--border); font-size: 13.5px; }
+    #zly-ai-audit .aud-signal-row:first-of-type { border-top: none; }
+    #zly-ai-audit .aud-signal-row .name { display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--ink); }
+    #zly-ai-audit .aud-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+    #zly-ai-audit .aud-signal-row .status { color: var(--ink-soft); text-align: right; }
+
+    /* ===== URGENCY BAND ===== */
+    #zly-ai-audit .aud-band { background: var(--ink); padding: 60px 40px; position: relative; overflow: hidden; }
+    #zly-ai-audit .aud-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 22% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 82% 85%, rgba(181,72,45,0.22), transparent 55%); }
+    #zly-ai-audit .aud-band-inner { position: relative; max-width: 1160px; margin: 0 auto; border-radius: 14px; }
+    #zly-ai-audit .aud-band-wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr); gap: 56px; align-items: center; }
+    #zly-ai-audit .aud-band-copy .tag { color: var(--marigold); background: none; -webkit-text-fill-color: unset; }
+    #zly-ai-audit .aud-band-copy h2 { color: var(--paper); font-size: clamp(26px, 3.2vw, 36px); margin-bottom: 14px; }
+    #zly-ai-audit .aud-band-copy p { color: #c7d0d6; margin-bottom: 26px; }
+    #zly-ai-audit .aud-band .aud-stats { margin-top: 0; }
+    #zly-ai-audit .aud-band .zly-label { color: #c7d0d6; }
+    #zly-ai-audit .aud-band .form-note { color: #9aa6ae; }
+    #zly-ai-audit .aud-band .form-note a { color: var(--paper); }
+
+    @media (max-width: 900px) {
+      #zly-ai-audit .sec { padding: 60px 20px; }
+      #zly-ai-audit .aud-hero { padding: 72px 20px 48px; }
+      #zly-ai-audit .aud-hero-wrap, #zly-ai-audit .aud-preview-wrap, #zly-ai-audit .aud-band-wrap { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+      #zly-ai-audit .aud-signals-grid { grid-template-columns: minmax(0, 1fr); }
+      #zly-ai-audit .aud-band { padding: 48px 26px; }
+    }
+    @media (max-width: 480px) {
+      #zly-ai-audit .aud-hero { padding: 56px 18px 40px; }
+      #zly-ai-audit .aud-card, #zly-ai-audit .aud-result-card { padding: 24px 22px; }
+      #zly-ai-audit .aud-stats { gap: 20px; }
+      #zly-ai-audit .aud-band { padding: 40px 22px; border-radius: 12px; }
+      #zly-ai-audit .btn-ghost { width: 100%; }
+    }
+  </style>
+
+  <!-- HERO -->
+  <section class="aud-hero" id="zly-audit-top">
+    <div class="aud-hero-wrap">
+      <div class="aud-hero-copy">
+        <span class="tag">free · 60-second check</span>
+        <h1>Would ChatGPT even recommend your business?</h1>
+        <p class="sub">A quick scan across six signals that decide whether AI engines like ChatGPT, Perplexity, and Gemini can find, understand, and recommend you, not just whether you rank on Google.</p>
+        <div class="aud-stats">
+          <div class="aud-stat"><div class="num">6</div><p>AI-readiness signals scored</p></div>
+          <div class="aud-stat"><div class="num">60 sec</div><p>to run your free check</p></div>
+          <div class="aud-stat"><div class="num">$0</div><p>cost, no card required</p></div>
+        </div>
+      </div>
+
+      <div class="aud-card">
+        <div class="kicker">Start your free check</div>
+        <h3>Enter your website. We'll check what AI sees.</h3>
+        <form id="zly-audit-hero-form" novalidate>
+          <div class="zly-field">
+            <label class="zly-label" for="zly-audit-hero-url">Your website</label>
+            <input class="zly-input" type="text" id="zly-audit-hero-url" name="website" placeholder="e.g. www.yourbusiness.com" required>
+          </div>
+          <div class="zly-field">
+            <label class="zly-label" for="zly-audit-hero-email">Where to send your results</label>
+            <input class="zly-input" type="email" id="zly-audit-hero-email" name="email" placeholder="you@yourbusiness.com" required>
+          </div>
+          <button type="submit" class="btn btn-primary" id="zly-audit-hero-submit">Run my AI audit</button>
+          <p class="form-note">By starting your check, you agree to Zoley's <a href="/terms-conditions">Terms of Use</a> and acknowledge our <a href="/privacy-policy">Privacy Policy</a>. We'll use the website and info you provide to run your check and follow up with your results.</p>
+          <p class="form-status" id="zly-audit-hero-status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE CHECK -->
+  <section class="sec">
+    <div class="aud-signals-head">
+      <span class="tag">what we check</span>
+      <h2>Six signals. One score. Built for how AI actually finds businesses.</h2>
+      <p>Ranking on Google doesn't mean AI can see you. We check six signals that decide whether ChatGPT, Perplexity, and Gemini can find, understand, and recommend your business.</p>
+    </div>
+
+    <div class="aud-signals-grid">
+      <div class="aud-signal-card">
+        <svg viewBox="0 0 48 48" fill="none"><rect x="12" y="14" width="24" height="20" rx="4" stroke="#b5482d" stroke-width="2.5"/><circle cx="19" cy="24" r="2.2" fill="#b5482d"/><circle cx="29" cy="24" r="2.2" fill="#b5482d"/><line x1="24" y1="14" x2="24" y2="8" stroke="#b5482d" stroke-width="2.5" stroke-linecap="round"/><circle cx="24" cy="6" r="2" stroke="#b5482d" stroke-width="2"/><line x1="12" y1="26" x2="7" y2="26" stroke="#b5482d" stroke-width="2.5" stroke-linecap="round"/><line x1="36" y1="26" x2="41" y2="26" stroke="#b5482d" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <h3>AI Crawl Access</h3>
+        <p>Whether AI crawlers, like GPTBot, ClaudeBot, and PerplexityBot, can actually reach and read your site, or a blocked robots.txt is quietly locking them out.</p>
+      </div>
+      <div class="aud-signal-card">
+        <svg viewBox="0 0 48 48" fill="none"><path d="M17 15 L8 24 L17 33" stroke="#6c5ce7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M31 15 L40 24 L31 33" stroke="#6c5ce7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="24" cy="24" r="2.4" fill="#6c5ce7"/></svg>
+        <h3>Structured Data</h3>
+        <p>Whether your pages carry the schema markup that turns plain text into facts AI engines can lift and trust, instead of ignore.</p>
+      </div>
+      <div class="aud-signal-card">
+        <svg viewBox="0 0 48 48" fill="none"><path d="M8 12 h32 a2 2 0 0 1 2 2 v16 a2 2 0 0 1 -2 2 H20 l-8 7 v-7 h-4 a2 2 0 0 1 -2 -2 V14 a2 2 0 0 1 2 -2 Z" stroke="#4ea1ff" stroke-width="2.5" fill="none"/><text x="24" y="26" font-family="DM Sans, sans-serif" font-size="13" font-weight="700" fill="#4ea1ff" text-anchor="middle">?</text></svg>
+        <h3>Answer-Ready Content</h3>
+        <p>Whether your content answers real questions in plain language AI can quote directly, instead of marketing copy that reads well but answers nothing.</p>
+      </div>
+      <div class="aud-signal-card">
+        <svg viewBox="0 0 48 48" fill="none"><circle cx="10" cy="14" r="4" stroke="#7a8b69" stroke-width="2.3"/><circle cx="38" cy="14" r="4" stroke="#7a8b69" stroke-width="2.3"/><circle cx="24" cy="38" r="4" stroke="#7a8b69" stroke-width="2.3"/><line x1="13" y1="16" x2="21" y2="35" stroke="#7a8b69" stroke-width="2" stroke-dasharray="3 3"/><line x1="35" y1="16" x2="27" y2="35" stroke="#7a8b69" stroke-width="2" stroke-dasharray="3 3"/><line x1="14" y1="14" x2="34" y2="14" stroke="#7a8b69" stroke-width="2" stroke-dasharray="3 3"/></svg>
+        <h3>Brand Citations</h3>
+        <p>How often other sites, directories, and reviews mention your business by name, the outside signals AI cross-references before it trusts a source.</p>
+      </div>
+      <div class="aud-signal-card">
+        <svg viewBox="0 0 48 48" fill="none"><path d="M8 12 h32 a2 2 0 0 1 2 2 v16 a2 2 0 0 1 -2 2 H20 l-8 7 v-7 h-4 a2 2 0 0 1 -2 -2 V14 a2 2 0 0 1 2 -2 Z" stroke="#b5482d" stroke-width="2.5" fill="none"/><path d="M24 17 l2.2 4.6 5 0.7 -3.6 3.5 0.9 5 -4.5 -2.4 -4.5 2.4 0.9 -5 -3.6 -3.5 5 -0.7 Z" fill="#b5482d"/></svg>
+        <h3>AI Engine Visibility</h3>
+        <p>When someone asks ChatGPT, Perplexity, or Gemini a question your business should answer, whether you actually show up in the response.</p>
+      </div>
+      <div class="aud-signal-card">
+        <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="16" stroke="#6c5ce7" stroke-width="2.5"/><path d="M24 15 V24 L31 29" stroke="#6c5ce7" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>
+        <h3>Content Freshness</h3>
+        <p>Whether your key pages look current. Stale, unmaintained content quietly slides out of what AI chooses to surface.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPORT PREVIEW -->
+  <section class="sec aud-preview">
+    <div class="aud-preview-wrap">
+      <div class="aud-preview-copy">
+        <span class="tag">your results</span>
+        <h2>See exactly where AI can't find you, and what to fix first.</h2>
+        <p class="sub">No jargon, no 40-page PDF. Every signal gets a plain-language verdict, so you know what's working, what's not, and what to fix first.</p>
+        <ul class="aud-checklist">
+          <li>Signal-by-signal breakdown, in plain language</li>
+          <li>One AI-readiness score you can track over time</li>
+          <li>The fastest fixes, ranked by impact, so you know where to start</li>
+        </ul>
+        <a href="#zly-audit-top" class="btn btn-ghost">Run my free AI audit</a>
+      </div>
+
+      <div class="aud-result-card">
+        <div class="kicker">Sample result</div>
+        <div class="aud-gauge-wrap">
+          <svg class="aud-gauge" viewBox="0 0 120 120">
+            <defs>
+              <linearGradient id="zly-gauge-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#b5482d"/>
+                <stop offset="100%" stop-color="#e3a72e"/>
+              </linearGradient>
+            </defs>
+            <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(27,36,48,0.1)" stroke-width="12"/>
+            <circle cx="60" cy="60" r="52" fill="none" stroke="url(#zly-gauge-grad)" stroke-width="12" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="202.5" transform="rotate(-90 60 60)"/>
+            <text x="60" y="57" font-family="Newsreader, serif" font-size="30" font-weight="600" fill="#1b2430" text-anchor="middle">38</text>
+            <text x="60" y="76" font-family="DM Sans, sans-serif" font-size="12" fill="#5c6b76" text-anchor="middle">out of 100</text>
+          </svg>
+          <div class="aud-gauge-label">AI Readiness: Needs Work</div>
+        </div>
+
+        <div class="aud-signal-row"><div class="name"><span class="aud-dot" style="background:#b5482d;"></span>AI Crawl Access</div><div class="status">Blocked in robots.txt</div></div>
+        <div class="aud-signal-row"><div class="name"><span class="aud-dot" style="background:#b5482d;"></span>Structured Data</div><div class="status">No schema found</div></div>
+        <div class="aud-signal-row"><div class="name"><span class="aud-dot" style="background:#e3a72e;"></span>Answer-Ready Content</div><div class="status">Partially structured</div></div>
+        <div class="aud-signal-row"><div class="name"><span class="aud-dot" style="background:#e3a72e;"></span>Brand Citations</div><div class="status">12 mentions found</div></div>
+        <div class="aud-signal-row"><div class="name"><span class="aud-dot" style="background:#b5482d;"></span>AI Engine Visibility</div><div class="status">Not appearing in AI answers</div></div>
+        <div class="aud-signal-row"><div class="name"><span class="aud-dot" style="background:#e3a72e;"></span>Content Freshness</div><div class="status">Updated 14 months ago</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- URGENCY BAND + SECOND FORM -->
+  <section class="aud-band">
+    <div class="aud-band-inner">
+      <div class="aud-band-wrap">
+        <div class="aud-band-copy">
+          <span class="tag">the landscape is shifting</span>
+          <h2>Your customers aren't just Googling anymore.</h2>
+          <p>A growing share of customers now ask an AI engine before they ever open Google. These engines don't return ten blue links, they return one answer. If your business isn't structured for AI to read, you're invisible to every one of those searches.</p>
+          <div class="aud-stats">
+            <div class="aud-stat"><div class="num">1 in 3</div><p>now ask AI before they search Google</p></div>
+            <div class="aud-stat"><div class="num">60 sec</div><p>time it takes to run your free check</p></div>
+            <div class="aud-stat"><div class="num">6</div><p>signals we check, free, no strings</p></div>
+          </div>
+        </div>
+
+        <div class="aud-band-form">
+          <form id="zly-audit-band-form" novalidate>
+            <div class="zly-field">
+              <label class="zly-label" for="zly-audit-band-url">Your website</label>
+              <input class="zly-input" type="text" id="zly-audit-band-url" name="website" placeholder="e.g. www.yourbusiness.com" required>
+            </div>
+            <div class="zly-field">
+              <label class="zly-label" for="zly-audit-band-email">Where to send your results</label>
+              <input class="zly-input" type="email" id="zly-audit-band-email" name="email" placeholder="you@yourbusiness.com" required>
+            </div>
+            <button type="submit" class="btn btn-primary" id="zly-audit-band-submit">Run my free AI audit</button>
+            <p class="form-note">By starting your check, you agree to Zoley's <a href="/terms-conditions">Terms of Use</a> and <a href="/privacy-policy">Privacy Policy</a>.</p>
+            <p class="form-status" id="zly-audit-band-status"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      // TODO: replace with your real form endpoint (Squarespace, CRM webhook, or your own API).
+      var FORM_ENDPOINT = "https://REPLACE-WITH-YOUR-FORM-ENDPOINT.example.com/ai-readiness-audit";
+
+      function wireForm(formId, urlFieldId, emailFieldId, statusId, submitId, submitLabel) {
+        var form = document.getElementById(formId);
+        var status = document.getElementById(statusId);
+        var submitBtn = document.getElementById(submitId);
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var website = document.getElementById(urlFieldId).value.trim();
+          var email = document.getElementById(emailFieldId).value.trim();
+
+          if (!website) {
+            status.textContent = "Mind adding your website?";
+            status.className = 'form-status error';
+            return;
+          }
+          if (!email || !email.includes('@')) {
+            status.textContent = "That email doesn't look right, mind double-checking it?";
+            status.className = 'form-status error';
+            return;
+          }
+
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Checking...';
+
+          fetch(FORM_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ website: website, email: email, source: 'ai-readiness-audit' })
+          })
+            .then(function (res) {
+              if (!res.ok) throw new Error('Request failed');
+              status.textContent = "You're in. Your AI-readiness results are on their way to your inbox.";
+              status.className = 'form-status success';
+              form.reset();
+            })
+            .catch(function () {
+              status.textContent = "Something didn't go through. Try again, or email us directly.";
+              status.className = 'form-status error';
+            })
+            .finally(function () {
+              submitBtn.disabled = false;
+              submitBtn.textContent = submitLabel;
+            });
+        });
+      }
+
+      wireForm('zly-audit-hero-form', 'zly-audit-hero-url', 'zly-audit-hero-email', 'zly-audit-hero-status', 'zly-audit-hero-submit', 'Run my AI audit');
+      wireForm('zly-audit-band-form', 'zly-audit-band-url', 'zly-audit-band-email', 'zly-audit-band-status', 'zly-audit-band-submit', 'Run my free AI audit');
+    })();
+  </script>
+</div>

@@ -1,0 +1,177 @@
+<!--
+ZOLEY — WEB-DESIGN — 9. FINAL CTA
+Source: main pages/zoley-web-design-page.v2.html
+Scoped under #zly-web-final-cta. Self-contained: drop into a Squarespace Code Block.
+-->
+
+<div id="zly-web-final-cta">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-web-final-cta {
+      --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef;
+      --ink: #1b2430; --ink-soft: #5c6b76;
+      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-web-final-cta * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-web-final-cta .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-web-final-cta h1, #zly-web-final-cta h2, #zly-web-final-cta h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-web-final-cta p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-web-final-cta .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: var(--barn); }
+
+    #zly-web-final-cta .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-web-final-cta .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-web-final-cta .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-web-final-cta .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    #zly-web-final-cta .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+    #zly-web-final-cta .btn-outline { background: transparent; color: #fff9ef; border: 2px solid #faf3e7; }
+    #zly-web-final-cta .btn-outline:hover { background: #faf3e7; color: var(--ink); }
+    #zly-web-final-cta .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+    #zly-web-final-cta .cta-note { font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
+
+    /* 1. HERO */
+    #zly-web-final-cta .hero { padding: 108px 24px 60px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    #zly-web-final-cta .hero h1 { font-size: clamp(34px, 4.4vw, 54px); }
+    #zly-web-final-cta .hero p.sub { font-size: 18px; max-width: 500px; margin: 20px 0 30px; }
+    #zly-web-final-cta .board { background: var(--paper-2); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+    #zly-web-final-cta .board svg { width: 100%; height: auto; display: block; }
+    #zly-web-final-cta .needle { transform-origin: 0px 0px; animation: zwb-needle 4s ease-in-out infinite; }
+    @keyframes zwb-needle { 0%, 100% { transform: rotate(-70deg); } 50% { transform: rotate(-58deg); } }
+    @media (prefers-reduced-motion: reduce) { #zly-web-final-cta .needle { animation: none; transform: rotate(-64deg); } }
+
+    #zly-web-final-cta .process-header { text-align: center; margin-bottom: 40px; }
+    #zly-web-final-cta .process-header h2 { font-size: clamp(30px, 3.6vw, 40px); max-width: 680px; margin: 0 auto; }
+    #zly-web-final-cta .process-header .process-sub { font-size: 16px; max-width: 600px; margin: 14px auto 0; }
+
+    #zly-web-final-cta .pin-wrap { display: flex; justify-content: center; padding: 0 24px 20px; }
+    #zly-web-final-cta .pin-card { background: var(--card); border: 1px solid var(--border); border-radius: 4px; max-width: 620px; padding: 36px 40px; position: relative; transform: rotate(-1deg); box-shadow: 0 12px 24px rgba(27,36,48,0.10); }
+    #zly-web-final-cta .pin-card::before { content: ''; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 18px; height: 18px; border-radius: 50%; background: linear-gradient(135deg, var(--barn), var(--violet)); box-shadow: 0 2px 3px rgba(0,0,0,0.25); }
+    #zly-web-final-cta .pin-card p.quote { font-family: 'Newsreader', serif; font-style: italic; font-size: 20px; color: var(--ink); margin-bottom: 12px; }
+    #zly-web-final-cta .pin-card span { font-family: 'Caveat', cursive; font-size: 20px; color: var(--barn); font-weight: 700; }
+
+    /* 2. COST */
+    #zly-web-final-cta .time-band { padding: 30px 24px 70px; }
+    #zly-web-final-cta .time-card { max-width: 1160px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 56px; box-shadow: 0 18px 40px -20px rgba(27,36,48,0.28); position: relative; overflow: hidden; }
+    #zly-web-final-cta .time-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--barn), var(--marigold)); }
+    #zly-web-final-cta .time-eyebrow { display: block; font-size: 12.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--barn); margin-bottom: 14px; }
+    #zly-web-final-cta .time-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; align-items: center; }
+    #zly-web-final-cta .time-stat { font-family: 'Newsreader', serif; font-size: clamp(56px, 7vw, 88px); font-weight: 600; line-height: 1; color: var(--barn); }
+    #zly-web-final-cta .time-stat span { font-size: 16px; color: var(--ink-soft); font-family: 'DM Sans', sans-serif; display: block; margin-top: 12px; font-weight: 600; line-height: 1.4; }
+    #zly-web-final-cta .time-grid h2 { font-size: clamp(28px, 3.4vw, 38px); }
+
+    /* 3. CARD GRID */
+    #zly-web-final-cta .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    #zly-web-final-cta .process-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 26px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #zly-web-final-cta .process-card:hover { transform: translateY(-6px); box-shadow: 0 18px 32px -16px rgba(27,36,48,0.28); }
+    #zly-web-final-cta .pc-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    #zly-web-final-cta .pc-num { flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+    #zly-web-final-cta .process-card h3 { font-size: 17px; }
+    #zly-web-final-cta .process-card p { font-size: 14px; }
+    #zly-web-final-cta .wd-cta { text-align: center; margin-top: 40px; }
+
+    /* 4. STAT BAND */
+    #zly-web-final-cta .stat-band { background: var(--ink); padding: 90px 24px; position: relative; overflow: hidden; }
+    #zly-web-final-cta .stat-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(181,72,45,0.2), transparent 55%), radial-gradient(circle at 85% 80%, rgba(78,161,255,0.18), transparent 55%); }
+    #zly-web-final-cta .stat-band .inner { max-width: 1160px; margin: 0 auto; position: relative; }
+    #zly-web-final-cta .stat-band .process-header h2 { color: var(--paper); }
+    #zly-web-final-cta .stat-band .process-header .process-sub { color: #c7d0d6; }
+    #zly-web-final-cta .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+    #zly-web-final-cta .stat-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 32px 22px; transform: rotate(var(--r, 0deg)); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #zly-web-final-cta .stat-card:hover { transform: rotate(var(--r, 0deg)) translateY(-6px); box-shadow: 0 16px 30px -18px rgba(0,0,0,0.5); }
+    #zly-web-final-cta .stat-card:nth-child(1) { --r: -1deg; }
+    #zly-web-final-cta .stat-card:nth-child(2) { --r: 1deg; }
+    #zly-web-final-cta .stat-card:nth-child(3) { --r: -0.5deg; }
+    #zly-web-final-cta .stat-card .num { font-family: 'Newsreader', serif; font-size: clamp(36px, 4vw, 48px); font-weight: 600; color: #fff9ef; }
+    #zly-web-final-cta .stat-card p { font-size: 14px; margin-top: 8px; color: #c7d0d6; }
+    #zly-web-final-cta .stat-close { text-align: center; max-width: 640px; margin: 40px auto 0; font-size: 17px; color: var(--paper); font-family: 'Newsreader', serif; font-style: italic; line-height: 1.5; }
+
+    /* 5. SIGNS */
+    #zly-web-final-cta .signs-band { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    #zly-web-final-cta .signs-wrap { max-width: 1160px; margin: 0 auto; padding: 80px 24px; display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 50px; align-items: start; }
+    #zly-web-final-cta .signs-wrap h2 { font-size: clamp(26px, 3vw, 36px); max-width: 400px; margin-bottom: 14px; }
+    #zly-web-final-cta .signs-wrap p.lead { font-size: 15.5px; max-width: 400px; }
+    #zly-web-final-cta .signs-list { list-style: none; }
+    #zly-web-final-cta .signs-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+    #zly-web-final-cta .signs-item:last-child { border-bottom: none; }
+    #zly-web-final-cta .signs-num { font-family: 'Newsreader', serif; font-size: 15px; color: var(--barn); font-weight: 600; flex-shrink: 0; width: 28px; }
+    #zly-web-final-cta .signs-item h3 { font-size: 17px; margin-bottom: 4px; }
+    #zly-web-final-cta .signs-item p { font-size: 14.5px; }
+
+    /* 6. HOW WE DO IT */
+    #zly-web-final-cta .wd-list { max-width: 800px; margin: 0 auto; }
+    #zly-web-final-cta .wd-row { display: grid; grid-template-columns: 40px 1fr auto; gap: 22px; align-items: flex-start; padding: 26px 0; border-bottom: 1px solid var(--border); }
+    #zly-web-final-cta .wd-row:last-of-type { border-bottom: none; }
+    #zly-web-final-cta .wd-num { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+    #zly-web-final-cta .wd-row h3 { font-size: 19px; margin-bottom: 6px; }
+    #zly-web-final-cta .wd-row p { font-size: 14.5px; }
+    #zly-web-final-cta .wd-out { font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--barn); white-space: nowrap; padding-top: 12px; }
+
+    /* 7. WHAT WE MEASURE */
+    #zly-web-final-cta .measure { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 50px; align-items: center; background: var(--paper-2); border-radius: 16px; padding: 48px; }
+    #zly-web-final-cta .measure h2 { font-size: clamp(26px, 3vw, 34px); margin-bottom: 14px; }
+    #zly-web-final-cta .measure p { font-size: 16px; margin-bottom: 12px; }
+    #zly-web-final-cta .metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    #zly-web-final-cta .metric { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; }
+    #zly-web-final-cta .metric .m { font-family: 'Newsreader', serif; font-size: 17px; font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+    #zly-web-final-cta .metric p { font-size: 13.5px; margin: 0; }
+
+    /* 8. CASE STUDY */
+    #zly-web-final-cta .case-study { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 40px; box-shadow: 0 18px 40px -24px rgba(27,36,48,0.25); }
+    #zly-web-final-cta .case-study-media { width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 32px; background: var(--paper-2); border: 1px solid var(--border); padding: 24px; }
+    #zly-web-final-cta .case-study-media svg { width: 100%; height: auto; display: block; max-width: 760px; margin: 0 auto; }
+    #zly-web-final-cta .case-study-media img { width: 100%; height: auto; display: block; }
+    #zly-web-final-cta .case-study-body { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 44px; align-items: center; }
+    #zly-web-final-cta .case-study .cs-stat { font-family: 'Newsreader', serif; font-weight: 600; font-size: clamp(44px, 5vw, 60px); color: var(--barn); line-height: 1; }
+    #zly-web-final-cta .case-study .cs-stat-label { font-size: 14px; color: var(--ink-soft); margin-top: 8px; }
+    #zly-web-final-cta .case-study h3 { font-size: 22px; margin-bottom: 10px; }
+    #zly-web-final-cta .case-study p { font-size: 15px; margin-bottom: 14px; }
+    #zly-web-final-cta .case-study .cs-note { font-family: 'Caveat', cursive; font-size: 17px; color: var(--ink-soft); }
+
+    /* 9. FINAL CTA */
+    #zly-web-final-cta .final { background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center; max-width: 1112px; margin: 0 auto; position: relative; overflow: hidden; }
+    #zly-web-final-cta .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+    #zly-web-final-cta .final > * { position: relative; }
+    #zly-web-final-cta .final h2 { color: var(--paper); font-size: clamp(27px, 3.2vw, 36px); margin-bottom: 14px; }
+    #zly-web-final-cta .final p { color: #c7d0d6; max-width: 520px; margin: 0 auto 26px; }
+    #zly-web-final-cta .final .btn-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    #zly-web-final-cta .final .cta-note { color: rgba(244,237,224,0.55); margin-top: 16px; }
+
+    @media (max-width: 900px) {
+      #zly-web-final-cta .hero { grid-template-columns: 1fr; padding: 72px 20px 40px; gap: 36px; }
+      #zly-web-final-cta .stat-strip { grid-template-columns: 1fr; }
+      #zly-web-final-cta .process-grid { grid-template-columns: repeat(2, 1fr); }
+      #zly-web-final-cta .case-study-body { grid-template-columns: 1fr; text-align: center; }
+      #zly-web-final-cta .signs-wrap { grid-template-columns: 1fr; padding: 60px 20px; }
+      #zly-web-final-cta .measure { grid-template-columns: 1fr; padding: 32px 24px; gap: 24px; }
+      #zly-web-final-cta .time-grid { grid-template-columns: 1fr; gap: 24px; }
+      #zly-web-final-cta .wd-row { grid-template-columns: 40px 1fr; }
+      #zly-web-final-cta .wd-out { grid-column: 2; padding-top: 0; }
+      #zly-web-final-cta .sec { padding: 60px 20px; }
+      #zly-web-final-cta .time-band { padding: 20px 20px 40px; }
+      #zly-web-final-cta .time-card { padding: 32px 24px; }
+      #zly-web-final-cta .stat-band { padding: 60px 20px; }
+    }
+    @media (max-width: 560px) {
+      #zly-web-final-cta .process-grid { grid-template-columns: 1fr; }
+      #zly-web-final-cta .metric-grid { grid-template-columns: 1fr; }
+      #zly-web-final-cta .hero { padding-top: 56px; }
+      #zly-web-final-cta .cta-row, #zly-web-final-cta .final .btn-row { flex-direction: column; align-items: stretch; }
+      #zly-web-final-cta .btn { justify-content: center; }
+      #zly-web-final-cta .final { padding: 40px 22px; border-radius: 12px; }
+    }
+  </style>
+
+  <section class="sec" style="padding-bottom: 96px;">
+    <div class="final">
+      <h2>Find out what your site is costing you.</h2>
+      <p>Tell us about your business and share your current site. Within two business days we'll reply with what we'd fix first, what a build would involve, and what it would cost.</p>
+      <div class="btn-row">
+        <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get your website plan</a>
+        <a href="https://calendly.com/zoley/free-30-min-discovery-call" class="btn btn-outline">Book a 30-minute call</a>
+      </div>
+      <p class="cta-note">No obligation. The audit notes are yours to keep either way.</p>
+    </div>
+  </section>
+</div>

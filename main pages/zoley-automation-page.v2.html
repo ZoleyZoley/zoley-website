@@ -1,0 +1,408 @@
+<!--
+ZOLEY — AUTOMATION PAGE — V2
+8-section template: Illustrated Hero / Cost of Manual Work / What We Automate / Current State (color break) /
+Where to Start (new, prioritization) / How We Do It / Case Study (illustrated) / Final CTA
+Scoped under #zly-auto-page. Drop into a Squarespace Code Block on /automation.
+
+V2 CHANGES (vs zoley-automation-page.html):
+- Hero is now two-column with an inline SVG pipeline illustration (lead -> CRM -> follow-up -> invoice -> paid).
+- Copy rewritten in a more authoritative register. Primary CTA is the Quick Start form.
+- Statistics replaced with sourced figures (see V2-NOTES.md; not cited on-page by design).
+- New "Where to start" block with a simple prioritization rule.
+- Case study media replaced with an illustrated operations dashboard. Labeled representative.
+-->
+
+<div id="zly-auto-page">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-auto-page {
+      --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef;
+      --ink: #1b2430; --ink-soft: #5c6b76;
+      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-auto-page * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-auto-page .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-auto-page h1, #zly-auto-page h2, #zly-auto-page h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-auto-page p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-auto-page .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: var(--barn); }
+
+    #zly-auto-page .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-auto-page .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-auto-page .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-auto-page .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    #zly-auto-page .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+    #zly-auto-page .btn-outline { background: transparent; color: #fff9ef; border: 2px solid #faf3e7; }
+    #zly-auto-page .btn-outline:hover { background: #faf3e7; color: var(--ink); }
+    #zly-auto-page .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+    #zly-auto-page .cta-note { font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
+
+    /* 1. HERO */
+    #zly-auto-page .hero { padding: 108px 24px 60px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    #zly-auto-page .hero h1 { font-size: clamp(34px, 4.4vw, 54px); }
+    #zly-auto-page .hero p.sub { font-size: 18px; max-width: 500px; margin: 20px 0 30px; }
+    #zly-auto-page .board { background: var(--paper-2); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+    #zly-auto-page .board svg { width: 100%; height: auto; display: block; }
+    #zly-auto-page .thread { stroke: url(#zau-grad); stroke-width: 2; stroke-dasharray: 5 5; fill: none; opacity: 0.8; }
+    #zly-auto-page .dot { animation: zau-move 4s linear infinite; }
+    @keyframes zau-move { 0% { offset-distance: 0%; opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { #zly-auto-page .dot { animation: none; display: none; } }
+
+    #zly-auto-page .process-header { text-align: center; margin-bottom: 40px; }
+    #zly-auto-page .process-header h2 { font-size: clamp(30px, 3.6vw, 40px); max-width: 680px; margin: 0 auto; }
+    #zly-auto-page .process-header .process-sub { font-size: 16px; max-width: 600px; margin: 14px auto 0; }
+
+    #zly-auto-page .pin-wrap { display: flex; justify-content: center; padding: 0 24px 20px; }
+    #zly-auto-page .pin-card { background: var(--card); border: 1px solid var(--border); border-radius: 4px; max-width: 620px; padding: 36px 40px; position: relative; transform: rotate(-1deg); box-shadow: 0 12px 24px rgba(27,36,48,0.10); }
+    #zly-auto-page .pin-card::before { content: ''; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 18px; height: 18px; border-radius: 50%; background: linear-gradient(135deg, var(--barn), var(--violet)); box-shadow: 0 2px 3px rgba(0,0,0,0.25); }
+    #zly-auto-page .pin-card p.quote { font-family: 'Newsreader', serif; font-style: italic; font-size: 20px; color: var(--ink); margin-bottom: 12px; }
+    #zly-auto-page .pin-card span { font-family: 'Caveat', cursive; font-size: 20px; color: var(--barn); font-weight: 700; }
+
+    /* 2. COST OF MANUAL WORK */
+    #zly-auto-page .time-band { padding: 30px 24px 70px; }
+    #zly-auto-page .time-card { max-width: 1160px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 56px; box-shadow: 0 18px 40px -20px rgba(27,36,48,0.28); position: relative; overflow: hidden; }
+    #zly-auto-page .time-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--barn), var(--marigold)); }
+    #zly-auto-page .time-eyebrow { display: block; font-size: 12.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--barn); margin-bottom: 14px; }
+    #zly-auto-page .time-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; align-items: center; }
+    #zly-auto-page .time-stat { font-family: 'Newsreader', serif; font-size: clamp(64px, 8vw, 96px); font-weight: 600; line-height: 1; color: var(--barn); }
+    #zly-auto-page .time-stat span { font-size: 16px; color: var(--ink-soft); font-family: 'DM Sans', sans-serif; display: block; margin-top: 12px; font-weight: 600; line-height: 1.4; }
+    #zly-auto-page .time-grid h2 { font-size: clamp(28px, 3.4vw, 38px); }
+
+    /* 3. CARD GRID */
+    #zly-auto-page .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    #zly-auto-page .process-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 26px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #zly-auto-page .process-card:hover { transform: translateY(-6px); box-shadow: 0 18px 32px -16px rgba(27,36,48,0.28); }
+    #zly-auto-page .pc-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    #zly-auto-page .pc-num { flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+    #zly-auto-page .process-card h3 { font-size: 17px; }
+    #zly-auto-page .process-card p { font-size: 14px; }
+    #zly-auto-page .process-card .ex { margin-top: 12px; font-size: 12.5px; color: var(--ink); background: var(--paper-2); border-radius: 6px; padding: 8px 10px; line-height: 1.45; }
+    #zly-auto-page .process-card .ex strong { color: var(--barn); }
+    #zly-auto-page .wd-cta { text-align: center; margin-top: 40px; }
+
+    /* 4. STAT BAND */
+    #zly-auto-page .stat-band { background: var(--ink); padding: 90px 24px; position: relative; overflow: hidden; }
+    #zly-auto-page .stat-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(181,72,45,0.2), transparent 55%), radial-gradient(circle at 85% 80%, rgba(78,161,255,0.18), transparent 55%); }
+    #zly-auto-page .stat-band .inner { max-width: 1160px; margin: 0 auto; position: relative; }
+    #zly-auto-page .stat-band .process-header h2 { color: var(--paper); }
+    #zly-auto-page .stat-band .process-header .process-sub { color: #c7d0d6; }
+    #zly-auto-page .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+    #zly-auto-page .stat-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 32px 22px; transform: rotate(var(--r, 0deg)); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #zly-auto-page .stat-card:hover { transform: rotate(var(--r, 0deg)) translateY(-6px); box-shadow: 0 16px 30px -18px rgba(0,0,0,0.5); }
+    #zly-auto-page .stat-card:nth-child(1) { --r: -1deg; }
+    #zly-auto-page .stat-card:nth-child(2) { --r: 1deg; }
+    #zly-auto-page .stat-card:nth-child(3) { --r: -0.5deg; }
+    #zly-auto-page .stat-card .num { font-family: 'Newsreader', serif; font-size: clamp(36px, 4vw, 48px); font-weight: 600; color: #fff9ef; }
+    #zly-auto-page .stat-card p { font-size: 14px; margin-top: 8px; color: #c7d0d6; }
+    #zly-auto-page .stat-close { text-align: center; max-width: 640px; margin: 40px auto 0; font-size: 17px; color: var(--paper); font-family: 'Newsreader', serif; font-style: italic; line-height: 1.5; }
+
+    /* 5. WHERE TO START */
+    #zly-auto-page .start { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; background: var(--paper-2); border-radius: 16px; padding: 48px; }
+    #zly-auto-page .start h2 { font-size: clamp(26px, 3vw, 34px); margin-bottom: 14px; }
+    #zly-auto-page .start p { font-size: 16px; margin-bottom: 12px; }
+    #zly-auto-page .start .rule { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 26px 28px; }
+    #zly-auto-page .start .rule h3 { font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; font-family: 'DM Sans', sans-serif; color: var(--barn); margin-bottom: 14px; }
+    #zly-auto-page .start .rule ol { padding-left: 20px; color: var(--ink); font-size: 15px; line-height: 1.6; }
+    #zly-auto-page .start .rule li { margin-bottom: 10px; }
+    #zly-auto-page .start .rule li strong { color: var(--ink); }
+    #zly-auto-page .start .rule .cap { font-family: 'Caveat', cursive; font-size: 18px; color: var(--ink-soft); margin-top: 8px; }
+
+    /* 6. HOW WE DO IT */
+    #zly-auto-page .wd-list { max-width: 800px; margin: 0 auto; }
+    #zly-auto-page .wd-row { display: grid; grid-template-columns: 40px 1fr auto; gap: 22px; align-items: flex-start; padding: 26px 0; border-bottom: 1px solid var(--border); }
+    #zly-auto-page .wd-row:last-of-type { border-bottom: none; }
+    #zly-auto-page .wd-num { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+    #zly-auto-page .wd-row h3 { font-size: 19px; margin-bottom: 6px; }
+    #zly-auto-page .wd-row p { font-size: 14.5px; }
+    #zly-auto-page .wd-out { font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--barn); white-space: nowrap; padding-top: 12px; }
+
+    /* 7. CASE STUDY */
+    #zly-auto-page .case-study { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 40px; box-shadow: 0 18px 40px -24px rgba(27,36,48,0.25); }
+    #zly-auto-page .case-study-media { width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 32px; background: var(--paper-2); border: 1px solid var(--border); padding: 24px; }
+    #zly-auto-page .case-study-media svg { width: 100%; height: auto; display: block; max-width: 760px; margin: 0 auto; }
+    #zly-auto-page .case-study-media img { width: 100%; height: auto; display: block; }
+    #zly-auto-page .case-study-body { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 44px; align-items: center; }
+    #zly-auto-page .case-study .cs-stat { font-family: 'Newsreader', serif; font-weight: 600; font-size: clamp(44px, 5vw, 60px); color: var(--barn); line-height: 1; }
+    #zly-auto-page .case-study .cs-stat-label { font-size: 14px; color: var(--ink-soft); margin-top: 8px; }
+    #zly-auto-page .case-study h3 { font-size: 22px; margin-bottom: 10px; }
+    #zly-auto-page .case-study p { font-size: 15px; margin-bottom: 14px; }
+    #zly-auto-page .case-study .cs-note { font-family: 'Caveat', cursive; font-size: 17px; color: var(--ink-soft); }
+
+    /* 8. FINAL CTA */
+    #zly-auto-page .final { background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center; max-width: 1112px; margin: 0 auto; position: relative; overflow: hidden; }
+    #zly-auto-page .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+    #zly-auto-page .final > * { position: relative; }
+    #zly-auto-page .final h2 { color: var(--paper); font-size: clamp(27px, 3.2vw, 36px); margin-bottom: 14px; }
+    #zly-auto-page .final p { color: #c7d0d6; max-width: 520px; margin: 0 auto 26px; }
+    #zly-auto-page .final .btn-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    #zly-auto-page .final .cta-note { color: rgba(244,237,224,0.55); margin-top: 16px; }
+
+    @media (max-width: 900px) {
+      #zly-auto-page .hero { grid-template-columns: 1fr; padding: 72px 20px 40px; gap: 36px; }
+      #zly-auto-page .stat-strip { grid-template-columns: 1fr; }
+      #zly-auto-page .process-grid { grid-template-columns: repeat(2, 1fr); }
+      #zly-auto-page .case-study-body { grid-template-columns: 1fr; text-align: center; }
+      #zly-auto-page .start { grid-template-columns: 1fr; padding: 32px 24px; gap: 24px; }
+      #zly-auto-page .time-grid { grid-template-columns: 1fr; gap: 24px; }
+      #zly-auto-page .wd-row { grid-template-columns: 40px 1fr; }
+      #zly-auto-page .wd-out { grid-column: 2; padding-top: 0; }
+      #zly-auto-page .sec { padding: 60px 20px; }
+      #zly-auto-page .time-band { padding: 20px 20px 40px; }
+      #zly-auto-page .time-card { padding: 32px 24px; }
+      #zly-auto-page .stat-band { padding: 60px 20px; }
+    }
+    @media (max-width: 560px) {
+      #zly-auto-page .process-grid { grid-template-columns: 1fr; }
+      #zly-auto-page .hero { padding-top: 56px; }
+      #zly-auto-page .cta-row, #zly-auto-page .final .btn-row { flex-direction: column; align-items: stretch; }
+      #zly-auto-page .btn { justify-content: center; }
+      #zly-auto-page .final { padding: 40px 22px; border-radius: 12px; }
+    }
+  </style>
+
+  <!-- 1. HERO -->
+  <section class="hero">
+    <div>
+      <span class="tag">operations automation</span>
+      <h1>The repeat work, handled by systems instead of by you.</h1>
+      <p class="sub">Lead follow-up, scheduling, invoicing, reporting. We map the manual steps that eat your week, then rebuild them as automated flows inside the tools you already own. Nothing new to babysit, and nothing that stops working when you take a day off.</p>
+      <div class="cta-row">
+        <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get your automation plan</a>
+        <a href="https://calendly.com/zoley/free-30-min-discovery-call" class="btn btn-ghost">Book a 30-minute call</a>
+      </div>
+      <p class="cta-note">A written recommendation and pricing within two business days.</p>
+    </div>
+    <div class="board">
+      <svg viewBox="0 0 420 320" fill="none" role="img" aria-label="Illustration: a new lead flows automatically from a web form to the CRM, to a follow-up email, to an invoice, to payment">
+        <defs>
+          <linearGradient id="zau-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b5482d"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
+        </defs>
+        <!-- pipeline path (S curve) -->
+        <path id="zau-path" class="thread" d="M70 62 C 150 62 150 130 210 130 S 290 62 350 62 S 350 200 290 200 S 150 200 130 258 S 250 290 350 262"/>
+        <!-- moving dots -->
+        <circle class="dot" r="5" fill="#e3a72e" style="offset-path: path('M70 62 C 150 62 150 130 210 130 S 290 62 350 62 S 350 200 290 200 S 150 200 130 258 S 250 290 350 262');"/>
+        <circle class="dot" r="5" fill="#4ea1ff" style="offset-path: path('M70 62 C 150 62 150 130 210 130 S 290 62 350 62 S 350 200 290 200 S 150 200 130 258 S 250 290 350 262'); animation-delay: -2s;"/>
+        <!-- 1 web form -->
+        <g transform="translate(14 30) rotate(-3 55 32)">
+          <rect x="0" y="0" width="112" height="64" rx="7" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <rect x="12" y="12" width="88" height="10" rx="3" fill="#1b2430" opacity="0.15"/>
+          <rect x="12" y="28" width="88" height="10" rx="3" fill="#1b2430" opacity="0.15"/>
+          <rect x="12" y="44" width="48" height="12" rx="4" fill="#b5482d"/>
+          <text x="20" y="53" font-family="DM Sans, sans-serif" font-size="8.5" font-weight="700" fill="#fff9ef">Submit</text>
+        </g>
+        <text x="20" y="116" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#b5482d">1. new lead</text>
+        <!-- 2 CRM -->
+        <g transform="translate(160 96) rotate(2 50 34)">
+          <rect x="0" y="0" width="100" height="68" rx="7" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <circle cx="22" cy="24" r="10" fill="#4ea1ff"/>
+          <circle cx="22" cy="20.5" r="3.8" fill="#fff9ef"/>
+          <path d="M14.5 30 C14.5 25 29.5 25 29.5 30" fill="#fff9ef"/>
+          <rect x="40" y="16" width="46" height="6" rx="3" fill="#1b2430" opacity="0.7"/>
+          <rect x="40" y="27" width="32" height="5" rx="2.5" fill="#1b2430" opacity="0.35"/>
+          <rect x="12" y="46" width="76" height="5" rx="2.5" fill="#1b2430" opacity="0.2"/>
+          <rect x="12" y="55" width="52" height="5" rx="2.5" fill="#1b2430" opacity="0.2"/>
+        </g>
+        <text x="92" y="188" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#4ea1ff">2. logged in CRM</text>
+        <!-- 3 follow-up email -->
+        <g transform="translate(306 24) rotate(4 42 28)">
+          <rect x="0" y="0" width="84" height="56" rx="6" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <path d="M4 6 L42 34 L80 6" fill="none" stroke="#e3a72e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="76" cy="8" r="9" fill="#7a8b69" stroke="#fff9ef" stroke-width="2"/>
+          <text x="76" y="11.5" font-family="DM Sans, sans-serif" font-size="9" font-weight="700" fill="#fff9ef" text-anchor="middle">2m</text>
+        </g>
+        <text x="300" y="104" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#e3a72e">3. reply in 2 min</text>
+        <!-- 4 invoice -->
+        <g transform="translate(246 166) rotate(-2 44 34)">
+          <rect x="0" y="0" width="88" height="68" rx="5" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <text x="10" y="18" font-family="DM Sans, sans-serif" font-size="9.5" font-weight="700" fill="#1b2430" letter-spacing="1">INVOICE</text>
+          <rect x="10" y="26" width="68" height="4" rx="2" fill="#1b2430" opacity="0.25"/>
+          <rect x="10" y="35" width="52" height="4" rx="2" fill="#1b2430" opacity="0.25"/>
+          <rect x="10" y="44" width="60" height="4" rx="2" fill="#1b2430" opacity="0.25"/>
+          <text x="78" y="61" font-family="Newsreader, serif" font-size="12" font-weight="600" fill="#b5482d" text-anchor="end">$1,240</text>
+        </g>
+        <text x="236" y="256" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#6c5ce7">4. invoice sent &amp; chased</text>
+        <!-- 5 paid -->
+        <g transform="translate(60 216) rotate(3 40 30)">
+          <rect x="0" y="0" width="80" height="60" rx="7" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <circle cx="40" cy="30" r="17" fill="#7a8b69"/>
+          <path d="M31 30 l6 6 l12 -13" stroke="#fff9ef" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <text x="20" y="302" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#7a8b69">5. paid, reconciled, done</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 2. COST OF MANUAL WORK -->
+  <section class="time-band">
+    <div class="time-card">
+      <div class="time-grid">
+        <div class="time-stat">60%<span>of a knowledge worker's time goes to "work about work": chasing updates, re-entering data, switching between tools</span></div>
+        <div>
+          <span class="time-eyebrow">The cost of doing it by hand</span>
+          <h2>In a small business, that time comes out of the owner's week.</h2>
+          <p style="margin-top: 14px;">Larger companies absorb coordination with staff. Owner-operators absorb it with evenings. The follow-up that goes out late, the invoice that sits unsent, the booking that needs three emails to confirm: none of it shows up on a to-do list, and all of it compounds. We rebuild those steps so they happen on time, every time, without anyone remembering to do them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. WHAT WE AUTOMATE -->
+  <section class="sec" style="padding-top: 30px;">
+    <div class="process-header">
+      <h2>What we automate, and what it replaces.</h2>
+      <p class="process-sub">Every flow is built inside tools you already pay for, documented, and handed over. If a vendor disappears, your process doesn't.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-card"><div class="pc-head"><span class="pc-num">1</span><h3>Lead capture &amp; follow-up</h3></div><p>Every inquiry gets a personal reply within minutes, is logged to your CRM, and is followed up on a schedule until it books or opts out.</p><div class="ex"><strong>Replaces:</strong> checking the inbox between jobs and hoping nothing slipped.</div></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">2</span><h3>Scheduling &amp; reminders</h3></div><p>Bookings, confirmations, reminders, and reschedules handled end-to-end, with your calendar as the single source of truth.</p><div class="ex"><strong>Replaces:</strong> the three-email back-and-forth to confirm a time.</div></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">3</span><h3>Invoicing &amp; collections</h3></div><p>Invoices generated from the job record, sent on completion, and chased politely on a set cadence until paid.</p><div class="ex"><strong>Replaces:</strong> month-end invoicing sessions and awkward reminder calls.</div></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">4</span><h3>Data entry &amp; sync</h3></div><p>Information entered once and pushed everywhere it needs to be: CRM, accounting, calendar, spreadsheet.</p><div class="ex"><strong>Replaces:</strong> re-typing the same customer details into four systems.</div></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">5</span><h3>Reporting &amp; dashboards</h3></div><p>One weekly view of leads, bookings, revenue, and outstanding invoices, assembled automatically and sent to you.</p><div class="ex"><strong>Replaces:</strong> digging through five tools to answer "how did we do this week?"</div></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">6</span><h3>Onboarding &amp; handoffs</h3></div><p>New client or new hire: the welcome sequence, documents, and access requests fire automatically the moment a deal closes.</p><div class="ex"><strong>Replaces:</strong> the checklist that lives in someone's head.</div></div>
+    </div>
+    <div class="wd-cta"><a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Find out which of these to build first</a></div>
+  </section>
+
+  <!-- 4. CURRENT STATE (color break) -->
+  <section class="stat-band">
+    <div class="inner">
+      <div class="process-header">
+        <span class="tag" style="display:block; text-align:center;">the bigger picture</span>
+        <h2>Speed is now a competitive variable, not a courtesy.</h2>
+        <p class="process-sub">The research on lead response is unambiguous, and it explains why follow-up is almost always the first flow we build.</p>
+      </div>
+      <div class="stat-strip">
+        <div class="stat-card"><div class="num">21&times;</div><p>more likely to qualify a lead when you respond within 5 minutes rather than 30</p></div>
+        <div class="stat-card"><div class="num">42 hrs</div><p>the average time it takes a business to respond to a new inquiry, when it responds at all</p></div>
+        <div class="stat-card"><div class="num">23%</div><p>of businesses never respond to a web lead</p></div>
+      </div>
+      <p class="stat-close">A five-minute reply is unrealistic for a person and trivial for a system.</p>
+    </div>
+  </section>
+
+  <!-- 5. WHERE TO START -->
+  <section class="sec">
+    <div class="start">
+      <div>
+        <span class="tag">a rule we use on every audit</span>
+        <h2>Not everything is worth automating. Here's how we decide.</h2>
+        <p>Owners often arrive with a list of twenty things they'd like to automate. Most of them shouldn't be, at least not yet. We score every candidate on three questions and build the one with the highest return first. The rest wait until the first one has paid for itself.</p>
+        <p>This is also why we won't quote a "full automation package." The right first build is different for every business, and it's usually smaller than people expect.</p>
+      </div>
+      <div class="rule">
+        <h3>The three questions</h3>
+        <ol>
+          <li><strong>How often does it happen?</strong> Daily beats weekly. Weekly beats monthly. Below monthly, a template usually wins.</li>
+          <li><strong>What does it cost when it's late or missed?</strong> A slow lead reply costs revenue. A late internal report costs almost nothing.</li>
+          <li><strong>Is the process stable?</strong> If the steps change every month, we document first and automate second.</li>
+        </ol>
+        <div class="cap">High frequency, high cost of delay, stable process: that's your first build.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. HOW WE DO IT -->
+  <section class="sec" style="padding-top: 0;">
+    <div class="process-header"><h2>How we build your automation.</h2><p class="process-sub">Four stages, each with a deliverable. Most first flows are live within three to five weeks of the audit.</p></div>
+    <div class="wd-list">
+      <div class="wd-row"><div class="wd-num">1</div><div><h3>Audit</h3><p>We walk through how a lead, a booking, and an invoice actually move through your business today, and time each manual step.</p></div><div class="wd-out">Findings memo</div></div>
+      <div class="wd-row"><div class="wd-num">2</div><div><h3>Strategy</h3><p>A ranked list of flows using the three questions above, with the first build scoped to the step, the tools, and a fixed price.</p></div><div class="wd-out">Scoped plan &amp; quote</div></div>
+      <div class="wd-row"><div class="wd-num">3</div><div><h3>Build &amp; connect</h3><p>We build the flow inside your existing tools, test it against real records, and run it in parallel with your current process before switching over.</p></div><div class="wd-out">Working system</div></div>
+      <div class="wd-row"><div class="wd-num">4</div><div><h3>Optimize</h3><p>Thirty days of monitoring, error handling, and a written handover with a diagram of every step. You own it outright.</p></div><div class="wd-out">Handover &amp; review</div></div>
+    </div>
+    <div class="wd-cta"><a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-ghost">Start with the audit</a></div>
+  </section>
+
+  <!-- 7. CASE STUDY -->
+  <section class="sec" style="padding-top: 0;">
+    <div class="process-header">
+      <span class="tag" style="display:block; text-align:center;">representative engagement</span>
+      <h2>What a first build looks like in practice.</h2>
+    </div>
+    <div class="case-study">
+      <!-- Replace this illustration with a real screenshot when a named case study is available -->
+      <div class="case-study-media">
+        <svg viewBox="0 0 760 300" fill="none" role="img" aria-label="Illustration: a weekly operations dashboard showing leads, response time, invoices outstanding, and hours saved">
+          <rect x="0" y="0" width="760" height="300" rx="12" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <text x="28" y="40" font-family="DM Sans, sans-serif" font-size="13" font-weight="700" fill="#1b2430" letter-spacing="1.5">THIS WEEK · MONDAY 7:00 AM</text>
+          <text x="732" y="40" font-family="DM Sans, sans-serif" font-size="12" fill="#5c6b76" text-anchor="end">sent automatically</text>
+          <!-- KPI tiles -->
+          <g transform="translate(28 62)">
+            <rect x="0" y="0" width="164" height="92" rx="8" fill="#faf3e7" stroke="#1b2430" stroke-width="1.5" opacity="0.9"/>
+            <text x="16" y="24" font-family="DM Sans, sans-serif" font-size="11.5" fill="#5c6b76">New leads</text>
+            <text x="16" y="62" font-family="Newsreader, serif" font-size="34" font-weight="600" fill="#1b2430">31</text>
+            <text x="16" y="80" font-family="DM Sans, sans-serif" font-size="11" fill="#7a8b69" font-weight="700">▲ 9 vs last week</text>
+          </g>
+          <g transform="translate(208 62)">
+            <rect x="0" y="0" width="164" height="92" rx="8" fill="#faf3e7" stroke="#1b2430" stroke-width="1.5" opacity="0.9"/>
+            <text x="16" y="24" font-family="DM Sans, sans-serif" font-size="11.5" fill="#5c6b76">Avg. first reply</text>
+            <text x="16" y="62" font-family="Newsreader, serif" font-size="34" font-weight="600" fill="#1b2430">2 min</text>
+            <text x="16" y="80" font-family="DM Sans, sans-serif" font-size="11" fill="#7a8b69" font-weight="700">was 5+ hours</text>
+          </g>
+          <g transform="translate(388 62)">
+            <rect x="0" y="0" width="164" height="92" rx="8" fill="#faf3e7" stroke="#1b2430" stroke-width="1.5" opacity="0.9"/>
+            <text x="16" y="24" font-family="DM Sans, sans-serif" font-size="11.5" fill="#5c6b76">Invoices outstanding</text>
+            <text x="16" y="62" font-family="Newsreader, serif" font-size="34" font-weight="600" fill="#1b2430">$4,120</text>
+            <text x="16" y="80" font-family="DM Sans, sans-serif" font-size="11" fill="#b5482d" font-weight="700">3 auto-reminders sent</text>
+          </g>
+          <g transform="translate(568 62)">
+            <rect x="0" y="0" width="164" height="92" rx="8" fill="#e9e4fb" stroke="#6c5ce7" stroke-width="1.5"/>
+            <text x="16" y="24" font-family="DM Sans, sans-serif" font-size="11.5" fill="#5c6b76">Hours handled by system</text>
+            <text x="16" y="62" font-family="Newsreader, serif" font-size="34" font-weight="600" fill="#6c5ce7">13.5</text>
+            <text x="16" y="80" font-family="DM Sans, sans-serif" font-size="11" fill="#6c5ce7" font-weight="700">this week</text>
+          </g>
+          <!-- bar chart: leads by day -->
+          <g transform="translate(28 176)">
+            <text x="0" y="0" font-family="DM Sans, sans-serif" font-size="11.5" fill="#5c6b76">Leads replied to within 5 minutes, by day</text>
+            <line x1="0" y1="96" x2="704" y2="96" stroke="#1b2430" stroke-width="1.5" opacity="0.3"/>
+            <rect x="10" y="46" width="80" height="50" rx="4" fill="#7a8b69" opacity="0.85"/>
+            <rect x="110" y="30" width="80" height="66" rx="4" fill="#7a8b69" opacity="0.85"/>
+            <rect x="210" y="22" width="80" height="74" rx="4" fill="#7a8b69" opacity="0.85"/>
+            <rect x="310" y="38" width="80" height="58" rx="4" fill="#7a8b69" opacity="0.85"/>
+            <rect x="410" y="14" width="80" height="82" rx="4" fill="#7a8b69" opacity="0.85"/>
+            <rect x="510" y="60" width="80" height="36" rx="4" fill="#4ea1ff" opacity="0.85"/>
+            <rect x="610" y="66" width="80" height="30" rx="4" fill="#4ea1ff" opacity="0.85"/>
+            <g font-family="DM Sans, sans-serif" font-size="11" fill="#5c6b76" text-anchor="middle">
+              <text x="50" y="112">Mon</text><text x="150" y="112">Tue</text><text x="250" y="112">Wed</text><text x="350" y="112">Thu</text><text x="450" y="112">Fri</text><text x="550" y="112">Sat</text><text x="650" y="112">Sun</text>
+            </g>
+            <text x="600" y="52" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#4ea1ff">weekends too</text>
+          </g>
+        </svg>
+      </div>
+      <div class="case-study-body">
+        <div>
+          <div class="cs-stat">2 min</div>
+          <div class="cs-stat-label">average first reply to a new lead, down from more than five hours</div>
+        </div>
+        <div>
+          <h3>A growing service business, chasing its own paperwork.</h3>
+          <p>Leads came in through the website and sat until someone got back to a desk. Invoices were written up at month-end and chased by phone. We built three connected flows: an instant personal reply and CRM entry for every inquiry, a follow-up sequence until the lead booked or declined, and invoicing generated from the job record with automatic reminders. The owner now reads one Monday-morning summary instead of managing the process by hand.</p>
+          <p class="cs-note">Details anonymized. Figures from a representative first engagement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PINNED TESTIMONIAL -->
+  <div class="pin-wrap">
+    <div class="pin-card">
+      <p class="quote">"Zoley enhanced our real estate website so potential buyers stay within our ecosystem. It led to a 40% increase in interest in our listings."</p>
+      <span>&mdash; Rob G., No Limit Real Estate, LLC</span>
+    </div>
+  </div>
+
+  <!-- 8. FINAL CTA -->
+  <section class="sec" style="padding-bottom: 96px;">
+    <div class="final">
+      <h2>Find out what's worth automating first.</h2>
+      <p>Answer a few questions about how work moves through your business. We'll reply within two business days with the first flow we'd build, what it would cost, and roughly how many hours it should return.</p>
+      <div class="btn-row">
+        <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get your automation plan</a>
+        <a href="https://calendly.com/zoley/free-30-min-discovery-call" class="btn btn-outline">Book a 30-minute call</a>
+      </div>
+      <p class="cta-note">No obligation. The recommendation is yours to keep either way.</p>
+    </div>
+  </section>
+</div>

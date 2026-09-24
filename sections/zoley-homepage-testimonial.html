@@ -1,0 +1,158 @@
+<!--
+ZOLEY HOMEPAGE — TESTIMONIAL CAROUSEL SECTION
+Auto-rotates through all testimonials; also click-through via dots and prev/next arrows.
+-->
+
+<div id="zly-home-testimonial">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-home-testimonial {
+      --paper: #faf3e7;
+      --ink: #1b2430;
+      --ink-soft: #5c6b76;
+      --barn: #b5482d;
+      --violet: #6c5ce7;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+    }
+    #zly-home-testimonial * { box-sizing: border-box; }
+
+    #zly-home-testimonial .zhy-pin-wrap { display: flex; flex-direction: column; align-items: center; padding: 20px 24px 76px; }
+    #zly-home-testimonial .zhy-pin-card {
+      background: #fff9ef; border: 1px solid var(--border); border-radius: 4px;
+      max-width: 620px; width: 100%; padding: 36px 40px; position: relative; transform: rotate(-1deg);
+      box-shadow: 0 12px 24px rgba(27,36,48,0.10); transition: opacity 0.2s ease;
+    }
+    #zly-home-testimonial .zhy-pin-card.fading { opacity: 0; }
+    #zly-home-testimonial .zhy-pin-card::before {
+      content: ''; position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      width: 18px; height: 18px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--barn), var(--violet));
+      box-shadow: 0 2px 3px rgba(0,0,0,0.25);
+    }
+    #zly-home-testimonial .zhy-pin-card p.quote { font-family: 'Newsreader', serif; font-style: italic; font-size: 20px; color: var(--ink); margin-bottom: 12px; line-height: 1.5; }
+    #zly-home-testimonial .zhy-pin-card span { font-family: 'Caveat', cursive; font-size: 20px; color: var(--barn); font-weight: 700; }
+
+    #zly-home-testimonial .zhy-controls { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 22px; }
+    #zly-home-testimonial .zhy-nav {
+      width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--ink); background: transparent;
+      color: var(--ink); font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: background 0.15s ease, color 0.15s ease;
+    }
+    #zly-home-testimonial .zhy-nav:hover { background: var(--ink); color: var(--paper); }
+    #zly-home-testimonial .zhy-dots { display: flex; gap: 9px; }
+    #zly-home-testimonial .zhy-dot {
+      width: 9px; height: 9px; border-radius: 50%; border: none; padding: 0; cursor: pointer;
+      background: var(--border); transition: background 0.15s ease, transform 0.15s ease;
+    }
+    #zly-home-testimonial .zhy-dot.active { background: var(--barn); transform: scale(1.2); }
+
+    @media (max-width: 900px) {
+      #zly-home-testimonial .zhy-pin-wrap { padding: 16px 20px 56px; }
+      #zly-home-testimonial .zhy-pin-card { padding: 28px 26px; }
+    }
+    @media (max-width: 480px) {
+      #zly-home-testimonial .zhy-pin-card { transform: rotate(0); padding: 24px 22px; }
+      #zly-home-testimonial .zhy-pin-card p.quote { font-size: 18px; }
+      #zly-home-testimonial .zhy-controls { gap: 14px; }
+    }
+  </style>
+
+  <div class="zhy-pin-wrap">
+    <div class="zhy-pin-card" id="zly-testi-card" aria-live="polite">
+      <p class="quote" id="zly-testi-quote"></p>
+      <span id="zly-testi-author"></span>
+    </div>
+    <div class="zhy-controls">
+      <button class="zhy-nav" id="zly-testi-prev" aria-label="Previous testimonial">&larr;</button>
+      <div class="zhy-dots" id="zly-testi-dots"></div>
+      <button class="zhy-nav" id="zly-testi-next" aria-label="Next testimonial">&rarr;</button>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var testimonials = [
+        {
+          text: "I had a passion for cleaning up the ocean, but no clue where to start. Zoley helped me turn my ideas into action with a simple landing page done for free — and just like that, the Blue Haven Project was real.",
+          author: "— Ashley M., The Blue Haven Project"
+        },
+        {
+          text: "With Zoley’s help, I turned a simple idea for a poem subscription service into a low-effort side business that works on autopilot. I landed my first 100 customers in 2 months.",
+          author: "— David L., Custom Poems Co."
+        },
+        {
+          text: "Zoley designed and built a custom lead generation funnel for us that put us in control of our applicant data. Now we’re responding faster and converting better than ever.",
+          author: "— Shirley J., Dental Medical Support Services, LLC."
+        },
+        {
+          text: "Zoley helped us take our children's book idea and turn it into a full roadmap — multiple short stories, a gamified app, and an educational platform. We finally have a plan.",
+          author: "— Ed P., Troopi’s Adventures"
+        },
+        {
+          text: "Zoley enhanced our real estate website so potential buyers stay within our ecosystem. It led to a 40% increase in interest in our listings.",
+          author: "— Rob G., No Limit Real Estate, LLC."
+        }
+      ];
+
+      var card = document.getElementById('zly-testi-card');
+      var quoteEl = document.getElementById('zly-testi-quote');
+      var authorEl = document.getElementById('zly-testi-author');
+      var dotsWrap = document.getElementById('zly-testi-dots');
+      var prevBtn = document.getElementById('zly-testi-prev');
+      var nextBtn = document.getElementById('zly-testi-next');
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      var index = 0;
+      var timer = null;
+      var ROTATE_MS = 6500;
+      var FADE_MS = 200;
+
+      testimonials.forEach(function (t, i) {
+        var dot = document.createElement('button');
+        dot.className = 'zhy-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
+        dot.addEventListener('click', function () { goTo(i, true); });
+        dotsWrap.appendChild(dot);
+      });
+
+      function renderImmediate(i) {
+        quoteEl.textContent = '“' + testimonials[i].text + '”';
+        authorEl.textContent = testimonials[i].author;
+        Array.prototype.forEach.call(dotsWrap.children, function (d, di) {
+          d.className = 'zhy-dot' + (di === i ? ' active' : '');
+        });
+      }
+
+      function goTo(i, userInitiated) {
+        index = (i + testimonials.length) % testimonials.length;
+        card.classList.add('fading');
+        setTimeout(function () {
+          renderImmediate(index);
+          card.classList.remove('fading');
+        }, FADE_MS);
+        if (userInitiated) restartTimer();
+      }
+
+      function next() { goTo(index + 1); }
+      function prev() { goTo(index - 1); }
+
+      function restartTimer() {
+        if (timer) clearInterval(timer);
+        if (reduceMotion) return;
+        timer = setInterval(next, ROTATE_MS);
+      }
+
+      prevBtn.addEventListener('click', function () { prev(); restartTimer(); });
+      nextBtn.addEventListener('click', function () { next(); restartTimer(); });
+      card.addEventListener('mouseenter', function () { if (timer) clearInterval(timer); });
+      card.addEventListener('mouseleave', restartTimer);
+
+      renderImmediate(0);
+      restartTimer();
+    })();
+  </script>
+</div>

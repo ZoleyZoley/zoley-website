@@ -1,0 +1,237 @@
+<!--
+ZOLEY — WEB-DESIGN — 1. HERO
+Source: main pages/zoley-web-design-page.v2.html
+Scoped under #zly-web-hero. Self-contained: drop into a Squarespace Code Block.
+-->
+
+<div id="zly-web-hero">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-web-hero {
+      --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef;
+      --ink: #1b2430; --ink-soft: #5c6b76;
+      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-web-hero * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-web-hero .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-web-hero h1, #zly-web-hero h2, #zly-web-hero h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-web-hero p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-web-hero .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: var(--barn); }
+
+    #zly-web-hero .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-web-hero .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-web-hero .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-web-hero .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    #zly-web-hero .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+    #zly-web-hero .btn-outline { background: transparent; color: #fff9ef; border: 2px solid #faf3e7; }
+    #zly-web-hero .btn-outline:hover { background: #faf3e7; color: var(--ink); }
+    #zly-web-hero .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+    #zly-web-hero .cta-note { font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
+
+    /* 1. HERO */
+    #zly-web-hero .hero { padding: 108px 24px 60px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    #zly-web-hero .hero h1 { font-size: clamp(34px, 4.4vw, 54px); }
+    #zly-web-hero .hero p.sub { font-size: 18px; max-width: 500px; margin: 20px 0 30px; }
+    #zly-web-hero .board { background: var(--paper-2); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+    #zly-web-hero .board svg { width: 100%; height: auto; display: block; }
+    #zly-web-hero .needle { transform-origin: 0px 0px; animation: zwb-needle 4s ease-in-out infinite; }
+    @keyframes zwb-needle { 0%, 100% { transform: rotate(-70deg); } 50% { transform: rotate(-58deg); } }
+    @media (prefers-reduced-motion: reduce) { #zly-web-hero .needle { animation: none; transform: rotate(-64deg); } }
+
+    #zly-web-hero .process-header { text-align: center; margin-bottom: 40px; }
+    #zly-web-hero .process-header h2 { font-size: clamp(30px, 3.6vw, 40px); max-width: 680px; margin: 0 auto; }
+    #zly-web-hero .process-header .process-sub { font-size: 16px; max-width: 600px; margin: 14px auto 0; }
+
+    #zly-web-hero .pin-wrap { display: flex; justify-content: center; padding: 0 24px 20px; }
+    #zly-web-hero .pin-card { background: var(--card); border: 1px solid var(--border); border-radius: 4px; max-width: 620px; padding: 36px 40px; position: relative; transform: rotate(-1deg); box-shadow: 0 12px 24px rgba(27,36,48,0.10); }
+    #zly-web-hero .pin-card::before { content: ''; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 18px; height: 18px; border-radius: 50%; background: linear-gradient(135deg, var(--barn), var(--violet)); box-shadow: 0 2px 3px rgba(0,0,0,0.25); }
+    #zly-web-hero .pin-card p.quote { font-family: 'Newsreader', serif; font-style: italic; font-size: 20px; color: var(--ink); margin-bottom: 12px; }
+    #zly-web-hero .pin-card span { font-family: 'Caveat', cursive; font-size: 20px; color: var(--barn); font-weight: 700; }
+
+    /* 2. COST */
+    #zly-web-hero .time-band { padding: 30px 24px 70px; }
+    #zly-web-hero .time-card { max-width: 1160px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 56px; box-shadow: 0 18px 40px -20px rgba(27,36,48,0.28); position: relative; overflow: hidden; }
+    #zly-web-hero .time-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--barn), var(--marigold)); }
+    #zly-web-hero .time-eyebrow { display: block; font-size: 12.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--barn); margin-bottom: 14px; }
+    #zly-web-hero .time-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; align-items: center; }
+    #zly-web-hero .time-stat { font-family: 'Newsreader', serif; font-size: clamp(56px, 7vw, 88px); font-weight: 600; line-height: 1; color: var(--barn); }
+    #zly-web-hero .time-stat span { font-size: 16px; color: var(--ink-soft); font-family: 'DM Sans', sans-serif; display: block; margin-top: 12px; font-weight: 600; line-height: 1.4; }
+    #zly-web-hero .time-grid h2 { font-size: clamp(28px, 3.4vw, 38px); }
+
+    /* 3. CARD GRID */
+    #zly-web-hero .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    #zly-web-hero .process-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 26px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #zly-web-hero .process-card:hover { transform: translateY(-6px); box-shadow: 0 18px 32px -16px rgba(27,36,48,0.28); }
+    #zly-web-hero .pc-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    #zly-web-hero .pc-num { flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+    #zly-web-hero .process-card h3 { font-size: 17px; }
+    #zly-web-hero .process-card p { font-size: 14px; }
+    #zly-web-hero .wd-cta { text-align: center; margin-top: 40px; }
+
+    /* 4. STAT BAND */
+    #zly-web-hero .stat-band { background: var(--ink); padding: 90px 24px; position: relative; overflow: hidden; }
+    #zly-web-hero .stat-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(181,72,45,0.2), transparent 55%), radial-gradient(circle at 85% 80%, rgba(78,161,255,0.18), transparent 55%); }
+    #zly-web-hero .stat-band .inner { max-width: 1160px; margin: 0 auto; position: relative; }
+    #zly-web-hero .stat-band .process-header h2 { color: var(--paper); }
+    #zly-web-hero .stat-band .process-header .process-sub { color: #c7d0d6; }
+    #zly-web-hero .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+    #zly-web-hero .stat-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 32px 22px; transform: rotate(var(--r, 0deg)); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #zly-web-hero .stat-card:hover { transform: rotate(var(--r, 0deg)) translateY(-6px); box-shadow: 0 16px 30px -18px rgba(0,0,0,0.5); }
+    #zly-web-hero .stat-card:nth-child(1) { --r: -1deg; }
+    #zly-web-hero .stat-card:nth-child(2) { --r: 1deg; }
+    #zly-web-hero .stat-card:nth-child(3) { --r: -0.5deg; }
+    #zly-web-hero .stat-card .num { font-family: 'Newsreader', serif; font-size: clamp(36px, 4vw, 48px); font-weight: 600; color: #fff9ef; }
+    #zly-web-hero .stat-card p { font-size: 14px; margin-top: 8px; color: #c7d0d6; }
+    #zly-web-hero .stat-close { text-align: center; max-width: 640px; margin: 40px auto 0; font-size: 17px; color: var(--paper); font-family: 'Newsreader', serif; font-style: italic; line-height: 1.5; }
+
+    /* 5. SIGNS */
+    #zly-web-hero .signs-band { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    #zly-web-hero .signs-wrap { max-width: 1160px; margin: 0 auto; padding: 80px 24px; display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 50px; align-items: start; }
+    #zly-web-hero .signs-wrap h2 { font-size: clamp(26px, 3vw, 36px); max-width: 400px; margin-bottom: 14px; }
+    #zly-web-hero .signs-wrap p.lead { font-size: 15.5px; max-width: 400px; }
+    #zly-web-hero .signs-list { list-style: none; }
+    #zly-web-hero .signs-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+    #zly-web-hero .signs-item:last-child { border-bottom: none; }
+    #zly-web-hero .signs-num { font-family: 'Newsreader', serif; font-size: 15px; color: var(--barn); font-weight: 600; flex-shrink: 0; width: 28px; }
+    #zly-web-hero .signs-item h3 { font-size: 17px; margin-bottom: 4px; }
+    #zly-web-hero .signs-item p { font-size: 14.5px; }
+
+    /* 6. HOW WE DO IT */
+    #zly-web-hero .wd-list { max-width: 800px; margin: 0 auto; }
+    #zly-web-hero .wd-row { display: grid; grid-template-columns: 40px 1fr auto; gap: 22px; align-items: flex-start; padding: 26px 0; border-bottom: 1px solid var(--border); }
+    #zly-web-hero .wd-row:last-of-type { border-bottom: none; }
+    #zly-web-hero .wd-num { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+    #zly-web-hero .wd-row h3 { font-size: 19px; margin-bottom: 6px; }
+    #zly-web-hero .wd-row p { font-size: 14.5px; }
+    #zly-web-hero .wd-out { font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--barn); white-space: nowrap; padding-top: 12px; }
+
+    /* 7. WHAT WE MEASURE */
+    #zly-web-hero .measure { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 50px; align-items: center; background: var(--paper-2); border-radius: 16px; padding: 48px; }
+    #zly-web-hero .measure h2 { font-size: clamp(26px, 3vw, 34px); margin-bottom: 14px; }
+    #zly-web-hero .measure p { font-size: 16px; margin-bottom: 12px; }
+    #zly-web-hero .metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    #zly-web-hero .metric { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; }
+    #zly-web-hero .metric .m { font-family: 'Newsreader', serif; font-size: 17px; font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+    #zly-web-hero .metric p { font-size: 13.5px; margin: 0; }
+
+    /* 8. CASE STUDY */
+    #zly-web-hero .case-study { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 40px; box-shadow: 0 18px 40px -24px rgba(27,36,48,0.25); }
+    #zly-web-hero .case-study-media { width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 32px; background: var(--paper-2); border: 1px solid var(--border); padding: 24px; }
+    #zly-web-hero .case-study-media svg { width: 100%; height: auto; display: block; max-width: 760px; margin: 0 auto; }
+    #zly-web-hero .case-study-media img { width: 100%; height: auto; display: block; }
+    #zly-web-hero .case-study-body { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 44px; align-items: center; }
+    #zly-web-hero .case-study .cs-stat { font-family: 'Newsreader', serif; font-weight: 600; font-size: clamp(44px, 5vw, 60px); color: var(--barn); line-height: 1; }
+    #zly-web-hero .case-study .cs-stat-label { font-size: 14px; color: var(--ink-soft); margin-top: 8px; }
+    #zly-web-hero .case-study h3 { font-size: 22px; margin-bottom: 10px; }
+    #zly-web-hero .case-study p { font-size: 15px; margin-bottom: 14px; }
+    #zly-web-hero .case-study .cs-note { font-family: 'Caveat', cursive; font-size: 17px; color: var(--ink-soft); }
+
+    /* 9. FINAL CTA */
+    #zly-web-hero .final { background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center; max-width: 1112px; margin: 0 auto; position: relative; overflow: hidden; }
+    #zly-web-hero .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+    #zly-web-hero .final > * { position: relative; }
+    #zly-web-hero .final h2 { color: var(--paper); font-size: clamp(27px, 3.2vw, 36px); margin-bottom: 14px; }
+    #zly-web-hero .final p { color: #c7d0d6; max-width: 520px; margin: 0 auto 26px; }
+    #zly-web-hero .final .btn-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    #zly-web-hero .final .cta-note { color: rgba(244,237,224,0.55); margin-top: 16px; }
+
+    @media (max-width: 900px) {
+      #zly-web-hero .hero { grid-template-columns: 1fr; padding: 72px 20px 40px; gap: 36px; }
+      #zly-web-hero .stat-strip { grid-template-columns: 1fr; }
+      #zly-web-hero .process-grid { grid-template-columns: repeat(2, 1fr); }
+      #zly-web-hero .case-study-body { grid-template-columns: 1fr; text-align: center; }
+      #zly-web-hero .signs-wrap { grid-template-columns: 1fr; padding: 60px 20px; }
+      #zly-web-hero .measure { grid-template-columns: 1fr; padding: 32px 24px; gap: 24px; }
+      #zly-web-hero .time-grid { grid-template-columns: 1fr; gap: 24px; }
+      #zly-web-hero .wd-row { grid-template-columns: 40px 1fr; }
+      #zly-web-hero .wd-out { grid-column: 2; padding-top: 0; }
+      #zly-web-hero .sec { padding: 60px 20px; }
+      #zly-web-hero .time-band { padding: 20px 20px 40px; }
+      #zly-web-hero .time-card { padding: 32px 24px; }
+      #zly-web-hero .stat-band { padding: 60px 20px; }
+    }
+    @media (max-width: 560px) {
+      #zly-web-hero .process-grid { grid-template-columns: 1fr; }
+      #zly-web-hero .metric-grid { grid-template-columns: 1fr; }
+      #zly-web-hero .hero { padding-top: 56px; }
+      #zly-web-hero .cta-row, #zly-web-hero .final .btn-row { flex-direction: column; align-items: stretch; }
+      #zly-web-hero .btn { justify-content: center; }
+      #zly-web-hero .final { padding: 40px 22px; border-radius: 12px; }
+    }
+  </style>
+
+  <section class="hero">
+    <div>
+      <span class="tag">web design &amp; development</span>
+      <h1>A website built as a sales system, not a brochure.</h1>
+      <p class="sub">Fast, mobile-first, and written around how your customers actually decide. Every site we build ships with a clear next step for the visitor, tracking that tells you whether it's working, and full ownership. No platform you're locked into, no developer you have to call to change a sentence.</p>
+      <div class="cta-row">
+        <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get your website plan</a>
+        <a href="https://calendly.com/zoley/free-30-min-discovery-call" class="btn btn-ghost">Book a 30-minute call</a>
+      </div>
+      <p class="cta-note">A written recommendation and pricing within two business days.</p>
+    </div>
+    <div class="board">
+      <svg viewBox="0 0 420 320" fill="none" role="img" aria-label="Illustration: a desktop site and its mobile version, with a page-speed gauge reading fast and a clear call-to-action button">
+        <defs>
+          <linearGradient id="zwb-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b5482d"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
+        </defs>
+        <!-- desktop browser -->
+        <g transform="translate(14 22) rotate(-1.5 150 100)">
+          <rect x="0" y="0" width="290" height="200" rx="8" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <line x1="0" y1="26" x2="290" y2="26" stroke="#1b2430" stroke-width="2"/>
+          <circle cx="14" cy="13" r="3.5" fill="#b5482d"/><circle cx="26" cy="13" r="3.5" fill="#e3a72e"/><circle cx="38" cy="13" r="3.5" fill="#7a8b69"/>
+          <rect x="60" y="8" width="160" height="10" rx="5" fill="#1b2430" opacity="0.12"/>
+          <!-- hero area -->
+          <rect x="18" y="46" width="150" height="14" rx="5" fill="#1b2430" opacity="0.85"/>
+          <rect x="18" y="66" width="120" height="8" rx="4" fill="#1b2430" opacity="0.3"/>
+          <rect x="18" y="80" width="136" height="8" rx="4" fill="#1b2430" opacity="0.3"/>
+          <rect x="18" y="100" width="82" height="24" rx="6" fill="#b5482d"/>
+          <text x="59" y="116" font-family="DM Sans, sans-serif" font-size="10" font-weight="700" fill="#fff9ef" text-anchor="middle">Get a quote</text>
+          <rect x="184" y="42" width="88" height="86" rx="6" fill="#f6e4b8" stroke="#1b2430" stroke-width="1.5"/>
+          <path d="M196 116 L216 90 L232 104 L248 82 L262 116 Z" fill="#4ea1ff" opacity="0.7"/>
+          <circle cx="252" cy="62" r="7" fill="#e3a72e"/>
+          <!-- three feature cards -->
+          <rect x="18" y="146" width="78" height="38" rx="5" fill="#faf3e7" stroke="#1b2430" stroke-width="1.5"/>
+          <rect x="106" y="146" width="78" height="38" rx="5" fill="#faf3e7" stroke="#1b2430" stroke-width="1.5"/>
+          <rect x="194" y="146" width="78" height="38" rx="5" fill="#faf3e7" stroke="#1b2430" stroke-width="1.5"/>
+          <rect x="26" y="158" width="40" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
+          <rect x="114" y="158" width="46" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
+          <rect x="202" y="158" width="36" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
+        </g>
+        <!-- phone -->
+        <g transform="translate(316 58) rotate(4 50 100)">
+          <rect x="0" y="0" width="98" height="196" rx="14" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <rect x="30" y="8" width="38" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
+          <rect x="12" y="30" width="60" height="9" rx="4" fill="#1b2430" opacity="0.85"/>
+          <rect x="12" y="45" width="72" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
+          <rect x="12" y="55" width="56" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
+          <rect x="12" y="70" width="74" height="20" rx="5" fill="#b5482d"/>
+          <text x="49" y="83.5" font-family="DM Sans, sans-serif" font-size="8.5" font-weight="700" fill="#fff9ef" text-anchor="middle">Get a quote</text>
+          <rect x="12" y="102" width="74" height="42" rx="5" fill="#f6e4b8" stroke="#1b2430" stroke-width="1.2"/>
+          <rect x="12" y="152" width="74" height="10" rx="3" fill="#faf3e7" stroke="#1b2430" stroke-width="1.2"/>
+          <rect x="12" y="168" width="74" height="10" rx="3" fill="#faf3e7" stroke="#1b2430" stroke-width="1.2"/>
+        </g>
+        <!-- thread desktop -> phone -->
+        <path d="M300 120 Q 312 128 320 136" stroke="url(#zwb-grad)" stroke-width="2" stroke-dasharray="5 5" fill="none" opacity="0.8"/>
+        <!-- speed gauge -->
+        <g transform="translate(60 230)">
+          <path d="M0 60 A60 60 0 0 1 120 60" fill="none" stroke="#1b2430" stroke-width="2.5"/>
+          <path d="M0 60 A60 60 0 0 1 18 22" fill="none" stroke="#7a8b69" stroke-width="10" opacity="0.85"/>
+          <path d="M22 18 A60 60 0 0 1 98 18" fill="none" stroke="#e3a72e" stroke-width="10" opacity="0.85"/>
+          <path d="M102 22 A60 60 0 0 1 120 60" fill="none" stroke="#b5482d" stroke-width="10" opacity="0.85"/>
+          <g transform="translate(60 60)">
+            <line class="needle" x1="0" y1="0" x2="0" y2="-48" stroke="#1b2430" stroke-width="3" stroke-linecap="round"/>
+            <circle r="6" fill="#1b2430"/>
+          </g>
+          <text x="60" y="84" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#1b2430" text-anchor="middle">1.4s load</text>
+        </g>
+        <text x="196" y="280" font-family="Caveat, cursive" font-size="19" font-weight="700" fill="#7a8b69" transform="rotate(-3 196 280)">fast on every device</text>
+        <text x="196" y="306" font-family="Caveat, cursive" font-size="19" font-weight="700" fill="#b5482d" transform="rotate(-3 196 306)">one obvious next step</text>
+      </svg>
+    </div>
+  </section>
+</div>

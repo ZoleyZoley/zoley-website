@@ -1,0 +1,233 @@
+<!--
+ZOLEY — AUTOMATION — 7. CASE STUDY
+Source: main pages/zoley-automation-page.v2.html
+Scoped under #zly-auto-case-study. Self-contained: drop into a Squarespace Code Block.
+-->
+
+<div id="zly-auto-case-study">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-auto-case-study {
+      --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef;
+      --ink: #1b2430; --ink-soft: #5c6b76;
+      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-auto-case-study * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-auto-case-study .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-auto-case-study h1, #zly-auto-case-study h2, #zly-auto-case-study h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-auto-case-study p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-auto-case-study .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: var(--barn); }
+
+    #zly-auto-case-study .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-auto-case-study .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-auto-case-study .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-auto-case-study .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    #zly-auto-case-study .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+    #zly-auto-case-study .btn-outline { background: transparent; color: #fff9ef; border: 2px solid #faf3e7; }
+    #zly-auto-case-study .btn-outline:hover { background: #faf3e7; color: var(--ink); }
+    #zly-auto-case-study .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+    #zly-auto-case-study .cta-note { font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
+
+    /* 1. HERO */
+    #zly-auto-case-study .hero { padding: 108px 24px 60px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    #zly-auto-case-study .hero h1 { font-size: clamp(34px, 4.4vw, 54px); }
+    #zly-auto-case-study .hero p.sub { font-size: 18px; max-width: 500px; margin: 20px 0 30px; }
+    #zly-auto-case-study .board { background: var(--paper-2); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+    #zly-auto-case-study .board svg { width: 100%; height: auto; display: block; }
+    #zly-auto-case-study .thread { stroke: url(#zau-grad); stroke-width: 2; stroke-dasharray: 5 5; fill: none; opacity: 0.8; }
+    #zly-auto-case-study .dot { animation: zau-move 4s linear infinite; }
+    @keyframes zau-move { 0% { offset-distance: 0%; opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { #zly-auto-case-study .dot { animation: none; display: none; } }
+
+    #zly-auto-case-study .process-header { text-align: center; margin-bottom: 40px; }
+    #zly-auto-case-study .process-header h2 { font-size: clamp(30px, 3.6vw, 40px); max-width: 680px; margin: 0 auto; }
+    #zly-auto-case-study .process-header .process-sub { font-size: 16px; max-width: 600px; margin: 14px auto 0; }
+
+    #zly-auto-case-study .pin-wrap { display: flex; justify-content: center; padding: 0 24px 20px; }
+    #zly-auto-case-study .pin-card { background: var(--card); border: 1px solid var(--border); border-radius: 4px; max-width: 620px; padding: 36px 40px; position: relative; transform: rotate(-1deg); box-shadow: 0 12px 24px rgba(27,36,48,0.10); }
+    #zly-auto-case-study .pin-card::before { content: ''; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 18px; height: 18px; border-radius: 50%; background: linear-gradient(135deg, var(--barn), var(--violet)); box-shadow: 0 2px 3px rgba(0,0,0,0.25); }
+    #zly-auto-case-study .pin-card p.quote { font-family: 'Newsreader', serif; font-style: italic; font-size: 20px; color: var(--ink); margin-bottom: 12px; }
+    #zly-auto-case-study .pin-card span { font-family: 'Caveat', cursive; font-size: 20px; color: var(--barn); font-weight: 700; }
+
+    /* 2. COST OF MANUAL WORK */
+    #zly-auto-case-study .time-band { padding: 30px 24px 70px; }
+    #zly-auto-case-study .time-card { max-width: 1160px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 56px; box-shadow: 0 18px 40px -20px rgba(27,36,48,0.28); position: relative; overflow: hidden; }
+    #zly-auto-case-study .time-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--barn), var(--marigold)); }
+    #zly-auto-case-study .time-eyebrow { display: block; font-size: 12.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--barn); margin-bottom: 14px; }
+    #zly-auto-case-study .time-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; align-items: center; }
+    #zly-auto-case-study .time-stat { font-family: 'Newsreader', serif; font-size: clamp(64px, 8vw, 96px); font-weight: 600; line-height: 1; color: var(--barn); }
+    #zly-auto-case-study .time-stat span { font-size: 16px; color: var(--ink-soft); font-family: 'DM Sans', sans-serif; display: block; margin-top: 12px; font-weight: 600; line-height: 1.4; }
+    #zly-auto-case-study .time-grid h2 { font-size: clamp(28px, 3.4vw, 38px); }
+
+    /* 3. CARD GRID */
+    #zly-auto-case-study .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    #zly-auto-case-study .process-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 26px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #zly-auto-case-study .process-card:hover { transform: translateY(-6px); box-shadow: 0 18px 32px -16px rgba(27,36,48,0.28); }
+    #zly-auto-case-study .pc-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    #zly-auto-case-study .pc-num { flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+    #zly-auto-case-study .process-card h3 { font-size: 17px; }
+    #zly-auto-case-study .process-card p { font-size: 14px; }
+    #zly-auto-case-study .process-card .ex { margin-top: 12px; font-size: 12.5px; color: var(--ink); background: var(--paper-2); border-radius: 6px; padding: 8px 10px; line-height: 1.45; }
+    #zly-auto-case-study .process-card .ex strong { color: var(--barn); }
+    #zly-auto-case-study .wd-cta { text-align: center; margin-top: 40px; }
+
+    /* 4. STAT BAND */
+    #zly-auto-case-study .stat-band { background: var(--ink); padding: 90px 24px; position: relative; overflow: hidden; }
+    #zly-auto-case-study .stat-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(181,72,45,0.2), transparent 55%), radial-gradient(circle at 85% 80%, rgba(78,161,255,0.18), transparent 55%); }
+    #zly-auto-case-study .stat-band .inner { max-width: 1160px; margin: 0 auto; position: relative; }
+    #zly-auto-case-study .stat-band .process-header h2 { color: var(--paper); }
+    #zly-auto-case-study .stat-band .process-header .process-sub { color: #c7d0d6; }
+    #zly-auto-case-study .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+    #zly-auto-case-study .stat-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 32px 22px; transform: rotate(var(--r, 0deg)); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #zly-auto-case-study .stat-card:hover { transform: rotate(var(--r, 0deg)) translateY(-6px); box-shadow: 0 16px 30px -18px rgba(0,0,0,0.5); }
+    #zly-auto-case-study .stat-card:nth-child(1) { --r: -1deg; }
+    #zly-auto-case-study .stat-card:nth-child(2) { --r: 1deg; }
+    #zly-auto-case-study .stat-card:nth-child(3) { --r: -0.5deg; }
+    #zly-auto-case-study .stat-card .num { font-family: 'Newsreader', serif; font-size: clamp(36px, 4vw, 48px); font-weight: 600; color: #fff9ef; }
+    #zly-auto-case-study .stat-card p { font-size: 14px; margin-top: 8px; color: #c7d0d6; }
+    #zly-auto-case-study .stat-close { text-align: center; max-width: 640px; margin: 40px auto 0; font-size: 17px; color: var(--paper); font-family: 'Newsreader', serif; font-style: italic; line-height: 1.5; }
+
+    /* 5. WHERE TO START */
+    #zly-auto-case-study .start { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; background: var(--paper-2); border-radius: 16px; padding: 48px; }
+    #zly-auto-case-study .start h2 { font-size: clamp(26px, 3vw, 34px); margin-bottom: 14px; }
+    #zly-auto-case-study .start p { font-size: 16px; margin-bottom: 12px; }
+    #zly-auto-case-study .start .rule { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 26px 28px; }
+    #zly-auto-case-study .start .rule h3 { font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; font-family: 'DM Sans', sans-serif; color: var(--barn); margin-bottom: 14px; }
+    #zly-auto-case-study .start .rule ol { padding-left: 20px; color: var(--ink); font-size: 15px; line-height: 1.6; }
+    #zly-auto-case-study .start .rule li { margin-bottom: 10px; }
+    #zly-auto-case-study .start .rule li strong { color: var(--ink); }
+    #zly-auto-case-study .start .rule .cap { font-family: 'Caveat', cursive; font-size: 18px; color: var(--ink-soft); margin-top: 8px; }
+
+    /* 6. HOW WE DO IT */
+    #zly-auto-case-study .wd-list { max-width: 800px; margin: 0 auto; }
+    #zly-auto-case-study .wd-row { display: grid; grid-template-columns: 40px 1fr auto; gap: 22px; align-items: flex-start; padding: 26px 0; border-bottom: 1px solid var(--border); }
+    #zly-auto-case-study .wd-row:last-of-type { border-bottom: none; }
+    #zly-auto-case-study .wd-num { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+    #zly-auto-case-study .wd-row h3 { font-size: 19px; margin-bottom: 6px; }
+    #zly-auto-case-study .wd-row p { font-size: 14.5px; }
+    #zly-auto-case-study .wd-out { font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--barn); white-space: nowrap; padding-top: 12px; }
+
+    /* 7. CASE STUDY */
+    #zly-auto-case-study .case-study { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 40px; box-shadow: 0 18px 40px -24px rgba(27,36,48,0.25); }
+    #zly-auto-case-study .case-study-media { width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 32px; background: var(--paper-2); border: 1px solid var(--border); padding: 24px; }
+    #zly-auto-case-study .case-study-media svg { width: 100%; height: auto; display: block; max-width: 760px; margin: 0 auto; }
+    #zly-auto-case-study .case-study-media img { width: 100%; height: auto; display: block; }
+    #zly-auto-case-study .case-study-body { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 44px; align-items: center; }
+    #zly-auto-case-study .case-study .cs-stat { font-family: 'Newsreader', serif; font-weight: 600; font-size: clamp(44px, 5vw, 60px); color: var(--barn); line-height: 1; }
+    #zly-auto-case-study .case-study .cs-stat-label { font-size: 14px; color: var(--ink-soft); margin-top: 8px; }
+    #zly-auto-case-study .case-study h3 { font-size: 22px; margin-bottom: 10px; }
+    #zly-auto-case-study .case-study p { font-size: 15px; margin-bottom: 14px; }
+    #zly-auto-case-study .case-study .cs-note { font-family: 'Caveat', cursive; font-size: 17px; color: var(--ink-soft); }
+
+    /* 8. FINAL CTA */
+    #zly-auto-case-study .final { background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center; max-width: 1112px; margin: 0 auto; position: relative; overflow: hidden; }
+    #zly-auto-case-study .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+    #zly-auto-case-study .final > * { position: relative; }
+    #zly-auto-case-study .final h2 { color: var(--paper); font-size: clamp(27px, 3.2vw, 36px); margin-bottom: 14px; }
+    #zly-auto-case-study .final p { color: #c7d0d6; max-width: 520px; margin: 0 auto 26px; }
+    #zly-auto-case-study .final .btn-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    #zly-auto-case-study .final .cta-note { color: rgba(244,237,224,0.55); margin-top: 16px; }
+
+    @media (max-width: 900px) {
+      #zly-auto-case-study .hero { grid-template-columns: 1fr; padding: 72px 20px 40px; gap: 36px; }
+      #zly-auto-case-study .stat-strip { grid-template-columns: 1fr; }
+      #zly-auto-case-study .process-grid { grid-template-columns: repeat(2, 1fr); }
+      #zly-auto-case-study .case-study-body { grid-template-columns: 1fr; text-align: center; }
+      #zly-auto-case-study .start { grid-template-columns: 1fr; padding: 32px 24px; gap: 24px; }
+      #zly-auto-case-study .time-grid { grid-template-columns: 1fr; gap: 24px; }
+      #zly-auto-case-study .wd-row { grid-template-columns: 40px 1fr; }
+      #zly-auto-case-study .wd-out { grid-column: 2; padding-top: 0; }
+      #zly-auto-case-study .sec { padding: 60px 20px; }
+      #zly-auto-case-study .time-band { padding: 20px 20px 40px; }
+      #zly-auto-case-study .time-card { padding: 32px 24px; }
+      #zly-auto-case-study .stat-band { padding: 60px 20px; }
+    }
+    @media (max-width: 560px) {
+      #zly-auto-case-study .process-grid { grid-template-columns: 1fr; }
+      #zly-auto-case-study .hero { padding-top: 56px; }
+      #zly-auto-case-study .cta-row, #zly-auto-case-study .final .btn-row { flex-direction: column; align-items: stretch; }
+      #zly-auto-case-study .btn { justify-content: center; }
+      #zly-auto-case-study .final { padding: 40px 22px; border-radius: 12px; }
+    }
+  </style>
+
+  <section class="sec" style="padding-top: 0;">
+    <div class="process-header">
+      <span class="tag" style="display:block; text-align:center;">representative engagement</span>
+      <h2>What a first build looks like in practice.</h2>
+    </div>
+    <div class="case-study">
+      <!-- Replace this illustration with a real screenshot when a named case study is available -->
+      <div class="case-study-media">
+        <svg viewBox="0 0 760 300" fill="none" role="img" aria-label="Illustration: a weekly operations dashboard showing leads, response time, invoices outstanding, and hours saved">
+          <rect x="0" y="0" width="760" height="300" rx="12" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <text x="28" y="40" font-family="DM Sans, sans-serif" font-size="13" font-weight="700" fill="#1b2430" letter-spacing="1.5">THIS WEEK · MONDAY 7:00 AM</text>
+          <text x="732" y="40" font-family="DM Sans, sans-serif" font-size="12" fill="#5c6b76" text-anchor="end">sent automatically</text>
+          <!-- KPI tiles -->
+          <g transform="translate(28 62)">
+            <rect x="0" y="0" width="164" height="92" rx="8" fill="#faf3e7" stroke="#1b2430" stroke-width="1.5" opacity="0.9"/>
+            <text x="16" y="24" font-family="DM Sans, sans-serif" font-size="11.5" fill="#5c6b76">New leads</text>
+            <text x="16" y="62" font-family="Newsreader, serif" font-size="34" font-weight="600" fill="#1b2430">31</text>
+            <text x="16" y="80" font-family="DM Sans, sans-serif" font-size="11" fill="#7a8b69" font-weight="700">▲ 9 vs last week</text>
+          </g>
+          <g transform="translate(208 62)">
+            <rect x="0" y="0" width="164" height="92" rx="8" fill="#faf3e7" stroke="#1b2430" stroke-width="1.5" opacity="0.9"/>
+            <text x="16" y="24" font-family="DM Sans, sans-serif" font-size="11.5" fill="#5c6b76">Avg. first reply</text>
+            <text x="16" y="62" font-family="Newsreader, serif" font-size="34" font-weight="600" fill="#1b2430">2 min</text>
+            <text x="16" y="80" font-family="DM Sans, sans-serif" font-size="11" fill="#7a8b69" font-weight="700">was 5+ hours</text>
+          </g>
+          <g transform="translate(388 62)">
+            <rect x="0" y="0" width="164" height="92" rx="8" fill="#faf3e7" stroke="#1b2430" stroke-width="1.5" opacity="0.9"/>
+            <text x="16" y="24" font-family="DM Sans, sans-serif" font-size="11.5" fill="#5c6b76">Invoices outstanding</text>
+            <text x="16" y="62" font-family="Newsreader, serif" font-size="34" font-weight="600" fill="#1b2430">$4,120</text>
+            <text x="16" y="80" font-family="DM Sans, sans-serif" font-size="11" fill="#b5482d" font-weight="700">3 auto-reminders sent</text>
+          </g>
+          <g transform="translate(568 62)">
+            <rect x="0" y="0" width="164" height="92" rx="8" fill="#e9e4fb" stroke="#6c5ce7" stroke-width="1.5"/>
+            <text x="16" y="24" font-family="DM Sans, sans-serif" font-size="11.5" fill="#5c6b76">Hours handled by system</text>
+            <text x="16" y="62" font-family="Newsreader, serif" font-size="34" font-weight="600" fill="#6c5ce7">13.5</text>
+            <text x="16" y="80" font-family="DM Sans, sans-serif" font-size="11" fill="#6c5ce7" font-weight="700">this week</text>
+          </g>
+          <!-- bar chart: leads by day -->
+          <g transform="translate(28 176)">
+            <text x="0" y="0" font-family="DM Sans, sans-serif" font-size="11.5" fill="#5c6b76">Leads replied to within 5 minutes, by day</text>
+            <line x1="0" y1="96" x2="704" y2="96" stroke="#1b2430" stroke-width="1.5" opacity="0.3"/>
+            <rect x="10" y="46" width="80" height="50" rx="4" fill="#7a8b69" opacity="0.85"/>
+            <rect x="110" y="30" width="80" height="66" rx="4" fill="#7a8b69" opacity="0.85"/>
+            <rect x="210" y="22" width="80" height="74" rx="4" fill="#7a8b69" opacity="0.85"/>
+            <rect x="310" y="38" width="80" height="58" rx="4" fill="#7a8b69" opacity="0.85"/>
+            <rect x="410" y="14" width="80" height="82" rx="4" fill="#7a8b69" opacity="0.85"/>
+            <rect x="510" y="60" width="80" height="36" rx="4" fill="#4ea1ff" opacity="0.85"/>
+            <rect x="610" y="66" width="80" height="30" rx="4" fill="#4ea1ff" opacity="0.85"/>
+            <g font-family="DM Sans, sans-serif" font-size="11" fill="#5c6b76" text-anchor="middle">
+              <text x="50" y="112">Mon</text><text x="150" y="112">Tue</text><text x="250" y="112">Wed</text><text x="350" y="112">Thu</text><text x="450" y="112">Fri</text><text x="550" y="112">Sat</text><text x="650" y="112">Sun</text>
+            </g>
+            <text x="600" y="52" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#4ea1ff">weekends too</text>
+          </g>
+        </svg>
+      </div>
+      <div class="case-study-body">
+        <div>
+          <div class="cs-stat">2 min</div>
+          <div class="cs-stat-label">average first reply to a new lead, down from more than five hours</div>
+        </div>
+        <div>
+          <h3>A growing service business, chasing its own paperwork.</h3>
+          <p>Leads came in through the website and sat until someone got back to a desk. Invoices were written up at month-end and chased by phone. We built three connected flows: an instant personal reply and CRM entry for every inquiry, a follow-up sequence until the lead booked or declined, and invoicing generated from the job record with automatic reminders. The owner now reads one Monday-morning summary instead of managing the process by hand.</p>
+          <p class="cs-note">Details anonymized. Figures from a representative first engagement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PINNED TESTIMONIAL -->
+  <div class="pin-wrap">
+    <div class="pin-card">
+      <p class="quote">"Zoley enhanced our real estate website so potential buyers stay within our ecosystem. It led to a 40% increase in interest in our listings."</p>
+      <span>&mdash; Rob G., No Limit Real Estate, LLC</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,87 @@
+<!--
+ZOLEY — ALL SOLUTIONS PAGE (HYBRID) — AI STRATEGY SECTION
+-->
+
+<div id="zly-solutions-hy-ai-strategy">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-solutions-hy-ai-strategy {
+      --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef;
+      --ink: #1b2430; --ink-soft: #5c6b76;
+      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); scroll-behavior: smooth;
+    }
+    #zly-solutions-hy-ai-strategy * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-solutions-hy-ai-strategy .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-solutions-hy-ai-strategy h1, #zly-solutions-hy-ai-strategy h2, #zly-solutions-hy-ai-strategy h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-solutions-hy-ai-strategy p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-solutions-hy-ai-strategy .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 12px; padding: 0 4px; color: var(--barn); }
+    #zly-solutions-hy-ai-strategy .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 26px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-solutions-hy-ai-strategy .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-solutions-hy-ai-strategy .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+
+    /* HERO */
+    #zly-solutions-hy-ai-strategy .hero { padding: 100px 24px 40px; max-width: 780px; margin: 0 auto; text-align: center; }
+    #zly-solutions-hy-ai-strategy .hero h1 { font-size: clamp(32px, 4.2vw, 50px); }
+    #zly-solutions-hy-ai-strategy .hero p.sub { font-size: 17.5px; max-width: 560px; margin: 20px auto 0; }
+
+    /* THREE PILLS */
+    #zly-solutions-hy-ai-strategy .pill-row { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin: 30px 0 10px; }
+    #zly-solutions-hy-ai-strategy .pill { background: var(--card); border: 1px solid var(--border); border-radius: 100px; padding: 10px 20px; font-size: 13.5px; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; }
+
+    /* ANCHOR NAV */
+    #zly-solutions-hy-ai-strategy .anchor-nav { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; padding: 30px 24px 10px; max-width: 900px; margin: 0 auto; }
+    #zly-solutions-hy-ai-strategy .anchor-nav a { font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; padding: 9px 16px; border-radius: 100px; border: 1.5px solid var(--border); background: var(--card); transition: border-color 0.15s ease; }
+    #zly-solutions-hy-ai-strategy .anchor-nav a:hover { border-color: var(--barn); }
+
+    /* SOLUTION BLOCK */
+    #zly-solutions-hy-ai-strategy .solution { padding: 70px 24px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; scroll-margin-top: 30px; }
+    #zly-solutions-hy-ai-strategy .solution.reverse .solution-copy { order: 2; }
+    #zly-solutions-hy-ai-strategy .solution.reverse .solution-art { order: 1; }
+    #zly-solutions-hy-ai-strategy .solution-copy .kicker { font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--barn); font-weight: 700; margin-bottom: 10px; display: block; }
+    #zly-solutions-hy-ai-strategy .solution-copy h2 { font-size: clamp(26px, 3vw, 36px); margin-bottom: 6px; }
+    #zly-solutions-hy-ai-strategy .solution-copy .subhead { font-family: 'Newsreader', serif; font-style: italic; font-size: 17px; color: var(--ink-soft); margin-bottom: 16px; }
+    #zly-solutions-hy-ai-strategy .solution-copy p.body { font-size: 15.5px; margin-bottom: 24px; }
+    #zly-solutions-hy-ai-strategy .solution-art { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 30px; }
+    #zly-solutions-hy-ai-strategy .solution-art svg { width: 100%; height: auto; display: block; }
+    #zly-solutions-hy-ai-strategy .divider { border: none; border-top: 1px dashed var(--border); max-width: 1160px; margin: 0 auto; }
+
+    @media (max-width: 900px) {
+      #zly-solutions-hy-ai-strategy .solution, #zly-solutions-hy-ai-strategy .solution.reverse { grid-template-columns: 1fr; }
+      #zly-solutions-hy-ai-strategy .solution.reverse .solution-copy, #zly-solutions-hy-ai-strategy .solution.reverse .solution-art { order: initial; }
+      #zly-solutions-hy-ai-strategy .sec, #zly-solutions-hy-ai-strategy .solution { padding: 56px 20px; }
+    }
+  </style>
+
+  <!-- AI STRATEGY -->
+  <section class="solution" id="ai-strategy">
+    <div class="solution-copy">
+      <span class="kicker">AI strategy &amp; integration</span>
+      <h2>Future-proof your business.</h2>
+      <p class="subhead">AI isn't coming, it's already here.</p>
+      <p class="body">We help you identify the right tools, integrate them seamlessly into your workflows, and understand how to actually use them. Automate tasks, enhance content, and stay ahead of the curve.</p>
+      <a href="https://www.zoley.io/ai-automation" class="btn btn-primary">Discover AI solutions</a>
+    </div>
+    <div class="solution-art">
+      <svg viewBox="0 0 360 260" fill="none">
+        <defs>
+          <linearGradient id="sol-thread" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#6c5ce7"/>
+            <stop offset="1" stop-color="#4ea1ff"/>
+          </linearGradient>
+        </defs>
+        <circle cx="80" cy="90" r="7" fill="#b5482d"/>
+        <circle cx="180" cy="60" r="7" fill="#6c5ce7"/>
+        <circle cx="280" cy="100" r="7" fill="#4ea1ff"/>
+        <circle cx="130" cy="180" r="7" fill="#e3a72e"/>
+        <circle cx="240" cy="190" r="7" fill="#7a8b69"/>
+        <path d="M80 90 L180 60 L280 100 L240 190 L130 180 L80 90 Z" stroke="url(#sol-thread)" stroke-width="2" stroke-dasharray="5 5" fill="none"/>
+        <path d="M180 60 L130 180" stroke="url(#sol-thread)" stroke-width="2" stroke-dasharray="5 5"/>
+      </svg>
+    </div>
+  </section>
+
+  <hr class="divider">
+</div>

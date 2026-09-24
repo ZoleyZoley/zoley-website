@@ -1,0 +1,106 @@
+<!--
+ZOLEY — CASE STUDY DETAIL PAGE (TEMPLATE) — GALLERY SECTION
+-->
+
+<div id="zly-cs-detail-gallery">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-cs-detail-gallery {
+      --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef;
+      --ink: #1b2430; --ink-soft: #5c6b76;
+      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-cs-detail-gallery * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-cs-detail-gallery .sec { padding: 70px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-cs-detail-gallery .prose { max-width: 720px; margin: 0 auto; }
+    #zly-cs-detail-gallery h1, #zly-cs-detail-gallery h2, #zly-cs-detail-gallery h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-cs-detail-gallery p { color: var(--ink-soft); line-height: 1.7; font-size: 16px; }
+    #zly-cs-detail-gallery .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 12px; padding: 0 4px; color: var(--barn); }
+
+    /* BUTTONS */
+    #zly-cs-detail-gallery .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-cs-detail-gallery .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-cs-detail-gallery .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-cs-detail-gallery .btn-outline { background: transparent; color: #fff9ef; border: 2px solid var(--barn); }
+    #zly-cs-detail-gallery .btn-outline:hover { background: var(--barn); }
+
+    /* BREADCRUMB */
+    #zly-cs-detail-gallery .crumb { display: block; max-width: 780px; margin: 0 auto; padding: 40px 24px 0; font-size: 14px; font-weight: 700; color: var(--barn); text-decoration: none; }
+    #zly-cs-detail-gallery .crumb:hover { text-decoration: underline; }
+
+    /* HEADER */
+    #zly-cs-detail-gallery .cs-header { padding: 24px 24px 48px; max-width: 780px; margin: 0 auto; text-align: center; }
+    #zly-cs-detail-gallery .cs-cat { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--barn); border: 1px solid var(--border); background: var(--card); padding: 4px 10px; border-radius: 999px; margin-bottom: 18px; }
+    #zly-cs-detail-gallery .cs-header h1 { font-size: clamp(30px, 4vw, 46px); }
+    #zly-cs-detail-gallery .cs-meta { font-size: 15px; color: var(--ink-soft); margin-top: 16px; }
+
+    /* HERO MEDIA */
+    #zly-cs-detail-gallery .hero-media { max-width: 1160px; margin: 0 auto 20px; padding: 0 24px; }
+    #zly-cs-detail-gallery .hero-media .media-box { width: 100%; aspect-ratio: 21 / 9; border-radius: 16px; overflow: hidden; background: linear-gradient(135deg, rgba(122,139,105,0.18), rgba(78,161,255,0.18)); display: flex; align-items: center; justify-content: center; text-align: center; padding: 24px; }
+
+    /* GENERIC MEDIA PLACEHOLDER */
+    #zly-cs-detail-gallery .media-box span { font-size: 13.5px; color: var(--ink-soft); font-style: italic; }
+    #zly-cs-detail-gallery .media-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* QUICK STATS */
+    #zly-cs-detail-gallery .quick-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 1160px; margin: 0 auto; padding: 0 24px 20px; }
+    #zly-cs-detail-gallery .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 28px 20px; text-align: center; }
+    #zly-cs-detail-gallery .stat-card .num { font-family: 'Newsreader', serif; font-size: clamp(30px, 3.4vw, 40px); font-weight: 600; color: var(--barn); line-height: 1; }
+    #zly-cs-detail-gallery .stat-card p { font-size: 13.5px; margin-top: 8px; }
+
+    /* PROSE SECTIONS */
+    #zly-cs-detail-gallery .prose h2 { font-size: clamp(22px, 2.4vw, 27px); margin-bottom: 14px; }
+    #zly-cs-detail-gallery .prose p + p { margin-top: 14px; }
+
+    /* APPROACH LIST */
+    #zly-cs-detail-gallery .approach-list { list-style: none; margin-top: 22px; }
+    #zly-cs-detail-gallery .approach-row { display: flex; gap: 18px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid var(--border); }
+    #zly-cs-detail-gallery .approach-row:last-child { border-bottom: none; }
+    #zly-cs-detail-gallery .approach-num { flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 13px; line-height: 1; display: flex; align-items: center; justify-content: center; }
+    #zly-cs-detail-gallery .approach-row p { font-size: 15px; margin-top: 0; }
+
+    /* BEFORE/AFTER GALLERY */
+    #zly-cs-detail-gallery .gallery { max-width: 1160px; margin: 0 auto; padding: 10px 24px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    #zly-cs-detail-gallery .gallery figure .media-box { aspect-ratio: 4 / 3; border-radius: 12px; }
+    #zly-cs-detail-gallery .gallery figcaption { text-align: center; font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-soft); margin-top: 12px; }
+
+    /* PULL QUOTE */
+    #zly-cs-detail-gallery .pull-quote { background: var(--card); border-left: 4px solid var(--barn); border-radius: 4px; padding: 28px 32px; margin: 28px 0; }
+    #zly-cs-detail-gallery .pull-quote blockquote { font-family: 'Newsreader', serif; font-style: italic; font-size: 20px; color: var(--ink); line-height: 1.5; }
+    #zly-cs-detail-gallery .pull-quote cite { display: block; margin-top: 12px; font-size: 14px; color: var(--ink-soft); font-style: normal; }
+
+    /* RESULT STAT CALLOUT */
+    #zly-cs-detail-gallery .result-callout { text-align: center; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 36px; margin-top: 28px; }
+    #zly-cs-detail-gallery .result-callout .num { font-family: 'Newsreader', serif; font-size: clamp(44px, 5vw, 60px); font-weight: 600; color: var(--barn); line-height: 1; }
+    #zly-cs-detail-gallery .result-callout p { font-size: 14.5px; margin-top: 8px; }
+
+    /* FINAL CTA */
+    #zly-cs-detail-gallery .final { background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center; margin: 0 24px; max-width: 1112px; margin-left: auto; margin-right: auto; position: relative; overflow: hidden; }
+    #zly-cs-detail-gallery .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+    #zly-cs-detail-gallery .final > * { position: relative; }
+    #zly-cs-detail-gallery .final h2 { color: var(--paper); font-size: clamp(27px, 3.2vw, 36px); margin-bottom: 14px; }
+    #zly-cs-detail-gallery .final p { color: #c7d0d6; max-width: 460px; margin: 0 auto 26px; }
+    #zly-cs-detail-gallery .final .btn-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    @media (max-width: 900px) {
+      #zly-cs-detail-gallery .quick-stats { grid-template-columns: 1fr; }
+      #zly-cs-detail-gallery .gallery { grid-template-columns: 1fr; }
+      #zly-cs-detail-gallery .sec { padding: 50px 20px; }
+    }
+  </style>
+
+  <!-- GALLERY -->
+  <div class="gallery">
+    <figure>
+      <div class="media-box"><span>Before: old process / screenshot</span></div>
+      <figcaption>Before</figcaption>
+    </figure>
+    <figure>
+      <div class="media-box"><span>After: new process / screenshot</span></div>
+      <figcaption>After</figcaption>
+    </figure>
+  </div>
+</div>

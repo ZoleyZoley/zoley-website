@@ -1,0 +1,237 @@
+<!--
+ZOLEY — ADVERTISING — 1. HERO
+Source: main pages/zoley-digital-advertising-page.v2.html
+Scoped under #zly-ads-hero. Self-contained: drop into a Squarespace Code Block.
+-->
+
+<div id="zly-ads-hero">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-ads-hero {
+      --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef;
+      --ink: #1b2430; --ink-soft: #5c6b76;
+      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-ads-hero * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-ads-hero .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-ads-hero h1, #zly-ads-hero h2, #zly-ads-hero h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-ads-hero p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-ads-hero .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: var(--barn); }
+
+    #zly-ads-hero .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-ads-hero .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-ads-hero .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-ads-hero .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    #zly-ads-hero .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+    #zly-ads-hero .btn-outline { background: transparent; color: #fff9ef; border: 2px solid #faf3e7; }
+    #zly-ads-hero .btn-outline:hover { background: #faf3e7; color: var(--ink); }
+    #zly-ads-hero .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+    #zly-ads-hero .cta-note { font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
+
+    /* 1. HERO */
+    #zly-ads-hero .hero { padding: 108px 24px 60px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    #zly-ads-hero .hero h1 { font-size: clamp(34px, 4.4vw, 54px); }
+    #zly-ads-hero .hero p.sub { font-size: 18px; max-width: 500px; margin: 20px 0 30px; }
+    #zly-ads-hero .board { background: var(--paper-2); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+    #zly-ads-hero .board svg { width: 100%; height: auto; display: block; }
+    #zly-ads-hero .thread { stroke: url(#zad-grad); stroke-width: 2; stroke-dasharray: 5 5; fill: none; opacity: 0.8; }
+    #zly-ads-hero .pulse { animation: zad-pulse 3s ease-in-out infinite; }
+    @keyframes zad-pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { #zly-ads-hero .pulse { animation: none; } }
+
+    #zly-ads-hero .process-header { text-align: center; margin-bottom: 40px; }
+    #zly-ads-hero .process-header h2 { font-size: clamp(30px, 3.6vw, 40px); max-width: 680px; margin: 0 auto; }
+    #zly-ads-hero .process-header .process-sub { font-size: 16px; max-width: 600px; margin: 14px auto 0; }
+
+    #zly-ads-hero .pin-wrap { display: flex; justify-content: center; padding: 0 24px 20px; }
+    #zly-ads-hero .pin-card { background: var(--card); border: 1px solid var(--border); border-radius: 4px; max-width: 620px; padding: 36px 40px; position: relative; transform: rotate(-1deg); box-shadow: 0 12px 24px rgba(27,36,48,0.10); }
+    #zly-ads-hero .pin-card::before { content: ''; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 18px; height: 18px; border-radius: 50%; background: linear-gradient(135deg, var(--barn), var(--violet)); box-shadow: 0 2px 3px rgba(0,0,0,0.25); }
+    #zly-ads-hero .pin-card p.quote { font-family: 'Newsreader', serif; font-style: italic; font-size: 20px; color: var(--ink); margin-bottom: 12px; }
+    #zly-ads-hero .pin-card span { font-family: 'Caveat', cursive; font-size: 20px; color: var(--barn); font-weight: 700; }
+
+    /* 2. COST */
+    #zly-ads-hero .time-band { padding: 30px 24px 70px; }
+    #zly-ads-hero .time-card { max-width: 1160px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 56px; box-shadow: 0 18px 40px -20px rgba(27,36,48,0.28); position: relative; overflow: hidden; }
+    #zly-ads-hero .time-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--barn), var(--marigold)); }
+    #zly-ads-hero .time-eyebrow { display: block; font-size: 12.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--barn); margin-bottom: 14px; }
+    #zly-ads-hero .time-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; align-items: center; }
+    #zly-ads-hero .time-stat { font-family: 'Newsreader', serif; font-size: clamp(56px, 7vw, 88px); font-weight: 600; line-height: 1; color: var(--barn); }
+    #zly-ads-hero .time-stat span { font-size: 16px; color: var(--ink-soft); font-family: 'DM Sans', sans-serif; display: block; margin-top: 12px; font-weight: 600; line-height: 1.4; }
+    #zly-ads-hero .time-grid h2 { font-size: clamp(28px, 3.4vw, 38px); }
+
+    /* 3. CARD GRID */
+    #zly-ads-hero .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    #zly-ads-hero .process-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 26px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #zly-ads-hero .process-card:hover { transform: translateY(-6px); box-shadow: 0 18px 32px -16px rgba(27,36,48,0.28); }
+    #zly-ads-hero .pc-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    #zly-ads-hero .pc-num { flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+    #zly-ads-hero .process-card h3 { font-size: 17px; }
+    #zly-ads-hero .process-card p { font-size: 14px; }
+    #zly-ads-hero .wd-cta { text-align: center; margin-top: 40px; }
+
+    /* 4. STAT BAND */
+    #zly-ads-hero .stat-band { background: var(--ink); padding: 90px 24px; position: relative; overflow: hidden; }
+    #zly-ads-hero .stat-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(181,72,45,0.2), transparent 55%), radial-gradient(circle at 85% 80%, rgba(78,161,255,0.18), transparent 55%); }
+    #zly-ads-hero .stat-band .inner { max-width: 1160px; margin: 0 auto; position: relative; }
+    #zly-ads-hero .stat-band .process-header h2 { color: var(--paper); }
+    #zly-ads-hero .stat-band .process-header .process-sub { color: #c7d0d6; }
+    #zly-ads-hero .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+    #zly-ads-hero .stat-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 32px 22px; transform: rotate(var(--r, 0deg)); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #zly-ads-hero .stat-card:hover { transform: rotate(var(--r, 0deg)) translateY(-6px); box-shadow: 0 16px 30px -18px rgba(0,0,0,0.5); }
+    #zly-ads-hero .stat-card:nth-child(1) { --r: -1deg; }
+    #zly-ads-hero .stat-card:nth-child(2) { --r: 1deg; }
+    #zly-ads-hero .stat-card:nth-child(3) { --r: -0.5deg; }
+    #zly-ads-hero .stat-card .num { font-family: 'Newsreader', serif; font-size: clamp(36px, 4vw, 48px); font-weight: 600; color: #fff9ef; }
+    #zly-ads-hero .stat-card p { font-size: 14px; margin-top: 8px; color: #c7d0d6; }
+    #zly-ads-hero .stat-close { text-align: center; max-width: 640px; margin: 40px auto 0; font-size: 17px; color: var(--paper); font-family: 'Newsreader', serif; font-style: italic; line-height: 1.5; }
+
+    /* 5. CANDOR */
+    #zly-ads-hero .candor { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 50px; align-items: start; background: var(--paper-2); border-radius: 16px; padding: 48px; }
+    #zly-ads-hero .candor h2 { font-size: clamp(26px, 3vw, 34px); margin-bottom: 14px; }
+    #zly-ads-hero .candor p.lead { font-size: 16px; }
+    #zly-ads-hero .candor ul { list-style: none; }
+    #zly-ads-hero .candor li { display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--border); font-size: 15px; line-height: 1.55; }
+    #zly-ads-hero .candor li:last-child { border-bottom: none; }
+    #zly-ads-hero .candor li .x { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--barn); color: var(--barn); font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+    #zly-ads-hero .candor li span.t { color: var(--ink-soft); }
+    #zly-ads-hero .candor li span.t strong { color: var(--ink); }
+
+    /* 6. HOW WE DO IT */
+    #zly-ads-hero .wd-list { max-width: 800px; margin: 0 auto; }
+    #zly-ads-hero .wd-row { display: grid; grid-template-columns: 40px 1fr auto; gap: 22px; align-items: flex-start; padding: 26px 0; border-bottom: 1px solid var(--border); }
+    #zly-ads-hero .wd-row:last-of-type { border-bottom: none; }
+    #zly-ads-hero .wd-num { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+    #zly-ads-hero .wd-row h3 { font-size: 19px; margin-bottom: 6px; }
+    #zly-ads-hero .wd-row p { font-size: 14.5px; }
+    #zly-ads-hero .wd-out { font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--barn); white-space: nowrap; padding-top: 12px; }
+
+    /* 7. TRACKING & METRICS */
+    #zly-ads-hero .measure { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 50px; align-items: center; background: var(--paper-2); border-radius: 16px; padding: 48px; }
+    #zly-ads-hero .measure h2 { font-size: clamp(26px, 3vw, 34px); margin-bottom: 14px; }
+    #zly-ads-hero .measure p { font-size: 16px; margin-bottom: 12px; }
+    #zly-ads-hero .metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    #zly-ads-hero .metric { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; }
+    #zly-ads-hero .metric .m { font-family: 'Newsreader', serif; font-size: 17px; font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+    #zly-ads-hero .metric p { font-size: 13.5px; margin: 0; }
+
+    /* 8. CASE STUDY */
+    #zly-ads-hero .case-study { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 40px; box-shadow: 0 18px 40px -24px rgba(27,36,48,0.25); }
+    #zly-ads-hero .case-study-media { width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 32px; background: var(--paper-2); border: 1px solid var(--border); padding: 24px; }
+    #zly-ads-hero .case-study-media svg { width: 100%; height: auto; display: block; max-width: 760px; margin: 0 auto; }
+    #zly-ads-hero .case-study-media img { width: 100%; height: auto; display: block; }
+    #zly-ads-hero .case-study-body { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 44px; align-items: center; }
+    #zly-ads-hero .case-study .cs-stat { font-family: 'Newsreader', serif; font-weight: 600; font-size: clamp(44px, 5vw, 60px); color: var(--barn); line-height: 1; }
+    #zly-ads-hero .case-study .cs-stat-label { font-size: 14px; color: var(--ink-soft); margin-top: 8px; }
+    #zly-ads-hero .case-study h3 { font-size: 22px; margin-bottom: 10px; }
+    #zly-ads-hero .case-study p { font-size: 15px; margin-bottom: 14px; }
+    #zly-ads-hero .case-study .cs-note { font-family: 'Caveat', cursive; font-size: 17px; color: var(--ink-soft); }
+
+    /* 9. FINAL CTA */
+    #zly-ads-hero .final { background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center; max-width: 1112px; margin: 0 auto; position: relative; overflow: hidden; }
+    #zly-ads-hero .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+    #zly-ads-hero .final > * { position: relative; }
+    #zly-ads-hero .final h2 { color: var(--paper); font-size: clamp(27px, 3.2vw, 36px); margin-bottom: 14px; }
+    #zly-ads-hero .final p { color: #c7d0d6; max-width: 520px; margin: 0 auto 26px; }
+    #zly-ads-hero .final .btn-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    #zly-ads-hero .final .cta-note { color: rgba(244,237,224,0.55); margin-top: 16px; }
+
+    @media (max-width: 900px) {
+      #zly-ads-hero .hero { grid-template-columns: 1fr; padding: 72px 20px 40px; gap: 36px; }
+      #zly-ads-hero .stat-strip { grid-template-columns: 1fr; }
+      #zly-ads-hero .process-grid { grid-template-columns: repeat(2, 1fr); }
+      #zly-ads-hero .case-study-body { grid-template-columns: 1fr; text-align: center; }
+      #zly-ads-hero .candor, #zly-ads-hero .measure { grid-template-columns: 1fr; padding: 32px 24px; gap: 24px; }
+      #zly-ads-hero .time-grid { grid-template-columns: 1fr; gap: 24px; }
+      #zly-ads-hero .wd-row { grid-template-columns: 40px 1fr; }
+      #zly-ads-hero .wd-out { grid-column: 2; padding-top: 0; }
+      #zly-ads-hero .sec { padding: 60px 20px; }
+      #zly-ads-hero .time-band { padding: 20px 20px 40px; }
+      #zly-ads-hero .time-card { padding: 32px 24px; }
+      #zly-ads-hero .stat-band { padding: 60px 20px; }
+    }
+    @media (max-width: 560px) {
+      #zly-ads-hero .process-grid { grid-template-columns: 1fr; }
+      #zly-ads-hero .metric-grid { grid-template-columns: 1fr; }
+      #zly-ads-hero .hero { padding-top: 56px; }
+      #zly-ads-hero .cta-row, #zly-ads-hero .final .btn-row { flex-direction: column; align-items: stretch; }
+      #zly-ads-hero .btn { justify-content: center; }
+      #zly-ads-hero .final { padding: 40px 22px; border-radius: 12px; }
+    }
+  </style>
+
+  <section class="hero">
+    <div>
+      <span class="tag">digital advertising</span>
+      <h1>Every dollar traced to a lead, or it doesn't get spent.</h1>
+      <p class="sub">We run search and social campaigns for businesses that want to know, in numbers, what their advertising returns. Targeting built on who actually buys, landing pages built to convert, and tracking in place before the first dollar goes out. If a campaign isn't paying for itself, you'll see it, and so will we.</p>
+      <div class="cta-row">
+        <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get your advertising plan</a>
+        <a href="https://calendly.com/zoley/free-30-min-discovery-call" class="btn btn-ghost">Book a 30-minute call</a>
+      </div>
+      <p class="cta-note">A written recommendation and pricing within two business days.</p>
+    </div>
+    <div class="board">
+      <svg viewBox="0 0 420 320" fill="none" role="img" aria-label="Illustration: a defined audience sees an ad, lands on a page built to convert, and the result is tracked as cost per lead and return on spend">
+        <defs>
+          <linearGradient id="zad-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b5482d"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
+        </defs>
+        <!-- audience target (top-left) -->
+        <g transform="translate(70 76)">
+          <circle r="52" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <circle r="34" fill="none" stroke="#e3a72e" stroke-width="2.5"/>
+          <circle r="16" fill="none" stroke="#e3a72e" stroke-width="2.5"/>
+          <!-- people inside -->
+          <g fill="#4ea1ff"><circle cx="-6" cy="-4" r="5"/><circle cx="8" cy="2" r="5"/><circle cx="-2" cy="10" r="5"/></g>
+          <g fill="#5c6b76" opacity="0.5"><circle cx="-38" cy="-20" r="4"/><circle cx="36" cy="26" r="4"/><circle cx="30" cy="-34" r="4"/><circle cx="-30" cy="30" r="4"/></g>
+        </g>
+        <text x="20" y="152" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#e3a72e">people ready to buy</text>
+        <!-- thread to ad -->
+        <path class="thread" d="M124 72 Q 170 40 206 56"/>
+        <!-- ad card (top-right) -->
+        <g transform="translate(206 26) rotate(3 90 42)">
+          <rect x="0" y="0" width="180" height="86" rx="8" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <rect x="12" y="12" width="26" height="12" rx="3" fill="#7a8b69"/>
+          <text x="25" y="21" font-family="DM Sans, sans-serif" font-size="8" font-weight="700" fill="#fff9ef" text-anchor="middle">Ad</text>
+          <rect x="46" y="13" width="110" height="9" rx="4" fill="#4ea1ff"/>
+          <rect x="12" y="34" width="156" height="6" rx="3" fill="#1b2430" opacity="0.5"/>
+          <rect x="12" y="46" width="120" height="6" rx="3" fill="#1b2430" opacity="0.3"/>
+          <rect x="12" y="62" width="70" height="14" rx="4" fill="#b5482d"/>
+          <text x="47" y="72" font-family="DM Sans, sans-serif" font-size="8.5" font-weight="700" fill="#fff9ef" text-anchor="middle">Get a quote</text>
+        </g>
+        <!-- thread to landing page -->
+        <path class="thread" d="M300 116 Q 300 140 292 160"/>
+        <!-- landing page (bottom-right) -->
+        <g transform="translate(228 164) rotate(-2 80 60)">
+          <rect x="0" y="0" width="160" height="118" rx="7" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+          <line x1="0" y1="18" x2="160" y2="18" stroke="#1b2430" stroke-width="1.5"/>
+          <circle cx="10" cy="9" r="2.5" fill="#b5482d"/><circle cx="19" cy="9" r="2.5" fill="#e3a72e"/><circle cx="28" cy="9" r="2.5" fill="#7a8b69"/>
+          <rect x="12" y="30" width="86" height="9" rx="4" fill="#1b2430" opacity="0.85"/>
+          <rect x="12" y="45" width="100" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
+          <rect x="12" y="55" width="80" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
+          <rect x="12" y="70" width="98" height="12" rx="3" fill="#faf3e7" stroke="#1b2430" stroke-width="1.2"/>
+          <rect x="12" y="88" width="98" height="12" rx="3" fill="#faf3e7" stroke="#1b2430" stroke-width="1.2"/>
+          <rect x="116" y="70" width="32" height="30" rx="4" fill="#b5482d"/>
+          <path d="M126 85 l4 4 l8 -9" stroke="#fff9ef" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <text x="236" y="300" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#b5482d">a page built to convert</text>
+        <!-- thread to results -->
+        <path class="thread" d="M226 230 Q 170 240 150 236"/>
+        <!-- results card (bottom-left) -->
+        <g class="pulse" transform="translate(16 186) rotate(2 66 50)">
+          <rect x="0" y="0" width="132" height="100" rx="8" fill="#fff9ef" stroke="#6c5ce7" stroke-width="2.5"/>
+          <text x="12" y="20" font-family="DM Sans, sans-serif" font-size="9.5" font-weight="700" fill="#6c5ce7" letter-spacing="1">THIS MONTH</text>
+          <text x="12" y="44" font-family="DM Sans, sans-serif" font-size="10" fill="#5c6b76">Cost per lead</text>
+          <text x="120" y="44" font-family="Newsreader, serif" font-size="15" font-weight="600" fill="#1b2430" text-anchor="end">$38</text>
+          <text x="12" y="66" font-family="DM Sans, sans-serif" font-size="10" fill="#5c6b76">Leads</text>
+          <text x="120" y="66" font-family="Newsreader, serif" font-size="15" font-weight="600" fill="#1b2430" text-anchor="end">46</text>
+          <text x="12" y="88" font-family="DM Sans, sans-serif" font-size="10" fill="#5c6b76">Return on spend</text>
+          <text x="120" y="88" font-family="Newsreader, serif" font-size="15" font-weight="600" fill="#7a8b69" text-anchor="end">3.1×</text>
+        </g>
+        <text x="20" y="310" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#6c5ce7">tracked from click to sale</text>
+      </svg>
+    </div>
+  </section>
+</div>

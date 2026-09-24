@@ -1,0 +1,161 @@
+<!--
+ZOLEY CASE STUDIES INDEX PAGE — V2 — ONE CODE BLOCK FOR THIS ENTIRE PAGE
+Sections: Hero / How We Measure (new) / Grid / Final CTA
+
+V2 CHANGES (vs zoley-case-studies.html):
+- Copy rewritten in a more authoritative register. Primary CTA is the Quick Start form.
+- New "How we measure" strip: sets expectations about what a Zoley case study reports.
+- Grid cards gained a small inline result sparkline (SVG) and a "what we did" line.
+- The two example cards are still placeholders and render publicly. Replace them with real cards
+  from tools/case-study-generator.html (or delete them) before publishing.
+-->
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+  /* ===== hero ===== */
+  #zly-cs-hero { --paper: #faf3e7; --ink: #1b2430; --ink-soft: #5c6b76; --barn: #b5482d; font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); }
+  #zly-cs-hero * { box-sizing: border-box; margin: 0; padding: 0; }
+  #zly-cs-hero h1 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+  #zly-cs-hero p { color: var(--ink-soft); line-height: 1.65; }
+  #zly-cs-hero .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: var(--barn); }
+  #zly-cs-hero .hero { padding: 108px 24px 40px; max-width: 800px; margin: 0 auto; text-align: center; }
+  #zly-cs-hero .hero h1 { font-size: clamp(34px, 4.6vw, 54px); }
+  #zly-cs-hero .hero p.sub { font-size: 18px; max-width: 580px; margin: 20px auto 0; }
+  @media (max-width: 900px) { #zly-cs-hero .hero { padding: 72px 20px 32px; } }
+  @media (max-width: 480px) { #zly-cs-hero .hero { padding: 56px 18px 28px; } }
+
+  /* ===== how we measure ===== */
+  #zly-cs-measure { --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76; --barn: #b5482d; --sage: #7a8b69; --border: rgba(27,36,48,0.14); font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); }
+  #zly-cs-measure * { box-sizing: border-box; margin: 0; padding: 0; }
+  #zly-cs-measure .sec { padding: 10px 24px 50px; max-width: 1160px; margin: 0 auto; }
+  #zly-cs-measure .strip { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); display: grid; grid-template-columns: repeat(3, 1fr); }
+  #zly-cs-measure .item { padding: 22px 20px; border-right: 1px solid var(--border); }
+  #zly-cs-measure .item:last-child { border-right: none; }
+  #zly-cs-measure .item h3 { font-family: 'Newsreader', serif; font-weight: 600; font-size: 17px; color: var(--ink); margin-bottom: 6px; }
+  #zly-cs-measure .item h3::before { content: '\2713\0020'; color: var(--sage); }
+  #zly-cs-measure .item p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.5; }
+  @media (max-width: 900px) { #zly-cs-measure .strip { grid-template-columns: 1fr; } #zly-cs-measure .item { border-right: none; border-bottom: 1px solid var(--border); padding: 16px 4px; } #zly-cs-measure .item:last-child { border-bottom: none; } #zly-cs-measure .sec { padding: 0 20px 40px; } }
+
+  /* ===== grid ===== */
+  #zly-cs-grid {
+    --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+    --barn: #b5482d; --violet: #6c5ce7; --blue: #4ea1ff; --sage: #7a8b69; --border: rgba(27,36,48,0.14);
+    font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+  }
+  #zly-cs-grid * { box-sizing: border-box; margin: 0; padding: 0; }
+  #zly-cs-grid .sec { padding: 20px 24px 90px; max-width: 1160px; margin: 0 auto; }
+  #zly-cs-grid h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; color: var(--ink); }
+  #zly-cs-grid .cs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 26px; }
+  #zly-cs-grid .cs-card { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 28px; position: relative; overflow: hidden; text-decoration: none; color: inherit; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  #zly-cs-grid .cs-card:hover { transform: translateY(-6px); box-shadow: 0 18px 32px -16px rgba(27,36,48,0.28); }
+  #zly-cs-grid .cs-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--barn), var(--violet), var(--blue)); }
+  #zly-cs-grid .cs-tag { font-size: 12.5px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--barn); font-weight: 700; margin-bottom: 10px; }
+  #zly-cs-grid .cs-card h3 { font-size: 20px; margin-bottom: 8px; }
+  #zly-cs-grid .cs-headline { font-size: 14.5px; color: var(--ink-soft); line-height: 1.5; margin-bottom: 12px; }
+  #zly-cs-grid .cs-did { font-size: 13px; color: var(--ink); margin-bottom: 18px; line-height: 1.5; }
+  #zly-cs-grid .cs-did strong { color: var(--violet); }
+  #zly-cs-grid .cs-spark { width: 100%; height: 44px; margin-bottom: 4px; }
+  #zly-cs-grid .cs-spark svg { width: 100%; height: 44px; display: block; }
+  #zly-cs-grid .cs-stat { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border); }
+  #zly-cs-grid .cs-stat .num { font-family: 'Newsreader', serif; font-size: 22px; font-weight: 600; color: var(--barn); margin-right: 6px; }
+  #zly-cs-grid .cs-stat .label { font-size: 13px; color: var(--ink-soft); }
+  #zly-cs-grid .cs-link { display: block; margin-top: 16px; font-size: 14px; font-weight: 700; color: var(--ink); }
+  #zly-cs-grid .cs-card:hover .cs-link { color: var(--barn); }
+  @media (max-width: 900px) { #zly-cs-grid .sec { padding: 16px 20px 60px; } #zly-cs-grid .cs-grid { grid-template-columns: 1fr; } }
+
+  /* ===== final cta ===== */
+  #zly-cs-cta { --paper: #faf3e7; --ink: #1b2430; --barn: #b5482d; --violet: #6c5ce7; font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); }
+  #zly-cs-cta * { box-sizing: border-box; margin: 0; padding: 0; }
+  #zly-cs-cta .sec { padding: 0 24px 96px; max-width: 1160px; margin: 0 auto; }
+  #zly-cs-cta h2 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; }
+  #zly-cs-cta .cta-row { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+  #zly-cs-cta .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  #zly-cs-cta .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+  #zly-cs-cta .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+  #zly-cs-cta .btn-outline { background: transparent; color: #faf3e7; border: 2px solid #faf3e7; }
+  #zly-cs-cta .btn-outline:hover { background: #faf3e7; color: var(--ink); }
+  #zly-cs-cta .final { background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center; position: relative; overflow: hidden; }
+  #zly-cs-cta .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+  #zly-cs-cta .final > * { position: relative; }
+  #zly-cs-cta .final h2 { color: var(--paper); font-size: clamp(27px, 3.2vw, 36px); margin-bottom: 14px; }
+  #zly-cs-cta .final p { color: #c7d0d6; max-width: 520px; margin: 0 auto 28px; line-height: 1.65; }
+  #zly-cs-cta .final .note { font-size: 13px; color: rgba(244,237,224,0.55); margin: 16px 0 0; }
+  @media (max-width: 900px) { #zly-cs-cta .sec { padding: 0 20px 64px; } #zly-cs-cta .final { padding: 48px 28px; } }
+  @media (max-width: 480px) { #zly-cs-cta .final { padding: 40px 22px; border-radius: 12px; } #zly-cs-cta .cta-row { flex-direction: column; align-items: stretch; } #zly-cs-cta .btn { justify-content: center; } }
+</style>
+
+<!-- HERO -->
+<div id="zly-cs-hero">
+  <section class="hero">
+    <span class="tag">client outcomes</span>
+    <h1>Results, with the numbers attached.</h1>
+    <p class="sub">Every engagement starts with a baseline and ends with a measurement. These are the ones clients have agreed to let us share: what the business looked like before, what we built, and what changed.</p>
+  </section>
+</div>
+
+<!-- HOW WE MEASURE -->
+<div id="zly-cs-measure">
+  <section class="sec">
+    <div class="strip">
+      <div class="item"><h3>A baseline, taken first</h3><p>We record the number before we touch anything, so the result is a comparison, not a claim.</p></div>
+      <div class="item"><h3>One primary metric</h3><p>Each case reports the single figure the engagement was scoped to move: hours, leads, revenue, or cost per lead.</p></div>
+      <div class="item"><h3>Client-approved</h3><p>Nothing is published without the owner's sign-off on the figures and the description.</p></div>
+    </div>
+  </section>
+</div>
+
+<!--
+GRID
+HOW TO ADD A NEW CASE STUDY:
+1. Fill out tools/case-study-generator.html to build the case study's own page.
+2. Copy the "Grid card" output and paste it between the CASE STUDY CARDS START/END markers.
+3. The two example cards below are placeholders. Delete or replace them before publishing.
+   (Optional: keep the .cs-spark block and .cs-did line in your generated cards; both are decorative.)
+-->
+<div id="zly-cs-grid">
+  <section class="sec">
+    <div class="cs-grid">
+
+      <!-- CASE STUDY CARDS START — paste new cards anywhere above the END marker -->
+
+      <a class="cs-card" href="#">
+        <span class="cs-tag">example · local coffee shop</span>
+        <h3>Example Co.</h3>
+        <p class="cs-headline">Online orders rose 40% in six weeks after a rebuilt ordering page and an automated re-order reminder. (Replace this card with a real one, or delete it.)</p>
+        <p class="cs-did"><strong>What we did:</strong> web design, automation</p>
+        <div class="cs-spark"><svg viewBox="0 0 280 44" preserveAspectRatio="none" aria-hidden="true"><path d="M0 34 L40 32 L80 33 L120 28 L160 22 L200 16 L240 12 L280 8" stroke="#6c5ce7" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M0 34 L40 32 L80 33 L120 28 L160 22 L200 16 L240 12 L280 8 L280 44 L0 44 Z" fill="#6c5ce7" opacity="0.1"/></svg></div>
+        <div class="cs-stat"><span class="num">+40%</span><span class="label">online orders, six weeks</span></div>
+        <span class="cs-link">Read the case study &rarr;</span>
+      </a>
+
+      <a class="cs-card" href="#">
+        <span class="cs-tag">example · home services</span>
+        <h3>Sample Business</h3>
+        <p class="cs-headline">Three hours a week returned to the owner by automating lead follow-up and invoice reminders. (Replace this card with a real one, or delete it.)</p>
+        <p class="cs-did"><strong>What we did:</strong> automation</p>
+        <div class="cs-spark"><svg viewBox="0 0 280 44" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 L40 12 L80 14 L120 20 L160 26 L200 30 L240 34 L280 36" stroke="#7a8b69" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M0 10 L40 12 L80 14 L120 20 L160 26 L200 30 L240 34 L280 36 L280 44 L0 44 Z" fill="#7a8b69" opacity="0.12"/></svg></div>
+        <div class="cs-stat"><span class="num">3 hrs/wk</span><span class="label">of manual follow-up removed</span></div>
+        <span class="cs-link">Read the case study &rarr;</span>
+      </a>
+
+      <!-- CASE STUDY CARDS END -->
+
+    </div>
+  </section>
+</div>
+
+<!-- FINAL CTA -->
+<div id="zly-cs-cta">
+  <section class="sec">
+    <div class="final">
+      <h2>Your business could be the next one on this page.</h2>
+      <p>Tell us where you are and what you'd like to change. Within two business days you'll have a written recommendation, the metric we'd measure it against, and a fixed price.</p>
+      <div class="cta-row">
+        <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get your plan</a>
+        <a href="https://calendly.com/zoley/free-30-min-discovery-call" class="btn btn-outline">Book a 30-minute call</a>
+      </div>
+      <p class="note">No obligation. The recommendation is yours to keep either way.</p>
+    </div>
+  </section>
+</div>

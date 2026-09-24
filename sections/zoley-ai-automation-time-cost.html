@@ -1,0 +1,43 @@
+<!--
+ZOLEY — AI & AUTOMATION PAGE — TIME COST SECTION
+-->
+
+<div id="zly-ai-time">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-ai-time {
+      --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-ai-time * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-ai-time .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-ai-time h2 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-ai-time p { color: var(--ink-soft); line-height: 1.65; }
+
+    #zly-ai-time .time-band { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    #zly-ai-time .time-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; align-items: center; }
+    #zly-ai-time .time-stat { font-family: 'Newsreader', serif; font-size: clamp(56px, 7vw, 84px); font-weight: 600; line-height: 1; color: var(--ink); }
+    #zly-ai-time .time-stat span { font-size: 16px; color: var(--ink-soft); font-family: 'DM Sans', sans-serif; display: block; margin-top: 10px; font-weight: 500; }
+    #zly-ai-time .time-grid h2 { font-size: clamp(24px, 2.8vw, 32px); }
+
+    @media (max-width: 900px) {
+      #zly-ai-time .time-grid { grid-template-columns: 1fr; gap: 30px; }
+      #zly-ai-time .sec { padding: 60px 20px; }
+    }
+    @media (max-width: 480px) {
+      #zly-ai-time .time-stat { font-size: clamp(48px, 16vw, 64px); }
+    }
+  </style>
+
+  <section class="sec time-band">
+    <div class="time-grid">
+      <div class="time-stat">20+<span>hours a week, gone to manual work</span></div>
+      <div>
+        <h2>Scheduling. Emails. Data entry. Follow-ups.</h2>
+        <p style="margin-top: 14px;">That's where most of your week disappears, while tools that could answer customer questions, draft content, or surface real insight sit unused. We close that gap so you spend your time on the business, not the busywork.</p>
+      </div>
+    </div>
+  </section>
+</div>

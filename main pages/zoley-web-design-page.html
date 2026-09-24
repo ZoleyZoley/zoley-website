@@ -1,0 +1,300 @@
+<!--
+ZOLEY — WEB DEVELOPMENT & DESIGN PAGE
+7-section template: Hero / Time Cost / What We Do / Current State (color break) / How We Do It / Case Study / Final CTA
+Scoped under #zly-web-page. Drop into a Squarespace Code Block on /web-design.
+Mirrors zoley-digital-advertising-page.html section-for-section — same family as the AI/Automation pages.
+
+CASE STUDY VISUAL: the .case-study-media block below has a placeholder <span>.
+Replace it with an <img src="..." alt="..."> of the actual project (screenshot, before/after, etc.) when ready.
+-->
+
+<div id="zly-web-page">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-web-page {
+      --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef;
+      --ink: #1b2430; --ink-soft: #5c6b76;
+      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-web-page * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-web-page .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-web-page h1, #zly-web-page h2, #zly-web-page h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-web-page p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-web-page .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: var(--barn); }
+
+    /* BUTTONS */
+    #zly-web-page .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-web-page .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-web-page .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-web-page .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    #zly-web-page .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+    #zly-web-page .btn-outline { background: transparent; color: #fff9ef; border: 2px solid var(--barn); }
+    #zly-web-page .btn-outline:hover { background: var(--barn); }
+
+    /* 1. HERO */
+    #zly-web-page .hero { padding: 108px 24px 72px; max-width: 900px; margin: 0 auto; text-align: center; }
+    #zly-web-page .hero h1 { font-size: clamp(34px, 4.6vw, 54px); }
+    #zly-web-page .hero p.sub { font-size: 18.5px; max-width: 540px; margin: 20px auto 30px; }
+
+    /* SECTION HEADERS (shared by 2, 4, 6) */
+    #zly-web-page .process-header { text-align: center; margin-bottom: 40px; }
+    #zly-web-page .process-header h2 { font-size: clamp(30px, 3.6vw, 40px); max-width: 640px; margin: 0 auto; }
+    #zly-web-page .process-header .process-sub { font-size: 15.5px; max-width: 560px; margin: 12px auto 0; }
+
+    /* SIGNS YOUR WEBSITE IS WORKING AGAINST YOU (featured) */
+    #zly-web-page .signs-band { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    #zly-web-page .signs-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 50px; align-items: start; }
+    #zly-web-page .signs-grid h2 { font-size: clamp(26px, 3vw, 36px); max-width: 380px; }
+    #zly-web-page .signs-list { list-style: none; }
+    #zly-web-page .signs-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+    #zly-web-page .signs-item:last-child { border-bottom: none; }
+    #zly-web-page .signs-num { font-family: 'Newsreader', serif; font-size: 15px; color: var(--barn); font-weight: 600; flex-shrink: 0; width: 28px; }
+    #zly-web-page .signs-item h3 { font-size: 17px; margin-bottom: 4px; }
+    #zly-web-page .signs-item p { font-size: 14.5px; }
+
+    /* TRACKING & METRICS (placeholder — content pending) */
+    #zly-web-page .tracking-placeholder { border: 1.5px dashed var(--border); border-radius: 14px; padding: 44px; text-align: center; color: var(--ink-soft); font-size: 14.5px; max-width: 760px; margin: 0 auto; }
+
+    /* PINNED TESTIMONIAL */
+    #zly-web-page .pin-wrap { display: flex; justify-content: center; padding: 0 24px 20px; }
+    #zly-web-page .pin-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 4px;
+      max-width: 620px; padding: 36px 40px; position: relative; transform: rotate(-1deg);
+      box-shadow: 0 12px 24px rgba(27,36,48,0.10);
+    }
+    #zly-web-page .pin-card::before {
+      content: ''; position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      width: 18px; height: 18px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--barn), var(--violet));
+      box-shadow: 0 2px 3px rgba(0,0,0,0.25);
+    }
+    #zly-web-page .pin-card p.quote { font-family: 'Newsreader', serif; font-style: italic; font-size: 20px; color: var(--ink); margin-bottom: 12px; }
+    #zly-web-page .pin-card span { font-family: 'Caveat', cursive; font-size: 20px; color: var(--barn); font-weight: 700; }
+
+    /* 2. TIME COST */
+    #zly-web-page .time-band { padding: 70px 24px; }
+    #zly-web-page .time-card { max-width: 1160px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 56px; box-shadow: 0 18px 40px -20px rgba(27,36,48,0.28); position: relative; overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #zly-web-page .time-card:hover { transform: translateY(-6px); box-shadow: 0 24px 48px -20px rgba(27,36,48,0.32); }
+    #zly-web-page .time-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--barn), var(--marigold)); }
+    #zly-web-page .time-eyebrow { display: block; font-size: 12.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--barn); margin-bottom: 14px; }
+    #zly-web-page .time-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; align-items: center; }
+    #zly-web-page .time-stat { font-family: 'Newsreader', serif; font-size: clamp(56px, 7vw, 84px); font-weight: 600; line-height: 1; color: var(--barn); text-shadow: 0 2px 0 rgba(181,72,45,0.12); }
+    #zly-web-page .time-stat span { font-size: 16px; color: var(--ink-soft); font-family: 'DM Sans', sans-serif; display: block; margin-top: 12px; font-weight: 600; }
+    #zly-web-page .time-grid h2 { font-size: clamp(30px, 3.4vw, 38px); }
+
+    /* CARD GRID (used in section 3) */
+    #zly-web-page .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+    #zly-web-page .process-grid--3col { grid-template-columns: repeat(3, 1fr); }
+    #zly-web-page .process-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 24px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #zly-web-page .process-card:hover { transform: translateY(-6px); box-shadow: 0 18px 32px -16px rgba(27,36,48,0.28); }
+    #zly-web-page .pc-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    #zly-web-page .pc-num { flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 13px; line-height: 1; display: flex; align-items: center; justify-content: center; }
+    #zly-web-page .process-card h3 { font-size: 16.5px; }
+    #zly-web-page .process-card p { font-size: 13.5px; }
+
+    /* VERTICAL LIST (used in section 5) */
+    #zly-web-page .wd-list { max-width: 760px; margin: 0 auto; }
+    #zly-web-page .wd-row { display: flex; gap: 22px; align-items: flex-start; padding: 26px 0; border-bottom: 1px solid var(--border); }
+    #zly-web-page .wd-row:last-of-type { border-bottom: none; }
+    #zly-web-page .wd-num { flex: 0 0 auto; width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--blue)); color: #fff9ef; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 16px; line-height: 1; display: flex; align-items: center; justify-content: center; }
+    #zly-web-page .wd-row h3 { font-size: 19px; margin-bottom: 6px; }
+    #zly-web-page .wd-row p { font-size: 14.5px; }
+    #zly-web-page .wd-cta { text-align: center; margin-top: 36px; }
+
+    /* 4. CURRENT STATE — full-bleed dark band, color breakup */
+    #zly-web-page .stat-band { background: var(--ink); padding: 90px 24px; position: relative; overflow: hidden; }
+    #zly-web-page .stat-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(181,72,45,0.2), transparent 55%), radial-gradient(circle at 85% 80%, rgba(78,161,255,0.18), transparent 55%); }
+    #zly-web-page .stat-band .inner { max-width: 1160px; margin: 0 auto; position: relative; }
+    #zly-web-page .stat-band .process-header h2 { color: var(--paper); }
+    #zly-web-page .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+    #zly-web-page .stat-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 32px 22px; transform: rotate(var(--r, 0deg)); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #zly-web-page .stat-card:nth-child(1) { --r: -1deg; }
+    #zly-web-page .stat-card:nth-child(2) { --r: 1deg; }
+    #zly-web-page .stat-card:nth-child(3) { --r: -0.5deg; }
+    #zly-web-page .stat-card:hover { transform: rotate(var(--r, 0deg)) translateY(-6px); box-shadow: 0 16px 30px -18px rgba(0,0,0,0.5); }
+    #zly-web-page .stat-card .num { font-family: 'Newsreader', serif; font-size: clamp(36px, 4vw, 48px); font-weight: 600; color: #fff9ef; -webkit-text-stroke: 1.5px var(--barn); paint-order: stroke fill; }
+    #zly-web-page .stat-card p { font-size: 14px; margin-top: 8px; color: #c7d0d6; }
+    #zly-web-page .stat-close { text-align: center; max-width: 620px; margin: 40px auto 0; font-size: 16.5px; color: var(--paper); font-family: 'Newsreader', serif; font-style: italic; line-height: 1.5; }
+
+    /* 6. CASE STUDY */
+    #zly-web-page .case-study { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 40px; box-shadow: 0 18px 40px -24px rgba(27,36,48,0.25); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #zly-web-page .case-study:hover { transform: translateY(-6px); box-shadow: 0 24px 48px -20px rgba(27,36,48,0.3); }
+    #zly-web-page .case-study-media { width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; margin-bottom: 32px; background: linear-gradient(135deg, rgba(122,139,105,0.18), rgba(78,161,255,0.18)); display: flex; align-items: center; justify-content: center; text-align: center; padding: 24px; }
+    #zly-web-page .case-study-media span { font-size: 13.5px; color: var(--ink-soft); font-style: italic; }
+    #zly-web-page .case-study-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    #zly-web-page .case-study-body { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 44px; align-items: center; }
+    #zly-web-page .case-study .cs-stat { font-family: 'Newsreader', serif; font-weight: 600; font-size: clamp(44px, 5vw, 60px); color: var(--barn); line-height: 1; }
+    #zly-web-page .case-study .cs-stat-label { font-size: 14px; color: var(--ink-soft); margin-top: 8px; }
+    #zly-web-page .case-study h3 { font-size: 22px; margin-bottom: 10px; }
+    #zly-web-page .case-study p { font-size: 15px; margin-bottom: 18px; }
+    #zly-web-page .case-study .cs-link { font-weight: 700; color: var(--barn); text-decoration: none; border-bottom: 2px solid var(--barn); padding-bottom: 2px; }
+
+    /* 7. FINAL CTA */
+    #zly-web-page .final { background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center; margin: 0 24px; max-width: 1112px; margin-left: auto; margin-right: auto; position: relative; overflow: hidden; }
+    #zly-web-page .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+    #zly-web-page .final > * { position: relative; }
+    #zly-web-page .final h2 { color: var(--paper); font-size: clamp(27px, 3.2vw, 36px); margin-bottom: 14px; }
+    #zly-web-page .final p { color: #c7d0d6; max-width: 460px; margin: 0 auto 26px; }
+    #zly-web-page .final .btn-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    @media (max-width: 900px) {
+      #zly-web-page .stat-strip { grid-template-columns: 1fr; }
+      #zly-web-page .process-grid { grid-template-columns: repeat(2, 1fr); }
+      #zly-web-page .case-study-body { grid-template-columns: 1fr; text-align: center; }
+      #zly-web-page .signs-grid { grid-template-columns: 1fr; }
+      #zly-web-page .sec { padding: 60px 20px; }
+      #zly-web-page .time-band { padding: 40px 20px; }
+      #zly-web-page .time-card { padding: 32px 24px; }
+      #zly-web-page .stat-band { padding: 60px 20px; }
+    }
+    @media (max-width: 560px) {
+      #zly-web-page .process-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <!-- 1. HERO -->
+  <section class="hero">
+    <h1>A website that finally works as hard as you do.</h1>
+    <p class="sub">Modern design, fast load times, and messaging that converts — so your site starts earning trust instead of losing it.</p>
+    <a href="https://calendly.com/zoley/free-30-min-discovery-call" class="btn btn-primary">Book a free call</a>
+  </section>
+
+  <!-- 2. TIME COST -->
+  <section class="time-band">
+    <div class="time-card">
+      <div class="time-grid">
+        <div class="time-stat">3 sec<span>is all it takes to lose a visitor for good</span></div>
+        <div>
+          <span class="time-eyebrow">The cost of a slow, dated site</span>
+          <h2>Outdated. Slow. Forgettable.</h2>
+          <p style="margin-top: 14px;">That's how most visitors describe a site that hasn't been touched in years, while competitors with fast, modern sites earn the trust — and the sale — instead. We close that gap so your site starts working for you, not against you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. WHAT WE DO -->
+  <section class="sec">
+    <div class="process-header"><h2>A closer look at how we help.</h2></div>
+    <div class="process-grid process-grid--3col">
+      <div class="process-card"><div class="pc-head"><span class="pc-num">1</span><h3>Website Redesign</h3></div><p>A modern site that loads fast and looks like it belongs in this decade.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">2</span><h3>Brand Messaging</h3></div><p>Clear voice and message so visitors know exactly what you do and why it matters.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">3</span><h3>SEO Foundations</h3></div><p>Get found by the people already searching for what you offer.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">4</span><h3>Mobile Optimization</h3></div><p>A site that works as well on a phone as it does on a desktop.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">5</span><h3>Conversion-Focused Design</h3></div><p>Pages built to turn visitors into leads, not just look nice.</p></div>
+      <div class="process-card"><div class="pc-head"><span class="pc-num">6</span><h3>Ongoing Site Care</h3></div><p>Updates and fixes so your site never falls behind again.</p></div>
+    </div>
+    <div class="wd-cta"><a href="#" class="btn btn-ghost">Learn more about web design</a></div>
+  </section>
+
+  <!-- 4. CURRENT STATE (FOMO, color break) -->
+  <section class="stat-band">
+    <div class="inner">
+      <div class="process-header">
+        <span class="tag" style="display:block; text-align:center;">the bigger picture</span>
+        <h2>Your website is either building trust or costing you customers.</h2>
+      </div>
+      <div class="stat-strip">
+        <div class="stat-card"><div class="num">95%</div><p>of consumers are less likely to return after a poor experience</p></div>
+        <div class="stat-card"><div class="num">88%</div><p>of users leave a site that takes longer than 3 seconds to load</p></div>
+        <div class="stat-card"><div class="num">53%</div><p>of customers read reviews before they ever buy</p></div>
+      </div>
+      <p class="stat-close">"First impressions happen online now, and most businesses only get one."</p>
+    </div>
+  </section>
+
+  <!-- FEATURED: SIGNS YOUR WEBSITE IS WORKING AGAINST YOU -->
+  <section class="sec signs-band">
+    <div class="signs-grid">
+      <div>
+        <span class="tag">featured</span>
+        <h2>Signs your website is working against you, not for you.</h2>
+      </div>
+      <ul class="signs-list">
+        <li class="signs-item">
+          <span class="signs-num">01</span>
+          <div><h3>It was built years ago and it shows.</h3><p>An outdated design makes visitors wonder if you're even still in business.</p></div>
+        </li>
+        <li class="signs-item">
+          <span class="signs-num">02</span>
+          <div><h3>You can't touch it without calling someone.</h3><p>Every small edit turns into a support ticket, a wait, and sometimes a bill.</p></div>
+        </li>
+        <li class="signs-item">
+          <span class="signs-num">03</span>
+          <div><h3>It's slow, or it breaks on a phone.</h3><p>Most of your visitors are on mobile. If it stutters there, they leave.</p></div>
+        </li>
+        <li class="signs-item">
+          <span class="signs-num">04</span>
+          <div><h3>It doesn't say what you actually do.</h3><p>Confusing layout and copy send people right back to Google.</p></div>
+        </li>
+        <li class="signs-item">
+          <span class="signs-num">05</span>
+          <div><h3>There's no clear next step for a visitor.</h3><p>No obvious way to book, buy, or reach you means business walks away.</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. HOW WE DO IT -->
+  <section class="sec">
+    <div class="process-header"><h2>How we build your site.</h2><p class="process-sub">Every build starts with an audit of your current site and goals, so what we design actually fits how your customers decide to buy.</p></div>
+    <div class="wd-list">
+      <div class="wd-row"><div class="wd-num">1</div><div><h3>Audit</h3><p>Find what's actually costing you visitors and customers.</p></div></div>
+      <div class="wd-row"><div class="wd-num">2</div><div><h3>Design &amp; Build</h3><p>A site built around how people actually decide to buy.</p></div></div>
+      <div class="wd-row"><div class="wd-num">3</div><div><h3>Launch &amp; Connect</h3><p>Wired into your tools, tracking, and the rest of your systems.</p></div></div>
+      <div class="wd-row"><div class="wd-num">4</div><div><h3>Optimize</h3><p>Keep it fast, current, and converting as you grow.</p></div></div>
+    </div>
+    <div class="wd-cta"><a href="#" class="btn btn-ghost">Get started</a></div>
+  </section>
+
+  <!-- 6. CASE STUDY -->
+  <section class="sec">
+    <div class="process-header">
+      <span class="tag" style="display:block; text-align:center;">case study</span>
+      <h2>See it in action.</h2>
+    </div>
+    <div class="case-study">
+      <div class="case-study-media"><span>Project visual — swap this placeholder for a screenshot or before/after of the work</span></div>
+      <div class="case-study-body">
+        <div>
+          <div class="cs-stat">2x</div>
+          <div class="cs-stat-label">more leads from the same traffic</div>
+        </div>
+        <div>
+          <h3>A local business, running on a website years out of date.</h3>
+          <p>The old site was slow, cluttered, and impossible to update. We rebuilt it around a clear message and a faster, mobile-first experience — and it started converting visitors instead of losing them.</p>
+          <a href="#" class="cs-link">Read the case study →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEBSITE TRACKING & METRICS (content pending from client) -->
+  <section class="sec">
+    <div class="process-header"><h2>Website tracking and understanding your metrics.</h2></div>
+    <div class="tracking-placeholder">Content pending — Ryan to supply copy for this section (tracking setup, what we measure, and how it's reported).</div>
+  </section>
+
+  <!-- PINNED TESTIMONIAL -->
+  <div class="pin-wrap">
+    <div class="pin-card">
+      <p class="quote">"Zoley enhanced our real estate website so potential buyers stay within our ecosystem. It led to a 40% increase in interest in our listings."</p>
+      <span>&mdash; Rob G., No Limit Real Estate, LLC.</span>
+    </div>
+  </div>
+
+  <!-- 7. FINAL CTA -->
+  <section class="sec" style="padding-bottom: 96px;">
+    <div class="final">
+      <h2>Ready to see what's holding your site back?</h2>
+      <p>A free call is the fastest way to find out what's actually costing you visitors.</p>
+      <div class="btn-row">
+        <a href="https://calendly.com/zoley/free-30-min-discovery-call" class="btn btn-primary">Book a free call</a>
+        <a href="#" class="btn btn-outline">Start an intake form</a>
+      </div>
+    </div>
+  </section>
+</div>

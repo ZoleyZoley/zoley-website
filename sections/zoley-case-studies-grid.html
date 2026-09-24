@@ -1,0 +1,74 @@
+<!--
+ZOLEY — CASE STUDIES PAGE — GRID SECTION
+
+HOW TO ADD A NEW CASE STUDY TO THIS GRID:
+1. Fill out tools/case-study-generator.html as usual to build the case study's own page.
+2. In that same tool, copy the "Grid card" output (separate from the full page HTML).
+3. Paste the card snippet anywhere between the CASE STUDY CARDS START/END markers below,
+   right inside this Code Block on Squarespace. Order doesn't matter — it's a CSS grid.
+4. The two example cards below are placeholders — delete them once you have real ones,
+   or leave one in as a visual reference for the format.
+-->
+
+<div id="zly-cs-grid">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-cs-grid {
+      --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+      --barn: #b5482d; --violet: #6c5ce7; --blue: #4ea1ff; --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-cs-grid * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-cs-grid .sec { padding: 20px 24px 90px; max-width: 1160px; margin: 0 auto; }
+    #zly-cs-grid h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; color: var(--ink); }
+
+    #zly-cs-grid .cs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 26px; }
+    #zly-cs-grid .cs-card {
+      display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 28px; position: relative; overflow: hidden;
+      text-decoration: none; color: inherit; transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    #zly-cs-grid .cs-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(27,36,48,0.10); }
+    #zly-cs-grid .cs-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--barn), var(--violet), var(--blue)); }
+    #zly-cs-grid .cs-tag { font-size: 12.5px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--barn); font-weight: 700; margin-bottom: 10px; }
+    #zly-cs-grid .cs-card h3 { font-size: 20px; margin-bottom: 8px; }
+    #zly-cs-grid .cs-headline { font-size: 14.5px; color: var(--ink-soft); line-height: 1.5; margin-bottom: 18px; }
+    #zly-cs-grid .cs-stat { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border); }
+    #zly-cs-grid .cs-stat .num { font-family: 'Newsreader', serif; font-size: 22px; font-weight: 600; color: var(--barn); margin-right: 6px; }
+    #zly-cs-grid .cs-stat .label { font-size: 13px; color: var(--ink-soft); }
+    #zly-cs-grid .cs-link { display: block; margin-top: 16px; font-size: 14px; font-weight: 700; color: var(--ink); }
+    #zly-cs-grid .cs-card:hover .cs-link { color: var(--barn); }
+
+    @media (max-width: 900px) {
+      #zly-cs-grid .sec { padding: 16px 20px 60px; }
+      #zly-cs-grid .cs-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <section class="sec">
+    <div class="cs-grid">
+
+      <!-- CASE STUDY CARDS START — paste new cards anywhere above the END marker -->
+
+      <a class="cs-card" href="#">
+        <span class="cs-tag">example — local coffee shop</span>
+        <h3>Example Co.</h3>
+        <p class="cs-headline">A 40% jump in online orders, in six weeks. (Replace this card with a real one, or delete it.)</p>
+        <div class="cs-stat"><span class="num">40%</span><span class="label">increase in online orders</span></div>
+        <span class="cs-link">Read the case study &rarr;</span>
+      </a>
+
+      <a class="cs-card" href="#">
+        <span class="cs-tag">example — home services</span>
+        <h3>Sample Business</h3>
+        <p class="cs-headline">3 hours a week given back by automating follow-ups. (Replace this card with a real one, or delete it.)</p>
+        <div class="cs-stat"><span class="num">3 hrs/wk</span><span class="label">saved on manual follow-ups</span></div>
+        <span class="cs-link">Read the case study &rarr;</span>
+      </a>
+
+      <!-- CASE STUDY CARDS END -->
+
+    </div>
+  </section>
+</div>

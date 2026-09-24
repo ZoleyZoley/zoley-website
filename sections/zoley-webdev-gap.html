@@ -1,0 +1,64 @@
+<!--
+ZOLEY — WEB DEVELOPMENT & DESIGN PAGE — GAP SECTION (the problem list)
+-->
+
+<div id="zly-webdev-gap">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+    #zly-webdev-gap {
+      --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+      --barn: #b5482d; --border: rgba(27,36,48,0.14);
+      font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    }
+    #zly-webdev-gap * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-webdev-gap .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+    #zly-webdev-gap h2, #zly-webdev-gap h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-webdev-gap p { color: var(--ink-soft); line-height: 1.65; }
+
+    #zly-webdev-gap .gap-band { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    #zly-webdev-gap .gap-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 50px; align-items: start; }
+    #zly-webdev-gap .gap-grid h2 { font-size: clamp(26px, 3vw, 36px); max-width: 380px; }
+    #zly-webdev-gap .gap-list { list-style: none; }
+    #zly-webdev-gap .gap-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+    #zly-webdev-gap .gap-item:last-child { border-bottom: none; }
+    #zly-webdev-gap .gap-num { font-family: 'Newsreader', serif; font-size: 15px; color: var(--barn); font-weight: 600; flex-shrink: 0; width: 28px; }
+    #zly-webdev-gap .gap-item h3 { font-size: 17px; margin-bottom: 4px; }
+    #zly-webdev-gap .gap-item p { font-size: 14.5px; }
+
+    @media (max-width: 900px) {
+      #zly-webdev-gap .gap-grid { grid-template-columns: 1fr; }
+      #zly-webdev-gap .sec { padding: 60px 20px; }
+    }
+  </style>
+
+  <section class="sec gap-band">
+    <div class="gap-grid">
+      <div>
+        <h2>Signs your website is working against you, not for you.</h2>
+      </div>
+      <ul class="gap-list">
+        <li class="gap-item">
+          <span class="gap-num">01</span>
+          <div><h3>It was built years ago and it shows.</h3><p>An outdated design makes visitors wonder if you're even still in business.</p></div>
+        </li>
+        <li class="gap-item">
+          <span class="gap-num">02</span>
+          <div><h3>You can't touch it without calling someone.</h3><p>Every small edit turns into a support ticket, a wait, and sometimes a bill.</p></div>
+        </li>
+        <li class="gap-item">
+          <span class="gap-num">03</span>
+          <div><h3>It's slow, or it breaks on a phone.</h3><p>Most of your visitors are on mobile. If it stutters there, they leave.</p></div>
+        </li>
+        <li class="gap-item">
+          <span class="gap-num">04</span>
+          <div><h3>It doesn't say what you actually do.</h3><p>Confusing layout and copy send people right back to Google.</p></div>
+        </li>
+        <li class="gap-item">
+          <span class="gap-num">05</span>
+          <div><h3>There's no clear next step for a visitor.</h3><p>No obvious way to book, buy, or reach you means business walks away.</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
