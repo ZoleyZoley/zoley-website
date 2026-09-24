@@ -92,7 +92,20 @@ def tokenize(css):
     toks, i, n, buf = [], 0, len(css), ""
     while i < n:
         if css[i] == '@' and css[i:].lstrip('@').startswith('import'):
-            j = css.index(';', i); toks.append(('import', None, None, css[i:j+1])); i = j+1; buf = ""; continue
+            # Find the ';' that ends the at-rule - not one inside url(...) or a
+            # quoted string. Google Fonts URLs contain ';' between weights, and
+            # cutting there leaves an unterminated string that kills the sheet.
+            j, depth, quote = i, 0, None
+            while j < n:
+                ch = css[j]
+                if quote:
+                    if ch == quote and css[j-1] != '\\': quote = None
+                elif ch in '"\'': quote = ch
+                elif ch == '(': depth += 1
+                elif ch == ')': depth -= 1
+                elif ch == ';' and depth == 0: break
+                j += 1
+            toks.append(('import', None, None, css[i:j+1])); i = j + 1; buf = ""; continue
         if css[i] == '{':
             sel, depth, j = buf.strip(), 1, i+1
             while depth:
