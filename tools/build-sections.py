@@ -42,14 +42,16 @@ PAGES = {
  "zoley-quickstart.v2.html": ("quickstart", None, ["hero","form","next-steps"]),
  "zoley-build.v2.html": ("build", None, ["hero","lead-magnet","services","validation","final-cta"]),
  "zoley-case-studies.v2.html": ("case-studies", None, ["hero","how-we-measure","grid","final-cta"]),
+ "zoley-tools-guides.v2.html": ("tools-guides", None, ["hero","tools","guides","final-cta"]),
 }
 
 PAGE_URLS = {"homepage":"/","ai":"/ai","automation":"/automation","advertising":"/digital-advertising",
  "consulting":"/strategic-consulting","web-design":"/web-design","about":"/about","pricing":"/pricing",
- "quickstart":"/find-your-next-best-business-move","build":"/build","case-studies":"/case-studies"}
+ "quickstart":"/find-your-next-best-business-move","build":"/build","case-studies":"/case-studies",
+ "tools-guides":"/tools-and-guides"}
 
 ORDER = ["homepage","ai","automation","advertising","consulting","web-design",
-         "about","pricing","quickstart","build","case-studies"]
+         "about","pricing","quickstart","build","case-studies","tools-guides"]
 
 DEF_RE = re.compile(
     r'<(linearGradient|radialGradient|filter|clipPath|mask|pattern|symbol)\b[^>]*\sid="([^"]+)"[^>]*?(?:/>|>.*?</\1>)', re.S)

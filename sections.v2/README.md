@@ -322,3 +322,25 @@ Or place sections individually:
 <div data-zoley-section="case-studies/03-grid"></div>
 <div data-zoley-section="case-studies/04-final-cta"></div>
 ```
+
+## tools-guides -> `/tools-and-guides`
+
+Source: `main pages/zoley-tools-guides.v2.html` - 4 sections
+
+| # | Section | File | Wrapper id |
+|---|---|---|---|
+| 1 | Hero | `tools-guides/01-hero.html` | `#zly-tg-hero` |
+| 2 | Tools | `tools-guides/02-tools.html` | `#zly-tg-tools` |
+| 3 | Guides | `tools-guides/03-guides.html` | `#zly-tg-guides` |
+| 4 | Final CTA | `tools-guides/04-final-cta.html` | `#zly-tg-cta` |
+
+Whole page: `<div data-zoley-page="tools-guides"></div>`
+
+Or place sections individually:
+
+```html
+<div data-zoley-section="tools-guides/01-hero"></div>
+<div data-zoley-section="tools-guides/02-tools"></div>
+<div data-zoley-section="tools-guides/03-guides"></div>
+<div data-zoley-section="tools-guides/04-final-cta"></div>
+```

@@ -1,0 +1,147 @@
+<!--
+ZOLEY - tools-guides - Tools
+Generated from main pages/zoley-tools-guides.v2.html by tools/build-sections.py
+Scoped under #zly-tg-tools. Self-contained: paste into a Squarespace Code Block as-is.
+-->
+
+<div id="zly-tg-tools">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+    /* ===== tools ===== */
+    #zly-tg-tools {
+        --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+        --sage: #7a8b69; --barn: #b5482d; --violet: #6c5ce7; --blue: #4ea1ff; --marigold: #e3a72e;
+        --border: rgba(27,36,48,0.14);
+        font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+        /* the hero's jump links land here; clears a fixed Squarespace header */
+        scroll-margin-top: 90px;
+      }
+    #zly-tg-tools * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-tg-tools h2, #zly-tg-tools h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-tg-tools p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-tg-tools .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); color: var(--barn); }
+    #zly-tg-tools .sec { padding: 40px 24px 80px; max-width: 1160px; margin: 0 auto; }
+    #zly-tg-tools .sec-head { text-align: center; max-width: 640px; margin: 0 auto 40px; }
+    #zly-tg-tools .sec-head h2 { font-size: clamp(30px, 3.6vw, 40px); margin-top: 6px; }
+    #zly-tg-tools .sec-head p { font-size: 16px; margin-top: 14px; }
+    #zly-tg-tools .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    #zly-tg-tools .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+    #zly-tg-tools .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--zly-accent, var(--barn)); }
+    #zly-tg-tools .card-art { background: var(--paper-2); border: 1px solid var(--border); border-radius: 10px; padding: 14px; margin-bottom: 18px; }
+    #zly-tg-tools .card-art svg { width: 100%; height: auto; display: block; }
+    #zly-tg-tools .card h3 { font-size: 20px; }
+    #zly-tg-tools .card p.desc { font-size: 14.5px; margin-top: 8px; }
+    #zly-tg-tools .whats-in { list-style: none; margin: 16px 0 0; padding: 0; }
+    #zly-tg-tools .whats-in li { font-size: 13.5px; color: var(--ink-soft); padding-left: 20px; position: relative; margin-bottom: 6px; line-height: 1.5; }
+    #zly-tg-tools .whats-in li::before { content: '\2713'; position: absolute; left: 0; color: var(--sage); font-weight: 700; }
+    #zly-tg-tools .card-foot { margin-top: auto; padding-top: 20px; }
+    #zly-tg-tools .meta { display: flex; gap: 8px; align-items: center; font-size: 12px; color: var(--ink-soft); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 12px; }
+    #zly-tg-tools .meta span { background: var(--paper-2); border-radius: 100px; padding: 4px 10px; }
+    #zly-tg-tools .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; width: 100%; padding: 14px 22px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-tg-tools .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-tg-tools .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-tg-tools .btn svg { width: 15px; height: 15px; flex: 0 0 auto; }
+    #zly-tg-tools .tools-note { text-align: center; font-size: 13.5px; margin-top: 30px; }
+    @media (max-width: 900px) {
+      #zly-tg-tools .grid { grid-template-columns: repeat(2, 1fr); }
+      #zly-tg-tools .sec { padding: 30px 20px 64px; }
+    }
+    @media (max-width: 560px) {
+      #zly-tg-tools .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">tools</span>
+      <h2>Code you can drop into your own site.</h2>
+      <p>Each download is a zip with the HTML, CSS and any JavaScript it needs, commented so you can change it. No attribution required, no account, no email.</p>
+    </div>
+
+    <div class="grid">
+      <!-- PLACEHOLDER TOOL 1 - replace the copy and point href at the real zip -->
+      <article class="card" style="--zly-accent: var(--violet);">
+        <div class="card-art">
+          <svg viewBox="0 0 260 110" fill="none" role="img" aria-label="Preview: a quote card pinned to a board">
+            <rect x="46" y="14" width="168" height="82" rx="6" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5" transform="rotate(-1.5 130 55)"/>
+            <circle cx="130" cy="16" r="7" fill="#6c5ce7" stroke="#1b2430" stroke-width="1.5"/>
+            <rect x="66" y="38" width="128" height="6" rx="3" fill="#1b2430" opacity="0.65"/>
+            <rect x="66" y="52" width="108" height="6" rx="3" fill="#1b2430" opacity="0.4"/>
+            <rect x="66" y="70" width="58" height="7" rx="3.5" fill="#b5482d" opacity="0.8"/>
+          </svg>
+        </div>
+        <h3>Testimonial cards</h3>
+        <p class="desc">The pinned quote card used across this site, plus the carousel that holds several of them.</p>
+        <ul class="whats-in">
+          <li>Single pinned card and a multi-card carousel</li>
+          <li>Arrows, dots and keyboard support</li>
+          <li>Respects reduced-motion settings</li>
+        </ul>
+        <div class="card-foot">
+          <div class="meta"><span>HTML + CSS + JS</span><span>Zip</span></div>
+          <a href="/s/zoley-testimonial-cards.zip" class="btn btn-primary" download>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 13h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download the zip
+          </a>
+        </div>
+      </article>
+
+      <!-- PLACEHOLDER TOOL 2 -->
+      <article class="card" style="--zly-accent: var(--barn);">
+        <div class="card-art">
+          <svg viewBox="0 0 260 110" fill="none" role="img" aria-label="Preview: a line of text being typed">
+            <rect x="26" y="34" width="208" height="42" rx="6" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <rect x="42" y="49" width="96" height="9" rx="4.5" fill="#1b2430" opacity="0.75"/>
+            <rect x="146" y="49" width="52" height="9" rx="4.5" fill="#b5482d"/>
+            <rect x="203" y="44" width="3.5" height="19" rx="1.75" fill="#b5482d"/>
+          </svg>
+        </div>
+        <h3>Typewriter text band</h3>
+        <p class="desc">The rotating line on our homepage. Types a phrase, holds it, clears it and moves to the next.</p>
+        <ul class="whats-in">
+          <li>Your own list of phrases</li>
+          <li>Holds a fixed height, so the page never jumps</li>
+          <li>Swaps phrases without typing under reduced-motion</li>
+        </ul>
+        <div class="card-foot">
+          <div class="meta"><span>HTML + CSS + JS</span><span>Zip</span></div>
+          <a href="/s/zoley-typewriter-band.zip" class="btn btn-primary" download>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 13h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download the zip
+          </a>
+        </div>
+      </article>
+
+      <!-- PLACEHOLDER TOOL 3 -->
+      <article class="card" style="--zly-accent: var(--blue);">
+        <div class="card-art">
+          <svg viewBox="0 0 260 110" fill="none" role="img" aria-label="Preview: a navigation bar with a dropdown">
+            <rect x="26" y="22" width="208" height="30" rx="6" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <rect x="40" y="33" width="30" height="7" rx="3.5" fill="#1b2430" opacity="0.7"/>
+            <rect x="80" y="33" width="38" height="7" rx="3.5" fill="#4ea1ff"/>
+            <rect x="128" y="33" width="30" height="7" rx="3.5" fill="#1b2430" opacity="0.4"/>
+            <rect x="80" y="60" width="74" height="34" rx="6" fill="#fff9ef" stroke="#1b2430" stroke-width="2"/>
+            <rect x="90" y="70" width="46" height="5" rx="2.5" fill="#1b2430" opacity="0.45"/>
+            <rect x="90" y="81" width="38" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
+          </svg>
+        </div>
+        <h3>Navigation menu</h3>
+        <p class="desc">A sticky header with a dropdown that works on touch, keyboard and mouse.</p>
+        <ul class="whats-in">
+          <li>Sticky header with a scrolled state</li>
+          <li>Dropdown and a mobile drawer</li>
+          <li>Focus handling and Escape to close</li>
+        </ul>
+        <div class="card-foot">
+          <div class="meta"><span>HTML + CSS + JS</span><span>Zip</span></div>
+          <a href="/s/zoley-navigation-menu.zip" class="btn btn-primary" download>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 13h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download the zip
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <p class="tools-note">Built something with one of these? We would like to see it. <a href="mailto:sales@zoley.io" style="color: var(--barn); font-weight: 600;">sales@zoley.io</a></p>
+  </section>
+</div>

@@ -547,5 +547,38 @@
         "defs_injected": []
       }
     ]
+  },
+  "tools-guides": {
+    "source": "zoley-tools-guides.v2.html",
+    "sections": [
+      {
+        "file": "01-hero.html",
+        "id": "zly-tg-hero",
+        "title": "Hero",
+        "key": "tools-guides/01-hero",
+        "defs_injected": []
+      },
+      {
+        "file": "02-tools.html",
+        "id": "zly-tg-tools",
+        "title": "Tools",
+        "key": "tools-guides/02-tools",
+        "defs_injected": []
+      },
+      {
+        "file": "03-guides.html",
+        "id": "zly-tg-guides",
+        "title": "Guides",
+        "key": "tools-guides/03-guides",
+        "defs_injected": []
+      },
+      {
+        "file": "04-final-cta.html",
+        "id": "zly-tg-cta",
+        "title": "Final CTA",
+        "key": "tools-guides/04-final-cta",
+        "defs_injected": []
+      }
+    ]
   }
 }

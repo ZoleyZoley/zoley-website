@@ -1,0 +1,83 @@
+<!--
+ZOLEY - tools-guides - Hero
+Generated from main pages/zoley-tools-guides.v2.html by tools/build-sections.py
+Scoped under #zly-tg-hero. Self-contained: paste into a Squarespace Code Block as-is.
+-->
+
+<div id="zly-tg-hero">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+    /* ===== hero ===== */
+    #zly-tg-hero {
+        --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+        --sage: #7a8b69; --barn: #b5482d; --violet: #6c5ce7; --blue: #4ea1ff; --marigold: #e3a72e;
+        --border: rgba(27,36,48,0.14);
+        font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+      }
+    #zly-tg-hero * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-tg-hero h1 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-tg-hero p { color: var(--ink-soft); line-height: 1.7; }
+    #zly-tg-hero .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: var(--barn); }
+    #zly-tg-hero .hero { padding: 108px 24px 56px; max-width: 900px; margin: 0 auto; text-align: center; }
+    #zly-tg-hero .hero h1 { font-size: clamp(34px, 4.6vw, 54px); }
+    #zly-tg-hero .hero p.sub { font-size: 18px; max-width: 620px; margin: 20px auto 0; }
+    #zly-tg-hero .jump-row { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 32px; }
+    #zly-tg-hero .btn { display: inline-flex; align-items: center; gap: 9px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    #zly-tg-hero .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+    #zly-tg-hero .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-tg-hero .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    #zly-tg-hero .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+    #zly-tg-hero .btn svg { width: 15px; height: 15px; flex: 0 0 auto; }
+    #zly-tg-hero .hero-note { font-size: 13.5px; margin-top: 16px; }
+    @media (max-width: 900px) {
+      #zly-tg-hero .hero { padding: 72px 20px 40px; }
+    }
+    @media (max-width: 480px) {
+      #zly-tg-hero .hero { padding-top: 56px; }
+      #zly-tg-hero .jump-row .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+
+  <section class="hero">
+    <span class="tag">free to take</span>
+    <h1>Tools and guides you can use today.</h1>
+    <p class="sub">The tools are the actual code behind pieces of this site, packaged so you can drop them into yours. The guides are what we hand clients before an engagement starts. Everything here is free.</p>
+    <div class="jump-row">
+      <a href="#zly-tg-tools" class="btn btn-primary" data-jump>
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        See all tools
+      </a>
+      <a href="#zly-tg-guides" class="btn btn-ghost" data-jump>
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        See all guides
+      </a>
+    </div>
+    <p class="hero-note">Tools download straight away. Guides ask for an email so we can send the file.</p>
+  </section>
+
+  <script>
+    (function () {
+      // The sections load one at a time, so a jump link can be clicked before its
+      // target exists. Look the target up at click time and wait briefly if needed.
+      function go(id, tries) {
+        var el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          el.setAttribute('tabindex', '-1');
+          el.focus({ preventScroll: true });
+          return;
+        }
+        if (tries > 0) setTimeout(function () { go(id, tries - 1); }, 150);
+      }
+      var links = document.querySelectorAll('#zly-tg-hero [data-jump]');
+      for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', function (e) {
+          var id = this.getAttribute('href').slice(1);
+          e.preventDefault();
+          go(id, 12);                       // roughly 1.8s of grace
+          if (history.replaceState) history.replaceState(null, '', '#' + id);
+        });
+      }
+    })();
+  </script>
+</div>

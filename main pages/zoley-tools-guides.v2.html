@@ -1,0 +1,579 @@
+<!--
+ZOLEY TOOLS & GUIDES PAGE — V2 — ONE CODE BLOCK PER SECTION
+Sections: Hero / Tools / Guides / Final CTA
+
+WHAT THIS PAGE IS FOR
+- Tools are code you give away outright. The download link goes straight to a zip;
+  there is no form in front of it.
+- Guides are gated. The download button opens a dialog asking for a name, phone and
+  email before the file is sent.
+
+ADDING A TOOL OR A GUIDE
+Every card below is a placeholder marked PLACEHOLDER. Copy one card, change the copy,
+and point its href at the real file. Nothing reads from a data file, so a card is the
+only thing you need to touch.
+
+STILL TO WIRE
+- GUIDE_ENDPOINT in the Guides section is a placeholder, like the Quick Start form.
+  Until it is set, the dialog validates and then reports that delivery is not connected.
+- Tool zips point at /s/… Squarespace file URLs that do not exist yet. Upload each zip
+  in Squarespace (Design -> Custom Files, or any file-upload field) and paste its link.
+- Guide cover art is an inline SVG placeholder. Each one has an <img> rule ready and a
+  comment showing where to swap in the real cover.
+-->
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+
+  /* ===== hero ===== */
+  #zly-tg-hero {
+    --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+    --sage: #7a8b69; --barn: #b5482d; --violet: #6c5ce7; --blue: #4ea1ff; --marigold: #e3a72e;
+    --border: rgba(27,36,48,0.14);
+    font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+  }
+  #zly-tg-hero * { box-sizing: border-box; margin: 0; padding: 0; }
+  #zly-tg-hero h1 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+  #zly-tg-hero p { color: var(--ink-soft); line-height: 1.7; }
+  #zly-tg-hero .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: var(--barn); }
+  #zly-tg-hero .hero { padding: 108px 24px 56px; max-width: 900px; margin: 0 auto; text-align: center; }
+  #zly-tg-hero .hero h1 { font-size: clamp(34px, 4.6vw, 54px); }
+  #zly-tg-hero .hero p.sub { font-size: 18px; max-width: 620px; margin: 20px auto 0; }
+  #zly-tg-hero .jump-row { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 32px; }
+  #zly-tg-hero .btn { display: inline-flex; align-items: center; gap: 9px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  #zly-tg-hero .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+  #zly-tg-hero .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+  #zly-tg-hero .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+  #zly-tg-hero .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+  #zly-tg-hero .btn svg { width: 15px; height: 15px; flex: 0 0 auto; }
+  #zly-tg-hero .hero-note { font-size: 13.5px; margin-top: 16px; }
+  @media (max-width: 900px) { #zly-tg-hero .hero { padding: 72px 20px 40px; } }
+  @media (max-width: 480px) { #zly-tg-hero .hero { padding-top: 56px; } #zly-tg-hero .jump-row .btn { width: 100%; justify-content: center; } }
+
+  /* ===== tools ===== */
+  #zly-tg-tools {
+    --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+    --sage: #7a8b69; --barn: #b5482d; --violet: #6c5ce7; --blue: #4ea1ff; --marigold: #e3a72e;
+    --border: rgba(27,36,48,0.14);
+    font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+    /* the hero's jump links land here; clears a fixed Squarespace header */
+    scroll-margin-top: 90px;
+  }
+  #zly-tg-tools * { box-sizing: border-box; margin: 0; padding: 0; }
+  #zly-tg-tools h2, #zly-tg-tools h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; color: var(--ink); }
+  #zly-tg-tools p { color: var(--ink-soft); line-height: 1.65; }
+  #zly-tg-tools .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); color: var(--barn); }
+  #zly-tg-tools .sec { padding: 40px 24px 80px; max-width: 1160px; margin: 0 auto; }
+  #zly-tg-tools .sec-head { text-align: center; max-width: 640px; margin: 0 auto 40px; }
+  #zly-tg-tools .sec-head h2 { font-size: clamp(30px, 3.6vw, 40px); margin-top: 6px; }
+  #zly-tg-tools .sec-head p { font-size: 16px; margin-top: 14px; }
+  #zly-tg-tools .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  #zly-tg-tools .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+  #zly-tg-tools .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--zly-accent, var(--barn)); }
+  #zly-tg-tools .card-art { background: var(--paper-2); border: 1px solid var(--border); border-radius: 10px; padding: 14px; margin-bottom: 18px; }
+  #zly-tg-tools .card-art svg { width: 100%; height: auto; display: block; }
+  #zly-tg-tools .card h3 { font-size: 20px; }
+  #zly-tg-tools .card p.desc { font-size: 14.5px; margin-top: 8px; }
+  #zly-tg-tools .whats-in { list-style: none; margin: 16px 0 0; padding: 0; }
+  #zly-tg-tools .whats-in li { font-size: 13.5px; color: var(--ink-soft); padding-left: 20px; position: relative; margin-bottom: 6px; line-height: 1.5; }
+  #zly-tg-tools .whats-in li::before { content: '\2713'; position: absolute; left: 0; color: var(--sage); font-weight: 700; }
+  #zly-tg-tools .card-foot { margin-top: auto; padding-top: 20px; }
+  #zly-tg-tools .meta { display: flex; gap: 8px; align-items: center; font-size: 12px; color: var(--ink-soft); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 12px; }
+  #zly-tg-tools .meta span { background: var(--paper-2); border-radius: 100px; padding: 4px 10px; }
+  #zly-tg-tools .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; width: 100%; padding: 14px 22px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  #zly-tg-tools .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+  #zly-tg-tools .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+  #zly-tg-tools .btn svg { width: 15px; height: 15px; flex: 0 0 auto; }
+  #zly-tg-tools .tools-note { text-align: center; font-size: 13.5px; margin-top: 30px; }
+  @media (max-width: 900px) { #zly-tg-tools .grid { grid-template-columns: repeat(2, 1fr); } #zly-tg-tools .sec { padding: 30px 20px 64px; } }
+  @media (max-width: 560px) { #zly-tg-tools .grid { grid-template-columns: 1fr; } }
+
+  /* ===== guides ===== */
+  #zly-tg-guides {
+    --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+    --sage: #7a8b69; --barn: #b5482d; --violet: #6c5ce7; --blue: #4ea1ff; --marigold: #e3a72e;
+    --border: rgba(27,36,48,0.14);
+    font-family: 'DM Sans', sans-serif; background: var(--paper-2); color: var(--ink);
+    scroll-margin-top: 90px;
+  }
+  #zly-tg-guides * { box-sizing: border-box; margin: 0; padding: 0; }
+  #zly-tg-guides h2, #zly-tg-guides h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; color: var(--ink); }
+  #zly-tg-guides p { color: var(--ink-soft); line-height: 1.65; }
+  #zly-tg-guides .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); color: var(--barn); }
+  #zly-tg-guides .sec { padding: 80px 24px; max-width: 1160px; margin: 0 auto; }
+  #zly-tg-guides .sec-head { text-align: center; max-width: 640px; margin: 0 auto 40px; }
+  #zly-tg-guides .sec-head h2 { font-size: clamp(30px, 3.6vw, 40px); margin-top: 6px; }
+  #zly-tg-guides .sec-head p { font-size: 16px; margin-top: 14px; }
+  #zly-tg-guides .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  #zly-tg-guides .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; }
+  #zly-tg-guides .cover { background: var(--paper); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 18px; }
+  #zly-tg-guides .cover svg { width: 100%; height: auto; display: block; }
+  /* Swap the placeholder SVG for a real cover: <img src="…" alt="…"> */
+  #zly-tg-guides .cover img { width: 100%; height: auto; display: block; border-radius: 6px; }
+  #zly-tg-guides .card h3 { font-size: 19px; }
+  #zly-tg-guides .card p.desc { font-size: 14.5px; margin-top: 8px; }
+  #zly-tg-guides .meta { display: flex; gap: 8px; flex-wrap: wrap; font-size: 12px; color: var(--ink-soft); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-top: 16px; }
+  #zly-tg-guides .meta span { background: var(--paper-2); border-radius: 100px; padding: 4px 10px; }
+  #zly-tg-guides .card-foot { margin-top: auto; padding-top: 20px; }
+  #zly-tg-guides .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; width: 100%; padding: 14px 22px; border-radius: 8px; font-weight: 700; font-size: 15px; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  #zly-tg-guides .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+  #zly-tg-guides .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+  #zly-tg-guides .btn svg { width: 15px; height: 15px; flex: 0 0 auto; }
+
+  /* ----- the gated download dialog ----- */
+  #zly-tg-guides .modal { position: fixed; inset: 0; z-index: 9999; display: none; align-items: center; justify-content: center; padding: 24px; }
+  #zly-tg-guides .modal.open { display: flex; }
+  #zly-tg-guides .modal-veil { position: absolute; inset: 0; background: rgba(27,36,48,0.62); }
+  #zly-tg-guides .modal-box { position: relative; background: var(--card); border: 1px solid var(--border); border-radius: 16px; width: 100%; max-width: 760px; max-height: calc(100vh - 48px); overflow-y: auto; display: grid; grid-template-columns: 0.85fr 1.15fr; box-shadow: 0 30px 70px -20px rgba(27,36,48,0.55); }
+  #zly-tg-guides .modal-art { background: var(--paper-2); padding: 28px 24px; display: flex; align-items: center; justify-content: center; border-right: 1px solid var(--border); border-radius: 16px 0 0 16px; }
+  #zly-tg-guides .modal-art svg { width: 100%; height: auto; display: block; }
+  #zly-tg-guides .modal-art img { width: 100%; height: auto; display: block; border-radius: 8px; }
+  #zly-tg-guides .modal-body { padding: 30px 30px 26px; }
+  #zly-tg-guides .modal-eyebrow { display: block; font-size: 11.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--barn); margin-bottom: 8px; }
+  #zly-tg-guides .modal-body h3 { font-size: 23px; }
+  #zly-tg-guides .modal-close { position: absolute; top: 12px; right: 12px; width: 44px; height: 44px; border-radius: 8px; border: none; background: transparent; cursor: pointer; color: var(--ink); display: grid; place-items: center; }
+  #zly-tg-guides .modal-close:hover { background: rgba(27,36,48,0.08); }
+  #zly-tg-guides .modal-close svg { width: 17px; height: 17px; }
+  #zly-tg-guides .field { margin-top: 15px; }
+  #zly-tg-guides label { display: block; font-size: 13.5px; font-weight: 700; margin-bottom: 6px; color: var(--ink); }
+  #zly-tg-guides label .opt { font-weight: 400; color: var(--ink-soft); }
+  #zly-tg-guides .zly-input { width: 100%; padding: 13px 14px; border-radius: 8px; border: 1.5px solid var(--border); font-family: 'DM Sans', sans-serif; font-size: 16px; background: var(--paper); color: var(--ink); }
+  #zly-tg-guides .zly-input:focus { outline: none; border-color: var(--violet); }
+  #zly-tg-guides .zly-input[aria-invalid="true"] { border-color: var(--barn); }
+  #zly-tg-guides .modal-body .btn { margin-top: 20px; }
+  #zly-tg-guides .form-status { font-size: 14px; margin-top: 12px; text-align: center; display: none; }
+  #zly-tg-guides .form-status.success { display: block; color: var(--sage); font-weight: 600; }
+  #zly-tg-guides .form-status.error { display: block; color: var(--barn); font-weight: 600; }
+  #zly-tg-guides .fine-print { font-size: 12px; color: var(--ink-soft); line-height: 1.55; margin-top: 14px; }
+  #zly-tg-guides .fine-print + .fine-print { margin-top: 8px; }
+  #zly-tg-guides :focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
+  @media (max-width: 900px) { #zly-tg-guides .grid { grid-template-columns: repeat(2, 1fr); } #zly-tg-guides .sec { padding: 64px 20px; } }
+  @media (max-width: 700px) {
+    #zly-tg-guides .modal-box { grid-template-columns: 1fr; }
+    #zly-tg-guides .modal-art { border-right: none; border-bottom: 1px solid var(--border); border-radius: 16px 16px 0 0; padding: 22px; }
+    #zly-tg-guides .modal-art svg, #zly-tg-guides .modal-art img { max-width: 220px; margin: 0 auto; }
+    #zly-tg-guides .modal-body { padding: 24px 22px 22px; }
+  }
+  @media (max-width: 560px) { #zly-tg-guides .grid { grid-template-columns: 1fr; } #zly-tg-guides .modal { padding: 12px; } }
+
+  /* ===== final cta ===== */
+  #zly-tg-cta {
+    --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76; --barn: #b5482d; --marigold: #e3a72e;
+    --border: rgba(27,36,48,0.14);
+    font-family: 'DM Sans', sans-serif; background: var(--ink); color: #fff9ef;
+  }
+  #zly-tg-cta * { box-sizing: border-box; margin: 0; padding: 0; }
+  #zly-tg-cta .sec { padding: 84px 24px; max-width: 760px; margin: 0 auto; text-align: center; }
+  #zly-tg-cta h2 { font-family: 'Newsreader', serif; font-weight: 600; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.15; color: #fff9ef; }
+  #zly-tg-cta p { color: rgba(250,243,231,0.72); line-height: 1.7; font-size: 16.5px; margin-top: 16px; }
+  #zly-tg-cta .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); color: var(--marigold); margin-bottom: 8px; }
+  #zly-tg-cta .cta-row { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 30px; }
+  #zly-tg-cta .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  #zly-tg-cta .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
+  #zly-tg-cta .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+  #zly-tg-cta .btn-outline { background: transparent; color: #fff9ef; border: 2px solid #faf3e7; }
+  #zly-tg-cta .btn-outline:hover { background: #faf3e7; color: var(--ink); }
+  #zly-tg-cta .cta-note { font-size: 13px; color: rgba(250,243,231,0.55); margin-top: 14px; }
+  @media (max-width: 480px) { #zly-tg-cta .sec { padding: 64px 20px; } #zly-tg-cta .btn { width: 100%; justify-content: center; } }
+</style>
+
+<div id="zly-tg-hero">
+  <section class="hero">
+    <span class="tag">free to take</span>
+    <h1>Tools and guides you can use today.</h1>
+    <p class="sub">The tools are the actual code behind pieces of this site, packaged so you can drop them into yours. The guides are what we hand clients before an engagement starts. Everything here is free.</p>
+    <div class="jump-row">
+      <a href="#zly-tg-tools" class="btn btn-primary" data-jump>
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        See all tools
+      </a>
+      <a href="#zly-tg-guides" class="btn btn-ghost" data-jump>
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        See all guides
+      </a>
+    </div>
+    <p class="hero-note">Tools download straight away. Guides ask for an email so we can send the file.</p>
+  </section>
+
+  <script>
+    (function () {
+      // The sections load one at a time, so a jump link can be clicked before its
+      // target exists. Look the target up at click time and wait briefly if needed.
+      function go(id, tries) {
+        var el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          el.setAttribute('tabindex', '-1');
+          el.focus({ preventScroll: true });
+          return;
+        }
+        if (tries > 0) setTimeout(function () { go(id, tries - 1); }, 150);
+      }
+      var links = document.querySelectorAll('#zly-tg-hero [data-jump]');
+      for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', function (e) {
+          var id = this.getAttribute('href').slice(1);
+          e.preventDefault();
+          go(id, 12);                       // roughly 1.8s of grace
+          if (history.replaceState) history.replaceState(null, '', '#' + id);
+        });
+      }
+    })();
+  </script>
+</div>
+
+<div id="zly-tg-tools">
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">tools</span>
+      <h2>Code you can drop into your own site.</h2>
+      <p>Each download is a zip with the HTML, CSS and any JavaScript it needs, commented so you can change it. No attribution required, no account, no email.</p>
+    </div>
+
+    <div class="grid">
+      <!-- PLACEHOLDER TOOL 1 - replace the copy and point href at the real zip -->
+      <article class="card" style="--zly-accent: var(--violet);">
+        <div class="card-art">
+          <svg viewBox="0 0 260 110" fill="none" role="img" aria-label="Preview: a quote card pinned to a board">
+            <rect x="46" y="14" width="168" height="82" rx="6" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5" transform="rotate(-1.5 130 55)"/>
+            <circle cx="130" cy="16" r="7" fill="#6c5ce7" stroke="#1b2430" stroke-width="1.5"/>
+            <rect x="66" y="38" width="128" height="6" rx="3" fill="#1b2430" opacity="0.65"/>
+            <rect x="66" y="52" width="108" height="6" rx="3" fill="#1b2430" opacity="0.4"/>
+            <rect x="66" y="70" width="58" height="7" rx="3.5" fill="#b5482d" opacity="0.8"/>
+          </svg>
+        </div>
+        <h3>Testimonial cards</h3>
+        <p class="desc">The pinned quote card used across this site, plus the carousel that holds several of them.</p>
+        <ul class="whats-in">
+          <li>Single pinned card and a multi-card carousel</li>
+          <li>Arrows, dots and keyboard support</li>
+          <li>Respects reduced-motion settings</li>
+        </ul>
+        <div class="card-foot">
+          <div class="meta"><span>HTML + CSS + JS</span><span>Zip</span></div>
+          <a href="/s/zoley-testimonial-cards.zip" class="btn btn-primary" download>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 13h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download the zip
+          </a>
+        </div>
+      </article>
+
+      <!-- PLACEHOLDER TOOL 2 -->
+      <article class="card" style="--zly-accent: var(--barn);">
+        <div class="card-art">
+          <svg viewBox="0 0 260 110" fill="none" role="img" aria-label="Preview: a line of text being typed">
+            <rect x="26" y="34" width="208" height="42" rx="6" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <rect x="42" y="49" width="96" height="9" rx="4.5" fill="#1b2430" opacity="0.75"/>
+            <rect x="146" y="49" width="52" height="9" rx="4.5" fill="#b5482d"/>
+            <rect x="203" y="44" width="3.5" height="19" rx="1.75" fill="#b5482d"/>
+          </svg>
+        </div>
+        <h3>Typewriter text band</h3>
+        <p class="desc">The rotating line on our homepage. Types a phrase, holds it, clears it and moves to the next.</p>
+        <ul class="whats-in">
+          <li>Your own list of phrases</li>
+          <li>Holds a fixed height, so the page never jumps</li>
+          <li>Swaps phrases without typing under reduced-motion</li>
+        </ul>
+        <div class="card-foot">
+          <div class="meta"><span>HTML + CSS + JS</span><span>Zip</span></div>
+          <a href="/s/zoley-typewriter-band.zip" class="btn btn-primary" download>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 13h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download the zip
+          </a>
+        </div>
+      </article>
+
+      <!-- PLACEHOLDER TOOL 3 -->
+      <article class="card" style="--zly-accent: var(--blue);">
+        <div class="card-art">
+          <svg viewBox="0 0 260 110" fill="none" role="img" aria-label="Preview: a navigation bar with a dropdown">
+            <rect x="26" y="22" width="208" height="30" rx="6" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <rect x="40" y="33" width="30" height="7" rx="3.5" fill="#1b2430" opacity="0.7"/>
+            <rect x="80" y="33" width="38" height="7" rx="3.5" fill="#4ea1ff"/>
+            <rect x="128" y="33" width="30" height="7" rx="3.5" fill="#1b2430" opacity="0.4"/>
+            <rect x="80" y="60" width="74" height="34" rx="6" fill="#fff9ef" stroke="#1b2430" stroke-width="2"/>
+            <rect x="90" y="70" width="46" height="5" rx="2.5" fill="#1b2430" opacity="0.45"/>
+            <rect x="90" y="81" width="38" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
+          </svg>
+        </div>
+        <h3>Navigation menu</h3>
+        <p class="desc">A sticky header with a dropdown that works on touch, keyboard and mouse.</p>
+        <ul class="whats-in">
+          <li>Sticky header with a scrolled state</li>
+          <li>Dropdown and a mobile drawer</li>
+          <li>Focus handling and Escape to close</li>
+        </ul>
+        <div class="card-foot">
+          <div class="meta"><span>HTML + CSS + JS</span><span>Zip</span></div>
+          <a href="/s/zoley-navigation-menu.zip" class="btn btn-primary" download>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 13h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download the zip
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <p class="tools-note">Built something with one of these? We would like to see it. <a href="mailto:sales@zoley.io" style="color: var(--barn); font-weight: 600;">sales@zoley.io</a></p>
+  </section>
+</div>
+
+<div id="zly-tg-guides">
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">guides</span>
+      <h2>What we hand clients before the work starts.</h2>
+      <p>Written documents, not brochures. Tell us where to send it and the file arrives by email.</p>
+    </div>
+
+    <div class="grid">
+      <!-- PLACEHOLDER GUIDE 1 - data-guide is what gets sent with the form -->
+      <article class="card">
+        <div class="cover">
+          <!-- Swap for a real cover: <img src="/s/launch-sequence-cover.png" alt="Cover of The Zoley Launch Sequence"> -->
+          <svg viewBox="0 0 200 140" fill="none" role="img" aria-label="Cover: The Zoley Launch Sequence">
+            <rect x="30" y="10" width="140" height="120" rx="5" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <rect x="30" y="10" width="10" height="120" fill="#b5482d"/>
+            <rect x="54" y="32" width="92" height="8" rx="4" fill="#1b2430" opacity="0.8"/>
+            <rect x="54" y="48" width="66" height="8" rx="4" fill="#1b2430" opacity="0.8"/>
+            <circle cx="60" cy="78" r="6" fill="#e3a72e"/><rect x="74" y="74" width="60" height="6" rx="3" fill="#1b2430" opacity="0.35"/>
+            <circle cx="60" cy="96" r="6" fill="#7a8b69"/><rect x="74" y="92" width="48" height="6" rx="3" fill="#1b2430" opacity="0.35"/>
+            <circle cx="60" cy="114" r="6" fill="#6c5ce7"/><rect x="74" y="110" width="54" height="6" rx="3" fill="#1b2430" opacity="0.35"/>
+          </svg>
+        </div>
+        <h3>The Zoley Launch Sequence</h3>
+        <p class="desc">How to take a business from idea to trading, in the order the steps actually have to happen.</p>
+        <div class="meta"><span>PDF</span><span>18 pages</span></div>
+        <div class="card-foot">
+          <button type="button" class="btn btn-primary" data-guide="The Zoley Launch Sequence">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 13h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download the guide
+          </button>
+        </div>
+      </article>
+
+      <!-- PLACEHOLDER GUIDE 2 -->
+      <article class="card">
+        <div class="cover">
+          <svg viewBox="0 0 200 140" fill="none" role="img" aria-label="Cover: The AI Readiness Audit">
+            <rect x="30" y="10" width="140" height="120" rx="5" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <rect x="30" y="10" width="10" height="120" fill="#6c5ce7"/>
+            <rect x="54" y="30" width="86" height="8" rx="4" fill="#1b2430" opacity="0.8"/>
+            <rect x="54" y="46" width="58" height="8" rx="4" fill="#1b2430" opacity="0.8"/>
+            <rect x="54" y="70" width="92" height="46" rx="4" fill="#f6e4b8" stroke="#1b2430" stroke-width="1.5"/>
+            <path d="M62 104 l14 -12 l12 8 l16 -20" stroke="#6c5ce7" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>The AI Readiness Audit</h3>
+        <p class="desc">Twenty questions that tell you whether AI will return hours in your business, or just cost you a subscription.</p>
+        <div class="meta"><span>PDF</span><span>12 pages</span></div>
+        <div class="card-foot">
+          <button type="button" class="btn btn-primary" data-guide="The AI Readiness Audit">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 13h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download the guide
+          </button>
+        </div>
+      </article>
+
+      <!-- PLACEHOLDER GUIDE 3 -->
+      <article class="card">
+        <div class="cover">
+          <svg viewBox="0 0 200 140" fill="none" role="img" aria-label="Cover: The Lead Response Playbook">
+            <rect x="30" y="10" width="140" height="120" rx="5" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <rect x="30" y="10" width="10" height="120" fill="#7a8b69"/>
+            <rect x="54" y="30" width="80" height="8" rx="4" fill="#1b2430" opacity="0.8"/>
+            <rect x="54" y="46" width="62" height="8" rx="4" fill="#1b2430" opacity="0.8"/>
+            <circle cx="100" cy="96" r="26" fill="none" stroke="#1b2430" stroke-width="2.5"/>
+            <path d="M100 78 V96 L114 104" stroke="#b5482d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>The Lead Response Playbook</h3>
+        <p class="desc">What to send a new enquiry, and how fast, with the templates we set up for clients.</p>
+        <div class="meta"><span>PDF</span><span>9 pages</span></div>
+        <div class="card-foot">
+          <button type="button" class="btn btn-primary" data-guide="The Lead Response Playbook">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 13h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download the guide
+          </button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- The download dialog. One dialog serves every guide; the title and the hidden
+       field are filled in from whichever button opened it. -->
+  <div class="modal" id="zly-tg-modal" role="dialog" aria-modal="true" aria-labelledby="zly-tg-modal-title" hidden>
+    <div class="modal-veil" data-close></div>
+    <div class="modal-box">
+      <div class="modal-art">
+        <!-- Swap for the guide's real cover when you have one -->
+        <svg viewBox="0 0 200 150" fill="none" role="img" aria-label="An envelope carrying a document">
+          <rect x="24" y="16" width="118" height="102" rx="5" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5" transform="rotate(-4 83 67)"/>
+          <rect x="42" y="40" width="74" height="7" rx="3.5" fill="#1b2430" opacity="0.7" transform="rotate(-4 79 43)"/>
+          <rect x="42" y="56" width="58" height="7" rx="3.5" fill="#1b2430" opacity="0.4" transform="rotate(-4 71 59)"/>
+          <rect x="42" y="72" width="66" height="7" rx="3.5" fill="#1b2430" opacity="0.4" transform="rotate(-4 75 75)"/>
+          <rect x="58" y="74" width="120" height="76" rx="6" fill="#f6e4b8" stroke="#1b2430" stroke-width="2.5"/>
+          <path d="M58 80 L118 118 L178 80" stroke="#1b2430" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
+          <circle cx="170" cy="46" r="17" fill="#b5482d"/>
+          <path d="M163 46 l5 5 l9 -10" stroke="#fff9ef" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="modal-body">
+        <button type="button" class="modal-close" data-close aria-label="Close">
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <span class="modal-eyebrow">Send me the guide</span>
+        <h3 id="zly-tg-modal-title">Guide</h3>
+
+        <form id="zly-tg-form" novalidate>
+          <input type="hidden" name="guide" id="zly-tg-guide-name">
+          <div class="field">
+            <label for="zly-tg-first">First name</label>
+            <input class="zly-input" type="text" id="zly-tg-first" name="first_name" autocomplete="given-name" required>
+          </div>
+          <div class="field">
+            <label for="zly-tg-phone">Phone number</label>
+            <input class="zly-input" type="tel" id="zly-tg-phone" name="phone" autocomplete="tel" required>
+          </div>
+          <div class="field">
+            <label for="zly-tg-email">Email</label>
+            <input class="zly-input" type="email" id="zly-tg-email" name="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="zly-tg-business">Business name <span class="opt">(optional)</span></label>
+            <input class="zly-input" type="text" id="zly-tg-business" name="business" autocomplete="organization">
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="zly-tg-submit">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 13h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download
+          </button>
+          <p class="form-status" id="zly-tg-status" role="status" aria-live="polite"></p>
+
+          <p class="fine-print">We will email the file to the address above. If it has not arrived in a few minutes, check your spam folder.</p>
+          <p class="fine-print">We may get in touch once about working together. You will not be added to our general marketing list.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      // TODO: replace with your real endpoint (CRM webhook, Zapier, or your own API).
+      var GUIDE_ENDPOINT = "https://REPLACE-WITH-YOUR-FORM-ENDPOINT.example.com/guide-download";
+
+      var modal  = document.getElementById('zly-tg-modal');
+      var box    = modal.querySelector('.modal-box');
+      var form   = document.getElementById('zly-tg-form');
+      var title  = document.getElementById('zly-tg-modal-title');
+      var hidden = document.getElementById('zly-tg-guide-name');
+      var status = document.getElementById('zly-tg-status');
+      var submit = document.getElementById('zly-tg-submit');
+      var opener = null;
+
+      function focusable() {
+        return box.querySelectorAll('a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])');
+      }
+
+      function open(btn) {
+        opener = btn;
+        var name = btn.getAttribute('data-guide') || 'the guide';
+        title.textContent = name;
+        hidden.value = name;
+        status.textContent = ''; status.className = 'form-status';
+        form.reset(); hidden.value = name;
+        modal.hidden = false;
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        var first = document.getElementById('zly-tg-first');
+        if (first) first.focus();
+      }
+
+      function close() {
+        modal.classList.remove('open');
+        modal.hidden = true;
+        document.body.style.overflow = '';
+        if (opener) { opener.focus(); opener = null; }
+      }
+
+      var triggers = document.querySelectorAll('#zly-tg-guides [data-guide]');
+      for (var i = 0; i < triggers.length; i++) {
+        triggers[i].addEventListener('click', function () { open(this); });
+      }
+      var closers = modal.querySelectorAll('[data-close]');
+      for (var c = 0; c < closers.length; c++) closers[c].addEventListener('click', close);
+
+      document.addEventListener('keydown', function (e) {
+        if (modal.hidden) return;
+        if (e.key === 'Escape') { close(); return; }
+        if (e.key !== 'Tab') return;
+        // keep focus inside the dialog
+        var f = focusable();
+        if (!f.length) return;
+        var first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      });
+
+      function invalid(el, on) { el.setAttribute('aria-invalid', on ? 'true' : 'false'); }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var first = document.getElementById('zly-tg-first');
+        var phone = document.getElementById('zly-tg-phone');
+        var email = document.getElementById('zly-tg-email');
+        [first, phone, email].forEach(function (el) { invalid(el, false); });
+
+        function fail(el, msg) {
+          invalid(el, true); el.focus();
+          status.textContent = msg; status.className = 'form-status error';
+        }
+        if (!first.value.trim())  return fail(first, "Mind adding your first name?");
+        if (phone.value.replace(/\D/g, '').length < 7) return fail(phone, "That phone number looks short. Mind checking it?");
+        if (!email.value.trim() || !email.value.includes('@')) return fail(email, "That email doesn't look right. Mind double-checking it?");
+
+        submit.disabled = true;
+        var label = submit.textContent;
+        submit.textContent = 'Sending...';
+
+        fetch(GUIDE_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            guide: hidden.value,
+            first_name: first.value.trim(),
+            phone: phone.value.trim(),
+            email: email.value.trim(),
+            business: document.getElementById('zly-tg-business').value.trim(),
+            source: 'tools-and-guides-page'
+          })
+        })
+          .then(function (res) {
+            if (!res.ok) throw new Error('Request failed');
+            status.textContent = "On its way. Check your inbox in the next few minutes.";
+            status.className = 'form-status success';
+            form.reset();
+          })
+          .catch(function () {
+            status.textContent = "Something didn't go through. Try again, or email sales@zoley.io and we'll send it over.";
+            status.className = 'form-status error';
+          })
+          .finally(function () { submit.disabled = false; submit.textContent = label; });
+      });
+    })();
+  </script>
+</div>
+
+<div id="zly-tg-cta">
+  <section class="sec">
+    <span class="tag">when you want a hand</span>
+    <h2>Rather have it built than build it?</h2>
+    <p>Answer a few questions about the business and we'll come back with a written recommendation and a fixed price. No obligation, and the recommendation is yours to keep either way.</p>
+    <div class="cta-row">
+      <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get your plan</a>
+      <a href="https://calendly.com/zoley/free-30-min-discovery-call" class="btn btn-outline">Book a 30-minute call</a>
+    </div>
+    <p class="cta-note">A written recommendation and pricing within two business days.</p>
+  </section>
+</div>
