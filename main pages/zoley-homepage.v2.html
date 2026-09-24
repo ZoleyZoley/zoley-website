@@ -118,9 +118,15 @@ has no real submit handler yet — wire it to your email provider before publish
     /* ---------- ROTATING TEXT ---------- */
     #zly-hy .zhy-rotate-band { padding: 50px 24px 60px; }
     #zly-hy .zhy-rotate-wrapper { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; max-width: 900px; margin: 0 auto; }
-    #zly-hy .zhy-static-text { font-family: 'Newsreader', serif; font-weight: 600; font-size: clamp(30px, 5vw, 52px); margin-bottom: 16px; color: var(--barn); line-height: 1.1; }
-    #zly-hy .zhy-changing-word { font-family: 'Newsreader', serif; font-weight: 600; font-size: clamp(30px, 5vw, 52px); line-height: 1.2; color: var(--ink); }
-    #zly-hy .zhy-cursor { font-family: 'Newsreader', serif; font-size: clamp(30px, 5vw, 52px); color: var(--ink-soft); animation: zhy-blink 1s step-start infinite; }
+    #zly-hy .zhy-static-text { font-family: 'Newsreader', serif; font-weight: 600; font-size: clamp(30px, 5vw, 52px); margin-bottom: 16px; color: var(--ink); line-height: 1.1; }
+    /* The line is held at two lines tall whatever it currently says, so a phrase
+       that wraps cannot shove the rest of the page up and down. The font-family
+       here is not redundant: the line box is sized by this element's strut as well
+       as by the spans inside it, and a DM Sans strut under Newsreader spans made
+       each line 39px instead of 36px, which broke the reservation on phones. */
+    #zly-hy .zhy-changing-line { font-family: 'Newsreader', serif; font-size: clamp(30px, 5vw, 52px); line-height: 1.2; min-height: 2.4em; text-align: center; }
+    #zly-hy .zhy-changing-word { font-family: 'Newsreader', serif; font-weight: 600; font-size: inherit; line-height: inherit; color: var(--barn); }
+    #zly-hy .zhy-cursor { font-family: 'Newsreader', serif; font-size: inherit; color: var(--barn); animation: zhy-blink 1s step-start infinite; }
     @keyframes zhy-blink { 50% { opacity: 0; } }
     @media (max-width: 480px) { #zly-hy .zhy-static-text { margin-bottom: 22px; } }
     @media (prefers-reduced-motion: reduce) { #zly-hy .zhy-cursor { animation: none; } }
@@ -441,7 +447,7 @@ has no real submit handler yet — wire it to your email provider before publish
   <section class="zhy-rotate-band">
     <div class="zhy-rotate-wrapper">
       <div class="zhy-static-text">Recently built for clients:</div>
-      <div><span class="zhy-changing-word" id="zhy-changing-word">a lead follow-up system that replies in minutes</span><span class="zhy-cursor">|</span></div>
+      <div class="zhy-changing-line"><span class="zhy-changing-word" id="zhy-changing-word">a two-minute lead reply</span><span class="zhy-cursor">|</span></div>
     </div>
   </section>
 
@@ -678,51 +684,59 @@ has no real submit handler yet — wire it to your email provider before publish
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+  // Kept short so each one fits a single line on a desktop. The line reserves
+  // two lines of height anyway, so a wrap on a narrow phone costs nothing.
   const words = [
-    "a lead follow-up system that replies in minutes",
-    "a pricing strategy backed by market data",
-    "an AI assistant that answers customer questions",
-    "a website with a measured conversion path",
-    "an ad campaign with tracked cost per lead",
-    "an invoicing flow that chases itself",
-    "a go-to-market plan for a new offer",
-    "an operations dashboard the owner actually reads"
+    "a two-minute lead reply",
+    "pricing built on market data",
+    "an AI assistant for customers",
+    "a site with a conversion path",
+    "ads with tracked cost per lead",
+    "invoicing that chases itself",
+    "a go-to-market plan for a launch",
+    "a dashboard owners actually read"
   ];
 
   const changingWord = document.getElementById("zhy-changing-word");
   if (!changingWord) return;
 
-  const TYPE_DELAY = 45;
-  const ERASE_DELAY = 30;
-  const HOLD_FULL   = 1400;
-  const HOLD_EMPTY  = 220;
+  const TYPE_DELAY = 45;    // per character
+  const HOLD_FULL  = 500;   // it sits complete for half a second
+  const HOLD_EMPTY = 180;   // a breath of blank before the next one starts
+
+  const reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   changingWord.textContent = words[0];
 
-  let i = 1;
-  let charIndex = 0;
-  let typing = true;
+  let i = 0;
+  let charIndex = words[0].length;   // the first phrase is already on screen
 
+  // Types a phrase out, holds it, then clears it outright. No backspacing.
   function tick(){
     const w = words[i];
-    if (typing){
+    if (charIndex < w.length){
       charIndex++;
       changingWord.textContent = w.slice(0, charIndex);
-      if (charIndex === w.length){ typing = false; setTimeout(tick, HOLD_FULL); }
-      else { setTimeout(tick, TYPE_DELAY); }
-    } else {
-      charIndex--;
-      changingWord.textContent = w.slice(0, Math.max(charIndex, 0));
-      if (charIndex <= 0){
-        typing = true;
-        i = (i + 1) % words.length;
-        if (i === 0) i = 1;
-        setTimeout(tick, HOLD_EMPTY);
-      } else { setTimeout(tick, ERASE_DELAY); }
+      setTimeout(tick, TYPE_DELAY);
+      return;
     }
+    setTimeout(() => {
+      changingWord.textContent = "";
+      i = (i + 1) % words.length;
+      charIndex = 0;
+      setTimeout(tick, HOLD_EMPTY);
+    }, HOLD_FULL);
   }
 
-  const start = () => (window.requestIdleCallback ? requestIdleCallback(tick, {timeout: 300}) : setTimeout(tick, 150));
+  // With reduced motion the phrases still change, they just do not type.
+  function swap(){
+    i = (i + 1) % words.length;
+    changingWord.textContent = words[i];
+    setTimeout(swap, 2500);
+  }
+
+  const run = reduced ? swap : tick;
+  const start = () => (window.requestIdleCallback ? requestIdleCallback(run, {timeout: 300}) : setTimeout(run, 150));
   if ("IntersectionObserver" in window){
     const io = new IntersectionObserver(entries => {
       if (entries[0].isIntersecting){ io.disconnect(); start(); }
