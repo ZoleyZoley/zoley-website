@@ -303,14 +303,13 @@ Or place sections individually:
 
 ## case-studies -> `/case-studies`
 
-Source: `main pages/zoley-case-studies.v2.html` - 4 sections
+Source: `main pages/zoley-case-studies.v2.html` - 3 sections
 
 | # | Section | File | Wrapper id |
 |---|---|---|---|
 | 1 | Hero | `case-studies/01-hero.html` | `#zly-cs-hero` |
-| 2 | How We Measure | `case-studies/02-how-we-measure.html` | `#zly-cs-measure` |
-| 3 | Grid | `case-studies/03-grid.html` | `#zly-cs-grid` |
-| 4 | Final CTA | `case-studies/04-final-cta.html` | `#zly-cs-cta` |
+| 2 | Grid | `case-studies/02-grid.html` | `#zly-cs-grid` |
+| 3 | Final CTA | `case-studies/03-final-cta.html` | `#zly-cs-cta` |
 
 Whole page: `<div data-zoley-page="case-studies"></div>`
 
@@ -318,9 +317,8 @@ Or place sections individually:
 
 ```html
 <div data-zoley-section="case-studies/01-hero"></div>
-<div data-zoley-section="case-studies/02-how-we-measure"></div>
-<div data-zoley-section="case-studies/03-grid"></div>
-<div data-zoley-section="case-studies/04-final-cta"></div>
+<div data-zoley-section="case-studies/02-grid"></div>
+<div data-zoley-section="case-studies/03-final-cta"></div>
 ```
 
 ## tools-guides -> `/tools-and-guides`

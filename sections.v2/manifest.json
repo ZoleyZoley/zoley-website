@@ -526,24 +526,17 @@
         "defs_injected": []
       },
       {
-        "file": "02-how-we-measure.html",
-        "id": "zly-cs-measure",
-        "title": "How We Measure",
-        "key": "case-studies/02-how-we-measure",
-        "defs_injected": []
-      },
-      {
-        "file": "03-grid.html",
+        "file": "02-grid.html",
         "id": "zly-cs-grid",
         "title": "Grid",
-        "key": "case-studies/03-grid",
+        "key": "case-studies/02-grid",
         "defs_injected": []
       },
       {
-        "file": "04-final-cta.html",
+        "file": "03-final-cta.html",
         "id": "zly-cs-cta",
         "title": "Final CTA",
-        "key": "case-studies/04-final-cta",
+        "key": "case-studies/03-final-cta",
         "defs_injected": []
       }
     ]

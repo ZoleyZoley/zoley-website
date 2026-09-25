@@ -41,7 +41,7 @@ PAGES = {
  "zoley-pricing.v2.html": ("pricing", None, ["hero","what-shapes-a-quote","two-paths"]),
  "zoley-quickstart.v2.html": ("quickstart", None, ["hero","form","next-steps"]),
  "zoley-build.v2.html": ("build", None, ["hero","lead-magnet","services","validation","final-cta"]),
- "zoley-case-studies.v2.html": ("case-studies", None, ["hero","how-we-measure","grid","final-cta"]),
+ "zoley-case-studies.v2.html": ("case-studies", None, ["hero","grid","final-cta"]),
  "zoley-tools-guides.v2.html": ("tools-guides", None, ["hero","tools","guides","final-cta"]),
 }
 

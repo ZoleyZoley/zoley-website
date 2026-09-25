@@ -31,7 +31,7 @@ Scoped under #zly-tg-guides. Self-contained: paste into a Squarespace Code Block
     #zly-tg-guides .cover img { width: 100%; height: auto; display: block; border-radius: 6px; }
     #zly-tg-guides .card h3 { font-size: 19px; }
     #zly-tg-guides .card p.desc { font-size: 14.5px; margin-top: 8px; }
-    #zly-tg-guides .meta { display: flex; gap: 8px; flex-wrap: wrap; font-size: 12px; color: var(--ink-soft); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-top: 16px; }
+    #zly-tg-guides .meta { display: flex; gap: 8px; flex-wrap: wrap; font-size: 12px; color: var(--ink-soft); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin: 0 0 12px; }
     #zly-tg-guides .meta span { background: var(--paper-2); border-radius: 100px; padding: 4px 10px; }
     #zly-tg-guides .card-foot { margin-top: auto; padding-top: 20px; }
     #zly-tg-guides .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; width: 100%; padding: 14px 22px; border-radius: 8px; font-weight: 700; font-size: 15px; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; transition: transform 0.15s ease, box-shadow 0.15s ease; }
@@ -105,8 +105,8 @@ Scoped under #zly-tg-guides. Self-contained: paste into a Squarespace Code Block
         </div>
         <h3>The Zoley Launch Sequence</h3>
         <p class="desc">How to take a business from idea to trading, in the order the steps actually have to happen.</p>
-        <div class="meta"><span>PDF</span><span>18 pages</span></div>
         <div class="card-foot">
+          <div class="meta"><span>PDF</span><span>18 pages</span></div>
           <button type="button" class="btn btn-primary" data-guide="The Zoley Launch Sequence">
             <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 13h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Download the guide
@@ -128,8 +128,8 @@ Scoped under #zly-tg-guides. Self-contained: paste into a Squarespace Code Block
         </div>
         <h3>The AI Readiness Audit</h3>
         <p class="desc">Twenty questions that tell you whether AI will return hours in your business, or just cost you a subscription.</p>
-        <div class="meta"><span>PDF</span><span>12 pages</span></div>
         <div class="card-foot">
+          <div class="meta"><span>PDF</span><span>12 pages</span></div>
           <button type="button" class="btn btn-primary" data-guide="The AI Readiness Audit">
             <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 13h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Download the guide
@@ -151,8 +151,8 @@ Scoped under #zly-tg-guides. Self-contained: paste into a Squarespace Code Block
         </div>
         <h3>The Lead Response Playbook</h3>
         <p class="desc">What to send a new enquiry, and how fast, with the templates we set up for clients.</p>
-        <div class="meta"><span>PDF</span><span>9 pages</span></div>
         <div class="card-foot">
+          <div class="meta"><span>PDF</span><span>9 pages</span></div>
           <button type="button" class="btn btn-primary" data-guide="The Lead Response Playbook">
             <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 13h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Download the guide
@@ -318,7 +318,7 @@ Scoped under #zly-tg-guides. Self-contained: paste into a Squarespace Code Block
             form.reset();
           })
           .catch(function () {
-            status.textContent = "Something didn't go through. Try again, or email sales@zoley.io and we'll send it over.";
+            status.textContent = "Something didn't go through. Try again, or email connect@zoley.io and we'll send it over.";
             status.className = 'form-status error';
           })
           .finally(function () { submit.disabled = false; submit.textContent = label; });
