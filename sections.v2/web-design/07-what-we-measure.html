@@ -75,17 +75,14 @@ Scoped under #zly-web-what-we-measure. Self-contained: paste into a Squarespace 
     #zly-web-what-we-measure .stat-band { background: var(--ink); padding: 90px 24px; position: relative; overflow: hidden; }
     #zly-web-what-we-measure .stat-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(181,72,45,0.2), transparent 55%), radial-gradient(circle at 85% 80%, rgba(78,161,255,0.18), transparent 55%); }
     #zly-web-what-we-measure .stat-band .inner { max-width: 1160px; margin: 0 auto; position: relative; }
-    #zly-web-what-we-measure .stat-band .process-header h2 { color: var(--paper); }
+    #zly-web-what-we-measure .stat-band .process-header h2 { color: var(--paper); max-width: 860px; text-wrap: balance; }
     #zly-web-what-we-measure .stat-band .process-header .process-sub { color: #c7d0d6; }
     #zly-web-what-we-measure .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
-    #zly-web-what-we-measure .stat-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 32px 22px; transform: rotate(var(--r, 0deg)); transition: transform 0.2s ease, box-shadow 0.2s ease; }
-    #zly-web-what-we-measure .stat-card:hover { transform: rotate(var(--r, 0deg)) translateY(-6px); box-shadow: 0 16px 30px -18px rgba(0,0,0,0.5); }
-    #zly-web-what-we-measure .stat-card:nth-child(1) { --r: -1deg; }
-    #zly-web-what-we-measure .stat-card:nth-child(2) { --r: 1deg; }
-    #zly-web-what-we-measure .stat-card:nth-child(3) { --r: -0.5deg; }
+    #zly-web-what-we-measure .stat-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 32px 22px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #zly-web-what-we-measure .stat-card:hover { transform: translateY(-6px); box-shadow: 0 16px 30px -18px rgba(0,0,0,0.5); }
     #zly-web-what-we-measure .stat-card .num { font-family: 'Newsreader', serif; font-size: clamp(36px, 4vw, 48px); font-weight: 600; color: #fff9ef; }
     #zly-web-what-we-measure .stat-card p { font-size: 14px; margin-top: 8px; color: #c7d0d6; }
-    #zly-web-what-we-measure .stat-close { text-align: center; max-width: 640px; margin: 40px auto 0; font-size: 17px; color: var(--paper); font-family: 'Newsreader', serif; font-style: italic; line-height: 1.5; }
+    #zly-web-what-we-measure .stat-close { text-align: center; max-width: 820px; text-wrap: balance; margin: 40px auto 0; font-size: 17px; color: var(--paper); font-family: 'Newsreader', serif; font-style: italic; line-height: 1.5; }
 
     /* 5. SIGNS */
     #zly-web-what-we-measure .signs-band { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }

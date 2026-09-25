@@ -107,7 +107,7 @@ Scoped under #zly-quickstart-form. Self-contained: paste into a Squarespace Code
         </div>
 
         <button type="submit" class="btn btn-primary" id="zly-qs-submit">Send me my plan</button>
-        <p class="form-note">A real person reads this. You'll hear back within two business days.</p>
+        <p class="form-note">A real person reads this, and you'll hear back with a plan.</p>
         <p class="form-status" id="zly-qs-status"></p>
       </form>
     </div>
@@ -166,7 +166,7 @@ Scoped under #zly-quickstart-form. Self-contained: paste into a Squarespace Code
             form.reset();
           })
           .catch(function () {
-            status.textContent = "Something didn't go through. Try again, or email sales@zoley.io.";
+            status.textContent = "Something didn't go through. Try again, or email connect@zoley.io.";
             status.className = 'form-status error';
           })
           .finally(function () { submitBtn.disabled = false; submitBtn.textContent = 'Send me my plan'; });
