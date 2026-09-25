@@ -212,6 +212,8 @@ V2 CHANGES (vs zoley-web-design-page.html):
       <svg viewBox="0 0 420 320" fill="none" role="img" aria-label="Illustration: a desktop site and its mobile version, with a page-speed gauge reading fast and a clear call-to-action button">
         <defs>
           <linearGradient id="zwb-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b5482d"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
+          <!-- userSpaceOnUse: a gradient defaults to objectBoundingBox, and a perfectly flat line has a zero-height box, so the stroke is not painted at all. -->
+          <linearGradient id="zwb-grad-line" gradientUnits="userSpaceOnUse" x1="356" y1="150" x2="404" y2="150"><stop offset="0" stop-color="#b5482d"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
         </defs>
         <!-- desktop browser -->
         <g transform="translate(14 22) rotate(-1.5 150 100)">
@@ -277,7 +279,7 @@ V2 CHANGES (vs zoley-web-design-page.html):
         <div>
           <span class="time-eyebrow">The cost of a slow, dated site</span>
           <h2>Half your visitors decide before the page finishes loading.</h2>
-          <p style="margin-top: 14px;">More than half of all web traffic is now on a phone, and most sites built more than a few years ago were never designed for it. The visitor doesn't complain; they go back to the search results and choose the next business down. Speed, clarity, and an obvious next step are not design preferences. They're the difference between a site that generates inquiries and one that quietly loses them.</p>
+          <p style="margin-top: 14px;">More than half of all web traffic is now on a phone, and most sites built more than a few years ago were never designed for it. The visitor doesn't complain; they go back to the search results and choose the next business down. Speed, clarity, and an obvious next step are not design preferences. They're the difference between a site that generates inquiries and one that loses them.</p>
         </div>
       </div>
     </div>
@@ -287,7 +289,7 @@ V2 CHANGES (vs zoley-web-design-page.html):
   <section class="sec" style="padding-top: 30px;">
     <div class="process-header">
       <h2>What's included in a build.</h2>
-      <p class="process-sub">Every site we deliver covers all six of these. There's no "basic tier" that leaves out the parts that make it work.</p>
+      <p class="process-sub">All six go into every site we deliver, built on the platform that suits your business — the one you already run, or one we'll help you pick. You own the result either way.</p>
     </div>
     <div class="process-grid">
       <div class="process-card"><div class="pc-head"><span class="pc-num">1</span><h3>Design &amp; build</h3></div><p>A modern, fast site designed around your customer's decision path. Built on a platform you can edit yourself, with no proprietary lock-in.</p></div>
@@ -326,7 +328,7 @@ V2 CHANGES (vs zoley-web-design-page.html):
       </div>
       <ul class="signs-list">
         <li class="signs-item"><span class="signs-num">01</span><div><h3>It was built years ago, and it looks it.</h3><p>Visitors read a dated site as a signal about the business behind it, fairly or not.</p></div></li>
-        <li class="signs-item"><span class="signs-num">02</span><div><h3>You can't change it without calling someone.</h3><p>Every small edit becomes a ticket, a wait, and often an invoice. That's a platform problem, and it's fixable.</p></div></li>
+        <li class="signs-item"><span class="signs-num">02</span><div><h3>You don't turn up when people search for you.</h3><p>If the page titles, descriptions, and structure were never set up behind the scenes, search engines have almost nothing to go on. The site is live; it just isn't findable.</p></div></li>
         <li class="signs-item"><span class="signs-num">03</span><div><h3>It's slow, or it breaks on a phone.</h3><p>Most of your visitors are on mobile. If the layout shifts, the buttons are tiny, or it stalls, they're gone.</p></div></li>
         <li class="signs-item"><span class="signs-num">04</span><div><h3>A stranger can't tell what you do in five seconds.</h3><p>Vague headlines and industry jargon send people back to the search results.</p></div></li>
         <li class="signs-item"><span class="signs-num">05</span><div><h3>There's no obvious next step.</h3><p>If the visitor has to hunt for how to book, buy, or reach you, most won't. One clear action per page.</p></div></li>
@@ -336,14 +338,14 @@ V2 CHANGES (vs zoley-web-design-page.html):
 
   <!-- 6. HOW WE DO IT -->
   <section class="sec">
-    <div class="process-header"><h2>How we build your site.</h2><p class="process-sub">Four stages, each with a deliverable. A typical build runs six to ten weeks from audit to launch, depending on scope.</p></div>
+    <div class="process-header"><h2>How we build your site.</h2><p class="process-sub">Four stages, each with a deliverable. You see and approve the work as it goes, so nothing at launch is a surprise.</p></div>
     <div class="wd-list">
       <div class="wd-row"><div class="wd-num">1</div><div><h3>Audit</h3><p>We review the current site, its analytics, and how customers actually find and evaluate you, then identify what's costing you inquiries.</p></div><div class="wd-out">Findings memo</div></div>
       <div class="wd-row"><div class="wd-num">2</div><div><h3>Design &amp; build</h3><p>Structure and messaging first, then design, then build. You see and approve each stage before the next begins.</p></div><div class="wd-out">Staged approvals</div></div>
       <div class="wd-row"><div class="wd-num">3</div><div><h3>Launch &amp; connect</h3><p>Forms wired to your CRM or inbox, tracking configured, listings updated, redirects handled so you don't lose existing search traffic.</p></div><div class="wd-out">Live site, tracked</div></div>
-      <div class="wd-row"><div class="wd-num">4</div><div><h3>Optimize</h3><p>Thirty days of post-launch monitoring, a training session so you can edit it yourself, and a written handover.</p></div><div class="wd-out">Handover &amp; training</div></div>
+      <div class="wd-row"><div class="wd-num">4</div><div><h3>Optimize</h3><p>Ongoing metrics and updates if you want them, a training session so you can edit the site yourself, and a written handover either way.</p></div><div class="wd-out">Handover &amp; training</div></div>
     </div>
-    <div class="wd-cta"><a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-ghost">Start with the audit</a></div>
+    <div class="wd-cta"><a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-ghost">Get started</a></div>
   </section>
 
   <!-- 7. WHAT WE MEASURE (drafted; was "content pending") -->
@@ -352,8 +354,8 @@ V2 CHANGES (vs zoley-web-design-page.html):
       <div>
         <span class="tag">tracking &amp; reporting</span>
         <h2>You'll know whether it's working, in numbers.</h2>
-        <p>A website without measurement is a guess with a domain name. Every site we launch ships with analytics configured around the actions that matter to your business, and a monthly summary written in plain language.</p>
-        <p>These are the six numbers we report on. If one of them isn't moving, that's where the next improvement goes.</p>
+        <p>A website without measurement is a guess with a domain name. We can set up analytics around the actions that matter to your business, and send a monthly summary written in plain language.</p>
+        <p>These are the six numbers we can report on. If one of them isn't moving, that's where the next improvement goes.</p>
       </div>
       <div class="metric-grid">
         <div class="metric"><span class="m">Qualified inquiries</span><p>Form submissions, calls, and bookings that came from the site, not just raw visits.</p></div>
@@ -369,13 +371,12 @@ V2 CHANGES (vs zoley-web-design-page.html):
   <!-- 8. CASE STUDY -->
   <section class="sec" style="padding-top: 0;">
     <div class="process-header">
-      <span class="tag" style="display:block; text-align:center;">representative engagement</span>
+      <span class="tag" style="display:block; text-align:center;">case study</span>
       <h2>What a rebuild looks like in practice.</h2>
     </div>
     <div class="case-study">
-      <!-- Replace this illustration with a real before/after screenshot when a named case study is available -->
       <div class="case-study-media">
-        <svg viewBox="0 0 760 300" fill="none" role="img" aria-label="Illustration: a cluttered, slow website before, and a clear, fast website after, with inquiries doubling">
+        <svg viewBox="0 0 760 300" fill="none" role="img" aria-label="Illustration: before, a cluttered site that sent buyers off to a listings portal; after, a clear site holding the listings itself">
           <!-- BEFORE -->
           <text x="0" y="16" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#5c6b76" letter-spacing="1.5">BEFORE</text>
           <g transform="translate(0 28)">
@@ -394,10 +395,10 @@ V2 CHANGES (vs zoley-web-design-page.html):
             <g transform="translate(300 60)">
               <circle r="14" fill="#faf3e7" stroke="#b5482d" stroke-width="2.5" stroke-dasharray="20 8"/>
             </g>
-            <text x="170" y="246" font-family="Caveat, cursive" font-size="16" font-weight="700" fill="#b5482d" text-anchor="middle">8.2s load · no clear action · not mobile-friendly</text>
+            <text x="170" y="246" font-family="Caveat, cursive" font-size="16" font-weight="700" fill="#b5482d" text-anchor="middle">listings linked out · hard to find · no clear path</text>
           </g>
           <!-- arrow -->
-          <path d="M356 150 L404 150" stroke="url(#zwb-grad)" stroke-width="2.5" stroke-dasharray="5 5" fill="none"/>
+          <path d="M356 150 L404 150" stroke="url(#zwb-grad-line)" stroke-width="2.5" stroke-dasharray="5 5" fill="none"/>
           <path d="M398 144 L406 150 L398 156" stroke="#6c5ce7" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
           <!-- AFTER -->
           <text x="420" y="16" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#7a8b69" letter-spacing="1.5">AFTER</text>
@@ -417,24 +418,18 @@ V2 CHANGES (vs zoley-web-design-page.html):
             <rect x="124" y="162" width="92" height="46" rx="6" fill="#faf3e7" stroke="#1b2430" stroke-width="1.5"/>
             <rect x="224" y="162" width="92" height="46" rx="6" fill="#faf3e7" stroke="#1b2430" stroke-width="1.5"/>
             <g transform="translate(300 60)"></g>
-            <text x="170" y="246" font-family="Caveat, cursive" font-size="16" font-weight="700" fill="#7a8b69" text-anchor="middle">1.4s load · one action per page · mobile-first</text>
-          </g>
-          <!-- result pill -->
-          <g transform="translate(300 268)">
-            <rect x="0" y="0" width="160" height="28" rx="14" fill="#6c5ce7"/>
-            <text x="80" y="18.5" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#fff9ef" text-anchor="middle">2× inquiries, same traffic</text>
+            <text x="170" y="246" font-family="Caveat, cursive" font-size="16" font-weight="700" fill="#7a8b69" text-anchor="middle">listings on site · found in search · one clear path</text>
           </g>
         </svg>
       </div>
       <div class="case-study-body">
         <div>
-          <div class="cs-stat">2&times;</div>
-          <div class="cs-stat-label">inquiries from the same monthly traffic within 60 days of launch</div>
+          <div class="cs-stat">40%</div>
+          <div class="cs-stat-label">more interest in their listings after the rebuild</div>
         </div>
         <div>
-          <h3>A local business on a site that hadn't changed since it launched.</h3>
-          <p>Traffic was steady, but almost none of it turned into a call or a form. The site took eight seconds to load on a phone, buried the phone number, and described the business in language its customers never used. We rewrote it around the three questions customers actually asked, cut load time to under two seconds, put one clear action on every page, and wired the forms into the owner's calendar. Visits didn't change. Inquiries doubled.</p>
-          <p class="cs-note">Details anonymized. Figures from a representative engagement.</p>
+          <h3>A real estate brokerage handing its buyers to Zillow.</h3>
+          <p>Buyers were arriving on the site and leaving within a click, because every listing pointed out to Zillow and most of them never came back. We restructured the pages around the path we wanted a buyer to take, fixed the search setup so the brokerage could actually be found, and brought every listing onto the site itself instead of linking away. Buyers who landed now had a reason to stay, and the interest stayed with the brokerage instead of going to a portal.</p>
         </div>
       </div>
     </div>
@@ -451,8 +446,8 @@ V2 CHANGES (vs zoley-web-design-page.html):
   <!-- 9. FINAL CTA -->
   <section class="sec" style="padding-bottom: 96px;">
     <div class="final">
-      <h2>Find out what your site is costing you.</h2>
-      <p>Tell us about your business and share your current site. Within two business days we'll reply with what we'd fix first, what a build would involve, and what it would cost.</p>
+      <h2>Let's build a website that works as hard as you do.</h2>
+      <p>We'll dig into what's working, what's not, and build a website that actually pulls its weight.</p>
       <div class="btn-row">
         <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get your website plan</a>
         <a href="https://calendly.com/zoley/zoley-discovery-call" class="btn btn-outline">Book an intro call</a>

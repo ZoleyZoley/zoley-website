@@ -63,9 +63,11 @@ Scoped under #zly-about-story. Self-contained: paste into a Squarespace Code Blo
         <svg viewBox="0 0 440 330" fill="none" role="img" aria-label="Illustration: a typical engagement laid out week by week, from audit to plan to build to review">
           <defs>
             <linearGradient id="zab-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b5482d"/><stop offset="1" stop-color="#4ea1ff"/></linearGradient>
+            <!-- userSpaceOnUse: a gradient defaults to objectBoundingBox, and a perfectly flat line has a zero-height box, so the stroke is not painted at all. -->
+            <linearGradient id="zab-grad-line" gradientUnits="userSpaceOnUse" x1="60" y1="36" x2="60" y2="300"><stop offset="0" stop-color="#b5482d"/><stop offset="1" stop-color="#4ea1ff"/></linearGradient>
           </defs>
           <!-- vertical timeline -->
-          <line x1="60" y1="36" x2="60" y2="300" stroke="url(#zab-grad)" stroke-width="2.5" stroke-dasharray="6 6"/>
+          <line x1="60" y1="36" x2="60" y2="300" stroke="url(#zab-grad-line)" stroke-width="2.5" stroke-dasharray="6 6"/>
           <!-- node 1 -->
           <circle cx="60" cy="52" r="13" fill="#fff9ef" stroke="#b5482d" stroke-width="2.5"/>
           <text x="60" y="56.5" font-family="DM Sans, sans-serif" font-size="11" font-weight="700" fill="#b5482d" text-anchor="middle">1</text>

@@ -201,6 +201,8 @@ Scoped under #zly-web-hero. Self-contained: paste into a Squarespace Code Block 
       <svg viewBox="0 0 420 320" fill="none" role="img" aria-label="Illustration: a desktop site and its mobile version, with a page-speed gauge reading fast and a clear call-to-action button">
         <defs>
           <linearGradient id="zwb-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b5482d"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
+          <!-- userSpaceOnUse: a gradient defaults to objectBoundingBox, and a perfectly flat line has a zero-height box, so the stroke is not painted at all. -->
+          <linearGradient id="zwb-grad-line" gradientUnits="userSpaceOnUse" x1="356" y1="150" x2="404" y2="150"><stop offset="0" stop-color="#b5482d"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
         </defs>
         <!-- desktop browser -->
         <g transform="translate(14 22) rotate(-1.5 150 100)">
