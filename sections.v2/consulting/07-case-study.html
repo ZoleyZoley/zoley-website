@@ -181,53 +181,58 @@ Scoped under #zly-consulting-case-study. Self-contained: paste into a Squarespac
       <h2>What a pricing engagement looks like in practice.</h2>
     </div>
     <div class="case-study">
-      <!-- Replace this illustration with a real chart or excerpt when a named case study is available -->
       <div class="case-study-media">
-        <svg viewBox="0 0 760 300" fill="none" role="img" aria-label="Chart: the client's two core offers repriced from below the market band into the middle of it, with revenue impact">
+        <svg viewBox="0 0 760 300" fill="none" role="img" aria-label="Chart: three price tiers. Offer A holds at $150; Offer B and Offer C are new tiers added above it at $350 and $500 a month. Forecast yearly revenue rises from about $300,000 to about $750,000 in four months.">
           <rect x="0" y="0" width="760" height="300" rx="12" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
-          <text x="28" y="38" font-family="DM Sans, sans-serif" font-size="13" font-weight="700" fill="#1b2430" letter-spacing="1.5">WHERE THE PRICES SAT, BEFORE AND AFTER</text>
-          <!-- market band -->
-          <rect x="140" y="70" width="440" height="150" rx="6" fill="#e3a72e" opacity="0.12"/>
-          <rect x="140" y="70" width="440" height="150" rx="6" fill="none" stroke="#e3a72e" stroke-width="2" stroke-dasharray="6 5"/>
-          <text x="360" y="62" font-family="Caveat, cursive" font-size="18" font-weight="700" fill="#e3a72e" text-anchor="middle">what competitors charge for comparable work</text>
+          <text x="28" y="38" font-family="DM Sans, sans-serif" font-size="13" font-weight="700" fill="#1b2430" letter-spacing="1.5">THE OFFER LADDER, BEFORE AND AFTER</text>
+
+          <!-- result callout, top right -->
+          <g transform="translate(566 52)">
+            <rect x="0" y="0" width="170" height="98" rx="8" fill="#faf3e7" stroke="#1b2430" stroke-width="1.5"/>
+            <text x="14" y="22" font-family="DM Sans, sans-serif" font-size="11" fill="#5c6b76">Forecast yearly revenue</text>
+            <text x="14" y="58" font-family="Newsreader, serif" font-size="30" font-weight="600" fill="#b5482d">$750k</text>
+            <text x="14" y="77" font-family="DM Sans, sans-serif" font-size="11" fill="#5c6b76">up from about $300k</text>
+            <text x="14" y="91" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="700" fill="#1b2430">in about four months</text>
+          </g>
+
           <!-- axis -->
           <line x1="60" y1="236" x2="700" y2="236" stroke="#1b2430" stroke-width="2"/>
           <g font-family="DM Sans, sans-serif" font-size="11" fill="#5c6b76" text-anchor="middle">
             <text x="60" y="256">$0</text><text x="220" y="256">$150</text><text x="380" y="256">$300</text><text x="540" y="256">$450</text><text x="700" y="256">$600</text>
           </g>
-          <!-- offer A -->
-          <text x="30" y="118" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#1b2430">Offer A</text>
-          <line x1="112" y1="114" x2="252" y2="114" stroke="#6c5ce7" stroke-width="2.5" stroke-dasharray="5 5"/>
-          <circle cx="112" cy="114" r="9" fill="#fff9ef" stroke="#5c6b76" stroke-width="2.5"/>
-          <circle cx="252" cy="114" r="10" fill="#6c5ce7" stroke="#fff9ef" stroke-width="3"/>
-          <text x="112" y="96" font-family="DM Sans, sans-serif" font-size="11" fill="#5c6b76" text-anchor="middle">$49</text>
-          <text x="252" y="96" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="700" fill="#6c5ce7" text-anchor="middle">$180</text>
-          <!-- offer B -->
-          <text x="30" y="182" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#1b2430">Offer B</text>
-          <line x1="188" y1="178" x2="392" y2="178" stroke="#6c5ce7" stroke-width="2.5" stroke-dasharray="5 5"/>
-          <circle cx="188" cy="178" r="9" fill="#fff9ef" stroke="#5c6b76" stroke-width="2.5"/>
-          <circle cx="392" cy="178" r="10" fill="#6c5ce7" stroke="#fff9ef" stroke-width="3"/>
-          <text x="188" y="160" font-family="DM Sans, sans-serif" font-size="11" fill="#5c6b76" text-anchor="middle">$120</text>
-          <text x="392" y="160" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="700" fill="#6c5ce7" text-anchor="middle">$310</text>
-          <!-- result callout -->
-          <g transform="translate(596 90)">
-            <rect x="0" y="0" width="136" height="110" rx="8" fill="#faf3e7" stroke="#1b2430" stroke-width="1.5"/>
-            <text x="14" y="24" font-family="DM Sans, sans-serif" font-size="11" fill="#5c6b76">Revenue, 90 days on</text>
-            <text x="14" y="62" font-family="Newsreader, serif" font-size="34" font-weight="600" fill="#b5482d">+27%</text>
-            <text x="14" y="86" font-family="DM Sans, sans-serif" font-size="11" fill="#5c6b76">Customer count</text>
-            <text x="14" y="100" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="700" fill="#1b2430">unchanged</text>
-          </g>
-          <text x="130" y="284" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#6c5ce7">both offers were priced below what the market already considered fair</text>
+
+          <!-- Offer A: unchanged at $150 -->
+          <text x="28" y="108" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#1b2430">Offer A</text>
+          <circle cx="220" cy="104" r="10" fill="#5c6b76" stroke="#fff9ef" stroke-width="3"/>
+          <text x="220" y="86" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="700" fill="#5c6b76" text-anchor="middle">$150</text>
+          <text x="244" y="108" font-family="Caveat, cursive" font-size="16" font-weight="700" fill="#5c6b76">kept exactly where it was</text>
+
+          <!-- Offer B: new tier at $350 -->
+          <text x="28" y="156" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#1b2430">Offer B</text>
+          <line x1="96" y1="152" x2="433" y2="152" stroke="#6c5ce7" stroke-width="2.5" stroke-dasharray="5 5"/>
+          <circle cx="96" cy="152" r="8" fill="#fff9ef" stroke="#5c6b76" stroke-width="2.5" stroke-dasharray="3 3"/>
+          <circle cx="433" cy="152" r="10" fill="#6c5ce7" stroke="#fff9ef" stroke-width="3"/>
+          <text x="433" y="134" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="700" fill="#6c5ce7" text-anchor="middle">$350</text>
+
+          <!-- Offer C: new tier at $500 a month -->
+          <text x="28" y="204" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#1b2430">Offer C</text>
+          <line x1="96" y1="200" x2="593" y2="200" stroke="#6c5ce7" stroke-width="2.5" stroke-dasharray="5 5"/>
+          <circle cx="96" cy="200" r="8" fill="#fff9ef" stroke="#5c6b76" stroke-width="2.5" stroke-dasharray="3 3"/>
+          <circle cx="593" cy="200" r="10" fill="#6c5ce7" stroke="#fff9ef" stroke-width="3"/>
+          <text x="593" y="182" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="700" fill="#6c5ce7" text-anchor="middle">$500/mo</text>
+
+          <text x="96" y="228" font-family="Caveat, cursive" font-size="16" font-weight="700" fill="#6c5ce7">B and C did not exist before</text>
+          <text x="330" y="284" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#e3a72e" text-anchor="middle">new patients were pointed at the two upper tiers</text>
         </svg>
       </div>
       <div class="case-study-body">
         <div>
-          <div class="cs-stat">+27%</div>
-          <div class="cs-stat-label">revenue within a quarter, from repricing two offers and adding no new customers</div>
+          <div class="cs-stat">2.5&times;</div>
+          <div class="cs-stat-label">forecast yearly revenue, from about $300k to about $750k in four months</div>
         </div>
         <div>
-          <h3>A local business pricing entirely on instinct.</h3>
-          <p>The owner had set prices at launch based on what felt reasonable and hadn't revisited them in three years. We benchmarked eight competitors, interviewed a dozen recent customers about what they'd compared and what they'd have paid, and found both core offers sitting well below the band the market already accepted. We restructured the two offers, wrote the messaging for the change, and sequenced the rollout so existing customers were handled first. Revenue rose by more than a quarter without a single additional customer.</p>
+          <h3>A physical therapy practice charging far less than the work was worth.</h3>
+          <p>The practice ran on a single option at $150 with nothing above it, priced years earlier and never revisited. We benchmarked the local market and found the ceiling sat well above what the owner believed it was, so we built a three-tier structure: the $150 option stayed exactly where it was, and two new tiers went in above it at $350 and $500 a month. The messaging pointed new patients at the upper tiers while existing ones kept the price they signed up for. Four months on, the forecast for the year had moved from about $300,000 to about $750,000.</p>
           <p class="cs-note">Details anonymized. Figures from a representative engagement.</p>
         </div>
       </div>
@@ -237,7 +242,7 @@ Scoped under #zly-consulting-case-study. Self-contained: paste into a Squarespac
   <!-- PINNED TESTIMONIAL -->
   <div class="pin-wrap">
     <div class="pin-card">
-      <p class="quote">"Zoley enhanced our real estate website so potential buyers stay within our ecosystem. It led to a 40% increase in interest in our listings."</p>
+      <p class="quote">"Zoley helped us understand what our competitors were charging, helped us introduce new offerings, and more than doubled our yearly revenue expectations. We are so happy with the results!!!"</p>
       <span>&mdash; Rob G., No Limit Real Estate, LLC</span>
     </div>
   </div>
