@@ -3,7 +3,7 @@
  * ---------------------------------------------------------------------------
  * Put ONE of these in Squarespace -> Settings -> Advanced -> Code Injection -> HEADER:
  *
- *   <script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.0.6/dist/zoley-loader.js"></script>
+ *   <script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.7.0/dist/zoley-loader.js"></script>
  *
  * Then each page just needs Code Blocks holding one line each:
  *
@@ -17,7 +17,7 @@
  *
  * The loader reads the pinned version out of its own <script src>, so the tag
  * above is the ONLY place a version number appears. To ship a new release:
- * push, tag, and bump @v1.0.0 to the new tag. Nothing else changes.
+ * push, tag, and bump the tag in that URL to the new one. Nothing else changes.
  *
  * Why a pinned tag and not @main: jsDelivr caches branch URLs for 12h at the
  * edge and 7 days in a browser that has already loaded them. Exact tags are
