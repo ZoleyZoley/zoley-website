@@ -20,8 +20,8 @@ REPO = os.path.dirname(HERE)
 SRC  = os.path.join(REPO, "main pages")
 
 # The tag Squarespace is pointed at. Bump this in the same commit you tag.
-CURRENT_TAG = "v1.7.1"
-NEXT_TAG    = "v1.7.2"
+CURRENT_TAG = "v1.7.2"
+NEXT_TAG    = "v1.7.3"
 OUT  = os.path.join(REPO, "sections.v2")
 
 # page file -> (folder, new-id stem, [slug per section, in page order])
