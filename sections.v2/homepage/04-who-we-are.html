@@ -188,6 +188,14 @@ Scoped under #zly-hy-who-we-are. Self-contained: paste into a Squarespace Code B
     #zly-hy-who-we-are .zhy-input:focus { outline: 2px solid var(--marigold); outline-offset: 1px; }
     #zly-hy-who-we-are .zhy-newsletter-form .zhy-btn { flex-shrink: 0; }
     #zly-hy-who-we-are .zhy-newsletter .fine-print { font-size: 12px; color: rgba(244,237,224,0.5); margin-top: 12px; margin-bottom: 0; }
+    #zly-hy-who-we-are .zhy-newsletter-form .zhy-input-name { flex: 1 1 140px; }
+    #zly-hy-who-we-are .zhy-newsletter-form .zhy-btn:disabled { opacity: 0.7; cursor: wait; }
+    /* Bot trap: off-screen for people, still filled in by form-stuffing bots. */
+    #zly-hy-who-we-are .zhy-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    #zly-hy-who-we-are .zhy-nl-status { font-size: 14px; font-weight: 600; margin: 12px 0 0; }
+    #zly-hy-who-we-are .zhy-nl-status:empty { display: none; }
+    #zly-hy-who-we-are .zhy-nl-status.is-error { color: #f4b8a8; }
+    #zly-hy-who-we-are .zhy-nl-status.is-success { color: var(--paper); font-size: 16px; }
 
     /* ---------- FEATURED (Automation spotlight) ---------- */
     #zly-hy-who-we-are .zhy-featured {

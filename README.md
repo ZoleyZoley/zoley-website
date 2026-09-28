@@ -19,10 +19,11 @@ Nothing in this repo was deleted or rewritten to build v2 — the originals are 
 
 ## How a change reaches the live site
 
-1. Edit a file in `sections.v2/`.
+1. Edit the page in `main pages/` (the `.v2.html` file), then run `python3 tools/build-sections.py`.
+   Never hand-edit `sections.v2/`: the build overwrites it.
 2. `git add -A && git commit -m "..." && git push`
-3. `git tag v1.7.3 && git push --tags`
-4. In Squarespace → Settings → Advanced → Code Injection → Header, change `@v1.7.2` to `@v1.7.3`.
+3. `git tag v1.7.4 && git push --tags` (the next unused tag; the live one is v1.7.3)
+4. In Squarespace → Settings → Advanced → Code Injection → Header, change `@v1.7.3` to `@v1.7.4`.
 
 Step 4 is one character in one box. Everything else on the site updates from it.
 
@@ -39,7 +40,7 @@ week. Exact tags are immutable, so they go live the moment you bump the number.
 Header code injection (site-wide):
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.7.2/dist/zoley-loader.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.7.3/dist/zoley-loader.js"></script>
 ```
 
 Then each page gets **one** Code Block holding a single line:

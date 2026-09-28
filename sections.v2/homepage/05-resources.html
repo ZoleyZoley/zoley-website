@@ -188,6 +188,14 @@ Scoped under #zly-hy-resources. Self-contained: paste into a Squarespace Code Bl
     #zly-hy-resources .zhy-input:focus { outline: 2px solid var(--marigold); outline-offset: 1px; }
     #zly-hy-resources .zhy-newsletter-form .zhy-btn { flex-shrink: 0; }
     #zly-hy-resources .zhy-newsletter .fine-print { font-size: 12px; color: rgba(244,237,224,0.5); margin-top: 12px; margin-bottom: 0; }
+    #zly-hy-resources .zhy-newsletter-form .zhy-input-name { flex: 1 1 140px; }
+    #zly-hy-resources .zhy-newsletter-form .zhy-btn:disabled { opacity: 0.7; cursor: wait; }
+    /* Bot trap: off-screen for people, still filled in by form-stuffing bots. */
+    #zly-hy-resources .zhy-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    #zly-hy-resources .zhy-nl-status { font-size: 14px; font-weight: 600; margin: 12px 0 0; }
+    #zly-hy-resources .zhy-nl-status:empty { display: none; }
+    #zly-hy-resources .zhy-nl-status.is-error { color: #f4b8a8; }
+    #zly-hy-resources .zhy-nl-status.is-success { color: var(--paper); font-size: 16px; }
 
     /* ---------- FEATURED (Automation spotlight) ---------- */
     #zly-hy-resources .zhy-featured {
@@ -322,24 +330,64 @@ Scoped under #zly-hy-resources. Self-contained: paste into a Squarespace Code Bl
         <div>
           <div class="zhy-col-title">Featured Guides</div>
           <ul class="zhy-guide-list">
-            <li><a href="#" class="zhy-guide-link"><span>The Small Business AI Starter Guide<small>Where AI pays off first, and where it doesn't yet</small></span><span class="arrow">&rarr;</span></a></li>
-            <li><a href="#" class="zhy-guide-link"><span>Five Automations Worth Setting Up First<small>Ranked by hours saved per hour of setup</small></span><span class="arrow">&rarr;</span></a></li>
-            <li><a href="#" class="zhy-guide-link"><span>A Website Checklist That Converts<small>The 12 elements we audit on every site</small></span><span class="arrow">&rarr;</span></a></li>
+            <li><a href="https://drive.google.com/uc?export=download&id=1bG4TBNHMalwXIw_dQZHoYOIPjudDB_wS" class="zhy-guide-link"><span>The Small Business AI Starter Guide<small>Where AI pays off first, and where it doesn't yet</small></span><span class="arrow">&rarr;</span></a></li>
+            <li><a href="https://drive.google.com/uc?export=download&id=15zwwOtOwFo4TQD32cZFjue3K8QxdqLO9" class="zhy-guide-link"><span>Five Automations Worth Setting Up First<small>Ranked by hours saved per hour of setup</small></span><span class="arrow">&rarr;</span></a></li>
+            <li><a href="https://drive.google.com/uc?export=download&id=1Mufday8PW1zzqSm_cYSOynCFf0h5zHXY" class="zhy-guide-link"><span>The Website Conversion Checklist<small>The 12 elements we audit on every site</small></span><span class="arrow">&rarr;</span></a></li>
           </ul>
         </div>
         <div>
-          <div class="zhy-col-title">Startup Steps Newsletter</div>
+          <div class="zhy-col-title">Zoley Espresso Brief</div>
           <div class="zhy-newsletter">
-          <h3>One operational improvement a month.</h3>
+          <h3>Easy operational tips to improve your business (Coming soon)</h3>
           <p>A single, specific change you can make to how your business runs, with the reasoning behind it. Short enough to act on the same day.</p>
-          <form class="zhy-newsletter-form" onsubmit="return false;">
-            <input type="email" required placeholder="you@yourbusiness.com" class="zhy-input" aria-label="Email address">
+          <form class="zhy-newsletter-form" id="zhy-nl-form" novalidate>
+            <input type="text" name="first_name" required placeholder="First name" class="zhy-input zhy-input-name" aria-label="First name" autocomplete="given-name">
+            <input type="email" name="email" required placeholder="you@yourbusiness.com" class="zhy-input" aria-label="Email address" autocomplete="email">
+            <div class="zhy-hp" aria-hidden="true"><label>Company <input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
             <button type="submit" class="zhy-btn zhy-btn-primary">Subscribe</button>
           </form>
+          <p class="zhy-nl-status" id="zhy-nl-status" role="status" aria-live="polite"></p>
           <p class="fine-print">One email a week. One thing to improve your business. We promise to not spam your inbox.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <script>
+    (function () {
+      // Espresso Brief signup -> Google Apps Script web app (see the note at the top of the page).
+      var NEWSLETTER_ENDPOINT = "https://script.google.com/macros/s/AKfycbxMauQxJhF3SWBEQsbL3HZCYoUTGGx3eYjJZnJz3lN82IAzELAXmortCYFprQLaCu95Vg/exec";
+
+      var form = document.getElementById('zhy-nl-form');
+      var status = document.getElementById('zhy-nl-status');
+      if (!form || !status) return;
+      var btn = form.querySelector('button[type="submit"]');
+
+      function say(msg, kind) { status.textContent = msg; status.className = 'zhy-nl-status' + (kind ? ' is-' + kind : ''); }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var first = form.first_name.value.trim();
+        var email = form.email.value.trim();
+        if (!first) { say('Mind adding your first name?', 'error'); form.first_name.focus(); return; }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { say("That email doesn't look right. Mind double-checking it?", 'error'); form.email.focus(); return; }
+        if (NEWSLETTER_ENDPOINT.indexOf('http') !== 0) { say('Signups open shortly. Please try again soon.', 'error'); return; }
+
+        btn.disabled = true; say('');
+        // Apps Script can't answer the browser's cross-site pre-check, so this is sent as
+        // plain text without reading the reply. The script validates everything itself.
+        fetch(NEWSLETTER_ENDPOINT, {
+          method: 'POST', mode: 'no-cors',
+          body: JSON.stringify({ form: 'newsletter', first_name: first, email: email, company: form.company.value, source: 'homepage' })
+        }).then(function () {
+          form.hidden = true;
+          say("You're in, " + first + ". Check your inbox for a welcome email.", 'success');
+        }).catch(function () {
+          btn.disabled = false;
+          say("Something didn't go through. Try again, or email connect@zoley.io.", 'error');
+        });
+      });
+    })();
+  </script>
 </div>
