@@ -22,8 +22,12 @@ Nothing in this repo was deleted or rewritten to build v2 — the originals are 
 1. Edit the page in `main pages/` (the `.v2.html` file), then run `python3 tools/build-sections.py`.
    Never hand-edit `sections.v2/`: the build overwrites it.
 2. `git add -A && git commit -m "..." && git push`
-3. `git tag v1.7.4 && git push --tags` (the next unused tag; the live one is v1.7.3)
-4. In Squarespace → Settings → Advanced → Code Injection → Header, change `@v1.7.3` to `@v1.7.4`.
+3. `git tag v1.7.5 && git push --tags` (the next unused tag; the live one is v1.7.4)
+4. In Squarespace → Settings → Advanced → Code Injection → Header, change `@v1.7.4` to `@v1.7.5`.
+
+**Never reuse a tag name**, even one you deleted. jsDelivr remembers which commit a
+tag pointed to the first time it was requested and keeps serving those files. (v1.7.3
+was lost this way on 9/28/26: it serves an older commit, so v1.7.4 replaced it.)
 
 Step 4 is one character in one box. Everything else on the site updates from it.
 
@@ -40,7 +44,7 @@ week. Exact tags are immutable, so they go live the moment you bump the number.
 Header code injection (site-wide):
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.7.3/dist/zoley-loader.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.7.4/dist/zoley-loader.js"></script>
 ```
 
 Then each page gets **one** Code Block holding a single line:
