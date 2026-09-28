@@ -8,7 +8,7 @@ Every section is **self-contained**: it carries its own scoped CSS and renders o
 **Once**, in Settings -> Advanced -> Code Injection -> **Header**:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.7.6/dist/zoley-loader.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.7.7/dist/zoley-loader.js"></script>
 ```
 
 Then give each page **one** Code Block holding a single line:
@@ -21,8 +21,8 @@ That renders every section of that page, in the order below. Adding, removing or
 reordering a section afterwards is a git change only - Squarespace never needs touching again.
 To place one section somewhere specific instead, use its own line from the page's list.
 
-**To ship a change:** edit the section -> `git push` -> `git tag v1.7.7 && git push --tags` ->
-change `@v1.7.6` to `@v1.7.7` in the header snippet. That number is the only thing you edit in Squarespace.
+**To ship a change:** edit the section -> `git push` -> `git tag v1.7.8 && git push --tags` ->
+change `@v1.7.7` to `@v1.7.8` in the header snippet. That number is the only thing you edit in Squarespace.
 
 > Pinned tags, not `@main`: jsDelivr caches a branch for 12h at the edge and **7 days in a browser
 > that already loaded it**. Exact tags are immutable and go live immediately.
@@ -59,7 +59,7 @@ Or place sections individually:
 <div data-zoley-section="homepage/08-final-cta"></div>
 ```
 
-## ai -> `/ai`
+## ai -> `/artificial-intelligence`
 
 Source: `main pages/zoley-ai-page.v2.html` - 8 sections
 
@@ -181,7 +181,7 @@ Or place sections individually:
 <div data-zoley-section="consulting/08-final-cta"></div>
 ```
 
-## web-design -> `/web-design`
+## web-design -> `/web-dev`
 
 Source: `main pages/zoley-web-design-page.v2.html` - 9 sections
 
@@ -213,7 +213,7 @@ Or place sections individually:
 <div data-zoley-section="web-design/09-final-cta"></div>
 ```
 
-## about -> `/about`
+## about -> `/our-story`
 
 Source: `main pages/zoley-about.v2.html` - 5 sections
 
@@ -321,7 +321,7 @@ Or place sections individually:
 <div data-zoley-section="case-studies/03-final-cta"></div>
 ```
 
-## tools-guides -> `/tools-and-guides`
+## tools-guides -> `/tools-guides`
 
 Source: `main pages/zoley-tools-guides.v2.html` - 4 sections
 

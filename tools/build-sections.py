@@ -20,8 +20,8 @@ REPO = os.path.dirname(HERE)
 SRC  = os.path.join(REPO, "main pages")
 
 # The tag Squarespace is pointed at. Bump this in the same commit you tag.
-CURRENT_TAG = "v1.7.6"
-NEXT_TAG    = "v1.7.7"
+CURRENT_TAG = "v1.7.7"
+NEXT_TAG    = "v1.7.8"
 OUT  = os.path.join(REPO, "sections.v2")
 
 # page file -> (folder, new-id stem, [slug per section, in page order])
@@ -49,10 +49,10 @@ PAGES = {
  "zoley-tools-guides.v2.html": ("tools-guides", None, ["hero","tools","guides","final-cta"]),
 }
 
-PAGE_URLS = {"homepage":"/","ai":"/ai","automation":"/automation","advertising":"/digital-advertising",
- "consulting":"/strategic-consulting","web-design":"/web-design","about":"/about","pricing":"/pricing",
+PAGE_URLS = {"homepage":"/","ai":"/artificial-intelligence","automation":"/automation","advertising":"/digital-advertising",
+ "consulting":"/strategic-consulting","web-design":"/web-dev","about":"/our-story","pricing":"/pricing",
  "quickstart":"/find-your-next-best-business-move","build":"/build","case-studies":"/case-studies",
- "tools-guides":"/tools-and-guides"}
+ "tools-guides":"/tools-guides"}
 
 ORDER = ["homepage","ai","automation","advertising","consulting","web-design",
          "about","pricing","quickstart","build","case-studies","tools-guides"]
