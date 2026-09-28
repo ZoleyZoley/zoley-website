@@ -1,6 +1,12 @@
 <!--
 ZOLEY ABOUT PAGE — V2 — ONE CODE BLOCK FOR THIS ENTIRE PAGE
-Sections: Hero / Story (with illustration) / How We Work (new: engagement timeline) / Principles / Final CTA
+Sections: Hero / Story (founder's letter) / How We Work (new: engagement timeline) / Principles / Final CTA
+
+9/28/26: the top half is now a first-person letter from Ryan instead of a sales section. It
+says outright that the page is a story on purpose, because every business has one. Written
+in "I" on purpose: this page is the one exception to the site's "we" voice. The letter only
+states facts Ryan gave (Fortune 50 operations leadership, the layoff, friends in PT and
+dental, custom builds, the name from his grandfather and puzzles). Don't embellish them.
 
 V2 CHANGES (vs zoley-about.html):
 - Copy rewritten in a more authoritative register; still "we".
@@ -26,23 +32,35 @@ V2 CHANGES (vs zoley-about.html):
   @media (max-width: 900px) { #zly-about-hero .hero { padding: 72px 20px 40px; } }
   @media (max-width: 480px) { #zly-about-hero .hero { padding: 56px 18px 32px; } }
 
-  /* ===== story ===== */
+  /* ===== story (founder's letter) ===== */
   #zly-about-story {
-    --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
-    --barn: #14457a; --violet: #6c5ce7; --blue: #4ea1ff; --sage: #7a8b69; --marigold: #e3a72e; --border: rgba(27,36,48,0.14);
+    --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+    --barn: #14457a; --violet: #6c5ce7; --blue: #4ea1ff; --border: rgba(27,36,48,0.14);
     font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
   }
   #zly-about-story * { box-sizing: border-box; margin: 0; padding: 0; }
-  #zly-about-story .sec { padding: 30px 24px 90px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-  #zly-about-story h2 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); font-size: clamp(26px, 3vw, 36px); margin-bottom: 18px; }
-  #zly-about-story p { color: var(--ink-soft); line-height: 1.7; font-size: 16.5px; margin-bottom: 16px; }
-  #zly-about-story p:last-of-type { margin-bottom: 0; }
-  #zly-about-story .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: var(--barn); }
-  #zly-about-story .media { background: var(--paper-2); border: 1px solid var(--border); border-radius: 16px; padding: 22px; }
-  #zly-about-story .media svg { width: 100%; height: auto; display: block; }
-  #zly-about-story .media img { width: 100%; height: auto; display: block; border-radius: 10px; }
-  #zly-about-story .cap { font-family: 'Caveat', cursive; font-size: 18px; color: var(--ink-soft); text-align: center; margin-top: 10px; transform: rotate(-1deg); }
-  @media (max-width: 900px) { #zly-about-story .sec { grid-template-columns: 1fr; padding: 16px 20px 60px; gap: 32px; } #zly-about-story .media { order: -1; } }
+  #zly-about-story .sec { padding: 10px 24px 96px; max-width: 780px; margin: 0 auto; }
+  /* A letter on the desk: plain card, soft shadow, the site's gradient rule across the top. */
+  #zly-about-story .letter {
+    position: relative; background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+    padding: 60px 68px 52px; box-shadow: 0 22px 44px -28px rgba(27,36,48,0.35);
+  }
+  #zly-about-story .letter::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 6px 6px 0 0; background: linear-gradient(90deg, var(--barn), var(--violet), var(--blue)); }
+  #zly-about-story .letter p { font-family: 'Newsreader', Georgia, serif; font-size: 19.5px; line-height: 1.75; color: var(--ink); margin-bottom: 22px; }
+  #zly-about-story .letter p.lede { font-size: 25px; line-height: 1.5; font-weight: 500; margin-bottom: 26px; }
+  #zly-about-story .letter p.closing { font-style: italic; }
+  #zly-about-story .sign { margin-top: 34px; color: var(--barn); font-family: 'Caveat', cursive; font-weight: 700; line-height: 1.1; }
+  #zly-about-story .sign .name { display: block; font-size: 40px; transform: rotate(-2deg); transform-origin: left center; }
+  #zly-about-story .sign .role { display: block; font-size: 24px; margin-top: 6px; }
+  @media (max-width: 900px) { #zly-about-story .sec { padding: 6px 20px 64px; } #zly-about-story .letter { padding: 44px 40px 40px; } }
+  @media (max-width: 560px) {
+    #zly-about-story .sec { padding: 4px 14px 56px; }
+    #zly-about-story .letter { padding: 34px 22px 32px; }
+    #zly-about-story .letter p { font-size: 18px; line-height: 1.7; }
+    #zly-about-story .letter p.lede { font-size: 21px; }
+    #zly-about-story .sign .name { font-size: 34px; }
+    #zly-about-story .sign .role { font-size: 21px; }
+  }
 
   /* ===== how we work ===== */
   #zly-about-how {
@@ -133,74 +151,32 @@ V2 CHANGES (vs zoley-about.html):
 <!-- HERO -->
 <div id="zly-about-hero">
   <section class="hero">
-    <span class="tag">who we are</span>
-    <h1>Zoley exists because small businesses were getting the strategy or the build, and rarely both.</h1>
-    <p class="sub">We're a consulting and systems firm for founders, owner-operators, and family businesses. We research what the market will pay for, then build the website, automation, and AI that deliver it. One team, one plan, one set of numbers.</p>
+    <span class="tag">a letter from our founder</span>
+    <h1>Every business has a story. Here's ours.</h1>
+    <p class="sub">You won't find a list of services on this page, and that's on purpose. Every business we work with has a story behind it, and you should know the one behind ours before you trust us with yours.</p>
   </section>
 </div>
 
 <!-- STORY -->
 <div id="zly-about-story">
   <section class="sec">
-    <div>
-      <span class="tag">how we got here</span>
-      <h2>We kept meeting owners who had been sold tools without a diagnosis.</h2>
-      <p>Between us we've spent more than thirty years in consulting, operations, and marketing, much of it inside larger companies with the budgets to hire a strategist, a developer, and an agency separately. Small businesses can't, so they end up with a website from one vendor, ads from another, and a stack of software subscriptions nobody connected.</p>
-      <p>Zoley was built to do the diagnosis first. We audit how a business actually runs, rank what's costing it the most, and then build the fix ourselves, inside the tools the owner already has. When the research and the build come from the same people, the result gets measured against the plan instead of drifting away from it.</p>
-      <p>We don't sell retainers you can't cancel, software we get commission on, or reports nobody reads. Every engagement is scoped in writing, priced before it starts, and handed over with documentation so you own what we built.</p>
-    </div>
-    <div>
-      <!-- Swap this SVG for a real team photo when available: <img src="..." alt="The Zoley team"> -->
-      <div class="media">
-        <svg viewBox="0 0 440 330" fill="none" role="img" aria-label="Illustration: a typical engagement laid out week by week, from audit to plan to build to review">
-          <defs>
-            <linearGradient id="zab-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#14457a"/><stop offset="1" stop-color="#4ea1ff"/></linearGradient>
-            <!-- userSpaceOnUse: a gradient defaults to objectBoundingBox, and a perfectly flat line has a zero-height box, so the stroke is not painted at all. -->
-            <linearGradient id="zab-grad-line" gradientUnits="userSpaceOnUse" x1="60" y1="36" x2="60" y2="300"><stop offset="0" stop-color="#14457a"/><stop offset="1" stop-color="#4ea1ff"/></linearGradient>
-          </defs>
-          <!-- vertical timeline -->
-          <line x1="60" y1="36" x2="60" y2="300" stroke="url(#zab-grad-line)" stroke-width="2.5" stroke-dasharray="6 6"/>
-          <!-- node 1 -->
-          <circle cx="60" cy="52" r="13" fill="#fff9ef" stroke="#14457a" stroke-width="2.5"/>
-          <text x="60" y="56.5" font-family="DM Sans, sans-serif" font-size="11" font-weight="700" fill="#14457a" text-anchor="middle">1</text>
-          <g transform="translate(92 26) rotate(-1 150 26)">
-            <rect x="0" y="0" width="300" height="52" rx="7" fill="#fff9ef" stroke="#1b2430" stroke-width="2"/>
-            <text x="16" y="21" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#1b2430">Week 1 · Audit</text>
-            <text x="16" y="39" font-family="DM Sans, sans-serif" font-size="11" fill="#5c6b76">Interviews, numbers, and a walk through how work moves</text>
-            <text x="286" y="21" font-family="Caveat, cursive" font-size="15" font-weight="700" fill="#14457a" text-anchor="end">findings memo</text>
-          </g>
-          <!-- node 2 -->
-          <circle cx="60" cy="126" r="13" fill="#fff9ef" stroke="#6c5ce7" stroke-width="2.5"/>
-          <text x="60" y="130.5" font-family="DM Sans, sans-serif" font-size="11" font-weight="700" fill="#6c5ce7" text-anchor="middle">2</text>
-          <g transform="translate(92 100) rotate(1 150 26)">
-            <rect x="0" y="0" width="300" height="52" rx="7" fill="#fff9ef" stroke="#1b2430" stroke-width="2"/>
-            <text x="16" y="21" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#1b2430">Week 2 · Plan</text>
-            <text x="16" y="39" font-family="DM Sans, sans-serif" font-size="11" fill="#5c6b76">Ranked fixes, first build scoped, fixed price agreed</text>
-            <text x="286" y="21" font-family="Caveat, cursive" font-size="15" font-weight="700" fill="#6c5ce7" text-anchor="end">plan &amp; quote</text>
-          </g>
-          <!-- node 3 -->
-          <circle cx="60" cy="200" r="13" fill="#fff9ef" stroke="#4ea1ff" stroke-width="2.5"/>
-          <text x="60" y="204.5" font-family="DM Sans, sans-serif" font-size="11" font-weight="700" fill="#4ea1ff" text-anchor="middle">3</text>
-          <g transform="translate(92 174) rotate(-1 150 26)">
-            <rect x="0" y="0" width="300" height="52" rx="7" fill="#fff9ef" stroke="#1b2430" stroke-width="2"/>
-            <text x="16" y="21" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#1b2430">Weeks 3–6 · Build &amp; connect</text>
-            <text x="16" y="39" font-family="DM Sans, sans-serif" font-size="11" fill="#5c6b76">Inside your existing tools, tested on real records</text>
-            <text x="286" y="21" font-family="Caveat, cursive" font-size="15" font-weight="700" fill="#4ea1ff" text-anchor="end">working system</text>
-          </g>
-          <!-- node 4 -->
-          <circle cx="60" cy="274" r="13" fill="#fff9ef" stroke="#7a8b69" stroke-width="2.5"/>
-          <text x="60" y="278.5" font-family="DM Sans, sans-serif" font-size="11" font-weight="700" fill="#7a8b69" text-anchor="middle">4</text>
-          <g transform="translate(92 248) rotate(1 150 26)">
-            <rect x="0" y="0" width="300" height="52" rx="7" fill="#fff9ef" stroke="#1b2430" stroke-width="2"/>
-            <text x="16" y="21" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#1b2430">Day 30 · Review &amp; handover</text>
-            <text x="16" y="39" font-family="DM Sans, sans-serif" font-size="11" fill="#5c6b76">Numbers against the plan, documentation, you own it</text>
-            <text x="286" y="21" font-family="Caveat, cursive" font-size="15" font-weight="700" fill="#7a8b69" text-anchor="end">dashboard</text>
-          </g>
-          <text x="20" y="322" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#5c6b76">a typical first engagement</text>
-        </svg>
-      </div>
-      <div class="cap">Every engagement follows the same four stages.</div>
-    </div>
+    <article class="letter" aria-label="A letter from Ryan K. Phelan, founder of Zoley Consulting">
+      <p class="lede">Zoley didn't start with a business plan. It started with a layoff.</p>
+
+      <p>For years I worked inside a Fortune 50 company, leading operational teams across different parts of the business. I learned how a large organization actually runs: how work moves from one team to the next, where it stalls, and how much a small fix in the right place is worth. Then I was laid off, and I had to figure out what came next.</p>
+
+      <p>The answer was closer than I expected. Some of my friends are exceptional at what they do. They're physical therapists and dentists with patients who love them. But nobody teaches the business side in physical therapy or dental school: the pricing, the scheduling, the follow-up with new patients, the systems that keep a practice running while you're busy doing the actual work. They were carrying all of that on top of their real jobs, mostly by hand.</p>
+
+      <p>I had spent my career on exactly that side of the house. So I started helping, one problem at a time. Zoley grew out of necessity, not a grand plan: a next step for me, and a need I kept seeing in the businesses around me.</p>
+
+      <p>I'm naturally curious, and I like to build things. When I look at a business, my first question isn't which software to sell it. It's how the work actually happens today. More often than not, the right answer is something built for that business specifically: an intake process that fits how the front desk really works, an automation that connects two tools that were never meant to talk, a report the owner actually reads. Off-the-shelf tools have their place, but most businesses don't run the way the software assumes they do.</p>
+
+      <p>The name Zoley comes from my grandfather. Whenever he came to visit, he'd settle in with the crossword from the newspaper and a bowl of pistachios or tortilla chips next to him, working through the clues one square at a time. That's where my love of puzzles comes from, and it's still how I think about this work. Every business is its own puzzle, made from the same kinds of pieces: people, tools, time and money. My job is to work out how they fit, fill in what's missing, and keep at it until the whole thing makes sense.</p>
+
+      <p class="closing">That's why this page reads like a letter instead of a brochure. Your business has its own story too, and I'd like to hear it.</p>
+
+      <div class="sign"><span class="name">Ryan K. Phelan</span><span class="role">Founder, Zoley Consulting</span></div>
+    </article>
   </section>
 </div>
 

@@ -245,7 +245,20 @@ Scoped under #zly-hy-testimonials. Self-contained: paste into a Squarespace Code
     #zly-hy-testimonials .zhy-test-dots button { box-sizing: content-box; width: 8px; height: 8px; padding: 18px; background-clip: content-box; border-radius: 50%; border: none; cursor: pointer; background-color: rgba(27,36,48,0.2); transition: background-color 0.3s ease, width 0.3s ease; }
     #zly-hy-testimonials .zhy-test-dots button.is-active { width: 22px; border-radius: 5px; background-color: var(--violet); }
     @media (prefers-reduced-motion: reduce) { #zly-hy-testimonials .zhy-test-track { transition: none; } }
-    @media (max-width: 640px) { #zly-hy-testimonials .zhy-test-page { grid-template-columns: 1fr; } }
+    /* Phones: one card per slide. The page wrappers drop out of the layout, so each
+       card becomes its own full-width slide in the track; the script counts cards
+       instead of pages below this width. */
+    @media (max-width: 640px) {
+      #zly-hy-testimonials .zhy-test-page { display: contents; }
+      #zly-hy-testimonials .zhy-test-card { flex: 0 0 100%; min-width: 0; margin: 4px 0 6px; }
+      /* A dot per card is up to 8 dots, so tighten the row to fit a phone. Each dot
+         is still a 26px tap target. */
+      #zly-hy-testimonials .zhy-test-nav { gap: 6px; }
+      #zly-hy-testimonials .zhy-test-dots button { padding: 9px; }
+    }
+    /* Very small phones (320px): smaller dots so the arrows stay on screen. The
+       arrows and swiping remain the main way to move on these. */
+    @media (max-width: 359px) { #zly-hy-testimonials .zhy-test-dots button { padding: 6px; } }
 
     /* ---------- FINAL CTA ---------- */
     #zly-hy-testimonials .zhy-sign {
@@ -394,39 +407,72 @@ Scoped under #zly-hy-testimonials. Self-contained: paste into a Squarespace Code
     if (!viewport || !track || !prev || !next || !dotsWrap) return;
 
     const pages = Array.from(track.querySelectorAll(".zhy-test-page"));
+    const cards = Array.from(track.querySelectorAll(".zhy-test-card"));
+    // Must match the max-width in the CSS that turns each card into its own slide.
+    const phone = window.matchMedia("(max-width: 640px)");
     const AUTOPLAY_MS = 6000;
     let index = 0;
     let autoplayTimer = null;
+    let dots = [];
 
-    pages.forEach((_, i) => {
-      const dot = document.createElement("button");
-      dot.type = "button";
-      dot.setAttribute("aria-label", `Go to testimonial page ${i + 1}`);
-      dot.addEventListener("click", () => goTo(i, true));
-      dotsWrap.appendChild(dot);
-    });
-    const dots = Array.from(dotsWrap.children);
+    // Desktop slides are pages of two cards; on phones every card is a slide.
+    const slideCount = () => (phone.matches ? cards.length : pages.length);
 
+    function buildDots() {
+      dotsWrap.innerHTML = "";
+      const label = phone.matches ? "testimonial" : "testimonial page";
+      for (let i = 0; i < slideCount(); i++) {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.setAttribute("aria-label", `Go to ${label} ${i + 1}`);
+        dot.addEventListener("click", () => goTo(i, true));
+        dotsWrap.appendChild(dot);
+      }
+      dots = Array.from(dotsWrap.children);
+    }
     function render() {
       track.style.transform = `translateX(-${index * 100}%)`;
       dots.forEach((dot, i) => dot.classList.toggle("is-active", i === index));
     }
     function goTo(i, userInitiated) {
-      index = (i + pages.length) % pages.length;
+      const n = slideCount();
+      index = (i + n) % n;
       render();
       if (userInitiated) restartAutoplay();
     }
-    function startAutoplay() { if (pages.length < 2) return; autoplayTimer = setInterval(() => goTo(index + 1, false), AUTOPLAY_MS); }
+    function startAutoplay() { if (slideCount() < 2) return; stopAutoplay(); autoplayTimer = setInterval(() => goTo(index + 1, false), AUTOPLAY_MS); }
     function stopAutoplay() { clearInterval(autoplayTimer); }
     function restartAutoplay() { stopAutoplay(); startAutoplay(); }
 
+    // Crossing the phone breakpoint (rotating a tablet, resizing a window): keep the
+    // same first card in view.
+    phone.addEventListener("change", () => {
+      const perPage = cards.length / pages.length;
+      index = phone.matches ? Math.round(index * perPage) : Math.floor(index / perPage);
+      buildDots();
+      goTo(index, false);
+    });
+
     prev.addEventListener("click", () => goTo(index - 1, true));
     next.addEventListener("click", () => goTo(index + 1, true));
+
+    // Swipe left/right on touch screens. Mostly-vertical drags are left to scroll the page.
+    let touchX = null, touchY = null;
+    viewport.addEventListener("touchstart", (e) => { touchX = e.touches[0].clientX; touchY = e.touches[0].clientY; stopAutoplay(); }, { passive: true });
+    viewport.addEventListener("touchend", (e) => {
+      if (touchX === null) return;
+      const dx = e.changedTouches[0].clientX - touchX, dy = e.changedTouches[0].clientY - touchY;
+      touchX = touchY = null;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) goTo(index + (dx < 0 ? 1 : -1), true);
+      else startAutoplay();
+    }, { passive: true });
+
     viewport.addEventListener("mouseenter", stopAutoplay);
     viewport.addEventListener("mouseleave", startAutoplay);
     viewport.addEventListener("focusin", stopAutoplay);
     viewport.addEventListener("focusout", startAutoplay);
 
+    buildDots();
     render();
     startAutoplay();
   });

@@ -245,7 +245,20 @@ Scoped under #zly-hy-featured. Self-contained: paste into a Squarespace Code Blo
     #zly-hy-featured .zhy-test-dots button { box-sizing: content-box; width: 8px; height: 8px; padding: 18px; background-clip: content-box; border-radius: 50%; border: none; cursor: pointer; background-color: rgba(27,36,48,0.2); transition: background-color 0.3s ease, width 0.3s ease; }
     #zly-hy-featured .zhy-test-dots button.is-active { width: 22px; border-radius: 5px; background-color: var(--violet); }
     @media (prefers-reduced-motion: reduce) { #zly-hy-featured .zhy-test-track { transition: none; } }
-    @media (max-width: 640px) { #zly-hy-featured .zhy-test-page { grid-template-columns: 1fr; } }
+    /* Phones: one card per slide. The page wrappers drop out of the layout, so each
+       card becomes its own full-width slide in the track; the script counts cards
+       instead of pages below this width. */
+    @media (max-width: 640px) {
+      #zly-hy-featured .zhy-test-page { display: contents; }
+      #zly-hy-featured .zhy-test-card { flex: 0 0 100%; min-width: 0; margin: 4px 0 6px; }
+      /* A dot per card is up to 8 dots, so tighten the row to fit a phone. Each dot
+         is still a 26px tap target. */
+      #zly-hy-featured .zhy-test-nav { gap: 6px; }
+      #zly-hy-featured .zhy-test-dots button { padding: 9px; }
+    }
+    /* Very small phones (320px): smaller dots so the arrows stay on screen. The
+       arrows and swiping remain the main way to move on these. */
+    @media (max-width: 359px) { #zly-hy-featured .zhy-test-dots button { padding: 6px; } }
 
     /* ---------- FINAL CTA ---------- */
     #zly-hy-featured .zhy-sign {

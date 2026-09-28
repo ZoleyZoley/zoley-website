@@ -1,0 +1,119 @@
+<!--
+ZOLEY - site footer - Espresso Brief signup
+Paste into a Squarespace Code Block in the footer (about 1/3 of the width).
+
+Posts first name + email to the same Apps Script web app as the homepage signup
+(internal-tools/website-forms/Code.gs). The row lands on the "Submissions" tab of
+"Zoley Espresso Brief - Subscribers" with Form = Newsletter, Source = footer, and the
+welcome email goes out. Signing up twice doesn't send a second welcome.
+
+Styled to sit on the Squarespace footer: transparent background, inherits the
+site font, footer browns. Colours are the --zfs-* variables below.
+Not built by tools/build-sections.py; this file is edited directly.
+-->
+<div id="zly-footer-signup">
+  <style>
+    #zly-footer-signup {
+      --zfs-text: #2e2119;      /* footer heading brown */
+      --zfs-muted: #8a7266;     /* footer link brown */
+      --zfs-button: #9b7f70;    /* Squarespace "Sign Up" button */
+      --zfs-button-hover: #856a5c;
+      --zfs-field-border: rgba(46,33,25,0.18);
+      --zfs-error: #a23b2a;
+      container-type: inline-size;
+      font-family: inherit;
+      color: var(--zfs-text);
+      text-align: center;
+    }
+    #zly-footer-signup * { box-sizing: border-box; }
+    #zly-footer-signup .zfs-title { font-size: 17px; font-weight: 600; line-height: 1.35; margin: 0 0 4px; color: var(--zfs-text); }
+    #zly-footer-signup .zfs-sub { font-size: 15px; line-height: 1.5; margin: 0 0 18px; color: var(--zfs-text); opacity: 0.85; }
+    #zly-footer-signup form { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 0; }
+    #zly-footer-signup input[type="text"], #zly-footer-signup input[type="email"] {
+      width: 100%; min-width: 0; margin: 0; padding: 14px 16px; font: inherit; font-size: 16px;
+      color: var(--zfs-text); background: #ffffff; border: 1px solid var(--zfs-field-border); border-radius: 0;
+      -webkit-appearance: none; appearance: none;
+    }
+    #zly-footer-signup input::placeholder { color: #9a8f88; opacity: 1; }
+    #zly-footer-signup input:focus { outline: 2px solid var(--zfs-button); outline-offset: 1px; }
+    #zly-footer-signup input[aria-invalid="true"] { border-color: var(--zfs-error); }
+    #zly-footer-signup button {
+      margin: 0; padding: 14px 26px; font: inherit; font-size: 16px; line-height: 1.2;
+      color: #ffffff; background: var(--zfs-button); border: 0; border-radius: 18px; cursor: pointer;
+      transition: background-color 0.15s ease;
+    }
+    #zly-footer-signup button:hover { background: var(--zfs-button-hover); }
+    #zly-footer-signup button:focus-visible { outline: 2px solid var(--zfs-text); outline-offset: 2px; }
+    #zly-footer-signup button:disabled { opacity: 0.7; cursor: wait; }
+    /* Bot trap: off-screen for people, still filled in by form-stuffing bots. */
+    #zly-footer-signup .zfs-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    #zly-footer-signup .zfs-status { font-size: 14px; line-height: 1.45; margin: 10px 0 0; }
+    #zly-footer-signup .zfs-status:empty { display: none; }
+    #zly-footer-signup .zfs-status.is-error { color: var(--zfs-error); font-weight: 600; }
+    #zly-footer-signup .zfs-status.is-success { font-size: 16px; font-weight: 600; margin-top: 0; }
+    #zly-footer-signup .zfs-fine { font-size: 12.5px; color: var(--zfs-muted); margin: 10px 0 0; }
+    /* Wide enough (the usual 1/3 footer column on desktop): names and email side
+       by side, button full width underneath. */
+    @container (min-width: 380px) {
+      #zly-footer-signup form { grid-template-columns: 1fr 1.4fr; }
+      #zly-footer-signup button { grid-column: 1 / -1; }
+    }
+    @supports not (container-type: inline-size) {
+      @media (min-width: 900px) {
+        #zly-footer-signup form { grid-template-columns: 1fr 1.4fr; }
+        #zly-footer-signup button { grid-column: 1 / -1; }
+      }
+    }
+  </style>
+
+  <p class="zfs-title">The Zoley Espresso Brief</p>
+  <p class="zfs-sub">One easy operational improvement for your business, every week.</p>
+
+  <form id="zfs-form" novalidate>
+    <input type="text" name="first_name" placeholder="First name" aria-label="First name" autocomplete="given-name" required>
+    <input type="email" name="email" placeholder="Email address" aria-label="Email address" autocomplete="email" required>
+    <div class="zfs-hp" aria-hidden="true"><label>Company <input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
+    <button type="submit">Sign Up</button>
+  </form>
+  <p class="zfs-status" id="zfs-status" role="status" aria-live="polite"></p>
+  <p class="zfs-fine" id="zfs-fine">No spam. Just one useful email a week.</p>
+
+  <script>
+    (function () {
+      var ENDPOINT = "https://script.google.com/macros/s/AKfycbxMauQxJhF3SWBEQsbL3HZCYoUTGGx3eYjJZnJz3lN82IAzELAXmortCYFprQLaCu95Vg/exec";
+
+      var form = document.getElementById('zfs-form');
+      var status = document.getElementById('zfs-status');
+      var fine = document.getElementById('zfs-fine');
+      if (!form || !status || form.getAttribute('data-ready')) return;
+      form.setAttribute('data-ready', '1');
+      var btn = form.querySelector('button');
+
+      function say(msg, kind) { status.textContent = msg; status.className = 'zfs-status' + (kind ? ' is-' + kind : ''); }
+      function flag(el, on) { el.setAttribute('aria-invalid', on ? 'true' : 'false'); }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var first = form.first_name.value.trim();
+        var email = form.email.value.trim();
+        flag(form.first_name, false); flag(form.email, false);
+        if (!first) { flag(form.first_name, true); say('Mind adding your first name?', 'error'); form.first_name.focus(); return; }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { flag(form.email, true); say("That email doesn't look right. Mind double-checking it?", 'error'); form.email.focus(); return; }
+
+        btn.disabled = true; say('');
+        // Apps Script can't answer the browser's cross-site pre-check, so this is sent as
+        // plain text without reading the reply. The script validates everything itself.
+        fetch(ENDPOINT, {
+          method: 'POST', mode: 'no-cors',
+          body: JSON.stringify({ form: 'newsletter', first_name: first, email: email, company: form.company.value, source: 'footer' })
+        }).then(function () {
+          form.hidden = true; fine.hidden = true;
+          say("You're in, " + first + ". Check your inbox for a welcome email.", 'success');
+        }).catch(function () {
+          btn.disabled = false;
+          say("Something didn't go through. Try again, or email connect@zoley.io.", 'error');
+        });
+      });
+    })();
+  </script>
+</div>
