@@ -3,16 +3,17 @@ ZOLEY QUICK START FORM PAGE — V2 — ONE CODE BLOCK FOR THIS ENTIRE PAGE
 Sections: Hero / Form (two-column: three-step wizard + "what you'll get back" panel) / What Happens Next (illustrated)
 Lives at /find-your-next-best-business-move.
 
-9/28/26: the form is a three-step wizard (About you / Your business / Timeline & budget).
-Fields marked * are required and are checked before Continue. No fixed price is promised
-anywhere on this page any more; the plan says "what it would cost".
+9/28/26: the form is a three-step wizard (About you / Your business / Details).
+Fields marked * are required and are checked before Continue. Ryan's call: cost is discussed
+with the lead directly and never promised in writing, so no price or cost wording on this page.
+Tone is confident, not apologetic: no "we'll only check in once" / "no follow-up pressure".
 
 V2 CHANGES (vs zoley-quickstart.html):
 - This page is now the primary conversion point for the whole site, so it explains what the
   visitor gets back (a written recommendation) before asking for anything.
 - Form fields: "What do you need help with?" options now match the five capabilities on the site,
   plus "Not sure yet". Added an optional website field (useful for web/ads/AI audits).
-- New side panel: what you receive, and what we won't do with your details.
+- New side panel: what you receive, and a short privacy line.
 - "What happens next" is now an illustrated three-step timeline.
 - FORM_ENDPOINT is still a placeholder — wire it before publishing.
 -->
@@ -142,7 +143,7 @@ V2 CHANGES (vs zoley-quickstart.html):
   <section class="hero">
     <span class="tag">the quick start form</span>
     <h1>Tell us about your business. We'll send back a plan.</h1>
-    <p class="sub">You'll receive a written recommendation back: what we'd do first, why, what it would cost, and what it should return. There's no obligation to follow through with us, we genuinely want to help.</p>
+    <p class="sub">You'll receive a written recommendation back: what we'd do first, why, and what it should return. There's no obligation to follow through with us, we genuinely want to help.</p>
   </section>
 </div>
 
@@ -155,7 +156,7 @@ V2 CHANGES (vs zoley-quickstart.html):
       <ol class="qs-steps" aria-label="Form progress">
         <li class="is-current" aria-current="step"><span class="n" aria-hidden="true">1</span><span class="l">About you</span></li>
         <li><span class="n" aria-hidden="true">2</span><span class="l">Your business</span></li>
-        <li><span class="n" aria-hidden="true">3</span><span class="l">Timeline &amp; budget</span></li>
+        <li><span class="n" aria-hidden="true">3</span><span class="l">Details</span></li>
       </ol>
 
       <form id="zly-qs-form" novalidate>
@@ -299,8 +300,8 @@ V2 CHANGES (vs zoley-quickstart.html):
 
         <!-- STEP 3 -->
         <fieldset class="qs-step" data-step="2">
-          <legend class="qs-step-title" tabindex="-1">Timeline and budget</legend>
-          <p class="qs-step-sub">So what we recommend fits when you need it and what you want to spend.</p>
+          <legend class="qs-step-title" tabindex="-1">Details</legend>
+          <p class="qs-step-sub">A few last details so the plan fits your business.</p>
           <div class="qs-grid">
             <div class="qs-field">
               <label for="zly-qs-timeline">Timeline <span class="req" aria-hidden="true">*</span></label>
@@ -365,16 +366,16 @@ V2 CHANGES (vs zoley-quickstart.html):
 
     <aside class="side">
       <span class="tag">what you'll get back</span>
-      <h3>A written recommendation, not a sales call.</h3>
+      <h3>A written plan built around your business.</h3>
       <ul>
         <li>The one or two things we'd fix first, and why those before anything else</li>
         <li>What the first engagement would include, step by step</li>
-        <li>A realistic timeline and what it would cost</li>
+        <li>A realistic timeline for getting it done</li>
         <li>What result we'd expect, and how we'd measure it</li>
       </ul>
       <div class="never">
-        <h4>What we won't do</h4>
-        <p>Add you to a drip sequence, share your details, or follow up more than once. If the plan isn't right for you, delete the email and that's the end of it.</p>
+        <h4>Your details stay private</h4>
+        <p>We never share or sell your information. It's used to build your plan.</p>
       </div>
       <p class="alt">Prefer to talk it through? <a href="https://calendly.com/zoley/zoley-discovery-call">Book an intro call</a> instead.</p>
     </aside>
@@ -528,7 +529,7 @@ V2 CHANGES (vs zoley-quickstart.html):
       <h2>What happens after you hit send.</h2>
     </div>
     <div class="timeline">
-      <svg viewBox="0 0 900 120" fill="none" role="img" aria-label="Timeline: today you submit the form, shortly after you receive a written plan, then you decide">
+      <svg viewBox="0 0 900 120" fill="none" role="img" aria-label="Timeline: today you submit the form, shortly after you receive a written plan, then we get to work">
         <defs><linearGradient id="zqs-grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#14457a"/><stop offset="0.5" stop-color="#6c5ce7"/><stop offset="1" stop-color="#7a8b69"/></linearGradient><!-- userSpaceOnUse: a gradient defaults to objectBoundingBox, and a perfectly flat line has a zero-height box, so the stroke is not painted at all. --><linearGradient id="zqs-grad-line" gradientUnits="userSpaceOnUse" x1="90" y1="50" x2="810" y2="50"><stop offset="0" stop-color="#14457a"/><stop offset="0.5" stop-color="#6c5ce7"/><stop offset="1" stop-color="#7a8b69"/></linearGradient></defs>
         <line x1="90" y1="50" x2="810" y2="50" stroke="url(#zqs-grad-line)" stroke-width="2.5" stroke-dasharray="7 7"/>
         <!-- node 1 -->
@@ -545,16 +546,16 @@ V2 CHANGES (vs zoley-quickstart.html):
         <!-- node 3 -->
         <circle cx="810" cy="50" r="20" fill="#fff9ef" stroke="#7a8b69" stroke-width="2.5"/>
         <path d="M801 50 l6 6 l12 -12" stroke="#7a8b69" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        <text x="810" y="92" font-family="DM Sans, sans-serif" font-size="13" font-weight="700" fill="#1b2430" text-anchor="middle">Whenever you're ready</text>
-        <text x="810" y="110" font-family="DM Sans, sans-serif" font-size="12" fill="#5c6b76" text-anchor="middle">you decide, on your timeline</text>
+        <text x="810" y="92" font-family="DM Sans, sans-serif" font-size="13" font-weight="700" fill="#1b2430" text-anchor="middle">Then</text>
+        <text x="810" y="110" font-family="DM Sans, sans-serif" font-size="12" fill="#5c6b76" text-anchor="middle">we get to work</text>
         <text x="270" y="30" font-family="Caveat, cursive" font-size="18" font-weight="700" fill="#14457a" text-anchor="middle">a real person reads it</text>
-        <text x="630" y="30" font-family="Caveat, cursive" font-size="18" font-weight="700" fill="#7a8b69" text-anchor="middle">no follow-up pressure</text>
+        <text x="630" y="30" font-family="Caveat, cursive" font-size="18" font-weight="700" fill="#7a8b69" text-anchor="middle">built for your business</text>
       </svg>
     </div>
     <div class="next-grid">
-      <div class="next-card"><span class="k">01</span><h3>We read it properly</h3><p>Your answers go to a person, not a queue. If something's unclear we'll email one question, not a calendar link.</p></div>
-      <div class="next-card"><span class="k">02</span><h3>You get the plan in writing</h3><p>What we'd do first, what it includes, what it costs, and what it should return. Written so you can forward it to a partner or an accountant.</p></div>
-      <div class="next-card"><span class="k">03</span><h3>You decide</h3><p>Take it, ask questions, compare it, or shelve it. We'll check in once. After that, the next move is yours.</p></div>
+      <div class="next-card"><span class="k">01</span><h3>We read it properly</h3><p>Your answers go to a person, not a queue. If something's unclear, we'll reach out with a quick question.</p></div>
+      <div class="next-card"><span class="k">02</span><h3>You get the plan in writing</h3><p>What we'd do first, what it includes, and what it should return. Written so you can share it with a partner or an accountant.</p></div>
+      <div class="next-card"><span class="k">03</span><h3>We get to work</h3><p>We'll walk you through the plan, answer your questions, and get the first project moving.</p></div>
     </div>
   </section>
 </div>
