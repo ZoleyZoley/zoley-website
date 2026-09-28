@@ -19,7 +19,7 @@ V2 CHANGES (vs zoley-automation-page.html):
     #zly-auto-page {
       --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef;
       --ink: #1b2430; --ink-soft: #5c6b76;
-      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      --marigold: #e3a72e; --barn: #14457a; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
       --border: rgba(27,36,48,0.14);
       font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
     }
@@ -30,8 +30,8 @@ V2 CHANGES (vs zoley-automation-page.html):
     #zly-auto-page .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: var(--barn); }
 
     #zly-auto-page .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
-    #zly-auto-page .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
-    #zly-auto-page .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-auto-page .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #0d2d50; }
+    #zly-auto-page .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #0d2d50; }
     #zly-auto-page .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
     #zly-auto-page .btn-ghost:hover { background: var(--ink); color: var(--paper); }
     #zly-auto-page .btn-outline { background: transparent; color: #fff9ef; border: 2px solid #faf3e7; }
@@ -84,10 +84,11 @@ V2 CHANGES (vs zoley-automation-page.html):
 
     /* 4. STAT BAND */
     #zly-auto-page .stat-band { background: var(--ink); padding: 90px 24px; position: relative; overflow: hidden; }
-    #zly-auto-page .stat-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(181,72,45,0.2), transparent 55%), radial-gradient(circle at 85% 80%, rgba(78,161,255,0.18), transparent 55%); }
+    #zly-auto-page .stat-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(227,167,46,0.15), transparent 55%), radial-gradient(circle at 85% 80%, rgba(78,161,255,0.18), transparent 55%); }
     #zly-auto-page .stat-band .inner { max-width: 1160px; margin: 0 auto; position: relative; }
     #zly-auto-page .stat-band .process-header h2 { color: var(--paper); max-width: 860px; text-wrap: balance; }
     #zly-auto-page .stat-band .process-header .process-sub { color: #c7d0d6; }
+    #zly-auto-page .stat-band .tag { color: var(--marigold); }
     #zly-auto-page .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
     #zly-auto-page .stat-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 32px 22px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
     #zly-auto-page .stat-card:hover { transform: translateY(-6px); box-shadow: 0 16px 30px -18px rgba(0,0,0,0.5); }
@@ -129,7 +130,7 @@ V2 CHANGES (vs zoley-automation-page.html):
 
     /* 8. FINAL CTA */
     #zly-auto-page .final { background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center; max-width: 1112px; margin: 0 auto; position: relative; overflow: hidden; }
-    #zly-auto-page .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+    #zly-auto-page .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(227,167,46,0.16), transparent 55%); }
     #zly-auto-page .final > * { position: relative; }
     #zly-auto-page .final h2 { color: var(--paper); font-size: clamp(27px, 3.2vw, 36px); margin-bottom: 14px; }
     #zly-auto-page .final p { color: #c7d0d6; max-width: 520px; margin: 0 auto 26px; }
@@ -197,7 +198,7 @@ V2 CHANGES (vs zoley-automation-page.html):
     <div class="board">
       <svg viewBox="0 0 420 320" fill="none" role="img" aria-label="Illustration: a new lead flows from a web form into the CRM, which branches two ways: a follow-up email, and an invoice that leads to payment">
         <defs>
-          <linearGradient id="zau-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b5482d"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
+          <linearGradient id="zau-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14457a"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
         </defs>
         <!-- Two branches out of the CRM, not one chain: the reply and the invoice
              happen independently, so 3 and 4 are deliberately not connected. -->
@@ -213,10 +214,10 @@ V2 CHANGES (vs zoley-automation-page.html):
           <rect x="0" y="0" width="112" height="64" rx="7" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
           <rect x="12" y="12" width="88" height="10" rx="3" fill="#1b2430" opacity="0.15"/>
           <rect x="12" y="28" width="88" height="10" rx="3" fill="#1b2430" opacity="0.15"/>
-          <rect x="12" y="44" width="48" height="12" rx="4" fill="#b5482d"/>
+          <rect x="12" y="44" width="48" height="12" rx="4" fill="#14457a"/>
           <text x="20" y="53" font-family="DM Sans, sans-serif" font-size="8.5" font-weight="700" fill="#fff9ef">Submit</text>
         </g>
-        <text x="20" y="116" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#b5482d">1. new lead</text>
+        <text x="20" y="116" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#14457a">1. new lead</text>
         <!-- 2 CRM -->
         <g transform="translate(160 96) rotate(2 50 34)">
           <rect x="0" y="0" width="100" height="68" rx="7" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
@@ -242,7 +243,7 @@ V2 CHANGES (vs zoley-automation-page.html):
           <rect x="10" y="26" width="68" height="4" rx="2" fill="#1b2430" opacity="0.25"/>
           <rect x="10" y="35" width="52" height="4" rx="2" fill="#1b2430" opacity="0.25"/>
           <rect x="10" y="44" width="60" height="4" rx="2" fill="#1b2430" opacity="0.25"/>
-          <text x="78" y="61" font-family="Newsreader, serif" font-size="12" font-weight="600" fill="#b5482d" text-anchor="end">$1,240</text>
+          <text x="78" y="61" font-family="Newsreader, serif" font-size="12" font-weight="600" fill="#14457a" text-anchor="end">$1,240</text>
         </g>
         <text x="236" y="270" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#6c5ce7">4. invoice sent &amp; chased</text>
         <!-- 5 paid -->
@@ -367,7 +368,7 @@ V2 CHANGES (vs zoley-automation-page.html):
             <rect x="0" y="0" width="164" height="92" rx="8" fill="#faf3e7" stroke="#1b2430" stroke-width="1.5" opacity="0.9"/>
             <text x="16" y="24" font-family="DM Sans, sans-serif" font-size="11.5" fill="#5c6b76">Invoices outstanding</text>
             <text x="16" y="62" font-family="Newsreader, serif" font-size="34" font-weight="600" fill="#1b2430">$4,120</text>
-            <text x="16" y="80" font-family="DM Sans, sans-serif" font-size="11" fill="#b5482d" font-weight="700">3 auto-reminders sent</text>
+            <text x="16" y="80" font-family="DM Sans, sans-serif" font-size="11" fill="#14457a" font-weight="700">3 auto-reminders sent</text>
           </g>
           <g transform="translate(568 62)">
             <rect x="0" y="0" width="164" height="92" rx="8" fill="#e9e4fb" stroke="#6c5ce7" stroke-width="1.5"/>

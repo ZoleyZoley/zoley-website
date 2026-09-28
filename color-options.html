@@ -1,0 +1,599 @@
+<title>Zoley Accent Options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap">
+
+<style>
+/* ---------------------------------------------------------------
+   The shell is deliberately cool and neutral so the warm Zoley
+   specimens inside it read as samples on a bench, not as the page.
+   --------------------------------------------------------------- */
+:root{
+  --bg:#eef1f4; --surface:#ffffff; --sunk:#e3e8ed;
+  --line:#d3dae1; --line-soft:#e6ebf0;
+  --text:#18212b; --muted:#5b6b7a; --faint:#8695a3;
+  --accent:#2d5f8a;
+  --good:#1d7a4f; --warn:#9a6a10;
+  --shadow:0 1px 2px rgba(24,33,43,.06), 0 8px 24px -16px rgba(24,33,43,.30);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#11161c; --surface:#19212a; --sunk:#0d1218;
+    --line:#2b3742; --line-soft:#222c36;
+    --text:#e6ecf2; --muted:#98a8b6; --faint:#6d7d8b;
+    --accent:#77b0e0;
+    --good:#5ac08c; --warn:#d7a53f;
+    --shadow:0 1px 2px rgba(0,0,0,.5), 0 8px 24px -16px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#11161c; --surface:#19212a; --sunk:#0d1218;
+  --line:#2b3742; --line-soft:#222c36;
+  --text:#e6ecf2; --muted:#98a8b6; --faint:#6d7d8b;
+  --accent:#77b0e0;
+  --good:#5ac08c; --warn:#d7a53f;
+  --shadow:0 1px 2px rgba(0,0,0,.5), 0 8px 24px -16px rgba(0,0,0,.8);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+  font-size:15px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1140px; margin:0 auto; padding-inline:20px}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px}
+code,.mono{font-family:'IBM Plex Mono',ui-monospace,Menlo,monospace}
+
+/* ---------- masthead ---------- */
+.masthead{padding-block:52px 34px}
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--faint); margin:0 0 14px;
+}
+h1{
+  font-family:'IBM Plex Sans',sans-serif; font-weight:600;
+  font-size:clamp(28px,4.2vw,40px); line-height:1.12; letter-spacing:-.02em;
+  margin:0 0 16px; text-wrap:balance; max-width:20ch;
+}
+.lede{margin:0; max-width:64ch; color:var(--muted); font-size:16.5px}
+.lede strong{color:var(--text); font-weight:600}
+
+/* ---------- the palette that is NOT changing ---------- */
+.fixed{
+  margin-top:30px; background:var(--surface); border:1px solid var(--line);
+  border-radius:12px; padding:18px 20px; box-shadow:var(--shadow);
+}
+.fixed h2{
+  font-size:12px; letter-spacing:.1em; text-transform:uppercase; font-weight:600;
+  color:var(--faint); margin:0 0 4px; font-family:'IBM Plex Mono',monospace;
+}
+.fixed p{margin:0 0 14px; font-size:13.5px; color:var(--muted)}
+.swatches{display:flex; flex-wrap:wrap; gap:10px}
+.sw{display:flex; align-items:center; gap:9px; font-size:12.5px; color:var(--muted)}
+.sw i{
+  width:26px; height:26px; border-radius:6px; display:block;
+  border:1px solid var(--line); flex:none;
+}
+.sw b{color:var(--text); font-weight:500; display:block; line-height:1.25}
+.sw .hex{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--faint)}
+
+/* ---------- control bar ---------- */
+.bar{
+  position:sticky; top:env(safe-area-inset-top,0px); z-index:20;
+  background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:blur(10px);
+  border-block:1px solid var(--line); margin-top:34px;
+}
+.bar-in{
+  max-width:1140px; margin:0 auto; padding:11px 20px;
+  display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+}
+.bar .hint{font-size:13px; color:var(--muted); margin-right:auto}
+.toggle{
+  display:inline-flex; align-items:center; gap:9px; cursor:pointer;
+  font-size:13.5px; color:var(--text); user-select:none;
+}
+.toggle input{width:16px; height:16px; accent-color:var(--accent); cursor:pointer; margin:0}
+
+/* ---------- one option ---------- */
+main{padding-block:12px 40px}
+.opt{
+  display:grid; grid-template-columns:300px minmax(0,1fr); gap:26px;
+  padding-block:34px; border-bottom:1px solid var(--line-soft);
+  align-items:start;
+}
+.opt:last-child{border-bottom:0}
+@media (max-width:860px){ .opt{grid-template-columns:1fr; gap:20px} }
+
+.meta .rank{
+  font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--faint);
+  letter-spacing:.1em; text-transform:uppercase;
+}
+.meta h3{
+  font-family:'IBM Plex Sans',sans-serif; font-size:23px; font-weight:600;
+  letter-spacing:-.015em; margin:4px 0 12px; display:flex; align-items:center; gap:11px;
+}
+.meta h3 i{width:22px; height:22px; border-radius:6px; border:1px solid var(--line); flex:none}
+.is-current .meta h3::after{
+  content:'in use'; font-family:'IBM Plex Mono',monospace; font-size:10.5px;
+  letter-spacing:.08em; text-transform:uppercase; color:var(--warn);
+  border:1px solid currentColor; border-radius:99px; padding:1px 7px; font-weight:500;
+}
+
+.tokens{
+  border:1px solid var(--line); border-radius:10px; overflow:hidden;
+  background:var(--surface); margin-bottom:14px;
+}
+.tok{
+  display:flex; align-items:center; gap:10px; padding:8px 11px;
+  border-bottom:1px solid var(--line-soft); font-size:12.5px;
+}
+.tok:last-child{border-bottom:0}
+.tok .k{color:var(--faint); flex:none; width:82px; font-family:'IBM Plex Mono',monospace; font-size:11px}
+.tok .v{font-family:'IBM Plex Mono',monospace; color:var(--text); font-size:12px}
+.tok i{width:16px; height:16px; border-radius:4px; margin-left:auto; border:1px solid var(--line); flex:none}
+
+.ratios{display:flex; gap:8px; margin-bottom:13px; flex-wrap:wrap}
+.ratio{
+  border:1px solid var(--line); border-radius:8px; padding:7px 10px;
+  background:var(--surface); font-size:11.5px; color:var(--muted); line-height:1.35;
+}
+.ratio b{
+  display:block; font-family:'IBM Plex Mono',monospace; font-size:15px;
+  font-weight:500; color:var(--good); font-variant-numeric:tabular-nums;
+}
+.ratio.is-thin b{color:var(--warn)}
+
+.note{font-size:13.5px; color:var(--muted); margin:0 0 13px}
+.copy{
+  font:inherit; font-size:12.5px; font-family:'IBM Plex Mono',monospace;
+  background:var(--surface); color:var(--text); border:1px solid var(--line);
+  border-radius:7px; padding:7px 12px; cursor:pointer; min-height:34px;
+}
+.copy:hover{border-color:var(--accent); color:var(--accent)}
+.copy[data-done="1"]{color:var(--good); border-color:var(--good)}
+
+/* ---------------------------------------------------------------
+   SPECIMEN — a slice of the real site. Pinned to light: these are
+   samples of a light-only site, so they must look identical no
+   matter which theme the viewer is in.
+   --------------------------------------------------------------- */
+.stage{display:grid; gap:14px}
+.stage.is-split{grid-template-columns:1fr 1fr}
+@media (max-width:720px){ .stage.is-split{grid-template-columns:1fr} }
+
+.spec{
+  color-scheme:light;
+  background:#faf3e7; border:1px solid #e0d4bd; border-radius:14px;
+  padding:26px 26px 22px; overflow:hidden; position:relative;
+  font-family:'DM Sans',system-ui,sans-serif; color:#1b2430;
+}
+.spec .stamp{
+  position:absolute; top:0; right:0;
+  font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.09em;
+  text-transform:uppercase; color:#8a7a62; background:#f1e6d0;
+  border-left:1px solid #e0d4bd; border-bottom:1px solid #e0d4bd;
+  border-radius:0 13px 0 8px; padding:5px 11px 4px;
+}
+.spec .tag{
+  font-family:'Caveat',cursive; font-size:21px; font-weight:700;
+  display:inline-block; transform:rotate(-2deg); margin-bottom:7px; padding:0 3px;
+}
+.spec h4{
+  font-family:'Newsreader',Georgia,serif; font-weight:600; font-size:27px;
+  line-height:1.12; letter-spacing:-.01em; color:#1b2430; margin:0 0 11px;
+  text-wrap:balance;
+}
+.spec p.body{font-size:15px; line-height:1.65; color:#5c6b76; margin:0 0 18px; max-width:46ch}
+.spec p.body a{font-weight:500; text-underline-offset:3px}
+.spec .rule{height:4px; border-radius:4px; margin:0 0 18px}
+.spec .btns{display:flex; gap:11px; flex-wrap:wrap; margin-bottom:20px}
+.spec .btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:13px 24px; border-radius:8px; font-weight:700; font-size:15px;
+  text-decoration:none; font-family:'DM Sans',sans-serif; border:0; cursor:default;
+}
+.spec .btn-ghost{background:transparent; color:#1b2430; border:2px solid #1b2430; padding:11px 22px}
+
+/* the dark band every service page carries */
+.spec .band{
+  background:#1b2430; border-radius:10px; padding:20px 22px;
+  position:relative; overflow:hidden;
+}
+.spec .band .glow{position:absolute; inset:0}
+.spec .band .inner{position:relative; display:flex; align-items:center; gap:16px; flex-wrap:wrap}
+.spec .band .num{
+  font-family:'Newsreader',Georgia,serif; font-size:32px; font-weight:600;
+  color:#fff9ef; line-height:1;
+}
+.spec .band .cap{font-size:13px; color:#c7d0d6; max-width:30ch; line-height:1.45}
+.spec .band .chip{
+  margin-left:auto; background:rgba(255,255,255,.06); border-radius:8px;
+  padding:9px 14px; font-size:12.5px; font-weight:700; color:#fff9ef;
+}
+
+.grouphd{padding-block:30px 0}
+.grouphd h2{
+  font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600;
+  letter-spacing:.11em; text-transform:uppercase; color:var(--text); margin:0 0 5px;
+}
+.grouphd p{margin:0; font-size:13.5px; color:var(--muted); max-width:66ch}
+.grouphd .line{height:2px; background:var(--line); margin-top:13px; border-radius:2px}
+
+.rel{
+  border:1px solid var(--line); border-radius:9px; background:var(--surface);
+  padding:9px 11px; margin-bottom:13px; font-size:12px; display:grid; gap:7px;
+}
+.rel .row{display:flex; align-items:baseline; gap:9px}
+.rel .row .lbl{color:var(--faint); flex:none}
+.rel .row .deg{
+  font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--text);
+  font-variant-numeric:tabular-nums; margin-left:auto; flex:none;
+}
+.rel .row .say{color:var(--muted); font-size:11.5px; text-align:right; line-height:1.3}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line); background:var(--surface)}
+.foot{padding-block:30px 44px; display:grid; gap:20px; grid-template-columns:1fr 1fr}
+@media (max-width:760px){ .foot{grid-template-columns:1fr} }
+.foot h2{
+  font-size:12px; letter-spacing:.1em; text-transform:uppercase; font-weight:600;
+  color:var(--faint); margin:0 0 9px; font-family:'IBM Plex Mono',monospace;
+}
+.foot p{margin:0 0 9px; font-size:13.5px; color:var(--muted); max-width:52ch}
+.counts{list-style:none; margin:0; padding:0; font-size:13px; color:var(--muted)}
+.counts li{display:flex; gap:10px; padding:5px 0; border-bottom:1px solid var(--line-soft)}
+.counts li:last-child{border-bottom:0}
+.counts b{
+  font-family:'IBM Plex Mono',monospace; color:var(--text); font-weight:500;
+  min-width:46px; text-align:right; font-variant-numeric:tabular-nums;
+}
+@media (prefers-reduced-motion: reduce){ *{transition:none!important; animation:none!important} }
+</style>
+
+<div class="wrap masthead">
+  <p class="eyebrow">Zoley · accent study · 28 Sep 2026</p>
+  <h1>Nine replacements for the barn red</h1>
+  <p class="lede">
+    A competitor launched on the same cream-and-terracotta pairing we use, and
+    <code>--barn #b5482d</code> is where the two sites collide. Each option below is shown on the
+    real components that use it, so you're judging the site, not a swatch. Every one carries two
+    readings: how far it sits from <strong>sage</strong>, which decides whether a green still reads
+    as its own signal, and how far it sits from the <strong>espresso logo</strong>, which decides
+    whether the accent still echoes the mark. <strong>Nothing here is built yet.</strong>
+  </p>
+
+  <div class="fixed" style="border-left:3px solid #4B2C1A">
+    <h2>The espresso, measured</h2>
+    <p>
+      None of these three appear anywhere in the site code — the v2 pages have no brown at all.
+      They live in the logo files and, presumably, Squarespace's own site styles. I sampled
+      <code>Zoley Logo - Espresso.png</code> to check: its dominant pixel is <code>#482818</code>,
+      which confirms your <code>#4B2C1A</code>.
+    </p>
+    <div class="swatches">
+      <span class="sw"><i style="background:#9E7B6A"></i><span><b>Mocha</b><span class="hex">#9E7B6A</span></span></span>
+      <span class="sw"><i style="background:#4B2C1A"></i><span><b>Espresso</b><span class="hex">#4B2C1A</span></span></span>
+      <span class="sw"><i style="background:#3B2417"></i><span><b>Espresso dark</b><span class="hex">#3B2417</span></span></span>
+    </div>
+  </div>
+
+  <div class="fixed">
+    <h2>Not changing</h2>
+    <p>These carry the brand on their own, and none of them are what the competitor copied.</p>
+    <div class="swatches">
+      <span class="sw"><i style="background:#faf3e7"></i><span><b>Paper</b><span class="hex">#faf3e7</span></span></span>
+      <span class="sw"><i style="background:#f6e4b8"></i><span><b>Sand</b><span class="hex">#f6e4b8</span></span></span>
+      <span class="sw"><i style="background:#1b2430"></i><span><b>Ink</b><span class="hex">#1b2430</span></span></span>
+      <span class="sw"><i style="background:#e3a72e"></i><span><b>Marigold</b><span class="hex">#e3a72e</span></span></span>
+      <span class="sw"><i style="background:#7a8b69"></i><span><b>Sage</b><span class="hex">#7a8b69</span></span></span>
+      <span class="sw"><i style="background:#6c5ce7"></i><span><b>Violet</b><span class="hex">#6c5ce7</span></span></span>
+      <span class="sw"><i style="background:#4ea1ff"></i><span><b>Blue</b><span class="hex">#4ea1ff</span></span></span>
+    </div>
+  </div>
+</div>
+
+<div class="bar">
+  <div class="bar-in">
+    <span class="hint">Each specimen uses the accent exactly where the live site does: tag, link, button, gradient, and the glow on dark bands.</span>
+    <label class="toggle" for="cmp">
+      <input type="checkbox" id="cmp">
+      <span>Compare against barn</span>
+    </label>
+    <label class="toggle" for="esp">
+      <input type="checkbox" id="esp">
+      <span>Dark bands in espresso</span>
+    </label>
+  </div>
+</div>
+
+<main class="wrap" id="options"></main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <h2>What a swap actually touches</h2>
+      <p>
+        The accent is a variable in the page sources but a literal in the illustrations, so a change
+        is mechanical rather than trivial. All of it happens in <code>main pages/*.v2.html</code> and
+        rebuilds through <code>build-sections.py</code> — no hand-editing of section files.
+      </p>
+      <ul class="counts">
+        <li><b>73</b><span><code>--barn:</code> declarations, one per section</span></li>
+        <li><b>256</b><span>literal <code>#b5482d</code>, mostly SVG strokes</span></li>
+        <li><b>124</b><span><code>#7c2f19</code> button shadows</span></li>
+        <li><b>105</b><span><code>rgba(181,72,45,…)</code> glows on dark bands</span></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Worth knowing before you pick</h2>
+      <p>
+        Barn has the weakest contrast of all seven — 4.85:1 as a link on paper, just over the 4.5:1
+        floor. Every option here is better, so whichever you choose, link and button legibility
+        improves as a side effect.
+      </p>
+      <p>
+        The accent also partners marigold in a left-to-right gradient on section rules and card tops.
+        That pairing is why the cool options read differently: teal and navy make marigold look
+        chosen, while burgundy and plum sit closer to it.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+
+  /* ---- OKLCh, so hue distances are perceptual rather than eyeballed ---- */
+  function chan(c){ return c <= 0.04045 ? c/12.92 : Math.pow((c+0.055)/1.055, 2.4); }
+  function rgbOf(hex){
+    var h = hex.replace("#","");
+    return [0,2,4].map(function(i){ return parseInt(h.substr(i,2),16); });
+  }
+  function oklch(hex){
+    var v = rgbOf(hex).map(function(x){ return chan(x/255); });
+    var r = v[0], g = v[1], b = v[2];
+    var l = Math.cbrt(0.4122214708*r + 0.5363325363*g + 0.0514459929*b);
+    var m = Math.cbrt(0.2119034982*r + 0.6806995451*g + 0.1073969566*b);
+    var s = Math.cbrt(0.0883024619*r + 0.2817188376*g + 0.6299787005*b);
+    var A = 1.9779984951*l - 2.4285922050*m + 0.4505937099*s;
+    var B = 0.0259040371*l + 0.7827717662*m - 0.8086757660*s;
+    return { C: Math.hypot(A,B), H: (Math.atan2(B,A) * 180/Math.PI + 360) % 360 };
+  }
+  function hueGap(a,b){
+    var d = Math.abs(oklch(a).H - oklch(b).H) % 360;
+    return Math.min(d, 360-d);
+  }
+  function lum(hex){
+    var v = rgbOf(hex).map(function(x){ return chan(x/255); });
+    return 0.2126*v[0] + 0.7152*v[1] + 0.0722*v[2];
+  }
+  function ratio(a,b){
+    var x = lum(a), y = lum(b);
+    return (Math.max(x,y)+0.05)/(Math.min(x,y)+0.05);
+  }
+  function darken(hex, f){
+    return "#" + rgbOf(hex).map(function(x){
+      var v = Math.round(x*f); return (v<16?"0":"") + v.toString(16);
+    }).join("");
+  }
+
+  var PAPER = "#faf3e7", LABEL = "#fff9ef", SAGE = "#7a8b69",
+      ESPRESSO = "#4B2C1A", ESPRESSO_DARK = "#3B2417", INK = "#1b2430";
+
+  var GROUPS = [
+    { title:"The control",
+      blurb:"What is on the site today, for reference.",
+      items:[
+        { name:"Barn", hex:"#b5482d", shadow:"#7c2f19", current:true,
+          note:"The hue the competitor landed on. Note its reading against the logo below - barn and the espresso mark are near neighbours, which is a large part of why the site has felt of a piece." }
+      ]},
+
+    { title:"Greens",
+      blurb:"You liked the green. The number that matters here is the gap from sage: below about 12 degrees an accent stops reading as its own signal and starts reading as a darker sage. All four clear that, so my earlier note was too strong - Forest is simply the closest of them, not a clash.",
+      items:[
+        { name:"Juniper", hex:"#1d5a4e",
+          note:"The most separated from sage of any green here, because it leans toward teal. If you want green but want the accent unmistakably distinct from the sage already in the step badges and checkmarks, this is the one." },
+        { name:"Bottle Green", hex:"#12503c",
+          note:"A true deep green with no blue tilt. Sits comfortably clear of sage and reads richer than Forest against the paper." },
+        { name:"Racing Green", hex:"#14452f",
+          note:"The darkest of the four, and the highest contrast on the page by some margin. Buttons look very solid; the trade is less colour presence at small sizes." },
+        { name:"Forest", hex:"#1f5132",
+          note:"The one from the first round. Still perfectly usable - it just sits nearest sage of the greens, so the two are doing similar work in the palette." }
+      ]},
+
+    { title:"Cool moves",
+      blurb:"The furthest from a red. These sit opposite the espresso on the wheel, which is the classic pairing for a brown mark - deliberate contrast rather than a family resemblance.",
+      items:[
+        { name:"Deep Teal", hex:"#0d6157",
+          note:"The strongest single answer to the collision. Cool against warm paper, and it turns marigold into a chosen partner rather than a neighbour." },
+        { name:"Petrol Blue", hex:"#10627d",
+          note:"Almost exactly opposite the espresso. Sits nearer the existing --blue than teal does, so check the AI and homepage heroes where both appear." },
+        { name:"Ink Navy", hex:"#14457a",
+          note:"The conservative pick. Reads as a deepened --ink, so the page gets quieter and the accent carries less presence than barn did." }
+      ]},
+
+    { title:"Keeps the logo echo",
+      blurb:"Closest in hue to the espresso mark, so the accent still feels related to the logo. These change the site least in feel while still moving off the competitor's exact hue.",
+      items:[
+        { name:"Plum", hex:"#73275c",
+          note:"Keeps barn's richness at a hue nothing else on the site occupies, while staying warm enough to sit with the espresso. The most distinctive option that still feels like Zoley." },
+        { name:"Burgundy", hex:"#7d2338",
+          note:"The nearest of all nine to the logo brown, and the smallest move overall. Weigh it carefully: it fixes the exact-hex match but stays in the red family, so the resemblance to their site survives." }
+      ]}
+  ];
+
+  function el(tag, cls, txt){
+    var d = document.createElement(tag);
+    if(cls) d.className = cls;
+    if(txt != null) d.textContent = txt;
+    return d;
+  }
+
+  /* One specimen: the same slice of the site, rendered in a given accent. */
+  function specimen(o, stampText){
+    var s = el("div","spec");
+    var rgb = rgbOf(o.hex).join(",");
+    var shadow = o.shadow || darken(o.hex, 0.66);
+
+    s.appendChild(el("span","stamp", stampText));
+
+    var tag = el("span","tag","where we'd start");
+    tag.style.color = o.hex;
+    s.appendChild(tag);
+
+    s.appendChild(el("h4","","A consulting partner with a builder's toolkit."));
+
+    var p = el("p","body");
+    p.appendChild(document.createTextNode("Scoped in writing, priced before we start, and supported after launch. "));
+    var a = document.createElement("a");
+    a.href = "#"; a.textContent = "See what we automate";
+    a.style.color = o.hex;
+    a.addEventListener("click", function(e){ e.preventDefault(); });
+    p.appendChild(a);
+    p.appendChild(document.createTextNode("."));
+    s.appendChild(p);
+
+    var rule = el("div","rule");
+    rule.style.background = "linear-gradient(90deg, " + o.hex + ", #e3a72e)";
+    s.appendChild(rule);
+
+    var btns = el("div","btns");
+    var primary = el("span","btn","Get started");
+    primary.style.background = o.hex;
+    primary.style.color = LABEL;
+    primary.style.boxShadow = "0 4px 0 " + shadow;
+    btns.appendChild(primary);
+    btns.appendChild(el("span","btn btn-ghost","Book an intro call"));
+    s.appendChild(btns);
+
+    var band = el("div","band");
+    band.setAttribute("data-band","1");
+    var glow = el("div","glow");
+    glow.style.background =
+      "radial-gradient(circle at 18% 20%, rgba(" + rgb + ",0.30), transparent 55%)," +
+      "radial-gradient(circle at 86% 84%, rgba(78,161,255,0.18), transparent 55%)";
+    band.appendChild(glow);
+    var inner = el("div","inner");
+    inner.appendChild(el("div","num","42 hrs"));
+    inner.appendChild(el("div","cap","the average time a business takes to answer a new inquiry by hand"));
+    var chip = el("div","chip","Current state");
+    chip.style.border = "1px solid rgba(" + rgb + ",0.55)";
+    inner.appendChild(chip);
+    band.appendChild(inner);
+    s.appendChild(band);
+
+    return s;
+  }
+
+  var BARN = GROUPS[0].items[0];
+  var host = document.getElementById("options");
+  var n = 0;
+
+  GROUPS.forEach(function(group){
+    var gh = el("div","grouphd");
+    gh.appendChild(el("h2", null, group.title));
+    gh.appendChild(el("p", null, group.blurb));
+    gh.appendChild(el("div","line"));
+    host.appendChild(gh);
+
+    group.items.forEach(function(o){
+      if(!o.current) n++;
+      var row = el("section","opt" + (o.current ? " is-current" : ""));
+      var shadow = o.shadow || darken(o.hex, 0.66);
+
+      var meta = el("div","meta");
+      meta.appendChild(el("p","rank", o.current ? "Control" : "Option " + n));
+
+      var h3 = el("h3");
+      var chipC = el("i"); chipC.style.background = o.hex;
+      h3.appendChild(chipC);
+      h3.appendChild(document.createTextNode(o.name));
+      meta.appendChild(h3);
+
+      var toks = el("div","tokens");
+      [["--barn", o.hex, o.hex],
+       ["shadow", shadow, shadow],
+       ["glow", "rgba(" + rgbOf(o.hex).join(",") + ",0.2)", o.hex]].forEach(function(t){
+        var r = el("div","tok");
+        r.appendChild(el("span","k",t[0]));
+        r.appendChild(el("span","v",t[1]));
+        var sw = el("i"); sw.style.background = t[2];
+        r.appendChild(sw);
+        toks.appendChild(r);
+      });
+      meta.appendChild(toks);
+
+      var sg = hueGap(o.hex, SAGE), eg = hueGap(o.hex, ESPRESSO);
+      var rel = el("div","rel");
+      [[ "vs sage", sg, sg < 12 ? "reads as a dark sage" : (sg < 22 ? "related, still separate" : "its own signal") ],
+       [ "vs espresso logo", eg, eg < 45 ? "echoes the mark" : (eg < 90 ? "warm cousin" : "deliberate contrast") ]
+      ].forEach(function(r){
+        var rr = el("div","row");
+        rr.appendChild(el("span","lbl",r[0]));
+        rr.appendChild(el("span","say",r[2]));
+        rr.appendChild(el("span","deg", r[1].toFixed(0) + "°"));
+        rel.appendChild(rr);
+      });
+      meta.appendChild(rel);
+
+      var ratios = el("div","ratios");
+      [["Link on paper", ratio(o.hex, PAPER)], ["Button label", ratio(LABEL, o.hex)]].forEach(function(r){
+        var box = el("div","ratio" + (r[1] < 5 ? " is-thin" : ""));
+        box.appendChild(el("b", null, r[1].toFixed(2) + ":1"));
+        box.appendChild(document.createTextNode(r[0]));
+        ratios.appendChild(box);
+      });
+      meta.appendChild(ratios);
+
+      meta.appendChild(el("p","note", o.note));
+
+      var copy = el("button","copy","Copy tokens");
+      copy.type = "button";
+      copy.addEventListener("click", function(){
+        var text = "--barn: " + o.hex + ";\nbutton shadow: " + shadow +
+                   ";\nglow: rgba(" + rgbOf(o.hex).join(",") + ",0.2);";
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(text).then(function(){
+            copy.textContent = "Copied"; copy.setAttribute("data-done","1");
+            setTimeout(function(){ copy.textContent = "Copy tokens"; copy.removeAttribute("data-done"); }, 1600);
+          }).catch(function(){ copy.textContent = "Press ⌘C"; });
+        }
+      });
+      meta.appendChild(copy);
+      row.appendChild(meta);
+
+      var stage = el("div","stage");
+      stage.appendChild(specimen(o, o.current ? "in use today" : o.hex));
+      if(!o.current){
+        var twin = specimen(BARN, "barn, for comparison");
+        twin.setAttribute("data-twin","1");
+        twin.hidden = true;
+        stage.appendChild(twin);
+      }
+      row.appendChild(stage);
+      host.appendChild(row);
+    });
+  });
+
+  /* Side-by-side against the current accent. */
+  document.getElementById("cmp").addEventListener("change", function(){
+    var on = this.checked;
+    Array.prototype.forEach.call(document.querySelectorAll('.spec[data-twin="1"]'), function(t){
+      t.hidden = !on;
+      t.parentNode.classList.toggle("is-split", on);
+    });
+  });
+
+  /* Swap the cold ink band for the warm espresso, to see the browns in play. */
+  document.getElementById("esp").addEventListener("change", function(){
+    var bg = this.checked ? ESPRESSO_DARK : INK;
+    Array.prototype.forEach.call(document.querySelectorAll('.spec [data-band="1"]'), function(b){
+      b.style.background = bg;
+    });
+  });
+})();
+</script>

@@ -21,7 +21,7 @@ V2 CHANGES (vs zoley-ai-page.html):
     #zly-ai-page {
       --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef;
       --ink: #1b2430; --ink-soft: #5c6b76;
-      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      --marigold: #e3a72e; --barn: #14457a; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
       --border: rgba(27,36,48,0.14);
       font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
     }
@@ -33,8 +33,8 @@ V2 CHANGES (vs zoley-ai-page.html):
 
     /* BUTTONS */
     #zly-ai-page .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
-    #zly-ai-page .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
-    #zly-ai-page .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-ai-page .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #0d2d50; }
+    #zly-ai-page .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #0d2d50; }
     #zly-ai-page .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
     #zly-ai-page .btn-ghost:hover { background: var(--ink); color: var(--paper); }
     #zly-ai-page .btn-outline { background: transparent; color: #fff9ef; border: 2px solid #faf3e7; }
@@ -89,10 +89,11 @@ V2 CHANGES (vs zoley-ai-page.html):
 
     /* 4. CURRENT STATE — dark band */
     #zly-ai-page .stat-band { background: var(--ink); padding: 90px 24px; position: relative; overflow: hidden; }
-    #zly-ai-page .stat-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(181,72,45,0.2), transparent 55%), radial-gradient(circle at 85% 80%, rgba(78,161,255,0.18), transparent 55%); }
+    #zly-ai-page .stat-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(227,167,46,0.15), transparent 55%), radial-gradient(circle at 85% 80%, rgba(78,161,255,0.18), transparent 55%); }
     #zly-ai-page .stat-band .inner { max-width: 1160px; margin: 0 auto; position: relative; }
     #zly-ai-page .stat-band .process-header h2 { color: var(--paper); max-width: 860px; text-wrap: balance; }
     #zly-ai-page .stat-band .process-header .process-sub { color: #c7d0d6; }
+    #zly-ai-page .stat-band .tag { color: var(--marigold); }
     #zly-ai-page .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
     #zly-ai-page .stat-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 32px 22px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
     #zly-ai-page .stat-card:hover { transform: translateY(-6px); box-shadow: 0 16px 30px -18px rgba(0,0,0,0.5); }
@@ -134,7 +135,7 @@ V2 CHANGES (vs zoley-ai-page.html):
 
     /* 8. FINAL CTA */
     #zly-ai-page .final { background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center; max-width: 1112px; margin: 0 auto; position: relative; overflow: hidden; }
-    #zly-ai-page .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+    #zly-ai-page .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(227,167,46,0.16), transparent 55%); }
     #zly-ai-page .final > * { position: relative; }
     #zly-ai-page .final h2 { color: var(--paper); font-size: clamp(27px, 3.2vw, 36px); margin-bottom: 14px; }
     #zly-ai-page .final p { color: #c7d0d6; max-width: 520px; margin: 0 auto 26px; }
@@ -202,7 +203,7 @@ V2 CHANGES (vs zoley-ai-page.html):
     <div class="board">
       <svg viewBox="0 0 420 344" fill="none" role="img" aria-label="Illustration: incoming messages pass through an AI assistant and come out answered, drafted, and summarized">
         <defs>
-          <linearGradient id="zai-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b5482d"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
+          <linearGradient id="zai-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14457a"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
           <linearGradient id="zai-core" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6c5ce7"/><stop offset="1" stop-color="#4ea1ff"/></linearGradient>
         </defs>
         <!-- inbox card (left) -->
@@ -226,7 +227,7 @@ V2 CHANGES (vs zoley-ai-page.html):
             <rect x="38" y="143" width="48" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
           </g>
           <g>
-            <circle cx="22" cy="178" r="8" fill="#b5482d"/>
+            <circle cx="22" cy="178" r="8" fill="#14457a"/>
             <rect x="38" y="172" width="60" height="6" rx="3" fill="#1b2430" opacity="0.7"/>
             <rect x="38" y="183" width="70" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
           </g>
@@ -363,12 +364,12 @@ V2 CHANGES (vs zoley-ai-page.html):
           <!-- website frame -->
           <rect x="0" y="0" width="480" height="300" rx="10" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
           <line x1="0" y1="30" x2="480" y2="30" stroke="#1b2430" stroke-width="2"/>
-          <circle cx="16" cy="15" r="4" fill="#b5482d"/><circle cx="30" cy="15" r="4" fill="#e3a72e"/><circle cx="44" cy="15" r="4" fill="#7a8b69"/>
+          <circle cx="16" cy="15" r="4" fill="#14457a"/><circle cx="30" cy="15" r="4" fill="#e3a72e"/><circle cx="44" cy="15" r="4" fill="#7a8b69"/>
           <rect x="20" y="52" width="180" height="12" rx="6" fill="#4ea1ff" opacity="0.9"/>
           <rect x="20" y="76" width="260" height="8" rx="4" fill="#1b2430" opacity="0.25"/>
           <rect x="20" y="92" width="220" height="8" rx="4" fill="#1b2430" opacity="0.25"/>
           <rect x="20" y="108" width="240" height="8" rx="4" fill="#1b2430" opacity="0.25"/>
-          <rect x="20" y="140" width="120" height="34" rx="6" fill="#b5482d"/>
+          <rect x="20" y="140" width="120" height="34" rx="6" fill="#14457a"/>
           <!-- chat widget -->
           <g transform="translate(250 44)">
             <rect x="0" y="0" width="210" height="240" rx="10" fill="#faf3e7" stroke="#1b2430" stroke-width="2"/>
@@ -406,7 +407,7 @@ V2 CHANGES (vs zoley-ai-page.html):
             <rect x="16" y="64" width="158" height="8" rx="4" fill="#1b2430" opacity="0.15"/>
             <rect x="16" y="80" width="110" height="8" rx="4" fill="#1b2430" opacity="0.15"/>
           </g>
-          <text x="560" y="236" font-family="Caveat, cursive" font-size="19" font-weight="700" fill="#b5482d" transform="rotate(-3 560 236)">the team only steps in when it counts</text>
+          <text x="560" y="236" font-family="Caveat, cursive" font-size="19" font-weight="700" fill="#14457a" transform="rotate(-3 560 236)">the team only steps in when it counts</text>
         </svg>
       </div>
       <div class="case-study-body">

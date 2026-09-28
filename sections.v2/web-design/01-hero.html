@@ -11,7 +11,7 @@ Scoped under #zly-web-hero. Self-contained: paste into a Squarespace Code Block 
     #zly-web-hero {
       --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef;
       --ink: #1b2430; --ink-soft: #5c6b76;
-      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      --marigold: #e3a72e; --barn: #14457a; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
       --border: rgba(27,36,48,0.14);
       font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
     }
@@ -22,8 +22,8 @@ Scoped under #zly-web-hero. Self-contained: paste into a Squarespace Code Block 
     #zly-web-hero .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: var(--barn); }
 
     #zly-web-hero .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
-    #zly-web-hero .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
-    #zly-web-hero .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-web-hero .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #0d2d50; }
+    #zly-web-hero .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #0d2d50; }
     #zly-web-hero .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
     #zly-web-hero .btn-ghost:hover { background: var(--ink); color: var(--paper); }
     #zly-web-hero .btn-outline { background: transparent; color: #fff9ef; border: 2px solid #faf3e7; }
@@ -73,10 +73,11 @@ Scoped under #zly-web-hero. Self-contained: paste into a Squarespace Code Block 
 
     /* 4. STAT BAND */
     #zly-web-hero .stat-band { background: var(--ink); padding: 90px 24px; position: relative; overflow: hidden; }
-    #zly-web-hero .stat-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(181,72,45,0.2), transparent 55%), radial-gradient(circle at 85% 80%, rgba(78,161,255,0.18), transparent 55%); }
+    #zly-web-hero .stat-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(227,167,46,0.15), transparent 55%), radial-gradient(circle at 85% 80%, rgba(78,161,255,0.18), transparent 55%); }
     #zly-web-hero .stat-band .inner { max-width: 1160px; margin: 0 auto; position: relative; }
     #zly-web-hero .stat-band .process-header h2 { color: var(--paper); max-width: 860px; text-wrap: balance; }
     #zly-web-hero .stat-band .process-header .process-sub { color: #c7d0d6; }
+    #zly-web-hero .stat-band .tag { color: var(--marigold); }
     #zly-web-hero .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
     #zly-web-hero .stat-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 32px 22px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
     #zly-web-hero .stat-card:hover { transform: translateY(-6px); box-shadow: 0 16px 30px -18px rgba(0,0,0,0.5); }
@@ -128,7 +129,7 @@ Scoped under #zly-web-hero. Self-contained: paste into a Squarespace Code Block 
 
     /* 9. FINAL CTA */
     #zly-web-hero .final { background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center; max-width: 1112px; margin: 0 auto; position: relative; overflow: hidden; }
-    #zly-web-hero .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+    #zly-web-hero .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(227,167,46,0.16), transparent 55%); }
     #zly-web-hero .final > * { position: relative; }
     #zly-web-hero .final h2 { color: var(--paper); font-size: clamp(27px, 3.2vw, 36px); margin-bottom: 14px; }
     #zly-web-hero .final p { color: #c7d0d6; max-width: 520px; margin: 0 auto 26px; }
@@ -197,21 +198,21 @@ Scoped under #zly-web-hero. Self-contained: paste into a Squarespace Code Block 
     <div class="board">
       <svg viewBox="0 0 420 320" fill="none" role="img" aria-label="Illustration: a desktop site and its mobile version, with a page-speed gauge reading fast and a clear call-to-action button">
         <defs>
-          <linearGradient id="zwb-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b5482d"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
+          <linearGradient id="zwb-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14457a"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
           <!-- userSpaceOnUse: a gradient defaults to objectBoundingBox, and a perfectly flat line has a zero-height box, so the stroke is not painted at all. -->
-          <linearGradient id="zwb-grad-line" gradientUnits="userSpaceOnUse" x1="356" y1="150" x2="404" y2="150"><stop offset="0" stop-color="#b5482d"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
+          <linearGradient id="zwb-grad-line" gradientUnits="userSpaceOnUse" x1="356" y1="150" x2="404" y2="150"><stop offset="0" stop-color="#14457a"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
         </defs>
         <!-- desktop browser -->
         <g transform="translate(14 22) rotate(-1.5 150 100)">
           <rect x="0" y="0" width="290" height="200" rx="8" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
           <line x1="0" y1="26" x2="290" y2="26" stroke="#1b2430" stroke-width="2"/>
-          <circle cx="14" cy="13" r="3.5" fill="#b5482d"/><circle cx="26" cy="13" r="3.5" fill="#e3a72e"/><circle cx="38" cy="13" r="3.5" fill="#7a8b69"/>
+          <circle cx="14" cy="13" r="3.5" fill="#14457a"/><circle cx="26" cy="13" r="3.5" fill="#e3a72e"/><circle cx="38" cy="13" r="3.5" fill="#7a8b69"/>
           <rect x="60" y="8" width="160" height="10" rx="5" fill="#1b2430" opacity="0.12"/>
           <!-- hero area -->
           <rect x="18" y="46" width="150" height="14" rx="5" fill="#1b2430" opacity="0.85"/>
           <rect x="18" y="66" width="120" height="8" rx="4" fill="#1b2430" opacity="0.3"/>
           <rect x="18" y="80" width="136" height="8" rx="4" fill="#1b2430" opacity="0.3"/>
-          <rect x="18" y="100" width="82" height="24" rx="6" fill="#b5482d"/>
+          <rect x="18" y="100" width="82" height="24" rx="6" fill="#14457a"/>
           <text x="59" y="116" font-family="DM Sans, sans-serif" font-size="10" font-weight="700" fill="#fff9ef" text-anchor="middle">Get a quote</text>
           <rect x="184" y="42" width="88" height="86" rx="6" fill="#f6e4b8" stroke="#1b2430" stroke-width="1.5"/>
           <path d="M196 116 L216 90 L232 104 L248 82 L262 116 Z" fill="#4ea1ff" opacity="0.7"/>
@@ -231,7 +232,7 @@ Scoped under #zly-web-hero. Self-contained: paste into a Squarespace Code Block 
           <rect x="12" y="30" width="60" height="9" rx="4" fill="#1b2430" opacity="0.85"/>
           <rect x="12" y="45" width="72" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
           <rect x="12" y="55" width="56" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
-          <rect x="12" y="70" width="74" height="20" rx="5" fill="#b5482d"/>
+          <rect x="12" y="70" width="74" height="20" rx="5" fill="#14457a"/>
           <text x="49" y="83.5" font-family="DM Sans, sans-serif" font-size="8.5" font-weight="700" fill="#fff9ef" text-anchor="middle">Get a quote</text>
           <rect x="12" y="102" width="74" height="42" rx="5" fill="#f6e4b8" stroke="#1b2430" stroke-width="1.2"/>
           <rect x="12" y="152" width="74" height="10" rx="3" fill="#faf3e7" stroke="#1b2430" stroke-width="1.2"/>
@@ -244,7 +245,7 @@ Scoped under #zly-web-hero. Self-contained: paste into a Squarespace Code Block 
           <path d="M0 60 A60 60 0 0 1 120 60" fill="none" stroke="#1b2430" stroke-width="2.5"/>
           <path d="M0 60 A60 60 0 0 1 18 22" fill="none" stroke="#7a8b69" stroke-width="10" opacity="0.85"/>
           <path d="M22 18 A60 60 0 0 1 98 18" fill="none" stroke="#e3a72e" stroke-width="10" opacity="0.85"/>
-          <path d="M102 22 A60 60 0 0 1 120 60" fill="none" stroke="#b5482d" stroke-width="10" opacity="0.85"/>
+          <path d="M102 22 A60 60 0 0 1 120 60" fill="none" stroke="#14457a" stroke-width="10" opacity="0.85"/>
           <g transform="translate(60 60)">
             <line class="needle" x1="0" y1="0" x2="0" y2="-48" stroke="#1b2430" stroke-width="3" stroke-linecap="round"/>
             <circle r="6" fill="#1b2430"/>
@@ -252,7 +253,7 @@ Scoped under #zly-web-hero. Self-contained: paste into a Squarespace Code Block 
           <text x="60" y="84" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#1b2430" text-anchor="middle">1.4s load</text>
         </g>
         <text x="196" y="280" font-family="Caveat, cursive" font-size="19" font-weight="700" fill="#7a8b69" transform="rotate(-3 196 280)">fast on every device</text>
-        <text x="196" y="306" font-family="Caveat, cursive" font-size="19" font-weight="700" fill="#b5482d" transform="rotate(-3 196 306)">one obvious next step</text>
+        <text x="196" y="306" font-family="Caveat, cursive" font-size="19" font-weight="700" fill="#14457a" transform="rotate(-3 196 306)">one obvious next step</text>
       </svg>
     </div>
   </section>

@@ -21,7 +21,7 @@ V2 CHANGES (vs zoley-digital-advertising-page.html):
     #zly-ads-page {
       --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef;
       --ink: #1b2430; --ink-soft: #5c6b76;
-      --marigold: #e3a72e; --barn: #b5482d; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+      --marigold: #e3a72e; --barn: #14457a; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
       --border: rgba(27,36,48,0.14);
       font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
     }
@@ -32,8 +32,8 @@ V2 CHANGES (vs zoley-digital-advertising-page.html):
     #zly-ads-page .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: var(--barn); }
 
     #zly-ads-page .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
-    #zly-ads-page .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #7c2f19; }
-    #zly-ads-page .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #7c2f19; }
+    #zly-ads-page .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #0d2d50; }
+    #zly-ads-page .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #0d2d50; }
     #zly-ads-page .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
     #zly-ads-page .btn-ghost:hover { background: var(--ink); color: var(--paper); }
     #zly-ads-page .btn-outline { background: transparent; color: #fff9ef; border: 2px solid #faf3e7; }
@@ -84,10 +84,11 @@ V2 CHANGES (vs zoley-digital-advertising-page.html):
 
     /* 4. STAT BAND */
     #zly-ads-page .stat-band { background: var(--ink); padding: 90px 24px; position: relative; overflow: hidden; }
-    #zly-ads-page .stat-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(181,72,45,0.2), transparent 55%), radial-gradient(circle at 85% 80%, rgba(78,161,255,0.18), transparent 55%); }
+    #zly-ads-page .stat-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(227,167,46,0.15), transparent 55%), radial-gradient(circle at 85% 80%, rgba(78,161,255,0.18), transparent 55%); }
     #zly-ads-page .stat-band .inner { max-width: 1160px; margin: 0 auto; position: relative; }
     #zly-ads-page .stat-band .process-header h2 { color: var(--paper); max-width: 860px; text-wrap: balance; }
     #zly-ads-page .stat-band .process-header .process-sub { color: #c7d0d6; }
+    #zly-ads-page .stat-band .tag { color: var(--marigold); }
     #zly-ads-page .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
     #zly-ads-page .stat-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 32px 22px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
     #zly-ads-page .stat-card:hover { transform: translateY(-6px); box-shadow: 0 16px 30px -18px rgba(0,0,0,0.5); }
@@ -138,7 +139,7 @@ V2 CHANGES (vs zoley-digital-advertising-page.html):
 
     /* 9. FINAL CTA */
     #zly-ads-page .final { background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center; max-width: 1112px; margin: 0 auto; position: relative; overflow: hidden; }
-    #zly-ads-page .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+    #zly-ads-page .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(227,167,46,0.16), transparent 55%); }
     #zly-ads-page .final > * { position: relative; }
     #zly-ads-page .final h2 { color: var(--paper); font-size: clamp(27px, 3.2vw, 36px); margin-bottom: 14px; }
     #zly-ads-page .final p { color: #c7d0d6; max-width: 520px; margin: 0 auto 26px; }
@@ -207,7 +208,7 @@ V2 CHANGES (vs zoley-digital-advertising-page.html):
     <div class="board">
       <svg viewBox="0 0 420 320" fill="none" role="img" aria-label="Illustration: a defined audience sees an ad, lands on a page built to convert, and the result is tracked as cost per lead and return on spend">
         <defs>
-          <linearGradient id="zad-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b5482d"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
+          <linearGradient id="zad-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14457a"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
         </defs>
         <!-- audience target (top-left) -->
         <g transform="translate(70 76)">
@@ -229,7 +230,7 @@ V2 CHANGES (vs zoley-digital-advertising-page.html):
           <rect x="46" y="13" width="110" height="9" rx="4" fill="#4ea1ff"/>
           <rect x="12" y="34" width="156" height="6" rx="3" fill="#1b2430" opacity="0.5"/>
           <rect x="12" y="46" width="120" height="6" rx="3" fill="#1b2430" opacity="0.3"/>
-          <rect x="12" y="62" width="70" height="14" rx="4" fill="#b5482d"/>
+          <rect x="12" y="62" width="70" height="14" rx="4" fill="#14457a"/>
           <text x="47" y="72" font-family="DM Sans, sans-serif" font-size="8.5" font-weight="700" fill="#fff9ef" text-anchor="middle">Get a quote</text>
         </g>
         <!-- thread to landing page -->
@@ -238,16 +239,16 @@ V2 CHANGES (vs zoley-digital-advertising-page.html):
         <g transform="translate(228 164) rotate(-2 80 60)">
           <rect x="0" y="0" width="160" height="118" rx="7" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
           <line x1="0" y1="18" x2="160" y2="18" stroke="#1b2430" stroke-width="1.5"/>
-          <circle cx="10" cy="9" r="2.5" fill="#b5482d"/><circle cx="19" cy="9" r="2.5" fill="#e3a72e"/><circle cx="28" cy="9" r="2.5" fill="#7a8b69"/>
+          <circle cx="10" cy="9" r="2.5" fill="#14457a"/><circle cx="19" cy="9" r="2.5" fill="#e3a72e"/><circle cx="28" cy="9" r="2.5" fill="#7a8b69"/>
           <rect x="12" y="30" width="86" height="9" rx="4" fill="#1b2430" opacity="0.85"/>
           <rect x="12" y="45" width="100" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
           <rect x="12" y="55" width="80" height="5" rx="2.5" fill="#1b2430" opacity="0.3"/>
           <rect x="12" y="70" width="98" height="12" rx="3" fill="#faf3e7" stroke="#1b2430" stroke-width="1.2"/>
           <rect x="12" y="88" width="98" height="12" rx="3" fill="#faf3e7" stroke="#1b2430" stroke-width="1.2"/>
-          <rect x="116" y="70" width="32" height="30" rx="4" fill="#b5482d"/>
+          <rect x="116" y="70" width="32" height="30" rx="4" fill="#14457a"/>
           <path d="M126 85 l4 4 l8 -9" stroke="#fff9ef" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
         </g>
-        <text x="236" y="300" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#b5482d">a page built to convert</text>
+        <text x="236" y="300" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#14457a">a page built to convert</text>
         <!-- thread to results -->
         <path class="thread" d="M226 230 Q 170 240 150 236"/>
         <!-- results card (bottom-left) -->
@@ -379,8 +380,8 @@ V2 CHANGES (vs zoley-digital-advertising-page.html):
           <g transform="translate(28 60)">
             <text x="0" y="0" font-family="DM Sans, sans-serif" font-size="11.5" fill="#5c6b76">Cost per lead</text>
             <line x1="0" y1="170" x2="330" y2="170" stroke="#1b2430" stroke-width="1.5" opacity="0.3"/>
-            <rect x="16" y="30" width="56" height="140" rx="4" fill="#b5482d" opacity="0.85"/>
-            <rect x="96" y="76" width="56" height="94" rx="4" fill="#b5482d" opacity="0.7"/>
+            <rect x="16" y="30" width="56" height="140" rx="4" fill="#14457a" opacity="0.85"/>
+            <rect x="96" y="76" width="56" height="94" rx="4" fill="#14457a" opacity="0.7"/>
             <rect x="176" y="112" width="56" height="58" rx="4" fill="#7a8b69" opacity="0.8"/>
             <rect x="256" y="128" width="56" height="42" rx="4" fill="#7a8b69" opacity="0.95"/>
             <g font-family="Newsreader, serif" font-size="14" font-weight="600" fill="#1b2430" text-anchor="middle">
