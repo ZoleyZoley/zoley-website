@@ -1,0 +1,414 @@
+<!--
+ZOLEY - cs-tree-project - whole page
+Generated from main pages/zoley-case-study-tree-project.v2.html by tools/build-sections.py
+Loaded by <div data-zoley-page="cs-tree-project">. Self-contained.
+-->
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@700&display=swap');
+
+  #zly-csd-tree-project {
+    --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+    --marigold: #e3a72e; --barn: #14457a; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+    --border: rgba(27,36,48,0.14);
+    font-family: 'DM Sans', -apple-system, sans-serif; background: var(--paper); color: var(--ink);
+  }
+  #zly-csd-tree-project * { box-sizing: border-box; margin: 0; padding: 0; }
+  #zly-csd-tree-project h1, #zly-csd-tree-project h2, #zly-csd-tree-project h3 { font-family: 'Newsreader', Georgia, serif; font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; color: var(--ink); }
+  #zly-csd-tree-project p { color: var(--ink-soft); line-height: 1.7; }
+  #zly-csd-tree-project a { color: inherit; }
+
+  /* ---------- TITLE ---------- */
+  #zly-csd-tree-project .hero { padding: 88px 24px 48px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1.05fr 0.95fr; column-gap: 56px; align-items: start; }
+  #zly-csd-tree-project .hero-head { grid-column: 1; grid-row: 1; }
+  #zly-csd-tree-project .hero-copy { grid-column: 1; grid-row: 2; }
+  #zly-csd-tree-project .board { grid-column: 2; grid-row: 2; background: var(--paper-2); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+  #zly-csd-tree-project .board svg { width: 100%; height: auto; display: block; }
+  #zly-csd-tree-project .back { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 700; text-decoration: none; color: var(--ink-soft); }
+  #zly-csd-tree-project .back:hover { color: var(--barn); }
+  #zly-csd-tree-project .tag { display: block; width: max-content; max-width: 100%; font-family: 'Caveat', cursive; font-size: 22px; font-weight: 700; color: var(--barn); transform: rotate(-2deg); margin: 4px 0 8px; padding: 0 4px; }
+  #zly-csd-tree-project .hero h1 { font-size: clamp(32px, 4vw, 50px); line-height: 1.1; }
+  #zly-csd-tree-project .hero .dek { font-size: 18px; margin-top: 20px; max-width: 540px; }
+
+  /* ---------- SNAPSHOT (dark band) ---------- */
+  #zly-csd-tree-project .snap-wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px 72px; }
+  #zly-csd-tree-project .snap { --snap-text: #fff9ef; --snap-soft: #d4dbe0; --snap-label: #9fb3c8; --snap-line: rgba(250,243,231,0.14);
+    position: relative; overflow: hidden; background: var(--ink); color: var(--snap-text); border-radius: 16px; }
+  #zly-csd-tree-project .snap-glow { position: absolute; border-radius: 50%; pointer-events: none; }
+  #zly-csd-tree-project .snap-glow-a { top: -120px; left: -80px; width: 360px; height: 360px; background: radial-gradient(circle, rgba(108,92,231,0.28), transparent 65%); }
+  #zly-csd-tree-project .snap-glow-b { bottom: -140px; right: -60px; width: 380px; height: 380px; background: radial-gradient(circle, rgba(78,161,255,0.2), transparent 65%); }
+  #zly-csd-tree-project .snap-inner { position: relative; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 36px; padding: 36px 40px; }
+  #zly-csd-tree-project .snap-tag { display: block; font-family: 'Caveat', cursive; font-size: 24px; font-weight: 700; line-height: 1; color: var(--marigold); margin: 0 0 6px; }
+  #zly-csd-tree-project .snap dl { display: grid; grid-template-columns: 120px minmax(0, 1fr); column-gap: 18px; }
+  #zly-csd-tree-project .snap dt { padding: 13px 0; border-bottom: 1px solid var(--snap-line); font-size: 11.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--snap-label); }
+  #zly-csd-tree-project .snap dd { padding: 11px 0; border-bottom: 1px solid var(--snap-line); font-size: 15px; line-height: 1.55; color: var(--snap-soft); }
+  #zly-csd-tree-project .snap dt:last-of-type, #zly-csd-tree-project .snap dd:last-of-type { border-bottom: 0; }
+  #zly-csd-tree-project .snap dd.snap-strong { font-size: 15.5px; font-weight: 700; color: var(--snap-text); }
+  #zly-csd-tree-project .snap-impact { display: flex; flex-direction: column; justify-content: center; gap: 10px; background: rgba(250,243,231,0.06); border: 1px solid rgba(250,243,231,0.16); border-radius: 12px; padding: 26px 24px; }
+  #zly-csd-tree-project .snap-impact-label { font-size: 11.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--marigold); }
+  #zly-csd-tree-project .snap-impact-number { font-family: 'Newsreader', Georgia, serif; font-size: 44px; font-weight: 600; line-height: 1.05; color: var(--snap-text); }
+  #zly-csd-tree-project .snap-impact-text { font-size: 15px; line-height: 1.6; color: var(--snap-soft); }
+  #zly-csd-tree-project .snap-stats { position: relative; list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--snap-line); }
+  #zly-csd-tree-project .snap-stats li { padding: 22px 24px 26px; border-right: 1px solid var(--snap-line); }
+  #zly-csd-tree-project .snap-stats li:first-child { padding-left: 40px; }
+  #zly-csd-tree-project .snap-stats li:last-child { border-right: 0; padding-right: 40px; }
+  #zly-csd-tree-project .snap-stat-num { display: block; font-family: 'Newsreader', Georgia, serif; font-size: 30px; font-weight: 600; line-height: 1.1; color: var(--snap-text); margin-bottom: 6px; }
+  #zly-csd-tree-project .snap-stat-label { display: block; font-size: 13.5px; line-height: 1.45; color: var(--snap-soft); }
+
+  /* ---------- STORY ---------- */
+  #zly-csd-tree-project .story { max-width: 760px; margin: 0 auto; padding: 0 24px 40px; }
+  #zly-csd-tree-project .chapter { padding: 0 0 56px; }
+  #zly-csd-tree-project .chapter h2 { font-size: clamp(26px, 3vw, 34px); margin-bottom: 18px; }
+  #zly-csd-tree-project .chapter h2::before { content: ''; display: block; width: 36px; height: 3px; border-radius: 2px; background: linear-gradient(90deg, var(--barn), var(--violet)); margin-bottom: 14px; }
+  #zly-csd-tree-project .chapter > p { font-size: 17px; margin-bottom: 16px; }
+  #zly-csd-tree-project .chapter > p:last-child { margin-bottom: 0; }
+  #zly-csd-tree-project .chapter > * + .parts, #zly-csd-tree-project .chapter > * + .points, #zly-csd-tree-project .chapter > * + .results, #zly-csd-tree-project .chapter > * + .diff { margin-top: 24px; }
+  #zly-csd-tree-project .parts + p, #zly-csd-tree-project .points + p, #zly-csd-tree-project .diff + p, #zly-csd-tree-project .ticks + p { margin-top: 24px; }
+  #zly-csd-tree-project .ticks { list-style: none; margin: 4px 0 16px; }
+  #zly-csd-tree-project .ticks li { position: relative; padding-left: 30px; margin-bottom: 10px; font-size: 16px; line-height: 1.6; color: var(--ink); }
+  #zly-csd-tree-project .ticks li::before { content: ''; position: absolute; left: 2px; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: var(--sage) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.3 2.3 4.7-5' stroke='%23fff9ef' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 16px no-repeat; }
+  #zly-csd-tree-project .points { list-style: none; display: grid; gap: 16px; }
+  #zly-csd-tree-project .points li { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px 24px 24px 20px; }
+  #zly-csd-tree-project .pt-n { font-family: 'Caveat', cursive; font-size: 34px; font-weight: 700; line-height: 1; color: var(--violet); text-align: center; }
+  #zly-csd-tree-project .points h3 { font-size: 19px; margin-bottom: 8px; }
+  #zly-csd-tree-project .points p { font-size: 15.5px; }
+  #zly-csd-tree-project .parts { display: grid; gap: 20px; }
+  #zly-csd-tree-project .part { position: relative; overflow: hidden; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 30px 30px 18px; }
+  #zly-csd-tree-project .part::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--barn), var(--violet), var(--blue)); }
+  #zly-csd-tree-project .part-label { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--barn); margin-bottom: 6px; }
+  #zly-csd-tree-project .part h3 { font-size: 22px; margin-bottom: 12px; }
+  #zly-csd-tree-project .part > p { font-size: 16px; margin-bottom: 14px; }
+  #zly-csd-tree-project .part .list-title { font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); margin-bottom: 10px; }
+  #zly-csd-tree-project .part .part-outro { border-top: 1px solid var(--border); padding-top: 16px; font-style: italic; }
+  #zly-csd-tree-project .results { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; }
+  #zly-csd-tree-project .r-group { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 22px 22px 8px; }
+  #zly-csd-tree-project .r-group h3 { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--barn); margin-bottom: 6px; }
+  #zly-csd-tree-project .r-group ul { list-style: none; }
+  #zly-csd-tree-project .r-group li { padding: 14px 0; border-top: 1px solid var(--border); }
+  #zly-csd-tree-project .r-group li:first-child { border-top: 0; }
+  #zly-csd-tree-project .r-val { display: block; font-family: 'Newsreader', Georgia, serif; font-size: 30px; font-weight: 600; line-height: 1.1; color: var(--barn); }
+  #zly-csd-tree-project .r-label { display: block; font-size: 14.5px; line-height: 1.45; color: var(--ink); margin-top: 4px; }
+  #zly-csd-tree-project .r-note { display: block; font-size: 13px; line-height: 1.4; color: var(--ink-soft); margin-top: 2px; }
+  #zly-csd-tree-project .diff { display: grid; gap: 14px; }
+  #zly-csd-tree-project .diff-item { border-left: 4px solid var(--violet); background: var(--card); border-radius: 0 12px 12px 0; padding: 20px 24px; }
+  #zly-csd-tree-project .diff-item h3 { font-size: 19px; margin-bottom: 6px; }
+  #zly-csd-tree-project .diff-item p { font-size: 15.5px; }
+  #zly-csd-tree-project .disclaimer { font-size: 13.5px; line-height: 1.6; color: var(--ink-soft); border: 1px dashed var(--border); border-radius: 10px; padding: 16px 18px; margin-top: -16px; }
+  #zly-csd-tree-project .disclaimer strong { color: var(--ink); }
+
+  /* ---------- CTA (same as the homepage) ---------- */
+  #zly-csd-tree-project .cta-sec { max-width: 1160px; margin: 0 auto; padding: 40px 24px 56px; }
+  #zly-csd-tree-project .sign { background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center; position: relative; overflow: hidden; }
+  #zly-csd-tree-project .sign::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+  #zly-csd-tree-project .sign > * { position: relative; }
+  #zly-csd-tree-project .sign h2 { color: var(--paper); font-size: clamp(28px, 3.2vw, 38px); line-height: 1.1; margin-bottom: 14px; }
+  #zly-csd-tree-project .sign p { color: #c7d0d6; max-width: 520px; margin: 0 auto 28px; line-height: 1.65; }
+  #zly-csd-tree-project .sign .cta-note { font-size: 13px; color: rgba(244,237,224,0.55); margin: 16px auto 0; }
+  #zly-csd-tree-project .cta-row { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+  #zly-csd-tree-project .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease; }
+  #zly-csd-tree-project .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #0d2d50; border: none; }
+  #zly-csd-tree-project .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #0d2d50; }
+  #zly-csd-tree-project .btn-ghost { background: transparent; color: var(--paper); border: 2px solid var(--paper); }
+  #zly-csd-tree-project .btn-ghost:hover { background: var(--paper); color: var(--ink); }
+
+  /* ---------- NEWSLETTER ---------- */
+  #zly-csd-tree-project .nl-sec { max-width: 1160px; margin: 0 auto; padding: 0 24px 96px; }
+  #zly-csd-tree-project .nl { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 40px; align-items: center; background: var(--paper-2); border: 1px solid var(--border); border-radius: 14px; padding: 44px 44px; }
+  #zly-csd-tree-project .nl-tag { display: block; width: max-content; font-family: 'Caveat', cursive; font-size: 22px; font-weight: 700; color: var(--barn); transform: rotate(-2deg); margin-bottom: 6px; padding: 0 4px; }
+  #zly-csd-tree-project .nl h2 { font-size: clamp(24px, 2.6vw, 30px); margin-bottom: 10px; }
+  #zly-csd-tree-project .nl-copy p { font-size: 15.5px; }
+  #zly-csd-tree-project .nl-form { display: flex; gap: 10px; flex-wrap: wrap; }
+  #zly-csd-tree-project .nl-input { flex: 1 1 200px; min-width: 0; min-height: 48px; padding: 13px 16px; border-radius: 8px; border: 1px solid rgba(27,36,48,0.24); background: #fff; color: var(--ink); font-size: 16px; font-family: 'DM Sans', sans-serif; }
+  #zly-csd-tree-project .nl-input.nl-first { flex: 1 1 140px; }
+  #zly-csd-tree-project .nl-input::placeholder { color: #8a949b; }
+  #zly-csd-tree-project .nl-input:focus { outline: 2px solid var(--barn); outline-offset: 1px; }
+  #zly-csd-tree-project .nl-form .btn { flex: 0 0 auto; }
+  #zly-csd-tree-project .nl-form .btn:disabled { opacity: 0.7; cursor: wait; }
+  #zly-csd-tree-project .nl-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  #zly-csd-tree-project .nl-status { font-size: 14px; font-weight: 600; margin-top: 12px; }
+  #zly-csd-tree-project .nl-status:empty { display: none; }
+  #zly-csd-tree-project .nl-status.is-error { color: #a23b2a; }
+  #zly-csd-tree-project .nl-status.is-success { color: var(--ink); font-size: 16px; margin-top: 0; }
+  #zly-csd-tree-project .nl-fine { font-size: 12.5px; margin-top: 12px; }
+
+  @media (max-width: 900px) {
+    #zly-csd-tree-project .hero { grid-template-columns: 1fr; padding: 64px 20px 36px; }
+    #zly-csd-tree-project .hero-head, #zly-csd-tree-project .hero-copy, #zly-csd-tree-project .board { grid-column: 1; grid-row: auto; }
+    #zly-csd-tree-project .hero-copy { margin-bottom: 36px; }
+    #zly-csd-tree-project .snap-wrap { padding: 0 20px 56px; }
+    #zly-csd-tree-project .snap-inner { grid-template-columns: 1fr; gap: 24px; padding: 30px 28px; }
+    #zly-csd-tree-project .snap-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    #zly-csd-tree-project .snap-stats li, #zly-csd-tree-project .snap-stats li:first-child, #zly-csd-tree-project .snap-stats li:last-child { padding: 20px 28px 22px; }
+    #zly-csd-tree-project .snap-stats li:nth-child(2n) { border-right: 0; }
+    #zly-csd-tree-project .snap-stats li:nth-child(n+3) { border-top: 1px solid var(--snap-line); }
+    #zly-csd-tree-project .story { padding: 0 20px 32px; }
+    #zly-csd-tree-project .cta-sec { padding: 32px 20px 48px; }
+    #zly-csd-tree-project .nl-sec { padding: 0 20px 64px; }
+    #zly-csd-tree-project .nl { grid-template-columns: 1fr; gap: 24px; padding: 34px 28px; }
+  }
+  @media (max-width: 560px) {
+    #zly-csd-tree-project { overflow-x: clip; }
+    #zly-csd-tree-project .hero { padding-top: 40px; }
+    #zly-csd-tree-project .hero .dek { font-size: 17px; }
+    /* Full-bleed illustration on phones, as on the other v2 pages. */
+    #zly-csd-tree-project .board { margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); border-left: 0; border-right: 0; border-radius: 0; padding-left: 0; padding-right: 0; }
+    #zly-csd-tree-project .snap-wrap { padding: 0 16px 48px; }
+    #zly-csd-tree-project .snap-inner { padding: 26px 22px; }
+    #zly-csd-tree-project .snap dl { grid-template-columns: 1fr; }
+    #zly-csd-tree-project .snap dt { padding: 14px 0 4px; border-bottom: 0; }
+    #zly-csd-tree-project .snap dd { padding: 0 0 14px; }
+    #zly-csd-tree-project .snap-impact { padding: 22px 20px; }
+    #zly-csd-tree-project .snap-impact-number { font-size: 36px; }
+    #zly-csd-tree-project .snap-stats { grid-template-columns: 1fr; }
+    #zly-csd-tree-project .snap-stats li, #zly-csd-tree-project .snap-stats li:first-child, #zly-csd-tree-project .snap-stats li:last-child { padding: 18px 22px; border-right: 0; }
+    #zly-csd-tree-project .snap-stats li + li { border-top: 1px solid var(--snap-line); }
+    #zly-csd-tree-project .story { padding: 0 18px 24px; }
+    #zly-csd-tree-project .chapter > p { font-size: 16.5px; }
+    #zly-csd-tree-project .points li { grid-template-columns: 1fr; gap: 4px; padding: 20px; }
+    #zly-csd-tree-project .pt-n { text-align: left; }
+    #zly-csd-tree-project .part { padding: 26px 20px 14px; }
+    #zly-csd-tree-project .results { grid-template-columns: 1fr; }
+    #zly-csd-tree-project .sign { padding: 40px 22px; border-radius: 12px; }
+    #zly-csd-tree-project .cta-row { flex-direction: column; align-items: stretch; }
+    #zly-csd-tree-project .nl { padding: 28px 20px; }
+    #zly-csd-tree-project .nl-form { flex-direction: column; }
+    #zly-csd-tree-project .nl-input, #zly-csd-tree-project .nl-input.nl-first { flex: 0 0 auto; width: 100%; }
+    #zly-csd-tree-project .nl-form .btn { width: 100%; }
+  }
+</style>
+
+<div id="zly-csd-tree-project">
+  <section class="hero">
+    <div class="hero-head">
+      <a class="back" href="https://www.zoley.io/case-studies">&larr; All case studies</a>
+      <span class="tag">web design and automation</span>
+    </div>
+    <div class="hero-copy">
+      <h1>A website and intake system that helped a local nonprofit look as good as its mission</h1>
+      <p class="dek">The organization plants trees that improve neighborhoods for decades. Its website looked dated and hid the next step. We rebuilt both the site and the way requests reach the team.</p>
+    </div>
+    <div class="board">
+        <svg viewBox="0 0 420 300" fill="none" role="img" aria-label="Illustration: visitors who take action, before 15%, after 35%">
+          <defs>
+            <linearGradient id="zly-csd-tree-project-grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#14457a"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
+          </defs>
+          <text x="210" y="26" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#1b2430" letter-spacing="1.2" text-anchor="middle">VISITORS WHO TAKE ACTION</text>
+          <g transform="rotate(-3 114 140)">
+            <rect x="34" y="66" width="160" height="150" rx="8" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <text x="114" y="100" font-family="Caveat, cursive" font-size="22" font-weight="700" fill="#5c6b76" text-anchor="middle">before</text>
+            <g transform="translate(0 38)">
+            <text x="114" y="122" font-family="Newsreader, Georgia, serif" font-size="42" font-weight="600" fill="#5c6b76" text-anchor="middle">15%</text>
+            </g>
+          </g>
+          <g transform="rotate(3 306 140)">
+            <rect x="226" y="66" width="160" height="150" rx="8" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <text x="306" y="100" font-family="Caveat, cursive" font-size="22" font-weight="700" fill="#6c5ce7" text-anchor="middle">after</text>
+            <g transform="translate(0 38)">
+            <text x="306" y="122" font-family="Newsreader, Georgia, serif" font-size="42" font-weight="600" fill="#14457a" text-anchor="middle">35%</text>
+            </g>
+            <circle cx="372" cy="204" r="14" fill="#7a8b69" stroke="#1b2430" stroke-width="2"/>
+            <path d="M365.5 204 l4.5 4.5 l8 -9" stroke="#fff9ef" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <path d="M116 64 C 160 34, 262 32, 304 62" stroke="url(#zly-csd-tree-project-grad)" stroke-width="2.2" stroke-dasharray="6 6" fill="none" opacity="0.85"/>
+          <path d="M291 57 L305 64 L300 50" stroke="#6c5ce7" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="116" cy="66" r="7" fill="#14457a" stroke="#1b2430" stroke-width="1.5"/>
+          <circle cx="304" cy="64" r="7" fill="#6c5ce7" stroke="#1b2430" stroke-width="1.5"/>
+          <text x="210" y="266" font-family="Caveat, cursive" font-size="22" font-weight="700" fill="#1b2430" text-anchor="middle" transform="rotate(-1.5 210 266)">same mission, clearer next step</text>
+        </svg>
+    </div>
+  </section>
+
+  <section class="snap-wrap" aria-label="Case study at a glance">
+    <div class="snap">
+      <div class="snap-glow snap-glow-a" aria-hidden="true"></div>
+      <div class="snap-glow snap-glow-b" aria-hidden="true"></div>
+      <div class="snap-inner">
+        <div>
+          <span class="snap-tag">at a glance</span>
+          <dl>
+            <dt>Client</dt>
+            <dd class="snap-strong">The West Hartford Tree Project</dd>
+            <dt>Industry</dt>
+            <dd>Community nonprofit</dd>
+            <dt>What we did</dt>
+            <dd>Web Design and Automation</dd>
+            <dt>Problem</dt>
+            <dd>A dated website with no clear way to request a tree, volunteer, or give, and requests arriving by email, phone, and message, each missing different details.</dd>
+            <dt>Solution</dt>
+            <dd>A credible, mobile-friendly website with three obvious paths, and a structured intake system that delivers every request complete and in one place.</dd>
+          </dl>
+        </div>
+        <div class="snap-impact">
+          <p class="snap-impact-label">The impact</p>
+          <p class="snap-impact-number">1,500</p>
+          <p class="snap-impact-text">tree requests in the first month, and more than twice the share of visitors taking action.</p>
+        </div>
+      </div>
+      <ul class="snap-stats" aria-label="Key results">
+          <li><span class="snap-stat-num">1,500</span><span class="snap-stat-label">tree requests in the first month</span></li>
+          <li><span class="snap-stat-num">35%</span><span class="snap-stat-label">of visitors take an action, up from 15%</span></li>
+          <li><span class="snap-stat-num">+20%</span><span class="snap-stat-label">volunteer sign-ups</span></li>
+          <li><span class="snap-stat-num">-60%</span><span class="snap-stat-label">time spent sorting and following up on requests</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <article class="story">
+      <section class="chapter">
+        <h2>The situation</h2>
+        <p>This organization does something simple and lasting. It puts trees into the ground in its own community, one yard, street, and park at a time. The work is visible, it is local, and it improves neighborhoods for decades.</p>
+        <p>Its website told a different story. The design was limited and dated, the mission was hard to find, and it was not clear how someone could request a tree, volunteer, or support the work. Requests came in through a mix of emails, phone calls, and messages, each with different information, which meant the small team spent a lot of time chasing details before any planting could begin.</p>
+      </section>
+      <section class="chapter">
+        <h2>The real problem</h2>
+        <p>For most businesses, a website is a sales tool. For a nonprofit, it is a trust tool.</p>
+        <p>Donors, volunteers, and neighbors all ask the same quiet question before they get involved: is this organization legitimate, organized, and worth my time or money? A nonprofit rarely gets to answer that question in person. The website answers it first, often in a matter of seconds.</p>
+        <p>A dated site with an unclear next step does not just look unpolished. It suggests, fairly or not, that the organization behind it may be disorganized too. That perception costs volunteers, donations, and community goodwill that the organization has earned through its actual work.</p>
+        <p>The intake side had the same problem from the inside. Without a consistent way to collect requests, every new request created extra work, and the team's time went to paperwork instead of planting.</p>
+      </section>
+      <section class="chapter">
+        <h2>Our approach</h2>
+        <p>We designed around two audiences at once.</p>
+        <p>For the public, the goal was trust and clarity. Someone landing on the site should understand the mission within seconds, see real evidence of the work, and know exactly what to do next.</p>
+        <p>For the team, the goal was simplicity. Every request should arrive complete, organized, and ready to act on, without anyone having to piece it together by hand.</p>
+        <p>We also kept one practical constraint front and center. Nonprofit teams are small and often volunteer-run. Anything we built had to be easy to maintain without technical help.</p>
+      </section>
+      <section class="chapter">
+        <h2>What we built</h2>
+        <div class="parts">
+          <div class="part">
+            <span class="part-label">Part one</span>
+            <h3>A website that earns trust</h3>
+            <ul class="ticks">
+              <li>A clean, modern design that looks credible from the first scroll</li>
+              <li>A clear mission story told in plain language, supported by real photos of the work</li>
+              <li>Three obvious paths for the three things visitors want to do: request a tree, volunteer, or support the work</li>
+              <li>Impact highlights that show what the organization has already accomplished</li>
+              <li>A layout that works well on phones, where most local visitors first find the site</li>
+              <li>Pages the team can update on their own as new projects and stories come in</li>
+            </ul>
+          </div>
+          <div class="part">
+            <span class="part-label">Part two</span>
+            <h3>A simple, reliable intake system</h3>
+            <ul class="ticks">
+              <li>A structured request form that collects the same key information every time</li>
+              <li>All requests organized in one place, so the team can see what is new, pending, and complete</li>
+              <li>Automatic confirmations, so every person who submits a request knows it was received</li>
+              <li>Internal notifications, so the right team member sees new requests right away</li>
+              <li>A clear record of every request, which also makes reporting to donors and partners easier</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter">
+        <h2>The results</h2>
+        <div class="results">
+          <div class="r-group">
+            <h3>Community engagement</h3>
+            <ul>
+              <li><span class="r-val">1,500</span><span class="r-label">Tree requests received</span><span class="r-note">in the first month</span></li>
+              <li><span class="r-val">+20%</span><span class="r-label">Volunteer sign-ups</span></li>
+            </ul>
+          </div>
+          <div class="r-group">
+            <h3>Website performance</h3>
+            <ul>
+              <li><span class="r-val">35%</span><span class="r-label">Visitors who took an action (request, volunteer, or donate)</span><span class="r-note">up from 15%</span></li>
+            </ul>
+          </div>
+          <div class="r-group">
+            <h3>Operations</h3>
+            <ul>
+              <li><span class="r-val">-60%</span><span class="r-label">Time spent sorting and following up on requests</span></li>
+              <li><span class="r-val">&lt; 1 day</span><span class="r-label">Average time from request to response</span><span class="r-note">down from up to a week</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter">
+        <h2>What made the difference</h2>
+        <div class="diff">
+          <div class="diff-item"><h3>The mission came first.</h3><p>Instead of leading with the organization, the site leads with the impact: trees planted, streets changed, neighbors involved. That is what people care about.</p></div>
+          <div class="diff-item"><h3>Every visitor had a clear next step.</h3><p>Visitors did not have to hunt for how to help. The paths were obvious, which removed hesitation.</p></div>
+          <div class="diff-item"><h3>The back office got as much attention as the front.</h3><p>A beautiful site that funnels requests into a messy inbox only moves the problem. The intake system made sure more interest turned into less work, not more.</p></div>
+        </div>
+      </section>
+      <section class="chapter">
+        <h2>Why it matters for your organization</h2>
+        <p>Nonprofits often put every dollar and every hour into the mission, which is exactly as it should be. But the website and the systems behind it are part of the mission too. They are how new supporters find you, decide to trust you, and choose to get involved.</p>
+        <p>A polished website tells the community that your organization is serious and well run. A simple intake system gives your team back the hours it spends on paperwork. Together, they help a small team do more of the work that matters.</p>
+        <p>If your organization's online presence does not reflect the quality of your work, we would be glad to talk about what that could look like.</p>
+      </section>
+  </article>
+
+  <section class="cta-sec">
+    <div class="sign">
+      <h2>Let's build what your business needed 6 months ago.</h2>
+      <p>Let's pinpoint what's slowing you down, build the right solution, and grow from there.</p>
+      <div class="cta-row">
+        <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get your plan</a>
+        <a href="https://calendly.com/zoley/zoley-discovery-call" class="btn btn-ghost">Book an intro call</a>
+      </div>
+      <p class="cta-note">Prefer email? connect@zoley.io</p>
+    </div>
+  </section>
+
+  <section class="nl-sec">
+    <div class="nl">
+      <div class="nl-copy">
+        <span class="nl-tag">the espresso brief</span>
+        <h2>One operational improvement, every week.</h2>
+        <p>A single, specific change you can make to how your business runs, with the reasoning behind it. Short enough to act on the same day.</p>
+      </div>
+      <div>
+        <form class="nl-form" novalidate>
+          <input type="text" name="first_name" required placeholder="First name" class="nl-input nl-first" aria-label="First name" autocomplete="given-name">
+          <input type="email" name="email" required placeholder="you@yourbusiness.com" class="nl-input" aria-label="Email address" autocomplete="email">
+          <div class="nl-hp" aria-hidden="true"><label>Company <input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <p class="nl-status" role="status" aria-live="polite"></p>
+        <p class="nl-fine">One email a week. One thing to improve your business.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      // Espresso Brief signup -> the same Apps Script web app as the homepage and footer.
+      var ENDPOINT = "https://script.google.com/macros/s/AKfycbxMauQxJhF3SWBEQsbL3HZCYoUTGGx3eYjJZnJz3lN82IAzELAXmortCYFprQLaCu95Vg/exec";
+      var root = document.getElementById('zly-csd-tree-project');
+      var form = root && root.querySelector('.nl-form');
+      if (!form || form.getAttribute('data-ready')) return;
+      form.setAttribute('data-ready', '1');
+      var status = root.querySelector('.nl-status');
+      var fine = root.querySelector('.nl-fine');
+      var btn = form.querySelector('button[type="submit"]');
+
+      function say(msg, kind) { status.textContent = msg; status.className = 'nl-status' + (kind ? ' is-' + kind : ''); }
+
+      form.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        var first = form.first_name.value.trim();
+        var email = form.email.value.trim();
+        if (!first) { say('Mind adding your first name?', 'error'); form.first_name.focus(); return; }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { say("That email doesn't look right. Mind double-checking it?", 'error'); form.email.focus(); return; }
+
+        btn.disabled = true; say('');
+        // Apps Script can't answer the browser's cross-site pre-check, so this is sent as
+        // plain text without reading the reply. The script validates everything itself.
+        fetch(ENDPOINT, {
+          method: 'POST', mode: 'no-cors',
+          body: JSON.stringify({ form: 'newsletter', first_name: first, email: email, company: form.company.value, source: 'case-study-tree-project' })
+        }).then(function () {
+          form.hidden = true; fine.hidden = true;
+          say("You're in, " + first + ". Check your inbox for a welcome email.", 'success');
+        }).catch(function () {
+          btn.disabled = false;
+          say("Something didn't go through. Try again, or email connect@zoley.io.", 'error');
+        });
+      });
+    })();
+  </script>
+</div>

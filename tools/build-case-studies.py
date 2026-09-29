@@ -186,7 +186,7 @@ def snapshot(cs):
 
 # ---------------------------------------------------------------- CSS
 CSS = r'''
-  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@700&display=swap');
 
   #W {
     --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;

@@ -1,0 +1,228 @@
+<!--
+ZOLEY - case-studies - whole page
+Generated from main pages/zoley-case-studies.v2.html by tools/build-sections.py
+Loaded by <div data-zoley-page="case-studies">. Self-contained.
+-->
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@700&display=swap');
+
+  /* ===== hero ===== */
+  #zly-cs-hero { --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76; --barn: #14457a; --sage: #7a8b69; --violet: #6c5ce7; --border: rgba(27,36,48,0.14); font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); }
+  #zly-cs-hero * { box-sizing: border-box; margin: 0; padding: 0; }
+  #zly-cs-hero h1 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+  #zly-cs-hero p { color: var(--ink-soft); line-height: 1.65; }
+  #zly-cs-hero .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: var(--barn); }
+  #zly-cs-hero .hero { padding: 104px 24px 48px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 0.92fr; column-gap: 56px; row-gap: 0; align-items: start; }
+  /* The tag sits in its own row so row 2 starts at the H1, keeping the headline
+     level with the top of the illustration whatever the Caveat line box measures. */
+  #zly-cs-hero .hero > .tag { grid-column: 1; grid-row: 1; justify-self: start; }
+  #zly-cs-hero .hero-copy { grid-column: 1; grid-row: 2; }
+  #zly-cs-hero .board { grid-column: 2; grid-row: 2; background: var(--paper-2); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+  #zly-cs-hero .board svg { width: 100%; height: auto; display: block; }
+  #zly-cs-hero .hero h1 { font-size: clamp(34px, 4.4vw, 52px); }
+  #zly-cs-hero .hero p.sub { font-size: 17.5px; max-width: 520px; margin: 20px 0 28px; }
+  #zly-cs-hero .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  #zly-cs-hero .btn { display: inline-flex; align-items: center; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  #zly-cs-hero .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #0d2d50; }
+  #zly-cs-hero .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #0d2d50; }
+  #zly-cs-hero .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+  #zly-cs-hero .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+  @media (max-width: 900px) {
+    #zly-cs-hero .hero { grid-template-columns: 1fr; padding: 76px 20px 36px; column-gap: 0; row-gap: 0; }
+    #zly-cs-hero .hero > .tag,
+    #zly-cs-hero .hero-copy,
+    #zly-cs-hero .board { grid-column: 1; grid-row: auto; }
+    #zly-cs-hero .hero-copy { margin-bottom: 36px; }
+  }
+  @media (max-width: 480px) { #zly-cs-hero .hero { padding: 56px 18px 28px; } #zly-cs-hero .cta-row .btn { width: 100%; justify-content: center; } }
+
+  /* ===== grid ===== */
+  #zly-cs-grid {
+    --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+    --barn: #14457a; --violet: #6c5ce7; --blue: #4ea1ff; --sage: #7a8b69; --border: rgba(27,36,48,0.14);
+    font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+  }
+  #zly-cs-grid * { box-sizing: border-box; margin: 0; padding: 0; }
+  #zly-cs-grid .sec { padding: 20px 24px 90px; max-width: 1160px; margin: 0 auto; }
+  #zly-cs-grid h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; color: var(--ink); }
+  #zly-cs-grid .cs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 26px; }
+  #zly-cs-grid .cs-card { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 28px; position: relative; overflow: hidden; text-decoration: none; color: inherit; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  #zly-cs-grid .cs-card:hover { transform: translateY(-6px); box-shadow: 0 18px 32px -16px rgba(27,36,48,0.28); }
+  #zly-cs-grid .cs-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--barn), var(--violet), var(--blue)); }
+  #zly-cs-grid .cs-tag { font-size: 12.5px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--barn); font-weight: 700; margin-bottom: 10px; }
+  #zly-cs-grid .cs-card h3 { font-size: 20px; margin-bottom: 8px; }
+  #zly-cs-grid .cs-headline { font-size: 14.5px; color: var(--ink-soft); line-height: 1.5; margin-bottom: 12px; }
+  #zly-cs-grid .cs-did { font-size: 13px; color: var(--ink); margin-bottom: 18px; line-height: 1.5; }
+  #zly-cs-grid .cs-did strong { color: var(--violet); }
+  #zly-cs-grid .cs-spark { width: 100%; height: 44px; margin-bottom: 4px; }
+  #zly-cs-grid .cs-spark svg { width: 100%; height: 44px; display: block; }
+  #zly-cs-grid .cs-stat { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border); }
+  #zly-cs-grid .cs-stat .num { font-family: 'Newsreader', serif; font-size: 22px; font-weight: 600; color: var(--barn); margin-right: 6px; }
+  #zly-cs-grid .cs-stat .label { font-size: 13px; color: var(--ink-soft); }
+  #zly-cs-grid .cs-link { display: block; margin-top: 16px; font-size: 14px; font-weight: 700; color: var(--ink); }
+  #zly-cs-grid .cs-card:hover .cs-link { color: var(--barn); }
+  @media (max-width: 900px) { #zly-cs-grid .sec { padding: 16px 20px 60px; } #zly-cs-grid .cs-grid { grid-template-columns: 1fr; } }
+
+  /* ===== final cta ===== */
+  #zly-cs-cta { --paper: #faf3e7; --ink: #1b2430; --barn: #14457a; --violet: #6c5ce7; font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); }
+  #zly-cs-cta * { box-sizing: border-box; margin: 0; padding: 0; }
+  #zly-cs-cta .sec { padding: 0 24px 96px; max-width: 1160px; margin: 0 auto; }
+  #zly-cs-cta h2 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; }
+  #zly-cs-cta .cta-row { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+  #zly-cs-cta .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  #zly-cs-cta .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #0d2d50; }
+  #zly-cs-cta .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #0d2d50; }
+  #zly-cs-cta .btn-outline { background: transparent; color: #faf3e7; border: 2px solid #faf3e7; }
+  #zly-cs-cta .btn-outline:hover { background: #faf3e7; color: var(--ink); }
+  #zly-cs-cta .final { background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center; position: relative; overflow: hidden; }
+  #zly-cs-cta .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+  #zly-cs-cta .final > * { position: relative; }
+  #zly-cs-cta .final h2 { color: var(--paper); font-size: clamp(27px, 3.2vw, 36px); margin-bottom: 14px; }
+  #zly-cs-cta .final p { color: #c7d0d6; max-width: 520px; margin: 0 auto 28px; line-height: 1.65; }
+  #zly-cs-cta .final .note { font-size: 13px; color: rgba(244,237,224,0.55); margin: 16px auto 0; }
+  @media (max-width: 900px) { #zly-cs-cta .sec { padding: 0 20px 64px; } #zly-cs-cta .final { padding: 48px 28px; } }
+  @media (max-width: 480px) { #zly-cs-cta .final { padding: 40px 22px; border-radius: 12px; } #zly-cs-cta .cta-row { flex-direction: column; align-items: stretch; } #zly-cs-cta .btn { justify-content: center; } }
+</style>
+
+<!-- HERO -->
+<div id="zly-cs-hero">
+  <section class="hero">
+    <span class="tag">client outcomes</span>
+    <div class="hero-copy">
+      <h1>The number before, and the number after.</h1>
+      <p class="sub">We take a baseline before anything gets built, report the one figure the engagement was scoped to move, and publish nothing without the owner's sign-off. These are the results clients have agreed to share.</p>
+      <div class="cta-row">
+        <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get started</a>
+        <a href="https://calendly.com/zoley/zoley-discovery-call" class="btn btn-ghost">Book an intro call</a>
+      </div>
+    </div>
+    <div class="board">
+      <svg viewBox="0 0 420 320" fill="none" role="img" aria-label="Illustration: the same metric measured twice, a shorter before bar and a longer after bar, with the baseline carried across and a note that the client approves the figure before publishing">
+        <defs>
+          <linearGradient id="zcs-grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#14457a"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
+        </defs>
+        <rect x="14" y="14" width="392" height="292" rx="10" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+        <text x="34" y="48" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#1b2430" letter-spacing="1.2">ONE NUMBER, MEASURED TWICE</text>
+
+        <text x="34" y="98" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#5c6b76">Before</text>
+        <rect x="96" y="82" width="104" height="22" rx="4" fill="#5c6b76" opacity="0.32"/>
+        <text x="212" y="98" font-family="DM Sans, sans-serif" font-size="11.5" fill="#5c6b76">baseline, taken first</text>
+
+        <text x="34" y="154" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#1b2430">After</text>
+        <rect x="96" y="138" width="244" height="22" rx="4" fill="url(#zcs-grad)"/>
+
+        <!-- the baseline, carried across so the gap is the whole point -->
+        <line x1="200" y1="76" x2="200" y2="172" stroke="#1b2430" stroke-width="1.8" stroke-dasharray="5 5" opacity="0.45"/>
+        <path d="M200 178 L200 186 M340 178 L340 186 M200 182 L340 182" stroke="#6c5ce7" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <text x="270" y="206" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#6c5ce7" text-anchor="middle">the difference</text>
+
+        <g transform="translate(34 232)">
+          <rect x="0" y="0" width="352" height="56" rx="8" fill="#faf3e7" stroke="#1b2430" stroke-width="1.5"/>
+          <circle cx="32" cy="28" r="13" fill="#7a8b69"/>
+          <path d="M26 28 l4 4 l8 -9" stroke="#fff9ef" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="58" y="25" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="700" fill="#1b2430">Client-approved before publishing</text>
+          <text x="58" y="42" font-family="DM Sans, sans-serif" font-size="11" fill="#5c6b76">the owner signs off on the figure and the write-up</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+</div>
+
+<!--
+GRID
+HOW TO ADD A NEW CASE STUDY:
+Add an entry to tools/case_study_content.py, then run
+  python3 tools/build-case-studies.py && python3 tools/build-sections.py
+That writes the case study's own page and regenerates every card between the markers below.
+-->
+<div id="zly-cs-grid">
+  <section class="sec">
+    <div class="cs-grid">
+
+      <!-- CASE STUDY CARDS START — generated by tools/build-case-studies.py; edits here are overwritten -->
+
+      <a class="cs-card" href="https://www.zoley.io/case-studies/commercial-real-estate">
+        <span class="cs-tag">Web design · Automation</span>
+        <h3>40% more conversions for a real estate company</h3>
+        <p class="cs-headline">A rebuilt website and a one-click outreach engine for a commercial brokerage. Every lead now hears back the same day.</p>
+        <p class="cs-did"><strong>What we did:</strong> web design, automation</p>
+        <div class="cs-spark"><svg viewBox="0 0 280 44" preserveAspectRatio="none" aria-hidden="true"><path d="M0 36 L40 34 L80 33 L120 27 L160 22 L200 16 L240 11 L280 7" stroke="#6c5ce7" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M0 36 L40 34 L80 33 L120 27 L160 22 L200 16 L240 11 L280 7 L280 44 L0 44 Z" fill="#6c5ce7" opacity="0.1"/></svg></div>
+        <div class="cs-stat"><span class="num">+40%</span><span class="label">interested conversions from the website</span></div>
+        <span class="cs-link">Read the case study &rarr;</span>
+      </a>
+
+      <a class="cs-card" href="https://www.zoley.io/case-studies/physical-therapy-practice">
+        <span class="cs-tag">Strategy · Automation</span>
+        <h3>How we helped a PT get to $750K yearly revenue</h3>
+        <p class="cs-headline">Tiered pricing and a custom CRM took a stalled physical therapy practice from roughly $300K to $750K a year.</p>
+        <p class="cs-did"><strong>What we did:</strong> strategy, automation</p>
+        <div class="cs-spark"><svg viewBox="0 0 280 44" preserveAspectRatio="none" aria-hidden="true"><path d="M0 36 L40 34 L80 33 L120 27 L160 22 L200 16 L240 11 L280 7" stroke="#14457a" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M0 36 L40 34 L80 33 L120 27 L160 22 L200 16 L240 11 L280 7 L280 44 L0 44 Z" fill="#14457a" opacity="0.1"/></svg></div>
+        <div class="cs-stat"><span class="num">$750K</span><span class="label">annual revenue, up from ~$300K</span></div>
+        <span class="cs-link">Read the case study &rarr;</span>
+      </a>
+
+      <a class="cs-card" href="https://www.zoley.io/case-studies/plastic-surgery-email">
+        <span class="cs-tag">Automation · Email</span>
+        <h3>Email delivery system for plastic surgery</h3>
+        <p class="cs-headline">A verified sending platform and instant team alerts. Spam placement fell from over 20% to 1%, and consultations booked rose to 80%.</p>
+        <p class="cs-did"><strong>What we did:</strong> automation, email infrastructure</p>
+        <div class="cs-spark"><svg viewBox="0 0 280 44" preserveAspectRatio="none" aria-hidden="true"><path d="M0 36 L40 34 L80 33 L120 27 L160 22 L200 16 L240 11 L280 7" stroke="#7a8b69" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M0 36 L40 34 L80 33 L120 27 L160 22 L200 16 L240 11 L280 7 L280 44 L0 44 Z" fill="#7a8b69" opacity="0.1"/></svg></div>
+        <div class="cs-stat"><span class="num">99.5%</span><span class="label">outbound email delivery rate</span></div>
+        <span class="cs-link">Read the case study &rarr;</span>
+      </a>
+
+      <a class="cs-card" href="https://www.zoley.io/case-studies/nonprofit-donation-system">
+        <span class="cs-tag">Web design · Fundraising</span>
+        <h3>A donation system for a nonprofit</h3>
+        <p class="cs-headline">A website that tells the full story and a few-step donation flow. Donations rose 30%, and the average gift went from $10 to $50.</p>
+        <p class="cs-did"><strong>What we did:</strong> web design, fundraising</p>
+        <div class="cs-spark"><svg viewBox="0 0 280 44" preserveAspectRatio="none" aria-hidden="true"><path d="M0 36 L40 34 L80 33 L120 27 L160 22 L200 16 L240 11 L280 7" stroke="#6c5ce7" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M0 36 L40 34 L80 33 L120 27 L160 22 L200 16 L240 11 L280 7 L280 44 L0 44 Z" fill="#6c5ce7" opacity="0.1"/></svg></div>
+        <div class="cs-stat"><span class="num">+30%</span><span class="label">total donations, first two months</span></div>
+        <span class="cs-link">Read the case study &rarr;</span>
+      </a>
+
+      <a class="cs-card" href="https://www.zoley.io/case-studies/west-hartford-tree-project">
+        <span class="cs-tag">Web design · Automation</span>
+        <h3>A website and intake system for a tree nonprofit</h3>
+        <p class="cs-headline">A credible new website with three clear paths and a structured intake system. 1,500 tree requests arrived in the first month.</p>
+        <p class="cs-did"><strong>What we did:</strong> web design, automation</p>
+        <div class="cs-spark"><svg viewBox="0 0 280 44" preserveAspectRatio="none" aria-hidden="true"><path d="M0 36 L40 34 L80 33 L120 27 L160 22 L200 16 L240 11 L280 7" stroke="#14457a" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M0 36 L40 34 L80 33 L120 27 L160 22 L200 16 L240 11 L280 7 L280 44 L0 44 Z" fill="#14457a" opacity="0.1"/></svg></div>
+        <div class="cs-stat"><span class="num">1,500</span><span class="label">tree requests in the first month</span></div>
+        <span class="cs-link">Read the case study &rarr;</span>
+      </a>
+
+      <a class="cs-card" href="https://www.zoley.io/case-studies/dental-staffing-intake">
+        <span class="cs-tag">Automation</span>
+        <h3>Automated shift intake for a dental staffing company</h3>
+        <p class="cs-headline">Shift requests used to arrive as texts to one personal phone. Now every one is sorted by urgency and logged where the whole team can see it.</p>
+        <p class="cs-did"><strong>What we did:</strong> automation</p>
+        <div class="cs-spark"><svg viewBox="0 0 280 44" preserveAspectRatio="none" aria-hidden="true"><path d="M0 36 L40 34 L80 33 L120 27 L160 22 L200 16 L240 11 L280 7" stroke="#7a8b69" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M0 36 L40 34 L80 33 L120 27 L160 22 L200 16 L240 11 L280 7 L280 44 L0 44 Z" fill="#7a8b69" opacity="0.1"/></svg></div>
+        <div class="cs-stat"><span class="num">1 place</span><span class="label">for every shift request, sorted by urgency</span></div>
+        <span class="cs-link">Read the case study &rarr;</span>
+      </a>
+
+
+
+
+
+      <!-- CASE STUDY CARDS END -->
+
+    </div>
+  </section>
+</div>
+
+<!-- FINAL CTA -->
+<div id="zly-cs-cta">
+  <section class="sec">
+    <div class="final">
+      <h2>Your business could be the next one on this page.</h2>
+      <p>Tell us where you are and what you'd like to change. You'll have a written recommendation back and the metric we'd measure it against.</p>
+      <div class="cta-row">
+        <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get your plan</a>
+        <a href="https://calendly.com/zoley/zoley-discovery-call" class="btn btn-outline">Book an intro call</a>
+      </div>
+      <p class="note">No obligation. The recommendation is yours to keep either way.</p>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,216 @@
+<!--
+ZOLEY - about - whole page
+Generated from main pages/zoley-about.v2.html by tools/build-sections.py
+Loaded by <div data-zoley-page="about">. Self-contained.
+-->
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@700&display=swap');
+
+  /* ===== hero ===== */
+  #zly-about-hero { --paper: #faf3e7; --ink: #1b2430; --ink-soft: #5c6b76; --barn: #14457a; font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); }
+  #zly-about-hero * { box-sizing: border-box; margin: 0; padding: 0; }
+  #zly-about-hero h1 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+  #zly-about-hero p { color: var(--ink-soft); line-height: 1.65; }
+  #zly-about-hero .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: var(--barn); }
+  #zly-about-hero .hero { padding: 108px 24px 50px; max-width: 800px; margin: 0 auto; text-align: center; }
+  #zly-about-hero .hero h1 { font-size: clamp(34px, 4.6vw, 54px); }
+  #zly-about-hero .hero p.sub { font-size: 18px; max-width: 600px; margin: 20px auto 0; }
+  @media (max-width: 900px) { #zly-about-hero .hero { padding: 72px 20px 40px; } }
+  @media (max-width: 480px) { #zly-about-hero .hero { padding: 56px 18px 32px; } }
+
+  /* ===== story (founder's letter) ===== */
+  #zly-about-story {
+    --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+    --barn: #14457a; --violet: #6c5ce7; --blue: #4ea1ff; --border: rgba(27,36,48,0.14);
+    font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+  }
+  #zly-about-story * { box-sizing: border-box; margin: 0; padding: 0; }
+  #zly-about-story .sec { padding: 10px 24px 96px; max-width: 780px; margin: 0 auto; }
+  /* A letter on the desk: plain card, soft shadow, the site's gradient rule across the top. */
+  #zly-about-story .letter {
+    position: relative; background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+    padding: 60px 68px 52px; box-shadow: 0 22px 44px -28px rgba(27,36,48,0.35);
+  }
+  #zly-about-story .letter::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 6px 6px 0 0; background: linear-gradient(90deg, var(--barn), var(--violet), var(--blue)); }
+  #zly-about-story .letter p { font-family: 'Newsreader', Georgia, serif; font-size: 19.5px; line-height: 1.75; color: var(--ink); margin-bottom: 22px; }
+  #zly-about-story .letter p.lede { font-size: 25px; line-height: 1.5; font-weight: 500; margin-bottom: 26px; }
+  #zly-about-story .letter p.closing { font-style: italic; }
+  #zly-about-story .sign { margin-top: 34px; color: var(--barn); font-family: 'Caveat', cursive; font-weight: 700; line-height: 1.1; }
+  #zly-about-story .sign .name { display: block; font-size: 40px; transform: rotate(-2deg); transform-origin: left center; }
+  #zly-about-story .sign .role { display: block; font-size: 24px; margin-top: 6px; }
+  @media (max-width: 900px) { #zly-about-story .sec { padding: 6px 20px 64px; } #zly-about-story .letter { padding: 44px 40px 40px; } }
+  @media (max-width: 560px) {
+    #zly-about-story .sec { padding: 4px 14px 56px; }
+    #zly-about-story .letter { padding: 34px 22px 32px; }
+    #zly-about-story .letter p { font-size: 18px; line-height: 1.7; }
+    #zly-about-story .letter p.lede { font-size: 21px; }
+    #zly-about-story .sign .name { font-size: 34px; }
+    #zly-about-story .sign .role { font-size: 21px; }
+  }
+
+  /* ===== how we work ===== */
+  #zly-about-how {
+    --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+    --barn: #14457a; --violet: #6c5ce7; --blue: #4ea1ff; --sage: #7a8b69; --border: rgba(27,36,48,0.14);
+    font-family: 'DM Sans', sans-serif; background: var(--ink); color: var(--paper);
+  }
+  #zly-about-how * { box-sizing: border-box; margin: 0; padding: 0; }
+  #zly-about-how .band { padding: 90px 24px; position: relative; overflow: hidden; }
+  #zly-about-how .band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 15% 15%, rgba(181,72,45,0.2), transparent 55%), radial-gradient(circle at 90% 85%, rgba(78,161,255,0.18), transparent 55%); }
+  #zly-about-how .inner { position: relative; max-width: 1160px; margin: 0 auto; }
+  #zly-about-how .head { text-align: center; max-width: 660px; margin: 0 auto 44px; }
+  #zly-about-how .tag { font-family: 'Caveat', cursive; font-size: 21px; font-weight: 700; display: inline-block; transform: rotate(-2deg); margin-bottom: 8px; padding: 0 4px; color: #e3a72e; }
+  #zly-about-how h2 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--paper); font-size: clamp(26px, 3.2vw, 38px); margin-bottom: 12px; }
+  #zly-about-how .head p { color: #c7d0d6; line-height: 1.65; font-size: 16px; }
+  #zly-about-how .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  #zly-about-how .item { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 12px; padding: 26px 24px; }
+  #zly-about-how .item .n { font-family: 'Newsreader', serif; font-size: 30px; font-weight: 600; color: #e3a72e; line-height: 1; margin-bottom: 12px; }
+  #zly-about-how .item h3 { font-family: 'Newsreader', serif; font-weight: 600; font-size: 19px; color: var(--paper); margin-bottom: 8px; line-height: 1.2; }
+  #zly-about-how .item p { color: #c7d0d6; font-size: 14.5px; line-height: 1.6; }
+  @media (max-width: 900px) { #zly-about-how .band { padding: 60px 20px; } #zly-about-how .grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { #zly-about-how .grid { grid-template-columns: 1fr; } }
+
+  /* ===== values ===== */
+  #zly-about-values {
+    --paper: #faf3e7; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+    --barn: #14457a; --violet: #6c5ce7; --blue: #4ea1ff; --border: rgba(27,36,48,0.14);
+    font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+  }
+  #zly-about-values * { box-sizing: border-box; margin: 0; padding: 0; }
+  #zly-about-values .sec { padding: 90px 24px; max-width: 1160px; margin: 0 auto; }
+  #zly-about-values h2, #zly-about-values h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+  #zly-about-values p { color: var(--ink-soft); line-height: 1.65; }
+  #zly-about-values .values-header { text-align: center; margin-bottom: 40px; }
+  #zly-about-values .values-header h2 { font-size: clamp(24px, 2.8vw, 34px); max-width: 620px; margin: 0 auto; }
+  #zly-about-values .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  #zly-about-values .value-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 28px; position: relative; overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  #zly-about-values .value-card:hover { transform: translateY(-6px); box-shadow: 0 18px 32px -16px rgba(27,36,48,0.28); }
+  #zly-about-values .value-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--barn), var(--violet), var(--blue)); }
+  #zly-about-values .value-card h3 { font-size: 19px; margin-bottom: 8px; }
+  #zly-about-values .value-card p { font-size: 14.5px; }
+  @media (max-width: 900px) { #zly-about-values .values-grid { grid-template-columns: 1fr; } #zly-about-values .sec { padding: 60px 20px; } }
+
+  /* ===== final cta ===== */
+  #zly-about-cta { --paper: #faf3e7; --ink: #1b2430; --barn: #14457a; --violet: #6c5ce7; font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); }
+  #zly-about-cta * { box-sizing: border-box; margin: 0; padding: 0; }
+  #zly-about-cta .sec { padding: 0 24px 96px; max-width: 1160px; margin: 0 auto; }
+  #zly-about-cta h2 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; }
+  #zly-about-cta .cta-row { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+  #zly-about-cta .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  #zly-about-cta .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #0d2d50; }
+  #zly-about-cta .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #0d2d50; }
+  #zly-about-cta .btn-outline { background: transparent; color: #faf3e7; border: 2px solid #faf3e7; }
+  #zly-about-cta .btn-outline:hover { background: #faf3e7; color: var(--ink); }
+  #zly-about-cta .final { background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center; position: relative; overflow: hidden; }
+  #zly-about-cta .final::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+  #zly-about-cta .final > * { position: relative; }
+  #zly-about-cta .final h2 { color: var(--paper); font-size: clamp(27px, 3.2vw, 36px); margin-bottom: 14px; }
+  #zly-about-cta .final p { color: #c7d0d6; max-width: 520px; margin: 0 auto 28px; line-height: 1.65; }
+  #zly-about-cta .final .note { font-size: 13px; color: rgba(244,237,224,0.55); margin: 16px auto 0; }
+  @media (max-width: 900px) { #zly-about-cta .sec { padding: 0 20px 64px; } #zly-about-cta .final { padding: 48px 28px; } }
+  @media (max-width: 480px) { #zly-about-cta .final { padding: 40px 22px; border-radius: 12px; } #zly-about-cta .cta-row { flex-direction: column; align-items: stretch; } #zly-about-cta .btn { justify-content: center; } }
+  /* ===== FULL-BLEED ILLUSTRATIONS ON PHONES =====
+     The drawings keep every bit of their desktop detail while scaling down, so the
+     labels inside them shrink too. Giving the panel the whole screen takes the
+     drawing from about 308px to 390px - roughly a third bigger - and every label
+     grows with it. calc(50% - 50vw) cancels whatever side padding the section
+     carries, so this needs no per-page gutter value.
+     Deliberately NOT applied to illustrations that sit inside a card - the case
+     studies and the homepage featured band - which would break out of its edges. */
+  @media (max-width: 560px) {
+    /* 50vw counts the scrollbar, so a desktop window narrowed below 560px could
+       otherwise overshoot by its width. clip contains it without creating a
+       scroll container the way overflow:hidden would. */
+    #zly-about-story { overflow-x: clip; }
+    #zly-about-story .media {
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      border-left: 0;
+      border-right: 0;
+      border-radius: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+</style>
+
+<!-- HERO -->
+<div id="zly-about-hero">
+  <section class="hero">
+    <span class="tag">a letter from our founder</span>
+    <h1>Every business has a story. Here's ours.</h1>
+    <p class="sub">You won't find a list of services on this page, and that's on purpose. Every business we work with has a story behind it, and you should know the one behind ours before you trust us with yours.</p>
+  </section>
+</div>
+
+<!-- STORY -->
+<div id="zly-about-story">
+  <section class="sec">
+    <article class="letter" aria-label="A letter from Ryan K. Phelan, founder of Zoley Consulting">
+      <p class="lede">Zoley didn't start with a business plan. It started with a layoff.</p>
+
+      <p>For years I worked inside a Fortune 50 company, leading operational teams across different parts of the business. I learned how a large organization actually runs: how work moves from one team to the next, where it stalls, and how much a small fix in the right place is worth. Then I was laid off, and I had to figure out what came next.</p>
+
+      <p>The answer was closer than I expected. Some of my friends are exceptional at what they do. They're physical therapists and dentists with patients who love them. But nobody teaches the business side in physical therapy or dental school: the pricing, the scheduling, the follow-up with new patients, the systems that keep a practice running while you're busy doing the actual work. They were carrying all of that on top of their real jobs, mostly by hand.</p>
+
+      <p>I had spent my career on exactly that side of the house. So I started helping, one problem at a time. Zoley grew out of necessity, not a grand plan: a next step for me, and a need I kept seeing in the businesses around me.</p>
+
+      <p>I'm naturally curious, and I like to build things. When I look at a business, my first question isn't which software to sell it. It's how the work actually happens today. More often than not, the right answer is something built for that business specifically: an intake process that fits how the front desk really works, an automation that connects two tools that were never meant to talk, a report the owner actually reads. Off-the-shelf tools have their place, but most businesses don't run the way the software assumes they do.</p>
+
+      <p>The name Zoley comes from my grandfather. Whenever he came to visit, he'd settle in with the crossword from the newspaper and a bowl of pistachios or tortilla chips next to him, working through the clues one square at a time. That's where my love of puzzles comes from, and it's still how I think about this work. Every business is its own puzzle, made from the same kinds of pieces: people, tools, time and money. My job is to work out how they fit, fill in what's missing, and keep at it until the whole thing makes sense.</p>
+
+      <p class="closing">That's why this page reads like a letter instead of a brochure. Your business has its own story too, and I'd like to hear it.</p>
+
+      <div class="sign"><span class="name">Ryan K. Phelan</span><span class="role">Founder, Zoley Consulting</span></div>
+    </article>
+  </section>
+</div>
+
+<!-- HOW WE WORK -->
+<div id="zly-about-how">
+  <section class="band">
+    <div class="inner">
+      <div class="head">
+        <span class="tag">how we work</span>
+        <h2>Four commitments you can hold us to.</h2>
+        <p>These aren't values. They're terms. If we break one, you should say so, and we'll fix it.</p>
+      </div>
+      <div class="grid">
+        <div class="item"><div class="n">01</div><h3>Diagnosis before prescription</h3><p>We won't quote a build until we've looked at how your business actually runs. The audit comes first, every time, and it's short.</p></div>
+        <div class="item"><div class="n">02</div><h3>Scoped and priced in writing</h3><p>Deliverables, timeline, and a fixed price before any work starts. If the scope changes, the price changes in writing too, not on the invoice.</p></div>
+        <div class="item"><div class="n">03</div><h3>Built to be owned</h3><p>We build inside tools you already pay for, document everything, and hand it over. No proprietary platform, no dependency on us to make a change.</p></div>
+        <div class="item"><div class="n">04</div><h3>Measured after launch</h3><p>Every build ships with tracking and a 30-day review against the plan. If the number didn't move, we want to know as much as you do.</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- PRINCIPLES -->
+<div id="zly-about-values">
+  <section class="sec">
+    <div class="values-header">
+      <h2>What working with us is like, day to day.</h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card"><h3>Plain English, always</h3><p>We explain what we're recommending and why in language you'd use with a colleague. If you can't explain the plan to your team after reading it, we've written it badly.</p></div>
+      <div class="value-card"><h3>Straight answers</h3><p>If the honest recommendation is "don't do this yet," that's what you'll hear. We turn down work that won't return what it costs, and we say so early.</p></div>
+      <div class="value-card"><h3>Around after launch</h3><p>Optional ongoing support once the build is live. Not a retainer you're locked into. A number you can call when the business changes and the system needs to follow.</p></div>
+    </div>
+  </section>
+</div>
+
+<!-- FINAL CTA -->
+<div id="zly-about-cta">
+  <section class="sec">
+    <div class="final">
+      <h2>Start with a plan, not a pitch.</h2>
+      <p>Tell us about your business. You'll have a written recommendation and pricing back, whether or not you decide to work with us.</p>
+      <div class="cta-row">
+        <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get your plan</a>
+        <a href="https://calendly.com/zoley/zoley-discovery-call" class="btn btn-outline">Book an intro call</a>
+      </div>
+      <p class="note">Prefer email? connect@zoley.io</p>
+    </div>
+  </section>
+</div>

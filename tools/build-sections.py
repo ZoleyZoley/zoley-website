@@ -20,8 +20,8 @@ REPO = os.path.dirname(HERE)
 SRC  = os.path.join(REPO, "main pages")
 
 # The tag Squarespace is pointed at. Bump this in the same commit you tag.
-CURRENT_TAG = "v1.7.8"
-NEXT_TAG    = "v1.7.9"
+CURRENT_TAG = "v1.7.9"
+NEXT_TAG    = "v1.7.10"
 OUT  = os.path.join(REPO, "sections.v2")
 
 # page file -> (folder, new-id stem, [slug per section, in page order])
@@ -195,6 +195,47 @@ def css_for(css, sid):
     return imports + used_kf + out
 
 
+def prune_css(css, used):
+    """Drop rules whose selectors name only classes this section never uses.
+
+    Every section of a one-wrapper page used to carry the whole page's CSS, so the
+    homepage shipped its ~20KB stylesheet eight times. A rule is kept if its selector
+    has no class at all, or if ANY class it names appears as a word anywhere in the
+    section's markup or the page's scripts (which covers classes JS adds later, like
+    is-active). That errs towards keeping rules: a stray keep costs bytes, a wrong
+    drop would break the layout."""
+    def keep_rule(sel):
+        classes = re.findall(r'\.(-?[A-Za-z_][\w-]*)', sel)
+        return not classes or any(c in used for c in classes)
+
+    out, pending = [], None
+    toks = tokenize(css)
+    for k, sel, body, raw in toks:
+        if k == 'comment':
+            pending = raw
+            continue
+        keep = None
+        if k == 'import':
+            keep = raw
+        elif k == 'rule' and keep_rule(sel):
+            keep = raw
+        elif k == 'at' and sel.startswith(('@media', '@supports', '@container')):
+            inner = [r for kk, ss, bb, r in tokenize(body) if kk == 'rule' and keep_rule(ss)]
+            if inner:
+                keep = sel + " {\n      " + "\n      ".join(inner) + "\n    }"
+        elif k == 'at' and not sel.startswith('@keyframes'):
+            keep = raw                       # @font-face and anything unfamiliar: keep
+        if keep is not None:
+            if pending:
+                out.append(pending)
+            out.append(keep)
+        pending = None
+    joined = "\n".join(out)
+    frames = [r for k, s, b, r in toks if k == 'at' and s.startswith('@keyframes')
+              and re.search(r'\b' + re.escape(s.split()[1]) + r'\b', joined)]
+    return "\n".join("    " + l if l.strip() else l for l in "\n".join(out + frames).split("\n"))
+
+
 def header(folder, title, source, sid):
     return (f"<!--\nZOLEY - {folder} - {title}\nGenerated from main pages/{source} by tools/build-sections.py\n"
             f"Scoped under #{sid}. Self-contained: paste into a Squarespace Code Block as-is.\n-->\n\n")
@@ -231,6 +272,9 @@ def build():
             css  = "\n".join(lines[sopen+1:sclose])
             body = lines[sclose+1:dclose]
 
+            page_js = " ".join(re.findall(r'<script>(.*?)</script>', text, re.S)) + " ".join(
+                re.findall(r'^document\.addEventListener\("DOMContentLoaded".*?^\}\);', text, re.S | re.M))
+
             starts = [i for i, l in enumerate(body) if re.match(r'\s*<!--\s*\d+\.', l)]
             assert len(starts) == len(slugs), \
                 f"{fname}: page has {len(starts)} sections but {len(slugs)} slugs are configured"
@@ -239,7 +283,8 @@ def build():
                 e = starts[j+1] if j+1 < len(starts) else len(body)
                 sid = f"{stem}-{slugs[j]}"
                 markup = "\n".join(body[s+1:e]).rstrip().replace(f"#{wid}", f"#{sid}")
-                scss   = css.replace(f"#{wid}", f"#{sid}")
+                used   = set(re.findall(r'[\w-]+', markup + " " + page_js))
+                scss   = prune_css(css.replace(f"#{wid}", f"#{sid}"), used)
                 miss   = needed_defs(markup, scss, page_defs)
                 out = (header(folder, pretty(slugs[j]), fname, sid) +
                        f'<div id="{sid}">\n  <style>\n{scss}\n  </style>\n'
@@ -273,6 +318,7 @@ def build():
         manifest[folder] = {"source": fname, "sections": entries}
 
     attach_page_scripts(manifest)
+    write_bundles(manifest)
     write_readme(manifest)
     json.dump(manifest, open(os.path.join(OUT, "manifest.json"), "w"), indent=2)
     total = sum(len(v["sections"]) for v in manifest.values())
@@ -298,6 +344,25 @@ def attach_page_scripts(manifest):
         indented = "\n".join("  " + l if l.strip() else l for l in js.split("\n"))
         open(p, "w").write(s[:-len("</div>")].rstrip() +
                            f"\n\n  <script>\n{indented}\n  </script>\n</div>\n")
+
+
+def write_bundles(manifest):
+    """One file per page for <div data-zoley-page>: the page source itself, so its CSS
+    ships once instead of once per section (the homepage drops from ~250KB to ~60KB)
+    and the loader makes one request instead of one per section.
+    Its DOMContentLoaded blocks get the same guard as the section copies, because
+    the loader can now inject a page before or after that event fires."""
+    os.makedirs(os.path.join(OUT, "_pages"), exist_ok=True)
+    for fname, (folder, stem, slugs) in PAGES.items():
+        text = strip_todos(open(os.path.join(SRC, fname)).read())
+        text = re.sub(r'\A\s*<!--.*?-->\s*', '', text, flags=re.S)   # the page's notes header
+        text = text.replace(DCL, GUARD)
+        assert DCL not in text
+        out = (f"<!--\nZOLEY - {folder} - whole page\nGenerated from main pages/{fname} by tools/build-sections.py\n"
+               f"Loaded by <div data-zoley-page=\"{folder}\">. Self-contained.\n-->\n\n{text.strip()}\n")
+        fn = f"_pages/{folder}.html"
+        open(os.path.join(OUT, fn), "w").write(out)
+        manifest[folder]["bundle"] = fn
 
 
 def write_readme(manifest):

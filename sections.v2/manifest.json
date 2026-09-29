@@ -58,7 +58,8 @@
         "key": "homepage/08-final-cta",
         "defs_injected": []
       }
-    ]
+    ],
+    "bundle": "_pages/homepage.html"
   },
   "ai": {
     "source": "zoley-ai-page.v2.html",
@@ -121,7 +122,8 @@
         "key": "ai/08-final-cta",
         "defs_injected": []
       }
-    ]
+    ],
+    "bundle": "_pages/ai.html"
   },
   "automation": {
     "source": "zoley-automation-page.v2.html",
@@ -182,7 +184,8 @@
         "key": "automation/08-final-cta",
         "defs_injected": []
       }
-    ]
+    ],
+    "bundle": "_pages/automation.html"
   },
   "advertising": {
     "source": "zoley-digital-advertising-page.v2.html",
@@ -250,7 +253,8 @@
         "key": "advertising/09-final-cta",
         "defs_injected": []
       }
-    ]
+    ],
+    "bundle": "_pages/advertising.html"
   },
   "consulting": {
     "source": "zoley-strategic-consulting-page.v2.html",
@@ -311,7 +315,8 @@
         "key": "consulting/08-final-cta",
         "defs_injected": []
       }
-    ]
+    ],
+    "bundle": "_pages/consulting.html"
   },
   "web-design": {
     "source": "zoley-web-design-page.v2.html",
@@ -381,7 +386,8 @@
         "key": "web-design/09-final-cta",
         "defs_injected": []
       }
-    ]
+    ],
+    "bundle": "_pages/web-design.html"
   },
   "about": {
     "source": "zoley-about.v2.html",
@@ -421,7 +427,8 @@
         "key": "about/05-final-cta",
         "defs_injected": []
       }
-    ]
+    ],
+    "bundle": "_pages/about.html"
   },
   "pricing": {
     "source": "zoley-pricing.v2.html",
@@ -447,7 +454,8 @@
         "key": "pricing/03-two-paths",
         "defs_injected": []
       }
-    ]
+    ],
+    "bundle": "_pages/pricing.html"
   },
   "quickstart": {
     "source": "zoley-quickstart.v2.html",
@@ -473,7 +481,8 @@
         "key": "quickstart/03-next-steps",
         "defs_injected": []
       }
-    ]
+    ],
+    "bundle": "_pages/quickstart.html"
   },
   "build": {
     "source": "zoley-build.v2.html",
@@ -513,7 +522,8 @@
         "key": "build/05-final-cta",
         "defs_injected": []
       }
-    ]
+    ],
+    "bundle": "_pages/build.html"
   },
   "case-studies": {
     "source": "zoley-case-studies.v2.html",
@@ -539,7 +549,8 @@
         "key": "case-studies/03-final-cta",
         "defs_injected": []
       }
-    ]
+    ],
+    "bundle": "_pages/case-studies.html"
   },
   "tools-guides": {
     "source": "zoley-tools-guides.v2.html",
@@ -572,7 +583,8 @@
         "key": "tools-guides/04-final-cta",
         "defs_injected": []
       }
-    ]
+    ],
+    "bundle": "_pages/tools-guides.html"
   },
   "cs-real-estate": {
     "source": "zoley-case-study-real-estate.v2.html",
@@ -584,7 +596,8 @@
         "key": "cs-real-estate/01-page",
         "defs_injected": []
       }
-    ]
+    ],
+    "bundle": "_pages/cs-real-estate.html"
   },
   "cs-physical-therapy": {
     "source": "zoley-case-study-physical-therapy.v2.html",
@@ -596,7 +609,8 @@
         "key": "cs-physical-therapy/01-page",
         "defs_injected": []
       }
-    ]
+    ],
+    "bundle": "_pages/cs-physical-therapy.html"
   },
   "cs-plastic-surgery": {
     "source": "zoley-case-study-plastic-surgery.v2.html",
@@ -608,7 +622,8 @@
         "key": "cs-plastic-surgery/01-page",
         "defs_injected": []
       }
-    ]
+    ],
+    "bundle": "_pages/cs-plastic-surgery.html"
   },
   "cs-nonprofit-donations": {
     "source": "zoley-case-study-nonprofit-donations.v2.html",
@@ -620,7 +635,8 @@
         "key": "cs-nonprofit-donations/01-page",
         "defs_injected": []
       }
-    ]
+    ],
+    "bundle": "_pages/cs-nonprofit-donations.html"
   },
   "cs-tree-project": {
     "source": "zoley-case-study-tree-project.v2.html",
@@ -632,7 +648,8 @@
         "key": "cs-tree-project/01-page",
         "defs_injected": []
       }
-    ]
+    ],
+    "bundle": "_pages/cs-tree-project.html"
   },
   "cs-dental-staffing": {
     "source": "zoley-case-study-dental-staffing.v2.html",
@@ -644,6 +661,7 @@
         "key": "cs-dental-staffing/01-page",
         "defs_injected": []
       }
-    ]
+    ],
+    "bundle": "_pages/cs-dental-staffing.html"
   }
 }

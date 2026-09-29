@@ -22,8 +22,8 @@ Nothing in this repo was deleted or rewritten to build v2 — the originals are 
 1. Edit the page in `main pages/` (the `.v2.html` file), then run `python3 tools/build-sections.py`.
    Never hand-edit `sections.v2/`: the build overwrites it.
 2. `git add -A && git commit -m "..." && git push`
-3. `git tag v1.7.9 && git push --tags` (the next unused tag; the live one is v1.7.8)
-4. In Squarespace → Settings → Advanced → Code Injection → Header, change `@v1.7.8` to `@v1.7.9`.
+3. `git tag v1.7.10 && git push --tags` (the next unused tag; the live one is v1.7.9)
+4. In Squarespace → Settings → Advanced → Code Injection → Header, change `@v1.7.9` to `@v1.7.10`.
 
 **Never reuse a tag name**, even one you deleted. jsDelivr remembers which commit a
 tag pointed to the first time it was requested and keeps serving those files. (v1.7.3
@@ -41,11 +41,23 @@ week. Exact tags are immutable, so they go live the moment you bump the number.
 
 ## One-time Squarespace setup
 
-Header code injection (site-wide):
+Header code injection (site-wide). This is the whole box - replace everything in it:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.7.8/dist/zoley-loader.js"></script>
+<style>[data-zoley-page]:empty,[data-zoley-section]:empty{min-height:100vh}</style>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@700&display=swap"></noscript>
+<script async src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.7.9/dist/zoley-loader.js"></script>
 ```
+
+Why each line is there (v1.7.9, 9/29/26 speed pass):
+- The `<style>` holds each empty placeholder at one screen tall until its content arrives,
+  so Squarespace's footer never paints under the header and then jumps (CLS was up to 0.65).
+- The fonts load without blocking the first paint, and the loader is `async`, so neither
+  holds up the page. The font URL must match the `@import` in every section exactly, or
+  the browser downloads the fonts twice.
 
 Then each page gets **one** Code Block holding a single line:
 
