@@ -33,6 +33,15 @@ Step 4 is one character in one box. Everything else on the site updates from it.
 
 **Rollback** is the same edit pointing at the older tag.
 
+### The homepage hero is pasted, not loaded
+
+The homepage hero lives directly in its Squarespace Code Block, so it paints with the
+page instead of after the loader (on a throttled phone: hero at 2.8s instead of 4.8s).
+A tag bump does **not** update it. After changing the hero in
+`main pages/zoley-homepage.v2.html`, run the build and re-paste
+`sections.v2/_inline/homepage-01-hero.html` into that Code Block. `INLINE` in
+`tools/build-sections.py` lists every section handled this way.
+
 ### Why a version tag instead of `@main`
 
 jsDelivr caches a branch URL for 12 hours at its edge and **7 days in a browser that has

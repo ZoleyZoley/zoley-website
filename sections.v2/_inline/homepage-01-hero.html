@@ -1,0 +1,237 @@
+<!-- ZOLEY homepage/01-hero - PASTED into its Squarespace Code Block (not loaded from the CDN).
+     Source: sections.v2/_inline/homepage-01-hero.html. Re-paste after changing it. -->
+<div id="zly-hy-hero">
+  <style>
+    #zly-hy-hero {
+          --paper: #faf3e7;
+          --paper-2: #f6e4b8;
+          --card: #fff9ef;
+          --ink: #1b2430;
+          --ink-soft: #5c6b76;
+          --marigold: #e3a72e;
+          --barn: #14457a;
+          --sage: #7a8b69;
+          --violet: #6c5ce7;
+          --blue: #4ea1ff;
+          --border: rgba(27,36,48,0.14);
+          font-family: 'DM Sans', -apple-system, sans-serif;
+          background: var(--paper);
+          color: var(--ink);
+        }
+    #zly-hy-hero * { box-sizing: border-box; }
+    #zly-hy-hero h1, #zly-hy-hero h2, #zly-hy-hero h3 { font-family: 'Newsreader', serif; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); margin: 0; }
+    #zly-hy-hero p { color: var(--ink-soft); line-height: 1.65; margin: 0; }
+    #zly-hy-hero .zhy-tag {
+          font-family: 'Caveat', cursive; font-size: 22px; font-weight: 700;
+          color: var(--barn);
+          display: inline-block; transform: rotate(-2deg); margin-bottom: 6px; padding: 0 4px;
+        }
+    /* ---------- BUTTONS ---------- */
+    #zly-hy-hero .zhy-cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+    #zly-hy-hero .zhy-btn {
+          display: inline-flex; align-items: center; gap: 8px; padding: 15px 28px;
+          border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none;
+          transition: transform 0.15s ease, box-shadow 0.15s ease; cursor: pointer; font-family: 'DM Sans', sans-serif;
+        }
+    #zly-hy-hero .zhy-btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #0d2d50; border: none; }
+    #zly-hy-hero .zhy-btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #0d2d50; }
+    #zly-hy-hero .zhy-btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    #zly-hy-hero .zhy-btn-ghost:hover { background: var(--ink); color: var(--paper); }
+    /* ---------- HERO ---------- */
+    #zly-hy-hero .zhy-hero { padding: 112px 40px 40px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 0.95fr 1.05fr; column-gap: 64px; row-gap: 0; align-items: start; }
+    /* The tag sits in its own row so row 2 starts at the H1. That keeps the
+           headline level with the top of the illustration without hard-coding the
+           tag's height, which is a Caveat line box and varies with the host font. */
+    #zly-hy-hero .zhy-hero > .zhy-tag { grid-column: 1; grid-row: 1; justify-self: start; }
+    #zly-hy-hero .zhy-hero-copy { grid-column: 1; grid-row: 2; }
+    #zly-hy-hero .zhy-hero > .zhy-board { grid-column: 2; grid-row: 2; }
+    #zly-hy-hero .zhy-hero h1 { font-size: clamp(36px, 4.4vw, 56px); }
+    #zly-hy-hero .zhy-hero p.zhy-sub { font-size: 18px; margin: 22px 0 30px; max-width: 500px; }
+    /* Signature: corkboard with pinned icons + network threads connecting them */
+    #zly-hy-hero .zhy-board {
+          background: var(--paper-2); border: 1px solid var(--border); border-radius: 14px;
+          padding: 20px; position: relative;
+        }
+    #zly-hy-hero .zhy-board svg { width: 100%; height: auto; display: block; }
+    #zly-hy-hero .zhy-thread { stroke: url(#zhy-thread-grad); stroke-width: 2; stroke-dasharray: 5 5; fill: none; opacity: 0.75; }
+    /* Proof strip under the hero */
+    #zly-hy-hero .zhy-proof { max-width: 1160px; margin: 0 auto; padding: 10px 40px 40px; }
+    #zly-hy-hero .zhy-proof-inner { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); display: grid; grid-template-columns: repeat(3, 1fr); }
+    #zly-hy-hero .zhy-proof-item { padding: 22px 20px; display: flex; gap: 14px; align-items: flex-start; border-right: 1px solid var(--border); }
+    #zly-hy-hero .zhy-proof-item:last-child { border-right: none; }
+    #zly-hy-hero .zhy-proof-item .num { font-family: 'Newsreader', serif; font-size: 30px; font-weight: 600; color: var(--barn); line-height: 1; white-space: nowrap; }
+    #zly-hy-hero .zhy-proof-item p { font-size: 13.5px; line-height: 1.45; }
+    #zly-hy-hero .zhy-changing-word { font-family: 'Newsreader', serif; font-weight: 600; font-size: inherit; line-height: inherit; color: var(--barn); }
+    #zly-hy-hero .zhy-step .n { font-family: 'Caveat', cursive; font-size: 20px; color: var(--barn); font-weight: 700; }
+    #zly-hy-hero .zhy-resources-head .zhy-tag { color: var(--marigold); }
+    #zly-hy-hero .zhy-newsletter-form .zhy-btn { flex-shrink: 0; }
+    #zly-hy-hero .zhy-newsletter-form .zhy-btn:disabled { opacity: 0.7; cursor: wait; }
+    #zly-hy-hero .zhy-nl-status { font-size: 14px; font-weight: 600; margin: 12px 0 0; }
+    #zly-hy-hero .zhy-nl-status:empty { display: none; }
+    #zly-hy-hero .zhy-nl-status.is-error { color: #f4b8a8; }
+    #zly-hy-hero .zhy-nl-status.is-success { color: var(--paper); font-size: 16px; }
+    #zly-hy-hero .zhy-featured .zhy-tag { color: var(--blue); }
+    #zly-hy-hero .zhy-test-viewport { overflow: hidden; }
+    #zly-hy-hero .zhy-test-track { display: flex; transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1); will-change: transform; }
+    #zly-hy-hero .zhy-test-page { flex: 0 0 100%; min-width: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 4px 4px 6px; }
+    #zly-hy-hero .zhy-test-card {
+          position: relative; min-height: 236px;
+          background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+          padding: 34px 32px 26px 40px; display: flex; flex-direction: column;
+          box-shadow: 0 16px 34px -24px rgba(27,36,48,0.35);
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+    #zly-hy-hero .zhy-test-card:hover { transform: translateY(-6px); box-shadow: 0 18px 32px -16px rgba(27,36,48,0.28); }
+    #zly-hy-hero .zhy-test-card::before { content: ''; position: absolute; left: 14px; top: 26px; bottom: 26px; width: 4px; border-radius: 4px; background: var(--violet); }
+    #zly-hy-hero .zhy-test-card .quote-icon { position: absolute; top: 16px; right: 18px; width: 19px; height: 15px; color: rgba(108,92,231,0.18); }
+    #zly-hy-hero .zhy-test-card p.quote { font-size: 16.5px; color: var(--ink); line-height: 1.65; flex-grow: 1; margin: 0 0 22px; }
+    #zly-hy-hero .zhy-test-card .who { border-top: 1px solid var(--border); padding-top: 16px; }
+    #zly-hy-hero .zhy-test-card .who strong { display: block; font-weight: 700; font-size: 15px; color: var(--ink); }
+    #zly-hy-hero .zhy-test-card .who .biz { display: block; font-weight: 400; color: var(--ink-soft); font-size: 13.5px; margin-top: 3px; }
+    #zly-hy-hero .zhy-test-card.is-placeholder { align-items: center; justify-content: center; text-align: center; border: 1.5px dashed var(--border); background: transparent; color: var(--ink-soft); box-shadow: none; }
+    #zly-hy-hero .zhy-test-card.is-placeholder::before, #zly-hy-hero .zhy-test-card.is-placeholder .quote-icon { display: none; }
+    #zly-hy-hero .zhy-test-card.is-placeholder .plus { font-size: 26px; color: var(--barn); margin-bottom: 8px; }
+    #zly-hy-hero .zhy-test-card.is-placeholder p { font-size: 14px; margin: 0; }
+    #zly-hy-hero .zhy-test-dots { display: flex; align-items: center; gap: 0; }
+    /* The dot stays 8px, but padding grows the control to a 44x44 tap target and
+           background-clip keeps the colour on the dot itself. Padding replaces the old
+           9px gap, so the targets sit edge to edge without overlapping. */
+    #zly-hy-hero .zhy-test-dots button { box-sizing: content-box; width: 8px; height: 8px; padding: 18px; background-clip: content-box; border-radius: 50%; border: none; cursor: pointer; background-color: rgba(27,36,48,0.2); transition: background-color 0.3s ease, width 0.3s ease; }
+    #zly-hy-hero .zhy-test-dots button.is-active { width: 22px; border-radius: 5px; background-color: var(--violet); }
+    @media (prefers-reduced-motion: reduce) {
+          #zly-hy-hero .zhy-test-track { transition: none; }
+        }
+    /* Phones: one card per slide. The page wrappers drop out of the layout, so each
+           card becomes its own full-width slide in the track; the script counts cards
+           instead of pages below this width. */
+    @media (max-width: 640px) {
+          #zly-hy-hero .zhy-test-page { display: contents; }
+          #zly-hy-hero .zhy-test-card { flex: 0 0 100%; min-width: 0; margin: 4px 0 6px; }
+          #zly-hy-hero .zhy-test-dots button { padding: 9px; }
+        }
+    /* Very small phones (320px): smaller dots so the arrows stay on screen. The
+           arrows and swiping remain the main way to move on these. */
+    @media (max-width: 359px) {
+          #zly-hy-hero .zhy-test-dots button { padding: 6px; }
+        }
+    @media (max-width: 900px) {
+          #zly-hy-hero .zhy-hero { grid-template-columns: 1fr; padding: 76px 20px 30px; column-gap: 0; row-gap: 0; }
+          #zly-hy-hero .zhy-hero > .zhy-tag,
+          #zly-hy-hero .zhy-hero-copy,
+          #zly-hy-hero .zhy-hero > .zhy-board { grid-column: 1; grid-row: auto; }
+          #zly-hy-hero .zhy-hero-copy { margin-bottom: 40px; }
+          #zly-hy-hero .zhy-proof { padding: 0 20px 30px; }
+          #zly-hy-hero .zhy-proof-inner { grid-template-columns: 1fr; }
+          #zly-hy-hero .zhy-proof-item { border-right: none; border-bottom: 1px solid var(--border); padding: 16px 4px; }
+          #zly-hy-hero .zhy-proof-item:last-child { border-bottom: none; }
+        }
+    @media (max-width: 560px) {
+          #zly-hy-hero .zhy-hero { padding-top: 56px; }
+          #zly-hy-hero .zhy-cta-row { flex-direction: column; align-items: stretch; }
+          #zly-hy-hero .zhy-btn { justify-content: center; }
+        }
+    /* ===== FULL-BLEED ILLUSTRATIONS ON PHONES =====
+           The drawings keep every bit of their desktop detail while scaling down, so the
+           labels inside them shrink too. Giving the panel the whole screen takes the
+           drawing from about 308px to 390px - roughly a third bigger - and every label
+           grows with it. calc(50% - 50vw) cancels whatever side padding the section
+           carries, so this needs no per-page gutter value.
+           Deliberately NOT applied to illustrations that sit inside a card - the case
+           studies and the homepage featured band - which would break out of its edges. */
+    @media (max-width: 560px) {
+          #zly-hy-hero { overflow-x: clip; }
+          #zly-hy-hero .zhy-board,
+          #zly-hy-hero .zhy-who-media {
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+            border-left: 0;
+            border-right: 0;
+            border-radius: 0;
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+  </style>
+
+  <section class="zhy-hero">
+    <span class="zhy-tag">strategy, systems, execution</span>
+    <div class="zhy-hero-copy">
+      <h1>It's time your business ran the way you always pictured it would.</h1>
+      <p class="zhy-sub">Zoley designs the systems underneath a small business: the research that sets direction, the website and campaigns that bring in demand, automation that keeps it moving, and reliable AI features that propel you forward.</p>
+      <div class="zhy-cta-row">
+        <a href="https://www.zoley.io/find-your-next-best-business-move" class="zhy-btn zhy-btn-primary">Get started</a>
+        <a href="https://calendly.com/zoley/zoley-discovery-call" class="zhy-btn zhy-btn-ghost">Book an intro call</a>
+      </div>
+    </div>
+    <div class="zhy-board">
+      <svg viewBox="0 0 400 320" fill="none" role="img" aria-label="Illustration: a website, customer record, database, calendar, location, and email connected by dashed threads">
+        <defs>
+          <linearGradient id="zhy-thread-grad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#14457a"/>
+            <stop offset="1" stop-color="#6c5ce7"/>
+          </linearGradient>
+          <symbol id="zhy-ico-website" viewBox="0 0 150 96">
+            <rect x="1" y="1" width="148" height="94" rx="4" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <line x1="1" y1="22" x2="149" y2="22" stroke="#1b2430" stroke-width="2"/>
+            <circle cx="14" cy="11.5" r="3" fill="#14457a"/>
+            <circle cx="26" cy="11.5" r="3" fill="#e3a72e"/>
+            <circle cx="38" cy="11.5" r="3" fill="#7a8b69"/>
+            <rect x="14" y="36" width="90" height="8" rx="4" fill="#4ea1ff"/>
+            <rect x="14" y="52" width="122" height="6" rx="3" fill="#1b2430" opacity="0.35"/>
+            <rect x="14" y="66" width="96" height="6" rx="3" fill="#1b2430" opacity="0.35"/>
+            <rect x="14" y="80" width="60" height="6" rx="3" fill="#1b2430" opacity="0.35"/>
+          </symbol>
+          <symbol id="zhy-ico-database" viewBox="0 0 90 96">
+            <ellipse cx="45" cy="14" rx="43" ry="13" fill="#f6e4b8" stroke="#1b2430" stroke-width="2.5"/>
+            <path d="M2 14 L2 82 A43 13 0 0 0 88 82 L88 14" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <path d="M2 48 A43 13 0 0 0 88 48" fill="none" stroke="#1b2430" stroke-width="1.5" opacity="0.4"/>
+            <path d="M2 65 A43 13 0 0 0 88 65" fill="none" stroke="#1b2430" stroke-width="1.5" opacity="0.4"/>
+            <circle cx="45" cy="30" r="5" fill="#7a8b69"/>
+          </symbol>
+          <symbol id="zhy-ico-clock" viewBox="0 0 70 70">
+            <circle cx="35" cy="35" r="33" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <circle cx="35" cy="35" r="18" stroke="#14457a" stroke-width="2.2" fill="none"/>
+            <line x1="35" y1="35" x2="35" y2="22" stroke="#14457a" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="35" y1="35" x2="45" y2="40" stroke="#14457a" stroke-width="2.2" stroke-linecap="round"/>
+          </symbol>
+          <symbol id="zhy-ico-pin" viewBox="0 0 46 60">
+            <path d="M23 2 C34 2 42 11 42 21 C42 36 23 58 23 58 C23 58 4 36 4 21 C4 11 12 2 23 2 Z" fill="#fff9ef" stroke="#6c5ce7" stroke-width="2.5"/>
+            <circle cx="23" cy="21" r="8" fill="#6c5ce7" opacity="0.85"/>
+          </symbol>
+          <symbol id="zhy-ico-contact" viewBox="0 0 130 92">
+            <rect x="1" y="1" width="128" height="90" rx="6" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <circle cx="32" cy="34" r="15" fill="#4ea1ff"/>
+            <circle cx="32" cy="29" r="5.5" fill="#fff9ef"/>
+            <path d="M21.5 43 C21.5 35.5 42.5 35.5 42.5 43" fill="#fff9ef"/>
+            <rect x="58" y="22" width="56" height="7" rx="3.5" fill="#1b2430" opacity="0.8"/>
+            <rect x="58" y="35" width="38" height="6" rx="3" fill="#1b2430" opacity="0.4"/>
+            <rect x="14" y="64" width="102" height="5" rx="2.5" fill="#1b2430" opacity="0.2"/>
+            <rect x="14" y="76" width="66" height="5" rx="2.5" fill="#1b2430" opacity="0.2"/>
+          </symbol>
+          <symbol id="zhy-ico-envelope" viewBox="0 0 90 62">
+            <rect x="1" y="1" width="88" height="60" rx="6" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <path d="M4 7 L45 37 L86 7" fill="none" stroke="#e3a72e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+          </symbol>
+        </defs>
+        <path class="zhy-thread" d="M92 68 Q 200 28 316 69"/>
+        <path class="zhy-thread" d="M316 69 Q 230 180 74 231"/>
+        <path class="zhy-thread" d="M74 231 Q 190 268 296 231"/>
+        <use href="#zhy-ico-website" x="14" y="18" width="156" height="100"/>
+        <use href="#zhy-ico-contact" x="246" y="20" width="140" height="99"/>
+        <use href="#zhy-ico-database" x="26" y="180" width="96" height="102"/>
+        <use href="#zhy-ico-clock" x="245" y="196" width="78" height="78"/>
+        <use href="#zhy-ico-pin" x="325" y="178" width="54" height="70" transform="rotate(10 352 213)"/>
+        <use href="#zhy-ico-envelope" x="308" y="236" width="84" height="57" transform="rotate(-7 350 264)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- PROOF STRIP (Zoley's own numbers — confirm each before publishing; see V2-NOTES.md) -->
+  <div class="zhy-proof">
+    <div class="zhy-proof-inner">
+      <div class="zhy-proof-item"><span class="num">30+</span><p>years of combined consulting experience across strategy, operations, and marketing</p></div>
+      <div class="zhy-proof-item"><span class="num">4 in 5</span><p>clients refer us to another business owner</p></div>
+      <div class="zhy-proof-item"><span class="num">$95</span><p>million influenced by past strategic decisions</p></div>
+    </div>
+  </div>
+</div>

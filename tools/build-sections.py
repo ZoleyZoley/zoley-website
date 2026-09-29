@@ -319,6 +319,7 @@ def build():
 
     attach_page_scripts(manifest)
     write_bundles(manifest)
+    write_inline()
     write_readme(manifest)
     json.dump(manifest, open(os.path.join(OUT, "manifest.json"), "w"), indent=2)
     total = sum(len(v["sections"]) for v in manifest.values())
@@ -363,6 +364,27 @@ def write_bundles(manifest):
         fn = f"_pages/{folder}.html"
         open(os.path.join(OUT, fn), "w").write(out)
         manifest[folder]["bundle"] = fn
+
+
+# Sections pasted straight into their Squarespace Code Block instead of loaded by
+# the loader, so the first thing on screen paints with the page itself (mobile LCP).
+# After changing one of these, re-paste sections.v2/_inline/<folder>-<file> into
+# that Code Block: the live site does NOT pick it up from a tag bump.
+INLINE = ["homepage/01-hero"]
+
+
+def write_inline():
+    os.makedirs(os.path.join(OUT, "_inline"), exist_ok=True)
+    for key in INLINE:
+        html = open(os.path.join(OUT, key + ".html")).read()
+        html = re.sub(r'\A<!--.*?-->\s*', '', html, flags=re.S)
+        # The header snippet already loads the fonts. An @import here would sit in a
+        # body <style> and hold the hero's first paint until the font CSS arrives.
+        html = re.sub(r'^\s*@import url\([^)]*\);\s*\n', '', html, flags=re.M)
+        assert "@import" not in html
+        note = (f"<!-- ZOLEY {key} - PASTED into its Squarespace Code Block (not loaded from the CDN).\n"
+                f"     Source: sections.v2/_inline/{key.replace('/', '-')}.html. Re-paste after changing it. -->\n")
+        open(os.path.join(OUT, "_inline", key.replace("/", "-") + ".html"), "w").write(note + html)
 
 
 def write_readme(manifest):
