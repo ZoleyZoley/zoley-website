@@ -1,0 +1,345 @@
+<!--
+ZOLEY - ind-real-estate - Page
+Generated from main pages/zoley-industry-real-estate.v2.html by tools/build-sections.py
+Scoped under #zly-ind-real-estate. Self-contained: paste into a Squarespace Code Block as-is.
+-->
+
+<div id="zly-ind-real-estate">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@700&display=swap');
+    #zly-ind-real-estate {
+        --paper: #faf3e7; --paper-2: #f6e4b8; --card: #fff9ef; --ink: #1b2430; --ink-soft: #5c6b76;
+        --marigold: #e3a72e; --barn: #14457a; --sage: #7a8b69; --violet: #6c5ce7; --blue: #4ea1ff;
+        --border: rgba(27,36,48,0.14);
+        font-family: 'DM Sans', -apple-system, sans-serif; background: var(--paper); color: var(--ink);
+      }
+    #zly-ind-real-estate * { box-sizing: border-box; margin: 0; padding: 0; }
+    #zly-ind-real-estate h1, #zly-ind-real-estate h2, #zly-ind-real-estate h3 { font-family: 'Newsreader', Georgia, serif; font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; color: var(--ink); }
+    #zly-ind-real-estate p { color: var(--ink-soft); line-height: 1.65; }
+    #zly-ind-real-estate .tag { display: block; width: max-content; max-width: 100%; font-family: 'Caveat', cursive; font-size: 22px; font-weight: 700; color: var(--barn); transform: rotate(-2deg); margin: 0 0 8px; padding: 0 4px; }
+    /* buttons */
+    #zly-ind-real-estate .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+    #zly-ind-real-estate .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 15px 28px; border-radius: 8px; font-weight: 700; font-size: 15.5px; text-decoration: none; font-family: 'DM Sans', sans-serif; transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease; }
+    #zly-ind-real-estate .btn-primary { background: var(--barn); color: #fff9ef; box-shadow: 0 4px 0 #0d2d50; }
+    #zly-ind-real-estate .btn-primary:hover { transform: translateY(2px); box-shadow: 0 2px 0 #0d2d50; }
+    #zly-ind-real-estate .btn-ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    #zly-ind-real-estate .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+    #zly-ind-real-estate .btn-ink { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    #zly-ind-real-estate .btn-ink:hover { background: var(--ink); color: var(--paper); }
+    #zly-ind-real-estate .btn-light { background: transparent; color: var(--paper); border: 2px solid var(--paper); }
+    #zly-ind-real-estate .btn-light:hover { background: var(--paper); color: var(--ink); }
+    /* hero */
+    #zly-ind-real-estate .hero { padding: 104px 24px 40px; max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 0.95fr; column-gap: 56px; align-items: start; }
+    #zly-ind-real-estate .hero > .tag { grid-column: 1; grid-row: 1; }
+    #zly-ind-real-estate .hero-copy { grid-column: 1; grid-row: 2; }
+    #zly-ind-real-estate .board { grid-column: 2; grid-row: 2; background: var(--paper-2); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+    #zly-ind-real-estate .board svg { width: 100%; height: auto; display: block; }
+    #zly-ind-real-estate .hero h1 { font-size: clamp(34px, 4.3vw, 52px); line-height: 1.08; }
+    #zly-ind-real-estate .hero .sub { font-size: 17.5px; margin: 20px 0 28px; max-width: 540px; }
+    #zly-ind-real-estate .hero .note { font-size: 13px; margin-top: 12px; }
+    /* stat */
+    #zly-ind-real-estate .stat { max-width: 1160px; margin: 0 auto; padding: 16px 24px 24px; }
+    #zly-ind-real-estate .stat-inner { display: grid; grid-template-columns: auto minmax(0, 640px); justify-content: center; gap: 28px; align-items: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 26px 8px; }
+    #zly-ind-real-estate .stat-num { font-family: 'Newsreader', Georgia, serif; font-size: clamp(40px, 5vw, 58px); font-weight: 600; line-height: 1; color: var(--barn); white-space: nowrap; }
+    #zly-ind-real-estate .stat-inner p { font-size: 16.5px; max-width: 720px; }
+    /* shared section frame */
+    #zly-ind-real-estate .sec { max-width: 1160px; margin: 0 auto; padding: 72px 24px 8px; }
+    #zly-ind-real-estate .sec-narrow { max-width: 860px; }
+    #zly-ind-real-estate .head { max-width: 680px; margin: 0 auto 36px; text-align: center; }
+    #zly-ind-real-estate .head .tag { margin-left: auto; margin-right: auto; }
+    #zly-ind-real-estate .head h2 { font-size: clamp(28px, 3.3vw, 40px); }
+    #zly-ind-real-estate .head p { font-size: 16.5px; margin-top: 12px; }
+    #zly-ind-real-estate .center { text-align: center; margin-top: 32px; }
+    /* problems */
+    #zly-ind-real-estate .probs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    #zly-ind-real-estate .prob { position: relative; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px 28px 26px 64px; }
+    #zly-ind-real-estate .prob-n { position: absolute; left: 22px; top: 22px; font-family: 'Caveat', cursive; font-size: 32px; font-weight: 700; line-height: 1; color: var(--violet); }
+    #zly-ind-real-estate .prob h3 { font-size: 20px; margin-bottom: 8px; }
+    #zly-ind-real-estate .prob p { font-size: 15.5px; }
+    /* builds */
+    #zly-ind-real-estate .builds { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    #zly-ind-real-estate .build { position: relative; overflow: hidden; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 26px 26px 24px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    #zly-ind-real-estate .build::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--barn), var(--violet), var(--blue)); }
+    #zly-ind-real-estate .build:hover { transform: translateY(-4px); box-shadow: 0 18px 32px -16px rgba(27,36,48,0.28); }
+    #zly-ind-real-estate .build-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+    #zly-ind-real-estate .build-n { font-family: 'Newsreader', Georgia, serif; font-size: 22px; font-weight: 600; color: var(--barn); }
+    #zly-ind-real-estate .chip { display: inline-flex; align-items: center; min-height: 30px; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--paper); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--barn); text-decoration: none; }
+    #zly-ind-real-estate .chip:hover { border-color: var(--barn); }
+    #zly-ind-real-estate .build h3 { font-size: 20px; margin-bottom: 8px; }
+    #zly-ind-real-estate .build p { font-size: 15px; }
+    /* proof */
+    #zly-ind-real-estate .proof { position: relative; overflow: hidden; background: var(--ink); border-radius: 16px; }
+    #zly-ind-real-estate .proof-glow { position: absolute; border-radius: 50%; pointer-events: none; }
+    #zly-ind-real-estate .proof-glow-a { top: -120px; left: -80px; width: 380px; height: 380px; background: radial-gradient(circle, rgba(108,92,231,0.28), transparent 65%); }
+    #zly-ind-real-estate .proof-glow-b { bottom: -140px; right: -60px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(78,161,255,0.2), transparent 65%); }
+    #zly-ind-real-estate .proof-inner { position: relative; padding: 48px 52px; }
+    #zly-ind-real-estate .proof-tag { display: block; font-family: 'Caveat', cursive; font-size: 24px; font-weight: 700; color: var(--marigold); margin-bottom: 8px; }
+    #zly-ind-real-estate .proof h2 { color: var(--paper); font-size: clamp(26px, 3vw, 36px); max-width: 760px; margin-bottom: 14px; }
+    #zly-ind-real-estate .proof-inner > p { color: #c7d0d6; font-size: 16.5px; max-width: 760px; }
+    #zly-ind-real-estate .proof-nums { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: 30px; border-top: 1px solid rgba(250,243,231,0.14); }
+    #zly-ind-real-estate .proof-nums li { padding: 22px 24px 4px 0; }
+    #zly-ind-real-estate .proof-nums li + li { padding-left: 24px; border-left: 1px solid rgba(250,243,231,0.14); }
+    #zly-ind-real-estate .pn { display: block; font-family: 'Newsreader', Georgia, serif; font-size: 36px; font-weight: 600; line-height: 1.05; color: #fff9ef; margin-bottom: 6px; }
+    #zly-ind-real-estate .pl { display: block; font-size: 14px; line-height: 1.45; color: #d4dbe0; }
+    #zly-ind-real-estate .proof-points { list-style: none; margin-top: 24px; display: grid; gap: 10px; }
+    #zly-ind-real-estate .proof-points li { position: relative; padding-left: 30px; color: #fff9ef; font-size: 16px; line-height: 1.5; }
+    #zly-ind-real-estate .proof-points li::before { content: ''; position: absolute; left: 0; top: 4px; width: 18px; height: 18px; border-radius: 50%; background: var(--sage) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.3 2.3 4.7-5' stroke='%23fff9ef' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 18px no-repeat; }
+    #zly-ind-real-estate .proof-link { display: inline-flex; align-items: center; min-height: 44px; margin-top: 26px; color: var(--marigold); font-weight: 700; font-size: 15.5px; text-decoration: none; }
+    #zly-ind-real-estate .proof-link:hover { color: #fff9ef; }
+    #zly-ind-real-estate .quotes { display: grid; gap: 20px; margin-top: 20px; }
+    #zly-ind-real-estate .quotes-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    #zly-ind-real-estate .quote { position: relative; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 30px 30px 24px 40px; box-shadow: 0 16px 34px -24px rgba(27,36,48,0.35); }
+    #zly-ind-real-estate .quote::before { content: ''; position: absolute; left: 14px; top: 26px; bottom: 26px; width: 4px; border-radius: 4px; background: var(--violet); }
+    #zly-ind-real-estate .quote blockquote { font-size: 16.5px; line-height: 1.65; color: var(--ink); margin-bottom: 18px; }
+    #zly-ind-real-estate .quote figcaption { border-top: 1px solid var(--border); padding-top: 14px; }
+    #zly-ind-real-estate .quote strong { display: block; font-size: 15px; color: var(--ink); }
+    #zly-ind-real-estate .quote figcaption span { display: block; font-size: 13.5px; color: var(--ink-soft); margin-top: 3px; }
+    /* steps */
+    #zly-ind-real-estate .steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; position: relative; }
+    #zly-ind-real-estate .steps::before { content: ''; position: absolute; left: 12%; right: 12%; top: 40px; border-top: 2px dashed rgba(108,92,231,0.5); }
+    #zly-ind-real-estate .step { position: relative; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px 22px; }
+    #zly-ind-real-estate .step-n { display: block; font-family: 'Caveat', cursive; font-size: 22px; font-weight: 700; color: var(--barn); margin-bottom: 6px; }
+    #zly-ind-real-estate .step h3 { font-size: 19px; margin-bottom: 8px; }
+    #zly-ind-real-estate .step p { font-size: 14.5px; }
+    /* faq */
+    #zly-ind-real-estate .faq { border-top: 1px solid var(--border); }
+    #zly-ind-real-estate .qa { border-bottom: 1px solid var(--border); }
+    #zly-ind-real-estate .qa summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 60px; padding: 18px 4px; font-family: 'Newsreader', Georgia, serif; font-size: 20px; font-weight: 600; color: var(--ink); }
+    #zly-ind-real-estate .qa summary::-webkit-details-marker { display: none; }
+    #zly-ind-real-estate .qa summary::after { content: '+'; flex: 0 0 auto; font-family: 'DM Sans', sans-serif; font-size: 24px; font-weight: 400; color: var(--barn); transition: transform 0.2s ease; }
+    #zly-ind-real-estate .qa[open] summary::after { transform: rotate(45deg); }
+    #zly-ind-real-estate .qa summary:focus-visible { outline: 2px solid var(--barn); outline-offset: 2px; }
+    #zly-ind-real-estate .qa p { font-size: 16px; padding: 0 4px 22px; max-width: 720px; }
+    /* CTA (same as the homepage) */
+    #zly-ind-real-estate .cta-sec { max-width: 1160px; margin: 0 auto; padding: 72px 24px 96px; }
+    #zly-ind-real-estate .sign { background: var(--ink); border-radius: 14px; padding: 60px 40px; text-align: center; position: relative; overflow: hidden; }
+    #zly-ind-real-estate .sign::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 20%, rgba(108,92,231,0.25), transparent 55%), radial-gradient(circle at 80% 85%, rgba(181,72,45,0.22), transparent 55%); }
+    #zly-ind-real-estate .sign > * { position: relative; }
+    #zly-ind-real-estate .sign h2 { color: var(--paper); font-size: clamp(28px, 3.2vw, 38px); line-height: 1.1; margin-bottom: 14px; }
+    #zly-ind-real-estate .sign p { color: #c7d0d6; max-width: 540px; margin: 0 auto 28px; }
+    #zly-ind-real-estate .sign .cta-row { justify-content: center; }
+    #zly-ind-real-estate .sign .cta-note { font-size: 13px; color: rgba(244,237,224,0.55); margin: 16px auto 0; }
+    @media (max-width: 900px) {
+      #zly-ind-real-estate .hero { grid-template-columns: 1fr; padding: 64px 20px 32px; }
+      #zly-ind-real-estate .hero > .tag, #zly-ind-real-estate .hero-copy, #zly-ind-real-estate .board { grid-column: 1; grid-row: auto; }
+      #zly-ind-real-estate .hero-copy { margin-bottom: 36px; }
+      #zly-ind-real-estate .stat { padding: 8px 20px 16px; }
+      #zly-ind-real-estate .sec { padding: 56px 20px 8px; }
+      #zly-ind-real-estate .builds { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      #zly-ind-real-estate .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      #zly-ind-real-estate .steps::before { display: none; }
+      #zly-ind-real-estate .proof-inner { padding: 40px 32px; }
+      #zly-ind-real-estate .cta-sec { padding: 56px 20px 64px; }
+    }
+    @media (max-width: 640px) {
+      #zly-ind-real-estate .probs, #zly-ind-real-estate .builds, #zly-ind-real-estate .steps, #zly-ind-real-estate .quotes-2 { grid-template-columns: 1fr; }
+      #zly-ind-real-estate .proof-nums { grid-template-columns: 1fr; }
+      #zly-ind-real-estate .proof-nums li, #zly-ind-real-estate .proof-nums li + li { padding: 18px 0 14px; border-left: 0; }
+      #zly-ind-real-estate .proof-nums li + li { border-top: 1px solid rgba(250,243,231,0.14); }
+    }
+    @media (max-width: 560px) {
+      #zly-ind-real-estate { overflow-x: clip; }
+      #zly-ind-real-estate .hero { padding-top: 44px; }
+      #zly-ind-real-estate .cta-row { flex-direction: column; align-items: stretch; }
+      #zly-ind-real-estate .board { margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); border-left: 0; border-right: 0; border-radius: 0; padding-left: 0; padding-right: 0; }
+      #zly-ind-real-estate .stat-inner { grid-template-columns: 1fr; justify-content: stretch; gap: 10px; text-align: left; }
+      #zly-ind-real-estate .sec { padding: 48px 16px 8px; }
+      #zly-ind-real-estate .head { text-align: left; }
+      #zly-ind-real-estate .head .tag { margin-left: 0; }
+      #zly-ind-real-estate .prob { padding: 24px 20px 22px 56px; }
+      #zly-ind-real-estate .prob-n { left: 18px; }
+      #zly-ind-real-estate .proof-inner { padding: 32px 22px; }
+      #zly-ind-real-estate .quote { padding: 26px 22px 20px 34px; }
+      #zly-ind-real-estate .qa summary { font-size: 18px; }
+      #zly-ind-real-estate .sign { padding: 40px 22px; border-radius: 12px; }
+      #zly-ind-real-estate .cta-sec { padding: 48px 16px 56px; }
+    }
+  </style>
+
+  <section class="hero">
+    <span class="tag">for real estate brokerages</span>
+    <div class="hero-copy">
+      <h1>Every lead hears back the same day, with the right listing attached.</h1>
+      <p class="sub">Buyers and investors are raising their hands on your listings every day. We build the website that keeps them on your listings, and the outreach system that answers each one quickly, accurately, and without a pile of manual steps.</p>
+      <div class="cta-row">
+        <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get your plan</a>
+        <a href="https://calendly.com/zoley/zoley-discovery-call" class="btn btn-ghost">Book an intro call</a>
+      </div>
+      <p class="note">A written recommendation. No obligation.</p>
+    </div>
+    <div class="board">
+        <svg viewBox="0 0 420 320" fill="none" role="img" aria-label="Illustration: Inquiry (on a listing, 9:14 pm), then Matched (to the right property), then Details sent (PDF, photos, link), then Tracked (no duplicates)">
+          <defs>
+            <linearGradient id="zly-ind-real-estate-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14457a"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
+          </defs>
+          <path d="M202 90 C 210 70, 214 70, 222 80 M300 130 C 280 170, 150 150, 120 170 M210 225 C 214 208, 220 208, 226 214" stroke="url(#zly-ind-real-estate-grad)" stroke-width="2.2" stroke-dasharray="6 6" fill="none" opacity="0.85"/>
+          <g transform="rotate(-3 112 90)">
+            <rect x="22" y="40" width="180" height="100" rx="8" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <circle cx="112" cy="42" r="7" fill="#14457a" stroke="#1b2430" stroke-width="1.5"/>
+            <text x="38" y="70" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#14457a">step 1</text>
+            <text x="38" y="96" font-family="Newsreader, Georgia, serif" font-size="20" font-weight="600" fill="#1b2430">Inquiry</text>
+            <text x="38" y="118" font-family="DM Sans, sans-serif" font-size="12.5" fill="#5c6b76">on a listing, 9:14 pm</text>
+            
+          </g><g transform="rotate(2.5 308 80)">
+            <rect x="218" y="30" width="180" height="100" rx="8" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <circle cx="308" cy="32" r="7" fill="#6c5ce7" stroke="#1b2430" stroke-width="1.5"/>
+            <text x="234" y="60" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#6c5ce7">step 2</text>
+            <text x="234" y="86" font-family="Newsreader, Georgia, serif" font-size="20" font-weight="600" fill="#1b2430">Matched</text>
+            <text x="234" y="108" font-family="DM Sans, sans-serif" font-size="12.5" fill="#5c6b76">to the right property</text>
+            
+          </g><g transform="rotate(2 120 220)">
+            <rect x="30" y="170" width="180" height="100" rx="8" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <circle cx="120" cy="172" r="7" fill="#e3a72e" stroke="#1b2430" stroke-width="1.5"/>
+            <text x="46" y="200" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#e3a72e">step 3</text>
+            <text x="46" y="226" font-family="Newsreader, Georgia, serif" font-size="20" font-weight="600" fill="#1b2430">Details sent</text>
+            <text x="46" y="248" font-family="DM Sans, sans-serif" font-size="12.5" fill="#5c6b76">PDF, photos, link</text>
+            
+          </g><g transform="rotate(-2.5 312 214)">
+            <rect x="222" y="164" width="180" height="100" rx="8" fill="#fff9ef" stroke="#1b2430" stroke-width="2.5"/>
+            <circle cx="312" cy="166" r="7" fill="#7a8b69" stroke="#1b2430" stroke-width="1.5"/>
+            <text x="238" y="194" font-family="Caveat, cursive" font-size="17" font-weight="700" fill="#7a8b69">step 4</text>
+            <text x="238" y="220" font-family="Newsreader, Georgia, serif" font-size="20" font-weight="600" fill="#1b2430">Tracked</text>
+            <text x="238" y="242" font-family="DM Sans, sans-serif" font-size="12.5" fill="#5c6b76">no duplicates</text>
+            <circle cx="384" cy="250" r="13" fill="#7a8b69" stroke="#1b2430" stroke-width="2"/><path d="M378 250 l4 4 l7.5 -8.5" stroke="#fff9ef" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <text x="210" y="304" font-family="Caveat, cursive" font-size="22" font-weight="700" fill="#1b2430" text-anchor="middle" transform="rotate(-1.5 210 304)">every lead, same day</text>
+        </svg>
+    </div>
+  </section>
+
+  <div class="stat">
+    <div class="stat-inner">
+      <span class="stat-num">76%</span>
+      <p>of repeat home buyers, and 67% of first-time buyers, interview only one agent before choosing who to work with. The first good answer usually wins the client.</p>
+    </div>
+  </div>
+
+  <section class="sec">
+    <div class="head">
+      <span class="tag">the cost nobody sees</span>
+      <h2>Where brokerages lose deals before the first call.</h2>
+      <p>Interest isn't the problem. What happens between the inquiry and the first real reply is where most of it leaks away.</p>
+    </div>
+    <div class="probs">
+        <div class="prob"><span class="prob-n">1</span><h3>Leads wait until someone's free.</h3><p>Response speed depends on how busy the team is that day. Some leads hear back in days; some never do, and they're already talking to someone else.</p></div>
+        <div class="prob"><span class="prob-n">2</span><h3>Your listings send buyers somewhere else.</h3><p>When every listing links out to a portal, the visitor leaves your site and most don't come back. The interest you paid for goes to someone else's platform.</p></div>
+        <div class="prob"><span class="prob-n">3</span><h3>Every lead means the same manual steps.</h3><p>Match the inquiry to the property, find the right PDF, write the email, check who's already been contacted. Tedious at five a day; a bottleneck at fifteen.</p></div>
+        <div class="prob"><span class="prob-n">4</span><h3>One wrong email costs credibility.</h3><p>Sending the wrong property, or the same email twice, to a serious buyer or investor is a bigger cost than a slow reply.</p></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="head">
+      <span class="tag">what we build</span>
+      <h2>What we build for real estate brokerages.</h2>
+      <p>Built inside the tools your brokerage already owns, so costs stay flat and every lead stays in your hands.</p>
+    </div>
+    <div class="builds">
+        <div class="build">
+          <div class="build-top"><span class="build-n">1</span><a class="chip" href="https://www.zoley.io/web-dev">Web</a></div>
+          <h3>A website that keeps buyers on your listings</h3>
+          <p>Listings on your own site instead of linking to portals, property pages that make the next step obvious, and search setup so the brokerage can be found.</p>
+        </div>
+        <div class="build">
+          <div class="build-top"><span class="build-n">2</span><a class="chip" href="https://www.zoley.io/automation">Automation</a></div>
+          <h3>Instant, accurate lead response</h3>
+          <p>Every inquiry answered quickly with the right property details, whatever time it arrives, so response speed no longer depends on the day's workload.</p>
+        </div>
+        <div class="build">
+          <div class="build-top"><span class="build-n">3</span><a class="chip" href="https://www.zoley.io/automation">Automation</a></div>
+          <h3>One-click branded outreach</h3>
+          <p>Personalized emails that include the correct listing PDF, photo, and link automatically, sent in one click instead of assembled by hand.</p>
+        </div>
+        <div class="build">
+          <div class="build-top"><span class="build-n">4</span><a class="chip" href="https://www.zoley.io/automation">Automation</a></div>
+          <h3>Safeguards built in</h3>
+          <p>A verification check before every send, automatic duplicate blocking, and locked records, so nothing goes out twice or to the wrong person.</p>
+        </div>
+        <div class="build">
+          <div class="build-top"><span class="build-n">5</span><a class="chip" href="https://www.zoley.io/automation">Automation</a></div>
+          <h3>Lead import &amp; a listings database</h3>
+          <p>New leads pulled in daily, people interested in several properties recognized as one person, and active and archived listings kept organized on their own.</p>
+        </div>
+        <div class="build">
+          <div class="build-top"><span class="build-n">6</span><a class="chip" href="https://www.zoley.io/digital-advertising">Advertising</a></div>
+          <h3>Listing campaigns with tracking</h3>
+          <p>Targeted campaigns for listings or for the brokerage itself, with tracking from day one so you can see which ads produce inquiries.</p>
+        </div>
+    </div>
+    <div class="center"><a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-ink">Find out what to build first</a></div>
+  </section>
+
+  <section class="sec">
+    <div class="proof">
+      <div class="proof-glow proof-glow-a" aria-hidden="true"></div>
+      <div class="proof-glow proof-glow-b" aria-hidden="true"></div>
+      <div class="proof-inner">
+        <span class="proof-tag">from our work</span>
+        <h2>A commercial brokerage with a strong pipeline and slow follow-up.</h2>
+        <p>No Limit Real Estate had 10 to 15 buyers and investors inquiring every day, but the website wasn't converting enough of them and every lead took a string of manual steps. We rebuilt the site and built an outreach engine inside tools the brokerage already owned.</p>
+        <ul class="proof-nums">
+          <li><span class="pn">+40%</span><span class="pl">interested conversions from the website</span></li>
+          <li><span class="pn">100%</span><span class="pl">of leads contacted the same day, up from 20%</span></li>
+          <li><span class="pn">~8 hrs</span><span class="pl">of manual lead handling saved every week</span></li>
+        </ul>
+        <a class="proof-link" href="https://www.zoley.io/case-studies/commercial-real-estate">Read the case study &rarr;</a>
+      </div>
+    </div>
+    <div class="quotes quotes-1">
+      <figure class="quote">
+        <blockquote>Zoley enhanced our real estate website so potential buyers stay within our ecosystem. It led to a 40% increase in interest in our listings.</blockquote>
+        <figcaption><strong>Rob G.</strong><span>No Limit Real Estate, LLC</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="head">
+      <span class="tag">how we work</span>
+      <h2>We diagnose before we build. Every engagement.</h2>
+    </div>
+    <div class="steps">
+        <div class="step"><span class="step-n">01</span><h3>Diagnose</h3><p>We audit how leads, listings, and follow-up actually move through your brokerage, and where they stall.</p></div>
+        <div class="step"><span class="step-n">02</span><h3>Design</h3><p>We rank the fixes by return on effort and scope the first one precisely: deliverables and timeline, in writing.</p></div>
+        <div class="step"><span class="step-n">03</span><h3>Build &amp; connect</h3><p>We build inside the tools you already run, document everything, and hand over ownership. No proprietary lock-in.</p></div>
+        <div class="step"><span class="step-n">04</span><h3>Measure</h3><p>Every build ships with tracking. We review the numbers with you and adjust, so the result holds up after launch.</p></div>
+    </div>
+  </section>
+
+  <section class="sec sec-narrow">
+    <div class="head">
+      <span class="tag">questions we hear</span>
+      <h2>Before you get in touch.</h2>
+    </div>
+    <div class="faq">
+      <details class="qa">
+        <summary>Do we have to switch CRMs or buy new software?</summary>
+        <p>No. We build inside the tools your brokerage already owns. In our commercial brokerage engagement the whole system needed zero new software subscriptions.</p>
+      </details>
+      <details class="qa">
+        <summary>What stops it from sending the wrong property to a client?</summary>
+        <p>Safeguards built in on purpose: a second verification check before every send, automatic duplicate blocking, and locked records, so nothing is sent twice or to the wrong person by accident.</p>
+      </details>
+      <details class="qa">
+        <summary>Does this work for residential as well as commercial?</summary>
+        <p>Yes. Our deepest real estate work so far is with a commercial brokerage, but the problems it solved (slow replies, listings that leak traffic to portals, manual follow-up) are the same in residential.</p>
+      </details>
+      <details class="qa">
+        <summary>How long until something is running?</summary>
+        <p>Most first builds are live within three to five weeks of the audit, and they run in parallel with your current process before we switch over.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="cta-sec">
+    <div class="sign">
+      <h2>Let's make sure every lead hears back the same day.</h2>
+      <p>Tell us how leads reach your brokerage today. We'll come back with a written plan: what we'd build first, why, and what it should return.</p>
+      <div class="cta-row">
+        <a href="https://www.zoley.io/find-your-next-best-business-move" class="btn btn-primary">Get your plan</a>
+        <a href="https://calendly.com/zoley/zoley-discovery-call" class="btn btn-light">Book an intro call</a>
+      </div>
+      <p class="cta-note">Prefer email? connect@zoley.io</p>
+    </div>
+  </section>
+</div>

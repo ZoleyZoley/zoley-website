@@ -702,5 +702,18 @@
       }
     ],
     "bundle": "_pages/ind-physical-therapy.html"
+  },
+  "ind-real-estate": {
+    "source": "zoley-industry-real-estate.v2.html",
+    "sections": [
+      {
+        "file": "01-page.html",
+        "id": "zly-ind-real-estate",
+        "title": "Page",
+        "key": "ind-real-estate/01-page",
+        "defs_injected": []
+      }
+    ],
+    "bundle": "_pages/ind-real-estate.html"
   }
 }

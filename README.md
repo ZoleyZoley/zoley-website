@@ -22,8 +22,8 @@ Nothing in this repo was deleted or rewritten to build v2 — the originals are 
 1. Edit the page in `main pages/` (the `.v2.html` file), then run `python3 tools/build-sections.py`.
    Never hand-edit `sections.v2/`: the build overwrites it.
 2. `git add -A && git commit -m "..." && git push`
-3. `git tag v1.7.11 && git push --tags` (the next unused tag; the live one is v1.7.10)
-4. In Squarespace → Settings → Advanced → Code Injection → Header, change `@v1.7.10` to `@v1.7.11`.
+3. `git tag v1.7.12 && git push --tags` (the next unused tag; the live one is v1.7.11)
+4. In Squarespace → Settings → Advanced → Code Injection → Header, change `@v1.7.11` to `@v1.7.12`.
 
 **Never reuse a tag name**, even one you deleted. jsDelivr remembers which commit a
 tag pointed to the first time it was requested and keeps serving those files. (v1.7.3
@@ -58,7 +58,7 @@ Header code injection (site-wide). This is the whole box - replace everything in
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;700&family=Caveat:wght@700&display=swap"></noscript>
-<script async src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.7.10/dist/zoley-loader.js"></script>
+<script async src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.7.11/dist/zoley-loader.js"></script>
 ```
 
 Why each line is there (v1.7.9, 9/29/26 speed pass):

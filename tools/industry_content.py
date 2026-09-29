@@ -19,7 +19,7 @@ SERVICE_URLS = {
 
 # How we work: the homepage's four steps, shared by every industry page.
 STEPS = [
-    ("Diagnose", "We audit how patients, work, and money actually move through your practice, and where they stall."),
+    ("Diagnose", "We audit how {flow} actually move through your {org}, and where they stall."),
     ("Design", "We rank the fixes by return on effort and scope the first one precisely: deliverables and timeline, in writing."),
     ("Build & connect", "We build inside the tools you already run, document everything, and hand over ownership. No proprietary lock-in."),
     ("Measure", "Every build ships with tracking. We review the numbers with you and adjust, so the result holds up after launch."),
@@ -29,6 +29,8 @@ INDUSTRIES = [
   # ------------------------------------------------------------------ Dental
   {
     "key": "dental",
+    "org": "practice",
+    "flow": "patients, work, and money",
     "sid": "zly-ind-dental",
     "url": "/dental-practices",
     "tag": "for dental practices",
@@ -83,6 +85,8 @@ INDUSTRIES = [
   # ------------------------------------------------------------------ Plastic surgery
   {
     "key": "plastic-surgery",
+    "org": "practice",
+    "flow": "patients, work, and money",
     "sid": "zly-ind-plastic-surgery",
     "url": "/plastic-surgery-practices",
     "tag": "for plastic surgery practices",
@@ -137,6 +141,8 @@ INDUSTRIES = [
   # ------------------------------------------------------------------ Physical therapy
   {
     "key": "physical-therapy",
+    "org": "practice",
+    "flow": "patients, work, and money",
     "sid": "zly-ind-physical-therapy",
     "url": "/physical-therapy-practices",
     "tag": "for physical therapy practices",
@@ -185,5 +191,60 @@ INDUSTRIES = [
     ],
     "cta_title": "Let's build the practice you pictured when you opened it.",
     "cta_text": "Tell us how your practice runs today. We'll come back with a written plan: what we'd change first, why, and what it should return.",
+  },
+
+  # ------------------------------------------------------------------ Real estate
+  {
+    "key": "real-estate",
+    "sid": "zly-ind-real-estate",
+    "url": "/real-estate",
+    "org": "brokerage",
+    "flow": "leads, listings, and follow-up",
+    "tag": "for real estate brokerages",
+    "title": "Every lead hears back the same day, with the right listing attached.",
+    "sub": "Buyers and investors are raising their hands on your listings every day. We build the website that keeps them on your listings, and the outreach system that answers each one quickly, accurately, and without a pile of manual steps.",
+    "board": {
+        "cards": [("Inquiry", "on a listing, 9:14 pm"), ("Matched", "to the right property"),
+                  ("Details sent", "PDF, photos, link"), ("Tracked", "no duplicates")],
+        "note": "every lead, same day",
+    },
+    "stat": ("76%", "of repeat home buyers, and 67% of first-time buyers, interview only one agent before choosing who to work with. The first good answer usually wins the client."),
+    "problems_title": "Where brokerages lose deals before the first call.",
+    "problems_intro": "Interest isn't the problem. What happens between the inquiry and the first real reply is where most of it leaks away.",
+    "problems": [
+        ("Leads wait until someone's free.", "Response speed depends on how busy the team is that day. Some leads hear back in days; some never do, and they're already talking to someone else."),
+        ("Your listings send buyers somewhere else.", "When every listing links out to a portal, the visitor leaves your site and most don't come back. The interest you paid for goes to someone else's platform."),
+        ("Every lead means the same manual steps.", "Match the inquiry to the property, find the right PDF, write the email, check who's already been contacted. Tedious at five a day; a bottleneck at fifteen."),
+        ("One wrong email costs credibility.", "Sending the wrong property, or the same email twice, to a serious buyer or investor is a bigger cost than a slow reply."),
+    ],
+    "builds_title": "What we build for real estate brokerages.",
+    "builds_intro": "Built inside the tools your brokerage already owns, so costs stay flat and every lead stays in your hands.",
+    "builds": [
+        ("Web", "A website that keeps buyers on your listings", "Listings on your own site instead of linking to portals, property pages that make the next step obvious, and search setup so the brokerage can be found."),
+        ("Automation", "Instant, accurate lead response", "Every inquiry answered quickly with the right property details, whatever time it arrives, so response speed no longer depends on the day's workload."),
+        ("Automation", "One-click branded outreach", "Personalized emails that include the correct listing PDF, photo, and link automatically, sent in one click instead of assembled by hand."),
+        ("Automation", "Safeguards built in", "A verification check before every send, automatic duplicate blocking, and locked records, so nothing goes out twice or to the wrong person."),
+        ("Automation", "Lead import & a listings database", "New leads pulled in daily, people interested in several properties recognized as one person, and active and archived listings kept organized on their own."),
+        ("Advertising", "Listing campaigns with tracking", "Targeted campaigns for listings or for the brokerage itself, with tracking from day one so you can see which ads produce inquiries."),
+    ],
+    "proof": {
+        "kind": "case",
+        "tag": "from our work",
+        "title": "A commercial brokerage with a strong pipeline and slow follow-up.",
+        "text": "No Limit Real Estate had 10 to 15 buyers and investors inquiring every day, but the website wasn't converting enough of them and every lead took a string of manual steps. We rebuilt the site and built an outreach engine inside tools the brokerage already owned.",
+        "numbers": [("+40%", "interested conversions from the website"), ("100%", "of leads contacted the same day, up from 20%"), ("~8 hrs", "of manual lead handling saved every week")],
+        "link": ("/case-studies/commercial-real-estate", "Read the case study"),
+    },
+    "quotes": [
+        ("Zoley enhanced our real estate website so potential buyers stay within our ecosystem. It led to a 40% increase in interest in our listings.", "Rob G.", "No Limit Real Estate, LLC"),
+    ],
+    "faq": [
+        ("Do we have to switch CRMs or buy new software?", "No. We build inside the tools your brokerage already owns. In our commercial brokerage engagement the whole system needed zero new software subscriptions."),
+        ("What stops it from sending the wrong property to a client?", "Safeguards built in on purpose: a second verification check before every send, automatic duplicate blocking, and locked records, so nothing is sent twice or to the wrong person by accident."),
+        ("Does this work for residential as well as commercial?", "Yes. Our deepest real estate work so far is with a commercial brokerage, but the problems it solved (slow replies, listings that leak traffic to portals, manual follow-up) are the same in residential."),
+        ("How long until something is running?", "Most first builds are live within three to five weeks of the audit, and they run in parallel with your current process before we switch over."),
+    ],
+    "cta_title": "Let's make sure every lead hears back the same day.",
+    "cta_text": "Tell us how leads reach your brokerage today. We'll come back with a written plan: what we'd build first, why, and what it should return.",
   },
 ]

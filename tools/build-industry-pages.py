@@ -136,8 +136,8 @@ def proof(ind):
   </section>'''
 
 
-def steps():
-    items = "\n".join(f'        <div class="step"><span class="step-n">0{i}</span><h3>{e(t)}</h3><p>{e(x)}</p></div>'
+def steps(ind):
+    items = "\n".join(f'        <div class="step"><span class="step-n">0{i}</span><h3>{e(t)}</h3><p>{e(x.format(org=ind["org"], flow=ind["flow"]))}</p></div>'
                       for i, (t, x) in enumerate(STEPS, 1))
     return f'''  <section class="sec">
     <div class="head">
@@ -205,7 +205,7 @@ CSS = r'''
 
   /* stat */
   #W .stat { max-width: 1160px; margin: 0 auto; padding: 16px 24px 24px; }
-  #W .stat-inner { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 26px; align-items: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 26px 8px; }
+  #W .stat-inner { display: grid; grid-template-columns: auto minmax(0, 640px); justify-content: center; gap: 28px; align-items: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 26px 8px; }
   #W .stat-num { font-family: 'Newsreader', Georgia, serif; font-size: clamp(40px, 5vw, 58px); font-weight: 600; line-height: 1; color: var(--barn); white-space: nowrap; }
   #W .stat-inner p { font-size: 16.5px; max-width: 720px; }
 
@@ -317,7 +317,7 @@ CSS = r'''
     #W .cta-row { flex-direction: column; align-items: stretch; }
     /* Full-bleed illustration on phones, as on the other v2 pages. */
     #W .board { margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); border-left: 0; border-right: 0; border-radius: 0; padding-left: 0; padding-right: 0; }
-    #W .stat-inner { grid-template-columns: 1fr; gap: 10px; text-align: left; }
+    #W .stat-inner { grid-template-columns: 1fr; justify-content: stretch; gap: 10px; text-align: left; }
     #W .sec { padding: 48px 16px 8px; }
     #W .head { text-align: left; }
     #W .head .tag { margin-left: 0; }
@@ -379,7 +379,7 @@ One section for the whole page. Squarespace page {ind['url']} gets one Code Bloc
 
 {proof(ind)}
 
-{steps()}
+{steps(ind)}
 
 {faq(ind)}
 
