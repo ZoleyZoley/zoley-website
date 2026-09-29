@@ -61,7 +61,7 @@ Header code injection (site-wide). This is the whole box - replace everything in
 <script async src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.7.10/dist/zoley-loader.js"></script>
 ```
 
-Why each line is there (v1.7.10, 9/29/26 speed pass):
+Why each line is there (v1.7.9, 9/29/26 speed pass):
 - The `<style>` holds each empty placeholder at one screen tall until its content arrives,
   so Squarespace's footer never paints under the header and then jumps (CLS was up to 0.65).
 - The fonts load without blocking the first paint, and the loader is `async`, so neither
