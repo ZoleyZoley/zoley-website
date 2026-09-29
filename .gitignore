@@ -3,3 +3,4 @@ __t_*.html
 __loadertest.html
 V2-NOTES.md
 main pages/V2-NOTES.md
+__pycache__/

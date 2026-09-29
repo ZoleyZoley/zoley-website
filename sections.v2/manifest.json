@@ -573,5 +573,77 @@
         "defs_injected": []
       }
     ]
+  },
+  "cs-real-estate": {
+    "source": "zoley-case-study-real-estate.v2.html",
+    "sections": [
+      {
+        "file": "01-page.html",
+        "id": "zly-csd-real-estate",
+        "title": "Page",
+        "key": "cs-real-estate/01-page",
+        "defs_injected": []
+      }
+    ]
+  },
+  "cs-physical-therapy": {
+    "source": "zoley-case-study-physical-therapy.v2.html",
+    "sections": [
+      {
+        "file": "01-page.html",
+        "id": "zly-csd-physical-therapy",
+        "title": "Page",
+        "key": "cs-physical-therapy/01-page",
+        "defs_injected": []
+      }
+    ]
+  },
+  "cs-plastic-surgery": {
+    "source": "zoley-case-study-plastic-surgery.v2.html",
+    "sections": [
+      {
+        "file": "01-page.html",
+        "id": "zly-csd-plastic-surgery",
+        "title": "Page",
+        "key": "cs-plastic-surgery/01-page",
+        "defs_injected": []
+      }
+    ]
+  },
+  "cs-nonprofit-donations": {
+    "source": "zoley-case-study-nonprofit-donations.v2.html",
+    "sections": [
+      {
+        "file": "01-page.html",
+        "id": "zly-csd-nonprofit-donations",
+        "title": "Page",
+        "key": "cs-nonprofit-donations/01-page",
+        "defs_injected": []
+      }
+    ]
+  },
+  "cs-tree-project": {
+    "source": "zoley-case-study-tree-project.v2.html",
+    "sections": [
+      {
+        "file": "01-page.html",
+        "id": "zly-csd-tree-project",
+        "title": "Page",
+        "key": "cs-tree-project/01-page",
+        "defs_injected": []
+      }
+    ]
+  },
+  "cs-dental-staffing": {
+    "source": "zoley-case-study-dental-staffing.v2.html",
+    "sections": [
+      {
+        "file": "01-page.html",
+        "id": "zly-csd-dental-staffing",
+        "title": "Page",
+        "key": "cs-dental-staffing/01-page",
+        "defs_injected": []
+      }
+    ]
   }
 }

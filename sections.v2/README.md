@@ -8,7 +8,7 @@ Every section is **self-contained**: it carries its own scoped CSS and renders o
 **Once**, in Settings -> Advanced -> Code Injection -> **Header**:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.7.7/dist/zoley-loader.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.7.8/dist/zoley-loader.js"></script>
 ```
 
 Then give each page **one** Code Block holding a single line:
@@ -21,8 +21,8 @@ That renders every section of that page, in the order below. Adding, removing or
 reordering a section afterwards is a git change only - Squarespace never needs touching again.
 To place one section somewhere specific instead, use its own line from the page's list.
 
-**To ship a change:** edit the section -> `git push` -> `git tag v1.7.8 && git push --tags` ->
-change `@v1.7.7` to `@v1.7.8` in the header snippet. That number is the only thing you edit in Squarespace.
+**To ship a change:** edit the section -> `git push` -> `git tag v1.7.9 && git push --tags` ->
+change `@v1.7.8` to `@v1.7.9` in the header snippet. That number is the only thing you edit in Squarespace.
 
 > Pinned tags, not `@main`: jsDelivr caches a branch for 12h at the edge and **7 days in a browser
 > that already loaded it**. Exact tags are immutable and go live immediately.
@@ -341,4 +341,100 @@ Or place sections individually:
 <div data-zoley-section="tools-guides/02-tools"></div>
 <div data-zoley-section="tools-guides/03-guides"></div>
 <div data-zoley-section="tools-guides/04-final-cta"></div>
+```
+
+## cs-real-estate -> `/case-studies/commercial-real-estate`
+
+Source: `main pages/zoley-case-study-real-estate.v2.html` - 1 sections
+
+| # | Section | File | Wrapper id |
+|---|---|---|---|
+| 1 | Page | `cs-real-estate/01-page.html` | `#zly-csd-real-estate` |
+
+Whole page: `<div data-zoley-page="cs-real-estate"></div>`
+
+Or place sections individually:
+
+```html
+<div data-zoley-section="cs-real-estate/01-page"></div>
+```
+
+## cs-physical-therapy -> `/case-studies/physical-therapy-practice`
+
+Source: `main pages/zoley-case-study-physical-therapy.v2.html` - 1 sections
+
+| # | Section | File | Wrapper id |
+|---|---|---|---|
+| 1 | Page | `cs-physical-therapy/01-page.html` | `#zly-csd-physical-therapy` |
+
+Whole page: `<div data-zoley-page="cs-physical-therapy"></div>`
+
+Or place sections individually:
+
+```html
+<div data-zoley-section="cs-physical-therapy/01-page"></div>
+```
+
+## cs-plastic-surgery -> `/case-studies/plastic-surgery-email`
+
+Source: `main pages/zoley-case-study-plastic-surgery.v2.html` - 1 sections
+
+| # | Section | File | Wrapper id |
+|---|---|---|---|
+| 1 | Page | `cs-plastic-surgery/01-page.html` | `#zly-csd-plastic-surgery` |
+
+Whole page: `<div data-zoley-page="cs-plastic-surgery"></div>`
+
+Or place sections individually:
+
+```html
+<div data-zoley-section="cs-plastic-surgery/01-page"></div>
+```
+
+## cs-nonprofit-donations -> `/case-studies/nonprofit-donation-system`
+
+Source: `main pages/zoley-case-study-nonprofit-donations.v2.html` - 1 sections
+
+| # | Section | File | Wrapper id |
+|---|---|---|---|
+| 1 | Page | `cs-nonprofit-donations/01-page.html` | `#zly-csd-nonprofit-donations` |
+
+Whole page: `<div data-zoley-page="cs-nonprofit-donations"></div>`
+
+Or place sections individually:
+
+```html
+<div data-zoley-section="cs-nonprofit-donations/01-page"></div>
+```
+
+## cs-tree-project -> `/case-studies/west-hartford-tree-project`
+
+Source: `main pages/zoley-case-study-tree-project.v2.html` - 1 sections
+
+| # | Section | File | Wrapper id |
+|---|---|---|---|
+| 1 | Page | `cs-tree-project/01-page.html` | `#zly-csd-tree-project` |
+
+Whole page: `<div data-zoley-page="cs-tree-project"></div>`
+
+Or place sections individually:
+
+```html
+<div data-zoley-section="cs-tree-project/01-page"></div>
+```
+
+## cs-dental-staffing -> `/case-studies/dental-staffing-intake`
+
+Source: `main pages/zoley-case-study-dental-staffing.v2.html` - 1 sections
+
+| # | Section | File | Wrapper id |
+|---|---|---|---|
+| 1 | Page | `cs-dental-staffing/01-page.html` | `#zly-csd-dental-staffing` |
+
+Whole page: `<div data-zoley-page="cs-dental-staffing"></div>`
+
+Or place sections individually:
+
+```html
+<div data-zoley-section="cs-dental-staffing/01-page"></div>
 ```
