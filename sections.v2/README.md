@@ -8,7 +8,7 @@ Every section is **self-contained**: it carries its own scoped CSS and renders o
 **Once**, in Settings -> Advanced -> Code Injection -> **Header**:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.7.9/dist/zoley-loader.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ZoleyZoley/zoley-website@v1.7.10/dist/zoley-loader.js"></script>
 ```
 
 Then give each page **one** Code Block holding a single line:
@@ -21,8 +21,8 @@ That renders every section of that page, in the order below. Adding, removing or
 reordering a section afterwards is a git change only - Squarespace never needs touching again.
 To place one section somewhere specific instead, use its own line from the page's list.
 
-**To ship a change:** edit the section -> `git push` -> `git tag v1.7.10 && git push --tags` ->
-change `@v1.7.9` to `@v1.7.10` in the header snippet. That number is the only thing you edit in Squarespace.
+**To ship a change:** edit the section -> `git push` -> `git tag v1.7.11 && git push --tags` ->
+change `@v1.7.10` to `@v1.7.11` in the header snippet. That number is the only thing you edit in Squarespace.
 
 > Pinned tags, not `@main`: jsDelivr caches a branch for 12h at the edge and **7 days in a browser
 > that already loaded it**. Exact tags are immutable and go live immediately.
@@ -437,4 +437,52 @@ Or place sections individually:
 
 ```html
 <div data-zoley-section="cs-dental-staffing/01-page"></div>
+```
+
+## ind-dental -> `/dental-practices`
+
+Source: `main pages/zoley-industry-dental.v2.html` - 1 sections
+
+| # | Section | File | Wrapper id |
+|---|---|---|---|
+| 1 | Page | `ind-dental/01-page.html` | `#zly-ind-dental` |
+
+Whole page: `<div data-zoley-page="ind-dental"></div>`
+
+Or place sections individually:
+
+```html
+<div data-zoley-section="ind-dental/01-page"></div>
+```
+
+## ind-plastic-surgery -> `/plastic-surgery-practices`
+
+Source: `main pages/zoley-industry-plastic-surgery.v2.html` - 1 sections
+
+| # | Section | File | Wrapper id |
+|---|---|---|---|
+| 1 | Page | `ind-plastic-surgery/01-page.html` | `#zly-ind-plastic-surgery` |
+
+Whole page: `<div data-zoley-page="ind-plastic-surgery"></div>`
+
+Or place sections individually:
+
+```html
+<div data-zoley-section="ind-plastic-surgery/01-page"></div>
+```
+
+## ind-physical-therapy -> `/physical-therapy-practices`
+
+Source: `main pages/zoley-industry-physical-therapy.v2.html` - 1 sections
+
+| # | Section | File | Wrapper id |
+|---|---|---|---|
+| 1 | Page | `ind-physical-therapy/01-page.html` | `#zly-ind-physical-therapy` |
+
+Whole page: `<div data-zoley-page="ind-physical-therapy"></div>`
+
+Or place sections individually:
+
+```html
+<div data-zoley-section="ind-physical-therapy/01-page"></div>
 ```

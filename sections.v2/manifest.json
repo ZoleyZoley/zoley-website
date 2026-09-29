@@ -663,5 +663,44 @@
       }
     ],
     "bundle": "_pages/cs-dental-staffing.html"
+  },
+  "ind-dental": {
+    "source": "zoley-industry-dental.v2.html",
+    "sections": [
+      {
+        "file": "01-page.html",
+        "id": "zly-ind-dental",
+        "title": "Page",
+        "key": "ind-dental/01-page",
+        "defs_injected": []
+      }
+    ],
+    "bundle": "_pages/ind-dental.html"
+  },
+  "ind-plastic-surgery": {
+    "source": "zoley-industry-plastic-surgery.v2.html",
+    "sections": [
+      {
+        "file": "01-page.html",
+        "id": "zly-ind-plastic-surgery",
+        "title": "Page",
+        "key": "ind-plastic-surgery/01-page",
+        "defs_injected": []
+      }
+    ],
+    "bundle": "_pages/ind-plastic-surgery.html"
+  },
+  "ind-physical-therapy": {
+    "source": "zoley-industry-physical-therapy.v2.html",
+    "sections": [
+      {
+        "file": "01-page.html",
+        "id": "zly-ind-physical-therapy",
+        "title": "Page",
+        "key": "ind-physical-therapy/01-page",
+        "defs_injected": []
+      }
+    ],
+    "bundle": "_pages/ind-physical-therapy.html"
   }
 }
